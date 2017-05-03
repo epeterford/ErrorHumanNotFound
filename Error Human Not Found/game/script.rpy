@@ -4,7 +4,7 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define eric = Character("ThunderWolf")
 
 # The game starts here.
 
@@ -29,6 +29,8 @@ label start:
     e "You've created a new Ren'Py game."
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
+    
+    eric "This is a test print"
 
     # This ends the game.
 
