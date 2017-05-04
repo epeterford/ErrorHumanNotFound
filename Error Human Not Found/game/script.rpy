@@ -5,6 +5,7 @@
 
 define e = Character("Eileen")
 define eric = Character("ThunderWolf")
+define j = Character("MetalElephant")
 
 # The game starts here.
 
@@ -33,6 +34,8 @@ label start:
     eric "This is a test print"
     
     eric "Is the coolet kid in town!"
+    
+    j "What a blowhard..."
 
     # This ends the game.
 
