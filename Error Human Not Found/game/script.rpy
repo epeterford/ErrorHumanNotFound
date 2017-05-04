@@ -36,4 +36,4 @@ label start:
 
     # This ends the game.
 
-    return
+    jump prologue
