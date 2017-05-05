@@ -6,6 +6,12 @@
 define e = Character("Eileen")
 define eric = Character("ThunderWolf")
 define j = Character("MetalElephant")
+define merlin = ("Merlin")
+image bg bed = "bg bed layout.png"
+image bg computer = "bg computer terminal.png"
+image bg view = "bg window and lamp.png"
+image merlin = "Merlin_neutral.png"
+define dissolve = Dissolve (1.0)
 
 # The game starts here.
 
@@ -36,6 +42,29 @@ label start:
     eric "Is the coolet kid in town!"
     
     j "What a blowhard..."
+    
+    scene bg computer
+    with dissolve 
+    
+    show merlin at right
+    
+    merlin "What was that about?"
+    
+    scene bg bed
+    with dissolve
+    
+    show merlin at center 
+    
+    merlin "And why am I in space?"
+    
+    scene bg view
+    with fade
+    
+    show merlin at left
+    
+    merlin "This is someone's room. I should leave."
+    
+    hide merlin
 
     # This ends the game.
 
