@@ -29,7 +29,10 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("")
+define gui.about = _("{i}Error: Human Not Found{/i} is an educational game developed by"
+                      "students from Full Sail University, working at CelleC Games.\n\n"
+                      
+                      "To see more of our educational games, visit cellecgames.com")
 
 
 ## A short name for the game used for executables and directories in the built
@@ -46,13 +49,13 @@ define build.name = "ErrorHumanotFound"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
-# define config.sample_sound = "sample-sound.ogg"
+#define config.sample_sound = "sample-sound.ogg"
 # define config.sample_voice = "sample-voice.ogg"
 
 
