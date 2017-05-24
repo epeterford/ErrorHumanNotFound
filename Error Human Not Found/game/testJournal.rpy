@@ -39,21 +39,22 @@ init -2 python:
     ## hang of doing it.
     journal_entries = list([
         "It was supposed to be a pinnacle of human and AI relations.\n\n"
-         "Instead, we have a dead AI, and I have fingers pointing at me when I {i}know{/i} I did"
-         "nothing wrong. But I make an easy scapegoat. I'm the youngest person working on the Markov"
-         "Project, one of the youngest researchers on Noah Sphere at all. Not to mention that anyone"
-         "who dislikes my mother would love to see me taken down just to get at her. Too bad they don't"
-         "know that I dislike her just as much as they do.\n\n"
+         "Instead, we have a dead AI, and I have fingers pointing at me when I {i}know{/i} I did "
+         "nothing wrong. But I make an easy scapegoat. I'm the youngest person working on the Markov "
+         "Project, one of the youngest researchers on Noah Sphere at all. Not to mention that anyone "
+         "who dislikes my mother would love to see me taken down just to get at her. Too bad they don't "
+         "know that I dislike her just as much as they do.\n\n",
          
-         "I wish my father was here, but work has him away. Maybe my 'partner,' Ada, will be able to help"
-         "me clear my name before I get railroaded by the official investigation team.",
-        "I don't think Ada was aware of \"Director\" Hirose being my mother. Lucky her. I wish it"
-         "was something I could be unaware of.\n\n"
+        "I wish my father was here, but work has him away. Maybe my 'partner,' Ada, will be able to help "
+         "me clear my name before I get railroaded by the official investigation team. "
+         "I don't think Ada was aware of \"Director\" Hirose being my mother. Lucky her. I wish it "
+         "was something I could be unaware of.\n\n",
          
-         "At least she's useful in one respect. I may be banned from investigating, but with her" 
-         "credentials, I'll clear my name. Someone has to.",
-        "Ada isn't human. She's a walking, talking robot. But sometimes, I think I'm more of a robot"
-         "than she is. I've been approaching this whole thing as if it were a true"
+        "At least Ada's useful in one respect. I may be banned from investigating, but with her " 
+         "credentials, I'll clear my name. Someone has to. "
+         "Ada isn't human. She's a walking, talking robot. But sometimes, I think I'm more of a robot "
+         "than she is. I've been approaching this whole thing as if it were an insult to me... I should "
+         "have considered the fact that a sentient being is dead. I promise, I will find out why."
         ])
     
     #### The increment function
@@ -100,7 +101,7 @@ screen journal:
     ## This is more or less code I adapted from the preferences
     ## menu, so I'm not 100% certain why it works, I just know that it does.
     #hbox:
-     #   xmaximum 250
+     #   xmaximum 1920
       #  vbox:
             ## Creates a box with the label "Vitals", to indicate
             ## that this is the section which shows Sofie's vitals,
@@ -170,10 +171,10 @@ screen notes_screen:
     tag menu
     use navigation
     vbox:
-        xminimum 620
+        xminimum 1920
         xmaximum 1920
         frame:
-            yminimum 593
+            yminimum 1080
             ymaximum 1080
             style_group "pref"
             has vbox
@@ -182,8 +183,8 @@ screen notes_screen:
             label _("Notes:")
             label (journal_entries[current_journal_page])
     vbox:
-        xpos 607
-        xmaximum 140
+        xpos 1400
+        xmaximum 300
         frame:
             style_group "pref"
             has vbox
