@@ -1,46 +1,51 @@
 label prologue:
+    window show
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
     #show Grace neutral
-    #BRACELET lights up
- 
-    "DING. DING."
-    #Insert sound effect to play with bracelet chime
+    #Insert SFX Typing here
+    "Grace types away at her computer."
+    "Grace's bracelet beeps and flashes."
     
+    #Insert SFX here
+    "DING. DING."
+ 
     #show Grace annoyed
     g "Hold on, I'm busy."
- 
+    #Insert SFX here
     "DING! DING! DING!"
  
     #show Grace angry
     g "Okay, okay, I get it!"
  
+    #choice 1  
     menu:
         "Answer the bracelet.":
             jump answer
-        "Head to the council chambers.":
-            jump chambers
+        "Just head on over.":
+            jump directChambers
  
 label answer:
-    "GRACE FORTRAN is hereby summoned to appear before the Conclave effective immediately. The recipient is to suspend all further research until they have reported to the Conclave.
-    Further instructions will be imparted by Director Hirose."
-
+    secretary "GRACE FORTRAN is hereby summoned to appear before the Conclave effective immediately. The recipient is to suspend all further research until after said appearance."
+    secretary "Further instructions will be provided by Director Hirose."
+ 
     #show Grace annoyed
-    g "Really? A summons? I have work to do. Would it have killed her to just stop by my lab instead of calling on me like a maid?"
-    #Grace walks out of the room.
+    g "Really? A summons? I have so much work to do. Would it have killed her to just stop by my lab instead of having her secretary call on me? I am not her servant."
+    "Grace marches out of the room."
+    jump chambers
+ 
+label directChambers:
+    g "There's only one person who would call me at work after hours." 
+    g "I suppose I should see what she wants."
+    "Grace shuts down her computer and exits the lab."
     jump chambers
  
 label chambers:
-    show Tosh neutral
-    $ time_ref = "17:16"
-    $ loc_ref = "Conclave Reception"
-    show bg conclaveWaitingRoom
-    with fade
-    #Grace arrives in the chambers and is greeted by a secretary VI.
-    secretary "Welcome, GRACE FORTRAN. Please wait here until the council is ready to assist you."
- 
+    #Grace arrives at the chambers and is greeted by a secretary VI.
+    secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
+    #choice 2 
     menu:
         "Thank her.":
             jump thanks
@@ -48,89 +53,89 @@ label chambers:
             jump shrug
  
 label thanks:
-    g "Okay! Thanks."
-    #secretary perks up and smiles at Grace
-    secretary "You are most welcome. Help yourself to some complimentary tea."
-    #cup of tea appears
-    #cup of tea description: The leaves were picked from the lush atmosphere inside of the Noah Sphere's bio dome.
-    #maybe another term other than bio dome?
-    #Grace takes a sip
-    g "Thank you."
+    g "Good evening to you, too."
+    "The secretary VI perks up and smiles at Grace."
+    secretary "You are most welcome. Help yourself to some complimentary oolong tea."
+    "A cup of warm oolong tea appears on a platter raised from the desk."
+    #cup of tea description: The leaves were picked from the lush atmosphere of one of the Noah Sphere's oxygen gardens.
+    "Grace takes a sip."
+    g "Thank you very much."
     jump prologueResume1
  
 label shrug:
     #show Grace snarky
     g "Yeah, like I've never been here before. I know the drill."
     #Grace walks away and takes a seat
-    secretary "Um..."
+    secretary "Excuse me..."
     #show Grace annoyed
     g "What?"
-    secretary "Please enjoy a complimentary tea!"
-    g "As long as you stop talking to me."
-    #cup of tea appears
-    #cup of tea description: The leaves were picked from the lush atmosphere inside of the Noah Sphere's bio dome.
-    #maybe another term other than bio dome?
-    #Grace takes a sip
-    jump prologueResume1
+    secretary "Would you like some complimentary tea?"
+    g "As long as it means you will stop talking to me."
+    "A cup of warm oolong tea appears on a platter raised from the desk."
+    #cup of tea description: The leaves were picked from the forest environment of Noah Sphere's oxygen garden. 
+    jump prologueResume1 
  
 label prologueResume1:
-    #off screen dialogue from the conclave ensues.
-    show bg conclaveDoor
-    with fade
-    h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to gain a grip on her and keep an eye on the other three elder AI's."
-    h "Colossus is keeping everything quiet but there's only so much we can keep the lid on."
-    h "Alpha was, after all, the first of them to acquire a physical form. There's the risk of an upset. How is Blue handling this?"
-    knuth "Blue is concerned, but she's holding her own. No excessive misdoings or demands for justice." 
-    knuth "Just curiosity and I think anguish, but it's hard to tell with her. She just expressed a sad face and then exploded with other random emoticons."
+    #off screen dialogue from the Conclave ensues.
+    "Grace grows more and more impatient."
+    g "What is taking so long?"
+    "Grace sits down her cup of tea and approaches the heavy door where the Conclave members meet."
+    "Voices can be heard from a crack in the door. Grace leans in to listen."
+ 
+    h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to gain a grip on her and keep an eye on the other three elder AIs."
+    h "Colossus is keeping everything quiet but there's only so much we can keep contained."
+    h "Alpha was, after all, the first of them to acquire a physical form. There's the risk of an uproar. How is Blue responding to this?"
+    knuth "Blue is concerned, but she's holding her own. No excessive disobedience." 
+    knuth "Just curiosity, and I think anguish? It's hard to tell with her. She just flashed a sad face and then exploded with other random emoticons."
     h "I expected as much. And Watson?"
     knuth "Well, you know Watson. He's difficult to get in touch with." 
-    knuth "Probably off gallivanting in some system, having a grand old time and unaware of what's happening at home base. AWOL as usual."
-    neva "Well at least we don't have to worry about him for now. He'd probably get in the way somehow."
+    knuth "Probably off gallivanting around in some system, having a grand old time and unaware of what's happening at home base. AWOL as usual."
+    neva "Well at least we don't have to worry about him for now. He'd probably get in the way."
     h "He certainly would. When he resurfaces, however, we'll want to get in touch." 
-    h "Don't forget. And we have the project leads suspended until further notice, correct?"
+    h "Let's not forget that point. We have the project leads suspended until further notice, correct?"
     cray "Yes, Director."
-    h "When will the investigators be here?"
-    cray "Twenty-four hours, madame."
-    h "Right. Please ensure that no one will get in their way. Speaking of, Grace should be here by now."
+    h "When will the external investigators be here?"
+    cray "Eighteen hours, Director."
+    h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
  
-    #the doors open. Grace stumbles into the room to be greeted by the Director and the four chiefs
-    #show hirose neutral (?)
-    $ time_ref = "17:24"
-    $ loc_ref = "The Conclave"
-    show bg conclave
-    with fade
-    h "Ah, hello, Grace. Eavesdropping at the door? How mature of you."
-    
+    "The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
+    h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     #show Grace frustrated
+    neva "What is the meaning of this, Doctor Fortran?"
+    godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
+    cray "Director, are you just going to allow--"
+    h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
+    g "I couldn't help but overhear. Especially with Cray's voice being so loud."
+    cray "Excuse me, but--"
     g "What's going on? What happened to Alpha?"
-    
-    h "Once your tone takes on a less hysterical note, we'll discuss."
-    
-    g "Don't tell me what to do. I want to know what happened to the AI I was working with."
-    #show godel neutral
-    godel "That's not the proper way you speak to the Director."
-    g "Mind your business."
-    godel "Well, I never."
-    g "Yeah, yeah. Tell me what's going on."  
-    #show hirose annoyed (?)
-    h "That's enough. We are not exactly certain of the events that transpired at this time, but unfortunately Alpha is no longer with us."
-
-    #show grace surprised/sad
-    g "But how? I tracked his transition, he was completely processed, everything was working perfectly..."
-    
-    #show cray neutral
+    #show director neutral
+    h "Once you take on a more reasonable tone, we'll discuss what occurred."
+    g "My tone is always reasonable. I want to know what happened to the AI I was working with."
+    godel "That's not the proper way you speak to the Director. Check your manners. "
+    g "Mind your own business."
+    godel "Well, I've never!"
+    g "Whatever, Godel."  
+    h "That's enough, both of you."
+    g "..."
+    "Hirose stares down Grace from her platform."
+    g "Director, please inform me of current events involving Alpha."
+    h "We are not exactly certain of the events that transpired at this time, but unfortunately Alpha is no longer with us."
+    #show Grace surprised
+    g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
     cray "That's what we don't understand, Alpha was--"
-    h "Like I stated, we are not positive of the reason yet. We are having a team of external investigators coming to inspect the situation."
-    g "What? Why external investigators? We couldn't keep this among our own?"
+    h "Like I stated, we are not positive of the reason yet. We ordered a team of external investigators to inspect the situation."
+    g "What? Why external investigators? We couldn't keep this among our own crew?"
     h "Almost everyone on the station worked with Alpha." 
-    h "We need an unbiased examination of the crime scene and interrogation of all those involved to truly determine what, or who, was at fault."
-    g "His neural network was fine yesterday. Was there a glitch somewhere?" 
-    g "Any type of malfunction should have been caught in the system. I just can't believe it."
-    cray "We can't either, we--"
+    h "We need an unbiased examination of the crime scene. We also need to interrogate all those involved to truly determine what, or who, was at fault."
+    g "Everything was running smoothly as of yesterday, including his neural network." 
+    g "Any type of malfunction should have been caught in the system. I just can't believe something like this happened."
+    g "All glitches were worked out with the prototype. This cannot be random chance."
+    cray "We can't believe it either, we--"
     h "Grace, you were summoned today because of your involvement with Alpha's process."
-    h "Your research shall be suspended until we have a clearer image of what happened to Alpha."
-    #show grace angry
+    h "Your research shall be suspended until we have a clear idea of what happened."
+    #show Grace angry
  
+    #choice 3 
     menu:
         "Continue asking questions.":
             jump lessobvious
@@ -138,100 +143,113 @@ label prologueResume1:
             jump sassy
  
 label lessobvious:
-    g "But how long is it going to take for the investigators to come? This is time sensitive."
-    h "We are aware of the sensitivity of the matter, believe me. They are scheduled to come in approximately 18 hours."
-    g "What?!"
-    h "This isn't up for debate, Grace. You will stay out of your lab and remain in your living quarters until the investigation is over." 
-    h "Until then you will have restricted access to the conclave and labs."
+    g "So nobody has run any sort of diagnostics on his system or even a preliminary examination of the machine body?"
+    h "No. While this is an urgent matter, we need unbiased eyes. Any work done by station crew would contaminate possible evidence."
+    g "What? We have some of the highest trained professionals in any scientific field and you're waiting on a random team of investigators?"
+    h "This isn't up for debate, Doctor Fortran. The lab is off limits. Remain in your living quarters until the investigation is over." 
+    h "Until then you will have restricted access to the Conclave and labs."
     #show Grace annoyed
-    g "But did you check his charts? Did you search through his databanks?" 
+    g "But did you check his charts? Did you search through his databanks at least?" 
     g "Did you look for anything that might suggest what could've occurred?"
-    h "We're leaving that up to the investigators to figure out. As for you, please heed my advice and do as I say." 
-    h "Stay out of this and leave it to the professionals."
-    g "Alright, fine. Keep me informed, though. I want to know what happened."
+    h "We're leaving that up to the investigators to figure out. As for you, please do as I instruct." 
+    h " As difficult as it may be for you to believe, there are other people who are perfectly capable of answering what happened to Alpha."
+    g "Alright, fine. Keep me informed. I want to know what happened."
     jump prologueResume2
  
 label sassy:
     g "You've got to be kidding me. My research could help discover what happened to him."
-    h "You're a suspect. This isn't an argument. Your work can wait until the investigation is over."
+    h "You're a suspect, Doctor Fortran. I don't think you understand the severity of the position you are in." 
+    h "This isn't something you get to stand here and pontificate about. Your work can wait until the investigation is over."
     #show Grace angry
-    g "I want to know what happened to Alpha. I have a right as one of the researchers who worked with him as well as on his cyborg body." 
-    g "This isn't fair. Waiting for such a long amount of time is wasted resources."
+    g "I want to know what happened to Alpha. I have the right as one of the researchers who worked with him and his android body." 
+    g "Waiting for so long is a waste of time."
     h "You'll stay out of this and let the investigators do their job."
     g "This is ridiculous. You're not doing enough!"
-    #show director irritated
-    h "Grace. You are not to be involved, and that's final."
-    #stare down between Grace and Hirose
-    g "Okay, fine."
+    #show Hirose irritated
+    h "You are not to be involved, and that's final."
+    "A stare down between Grace and Hirose chills the room."
+    g "Fine."
     #show Grace snarky
-    #under her breath
-    g "{i}We'll see about that.{/i}"
+    "Grace turns to walk out of the room and speaks to herself."
+    g "We'll see about that."
     jump prologueResume2
  
 label prologueResume2:
-    #Grace exits room
-    #Grace enters her lab to be greeted with the sight of ADA in humanoid form
+    "Grace enters her lab to be greeted with the sight of an android."
     #show Grace surprised
- 
+     
     g "What the... Who are you? And what do you think you're doing in my lab?"
     #show Ada neutral
-    a "Grace, it's Ada. You know, the other AI you've been working with." 
-    a "The one who isn't dead. I've uploaded myself into a physical form to solve the destruction of my friend."
-    a "I cannot accomplish as much as I would've liked without the physical advantage you humans have."
+    a "Grace, it is I, Ada." 
+    a "I have uploaded myself into a physical form to solve the death of my friend."
+    a "However, I cannot hope to accomplish as much as I would have liked without the physical advantage you humans possess."
     #show Grace annoyed
-    g "Oh, give me a break. An AI just died, and now I've got another one in my office?" 
-    g "Do you know how much trouble I'm gonna be in if someone finds you in here? I've got enough on my plate right now."
-    a "I'm not sure I care. That AI wasn't just my associate, but my friend. Alpha's dead and I need to know what happened to him."
+    g "Oh, give me a break. Alpha just died, and now you're in my office?" 
+    g "I've got enough on my plate right now. If someone finds you in here--"
+    a "I am not sure that I care. Alpha was not just my associate, he was my friend. Alpha's now dead and I need to know what happened to him."
     #show Grace surprised
-    g "Yeah, I understand that his death is a tragedy, but a lot is going on right now. The conclave is shutting down the lab and everything."
-    g "They're bringing outside investigators to find out what happened to him. I wanna know what happened too, but we've got strict orders from Hirose-"
+    g "Yeah, I understand that his death is unnerving, but a lot is happening right now. The Conclave is shutting down the labs and everything."
+    g "They're bringing outside investigators to find out what happened to him. I want to know what happened too, but we've got strict orders from the Director-"
     #show Ada concerned
     a "When do the investigators come?"
-    g "18 hours."
-    a "That's more than enough time."
-    g "Time for what? What are you thinking?"
-    a "If you wish to help me, then we'll find a way to go around them. Are you with me?"
- 
+    g "Eighteen hours."
+    a "That is more than adequate time."
+    g "Time for what? What are you planning?"
+    a "If you wish to help me understand the circumstances that led to Alpha's death, then we'll find a way around the Conclave's orders. Are you with me?"
+    #choice 4 
     menu:
         "Agree, but make it clear Ada knows who's boss.":
             jump boss
         "Agree.":
             jump together
-        "Agree reluctantly.":
+        "Express your doubts.":
             jump reluctant
-            
+ 
 label boss:
-    g "Alright, but I'll lead this. I'm not taking the fall for you if we happen to get caught."
+    g "Alright, but you follow my lead. And to be clear, if we get caught, I'm not taking the fall for you."
     #show Ada frustrated
-    a "Well okay then. I don't know how that's relevant as I wouldn't expect you to anyway."
-    g "Good."
+    a "That is acceptable. I was not expecting you to anyway."
+    g "While we're on the subject, don't expect anything from me outside of this investigation. I'll do the same for you."
+    a "If that is what you wish, then fine."
+    g "Good, because that is what I wish."
     a "Good."
     jump prologueResume3
  
 label together:
-    g "Yeah. Let's work together to figure this mess out."
-    a "Shall we get to work then?"
+    g "Yeah. Let's work together to figure this out."
+    g "If I don't do this with you, I know I'll regret it. Alpha deserved better than a delayed investigation."
+    a "My thoughts exactly. I was not able to be there for him then, but I want to be here for him now."
+    g "Who better to look into this than an AI and a researcher that knows this place like the back of her hand?"
+    a "Humans memorize the backs of their hands?"
+    "Ada studies her hand."
+    g "No--nevermind."
+    a "Shall we get to it then? No point in waiting around to get caught."
     g "Absolutely."
-    a "Alright. Let's get to it."
+    a "After you."
     jump prologueResume3
  
 label reluctant:
-    g "I guess we could do that. But you know that a human, AKA me, is going to get the boot rather than the sidekick robot."
+    g "I guess we could do that. But you know that a human, i.e. me, is going to get the axe rather than the sidekick robot."
     #show ada seething
-    a "Excuse me? A robot? I'll have you know that I can process faster than you can think. And I'm no one's sidekick."
+    a "Excuse me? A robot? I'll have you know that I can process faster than you or any robot can think." 
+    a "I am an AI inhabiting an android body, not the equivalent of a toaster. I am no one's sidekick."
     g "Okay, okay. Calm down."
-    a "I'm the epitome of calm."
-    g "Whatever you say."
+    a "I am the epitome of calm."
+    g "I think you've got thin skin, Ada."
+    a "Grace, my aluminic steel chassis is markedly thicker than the human epidermis. I do not understand this claim you are making."
+    g "That… wasn't what I was talking about. But we should get started ."
     jump prologueResume3
+ 
  
 label prologueResume3:
     #show Grace neutral
-    g "First things first, we need credentials. I think that the best place to start would be Director Hirose's residence."
+    g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 
     g "We need to acquire her credentials to access the crime scene."
-    #They start to leave. Ada stumbles.
-    #Have SFX here
-    a "It might take me a moment to get used to walking."
-
-    #End of prologue
+    "The two start to leave." 
+    "Ada stumbles."
+    g "Err... are you going to be alright?"
+    a "It might take me a moment to get used to walking. But if a hominid like yourself could figure it out, then I anticipate little difficulty in doing so as well."
     jump chapterOne
-    # ... more code goes here ...
+
+
+#End of prologue.
