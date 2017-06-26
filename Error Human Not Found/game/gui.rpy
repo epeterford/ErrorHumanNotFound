@@ -58,7 +58,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "oposs___.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "Finalnew.ttf"
+define gui.name_text_font = "United Kingdom DEMO.otf"
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "oposs___.ttf"
@@ -67,7 +67,7 @@ define gui.interface_text_font = "oposs___.ttf"
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size =  50
+define gui.name_text_size =  31
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 36
@@ -120,7 +120,7 @@ define gui.namebox_height = 115
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(60, 40, 5, 25)
+define gui.namebox_borders = Borders(62, 28, 5, 25)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background if the namebox will be scaled.
@@ -134,7 +134,7 @@ define gui.dialogue_xpos = 300 #155 #580
 define gui.dialogue_ypos = 40
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1400 #1200
+define gui.dialogue_width = 1300 #1200
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.

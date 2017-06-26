@@ -1,7 +1,728 @@
 label chapterOne:
-    "Chapter one is currently not implemented."
+    scene bg hiroseDoor
+    #show Grace neutral
+    g "Here we are. Scan my badge and voila. Open."
+ 
+    "The door doesn't budge."
+    "A voice issues from speakers near the door."
+ 
+    tosh "The Director is not here at the moment. Please make an appointment."
+    #Tosh's sprite isn't displayed here
+    #show Grace annoyed
+    g "What? I usually have access!"
+ 
+    #show Ada nervous
+    a "And why do you have access to the Director's office?"
+ 
+    #show Grace neutral
+    g "Because she's my mother."
+    #show Grace surprised
+    g "You... didn't know?"
+    #show Ada neutral
+    a "That point was never present in my databanks."
+    #show Grace snarky
+    g "Yeah, that's the Director for you. Why bother with unimportant details like family?"
+    #show Ada neutral
+    a "Regardless, we need to get inside."
+    a "Let me get the door."
+    #show Ada neutral
+    a "..."
+    "An awkward silence hangs."
+    #show Grace neutral
+    g "And this is supposed to...?"
+
+    #show Ada concerned
+    a "I seem to be having a malfunction. I can usually do this with as little thought as you might give breathing."
+    #choice 1 
+    menu:
+        "Let her know what's wrong.":
+            jump notin
+        "Remind her she has a body.":
+            jump usuallyinaserver
+        "Sass her.":
+            jump tryandguess
+ 
+label notin:
+    #show Grace neutral
+    g "You're not in the system anymore, Ada."
+    g "Any connection you had to the system left when you jumped into that body."
+
+    #show Ada neutral
+    a "Interesting. I had hoped to have retained my connection to the Sphere's network."
+    g "Yeah, do you want your circuits lightly salted while you're at it? You'd have fried in seconds."
+    #show Ada concerned
+    a "What? I thought these neural networks were supposed to preserve me."
+    g "{i}Just{/i} preserve you. Wireless interfacing was going to be a feature in the next model. I would think the whole 'I have a physical body and get to walk around' would be enough for a thank you."
+    jump doorhack
+ 
+label usuallyinaserver:
+    #show Grace neutral
+    g "Well, the server you left was connected to everything."
+    #show Grace happy
+    g "Welcome to the physical world! Here we have no strings!"
+    #show Ada neutral
+    a "I do not see why this warrants a positive response."
+    a "This is going to be a challenge."
+
+    #show Grace snarky
+    g "It can't be that hard. If the humans can do it, so can you!"
+    #show Ada amused
+    a "I suppose I can find that reassuring."
+    #show Grace surprised
+    g "Hey!"
+    #show Grace snarky
+    g "I mean, I {i}do{/i} represent that remark."
+    jump doorhack
+ 
+label tryandguess:
+    #show Grace snarky
+    g "I'll give you a few guesses to find the issue."
+    #show Ada neutral
+    a "Is that sarcasm my circuits are registering?"
+    #show Grace neutral
+    g "No, I was legitimately giving you a couple of guesses."
+    #show Ada frustrated
+    g "I mean, if you don't know then you don't know. I think it's incredibly obvious."
+    a "This discussion is pointless. I am not going to waste anymore time {i}or{/i} processing power on it."
+    #show Ada neutral
+    g "Look, you're not connected to the system anymore, you can't just make doors open at will. Now you're in the meat world like the rest of us."
+    jump doorhack
+
+label doorhack:
+    #show Grace neutral
+    g "My turn to try the door."
+    g "Watch my back. We don't want to get busted before we even start."
+    
+    #show Ada neutral
+    a "What are you doing, precisely? Besides tearing apart that defenseless panel."
+
+    #show Grace snarky
+    g "Call it a manual override."
+ 
+    #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
+    #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE)resume script once the puzzle concludes.
+#    if(attemptsLogicGate1==1):
+#        show Grace happy
+#        g "Yes! First try! Still got it. Nobody can touch these elite skills." 
+#    if (attemptsLogicGate1>1 and attempts<4):
+#        #show Grace happy
+#        g "Hey, wasn't perfect. But the door is open, and we haven't been caught." 
+#    if (attemptsLogicGate1>3):
+#	#show Grace annoyed
+#	g "Apparently my hacking skills have become subpar. Too much legitimate coding."
+
+ 
+    #transition to Hirose's reception  with a fade.
+    scene bg hiroseReception
+ 
+    #show Ada neutral
+    a "Are you positive that being here is within protocol?"
+ 
+    #show Grace happy
+    g "If it makes you feel better, this isn't the first time I've done this."
+ 
+    #show Ada neutral
+    a "I feel that your statement requires some elaboration."
+    #show Grace snarky
+    g "Let's just say that whoever updates key card access needs to do their job faster."
+ 
+    #show Tosh pleasant
+    tosh "Hello, Doctor Fortran!"
+     
+    #show Ada neutral
+    a "So, this is where Tosh is centered..."
+     
+    tosh "Sorry for not greeting you, I did not notice you come in."
+    tosh "Director Hirose is not available at the moment. What is the purpose of your visit?"
+    #choice 2 
+    menu:
+        "Try to bluff her.":
+            jump failtosh1
+        "Dismiss her.":
+            jump failtosh2
+        "Use your rank.":
+            jump succeedtosh
+ 
+label failtosh1:
+    g "I'm just here to grab something for my mother."
+    #show Tosh pleasant
+    tosh  "Oh! That's no issue, then. Let me just contact her to confi--"
+    #show Ada frustrated
+    a "Hold on!"
+    tosh "Hm?"
+    jump toshgetsroasted
+    
+label failtosh2:
+    g "..."
+    #show Grace frustrated
+    #show Tosh alarmed
+    tosh "Failure to supply a response means I have to contact Director Hirose, Doctor Fortran."
+    #show Ada frustrated
+    a"You will do no such thing, Tosh."
+    jump toshgetsroasted
+ 
+label succeedtosh:
+    g "Tosh, I am sure that as my mother's sole descendant and a lead researcher on the station I have sufficient privileges to access my mother's office."
+    #show Tosh pleasant
+    tosh "Reviewing familial protocols..."
+    tosh "Precedent supports your argument. You may proceed."
+    #show Grace happy
+    g "Thank you kindly, Tosh."
+
+    tosh "I will just log your visit so the Director can se--"
+    #show Ada neutral
+    a "Belay that, Tosh. There will be no report of our visit."
+    jump toshgetsroasted
+ 
+label toshgetsroasted:
+ 
+    #show Tosh alarmed
+    tosh "Who are you? I am not finding a badge or serial number associated with your profile..."
+ 
+    #show Ada neutral
+    a "I am Ada. Sound familiar?"
+ 
+    #show Tosh pleasant
+    tosh "Forgive me, Ada, I failed to recognize you! You are looking very... human today."
+    tosh "I am afraid I'm going to have to ask you to leave. You do not have the authorization to be here."
+
+    #show Ada frustrated
+    a  "What is your purpose, Tosh?"
+ 
+    tosh "To serve Director Hirose to the best of my ability. Please vacate the premises. It would be unpleasant for all of us if I had to call security in to remove you."
+
+    #show Ada happy
+    a "Oh, I would not be so hasty if I were you. I do control your update schedule, Tosh."
+    #show Ada neutral
+    a "If your next update were to completely destroy your scheduling capability, you would be reformatted for sure..."
+ 
+    #show Tosh Alarmed
+    tosh "..."
+    tosh "I would hate to inconvenience the Director that way."
+    #show Tosh pleasant
+    tosh "You may stay."
+ 
+    a "And?"
+ 
+    tosh "And I may be experiencing downtime while processing an update and will not be able to log this visit."
+    #show Ada amused:
+    a "Thank you so much for your cooperation, Tosh."
+    jump adadoxxeshirose
+ 
+label adadoxxeshirose:
+    g "Now that we've passed the gatekeeper, let's get what we came here for."
+    scene bg hiroseOfficeMain  
+    #show Grace neutral
+    g "It almost hurts to admit it, but I'm incredibly jealous of this office. Don't have the same view from my little lab."
+    $ talkAdaHiroseOffice_value = 0
+label hiroseOffice_actions:
+    window hide
+    scene bg hiroseOfficeMain 
+    if talkAdaHiroseOffice_value>0 and hiroseOfficeItems == 3:
+        jump wegotthedeets
+    screen hiroseOfficeAction:
+        imagebutton:
+            idle "adaTalk.png" 
+            hover "adaTalk_hover.png" 
+            xpos 0
+            ypos 0 
+            focus_mask True
+            action Jump("talkAdaHiroseOffice")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "investigate.png" 
+            hover "investigate_hover.png" 
+            xpos 0
+            ypos 200
+            focus_mask True
+            action Jump("exploreOffice")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    call screen hiroseOfficeAction
+    
+label talkAdaHiroseOffice:
+    if(talkAdaHiroseOffice_value == 0):
+        g "Hey, about back there, with Tosh..."
+        $ talkAdaHiroseOffice_value += 1
+        #choice 3
+        menu:
+            "Approve, but keep it orderly.":
+                jump sepbutequal1
+            "Scold her.":
+                jump subservient1
+            "Compliment her.":
+                jump equal1
+    if(talkAdaHiroseOffice_value > 0):
+        a "We should not linger here too long. I might have stopped Tosh for the moment, but aggravating her further will not aid us."
+        jump hiroseOffice_actions
+        
+label sepbutequal1:
+    #show Grace Neutral
+    g "That was good thinking, but let me know the next time you're planning to threaten my mom's secretary VI."
+    #show Ada Neutral
+    a "Will do, Grace. I did not think there was time to warn you."
+    a "Now, let me see the computer. We do not have time to guess passwords."
+    g "What are you doing?"
+    a "I am going to access it directly."
+    a "I have spent all of my existence manipulating code."
+    a "It is about as difficult as moving building blocks."
+    jump hiroseOffice_actions
+ 
+label subservient1:
+    g "You had no business pulling rank on another computer system without consulting me first." 
+    g "I\'m in charge here, not you."
+    #show Ada frustrated
+    a "Another {i}computer system{/i}?"
+    a "I am so much more than that. I am a synthetic intelligence transf--"
+    g "I don\'t care, Ada."
+    g "You could\'ve blown our cover, and I would\'ve lost my career if that happened."
+    g "I don\'t even know what they would\'ve done to you."
+    a "Fine, whatever you say."
+    g "It's your turn to pull your weight. You can hack the computer."
+    jump hiroseOffice_actions
+
+label equal1:
+    g "That was quick thinking to keep Tosh from giving us away."
+    g "Nice job."
+    #show Ada happy
+    a "Far from the hardest thing I have ever done."
+    g "Wasn't exactly the robot battle I've always wanted to see, but I guess it's close enough."
+    #show Ada neutral
+    a "Grace, I had no intention of engaging Tosh. Besides, I do not think it would have been a very fair fight."
+    a "Now, let us see the computer. This should not take me too long."
+    jump hiroseOffice_actions
+    
+label exploreOffice:
+    #Begin the sequence that allows the players to look around Hirose's office. 
+    #3 items split 
+    #Once the player clicks on the computer, actual puzzle fires.
+    window hide
+    scene bg hiroseOfficeMain
+    screen hiroseOffice1_scr:
+        imagebutton:
+            idle "arrow.png"
+            hover "arrow_hover.png"
+            xpos 1340
+            ypos 419
+            focus_mask True
+            action Jump("hiroseOffice2")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "back.png"
+            hover "back_hover.png"
+            xpos 0
+            ypos 0
+            focus_mask True
+            action Jump("hiroseOffice_actions")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    call screen hiroseOffice1_scr
+label hiroseOffice2:
+    window hide
+    scene bg hiroseOfficeTransition at basicfade
+    screen hiroseOffice2_scr:
+        imagebutton:
+            idle "arrow.png" 
+            hover "arrow_hover.png" 
+            xpos 1288 
+            ypos 308 
+            focus_mask True
+            action Jump("exploreHiroseOffice")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "arrowL.png" 
+            hover "arrowL_hover.png" 
+            xpos 127 
+            ypos 308 
+            focus_mask True
+            action Jump("exploreOffice")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    call screen hiroseOffice2_scr
+#Buttons for the objects
+label exploreHiroseOffice:
+    scene bg hiroseOfficeDesk at basicfade
+    screen investigateOffice:
+        imagebutton:
+            idle "arrowL.png" 
+            hover "arrowL_hover.png" 
+            xpos 0 
+            ypos 345 
+            focus_mask True
+            action Jump("hiroseOffice2")
+            hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (hiroseTea_inv == False):
+            imagebutton:
+                idle "hiroseTea.png" 
+                hover "hiroseTea_hover.png" 
+                xpos 591 
+                ypos 385 
+                focus_mask True
+                action Jump("hiroseTea_label")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (hiroseSafe_inv == False):
+            imagebutton:
+                idle "hiroseSafe.png" 
+                hover "hiroseSafe_hover.png" 
+                xpos 468 
+                ypos 570 
+                focus_mask True
+                action Jump("hiroseSafe_label")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (solvedBinary1 == False):
+            imagebutton:
+                idle "hiroseOfficialComputer.png" 
+                hover "hiroseOfficialComputer_hover.png" 
+                xpos 596
+                ypos 61 
+                focus_mask True
+                action Jump("adaActualPuzzle1")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+    call screen investigateOffice
+
+label hiroseTea_label:
+    $ hiroseTea_inv = True
+    $ hiroseOfficeItems +=1
+    show image "hiroseTea_closeup.png" at centerScreen
+    window show
+    "A cup containing the dregs of a hybrid floral tea."
+    g "Roberta does drink some of the strangest teas. I'll stick to my coffee, thanks."
+    a "Humans and their caffeine..."
+    hide image "hiroseTea_closeup.png"
+    window hide
+    jump exploreHiroseOffice
+
+label hiroseSafe_label:
+    $ hiroseSafe_inv = True
+    $ hiroseOfficeItems += 1
+    show image "hiroseSafe_closeup.png" at centerScreen
+    window show
+    "A biometric locked safe."
+    a "Grace, should you be poking around that?"
+    g "Only as a last resort. Those kind of locks are a pain to circumvent anyways."
+    hide image "hiroseSafe_closeup.png"
+    window hide
+    jump exploreHiroseOffice
+    
+label adaActualPuzzle1:
+    window show
+    "Description of the computer. Followed by the puzzle. On fail, needs to return to the desk view with dialogue. For now, assume pass."
+    show image "hiroseOfficialComputer_closeup.png" at centerScreen
+    $ solvedBinary1 = True
+    hide image "hiroseOfficialComputer_closeup.png"
+    if (solvedBinary1 == True):
+        $ hiroseOfficeItems += 1
+    window hide
+    jump exploreHiroseOffice
+#    if (attemptsBinary1==1):
+#        #show Ada amused
+#        a "I did not even have to suspend any normal running processes to crack that."
+#    if (attemptsBinary1>1 and attemptsBinary1<4):
+#        #show Ada happy
+#        a "Well played, personal computer, but the AI always comes out on top." 
+#    if (attemptsBinary1>3):
+#	#show Ada annoyed
+#	a "I can process yottaFLOPS but a simple password causes me this much difficulty? I have to question the definition of state-of-the-art hardware."
+        
+label wegotthedeets:
+    a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
+    g "Of course not. That would be too easy."
+    "Grace looks around, thinking."
+    g "She's got a personal computer. I'd wager it's probably there."
+    scene bg hirosePersonalArea at basicfade
+    a "We cannot hack this one. One incorrect guess and we will be locked out."
+    g "Let's look around. Maybe something here will tell us what to try."
+    jump hirosePersonalArea_actions
+    
+label hirosePersonalArea_actions: 
+    #insert exploration here. Must pick up photo before being able to open computer.
+    window hide
+    scene bg hirosePersonalArea
+    screen hirosePersonalArea_scr:
+        imagebutton:
+            idle "adaTalk.png" 
+            hover "adaTalk_hover.png" 
+            xpos 0
+            ypos 0 
+            focus_mask True
+            action Jump("talkAdaHirosePersonal")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "investigate.png" 
+            hover "investigate_hover.png" 
+            xpos 0
+            ypos 200
+            focus_mask True
+            action Jump("hirosePersonalArea_inv")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    call screen hirosePersonalArea_scr
+        
+label hirosePersonalArea_inv:
+    scene bg hirosePersonalArea at basicfade
+    window hide
+    screen hirosePersonalArea_invScr:
+        imagebutton:
+            idle "arrowL.png"
+            hover "arrowL_hover.png"
+            xpos 794
+            ypos 351
+            focus_mask True
+            action Jump("hirosePersonalComputer")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "arrow.png"
+            hover "arrow_hover.png"
+            xpos 1596
+            ypos 650
+            focus_mask True
+            action Jump("hiroseBed")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "back.png"
+            hover "back_hover.png"
+            xpos 0
+            ypos 0
+            focus_mask True
+            action Jump("hirosePersonalArea_actions")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    call screen hirosePersonalArea_invScr
+    #should get password from photo
+    #show Grace happy
+
+label hirosePersonalComputer:
+    scene bg hirosePersonalComputer at basicfade
+    screen investigateHirosePC:
+        imagebutton:
+            idle "arrowD.png" 
+            hover "arrowD_hover.png"
+            xpos 865
+            ypos 890
+            focus_mask True
+            action Jump("hirosePersonalArea_inv")
+            hover_sound "audio/ENHF_UI_Highlight.ogg"
+        imagebutton:
+            idle "hiroseComputer.png"
+            hover "hiroseComputer_hover.png"
+            xpos 0
+            ypos 0
+            focus_mask True
+            action Jump("hirosePC_label")
+            hover_sound "audio/ENHF_UI_Highlight.ogg"
+    call screen investigateHirosePC
+
+label hiroseBed:
+    scene bg hirosePersonalBed at basicfade
+    screen investigateHiroseBed:
+        imagebutton:
+            idle "arrowD.png" 
+            hover "arrowD_hover.png" 
+            xpos 865
+            ypos 890 
+            focus_mask True
+            action Jump("hirosePersonalArea_inv")
+            hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (hiroseBed_inv == False):
+            imagebutton:
+                idle "hiroseBed.png" 
+                hover "hiroseBed_hover.png" 
+                xpos 35
+                ypos 507 
+                focus_mask True
+                action Jump("hiroseBed_label")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (hiroseWindow_inv == False):
+            imagebutton:
+                idle "hiroseWindow.png" 
+                hover "hiroseWindow_hover.png" 
+                xpos 0 
+                ypos 0
+                focus_mask True
+                action Jump("hiroseWindow_label")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+        if (hirosePhoto_inv == False):
+            imagebutton:
+                idle "hirosePhoto.png" 
+                hover "hirosePhoto_hover.png" 
+                xpos 1512
+                ypos 729 
+                focus_mask True
+                action Jump("hirosePhoto_label")
+                hover_sound "audio/ENHF_UI_Highlight.ogg"
+    call screen investigateHiroseBed
+
+    
+label gotHirosePassword:
+    g "We've got it!" 
+    #show Grace neutral
+    g "Let's get back to my lab. We've got some work to do before we can use this."
+    window hide
+    scene bg hirosePersonalArea at basicfade
+    pause
+    scene bg hiroseOfficeMain at basicfade
+    pause
+    scene bg hiroseReception at basicfade
+    pause
+    scene bg hallwayGrace at basicfade
+    pause
+    scene bg G_main at basicfade
+    pause
+    scene bg G_deskArea at basicfade
+    pause
+    scene bg G_right at basicfade
+    pause
+    window show
+    #Transition to Grace's Lab here
+    "Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
+    #show Grace happy
+    g "There. My keycard is now copying Hirose's access protocols."
+    jump endChapterOne
+
+label talkAdaHirosePersonal:
+    if talkAdaHirosePersonal_value==0:
+        #show Grace neutral
+        g "That run-in with Tosh was too close."
+        #show Ada amused
+        a "Until I took care of it rather handily, I would say."
+        $ talkAdaHirosePersonal_value +=1
+        #choice 4
+        menu:
+            "Comment on her expression.":
+                jump sortaroastada
+            "Be dismissive.":
+                jump actuallyroastada
+            "Crack a joke.":
+                jump toshgotwrecked
+    else:
+        a "Humans lack the capacity to retrieve stored information perfectly. It is likely your mother left some reminder of a password somewhere."
+        g "I think you underestimate how much like a robot she is."
+        window hide
+        jump hirosePersonalArea_actions
+                
+label sortaroastada:
+    #show Grace surprised
+    g "Did you enjoy that?"
+    #show Ada neutral
+    a "Hm?"
+    #show Grace snarky
+    g "Talking down to Tosh like that. I can't help but notice the giant grin on your face."
+    "Ada pauses, and she reaches up to touch her face."
+    #show Ada concerned
+    a "I did not realize. I was not trying to be cruel, Grace."
+    g "I didn't say you were cruel."
+    g "Well, I guess even machines like pecking downwards every once in awhile."
+    a "I am not familiar with that colloquialism."
+    g "Just observe my mother for long enough. She does the same thing."
+    window hide
+    jump hirosePersonalArea_actions
+    
+label actuallyroastada:
+    #show Grace annoyed
+    g "You did your job. Nothing more."
+    g "I could've done that by myself, if I'd been so inclined."
+    #show Ada frustrated
+    a "I beg to differ. I do not have to help you here, Grace."
+    "Grace sighs."
+    #show Grace neutral
+    g "I didn't ask for you to help. You're the one who wanted to come along."
+    #show Ada Seething
+    a "Noted."
+    window hide
+    jump hirosePersonalArea_actions
+ 
+label toshgotwrecked:
+    #show Grace happy
+    g "I've got to say, I never liked that VI."
+    #show Ada amused
+    a "Really?"
+    #show Grace neutral
+    g "Too chipper for my liking. It's like she's too helpful."
+    a "Have you considered the possibility that you detest Tosh because you often see her with your mother?"
+    #show Grace surprised
+    g "What?! I would never think like that!"
+    #show Grace neutral.
+    g "..." 
+    #show Grace snarky
+    g "You're probably right."
+    window hide
+    jump hirosePersonalArea_actions
 
 #end the chapter here, go to Chapter 2
 label endChapterOne:
+    #Insert the check for which tonal shift to jump to
     "For now, this is the end."
     return
+
+label hirosePhoto_label:
+    $ hirosePhoto_inv = True
+    $ hirosePersonalItems_value += 1
+    show image "hirosePhoto_closeup.png" at centerScreen
+    window show
+    "A family portrait of Hirose, a young Grace, and Grace's father."
+    a "Is that your family?"
+    g "Technically. My mother only half-counts."
+    a "You were cute as a kid. What happened?"
+    g "Ha. Funny."
+    "Grace starts to put the photo back."
+    a "Grace, I would look at the back of the photo."
+    g "Why?"
+    a "A calculated guess."
+    #show image "hirosePhoto_closeupBack.png" at centerScreen
+    g "The password is on the back of a photo. How original."
+    a "Those numbers appear to correspond with your birthdate."
+    g "At least it's good for something."
+    hide image "hirosePhoto_closeup.png"
+    #hide image "hirosePhoto_closeupBack.png" 
+    window hide
+    jump hiroseBed
+
+label hiroseBed_label:
+    $ hiroseBed_inv = True
+    $ hirosePersonalItems_value += 1
+    show image "hiroseBed_closeup.png" at centerScreen
+    window show
+    "A rather utilitarian bed."
+    a "It was my understanding that most working spaces do not have beds."
+    g "Roberta is a workaholic. The mother 'bit' is just window-dressing."
+    a "Ah. A sore subject, I take it?"
+    g "Not really. Kind of preferred it when she slept at the office."
+    hide image "hiroseBed_closeup.png"
+    window hide
+    jump hiroseBed
+    
+label hiroseWindow_label:
+    $ hiroseWindow_inv = True
+    $ hirosePersonalItems_value += 1
+    show image "hiroseWindow_closeup.png" at centerScreen
+    window show
+    "A stunning view of the nebula."
+    g "I suppose the perks of being the head of the station is the view."
+    a "I would concur, but posit that all these windows seem rather unsafe."
+    g "We're humans. Hardly anything we do is textbook safe."
+    a "I am beginning to see that."
+    hide image "hirosePhoto_closeup.png"
+    window hide
+    jump hiroseBed
+    
+label hirosePC_label:
+    show image "hiroseComputer_closeup.png" at centerScreen
+    window show
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+        g "Alright, I'll just log in, copy her credentials, and then we can leave."
+        # show image "hiroseComputerLogged.png"
+        #play SFX typing
+        hide image "hiroseComputer_closeup.png"
+        #hide image "hiroseComputerLogged.png"
+        jump gotHirosePassword
+    elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
+        a "We have the password. Are you sure you are ready? After we get the credentials we should not linger."
+        g "I suppose I shsould take another look around."
+        hide image "hirosePhoto_closeup.png"
+        window hide
+        jump hirosePersonalComputer
+    else:
+        a "Grace, if we attempt to log on without a concrete idea of the password, we will alert security to a breach."
+        g "Right. I suppose I'll take another look around."
+        g "Writing down a password kind of ruins the point of having one, though."
+        a "Your mother is on the elderly side of the human age spectrum. Memory problems become more common."
+        g "Please do tell her that. Make sure I'm there when you do."
+        g "Come on, let's keep looking."
+        hide image "hirosePhoto_closeup.png"
+        window hide
+        jump hirosePersonalComputer

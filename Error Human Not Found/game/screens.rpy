@@ -247,7 +247,33 @@ screen quick_menu():
 
             xalign 0.5
             yalign 1.0
-
+            #CHANGE THIS for the pretty icons
+#            imagebutton: #History
+#                idle
+#                hover
+#                xpos
+#                ypos
+#                focus_mask True
+#                action Rollback()
+#                hover_sound ""
+#            imagebutton: #Skip
+#                idle
+#                hover
+#                xpos
+#                ypos
+#                focus_mask True
+#                action Rollback()
+#                hover_sound ""
+                
+#            imagebutton: #Journal
+#                idle
+#                hover
+#                xpos
+#                ypos
+#                focus_mask True
+#                action Rollback()
+#                hover_sound ""
+            
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
@@ -264,7 +290,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+#default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text

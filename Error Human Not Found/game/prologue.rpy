@@ -41,8 +41,9 @@ label directChambers:
     g "I suppose I should see what she wants."
     "Grace shuts down her computer and exits the lab."
     jump chambers
- 
+
 label chambers:
+    scene bg conclaveWaitingRoom at basicfade 
     #Grace arrives at the chambers and is greeted by a secretary VI.
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
@@ -76,6 +77,7 @@ label shrug:
     jump prologueResume1 
  
 label prologueResume1:
+    scene bg conclaveDoor at basicfade
     #off screen dialogue from the Conclave ensues.
     "Grace grows more and more impatient."
     g "What is taking so long?"
@@ -97,7 +99,8 @@ label prologueResume1:
     h "When will the external investigators be here?"
     cray "Eighteen hours, Director."
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
- 
+    #insert SFX here
+    scene bg conclave at basicfade
     "The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     #show Grace frustrated
@@ -175,6 +178,12 @@ label sassy:
     jump prologueResume2
  
 label prologueResume2:
+    window hide
+    scene bg hallwayGrace at basicfade
+    pause
+    #SFX
+    scene bg G_main at basicfade
+    window show
     "Grace enters her lab to be greeted with the sight of an android."
     #show Grace surprised
      
@@ -198,7 +207,7 @@ label prologueResume2:
     a "If you wish to help me understand the circumstances that led to Alpha's death, then we'll find a way around the Conclave's orders. Are you with me?"
     #choice 4 
     menu:
-        "Agree, but make it clear Ada knows who's boss.":
+        "Make it clear who's boss.":
             jump boss
         "Agree.":
             jump together
@@ -237,7 +246,7 @@ label reluctant:
     a "I am the epitome of calm."
     g "I think you've got thin skin, Ada."
     a "Grace, my aluminic steel chassis is markedly thicker than the human epidermis. I do not understand this claim you are making."
-    g "That… wasn't what I was talking about. But we should get started ."
+    g "That... wasn't what I was talking about. But we should get started ."
     jump prologueResume3
  
  
