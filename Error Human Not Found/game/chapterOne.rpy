@@ -34,6 +34,7 @@ label chapterOne:
     #show Ada concerned
     a "I seem to be having a malfunction. I can usually do this with as little thought as you might give breathing."
     #choice 1 
+    $ quick_menu = False
     menu:
         "Let her know what's wrong.":
             jump notin
@@ -43,6 +44,7 @@ label chapterOne:
             jump tryandguess
  
 label notin:
+    $ quick_menu = True
     #show Grace neutral
     g "You're not in the system anymore, Ada."
     g "Any connection you had to the system left when you jumped into that body."
@@ -56,6 +58,7 @@ label notin:
     jump doorhack
  
 label usuallyinaserver:
+    $ quick_menu = True
     #show Grace neutral
     g "Well, the server you left was connected to everything."
     #show Grace happy
@@ -75,6 +78,7 @@ label usuallyinaserver:
     jump doorhack
  
 label tryandguess:
+    $ quick_menu = True
     #show Grace snarky
     g "I'll give you a few guesses to find the issue."
     #show Ada neutral
@@ -100,6 +104,7 @@ label doorhack:
     g "Call it a manual override."
  
     #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
+    #Also make sure to set quick_menu to False and set it back to true when done
     #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE)resume script once the puzzle concludes.
 #    if(attemptsLogicGate1==1):
 #        show Grace happy
@@ -135,6 +140,7 @@ label doorhack:
     tosh "Sorry for not greeting you, I did not notice you come in."
     tosh "Director Hirose is not available at the moment. What is the purpose of your visit?"
     #choice 2 
+    $ quick_menu = False
     menu:
         "Try to bluff her.":
             jump failtosh1
@@ -144,6 +150,7 @@ label doorhack:
             jump succeedtosh
  
 label failtosh1:
+    $ quick_menu = True
     g "I'm just here to grab something for my mother."
     #show Tosh pleasant
     tosh  "Oh! That's no issue, then. Let me just contact her to confi--"
@@ -153,6 +160,7 @@ label failtosh1:
     jump toshgetsroasted
     
 label failtosh2:
+    $ quick_menu = True
     g "..."
     #show Grace frustrated
     #show Tosh alarmed
@@ -162,6 +170,7 @@ label failtosh2:
     jump toshgetsroasted
  
 label succeedtosh:
+    $ quick_menu = True
     g "Tosh, I am sure that as my mother's sole descendant and a lead researcher on the station I have sufficient privileges to access my mother's office."
     #show Tosh pleasant
     tosh "Reviewing familial protocols..."
@@ -217,6 +226,7 @@ label adadoxxeshirose:
     $ talkAdaHiroseOffice_value = 0
 label hiroseOffice_actions:
     window hide
+    $ quick_menu = False
     scene bg hiroseOfficeMain 
     if talkAdaHiroseOffice_value>0 and hiroseOfficeItems == 3:
         jump wegotthedeets
@@ -241,9 +251,11 @@ label hiroseOffice_actions:
     
 label talkAdaHiroseOffice:
     if(talkAdaHiroseOffice_value == 0):
+        $ quick_menu = True
         g "Hey, about back there, with Tosh..."
         $ talkAdaHiroseOffice_value += 1
         #choice 3
+        $ quick_menu = False
         menu:
             "Approve, but keep it orderly.":
                 jump sepbutequal1
@@ -252,10 +264,12 @@ label talkAdaHiroseOffice:
             "Compliment her.":
                 jump equal1
     if(talkAdaHiroseOffice_value > 0):
+        $ quick_menu = True
         a "We should not linger here too long. I might have stopped Tosh for the moment, but aggravating her further will not aid us."
         jump hiroseOffice_actions
         
 label sepbutequal1:
+    $ quick_menu = True
     #show Grace Neutral
     g "That was good thinking, but let me know the next time you're planning to threaten my mom's secretary VI."
     #show Ada Neutral
@@ -268,6 +282,7 @@ label sepbutequal1:
     jump hiroseOffice_actions
  
 label subservient1:
+    $ quick_menu = True
     g "You had no business pulling rank on another computer system without consulting me first." 
     g "I\'m in charge here, not you."
     #show Ada frustrated
@@ -281,6 +296,7 @@ label subservient1:
     jump hiroseOffice_actions
 
 label equal1:
+    $ quick_menu = True
     g "That was quick thinking to keep Tosh from giving us away."
     g "Nice job."
     #show Ada happy
@@ -296,6 +312,7 @@ label exploreOffice:
     #3 items split 
     #Once the player clicks on the computer, actual puzzle fires.
     window hide
+    $ quick_menu = False
     scene bg hiroseOfficeMain
     screen hiroseOffice1_scr:
         imagebutton:
@@ -317,6 +334,7 @@ label exploreOffice:
     call screen hiroseOffice1_scr
 label hiroseOffice2:
     window hide
+    $ quick_menu = False
     scene bg hiroseOfficeTransition at basicfade
     screen hiroseOffice2_scr:
         imagebutton:
@@ -339,6 +357,7 @@ label hiroseOffice2:
 #Buttons for the objects
 label exploreHiroseOffice:
     scene bg hiroseOfficeDesk at basicfade
+    $ quick_menu = False
     screen investigateOffice:
         imagebutton:
             idle "arrowL.png" 
@@ -378,6 +397,7 @@ label exploreHiroseOffice:
     call screen investigateOffice
 
 label hiroseTea_label:
+    $ quick_menu = True
     $ hiroseTea_inv = True
     $ hiroseOfficeItems +=1
     show image "hiroseTea_closeup.png" at centerScreen
@@ -387,9 +407,11 @@ label hiroseTea_label:
     a "Humans and their caffeine..."
     hide image "hiroseTea_closeup.png"
     window hide
+    $ quick_menu = False
     jump exploreHiroseOffice
 
 label hiroseSafe_label:
+    $ quick_menu = True
     $ hiroseSafe_inv = True
     $ hiroseOfficeItems += 1
     show image "hiroseSafe_closeup.png" at centerScreen
@@ -399,9 +421,11 @@ label hiroseSafe_label:
     g "Only as a last resort. Those kind of locks are a pain to circumvent anyways."
     hide image "hiroseSafe_closeup.png"
     window hide
+    $ quick_menu = False
     jump exploreHiroseOffice
     
 label adaActualPuzzle1:
+    $ quick_menu = True
     window show
     "Description of the computer. Followed by the puzzle. On fail, needs to return to the desk view with dialogue. For now, assume pass."
     show image "hiroseOfficialComputer_closeup.png" at centerScreen
@@ -410,6 +434,7 @@ label adaActualPuzzle1:
     if (solvedBinary1 == True):
         $ hiroseOfficeItems += 1
     window hide
+    $ quick_menu = False
     jump exploreHiroseOffice
 #    if (attemptsBinary1==1):
 #        #show Ada amused
@@ -422,6 +447,7 @@ label adaActualPuzzle1:
 #	a "I can process yottaFLOPS but a simple password causes me this much difficulty? I have to question the definition of state-of-the-art hardware."
         
 label wegotthedeets:
+    $ quick_menu = True
     a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
     g "Of course not. That would be too easy."
     "Grace looks around, thinking."
@@ -434,6 +460,7 @@ label wegotthedeets:
 label hirosePersonalArea_actions: 
     #insert exploration here. Must pick up photo before being able to open computer.
     window hide
+    $ quick_menu = False
     scene bg hirosePersonalArea
     screen hirosePersonalArea_scr:
         imagebutton:
@@ -455,6 +482,7 @@ label hirosePersonalArea_actions:
     call screen hirosePersonalArea_scr
         
 label hirosePersonalArea_inv:
+    $ quick_menu = False
     scene bg hirosePersonalArea at basicfade
     window hide
     screen hirosePersonalArea_invScr:
@@ -487,6 +515,7 @@ label hirosePersonalArea_inv:
     #show Grace happy
 
 label hirosePersonalComputer:
+    $ quick_menu = False
     scene bg hirosePersonalComputer at basicfade
     screen investigateHirosePC:
         imagebutton:
@@ -508,6 +537,7 @@ label hirosePersonalComputer:
     call screen investigateHirosePC
 
 label hiroseBed:
+    $ quick_menu = False
     scene bg hirosePersonalBed at basicfade
     screen investigateHiroseBed:
         imagebutton:
@@ -549,9 +579,11 @@ label hiroseBed:
 
     
 label gotHirosePassword:
+    $ quick_menu = True
     g "We've got it!" 
     #show Grace neutral
     g "Let's get back to my lab. We've got some work to do before we can use this."
+    $ quick_menu = False
     window hide
     scene bg hirosePersonalArea at basicfade
     pause
@@ -568,6 +600,7 @@ label gotHirosePassword:
     scene bg G_right at basicfade
     pause
     window show
+    $ quick_menu = True
     #Transition to Grace's Lab here
     "Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
     #show Grace happy
@@ -575,6 +608,7 @@ label gotHirosePassword:
     jump endChapterOne
 
 label talkAdaHirosePersonal:
+    $ quick_menu = True
     if talkAdaHirosePersonal_value==0:
         #show Grace neutral
         g "That run-in with Tosh was too close."
@@ -582,6 +616,7 @@ label talkAdaHirosePersonal:
         a "Until I took care of it rather handily, I would say."
         $ talkAdaHirosePersonal_value +=1
         #choice 4
+        $ quick_menu = False
         menu:
             "Comment on her expression.":
                 jump sortaroastada
@@ -593,9 +628,11 @@ label talkAdaHirosePersonal:
         a "Humans lack the capacity to retrieve stored information perfectly. It is likely your mother left some reminder of a password somewhere."
         g "I think you underestimate how much like a robot she is."
         window hide
+        $ quick_menu = False
         jump hirosePersonalArea_actions
                 
 label sortaroastada:
+    $ quick_menu = True
     #show Grace surprised
     g "Did you enjoy that?"
     #show Ada neutral
@@ -609,10 +646,12 @@ label sortaroastada:
     g "Well, I guess even machines like pecking downwards every once in awhile."
     a "I am not familiar with that colloquialism."
     g "Just observe my mother for long enough. She does the same thing."
+    $ quick_menu = False
     window hide
     jump hirosePersonalArea_actions
     
 label actuallyroastada:
+    $ quick_menu = True
     #show Grace annoyed
     g "You did your job. Nothing more."
     g "I could've done that by myself, if I'd been so inclined."
@@ -623,10 +662,12 @@ label actuallyroastada:
     g "I didn't ask for you to help. You're the one who wanted to come along."
     #show Ada Seething
     a "Noted."
+    $ quick_menu = False
     window hide
     jump hirosePersonalArea_actions
  
 label toshgotwrecked:
+    $ quick_menu = True
     #show Grace happy
     g "I've got to say, I never liked that VI."
     #show Ada amused
@@ -640,6 +681,7 @@ label toshgotwrecked:
     g "..." 
     #show Grace snarky
     g "You're probably right."
+    $ quick_menu = False
     window hide
     jump hirosePersonalArea_actions
 
@@ -650,6 +692,7 @@ label endChapterOne:
     return
 
 label hirosePhoto_label:
+    $ quick_menu = True
     $ hirosePhoto_inv = True
     $ hirosePersonalItems_value += 1
     show image "hirosePhoto_closeup.png" at centerScreen
@@ -670,9 +713,11 @@ label hirosePhoto_label:
     hide image "hirosePhoto_closeup.png"
     #hide image "hirosePhoto_closeupBack.png" 
     window hide
+    $ quick_menu = False
     jump hiroseBed
 
 label hiroseBed_label:
+    $ quick_menu = True
     $ hiroseBed_inv = True
     $ hirosePersonalItems_value += 1
     show image "hiroseBed_closeup.png" at centerScreen
@@ -683,10 +728,12 @@ label hiroseBed_label:
     a "Ah. A sore subject, I take it?"
     g "Not really. Kind of preferred it when she slept at the office."
     hide image "hiroseBed_closeup.png"
+    $ quick_menu = False
     window hide
     jump hiroseBed
     
 label hiroseWindow_label:
+    $ quick_menu = True
     $ hiroseWindow_inv = True
     $ hirosePersonalItems_value += 1
     show image "hiroseWindow_closeup.png" at centerScreen
@@ -696,13 +743,15 @@ label hiroseWindow_label:
     a "I would concur, but posit that all these windows seem rather unsafe."
     g "We're humans. Hardly anything we do is textbook safe."
     a "I am beginning to see that."
-    hide image "hirosePhoto_closeup.png"
+    hide image "hiroseWindow_closeup.png"
     window hide
+    $ quick_menu = False
     jump hiroseBed
     
 label hirosePC_label:
     show image "hiroseComputer_closeup.png" at centerScreen
     window show
+    $ quick_menu = True
     if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
         g "Alright, I'll just log in, copy her credentials, and then we can leave."
         # show image "hiroseComputerLogged.png"
@@ -715,6 +764,7 @@ label hirosePC_label:
         g "I suppose I shsould take another look around."
         hide image "hirosePhoto_closeup.png"
         window hide
+        $ quick_menu = False
         jump hirosePersonalComputer
     else:
         a "Grace, if we attempt to log on without a concrete idea of the password, we will alert security to a breach."
@@ -725,4 +775,5 @@ label hirosePC_label:
         g "Come on, let's keep looking."
         hide image "hirosePhoto_closeup.png"
         window hide
+        $ quick_menu = False
         jump hirosePersonalComputer

@@ -21,6 +21,7 @@ label prologue:
     g "Okay, okay, I get it!"
  
     #choice 1  
+    $ quick_menu = False
     menu:
         "Answer the bracelet.":
             jump answer
@@ -28,6 +29,7 @@ label prologue:
             jump directChambers
  
 label answer:
+    $ quick_menu = True
     secretary "GRACE FORTRAN is hereby summoned to appear before the Conclave effective immediately. The recipient is to suspend all further research until after said appearance."
     secretary "Further instructions will be provided by Director Hirose."
  
@@ -37,16 +39,19 @@ label answer:
     jump chambers
  
 label directChambers:
+    $ quick_menu = True
     g "There's only one person who would call me at work after hours." 
     g "I suppose I should see what she wants."
     "Grace shuts down her computer and exits the lab."
     jump chambers
 
 label chambers:
+    $ quick_menu = True
     scene bg conclaveWaitingRoom at basicfade 
     #Grace arrives at the chambers and is greeted by a secretary VI.
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
+    $ quick_menu = False
     menu:
         "Thank her.":
             jump thanks
@@ -54,6 +59,7 @@ label chambers:
             jump shrug
  
 label thanks:
+    $ quick_menu = True
     g "Good evening to you, too."
     "The secretary VI perks up and smiles at Grace."
     secretary "You are most welcome. Help yourself to some complimentary oolong tea."
@@ -64,6 +70,7 @@ label thanks:
     jump prologueResume1
  
 label shrug:
+    $ quick_menu = True
     #show Grace snarky
     g "Yeah, like I've never been here before. I know the drill."
     #Grace walks away and takes a seat
@@ -139,6 +146,7 @@ label prologueResume1:
     #show Grace angry
  
     #choice 3 
+    $ quick_menu = False
     menu:
         "Continue asking questions.":
             jump lessobvious
@@ -146,6 +154,7 @@ label prologueResume1:
             jump sassy
  
 label lessobvious:
+    $ quick_menu = True
     g "So nobody has run any sort of diagnostics on his system or even a preliminary examination of the machine body?"
     h "No. While this is an urgent matter, we need unbiased eyes. Any work done by station crew would contaminate possible evidence."
     g "What? We have some of the highest trained professionals in any scientific field and you're waiting on a random team of investigators?"
@@ -160,6 +169,7 @@ label lessobvious:
     jump prologueResume2
  
 label sassy:
+    $ quick_menu = True
     g "You've got to be kidding me. My research could help discover what happened to him."
     h "You're a suspect, Doctor Fortran. I don't think you understand the severity of the position you are in." 
     h "This isn't something you get to stand here and pontificate about. Your work can wait until the investigation is over."
@@ -179,11 +189,13 @@ label sassy:
  
 label prologueResume2:
     window hide
+    $ quick_menu = False
     scene bg hallwayGrace at basicfade
     pause
     #SFX
     scene bg G_main at basicfade
     window show
+    $ quick_menu = True
     "Grace enters her lab to be greeted with the sight of an android."
     #show Grace surprised
      
@@ -206,6 +218,7 @@ label prologueResume2:
     g "Time for what? What are you planning?"
     a "If you wish to help me understand the circumstances that led to Alpha's death, then we'll find a way around the Conclave's orders. Are you with me?"
     #choice 4 
+    $ quick_menu = False
     menu:
         "Make it clear who's boss.":
             jump boss
@@ -215,6 +228,7 @@ label prologueResume2:
             jump reluctant
  
 label boss:
+    $ quick_menu = True
     g "Alright, but you follow my lead. And to be clear, if we get caught, I'm not taking the fall for you."
     #show Ada frustrated
     a "That is acceptable. I was not expecting you to anyway."
@@ -225,6 +239,7 @@ label boss:
     jump prologueResume3
  
 label together:
+    $ quick_menu = True
     g "Yeah. Let's work together to figure this out."
     g "If I don't do this with you, I know I'll regret it. Alpha deserved better than a delayed investigation."
     a "My thoughts exactly. I was not able to be there for him then, but I want to be here for him now."
@@ -238,6 +253,7 @@ label together:
     jump prologueResume3
  
 label reluctant:
+    $ quick_menu = True
     g "I guess we could do that. But you know that a human, i.e. me, is going to get the axe rather than the sidekick robot."
     #show ada seething
     a "Excuse me? A robot? I'll have you know that I can process faster than you or any robot can think." 

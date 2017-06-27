@@ -23,19 +23,6 @@ define mopr = Character("M.O.P.R", color="#ad0000")
 #define = Character("", color="#000000")
 #define = Character("", color="#000000")
 
-#Create variables for the puzzles
-#attemptsLogicGate1
-#attemptsLogicGate2
-#attemptsLogicGate3
-#attemptsBinary1
-#attemptsBinary2
-#attemptsBinary3
-#attemptsGrammar1
-#attemptsGrammar2
-#attemptsGrammar3
-#attemptsLoops1
-#attemptsLoops2
-#attemptsLoops3
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"
 image bg splashScreen = "Error_TitleSplash.png"
@@ -65,6 +52,8 @@ image bg hiroseReception = "Hirose_Reception.png"
 #$ hiroseSafe_inv = False
 #$ solvedBinary1 = False
 #$ hiroseOfficeItems = 0
+
+#
 
 #The Balcony
 

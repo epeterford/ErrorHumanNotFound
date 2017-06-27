@@ -241,48 +241,57 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-            #CHANGE THIS for the pretty icons
-#            imagebutton: #History
-#                idle
-#                hover
-#                xpos
-#                ypos
-#                focus_mask True
-#                action Rollback()
-#                hover_sound ""
-#            imagebutton: #Skip
-#                idle
-#                hover
-#                xpos
-#                ypos
-#                focus_mask True
-#                action Rollback()
-#                hover_sound ""
-                
-#            imagebutton: #Journal
-#                idle
-#                hover
-#                xpos
-#                ypos
-#                focus_mask True
-#                action Rollback()
-#                hover_sound ""
-            
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-            textbutton _("Journal") action ShowMenu("journal")
+        imagebutton: #Journal
+            idle "journal_idle.png"
+            hover "journal_hover.png"
+            xpos 224
+            ypos 1020
+            focus_mask True
+            action ShowMenu("journal")
+        imagebutton: #Preferences
+            idle "prefs_idle.png"
+            hover "prefs_hover.png"
+            xpos 1490
+            ypos 1020
+            focus_mask True
+            action ShowMenu('preferences')
+        imagebutton: #History
+            idle "history_idle.png"
+            hover "history_hover.png"
+            xpos 1068
+            ypos 1020
+            focus_mask True
+            action ShowMenu('history')
+        imagebutton: #Save
+            idle "save_idle.png"
+            hover "save_hover.png"
+            xpos 1279
+            ypos 1020
+            focus_mask True
+            action ShowMenu('save')
+        imagebutton: #Skip
+            idle "skip_idle.png"
+            hover "skip_hover.png"
+            xpos 646
+            ypos 1020
+            focus_mask True
+            action Skip() alternate Skip(fast=True, confirm=True)
+        imagebutton: #Auto
+            idle "auto_idle.png"
+            hover "auto_hover.png"
+            xpos 435
+            ypos 1020
+            focus_mask True
+            action Preference("auto-forward", "toggle")
+        imagebutton: #Back
+            idle "back_idle.png"
+            hover "back_hover2.png"
+            xpos 857
+            ypos 1020
+            focus_mask True
+            action Rollback()
+#            textbutton _("Q.Save") action QuickSave()
+#            textbutton _("Q.Load") action QuickLoad()
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
