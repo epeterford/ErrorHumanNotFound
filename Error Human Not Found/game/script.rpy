@@ -25,6 +25,24 @@ define mopr = Character("M.O.P.R", color="#ad0000")
 
 #Sprites for the Conclave
 image Nevalinna speaking = "sprites/nevalinna_speaking.png"
+image Grace snarky = "sprites/grace_snarky.png"
+image Grace happy = "sprites/grace_happy.png"
+image Grace angry = "sprites/grace_angry.png"
+image Grace annoyed = "sprites/grace_annoyed.png"
+image Grace neutral = "sprites/grace_neutral.png"
+image Grace sad = "sprites/grace_sad.png"
+image Grace surprised = "sprites/grace_surprised.png"
+image Grace frustrated = "sprites/grace_annoyed.png"
+image Tosh pleasant = "sprites/Tosh_Happy.png"
+image Ada afraid = "sprites/ada_afraid.png"
+image Ada amused = "sprites/ada_amused.png"
+image Ada annoyed = "sprites/ada_annoyed.png"
+image Ada frustrated = "sprites/ada_annoyed.png"
+image Ada happy = "sprites/ada_happy.png"
+image Ada neutral = "sprites/ada_neutral.png"
+image Ada seething = "sprites/ada_seething.png"
+image Ada concerned = "sprites/ada_afraid.png"
+image Ada nervous = "sprites/ada_afraid.png"
 
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"

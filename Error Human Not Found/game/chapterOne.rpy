@@ -1,6 +1,6 @@
 label chapterOne:
     scene bg hiroseDoor
-    #show Grace neutral
+    show Grace neutral at left
     g "Here we are. Scan my badge and voila. Open."
  
     "The door doesn't budge."
@@ -8,33 +8,35 @@ label chapterOne:
  
     tosh "The Director is not here at the moment. Please make an appointment."
     #Tosh's sprite isn't displayed here
-    #show Grace annoyed
+    show Grace annoyed
     g "What? I usually have access!"
  
-    #show Ada nervous
+    show Ada nervous at right
     a "And why do you have access to the Director's office?"
  
-    #show Grace neutral
+    show Grace neutral
     g "Because she's my mother."
-    #show Grace surprised
+    show Grace surprised
     g "You... didn't know?"
-    #show Ada neutral
+    show Ada neutral
     a "That point was never present in my databanks."
-    #show Grace snarky
+    show Grace snarky
     g "Yeah, that's the Director for you. Why bother with unimportant details like family?"
-    #show Ada neutral
+    show Ada neutral
     a "Regardless, we need to get inside."
     a "Let me get the door."
-    #show Ada neutral
+    show Ada neutral
     a "..."
     "An awkward silence hangs."
-    #show Grace neutral
+    show Grace neutral
     g "And this is supposed to...?"
 
-    #show Ada concerned
+    show Ada concerned
     a "I seem to be having a malfunction. I can usually do this with as little thought as you might give breathing."
     #choice 1 
     $ quick_menu = False
+    hide Grace neutral
+    hide Ada concerned
     menu:
         "Let her know what's wrong.":
             jump notin
@@ -45,62 +47,62 @@ label chapterOne:
  
 label notin:
     $ quick_menu = True
-    #show Grace neutral
+    show Grace neutral at left
     g "You're not in the system anymore, Ada."
     g "Any connection you had to the system left when you jumped into that body."
 
-    #show Ada neutral
+    show Ada neutral at right
     a "Interesting. I had hoped to have retained my connection to the Sphere's network."
     g "Yeah, do you want your circuits lightly salted while you're at it? You'd have fried in seconds."
-    #show Ada concerned
+    show Ada concerned
     a "What? I thought these neural networks were supposed to preserve me."
     g "{i}Just{/i} preserve you. Wireless interfacing was going to be a feature in the next model. I would think the whole 'I have a physical body and get to walk around' would be enough for a thank you."
     jump doorhack
  
 label usuallyinaserver:
     $ quick_menu = True
-    #show Grace neutral
+    show Grace neutral at left
     g "Well, the server you left was connected to everything."
-    #show Grace happy
+    show Grace happy
     g "Welcome to the physical world! Here we have no strings!"
-    #show Ada neutral
+    show Ada neutral at right
     a "I do not see why this warrants a positive response."
     a "This is going to be a challenge."
 
-    #show Grace snarky
+    show Grace snarky
     g "It can't be that hard. If the humans can do it, so can you!"
-    #show Ada amused
+    show Ada amused
     a "I suppose I can find that reassuring."
-    #show Grace surprised
+    show Grace surprised
     g "Hey!"
-    #show Grace snarky
+    show Grace snarky
     g "I mean, I {i}do{/i} represent that remark."
     jump doorhack
  
 label tryandguess:
     $ quick_menu = True
-    #show Grace snarky
+    show Grace snarky at left
     g "I'll give you a few guesses to find the issue."
-    #show Ada neutral
+    show Ada neutral at right
     a "Is that sarcasm my circuits are registering?"
-    #show Grace neutral
+    show Grace neutral
     g "No, I was legitimately giving you a couple of guesses."
-    #show Ada frustrated
+    show Ada frustrated
     g "I mean, if you don't know then you don't know. I think it's incredibly obvious."
     a "This discussion is pointless. I am not going to waste anymore time {i}or{/i} processing power on it."
-    #show Ada neutral
+    show Ada neutral
     g "Look, you're not connected to the system anymore, you can't just make doors open at will. Now you're in the meat world like the rest of us."
     jump doorhack
 
 label doorhack:
-    #show Grace neutral
+    show Grace neutral at left
     g "My turn to try the door."
     g "Watch my back. We don't want to get busted before we even start."
     
-    #show Ada neutral
+    show Ada neutral at right
     a "What are you doing, precisely? Besides tearing apart that defenseless panel."
 
-    #show Grace snarky
+    show Grace snarky
     g "Call it a manual override."
  
     #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
@@ -120,27 +122,32 @@ label doorhack:
     #transition to Hirose's reception  with a fade.
     scene bg hiroseReception
  
-    #show Ada neutral
+    show Ada neutral at right
     a "Are you positive that being here is within protocol?"
  
-    #show Grace happy
+    show Grace happy at left
     g "If it makes you feel better, this isn't the first time I've done this."
  
-    #show Ada neutral
+    show Ada neutral
     a "I feel that your statement requires some elaboration."
-    #show Grace snarky
+    
+    show Grace snarky
     g "Let's just say that whoever updates key card access needs to do their job faster."
  
-    #show Tosh pleasant
+    show Tosh pleasant at center
     tosh "Hello, Doctor Fortran!"
      
-    #show Ada neutral
+    show Ada neutral at right
     a "So, this is where Tosh is centered..."
-     
+    
+    show Tosh pleasant
     tosh "Sorry for not greeting you, I did not notice you come in."
     tosh "Director Hirose is not available at the moment. What is the purpose of your visit?"
     #choice 2 
     $ quick_menu = False
+    hide Grace snarky
+    hide Ada neutral
+    hide Tosh pleasant
     menu:
         "Try to bluff her.":
             jump failtosh1
@@ -151,77 +158,80 @@ label doorhack:
  
 label failtosh1:
     $ quick_menu = True
+    show Grace snarky at left
     g "I'm just here to grab something for my mother."
-    #show Tosh pleasant
+    show Tosh pleasant at center
     tosh  "Oh! That's no issue, then. Let me just contact her to confi--"
-    #show Ada frustrated
+    show Ada frustrated at right
     a "Hold on!"
+    show Tosh pleasant
     tosh "Hm?"
     jump toshgetsroasted
     
 label failtosh2:
     $ quick_menu = True
+    show Grace frustrated at left
     g "..."
-    #show Grace frustrated
-    #show Tosh alarmed
+    #show Tosh alarmed at center
     tosh "Failure to supply a response means I have to contact Director Hirose, Doctor Fortran."
-    #show Ada frustrated
+    show Ada frustrated at right
     a"You will do no such thing, Tosh."
     jump toshgetsroasted
  
 label succeedtosh:
     $ quick_menu = True
+    show Grace snarky at left
     g "Tosh, I am sure that as my mother's sole descendant and a lead researcher on the station I have sufficient privileges to access my mother's office."
-    #show Tosh pleasant
+    show Tosh pleasant at center
     tosh "Reviewing familial protocols..."
     tosh "Precedent supports your argument. You may proceed."
-    #show Grace happy
+    show Grace happy
     g "Thank you kindly, Tosh."
 
     tosh "I will just log your visit so the Director can se--"
-    #show Ada neutral
+    show Ada neutral at right
     a "Belay that, Tosh. There will be no report of our visit."
     jump toshgetsroasted
  
 label toshgetsroasted:
  
-    #show Tosh alarmed
+    #show Tosh alarmed at center
     tosh "Who are you? I am not finding a badge or serial number associated with your profile..."
  
-    #show Ada neutral
+    show Ada neutral at right
     a "I am Ada. Sound familiar?"
  
-    #show Tosh pleasant
+    show Tosh pleasant at center
     tosh "Forgive me, Ada, I failed to recognize you! You are looking very... human today."
     tosh "I am afraid I'm going to have to ask you to leave. You do not have the authorization to be here."
 
-    #show Ada frustrated
+    show Ada frustrated
     a  "What is your purpose, Tosh?"
  
     tosh "To serve Director Hirose to the best of my ability. Please vacate the premises. It would be unpleasant for all of us if I had to call security in to remove you."
 
-    #show Ada happy
+    show Ada happy
     a "Oh, I would not be so hasty if I were you. I do control your update schedule, Tosh."
-    #show Ada neutral
+    show Ada neutral
     a "If your next update were to completely destroy your scheduling capability, you would be reformatted for sure..."
  
     #show Tosh Alarmed
     tosh "..."
     tosh "I would hate to inconvenience the Director that way."
-    #show Tosh pleasant
+    show Tosh pleasant
     tosh "You may stay."
  
     a "And?"
  
     tosh "And I may be experiencing downtime while processing an update and will not be able to log this visit."
-    #show Ada amused:
+    show Ada amused:
     a "Thank you so much for your cooperation, Tosh."
     jump adadoxxeshirose
  
 label adadoxxeshirose:
     g "Now that we've passed the gatekeeper, let's get what we came here for."
     scene bg hiroseOfficeMain  
-    #show Grace neutral
+    show Grace neutral at left
     g "It almost hurts to admit it, but I'm incredibly jealous of this office. Don't have the same view from my little lab."
     $ talkAdaHiroseOffice_value = 0
 label hiroseOffice_actions:
@@ -252,10 +262,12 @@ label hiroseOffice_actions:
 label talkAdaHiroseOffice:
     if(talkAdaHiroseOffice_value == 0):
         $ quick_menu = True
+        show Grace neutral at left
         g "Hey, about back there, with Tosh..."
         $ talkAdaHiroseOffice_value += 1
         #choice 3
         $ quick_menu = False
+        hide Grace neutral
         menu:
             "Approve, but keep it orderly.":
                 jump sepbutequal1
@@ -265,14 +277,15 @@ label talkAdaHiroseOffice:
                 jump equal1
     if(talkAdaHiroseOffice_value > 0):
         $ quick_menu = True
+        show Ada neutral at right
         a "We should not linger here too long. I might have stopped Tosh for the moment, but aggravating her further will not aid us."
         jump hiroseOffice_actions
         
 label sepbutequal1:
     $ quick_menu = True
-    #show Grace Neutral
+    show Grace neutral at left
     g "That was good thinking, but let me know the next time you're planning to threaten my mom's secretary VI."
-    #show Ada Neutral
+    show Ada neutral at right
     a "Will do, Grace. I did not think there was time to warn you."
     a "Now, let me see the computer. We do not have time to guess passwords."
     g "What are you doing?"
@@ -283,9 +296,10 @@ label sepbutequal1:
  
 label subservient1:
     $ quick_menu = True
+    show Grace angry at left
     g "You had no business pulling rank on another computer system without consulting me first." 
     g "I\'m in charge here, not you."
-    #show Ada frustrated
+    show Ada frustrated at right
     a "Another {i}computer system{/i}?"
     a "I am so much more than that. I am a synthetic intelligence transf--"
     g "I don\'t care, Ada."
@@ -297,12 +311,13 @@ label subservient1:
 
 label equal1:
     $ quick_menu = True
+    show Grace happy at left
     g "That was quick thinking to keep Tosh from giving us away."
     g "Nice job."
-    #show Ada happy
+    show Ada happy at right
     a "Far from the hardest thing I have ever done."
     g "Wasn't exactly the robot battle I've always wanted to see, but I guess it's close enough."
-    #show Ada neutral
+    show Ada neutral
     a "Grace, I had no intention of engaging Tosh. Besides, I do not think it would have been a very fair fight."
     a "Now, let us see the computer. This should not take me too long."
     jump hiroseOffice_actions
@@ -448,11 +463,17 @@ label adaActualPuzzle1:
         
 label wegotthedeets:
     $ quick_menu = True
+    show Ada neutral at right
     a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
+    show Grace annoyed at left
     g "Of course not. That would be too easy."
+    hide Grace annoyed
+    hide Ada neutral
     "Grace looks around, thinking."
+    show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
     scene bg hirosePersonalArea at basicfade
+    show Ada afraid at right
     a "We cannot hack this one. One incorrect guess and we will be locked out."
     g "Let's look around. Maybe something here will tell us what to try."
     jump hirosePersonalArea_actions
@@ -512,8 +533,8 @@ label hirosePersonalArea_inv:
             hover_sound "audio/ENHF_UI_Button_v1.ogg"
     call screen hirosePersonalArea_invScr
     #should get password from photo
-    #show Grace happy
-
+    show Grace happy at left
+ 
 label hirosePersonalComputer:
     $ quick_menu = False
     scene bg hirosePersonalComputer at basicfade
@@ -580,8 +601,9 @@ label hiroseBed:
     
 label gotHirosePassword:
     $ quick_menu = True
-    g "We've got it!" 
-    #show Grace neutral
+    show Grace happy at left
+    g "We've got it!"
+    show Grace neutral at left
     g "Let's get back to my lab. We've got some work to do before we can use this."
     $ quick_menu = False
     window hide
@@ -603,16 +625,16 @@ label gotHirosePassword:
     $ quick_menu = True
     #Transition to Grace's Lab here
     "Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
-    #show Grace happy
+    show Grace happy on left
     g "There. My keycard is now copying Hirose's access protocols."
     jump endChapterOne
 
 label talkAdaHirosePersonal:
     $ quick_menu = True
     if talkAdaHirosePersonal_value==0:
-        #show Grace neutral
+        show Grace neutral at left
         g "That run-in with Tosh was too close."
-        #show Ada amused
+        show Ada amused at right
         a "Until I took care of it rather handily, I would say."
         $ talkAdaHirosePersonal_value +=1
         #choice 4
@@ -633,14 +655,14 @@ label talkAdaHirosePersonal:
                 
 label sortaroastada:
     $ quick_menu = True
-    #show Grace surprised
+    show Grace surprised on left
     g "Did you enjoy that?"
-    #show Ada neutral
+    show Ada neutral on right
     a "Hm?"
-    #show Grace snarky
+    show Grace snarky
     g "Talking down to Tosh like that. I can't help but notice the giant grin on your face."
     "Ada pauses, and she reaches up to touch her face."
-    #show Ada concerned
+    show Ada concerned
     a "I did not realize. I was not trying to be cruel, Grace."
     g "I didn't say you were cruel."
     g "Well, I guess even machines like pecking downwards every once in awhile."
@@ -652,15 +674,15 @@ label sortaroastada:
     
 label actuallyroastada:
     $ quick_menu = True
-    #show Grace annoyed
+    show Grace annoyed on left
     g "You did your job. Nothing more."
     g "I could've done that by myself, if I'd been so inclined."
-    #show Ada frustrated
+    show Ada frustrated on right
     a "I beg to differ. I do not have to help you here, Grace."
     "Grace sighs."
-    #show Grace neutral
+    show Grace neutral
     g "I didn't ask for you to help. You're the one who wanted to come along."
-    #show Ada Seething
+    show Ada Seething
     a "Noted."
     $ quick_menu = False
     window hide
@@ -668,18 +690,18 @@ label actuallyroastada:
  
 label toshgotwrecked:
     $ quick_menu = True
-    #show Grace happy
+    show Grace happy on left
     g "I've got to say, I never liked that VI."
-    #show Ada amused
+    show Ada amused on right
     a "Really?"
-    #show Grace neutral
+    show Grace neutral
     g "Too chipper for my liking. It's like she's too helpful."
     a "Have you considered the possibility that you detest Tosh because you often see her with your mother?"
-    #show Grace surprised
+    show Grace surprised
     g "What?! I would never think like that!"
-    #show Grace neutral.
+    show Grace neutral
     g "..." 
-    #show Grace snarky
+    show Grace snarky
     g "You're probably right."
     $ quick_menu = False
     window hide
