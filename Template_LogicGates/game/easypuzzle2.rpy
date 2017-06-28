@@ -10,51 +10,51 @@ label start:
     #the first set of values declares images for the show call
     #the second set show the image at a certain positon
     #row 0
-    image tile1 = "RED-HORIZ-LINE.png"
-    image tile2 = "RED-HORIZ-LINE.png"
-    image tile3 = "RED-HORIZ-LINE.png"
-    image tile4 = "RED-HORIZ-LINE.png"
-    image tile5 = "RED-ELBOW - BL.png"
-    image tile6 = "RED-ELBOW - BL.png"
-    image tile7 = "RED-ELBOW - BL.png"
-    image tile8 = "RED-ELBOW - BL.png"
-    image tile9 = "RED-ELBOW - BL.png"
-    image tile10 = "RED-ELBOW - BL.png"
-    image tile11 = "RED-ELBOW - BL.png"
-    image tile12 = "RED-ELBOW - BL.png"
-    image tile13 = "RED-ELBOW - BL.png"
-    image tile14 = "RED-ELBOW - BL.png"
+    #image tile00_00 = "RED-HORIZ-LINE.png"
+    #image tile00_01 = "RED-HORIZ-LINE.png"
+    #image tile00_02= "RED-HORIZ-LINE.png"
+    #image tile00_03 = "RED-HORIZ-LINE.png"
+    #image tile00_04 = "RED-ELBOW - BL.png"
+    image tile00_05 = "GREEN-ELBOW-BR.png"
+    image tile00_06 = "GREEN-ELBOW - BL.png"
+    #image tile00_07 = "RED-ELBOW - BL.png"
+    #image tile00_08 = "RED-ELBOW - BL.png"
+    #image tile00_09 = "RED-ELBOW - BL.png"
+    #image tile00_10 = "RED-ELBOW - BL.png"
+    #image tile00_11 = "RED-ELBOW - BL.png"
+    #image tile00_12 = "RED-ELBOW - BL.png"
+    #image tile00_13 = "RED-ELBOW - BL.png"
     
-    show tile1 at Position(xpos = 436, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile2 at Position(xpos = 511, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile3 at Position(xpos = 586, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile4 at Position(xpos = 661, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile5 at Position(xpos = 736, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile6 at Position(xpos = 811, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile7 at Position(xpos = 886, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile8 at Position(xpos = 961, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile9 at Position(xpos = 1036, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile10 at Position(xpos = 1111, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile11 at Position(xpos = 1186, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile12 at Position(xpos = 1261, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile13 at Position(xpos = 1336, xanchor = 0, ypos = 233, yanchor = 0)
-    show tile14 at Position(xpos = 1411, xanchor = 0, ypos = 233, yanchor = 0)
+    #show tile00_00 at Position(xpos = 436, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_01 at Position(xpos = 511, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_02 at Position(xpos = 586, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_03 at Position(xpos = 661, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_04 at Position(xpos = 736, xanchor = 0, ypos = 233, yanchor = 0)
+    show tile00_05 at Position(xpos = 811, xanchor = 0, ypos = 233, yanchor = 0)
+    show tile00_06 at Position(xpos = 886, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_07 at Position(xpos = 961, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_08 at Position(xpos = 1036, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_09 at Position(xpos = 1111, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_10 at Position(xpos = 1186, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_11 at Position(xpos = 1261, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_12 at Position(xpos = 1336, xanchor = 0, ypos = 233, yanchor = 0)
+#    show tile00_13 at Position(xpos = 1411, xanchor = 0, ypos = 233, yanchor = 0)
    
     #row 1 (row has a light)
-    image tile15 = "RED-HORIZ-LINE.png"
-    image tile16 = "RED-HORIZ-LINE.png"
-    image tile17 = "RED-HORIZ-LINE.png"
-    image tile18 = "RED-HORIZ-LINE.png"
-    image tile19 = "RED-ELBOW - BL.png"
-    image tile20 = "RED-ELBOW - BL.png"
-    image tile21 = "RED-ELBOW - BL.png"
-    image tile22 = "RED-ELBOW - BL.png"
-    image tile23 = "RED-ELBOW - BL.png"
-    image tile24 = "RED-ELBOW - BL.png"
-    image tile25= "RED-ELBOW - BL.png"
-    image tile26 = "RED-ELBOW - BL.png"
-    image tile27 = "RED-ELBOW - BL.png"
-    image tile28 = "RED-ELBOW - BL.png"
+    image tile01_00 = "RED-HORIZ-LINE.png"
+    image tile01_01 = "RED-HORIZ-LINE.png"
+    image tile01_02 = "RED-ELBOW_.png"
+    image tile01_03 = "RED-HORIZ-LINE.png"
+    image tile01_04 = "RED-ELBOW - BL.png"
+    image tile01_05 = "RED-ELBOW - BL.png"
+    image tile01_06 = "RED-ELBOW - BL.png"
+    image tile01_07 = "RED-ELBOW - BL.png"
+    image tile01_08 = "RED-ELBOW - BL.png"
+    image tile01_09 = "RED-ELBOW - BL.png"
+    image tile01_10= "RED-ELBOW - BL.png"
+    image tile01_11 = "RED-ELBOW - BL.png"
+    image tile01_12 = "RED-ELBOW - BL.png"
+    image tile01_13 = "RED-ELBOW - BL.png"
     
     show tile15 at Position(xpos = 436, xanchor = 0, ypos = 308, yanchor = 0)
     show tile16 at Position(xpos = 511, xanchor = 0, ypos = 308, yanchor = 0)
