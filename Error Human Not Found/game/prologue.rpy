@@ -111,7 +111,9 @@ label prologueResume1:
     "The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     #show Grace frustrated
+    show Nevalinna speaking at right
     neva "What is the meaning of this, Doctor Fortran?"
+    hide Nevalinna speaking
     godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
     cray "Director, are you just going to allow--"
     h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."

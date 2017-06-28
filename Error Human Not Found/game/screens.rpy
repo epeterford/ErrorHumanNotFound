@@ -244,52 +244,52 @@ screen quick_menu():
         imagebutton: #Journal
             idle "journal_idle.png"
             hover "journal_hover.png"
-            xpos 224
-            ypos 1020
+            xpos 646
+            ypos 989
             focus_mask True
             action ShowMenu("journal")
         imagebutton: #Preferences
             idle "prefs_idle.png"
             hover "prefs_hover.png"
-            xpos 1490
-            ypos 1020
+            xpos 1278 #1490
+            ypos 989
             focus_mask True
             action ShowMenu('preferences')
         imagebutton: #History
             idle "history_idle.png"
             hover "history_hover.png"
             xpos 1068
-            ypos 1020
+            ypos 989
             focus_mask True
             action ShowMenu('history')
         imagebutton: #Save
             idle "save_idle.png"
             hover "save_hover.png"
-            xpos 1279
-            ypos 1020
+            xpos 1489 #1279
+            ypos 989
             focus_mask True
             action ShowMenu('save')
         imagebutton: #Skip
             idle "skip_idle.png"
             hover "skip_hover.png"
-            xpos 646
-            ypos 1020
+            xpos 857
+            ypos 989
             focus_mask True
             action Skip() alternate Skip(fast=True, confirm=True)
-        imagebutton: #Auto
-            idle "auto_idle.png"
-            hover "auto_hover.png"
-            xpos 435
-            ypos 1020
-            focus_mask True
-            action Preference("auto-forward", "toggle")
-        imagebutton: #Back
-            idle "back_idle.png"
-            hover "back_hover2.png"
-            xpos 857
-            ypos 1020
-            focus_mask True
-            action Rollback()
+#        imagebutton: #Auto
+#            idle "auto_idle.png"
+#            hover "auto_hover.png"
+#            xpos 435
+#            ypos 1020
+#            focus_mask True
+#            action Preference("auto-forward", "toggle")
+#        imagebutton: #Back
+#            idle "back_idle.png"
+#            hover "back_hover2.png"
+#            xpos 857
+#            ypos 1020
+#            focus_mask True
+#            action Rollback()
 #            textbutton _("Q.Save") action QuickSave()
 #            textbutton _("Q.Load") action QuickLoad()
 

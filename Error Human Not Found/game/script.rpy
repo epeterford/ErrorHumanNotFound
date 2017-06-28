@@ -8,7 +8,7 @@ define h = Character("Director Hirose", color="8b00bf")
 define knuth = Character("Chief Knuth", color="#5a0167")
 define neva = Character("Chief Nevalinna", color="#5a0167")
 define cray = Character("Chief Cray", color="#5a0167")
-define godel = Character("Chief Gödel", color="#5a0167")
+define godel = Character("Chief Godel", color="#5a0167")
 define b = Character("Blue", color="#0016bb")
 define c = Character("Colossus", color="#765e00")
 define e = Character("Eastern Goddess", color="#e6e03d")
@@ -23,31 +23,34 @@ define mopr = Character("M.O.P.R", color="#ad0000")
 #define = Character("", color="#000000")
 #define = Character("", color="#000000")
 
+#Sprites for the Conclave
+image Nevalinna speaking = "sprites/nevalinna_speaking.png"
+
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"
 image bg splashScreen = "Error_TitleSplash.png"
 image bg openCrawlBG = "openCrawlBG.png"
 ##Grace's Lab BG
-image bg G_main = "GraceLab_Main.png"
-image bg G_deskArea = "GraceDesk_Main.png"
-image bg G_left1 = "GraceDesk_Left1.png"
-image bg G_left2 = "GraceDesk_Left2.png"
-image bg G_right = "GraceDesk_Right.png"
-image bg hallwayGrace = "Hallway_Grace.png"
+image bg G_main = "bg/GraceLab_Main.png"
+image bg G_deskArea = "bg/GraceDesk_Main.png"
+image bg G_left1 = "bg/GraceDesk_Left1.png"
+image bg G_left2 = "bg/GraceDesk_Left2.png"
+image bg G_right = "bg/GraceDesk_Right.png"
+image bg hallwayGrace = "bg/Hallway_Grace.png"
 ##The Conclave
-image bg conclaveWaitingRoom = "ConclaveReception_Main.png"
-image bg conclaveDoor = "ConclaveReception_Close.png"
-image bg conclave = "Conclave_Proper.png"
+image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
+image bg conclaveDoor = "bg/ConclaveReception_Close.png"
+image bg conclave = "bg/Conclave_Proper.png"
 
 #Hirose's Space
-image bg hiroseDoor= "Hirose_Door.png"
-image bg hiroseOfficeDesk = "Hirose_OfficeDesk.png"
-image bg hiroseOfficeMain = "Hirose_OfficeMain.png"
-image bg hiroseOfficeTransition = "Hirose_OfficeTransition.png"
-image bg hirosePersonalBed = "Hirose_PersonalBed.png"
-image bg hirosePersonalComputer = "Hirose_PersonalComputer.png"
-image bg hirosePersonalArea = "Hirose_PersonalMain.png"
-image bg hiroseReception = "Hirose_Reception.png"
+image bg hiroseDoor= "bg/Hirose_Door.png"
+image bg hiroseOfficeDesk = "bg/Hirose_OfficeDesk.png"
+image bg hiroseOfficeMain = "bg/Hirose_OfficeMain.png"
+image bg hiroseOfficeTransition = "bg/Hirose_OfficeTransition.png"
+image bg hirosePersonalBed = "bg/Hirose_PersonalBed.png"
+image bg hirosePersonalComputer = "bg/Hirose_PersonalComputer.png"
+image bg hirosePersonalArea = "bg/Hirose_PersonalMain.png"
+image bg hiroseReception = "bg/Hirose_Reception.png"
 #$ hiroseTea_inv = False
 #$ hiroseSafe_inv = False
 #$ solvedBinary1 = False
