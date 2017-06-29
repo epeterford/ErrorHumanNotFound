@@ -133,6 +133,8 @@ label start:
     $ hirosePersonalItems = 0
     $ talkAdaHirosePersonal_value = 0
     $ hirosePersonalItems_value = 0
+    $ Logic_A_solved = False
+    $ Logic_B_solved = False
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0

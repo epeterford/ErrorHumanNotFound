@@ -444,9 +444,13 @@ label adaActualPuzzle1:
     window show
     "Description of the computer. Followed by the puzzle. On fail, needs to return to the desk view with dialogue. For now, assume pass."
     show image "hiroseOfficialComputer_closeup.png" at centerScreen
-    $ solvedBinary1 = True
+    window hide 
+    if Logic_A_solved == False:
+        jump logicGate_easyA1
+    if Logic_B_solved == False:
+        jump logicGate_easyB1
     hide image "hiroseOfficialComputer_closeup.png"
-    if (solvedBinary1 == True):
+    if (solved_LG_easy == True):
         $ hiroseOfficeItems += 1
     window hide
     $ quick_menu = False
