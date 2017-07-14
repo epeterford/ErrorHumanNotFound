@@ -235,6 +235,33 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+#screen game_menu():
+#    zorder 100
+#    if game_menu:
+#        imagebutton:
+#            idle "back.png"
+#            hover "back_hover.png"
+#            xpos 0
+#            ypos 0
+#            focus_mask True
+#            action Jump("hiroseOffice_actions")
+#            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            
+#init python:
+#    config.overlay_screens.append("game_menu")
+
+#default quick_menu = True
+
+style quick_button is default
+style quick_button_text is button_text
+
+style quick_button:
+    properties gui.button_properties("quick_button")
+
+style quick_button_text:
+    properties gui.button_text_properties("quick_button")
+
+
 screen quick_menu():
 
     ## Ensure this appears on top of other screens.
@@ -298,6 +325,7 @@ screen quick_menu():
 ## the player has not explicitly hidden the interface.
 init python:
     config.overlay_screens.append("quick_menu")
+    #config.overlay_screens.append("game_menu")
 
 #default quick_menu = True
 

@@ -32,13 +32,13 @@ screen logicGates2:
                 dragged gate_dragged
                 xpos and1x ypos and1y
 
-
             #location to be dropped
             drag:
                 drag_name "gate slot one"
                 child "cover.png"
                 draggable False
                 xpos 1111 ypos 608
+                
 
                 
  

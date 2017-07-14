@@ -34,6 +34,7 @@ image Grace sad = "sprites/grace_sad.png"
 image Grace surprised = "sprites/grace_surprised.png"
 image Grace frustrated = "sprites/grace_annoyed.png"
 image Tosh pleasant = "sprites/Tosh_Happy.png"
+image Tosh alarmed = "sprites/Tosh_alarmed.png" 
 image Ada afraid = "sprites/ada_afraid.png"
 image Ada amused = "sprites/ada_amused.png"
 image Ada annoyed = "sprites/ada_annoyed.png"
@@ -55,11 +56,23 @@ image bg G_left1 = "bg/GraceDesk_Left1.png"
 image bg G_left2 = "bg/GraceDesk_Left2.png"
 image bg G_right = "bg/GraceDesk_Right.png"
 image bg hallwayGrace = "bg/Hallway_Grace.png"
+
+
+#tutorial backgrounds
+image bg lgEasy1 = "dragNDrop_instructions.png"
+image bg lgEasy2 = "LG_instructions.png"
+image bg lgEasy3 = "truthTable_instructions.png"
+image bg lgEasy4 = "NOT_instructions.png"
+image bg lgEasy5 = "AND_OR_instructions.png"
+
+
+
 ##The Conclave
 image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
 image bg conclaveDoor = "bg/ConclaveReception_Close.png"
 image bg conclave = "bg/Conclave_Proper.png"
-
+image other darken = "blackout.png"
+                       
 #Hirose's Space
 image bg hiroseDoor= "bg/Hirose_Door.png"
 image bg hiroseOfficeDesk = "bg/Hirose_OfficeDesk.png"
@@ -75,7 +88,7 @@ image bg hiroseReception = "bg/Hirose_Reception.png"
 #$ hiroseOfficeItems = 0
 
 #
-
+image special emptyButton = "button_empty.png"
 #The Balcony
 
 #Hallway Shots
@@ -100,11 +113,29 @@ define dissolve = Dissolve (1.0)
 
 image Tosh neutral = "Tosh_Happy1.png"
 
-define audio.creep = "music/Creep_Wav.ogg"
-define audio.digi = "music/Digi_Sprites.ogg"
-define audio.robot = "music/robotScanner.ogg"
-define audio.sraf = "music/srafTexture.ogg"
-define audio.stab = "music/stabTapeEcho.ogg"
+#define audio.lab2_00 = "music/Creep_Wav.ogg"
+#define audio.lab2_01 = "music/Digi_Sprites.ogg"
+#define audio.lab2_02 = "music/robotScanner.ogg"
+#define audio.lab2_03 = "music/srafTexture.ogg"
+#define audio.lab2_04 = "music/stabTapeEcho.ogg"
+#define audio.lab2_05 = "music/stabTapeEcho.ogg"
+#define audio.lab2_06 = "music/stabTapeEcho.ogg"
+#define audio.lab2_07 = "music/stabTapeEcho.ogg"
+#define audio.lab2_08 = "music/stabTapeEcho.ogg"
+#define audio.lab2_09 = "music/stabTapeEcho.ogg"
+define audio.mt_bellsL = "music/MainTheme/EHNF_L1_Bells_L_Bounced.ogg"
+define audio.mt_bellsR = "music/MainTheme/EHNF_L2_Bells_R_Bounced.ogg"
+define audio.mt_piano = "music/MainTheme/EHNF_L3_Brians_Piano.ogg"
+define audio.mt_ghostBus = "music/MainTheme/EHNF_L4_Ghost_Bus.ogg"
+define audio.mt_ghostL = "music/MainTheme/EHNF_L5_Ghosts_L.ogg"
+define audio.mt_ghostR = "music/MainTheme/EHNF_L6_Ghosts_R.ogg"
+define audio.mt_orchestra = "music/MainTheme/EHNF_L7_Orchestra_Percussion.ogg"
+define audio.mt_sciFi = "music/MainTheme/EHNF_L8_SciFi_Pad.ogg"
+define audio.mt_touchOrchestra = "music/MainTheme/EHNF_L9_Touch_Orchestra_Bounced.ogg"
+define audio.mt_tornado = "music/MainTheme/EHNF_L10_Tornado_CMKD_Bounced.ogg"
+define audio.mt_ultrasweeper = "music/MainTheme/EHNF_L11_Ultrasweeper_FP_Bounced.ogg"
+define audio.mt_violins = "music/MainTheme/EHNF_L12_Violins.ogg"
+define audio.mt_wistful = "music/MainTheme/EHNF_L13_WistfulLead_SP_Bounced.ogg"
 
 
 init python:
@@ -113,6 +144,15 @@ init python:
     renpy.music.register_channel("channel02", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel03", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel04", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel05", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel06", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel07", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel08", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel09", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel10", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel11", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel12", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel13", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
     
     
@@ -122,10 +162,11 @@ init python:
 # The game starts here.
 label start:
     $ quick_menu = False
+    $ gate_name = ""
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
     $ hiroseTea_inv = False
+    $ hiroseOfficeComputer = False
     $ hiroseSafe_inv = False
-    $ solvedBinary1 = False
     $ hiroseOfficeItems = 0
     $ hiroseBed_inv = False
     $ hirosePhoto_inv = False
@@ -135,6 +176,7 @@ label start:
     $ hirosePersonalItems_value = 0
     $ Logic_A_solved = False
     $ Logic_B_solved = False
+    $ tutorial_LGEasy = True
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0
@@ -147,7 +189,20 @@ label start:
             linear 3.0 alpha 0.0   
 
 
-    play music "audio/Main_Title_BGM.wav"
+    #play music "audio/Main_Title_BGM.wav"
+    play channel00 mt_bellsL
+    play channel01 mt_bellsR
+    play channel02 mt_piano
+    play channel03 mt_ghostBus
+    play channel04 mt_ghostL
+    play channel05 mt_ghostR
+    play channel06 mt_orchestra
+    play channel07 mt_sciFi
+    play channel08 mt_touchOrchestra
+    play channel09 mt_tornado
+    play channel10 mt_ultrasweeper
+    play channel11 mt_violins
+    play channel12 mt_wistful
 
     window hide
     scene bg openCrawlBG at basicfade

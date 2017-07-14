@@ -1,4 +1,27 @@
 label prologue:
+    stop channel00 
+    stop channel01 
+    stop channel02 
+    stop channel03 
+    stop channel04 
+    stop channel05 
+    stop channel06 
+    stop channel07 
+    stop channel08 
+    stop channel09 
+    stop channel10 
+    stop channel11 
+    stop channel12 
+    #    play channel00 lab2_00
+    #    play channel01 lab2_01
+    #    play channel02 lab2_02
+    #    play channel03 lab2_03
+    #    play channel04 lab2_04
+    #    play channel05 lab2_05
+    #    play channel06 lab2_06
+    #    play channel07 lab2_07
+    #    play channel08 lab2_08
+    #    play channel09 lab2_09
     window show
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:03"
@@ -70,11 +93,16 @@ label thanks:
     g "Good evening to you, too."
     "The secretary VI perks up and smiles at Grace."
     secretary "You are most welcome. Help yourself to some complimentary oolong tea."
-    "A cup of warm oolong tea appears on a platter raised from the desk."
-    #cup of tea description: The leaves were picked from the lush atmosphere of one of the Noah Sphere's oxygen gardens.
+    show other darken
+    show image "objects/tea_closeup.png" at centerScreen
+    "A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    hide other darken
+    hide image "objects/tea_closeup.png"
     "Grace takes a sip."
     show Grace happy
-    g "Thank you very much."
+    g "Ah, freshly made tea."
+    secretary "The oxygen garden workers reported that this was their best harvest to date."
+    g "I can taste it!"
     jump prologueResume1
  
 label shrug:
@@ -88,8 +116,15 @@ label shrug:
     g "What?"
     secretary "Would you like some complimentary tea?"
     g "As long as it means you will stop talking to me."
-    "A cup of warm oolong tea appears on a platter raised from the desk."
-    #cup of tea description: The leaves were picked from the forest environment of Noah Sphere's oxygen garden. 
+    show other darken
+    show image "objects/tea_closeup.png" at centerScreen
+    "A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    hide other darken
+    hide image "objects/tea_closeup.png"
+    show Grace happy
+    g "Ah, freshly made tea."
+    secretary "The oxygen garden workers reported that this was their best harvest to date."
+    g "I can taste it!"
     jump prologueResume1 
  
 label prologueResume1:
@@ -205,7 +240,7 @@ label prologueResume2:
     window hide
     $ quick_menu = False
     scene bg hallwayGrace at basicfade
-    pause
+    $ renpy.pause(0.5)
     #SFX
     scene bg G_main at basicfade
     window show

@@ -26,7 +26,7 @@ init:
 label logicGate_easyB1:
     #loads background
     scene bg Logic_Gate
-   
+    $ quick_menu = False
     #row 1 (row has a light)
     image tile15 = "r_horizontal.png"
     image tile16 = "r_horizontal.png"
@@ -379,9 +379,11 @@ label gamefile2:
         show tile162 at Position(xpos = 1336, xanchor = 0, ypos = 533, yanchor = 0)   
         show tile163 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)   
         show tile164 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)   
-        #"YOU WIN"
+        "YOU WIN"
         $ Logic_B_solved = True
         $ solved_LG_easy = True
+        $ hiroseOfficeComputer = True
+        $ hiroseOfficeItems += 1
         #make to jump back to the game
         jump exploreHiroseOffice
     else:
@@ -407,7 +409,7 @@ label gamefile2:
         hide tile167
         hide tile168
         
-    #keeps invalid moves from cancling game
+    #keeps invalid moves from canceling game
     if slot_name == "null":
         $attempts +=1
         

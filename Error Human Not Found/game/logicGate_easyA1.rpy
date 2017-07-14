@@ -26,7 +26,9 @@ label logicGate_easyA1:
 
     #loads background
     scene bg Logic_Gate
-    
+    $ quick_menu = False
+    $ attempts = 6
+    $ game_menu = True
     #all sections are broken down into their rows
     #the first set of values declares images for the show call
     #the second set show the image at a certain positon
@@ -154,7 +156,7 @@ label logicGate_easyA1:
     $ and1in1 = False
    
     #attempts for players
-    $ attempts = 6
+    #$ attempts = 6
  
     jump gamefile1
     
@@ -163,7 +165,6 @@ label gamefile1:
     
     #calls game screen
     call screen logicGates1
-    
     #the first logic gate *******************************************************************************
     if gate_name == "and_gate":
         #gate slot numeber one *******************************
@@ -211,7 +212,14 @@ label gamefile1:
     jump gamefile1
     
 screen logicGates1:
-    
+#    imagebutton:
+#        idle "back.png"
+#        hover "back_hover.png"
+#        xpos 0
+#        ypos 0
+#        focus_mask True
+#        action Jump("hiroseOffice_actions")
+#        hover_sound "audio/ENHF_UI_Button_v1.ogg"
     #drags and drop location
     draggroup:
             #and gates
