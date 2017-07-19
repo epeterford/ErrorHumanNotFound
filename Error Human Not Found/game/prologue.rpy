@@ -27,7 +27,7 @@ label prologue:
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
-    show Grace neutral at left
+    show Grace neutral at basicfade#left at basicfade #with fade
     #Insert SFX Typing here
     "Grace types away at her computer."
     "Grace's bracelet beeps and flashes."
@@ -35,12 +35,13 @@ label prologue:
     #Insert SFX here
     "DING. DING."
  
-    show Grace annoyed
+    hide Grace neutral at basicfade
+    show Grace annoyed at basicfade #at left with fade
     g "Hold on, I'm busy."
     #Insert SFX here
     "DING! DING! DING!"
  
-    show Grace angry
+    show Grace angry at basicfade
     g "Okay, okay, I get it!"
  
     #choice 1  
@@ -73,7 +74,7 @@ label directChambers:
 
 label chambers:
     $ quick_menu = True
-    scene bg conclaveWaitingRoom at basicfade 
+    scene bg conclaveWaitingRoom with fade #at basicfade 
     #Grace arrives at the chambers and is greeted by a secretary VI.
     show Tosh pleasant at right
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
@@ -128,7 +129,7 @@ label shrug:
     jump prologueResume1 
  
 label prologueResume1:
-    scene bg conclaveDoor at basicfade
+    scene bg conclaveDoor with fade #at basicfade
     #off screen dialogue from the Conclave ensues.
     "Grace grows more and more impatient."
     show Grace annoyed at left
@@ -153,7 +154,7 @@ label prologueResume1:
     cray "Eighteen hours, Director."
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
     #insert SFX here
-    scene bg conclave at basicfade
+    scene bg conclave with fade #at basicfade
     "The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
@@ -239,10 +240,10 @@ label sassy:
 label prologueResume2:
     window hide
     $ quick_menu = False
-    scene bg hallwayGrace at basicfade
+    scene bg hallwayGrace with fade #at basicfade
     $ renpy.pause(0.5)
     #SFX
-    scene bg G_main at basicfade
+    scene bg G_main with fade #at basicfade
     window show
     $ quick_menu = True
     "Grace enters her lab to be greeted with the sight of an android."

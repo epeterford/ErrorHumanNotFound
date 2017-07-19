@@ -408,60 +408,22 @@ style navigation_button_text:
 ##
 ## http://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen main_menu():
-
-    ## This ensures that any other menu screen is replaced.
+screen main_menu:
     tag menu
-
-    style_prefix "main_menu"
-
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
-    frame:
-        pass
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
-
-    if gui.show_name:
-
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
-
-style main_menu_frame is empty
-style main_menu_vbox is vbox
-style main_menu_text is gui_text
-style main_menu_title is main_menu_text
-style main_menu_version is main_menu_text
-
-style main_menu_frame:
-    xsize 420
-    yfill True
-
-    background "gui/overlay/main_menu.png"
-
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
-
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
-
-style main_menu_version:
-    properties gui.text_properties("version")
+    imagemap:
+        ground "mm_idle.png"
+        idle "mm_idle.png"
+        hover "mm_hover.png"
+            
+        hotspot (12, 83, 315, 95) action Start()
+        hotspot (12, 186, 315, 95) action ShowMenu("load")
+        hotspot (12, 314, 315, 95) action ShowMenu("preferences")
+        hotspot (12, 438, 315, 95) action ShowMenu("about")
+        hotspot (12, 569, 315, 95) action Help()
+        hotspot (12, 828, 315, 95) action Quit(confirm=False)
+#        hotspot (12, 700, 315, 95) action Help() Database
+#        hotspot (12, 927, 315, 95) action Quit(confirm=False) Credits
+        
 
 
 ## Game Menu screen ############################################################
@@ -474,6 +436,16 @@ style main_menu_version:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None):
+#    imagemap:
+#        ground "gui/overlay/game_menu.png"
+#        idle "gui/overlay/game_menu.png"
+#        hover "gui/overlay/game_menu_hover.png"
+                
+#        hotspot (12, 83, 315, 95) action Start()
+#        hotspot (12, 186, 315, 95) action ShowMenu("load")
+#        hotspot (12, 314, 315, 95) action ShowMenu("preferences")
+#        hotspot (12, 438, 315, 95) action ShowMenu("about")
+#        hotspot (12, 569, 315, 95) action Help()
 
     style_prefix "game_menu"
 
@@ -578,15 +550,25 @@ style game_menu_label:
     xpos 75
     ysize 180
 
-style game_menu_label_text:
-    size gui.title_text_size
-    color gui.accent_color
-    yalign 0.5
-
 style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -45
+style game_menu_label_text:
+    size gui.title_text_size
+    color gui.accent_color
+    yalign 0.5
+#imagemap:
+#    ground "gui/overlay/game_menu.png"
+#    idle "gui/overlay/game_menu.png"
+#    hover "gui/overlay/game_menu_hover.png"
+            
+#    hotspot (12, 83, 315, 95) action Start()
+#    hotspot (12, 186, 315, 95) action ShowMenu("load")
+#    hotspot (12, 314, 315, 95) action ShowMenu("preferences")
+#    hotspot (12, 438, 315, 95) action ShowMenu("about")
+#    hotspot (12, 569, 315, 95) action Help()
+    
 
 
 ## About screen ################################################################

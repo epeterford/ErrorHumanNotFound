@@ -64,7 +64,8 @@ image bg lgEasy2 = "LG_instructions.png"
 image bg lgEasy3 = "truthTable_instructions.png"
 image bg lgEasy4 = "NOT_instructions.png"
 image bg lgEasy5 = "AND_OR_instructions.png"
-
+image bg tutorial_inv_1 = "inv_instruction1.png"
+image bg tutorial_inv_2 = "inv_instruction2.png"
 
 
 ##The Conclave
@@ -90,6 +91,14 @@ image bg hiroseReception = "bg/Hirose_Reception.png"
 #
 image special emptyButton = "button_empty.png"
 #The Balcony
+image bg black = "bg/blackScreen.png"
+image bg balconyMain = "bg/Balcony_Main.png"
+image bg balconyCorner = "bg/Balcony_Corner.png"
+image bg balconyTop = "bg/Balcony_RailingTopDown.png"
+image bg balconyClose = "bg/Balcony_RailingClose.png"
+image bg balconyLong = "bg/Balcony_RailingLong.png"
+image bg balconyRamp = "bg/Balcony_Ramp.png"
+image bg bbalconyTransition = "bg/Balcony_Transition.png"
 
 #Hallway Shots
 
@@ -161,6 +170,9 @@ init python:
 
 # The game starts here.
 label start:
+    $ points_SbE = 0
+    $ points_E = 0
+    $ points_S = 0
     $ quick_menu = False
     $ gate_name = ""
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
@@ -174,20 +186,26 @@ label start:
     $ hirosePersonalItems = 0
     $ talkAdaHirosePersonal_value = 0
     $ hirosePersonalItems_value = 0
+    $ graceRightDesk_value = 0
+    $ graceLeft1Desk_value = 0
+    $ graceLeft2Desk_value = 0
     $ Logic_A_solved = False
     $ Logic_B_solved = False
     $ tutorial_LGEasy = True
+    $ resume = ""
+    $ callAttempts = 0
+    $ balconyItems = 0
+    $ moprScene = False
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0
         
     transform basicfade:
-        on scene:
+        on show:
             alpha 0.0
-            linear 3.0 alpha 1.0
+            linear 0.3 alpha 1.0
         on hide:
-            linear 3.0 alpha 0.0   
-
+            linear 0.1 alpha 0.0   
 
     #play music "audio/Main_Title_BGM.wav"
     play channel00 mt_bellsL
@@ -228,7 +246,8 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
     
-    scene bg G_deskArea at basicfade
+    scene bg G_deskArea with fade #at basicfade
+    with None 
     $ quick_menu = True
     #with fade(5.0)
     jump prologue

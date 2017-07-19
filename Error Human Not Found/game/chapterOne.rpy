@@ -1,112 +1,5 @@
 label chapterOne:
-    screen tutorial_scrLGEasy_1:
-        imagebutton:
-            idle "next.png" 
-            hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_2")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    screen tutorial_scrLGEasy_2:
-        imagebutton:
-            idle "next.png" 
-            hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_3")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "back.png" 
-            hover "back_hover.png" 
-            xpos 0
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_1")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    screen tutorial_scrLGEasy_3:
-        imagebutton:
-            idle "next.png" 
-            hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_4")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "back.png" 
-            hover "back_hover.png" 
-            xpos 0
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_2")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    screen tutorial_scrLGEasy_4:
-        imagebutton:
-            idle "next.png" 
-            hover "next_hover.png" 
-            xpos 1670
-            ypos 960  
-            focus_mask True
-            action Jump("tutorial_LGEasy_5")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "back.png" 
-            hover "back_hover.png" 
-            xpos 0
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_3")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    screen tutorial_scrLGEasy_5:
-        imagebutton:
-            idle "finish.png" 
-            hover "finish_hover.png" 
-            xpos 1670
-            ypos 960 
-            focus_mask True
-            action Jump("adaActualPuzzle1")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "back.png" 
-            hover "back_hover.png" 
-            xpos 0
-            ypos 960 
-            focus_mask True
-            action Jump("tutorial_LGEasy_4")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
     jump startChapterOne
-
-label tutorial_LGEasy_1:
-    window hide
-    $ quick_menu = False
-    scene bg lgEasy1 
-    call screen tutorial_scrLGEasy_1
-    
-label tutorial_LGEasy_2:
-    window hide
-    $ quick_menu = False
-    scene bg lgEasy2 
-    call screen tutorial_scrLGEasy_2
-        
-label tutorial_LGEasy_3:
-    window hide
-    $ quick_menu = False
-    scene bg lgEasy3 
-    call screen tutorial_scrLGEasy_3
-    
-label tutorial_LGEasy_4:
-    window hide
-    $ quick_menu = False
-    scene bg lgEasy4 
-    call screen tutorial_scrLGEasy_4
-    
-label tutorial_LGEasy_5:
-    window hide
-    $ quick_menu = False
-    scene bg lgEasy5 
-    call screen tutorial_scrLGEasy_5
 
 label startChapterOne:
     scene bg hiroseDoor
@@ -156,6 +49,7 @@ label startChapterOne:
             jump tryandguess
  
 label notin:
+    $ points_E +=1
     $ quick_menu = True
     show Grace neutral at left
     g "You're not in the system anymore, Ada."
@@ -170,6 +64,7 @@ label notin:
     jump doorhack
  
 label usuallyinaserver:
+    $ points_SbE +=1
     $ quick_menu = True
     show Grace neutral at left
     g "Well, the server you left was connected to everything."
@@ -190,6 +85,7 @@ label usuallyinaserver:
     jump doorhack
  
 label tryandguess:
+    $ points_S +=1
     $ quick_menu = True
     show Grace snarky at left
     g "I'll give you a few guesses to find the issue."
@@ -267,6 +163,7 @@ label doorhack:
             jump succeedtosh
  
 label failtosh1:
+    $ points_S +=1
     $ quick_menu = True
     show Grace snarky at left
     g "I'm just here to grab something for my mother."
@@ -279,6 +176,7 @@ label failtosh1:
     jump toshgetsroasted
     
 label failtosh2:
+    $ points_E +=1
     $ quick_menu = True
     show Grace frustrated at left
     g "..."
@@ -289,6 +187,7 @@ label failtosh2:
     jump toshgetsroasted
  
 label succeedtosh:
+    $ points_SbE +=1
     $ quick_menu = True
     show Grace snarky at left
     g "Tosh, I am sure that as my mother's sole descendant and a lead researcher on the station I have sufficient privileges to access my mother's office."
@@ -344,30 +243,7 @@ label adadoxxeshirose:
     show Grace neutral at left
     g "It almost hurts to admit it, but I'm incredibly jealous of this office. Don't have the same view from my little lab."
     $ talkAdaHiroseOffice_value = 0
-label hiroseOffice_actions:
-    window hide
-    $ quick_menu = False
-    scene bg hiroseOfficeMain 
-    if talkAdaHiroseOffice_value>0 and hiroseOfficeItems == 3:
-        jump wegotthedeets
-    screen hiroseOfficeAction:
-        imagebutton:
-            idle "adaTalk.png" 
-            hover "adaTalk_hover.png" 
-            xpos 0
-            ypos 0 
-            focus_mask True
-            action Jump("talkAdaHiroseOffice")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "investigate.png" 
-            hover "investigate_hover.png" 
-            xpos 0
-            ypos 200
-            focus_mask True
-            action Jump("exploreOffice")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    call screen hiroseOfficeAction
+    jump chapterOne_screens
     
 label talkAdaHiroseOffice:
     if(talkAdaHiroseOffice_value == 0):
@@ -392,6 +268,7 @@ label talkAdaHiroseOffice:
         jump hiroseOffice_actions
         
 label sepbutequal1:
+    $ points_SbE +=1
     $ quick_menu = True
     show Grace neutral at left
     g "That was good thinking, but let me know the next time you're planning to threaten my mom's secretary VI."
@@ -405,6 +282,7 @@ label sepbutequal1:
     jump hiroseOffice_actions
  
 label subservient1:
+    $ points_S +=1
     $ quick_menu = True
     show Grace angry at left
     g "You had no business pulling rank on another computer system without consulting me first." 
@@ -420,6 +298,7 @@ label subservient1:
     jump hiroseOffice_actions
 
 label equal1:
+    $ points_E +=1
     $ quick_menu = True
     show Grace happy at left
     g "That was quick thinking to keep Tosh from giving us away."
@@ -438,97 +317,17 @@ label exploreOffice:
     #Once the player clicks on the computer, actual puzzle fires.
     window hide
     $ quick_menu = False
-    scene bg hiroseOfficeMain
-    screen hiroseOffice1_scr:
-        imagebutton:
-            idle "arrow.png"
-            hover "arrow_hover.png"
-            xpos 1340
-            ypos 419
-            focus_mask True
-            action Jump("hiroseOffice2")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "back.png"
-            hover "back_hover.png"
-            xpos 0
-            ypos 0
-            focus_mask True
-            action Jump("hiroseOffice_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    scene bg hiroseOfficeMain with fade
     call screen hiroseOffice1_scr
 label hiroseOffice2:
     window hide
     $ quick_menu = False
-    scene bg hiroseOfficeTransition at basicfade
-    screen hiroseOffice2_scr:
-        imagebutton:
-            idle "arrow.png" 
-            hover "arrow_hover.png" 
-            xpos 1288 
-            ypos 308 
-            focus_mask True
-            action Jump("exploreHiroseOffice")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "arrowL.png" 
-            hover "arrowL_hover.png" 
-            xpos 127 
-            ypos 308 
-            focus_mask True
-            action Jump("exploreOffice")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    scene bg hiroseOfficeTransition with fade #at basicfade
     call screen hiroseOffice2_scr
 #Buttons for the objects
 label exploreHiroseOffice:
-    scene bg hiroseOfficeDesk at basicfade
+    scene bg hiroseOfficeDesk with fade #at basicfade
     $ quick_menu = False
-    screen investigateOffice:
-        #text "Items: [hiroseOfficeItems]/3" xpos 1750 ypos 10 color "#dddddd"
-        imagebutton:
-            idle "button_empty.png"
-            xpos 1630
-            ypos 10
-        text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
-        text "[hiroseOfficeItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
-        text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        imagebutton:
-            idle "arrowL.png" 
-            hover "arrowL_hover.png" 
-            xpos 0 
-            ypos 345 
-            focus_mask True
-            action Jump("hiroseOffice2")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        if (hiroseTea_inv == False):
-            imagebutton:
-                idle "hiroseTea.png" 
-                hover "hiroseTea_hover.png" 
-                xpos 591 
-                ypos 385 
-                focus_mask True
-                action Jump("hiroseTea_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
-        if (hiroseSafe_inv == False):
-            imagebutton:
-                idle "hiroseSafe.png" 
-                hover "hiroseSafe_hover.png" 
-                xpos 468 
-                ypos 570 
-                focus_mask True
-                action Jump("hiroseSafe_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
-        if (hiroseOfficeComputer == False):
-            imagebutton:
-                idle "hiroseOfficialComputer.png" 
-                hover "hiroseOfficialComputer_hover.png" 
-                xpos 596
-                ypos 61 
-                focus_mask True
-                action Jump("adaActualPuzzle1")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
     call screen investigateOffice
 
 label hiroseTea_label:
@@ -601,7 +400,7 @@ label wegotthedeets:
     "Grace looks around, thinking."
     show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
-    scene bg hirosePersonalArea at basicfade
+    scene bg hirosePersonalArea with fade #at basicfade
     show Ada afraid at right
     a "We cannot hack this one. One incorrect guess and we will be locked out."
     g "Let's look around. Maybe something here will tell us what to try."
@@ -612,128 +411,24 @@ label hirosePersonalArea_actions:
     window hide
     $ quick_menu = False
     scene bg hirosePersonalArea
-    screen hirosePersonalArea_scr:
-        imagebutton:
-            idle "adaTalk.png" 
-            hover "adaTalk_hover.png" 
-            xpos 0
-            ypos 0 
-            focus_mask True
-            action Jump("talkAdaHirosePersonal")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        imagebutton:
-            idle "investigate.png" 
-            hover "investigate_hover.png" 
-            xpos 0
-            ypos 200
-            focus_mask True
-            action Jump("hirosePersonalArea_inv")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
     call screen hirosePersonalArea_scr
         
 label hirosePersonalArea_inv:
     $ quick_menu = False
-    scene bg hirosePersonalArea at basicfade
+    scene bg hirosePersonalArea with fade #at basicfade
     window hide
-    screen hirosePersonalArea_invScr:
-        imagebutton:
-            idle "arrowL.png"
-            hover "arrowL_hover.png"
-            xpos 794
-            ypos 351
-            focus_mask True
-            action Jump("hirosePersonalComputer")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "arrow.png"
-            hover "arrow_hover.png"
-            xpos 1596
-            ypos 650
-            focus_mask True
-            action Jump("hiroseBed")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "back.png"
-            hover "back_hover.png"
-            xpos 0
-            ypos 0
-            focus_mask True
-            action Jump("hirosePersonalArea_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
     call screen hirosePersonalArea_invScr
     #should get password from photo
     show Grace happy at left
  
 label hirosePersonalComputer:
     $ quick_menu = False
-    scene bg hirosePersonalComputer at basicfade
-    screen investigateHirosePC:
-        imagebutton:
-            idle "arrowD.png"
-            hover "arrowD_hover.png"
-            xpos 865
-            ypos 890
-            focus_mask True
-            action Jump("hirosePersonalArea_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "objects/hiroseComputer.png"
-            hover "objects/hiroseComputer_hover.png"
-            xpos 0
-            ypos 0
-            focus_mask True
-            action Jump("hirosePC_label")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    scene bg hirosePersonalComputer with fade #at basicfade
     call screen investigateHirosePC
 
 label hiroseBed:
     $ quick_menu = False
-    scene bg hirosePersonalBed at basicfade
-    screen investigateHiroseBed:
-        imagebutton:
-            idle "button_empty.png"
-            xpos 1630
-            ypos 10
-        text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
-        text "[hirosePersonalItems_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
-        text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        imagebutton:
-            idle "arrowD.png" 
-            hover "arrowD_hover.png" 
-            xpos 865
-            ypos 890 
-            focus_mask True
-            action Jump("hirosePersonalArea_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        if (hiroseBed_inv == False):
-            imagebutton:
-                idle "objects/hiroseBed.png" 
-                hover "objects/hiroseBed_hover.png" 
-                xpos 0
-                ypos 0 
-                focus_mask True
-                action Jump("hiroseBed_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
-        if (hiroseWindow_inv == False):
-            imagebutton:
-                idle "objects/hiroseWindow.png" 
-                hover "objects/hiroseWindow_hover.png" 
-                xpos 0 
-                ypos 0
-                focus_mask True
-                action Jump("hiroseWindow_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
-        if (hirosePhoto_inv == False):
-            imagebutton:
-                idle "hirosePhoto.png" 
-                hover "hirosePhoto_hover.png" 
-                xpos 1512
-                ypos 729 
-                focus_mask True
-                action Jump("hirosePhoto_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+    scene bg hirosePersonalBed with fade #at basicfade
     call screen investigateHiroseBed
 
     
@@ -745,20 +440,20 @@ label gotHirosePassword:
     g "Let's get back to my lab. We've got some work to do before we can use this."
     $ quick_menu = False
     window hide
-    scene bg hirosePersonalArea at basicfade
-    $ renpy.pause(0.5)
-    scene bg hiroseOfficeMain at basicfade
-    $ renpy.pause(0.5)
-    scene bg hiroseReception at basicfade
-    $ renpy.pause(0.5)
-    scene bg hallwayGrace at basicfade
-    $ renpy.pause(0.5)
-    scene bg G_main at basicfade
-    $ renpy.pause(0.5)
-    scene bg G_deskArea at basicfade
-    $ renpy.pause(0.5)
-    scene bg G_right at basicfade
-    $ renpy.pause(0.5)
+    scene bg hirosePersonalArea with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg hiroseOfficeMain with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg hiroseReception with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg hallwayGrace with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg G_main with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg G_deskArea with fade #at basicfade
+    $ renpy.pause(0.8)
+    scene bg G_right with fade #at basicfade
+    $ renpy.pause(0.8)
     window show
     $ quick_menu = True
     #Transition to Grace's Lab here
@@ -792,6 +487,7 @@ label talkAdaHirosePersonal:
         jump hirosePersonalArea_actions
                 
 label sortaroastada:
+    $ points_SbE +=2
     $ quick_menu = True
     show Grace surprised on left
     g "Did you enjoy that?"
@@ -811,6 +507,7 @@ label sortaroastada:
     jump hirosePersonalArea_actions
     
 label actuallyroastada:
+    $ points_S +=2
     $ quick_menu = True
     show Grace annoyed on left
     g "You did your job. Nothing more."
@@ -827,6 +524,7 @@ label actuallyroastada:
     jump hirosePersonalArea_actions
  
 label toshgotwrecked:
+    $ points_E +=2
     $ quick_menu = True
     show Grace happy on left
     g "I've got to say, I never liked that VI."
@@ -847,9 +545,14 @@ label toshgotwrecked:
 
 #end the chapter here, go to Chapter 2
 label endChapterOne:
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            jump chapterTwo_S
+    if(points_E>points_SbE):
+        if(points_E>points_S):
+            jump chapterTwo_E
+    jump chapterTwo_SbE
     #Insert the check for which tonal shift to jump to
-    "For now, this is the end."
-    return
 
 label hirosePhoto_label:
     $ quick_menu = True
@@ -880,23 +583,21 @@ label hiroseBed_label:
     $ quick_menu = True
     $ hiroseBed_inv = True
     $ hirosePersonalItems_value += 1
+    show other darken
     show image "objects/hiroseBed_closeup.png" at centerScreen
     window show
-    "A rather utilitarian bed."
-    show Ada surprised
+    "A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs."
+    hide other darken
+    hide image "objects/hiroseBed_closeup.png"
+    show Ada amused at right
     a "This room layout hardly seems standard."
-    show Grace snarky
+    show Grace snarky at left
     g "I wonder what tipped it off."
     show Ada neutral
     a "Well, these sleeping arrangements are placed in a work area, for one."
     show Grace neutral
     g "That's Hirose for you. Dad and I used to be worried when she wouldn't come home from work."
     g "We learned that there's other places she'd rather be, apparently."
-#    a "It was my understanding that most working spaces do not have beds."
-#    g "Roberta is a workaholic. The mother 'bit' is just window-dressing."
-#    a "Ah. A sore subject, I take it?"
-#    g "Not really. Kind of preferred it when she slept at the office."
-    hide image "hiroseBed_closeup.png"
     $ quick_menu = False
     window hide
     jump hiroseBed
@@ -905,9 +606,12 @@ label hiroseWindow_label:
     $ quick_menu = True
     $ hiroseWindow_inv = True
     $ hirosePersonalItems_value += 1
+    show other darken
     show image "objects/hiroseWindow_closeup.png" at centerScreen
     window show
-    "A stunning view of the nebula."
+    "An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
+    hide image "objects/hiroseWindow_closeup.png"
+    hide other darken
     show Grace happy at left
     g "The view from up here never gets old."
     g "If it's got a bed in it, I suppose even an office can be a room with a view."
@@ -923,7 +627,6 @@ label hiroseWindow_label:
 #    a "I would concur, but posit that all these windows seem rather unsafe."
 #    g "We're humans. Hardly anything we do is textbook safe."
 #    a "I am beginning to see that."
-    hide image "hiroseWindow_closeup.png"
     window hide
     $ quick_menu = False
     jump hiroseBed
