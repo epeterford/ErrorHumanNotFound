@@ -45,10 +45,10 @@ label start:
     image tile01_01 = "r_horizontal.png"
     image tile01_02 = "r_elbow_bl.png"
     #image tile01_03 = "r_elbow_tl.png"
-    image tile01_04 = "r_elbow_br.png"
-    image tile01_05 = "r_horizontal.png"
-    image tile01_06 = "r_horizontal.png"
-    image tile01_07 = "r_elbow_bl.png"
+#    image tile01_04 = "r_elbow_br.png"
+#    image tile01_05 = "r_horizontal.png"
+#    image tile01_06 = "r_horizontal.png"
+#    image tile01_07 = "r_elbow_bl.png"
 #    image tile01_08 = "y_horizontal.png"
 #    image tile01_09 = "y_horizontal.png"
 #    image tile01_10= "y_elbow_bl.png"
@@ -60,10 +60,10 @@ label start:
     show tile01_01 at Position(xpos = 511, xanchor = 0, ypos = 308, yanchor = 0)
     show tile01_02 at Position(xpos = 586, xanchor = 0, ypos = 308, yanchor = 0)
 #    show tile01_03 at Position(xpos = 661, xanchor = 0, ypos = 308, yanchor = 0)
-    show tile01_04 at Position(xpos = 736, xanchor = 0, ypos = 308, yanchor = 0)
-    show tile01_05 at Position(xpos = 811, xanchor = 0, ypos = 308, yanchor = 0)
-    show tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
-    show tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
+#    show tile01_04 at Position(xpos = 736, xanchor = 0, ypos = 308, yanchor = 0)
+#    show tile01_05 at Position(xpos = 811, xanchor = 0, ypos = 308, yanchor = 0)
+#    show tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
+#    show tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
 #    show tile01_08 at Position(xpos = 1036, xanchor = 0, ypos = 308, yanchor = 0)
 #    show tile01_09 at Position(xpos = 1111, xanchor = 0, ypos = 308, yanchor = 0)
 #    show tile01_10 at Position(xpos = 1186, xanchor = 0, ypos = 308, yanchor = 0)
@@ -75,14 +75,14 @@ label start:
     #image tile02_00 = "r_elbow_tl.png"
     #image tile02_01 = "r_elbow_tl.png"
     image tile02_02 = "r_g.png"
-    image tile02_03 = "AND_Gate.png"
-    image tile02_04 = "r_elbow_tl.png"
-#    image tile02_05 = "g_elbow_tl.png"
+    image tile02_03 = "OR_Gate.png"
+    image tile02_04 = "g_horizontal.png"
+    image tile02_05 = "g_elbow_bl.png"
 #    image tile02_06 = "y_vertical.png"
-    image tile02_07 = "r_elbow_tr.png"
-    image tile02_08 = "r_horizontal.png"
-    image tile02_09 = "NONE_Gate.png"
-    image tile02_10 = "y_elbow_bl.png"
+#    image tile02_07 = "r_elbow_tr.png"
+#    image tile02_08 = "r_horizontal.png"
+#    image tile02_09 = "NONE_Gate.png"
+#    image tile02_10 = "y_elbow_bl.png"
 #    image tile02_11 = "y_elbow_bl.png"
     #image tile02_12 = "r_elbow_tl.png"
 #    image tile02_13 = "y_vertical.png"
@@ -92,119 +92,119 @@ label start:
     show tile02_02 at Position(xpos = 586, xanchor = 0, ypos = 383, yanchor = 0)
     show tile02_03 at Position(xpos = 661, xanchor = 0, ypos = 383, yanchor = 0)
     show tile02_04 at Position(xpos = 736, xanchor = 0, ypos = 383, yanchor = 0)
-#    show tile02_05 at Position(xpos = 811, xanchor = 0, ypos = 383, yanchor = 0)
+    show tile02_05 at Position(xpos = 811, xanchor = 0, ypos = 383, yanchor = 0)
 #    show tile02_06 at Position(xpos = 886, xanchor = 0, ypos = 383, yanchor = 0)
-    show tile02_07 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
-    show tile02_08 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
-    show tile02_09 at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
-    show tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
+#    show tile02_07 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
+#    show tile02_08 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
+#    show tile02_09 at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
+#    show tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
 #    show tile02_11 at Position(xpos = 1261, xanchor = 0, ypos = 383, yanchor = 0)
     #show tile02_12 at Position(xpos = 1336, xanchor = 0, ypos = 383, yanchor = 0)
 #    show tile02_13 at Position(xpos = 1411, xanchor = 0, ypos = 383, yanchor = 0)
 
     #row 3 (row has a light)
-    image tile03_00 = "g_horizontal.png"
-    image tile03_01 = "g_t_down.png"
+    image tile03_00 = "r_elbow_bl.png"
+    image tile03_01 = "g_elbow_br.png"
     image tile03_02 = "g_elbow_tl.png"
 #    image tile03_03 = "r_elbow_tl.png"
-    image tile03_04 = "g_elbow_br.png"
-    image tile03_05 = "NOT_Gate.png"
-    image tile03_06 = "r_horizontal.png"
-    image tile03_07 = "r_elbow_bl.png"
+#    image tile03_04 = "g_elbow_br.png"
+    image tile03_05 = "g_vertical.png"
+#    image tile03_06 = "r_horizontal.png"
+#    image tile03_07 = "r_elbow_bl.png"
     #image tile03_08 = "r_elbow_tl.png"
     #image tile03_09 = "r_elbow_tl.png"
     image tile03_10 = "y_vertical.png"
     #image tile03_11 = "r_elbow_tl.png"
     #image tile03_12 = "r_elbow_tl.png"
-    image tile03_13 = "y_elbow_br.png"
+#    image tile03_13 = "y_elbow_br.png"
     
     show tile03_00 at Position(xpos = 436, xanchor = 0, ypos = 458, yanchor = 0)
     show tile03_01 at Position(xpos = 511, xanchor = 0, ypos = 458, yanchor = 0)
     show tile03_02 at Position(xpos = 586, xanchor = 0, ypos = 458, yanchor = 0)
 #    show tile03_03 at Position(xpos = 661, xanchor = 0, ypos = 458, yanchor = 0)
-    show tile03_04 at Position(xpos = 736, xanchor = 0, ypos = 458, yanchor = 0)
+#    show tile03_04 at Position(xpos = 736, xanchor = 0, ypos = 458, yanchor = 0)
     show tile03_05 at Position(xpos = 811, xanchor = 0, ypos = 458, yanchor = 0)
-    show tile03_06 at Position(xpos = 886, xanchor = 0, ypos = 458, yanchor = 0)
-    show tile03_07 at Position(xpos = 961, xanchor = 0, ypos = 458, yanchor = 0)
+#    show tile03_06 at Position(xpos = 886, xanchor = 0, ypos = 458, yanchor = 0)
+#    show tile03_07 at Position(xpos = 961, xanchor = 0, ypos = 458, yanchor = 0)
 #    show tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
 #    show tile03_09 at Position(xpos = 1111, xanchor = 0, ypos = 458, yanchor = 0)
-    show tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+#    show tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
 #    show tile03_11 at Position(xpos = 1261, xanchor = 0, ypos = 458, yanchor = 0)
 #    show tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
-    show tile03_13 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
+#    show tile03_13 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
     
     #row 4 
-#    image tile04_00 = "r_elbow_tl.png"
-    image tile04_01 = "g_elbow_tr.png"
-    image tile04_02 = "g_horizontal.png"
-    image tile04_03 = "g_horizontal.png"
-    image tile04_04 = "g_elbow_tl.png"
-#    image tile04_05 = "y_t_down.png"
-#    image tile04_06 = "y_elbow_tl.png"
-    image tile04_07 = "r_vertical.png"
-#    image tile04_08 = "r_elbow_tl.png"
+    image tile04_00 = "r_elbow_tr.png"
+    image tile04_01 = "g_jump_r.png"
+    image tile04_02 = "r_horizontal.png"
+    image tile04_03 = "NONE_Gate.png"
+    image tile04_04 = "y_elbow_bl.png"
+    image tile04_05 = "g_y.png"
+    image tile04_06 = "NONE_Gate.png"
+    image tile04_07 = "y_horizontal.png"
+    image tile04_08 = "y_elbow_bl.png"
 #    image tile04_09 = "r_elbow_tl.png"
-    image tile04_10 = "y_y.png"
-    image tile04_11 = "AND_Gate.png"
-    image tile04_12 = "y_horizontal.png"
-    image tile04_13 = "y_elbow_tl.png"
+#    image tile04_10 = "y_y.png"
+#    image tile04_11 = "AND_Gate.png"
+#    image tile04_12 = "y_horizontal.png"
+#    image tile04_13 = "y_elbow_tl.png"
     
-#    show tile04_00 at Position(xpos = 436, xanchor = 0, ypos = 533, yanchor = 0)
+    show tile04_00 at Position(xpos = 436, xanchor = 0, ypos = 533, yanchor = 0)
     show tile04_01 at Position(xpos = 511, xanchor = 0, ypos = 533, yanchor = 0)
     show tile04_02 at Position(xpos = 586, xanchor = 0, ypos = 533, yanchor = 0)
     show tile04_03 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
     show tile04_04 at Position(xpos = 736, xanchor = 0, ypos = 533, yanchor = 0)
-#    show tile04_05 at Position(xpos = 811, xanchor = 0, ypos = 533, yanchor = 0)
-#    show tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
+    show tile04_05 at Position(xpos = 811, xanchor = 0, ypos = 533, yanchor = 0)
+    show tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
     show tile04_07 at Position(xpos = 961, xanchor = 0, ypos = 533, yanchor = 0)
-#    show tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
+    show tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
 #    show tile04_09 at Position(xpos = 1111, xanchor = 0, ypos = 533, yanchor = 0)
-    show tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
-    show tile04_11 at Position(xpos = 1261, xanchor = 0, ypos = 533, yanchor = 0)
-    show tile04_12 at Position(xpos = 1336, xanchor = 0, ypos = 533, yanchor = 0)
-    show tile04_13 at Position(xpos = 1411, xanchor = 0, ypos = 533, yanchor = 0)
+#    show tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
+#    show tile04_11 at Position(xpos = 1261, xanchor = 0, ypos = 533, yanchor = 0)
+#    show tile04_12 at Position(xpos = 1336, xanchor = 0, ypos = 533, yanchor = 0)
+#    show tile04_13 at Position(xpos = 1411, xanchor = 0, ypos = 533, yanchor = 0)
     
     #row 5 (row has a light)
     image tile05_00 = "g_horizontal.png"
-    image tile05_01 = "g_elbow_bl.png"
-#    image tile05_02 = "r_elbow_tl.png"
+    image tile05_01 = "g_t_up.png"
+    image tile05_02 = "g_elbow_bl.png"
 #    image tile05_03 = "r_elbow_tl.png"
-#    image tile05_04 = "r_elbow_tl.png"
-#    image tile05_05 = "y_vertical.png"
+    image tile05_04 = "y_elbow_tr.png"
+    image tile05_05 = "y_elbow_tl.png"
 #    image tile05_06 = "r_elbow_tl.png"
-    image tile05_07 = "r_vertical.png"
-#    image tile05_08 = "r_elbow_tl.png"
+#    image tile05_07 = "r_vertical.png"
+    image tile05_08 = "y_vertical.png"
 #    image tile05_09 = "r_elbow_tl.png"
-    image tile05_10 = "y_vertical.png"
-#    image tile05_11 = "r_elbow_tl.png"
-#    image tile05_12 = "r_elbow_tl.png"
-#    image tile05_13 = "r_elbow_tl.png"
+    image tile05_10 = "y_elbow_br.png"
+    image tile05_11 = "NOT_Gate.png"
+    image tile05_12 = "y_horizontal.png"
+    image tile05_13 = "y_horizontal.png"
     
     show tile05_00 at Position(xpos = 436, xanchor = 0, ypos = 608, yanchor = 0)
     show tile05_01 at Position(xpos = 511, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_02 at Position(xpos = 586, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_02 at Position(xpos = 586, xanchor = 0, ypos = 608, yanchor = 0)
 #    show tile05_03 at Position(xpos = 661, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_04 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_05 at Position(xpos = 811, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_04 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_05 at Position(xpos = 811, xanchor = 0, ypos = 608, yanchor = 0)
 #    show tile05_06 at Position(xpos = 886, xanchor = 0, ypos = 608, yanchor = 0)
-    show tile05_07 at Position(xpos = 961, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
+#    show tile05_07 at Position(xpos = 961, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
 #    show tile05_09 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
     show tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_11 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_12 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
-#    show tile05_13 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_11 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_12 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
+    show tile05_13 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
     
     #row 6
 #    image tile06_00 = "r_elbow_tl.png"
-    image tile06_01 = "g_vertical.png"
-#    image tile06_02 = "r_elbow_tl.png"
-#    image tile06_03 = "r_elbow_tl.png"
-#    image tile06_04 = "r_elbow_tl.png"
+#    image tile06_01 = "g_vertical.png"
+    image tile06_02 = "g_g.png"
+    image tile06_03 = "AND_Gate.png"
+    image tile06_04 = "g_elbow_bl.png"
 #    image tile06_05 = "y_elbow_tr.png"
 #    image tile06_06 = "y_horizontal.png"
-    image tile06_07 = "r_vertical.png"
-#    image tile06_08 = "r_elbow_tl.png"
+#    image tile06_07 = "r_vertical.png"
+    image tile06_08 = "y_vertical.png"
 #    image tile06_09 = "r_elbow_tl.png"
     image tile06_10 = "y_vertical.png"
 #    image tile06_11 = "r_elbow_tl.png"
@@ -212,14 +212,14 @@ label start:
 #    image tile06_13 = "r_elbow_tl.png"
     
 #    show tile06_00 at Position(xpos = 436, xanchor = 0, ypos = 683, yanchor = 0)
-    show tile06_01 at Position(xpos = 511, xanchor = 0, ypos = 683, yanchor = 0)
-#    show tile06_02 at Position(xpos = 586, xanchor = 0, ypos = 683, yanchor = 0)
-#    show tile06_03 at Position(xpos = 661, xanchor = 0, ypos = 683, yanchor = 0)
-#    show tile06_04 at Position(xpos = 736, xanchor = 0, ypos = 683, yanchor = 0)
+#    show tile06_01 at Position(xpos = 511, xanchor = 0, ypos = 683, yanchor = 0)
+    show tile06_02 at Position(xpos = 586, xanchor = 0, ypos = 683, yanchor = 0)
+    show tile06_03 at Position(xpos = 661, xanchor = 0, ypos = 683, yanchor = 0)
+    show tile06_04 at Position(xpos = 736, xanchor = 0, ypos = 683, yanchor = 0)
 #    show tile06_05 at Position(xpos = 811, xanchor = 0, ypos = 683, yanchor = 0)
 #    show tile06_06 at Position(xpos = 886, xanchor = 0, ypos = 683, yanchor = 0)
-    show tile06_07 at Position(xpos = 961, xanchor = 0, ypos = 683, yanchor = 0)
-#    show tile06_08 at Position(xpos = 1036, xanchor = 0, ypos = 683, yanchor = 0)
+#    show tile06_07 at Position(xpos = 961, xanchor = 0, ypos = 683, yanchor = 0)
+    show tile06_08 at Position(xpos = 1036, xanchor = 0, ypos = 683, yanchor = 0)
 #    show tile06_09 at Position(xpos = 1111, xanchor = 0, ypos = 683, yanchor = 0)
     show tile06_10 at Position(xpos = 1186, xanchor = 0, ypos = 683, yanchor = 0)
 #    show tile06_11 at Position(xpos = 1261, xanchor = 0, ypos = 683, yanchor = 0)
@@ -227,16 +227,16 @@ label start:
 #    show tile06_13 at Position(xpos = 1411, xanchor = 0, ypos = 683, yanchor = 0)
     
     #row 7 (row has a light)
-    image tile07_00 = "g_elbow_bl.png"
-    image tile07_01 = "g_g.png"
-    image tile07_02 = "NONE_Gate.png"
-    image tile07_03 = "y_horizontal.png"
-    image tile07_04 = "y_elbow_bl.png"
+    image tile07_00 = "g_horizontal.png"
+    image tile07_01 = "g_horizontal.png"
+    image tile07_02 = "g_elbow_tl.png"
+#    image tile07_03 = "y_horizontal.png"
+    image tile07_04 = "g_vertical.png"
 #    image tile07_05 = "r_elbow_tl.png"
 #    image tile07_06 = "r_elbow_tl.png"
-    image tile07_07 = "r_y.png"
-    image tile07_08 = "NONE_Gate.png"
-    image tile07_09 = "y_horizontal.png"
+#    image tile07_07 = "r_y.png"
+    image tile07_08 = "y_g.png"
+    image tile07_09 = "NONE_Gate.png"
     image tile07_10 = "y_elbow_tl.png"
 #    image tile07_11 = "r_elbow_tl.png"
 #    image tile07_12 = "r_elbow_tl.png"
@@ -245,11 +245,11 @@ label start:
     show tile07_00 at Position(xpos = 436, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_01 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_02 at Position(xpos = 586, xanchor = 0, ypos = 758, yanchor = 0)
-    show tile07_03 at Position(xpos = 661, xanchor = 0, ypos = 758, yanchor = 0)
+#    show tile07_03 at Position(xpos = 661, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_04 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
 #    show tile07_05 at Position(xpos = 811, xanchor = 0, ypos = 758, yanchor = 0)
 #    show tile07_06 at Position(xpos = 886, xanchor = 0, ypos = 758, yanchor = 0)
-    show tile07_07 at Position(xpos = 961, xanchor = 0, ypos = 758, yanchor = 0)
+#    show tile07_07 at Position(xpos = 961, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_08 at Position(xpos = 1036, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_09 at Position(xpos = 1111, xanchor = 0, ypos = 758, yanchor = 0)
     show tile07_10 at Position(xpos = 1186, xanchor = 0, ypos = 758, yanchor = 0)
@@ -258,30 +258,30 @@ label start:
 #    show tile07_13 at Position(xpos = 1411, xanchor = 0, ypos = 758, yanchor = 0)
     
     #row 8
-    image tile08_00 = "g_elbow_tr.png"
-    image tile08_01 = "g_elbow_tl.png"
+#    image tile08_00 = "g_elbow_tr.png"
+#    image tile08_01 = "g_elbow_tl.png"
 #    image tile08_02 = "r_horizontal.png"
 #    image tile08_03 = "r_horizontal.png"
-    image tile08_04 = "y_elbow_tr.png"
-    image tile08_05 = "y_horizontal.png"
-    image tile08_06 = "y_horizontal.png"
-    image tile08_07 = "y_elbow_tl.png"
-#    image tile08_08 = "r_elbow_tl.png"
+    image tile08_04 = "g_elbow_tr.png"
+    image tile08_05 = "g_horizontal.png"
+    image tile08_06 = "g_horizontal.png"
+    image tile08_07 = "g_horizontal.png"
+    image tile08_08 = "g_elbow_tl.png"
 #    image tile08_09 = "r_elbow_tl.png"
 #    image tile08_10 =  "r_elbow_tl.png"
 #    image tile08_11 = "r_elbow_tl.png"
 #    image tile08_12 = "r_elbow_tl.png"
 #    image tile08_13 = "r_elbow_tl.png"
     
-    show tile08_00 at Position(xpos = 436, xanchor = 0, ypos = 833, yanchor = 0)
-    show tile08_01 at Position(xpos = 511, xanchor = 0, ypos = 833, yanchor = 0)
+#    show tile08_00 at Position(xpos = 436, xanchor = 0, ypos = 833, yanchor = 0)
+#    show tile08_01 at Position(xpos = 511, xanchor = 0, ypos = 833, yanchor = 0)
 #    show tile08_02 at Position(xpos = 586, xanchor = 0, ypos = 833, yanchor = 0)
 #    show tile08_03 at Position(xpos = 661, xanchor = 0, ypos = 833, yanchor = 0)
     show tile08_04 at Position(xpos = 736, xanchor = 0, ypos = 833, yanchor = 0)
     show tile08_05 at Position(xpos = 811, xanchor = 0, ypos = 833, yanchor = 0)
     show tile08_06 at Position(xpos = 886, xanchor = 0, ypos = 833, yanchor = 0)
     show tile08_07 at Position(xpos = 961, xanchor = 0, ypos = 833, yanchor = 0)
-#    show tile08_08 at Position(xpos = 1036, xanchor = 0, ypos = 833, yanchor = 0)
+    show tile08_08 at Position(xpos = 1036, xanchor = 0, ypos = 833, yanchor = 0)
 #    show tile08_09 at Position(xpos = 1111, xanchor = 0, ypos = 833, yanchor = 0)
 #    show tile08_10 at Position(xpos = 1186, xanchor = 0, ypos = 833, yanchor = 0)
 #    show tile08_11 at Position(xpos = 1261, xanchor = 0, ypos = 833, yanchor = 0)
