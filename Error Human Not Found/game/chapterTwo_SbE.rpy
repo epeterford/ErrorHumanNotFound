@@ -40,14 +40,14 @@ label letherfinish_SbE:
     $ points_E +=2
     #show Ada neutral
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
-    a "If we do, I calculate a 33% decrease in efficiency. I think we can make it up, though."
+    a "If we do, I calculate a 33\% decrease in efficiency. I think we can make it up, though."
     #show Grace surprised
     g "Are you done?"
     a "Of course I am done. I stopped, did I not?"
     #show Grace neutral
-    g "Let's go, then. I know a shortcut."
+    g "Let’s go, then. I know a shortcut."
     a "A shortcut?"
-    #Grace's sprite disappears here. 
+    #Grace’s sprite disappears here. 
     a "Fine. Do not answer me."
     a "I am curious, though. Into this 'shortcut' we go."
     if(points_S>points_SbE):
@@ -68,7 +68,7 @@ label helpherout_SbE:
     g "I know there are two viewports in the mechanics sector. Is it the one by the robot maintenance bay?"
     a "Yes. I was in the process of saying that when you interrupted."
     #show Grace snarky
-    g "I know where it is then."
+    g "Sorry to interrupt, I know how to get there so we can save some time. Follow me."
     #make Grace's sprite disappear here.
     #show Ada concerned
     a "But is your route optimal? Grace?"
@@ -94,10 +94,11 @@ label adapls_SbE:
     g "I was raised here, and I know it just as well as you do. I don't need a tour guide."
     #show Ada frustrated
     a "I was hardly organizing a tour, Grace. I was plotting the optimal route to Alpha. We do not have any time to waste."
-    g "If you think I'm skulking through a maintenance shaft, you'd be dead wrong. I have enough to worry about."
+    g "I get that you're trying to be as efficient as possible, but I don't want to go skulking through a maintenance shaft."
+      # "If you think I'm skulking through a maintenance shaft, you'd be dead wrong. I have enough to worry about."
     #Grace's sprite disappears here.
     #show Ada seething
-    a "Very well, Grace. Let us take your route. It is not like I can process several thousand times faster and more accurately than you."
+    a "Very well, Grace. Let us take your route. We will take the slower path to satisfy your preferences. " #It is not like I can process several thousand times faster and more accurately than you."
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -142,7 +143,7 @@ label askherifshesalright:
     g "Ada, are you alright?"
     #show Ada frustrated
     a "I do not quite know, Grace. I am sad, but I detect levels of anger as well. I have never felt this before."
-    a "It is different. Running emotional simulations versus experiencing them while inhabiting the hardware is… It is overwhelming."
+    a "It is different. Running emotional simulations versus experiencing them while inhabiting the hardware is... It is overwhelming."
     g "It's called loss, Ada. It's what everyone feels when a friend dies."
     a "Why does it hurt? I do not register any stimuli from my chassis. I think there may be a short in the sensors."
     #show Grace neutral
@@ -188,7 +189,7 @@ label lethermourn:
 label wegotstufftodo:
     $ points_S +=2
     #show Grace neutral
-    g "Ada…"
+    g "Ada..."
     #show Ada concerned
     a "Yes, Grace?"
     g "I get that he was your friend, but we can't afford to be distracted. We need to solve this {i}now{/i}."
@@ -295,7 +296,7 @@ label enterthemopr_SbE:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
     #show Grace surprised
-    g "Ah… We were just leaving!"
+    g "Ah... We were just leaving!"
     #show Ada amused
     a "Grace, it is just a cleaning robot."
     #show Mopr

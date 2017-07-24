@@ -330,34 +330,6 @@ label exploreHiroseOffice:
     $ quick_menu = False
     call screen investigateOffice
 
-label hiroseTea_label:
-    $ quick_menu = True
-    $ hiroseTea_inv = True
-    $ hiroseOfficeItems +=1
-    show image "hiroseTea_closeup.png" at centerScreen
-    window show
-    "A cup containing the dregs of a hybrid floral tea."
-    g "Roberta does drink some of the strangest teas. I'll stick to my coffee, thanks."
-    a "Humans and their caffeine..."
-    hide image "hiroseTea_closeup.png"
-    window hide
-    $ quick_menu = False
-    jump exploreHiroseOffice
-
-label hiroseSafe_label:
-    $ quick_menu = True
-    $ hiroseSafe_inv = True
-    $ hiroseOfficeItems += 1
-    show image "hiroseSafe_closeup.png" at centerScreen
-    window show
-    "A biometric locked safe."
-    a "Grace, should you be poking around that?"
-    g "Only as a last resort. Those kind of locks are a pain to circumvent anyways."
-    hide image "hiroseSafe_closeup.png"
-    window hide
-    $ quick_menu = False
-    jump exploreHiroseOffice
-    
 label adaActualPuzzle1:
     scene bg hiroseOfficeDesk
     $ quick_menu = True
@@ -578,64 +550,12 @@ label hirosePhoto_label:
     window hide
     $ quick_menu = False
     jump hiroseBed
-
-label hiroseBed_label:
-    $ quick_menu = True
-    $ hiroseBed_inv = True
-    $ hirosePersonalItems_value += 1
-    show other darken
-    show image "objects/hiroseBed_closeup.png" at centerScreen
-    window show
-    "A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs."
-    hide other darken
-    hide image "objects/hiroseBed_closeup.png"
-    show Ada amused at right
-    a "This room layout hardly seems standard."
-    show Grace snarky at left
-    g "I wonder what tipped it off."
-    show Ada neutral
-    a "Well, these sleeping arrangements are placed in a work area, for one."
-    show Grace neutral
-    g "That's Hirose for you. Dad and I used to be worried when she wouldn't come home from work."
-    g "We learned that there's other places she'd rather be, apparently."
-    $ quick_menu = False
-    window hide
-    jump hiroseBed
-    
-label hiroseWindow_label:
-    $ quick_menu = True
-    $ hiroseWindow_inv = True
-    $ hirosePersonalItems_value += 1
-    show other darken
-    show image "objects/hiroseWindow_closeup.png" at centerScreen
-    window show
-    "An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
-    hide image "objects/hiroseWindow_closeup.png"
-    hide other darken
-    show Grace happy at left
-    g "The view from up here never gets old."
-    g "If it's got a bed in it, I suppose even an office can be a room with a view."
-    show Ada amused at right
-    a "It already has windows, Grace. Isn't it already a room with a view?"
-    show Grace snarky
-    g "All this time around humans, and no ear for metaphors?" 
-    show Ada neutral
-    a "My memory banks are far from exhaustive, Grace."
-    show Grace neutral
-    g "Right Hotel metaphors remain the exclusive domain of humans for the forseeable future."
-#    g "I suppose the perks of being the head of the station is the view."
-#    a "I would concur, but posit that all these windows seem rather unsafe."
-#    g "We're humans. Hardly anything we do is textbook safe."
-#    a "I am beginning to see that."
-    window hide
-    $ quick_menu = False
-    jump hiroseBed
     
 label hirosePC_label:
     show image "objects/hiroseComputer_closeup.png" at centerScreen
     window show
     $ quick_menu = True
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 :
         g "Alright, I'll just log in, copy her credentials, and then we can leave."
         # show image "hiroseComputerLogged.png"
         #play SFX typing

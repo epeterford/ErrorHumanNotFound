@@ -178,7 +178,9 @@ label start:
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
     $ hiroseTea_inv = False
     $ hiroseOfficeComputer = False
-    $ hiroseSafe_inv = False
+    $ hiroseTree_inv = False
+    $ hiroseTransitionItems = 0
+    $ hiroseRecorder_inv = False
     $ hiroseOfficeItems = 0
     $ hiroseBed_inv = False
     $ hirosePhoto_inv = False

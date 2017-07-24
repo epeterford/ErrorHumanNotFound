@@ -220,7 +220,7 @@ label gracePoster_inv:
     show other darken
     show image "objects/gracePoster_closeup.png" at centerScreen
     window show
-    "An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  culture icon."
+    "An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon."
     hide image "objects/gracePoster_closeup.png"
     hide other darken
     #show Grace neutral

@@ -18,7 +18,7 @@ label chapterTwo_E:
     #Begin Grace's Lab sequence.
     #3 Different "areas" the player can look at, 7 total observable items.
     #Grace's Desk Item 1: AI head prototype displayed in bust fashion. It's raw machinery with no plating and looks kind of like a terminator head. // Reaction Item
-    #In response; #show Ada concerned // a "Was I going to look like this?" // #show Grace neutral // g "No, this is just what you look like under your plating. // g "Oh…"
+    #In response; #show Ada concerned // a "Was I going to look like this?" // #show Grace neutral // g "No, this is just what you look like under your plating. // g "Oh..."
     #Grace's Desk Item 2: A picture of Grace and her Father. // Reaction item
     #In response: #show Grace Sad // g "Come back soon, dad." // #show Ada neutral // a "Where is your father?" // #show Grace neutral // g "Somewhere more important."
     #Grace's work area item 1: Unassembled Neural Network // database item
@@ -57,16 +57,16 @@ label letherfinish_E:
     $ points_E +=2
     #show Ada neutral
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
-    a "If we do, I calculate a 33% decrease in time efficiency. I think we can make it up, though."
+    a "If we do, I calculate a 33\% decrease in time efficiency. I think we can make it up, though."
     #show Grace surprised
     g "Are you done?"
     a "Of course I am done. I stopped, did I not?"
     #show Grace neutral
-    g "Let's go, then. I know a shortcut."
-    a "A shortcut?"
+    g "Let's go, then. I know your processor has exact times and locations, but I know a shortcut. Shaving a couple of minutes would benefit us, don't you think?"
+    a "“A shortcut? Yes, you are right, saved time would help. Good thinking, Grace."
     #Grace's sprite disappears here.
     a "Fine. Do not answer me. I will just be that poor intrepid adventurer and follow you."
-    a "I am curious. Show me this 'shortcut'."   
+    a "I am curious to see this 'shortcut'."   
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -85,12 +85,12 @@ label helpherout_E:
     g "I know there are two viewports in the mechanics sector. Is it the one by the robot maintenance bay?"
     a "Yes. I was in the process of saying that when you interrupted."
     #show Grace snarky
-    g "I know where it is then."
+    g "Sorry to interrupt, but I know how to get there so we can save some time. Follow me."
     #Make Grace's sprite disappear here.
     #show Ada concerned
     a "But is your route optimal? Grace?"
     a "..."
-    a "Slow down!"
+    a "Wait for me!"
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -108,13 +108,13 @@ label adapls_E:
     #show Ada concerned
     a "Grace?"
     g "I know how to navigate the station on my own. There are only two viewports in engineering, and it's probably the one closest to the maintenance bay."
-    g "I was raised here, and I know it just as well as you do."
+    g "I was raised here, so I know this place like the back of my hand. No offense, but I think my way might be a tad bit faster."
     #show Ada frustrated
-    a "I understand. I was plotting the optimal route to Alpha. We don't have any time to waste."
-    g "If you think I'm skulking through a maintenance shaft, you'd be dead wrong. I have enough to worry about."
+    a "I understand. I was plotting the optimal route to Alpha. But if you have a better route, be my guest."
+    g "I don't want to skulk through a maintenance shaft. Let's go!"
     #Grace's sprite disappears here.
     #show Ada frustrated
-    a "Very well, Grace. Let us take your route. It is not like I can process several hundred times faster and more accurately than you."
+    a "Hold on!"
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -128,10 +128,10 @@ label adapls_E:
 label gettingin_E:
     #Display the crime scene background. The background comes up before the character sprites do.
     #show Grace neutral
-    g "Here we are. That must be--"
+    g "Here we are. Oh, no... is that--"
     #show Ada concerned
     a "Alpha!"
-    "Ada rushes to the fallen AIs side. Her voice sounds distressed, but it seems like her face is still figuring out what emotion it wants to be."
+    "Ada rushes to the fallen AIs side. She kneels beside him and a flurry of emotions cross over her face."
     #show Grace surprised
     g "Ada?"
     #choice 2
@@ -144,6 +144,7 @@ label gettingin_E:
             jump moveitalong
 
 label askherif:
+    $ points_E +=2
     #show Grace sad
     g "Ada, are you alright?"
     #show Ada frustrated
@@ -168,17 +169,19 @@ label askherif:
     jump csinoahsphere_SbE
  
 label poorpooralpha:
+    $ points_SbE +=2
     "Grace watches Ada as she slowly falls to her knees."
     #show Ada concerned
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
     a "A total erasure of one's existence... I realize now how sweet that sounds compared to having something left behind as a reminder."
     #show Grace sad
-    g "Were you close?"
+    g "You must have been close."
     a "As close as AIs could get, I suppose."
     "Ada lays a hand on Alpha's forehead."
     a "When you can see the breadth of one's whole existence in a sea of data, you get to know them much more closely than by mere conversation. He was a teacher and a friend, all at once. I looked forward to shaking his hand."
     #show Grace neutral
     g "I'm sorry for your loss. I know it must be hard."
+    a "I... thank you." 
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -190,8 +193,9 @@ label poorpooralpha:
     jump csinoahsphere_SbE
  
 label moveitalong:
+    $ points_S +=2
     #show Grace neutral
-    g "Ada…"
+    g "Ada..."
     #show Ada concerned
     a "Yes, Grace?"
     g "I know that you have a wide range of emotions right now and I understand your pain, but we can't afford to be distracted. We need to solve this {i}now{/i}."
@@ -288,13 +292,13 @@ label csinoahsphere_E:
 #	a "I have never seen code this corrupted. I was barely able to access the logs."
 ##show Ada concerned
 #a "This is very troubling."
-##show Grace surprised
-#g "What is it? Are you okay?"
-#a "Yes, I am fine. But there are several code remnants that are foreign to Alpha's data signatures."
-#a "It almost takes up a majority of his memory space."
-#g "What does the code say?"
+#g “What’s wrong? Is everything okay?”
+#a “I am not sure yet. I am not sure what happened here. There are several code remnants that are foreign to Alpha’s data signatures."
+#a "It almost takes up a majority of his memory space.”
+#g “What does the code say?”
 ##show Ada frustrated
-#a "There are several places where they overlap and are threaded together."
+#a “There are several places where the codes overlap and are threaded together."
+
 #a "I could not begin to tell you what he was processing."
 #jump enterthemopr
 
@@ -302,7 +306,7 @@ label enterthemopr_E:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
     #show Grace surprised
-    g "Ah… We were just leaving!"
+    g "Ah... We were just leaving!"
     #show Ada amused
     a "Grace, it is just a cleaning robot."
     #show Mopr
@@ -313,13 +317,13 @@ label enterthemopr_E:
     a "Cute?"
     g "Yeah. They were one of the first robots my dad showed me how to take apart and fix when I was little."
     a "You mentioned your father before."
-    g "Yeah, I did. I'm surprised you caught that. He isn't located on the Noah Sphere, so he wouldn't be in your data banks. He's actually the one that made me want to be a doctor."
+    g "Yeah, I did. I'm surprised you caught that. He isn't on the Noah Sphere right now, so he's not a priority in your data banks. He's actually the one that made me want to be a doctor."
     g "I miss him a lot, but anyway..."
     #show Grace sad
     a "I am starting to understand the definition of miss. It is equivalent to a burnt wire."
     g "It's not a fun feeling, that's for sure."
     a "Is your dad dead like Alpha?"
-    g "No, it's not that serious. He's just on Earth. He works there."
+    g "No, it's not that serious. He's just on Earth right now. His current work requires testing there."
     a "Ah. An absence is still an absence."
     g "You've got that right."
     "The robot's camera pans across Ada and Grace, and then settles on Alpha."
@@ -354,17 +358,16 @@ label enterthemopr_E:
 label ackchually:
     $ points_SbE +=2
     #show Grace neutral
-    g "Robotics is what I grew up with, Ada."
     g "When I was a kid, I wanted one of these instead of a dog."
     #show Ada amused
     a "I was not aware that these units could be convinced to alter their programs."
     #show Grace snarky
-    g "They're designed to modify their routines based on human feedback." 
+    g "I mean, I didn't actually program it to behave like a dog. They're designed to modify their routines based on human feedback." 
     #show Grace happy
     g "Positive reinforcement encourages them to focus on improving the praised cleaning routine rather than adjusting it dynamically."
     a "How was I not aware of this?"
-    g "It's probably because you're used to just giving them the most efficient route from the beginning."
-    g "Watch and learn."
+    g "It's probably just something you never thought to consider. There isn't much that would make you think about it if you didn't already know."
+    g "Let me show you how I'd handle it."
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -380,13 +383,11 @@ label byefelicia:
     #show Grace frustrated
     g "Not now, Ada. I know what I'm doing."
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
-    g "Did I ask for your help? I've got this, on my own level, thank you very much."
-    a "I detect sarcasm in your behavior."
-    g "No, really?"
-    a "..."
-    g "I appreciate that you have your capabilities as an android, but I know what I'm doing."
-    a "I am aware of that. I did not--"
-    g "How about we stop talking so we don't get caught? And by that, I mean you let me do my job."
+    a "I'm aware of your abilities, Ada, but let me give this a try."
+    g "I know what I'm doing."
+    a "I did not mean to insult your capabilities, Grace."
+    g "I know, Ada, you're fine."
+    a "Proceed."
     #show Ada frustrated
     a "Fine."
     if(points_S>points_SbE):
@@ -403,18 +404,20 @@ label byefelicia:
 label lilbabymopr:
     $ points_E +=2
     #show Grace neutral
-    g "If you talk to it, I'm sure you'd like it."
-    a "What do you mean?"
-    g "My dad often would speak to these machines as we worked together on different things."
+    g "Talk to him, Ada. You'll like him."
+    a "Him?"
+    g "It's more personal than it. My dad often would speak to these machines as we worked together on different things."
     a "What did that improve?"
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "This conversation reminds me of the good times my dad and I had."
+    a "Alright, I will give it a try."
     "Ada approaches the MOPR unit."
     "She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
     mopr "[[Affirmative beeping.]"
     #show Grace happy
-    g "See? It trusts you."
+    g "See? He likes you."
+    #show Ada happy
     a "It appears that way."
     if(points_S>points_SbE):
         if(points_S>points_E):

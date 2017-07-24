@@ -18,7 +18,7 @@ label chapterTwo_S:
     #Begin Grace's Lab sequence.
     #3 Different "areas" the player can look at, 7 total observable items.
     #Grace's Desk Item 1: AI head prototype displayed in bust fashion. It's raw machinery with no plating and looks kind of like a terminator head. // Reaction Item
-    #In response; #show Ada concerned // a "Was I going to look like this?" // #show Grace neutral // g "No, this is just what you look like under your plating." // a "Oh…"
+    #In response; #show Ada concerned // a "Was I going to look like this?" // #show Grace neutral // g "No, this is just what you look like under your plating." // a "Oh..."
     #Grace's Desk Item 2: A picture of Grace and her Father. // Reaction item
     #In response: #show Grace sad // g "Come back soon, dad." //#show Ada neutral // a "Where is your father?" // #show Grace neutral // g "Somewhere more important."
     #Grace's work area item 1: Unassembled Neural Network // database item
@@ -41,7 +41,7 @@ label resumeChapterTwo_S:
     a "They have not moved him from where he was found. They just left him there."
 
     #show Grace neutral
-    g "And he was found…?"
+    g "And he was found...?"
 
     "Ada gives Grace a long look before answering."
 
@@ -60,7 +60,7 @@ label hurryupada:
     $ points_E +=2
     #show Ada neutral
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
-    a "If we do, I postulate a 33% decrease in time efficiency. I think we can make it up, though."
+    a "If we do, I postulate a 33\% decrease in time efficiency. I think we can make it up, though."
     #show Grace surprised
     g "Are you done?"
     a "That is why I stopped."
@@ -219,7 +219,7 @@ label alphadistraction_S:
     a "Alpha was like a brother to me. I am going to take a few minutes."
     g "No, he wasn't. You don't know how that feels."
     #show Ada seething
-    a "Do not test me, Grace. I would never hurt a human, but I can just as easily decide to stop helping."
+    a "Do not test me, Grace. I would never hurt a human, but I can just as easily decide to stop helping." #Very well, Grace. Let us take your route. It is not like I can process several hundred times faster and more accurately than you.
     a "Why not go worry about your precious career instead."
     #show Grace frustrated
     g "Fine. Whatever. I'm going to take a look around."
@@ -322,7 +322,7 @@ label enterthemopr_S:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
     #show Grace surprised
-    g "Ah… We were just leaving!"
+    g "Ah... We were just leaving!"
     #show Ada amused
     a "Grace, it is just a cleaning robot."
     #show Mopr
