@@ -27,6 +27,7 @@ label prologue:
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
+    play sound 
     show Grace neutral at basicfade#left at basicfade #with fade
     #Insert SFX Typing here
     "Grace types away at her computer."
@@ -134,7 +135,7 @@ label prologueResume1:
     "Grace grows more and more impatient."
     show Grace annoyed at left
     g "What is taking so long?"
-    "Grace sits down her cup of tea and approaches the heavy door where the Conclave members meet."
+    "Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet."
     "Voices can be heard from a crack in the door. Grace leans in to listen."
     hide Grace annoyed
     

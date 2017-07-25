@@ -111,6 +111,7 @@ label doorhack:
     show Grace snarky
     g "Call it a manual override."
  
+    #MIHIR IMPLEMENT HERE!!!!!
     #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
     #Also make sure to set quick_menu to False and set it back to true when done
     #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE)resume script once the puzzle concludes.
@@ -335,7 +336,7 @@ label adaActualPuzzle1:
     $ quick_menu = True
     window show
     "Hirose's work computer. Grace and Ada are currently unable to access it."
-    show image "hiroseOfficialComputer_closeup.png" at centerScreen
+    show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
     $ renpy.pause(0.5)
     if (tutorial_LGEasy == True):
         $ tutorial_LGEasy = False
@@ -564,7 +565,7 @@ label hirosePC_label:
         jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
         a "We have the password. Are you sure you are ready? After we get the credentials we should not linger."
-        g "I suppose I shsould take another look around."
+        g "I suppose I should take another look around."
         hide image "hirosePhoto_closeup.png"
         window hide
         $ quick_menu = False

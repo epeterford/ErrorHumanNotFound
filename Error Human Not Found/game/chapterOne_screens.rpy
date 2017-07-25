@@ -221,10 +221,10 @@ label chapterOne_screens:
                 hover_sound "audio/ENHF_UI_Highlight.ogg"
         if (hiroseOfficeComputer == False):
             imagebutton:
-                idle "hiroseOfficialComputer.png" 
-                hover "hiroseOfficialComputer_hover.png" 
-                xpos 596
-                ypos 61 
+                idle "objects/hiroseOfficialComputer.png" 
+                hover "objects/hiroseOfficialComputer_hover.png" 
+                xpos 0
+                ypos 0
                 focus_mask True
                 action Jump("adaActualPuzzle1")
                 hover_sound "audio/ENHF_UI_Highlight.ogg"

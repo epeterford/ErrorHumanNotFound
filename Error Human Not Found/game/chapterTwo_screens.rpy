@@ -120,8 +120,8 @@ label chapterTwo_screens:
             
     screen balcony_actionsScr:
         imagebutton:
-            idle "adaTalk.png" #Comment SWAP THIS WITH WRISTBAND
-            hover "adaTalk_hover.png" #SWAP THIS WITH WRISTBAND/CELL
+            idle "callLynn.png" #Comment SWAP THIS WITH WRISTBAND
+            hover "callLynn_hover.png" #SWAP THIS WITH WRISTBAND/CELL
             xpos 0
             ypos 0 
             focus_mask True

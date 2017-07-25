@@ -36,6 +36,7 @@ image Grace frustrated = "sprites/grace_annoyed.png"
 image Tosh pleasant = "sprites/Tosh_Happy.png"
 image Tosh alarmed = "sprites/Tosh_alarmed.png" 
 image Ada afraid = "sprites/ada_afraid.png"
+image Ada surprised = "sprites/ada_afraid.png"
 image Ada amused = "sprites/ada_amused.png"
 image Ada annoyed = "sprites/ada_annoyed.png"
 image Ada frustrated = "sprites/ada_annoyed.png"
@@ -162,8 +163,23 @@ init python:
     renpy.music.register_channel("channel11", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel12", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel13", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    config.main_menu_music = "music/EHNF_Main_Theme.ogg"
+#    config.main_menu_music = ("music/MainTheme/EHNF_L1_Bells_L_Bounced.ogg" and "music/MainTheme/EHNF_L2_Bells_R_Bounced.ogg" and "music/MainTheme/EHNF_L3_Brians_Piano.ogg" and "music/MainTheme/EHNF_L4_Ghost_Bus.ogg" and "music/MainTheme/EHNF_L5_Ghosts_L.ogg"and "music/MainTheme/EHNF_L6_Ghosts_R.ogg"and "music/MainTheme/EHNF_L7_Orchestra_Percussion.ogg"and "music/MainTheme/EHNF_L8_SciFi_Pad.ogg"and "music/MainTheme/EHNF_L9_Touch_Orchestra_Bounced.ogg"and "music/MainTheme/EHNF_L10_Tornado_CMKD_Bounced.ogg"and "music/MainTheme/EHNF_L11_Ultrasweeper_FP_Bounced.ogg"and "music/MainTheme/EHNF_L12_Violins.ogg"and "music/MainTheme/EHNF_L13_WistfulLead_SP_Bounced.ogg")
+#        play channel00 mt_bellsL,
+#        play channel01 mt_bellsR,
+#        play channel02 mt_piano,
+#        play channel03 mt_ghostBus,
+#        play channel04 mt_ghostL,
+#        play channel05 mt_ghostR,
+#        play channel06 mt_orchestra,
+#        play channel07 mt_sciFi,
+#        play channel08 mt_touchOrchestra,
+#        play channel09 mt_tornado,
+#        play channel10 mt_ultrasweeper,
+#        play channel11 mt_violins,
+#        play channel12 mt_wistful]
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
-    
+
     
     
 #Creep_Wav.ogg, #Digi_Sprites.ogg, robotScanner.ogg, sraftexture.ogg, stabTapeEcho.ogg 
@@ -176,6 +192,7 @@ label start:
     $ quick_menu = False
     $ gate_name = ""
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
+    $ near_left = Position(xpos=0.25, ypos = 0.5)
     $ hiroseTea_inv = False
     $ hiroseOfficeComputer = False
     $ hiroseTree_inv = False
