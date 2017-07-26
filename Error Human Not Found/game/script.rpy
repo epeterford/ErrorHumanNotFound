@@ -78,6 +78,7 @@ image other darken = "blackout.png"
 #Hirose's Space
 image bg hiroseDoor= "bg/Hirose_Door.png"
 image bg hiroseOfficeDesk = "bg/Hirose_OfficeDesk.png"
+image bg hiroseOfficeDesk2 = "bg/Hirose_OfficeDeskLoggedIn.png"
 image bg hiroseOfficeMain = "bg/Hirose_OfficeMain.png"
 image bg hiroseOfficeTransition = "bg/Hirose_OfficeTransition.png"
 image bg hirosePersonalBed = "bg/Hirose_PersonalBed.png"
@@ -102,6 +103,8 @@ image bg balconyRamp = "bg/Balcony_Ramp.png"
 image bg bbalconyTransition = "bg/Balcony_Transition.png"
 
 #Hallway Shots
+image bg Logic_Gate = "LOGIC_GATE_BG.png"
+image bg black = "blackScreen.png"
 
 #Lab 2
 
@@ -146,8 +149,15 @@ define audio.mt_tornado = "music/MainTheme/EHNF_L10_Tornado_CMKD_Bounced.ogg"
 define audio.mt_ultrasweeper = "music/MainTheme/EHNF_L11_Ultrasweeper_FP_Bounced.ogg"
 define audio.mt_violins = "music/MainTheme/EHNF_L12_Violins.ogg"
 define audio.mt_wistful = "music/MainTheme/EHNF_L13_WistfulLead_SP_Bounced.ogg"
+define audio.pipeFlowR = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_PipeFlow_01.ogg"
+define audio.pipeFlowG = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_PipeFlow_02.ogg"
+define audio.pipeFlowN = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_PipeFlow_03.ogg"
+define audio.lgWin = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_RightOutput.ogg"
+define audio.lgLose = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_WrongOutput.ogg"
 
 
+init: 
+    $ config.keymap['hide_windows'].remove('mouseup_2')
 init python:
     renpy.music.register_channel("channel00", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel01", mixer=None, loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
@@ -186,12 +196,14 @@ init python:
 
 # The game starts here.
 label start:
+    stop music
     $ points_SbE = 0
     $ points_E = 0
     $ points_S = 0
     $ quick_menu = False
     $ gate_name = ""
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
+    $ centerScreen2 = Position(xpos=0.5, xanchor =0.5, ypos =0.35, yanchor = 0.2)
     $ near_left = Position(xpos=0.25, ypos = 0.5)
     $ hiroseTea_inv = False
     $ hiroseOfficeComputer = False
@@ -210,11 +222,14 @@ label start:
     $ graceLeft2Desk_value = 0
     $ Logic_A_solved = False
     $ Logic_B_solved = False
+    $ solved_LG_easy = False
+    $ lgEasy_tries = 0
     $ tutorial_LGEasy = True
     $ resume = ""
     $ callAttempts = 0
     $ balconyItems = 0
     $ moprScene = False
+    $ LGEasyHints = 0
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0

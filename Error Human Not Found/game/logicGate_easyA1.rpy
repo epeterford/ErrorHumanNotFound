@@ -1,4 +1,5 @@
-﻿init python:
+﻿
+init python:
 
     #makes it so the game doesn't stop early
     def gate_dragged(drags,drop):
@@ -19,16 +20,13 @@
 
             return True
         return True
-init:
-    image bg Logic_Gate = "LOGIC_GATE_BG.png"
-
 label logicGate_easyA1:
+    $renpy.block_rollback()
+    $quick_menu = False
 
     #loads background
     scene bg Logic_Gate
-    $ quick_menu = False
-    $ attempts = 6
-    $ game_menu = True
+    
     #all sections are broken down into their rows
     #the first set of values declares images for the show call
     #the second set show the image at a certain positon
@@ -129,7 +127,7 @@ label logicGate_easyA1:
     show eatile38 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
     
     #logicGate_easyA1 and end points
-    image logicGate_easyA11 = "light_g_on.png"
+    image logicGate_easyA11 = "light_r_on.png"
     show logicGate_easyA11 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
     image logicGate_easyA12 = "light_g_on.png"
     show logicGate_easyA12 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
@@ -138,33 +136,24 @@ label logicGate_easyA1:
     image end = "light_g_off.png"
     show end at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
     
-    #makes gray backgrounds for tiles
-    image and_gray = "AND_Gray.png"
-    image or_gray = "OR_Gray.png"
-    image nand_gray = "NAND_Gray.png"
-    image nor_gray = "NOR_Gray.png"
-    show and_gray at Position(xpos = 586, xanchor = 0, ypos = 88, yanchor = 0)
-    show or_gray at Position(xpos = 812, xanchor = 0, ypos = 88, yanchor = 0)
-    show nand_gray at Position(xpos = 1035, xanchor = 0, ypos = 88, yanchor = 0)
-    show nor_gray at Position(xpos = 1261, xanchor = 0, ypos = 88, yanchor = 0)
-
     #initial value assignment for dragables
-    $ and1x = 586
+    $ and1x = 698
     $ and1y = 88
    
     # check conditons for locations
     $ and1in1 = False
    
     #attempts for players
-    #$ attempts = 6
+    $ attempts = 3
  
-    jump gamefile1
+    jump gamefileA1
     
     
-label gamefile1:
+label gamefileA1:
     
     #calls game screen
-    call screen logicGates1
+    call screen logicGatesEasyA1
+    
     #the first logic gate *******************************************************************************
     if gate_name == "and_gate":
         #gate slot numeber one *******************************
@@ -181,6 +170,7 @@ label gamefile1:
 
 #first slot for and 1
     if and1in1 == True:
+        play sound pipeFlowG
         image eatile39 = "g_horizontal.png"
         image eatile40 = "g_horizontal.png"
         image eatile41 = "g_horizontal.png"
@@ -199,9 +189,12 @@ label gamefile1:
         
 #win conditions ********
     if and1in1 == True: 
-        #"YOU WIN"
+        image eatile100 = "AND_Gate.png"
+        show eatile100 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
+        play sound lgWin
+        $ renpy.pause(1.0)
         $ Logic_A_solved = True
-        jump exploreHiroseOffice
+        jump nextLGEasy
 
         
     $ attempts -= 1
@@ -209,17 +202,25 @@ label gamefile1:
         #"you lose try again"
         jump exploreHiroseOffice
     
-    jump gamefile1
+    jump gamefileA1
     
-screen logicGates1:
-#    imagebutton:
-#        idle "back.png"
-#        hover "back_hover.png"
-#        xpos 0
-#        ypos 0
-#        focus_mask True
-#        action Jump("hiroseOffice_actions")
-#        hover_sound "audio/ENHF_UI_Button_v1.ogg"
+screen logicGatesEasyA1:
+    key 'h' action Hide("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 240
+        ypos 890
+        focus_mask True
+        action Jump("LGEasyHintsA1")
+        hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty.png"
+        xpos 1515
+        ypos 890
+    text "Attempts" xpos 1530 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1716 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
+    text "[attempts]" xpos 1735 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates

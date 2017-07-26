@@ -1,5 +1,48 @@
 label chapterOne_screens:
-    
+    screen lgEasyWin_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("pickNextPuzzleLGEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610
+            focus_mask True
+            action Jump("exploreHiroseOffice")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    screen lgEasyLose_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("pickNextPuzzleLGEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610 
+            focus_mask True
+            action Jump("exploreHiroseOffice")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    screen lgEasyDone_scr:
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 815
+            ypos 610
+            focus_mask True
+            action Jump("lgEasyDone_talk")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
     screen tutorial_scrInv_1:
         imagebutton:
             idle "next.png" 
@@ -99,7 +142,7 @@ label chapterOne_screens:
             xpos 1670
             ypos 960 
             focus_mask True
-            action Jump("adaActualPuzzle1")
+            action Jump("easyLGAPuzzle")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
@@ -351,6 +394,7 @@ label tutorial_Inv_2:
     call screen tutorial_scrInv_2
     
 label tutorial_LGEasy_1:
+    play music "music/BGM/Puzzle_BGM.ogg"
     window hide
     $ quick_menu = False
     scene bg lgEasy1 
@@ -453,7 +497,7 @@ label hiroseRecorder_label:
     $ quick_menu = True
     $ hiroseRecorder_inv = True
     $ hiroseOfficeItems += 1
-    show other darkenR
+    show other darken
     show image "objects/hiroseRecorder_closeup.png" at centerScreen
     window show
     "This desk is made for Hirose's stenographer. This old-fashion style of recording events is rarely seen anymore, but dedicated practitioners in the art of writing shorthand have kept the profession alive."
@@ -477,7 +521,7 @@ label hiroseWindow_label:
     $ quick_menu = True
     $ hiroseWindow_inv = True
     $ hirosePersonalItems_value += 1
-    show other darken
+    show other darkenR
     show image "objects/hiroseWindow_closeup.png" at centerScreen
     window show
     "An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
@@ -498,3 +542,287 @@ label hiroseWindow_label:
     $ quick_menu = False
     jump hiroseBed
     
+label LGEasyHintsA1:
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    image EB111tile07_02 = "and_Gate.png"
+    show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA1
+    if (remainder==1):
+        $ LGEasyHints +=1
+        $ hintYes = True
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA1
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA1
+    $ quick_menu = False
+    jump logicGate_easyA1
+    
+label LGEasyHintsA2:
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    image EB111tile07_02A2 = "OR_Gate.png"
+    show EB111tile07_02A2 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA2
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA2
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA2
+    $ quick_menu = False
+    jump logicGate_easyA2
+    
+label LGEasyHintsA3:
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    image EB111tile07_02A3 = "OR_Gate.png"
+    show EB111tile07_02A3 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA3
+    if (remainder ==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA3
+    if (remainder ==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyA3
+    $ quick_menu = False
+    jump logicGate_easyA3
+    
+label LGEasyHintsB1:
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    image EB111tile07_02 = "and_Gate.png"
+    show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    image EB111tile07_08 = "or_Gate.png"
+    show EB111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB1
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB1
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB1
+    $ quick_menu = False
+    jump logicGate_easyB1
+    
+label LGEasyHintsB2:
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    image EB25end1 = "light_g_on.png"
+    show EB25end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
+    image EB25tile04_03 = "and_Gate.png"
+    show EB25tile04_03 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
+    image EB25tile01_07 = "or_Gate.png"
+    show EB25tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
+    show other darken
+    if (remainder== 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB2
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB2
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB2
+    $ quick_menu = False
+    jump logicGate_easyB2
+    
+label LGEasyHintsB3:
+    image EB311tile07_02 = "and_Gate.png"
+    show EB311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    image EB311tile07_08 = "or_Gate.png"
+    show EB311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB3
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB3
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        hide other darken
+        $ quick_menu = False
+        jump logicGate_easyB3
+    $ quick_menu = False
+    jump logicGate_easyB3
+    
+label LGEasyHintsC1:
+    image EC111tile02_09 = "not_Gate.png"
+    show EC111tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
+    image EC111tile07_02 = "and_Gate.png"
+    show EC111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    image EC111tile07_08 = "or_Gate.png"
+    show EC111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken
+    $ quick_menu = True
+    $ remainder = LGEasyHints%3
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC1
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC1
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC1
+    $ quick_menu = False
+    hide other darken
+    jump logicGate_easyC1
+    
+label LGEasyHintsC2:
+    $ quick_menu = True
+    image EC211tile02_09 = "not_Gate.png"
+    show EC211tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
+    image EC211tile07_02 = "and_Gate.png"
+    show EC211tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    image EC211tile07_08 = "or_Gate.png"
+    show EC211tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken
+    $ remainder = LGEasyHints%3
+    if (remainder==0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        $ quick_menu = False
+        hide other darken
+        jump _easyC2
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC2
+    if (remainder==2):
+        $ LGEasyHints +=1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC2
+    $ quick_menu = False
+    hide other darken
+    jump logicGate_easyC2
+    
+label LGEasyHintsC3:
+    $ quick_menu = True
+    image EC311tile02_09 = "not_Gate.png"
+    show EC311tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
+    image EC311tile07_02 = "and_Gate.png"
+    show EC311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    image EC311tile07_08 = "or_Gate.png"
+    show EC311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken
+    $ remainder = LGEasyHints%3
+    if (remainder == 0):
+        $ LGEasyHints +=1
+        g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC3
+    if (remainder==1):
+        $ LGEasyHints +=1
+        g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC3
+    if (remainder==2):
+        $ LGEasyHints += 1
+        g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
+        $ quick_menu = False
+        hide other darken
+        jump logicGate_easyC3
+    $ quick_menu = False
+    hide other darken
+    jump logicGate_easyC3
+
+label nextLGEasy:
+    show other darken
+    image segmentComplete = "segmentComplete.png"
+    show segmentComplete at centerScreen2
+    call screen lgEasyWin_scr
+        
+label repeatLGEasy:
+    show other darken
+    image segmentFailed = "segmentFailed.png"
+    show segmentFailed at centerScreen2
+    call screen lgEasyLose_scr
+
+label lgEasyDone:
+    show other darken
+    image passwordAccepted = "passwordAccepted.png"
+    show passwordAccepted at centerScreen2
+    call screen lgEasyDone_scr

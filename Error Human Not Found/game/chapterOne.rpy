@@ -114,7 +114,7 @@ label doorhack:
     #MIHIR IMPLEMENT HERE!!!!!
     #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
     #Also make sure to set quick_menu to False and set it back to true when done
-    #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE)resume script once the puzzle concludes.
+    #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE) resume script once the puzzle concludes.
 #    if(attemptsLogicGate1==1):
 #        show Grace happy
 #        g "Yes! First try! Still got it. Nobody can touch these elite skills." 
@@ -327,13 +327,22 @@ label hiroseOffice2:
     call screen hiroseOffice2_scr
 #Buttons for the objects
 label exploreHiroseOffice:
-    scene bg hiroseOfficeDesk with fade #at basicfade
+    $renpy.block_rollback()
+    stop music
+    if solved_LG_easy == False:
+        scene bg hiroseOfficeDesk with fade 
+    if solved_LG_easy ==True:
+        scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = False
     call screen investigateOffice
 
 label adaActualPuzzle1:
-    scene bg hiroseOfficeDesk
+    if solved_LG_easy == False:
+        scene bg hiroseOfficeDesk with fade 
+    if solved_LG_easy ==True:
+        scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
+    $ config.rollback_enabled = False
     window show
     "Hirose's work computer. Grace and Ada are currently unable to access it."
     show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
@@ -341,38 +350,94 @@ label adaActualPuzzle1:
     if (tutorial_LGEasy == True):
         $ tutorial_LGEasy = False
         jump tutorial_LGEasy_1
-    window hide 
-    if Logic_A_solved == False:
-        jump logicGate_easyA1
-    if Logic_B_solved == False:
-        jump logicGate_easyB1
-    hide image "hiroseOfficialComputer_closeup.png"
-#    if (solved_LG_easy == True):
-#        $ hiroseOfficeItems += 1
-    window hide
+    if (solved_LG_easy == True):
+        $ hiroseOfficeItems += 1
     $ quick_menu = False
+    if Logic_A_solved == False:
+        jump easyLGAPuzzle
+    if Logic_B_solved == False:
+        jump easyLGBPuzzle
+    if solved_LG_easy == False:
+        jump lastEasyLGPuzzle
+    window hide 
+    hide image "objects/hiroseOfficialComputer_closeup.png"
     jump exploreHiroseOffice
-#    if (attemptsBinary1==1):
-#        #show Ada amused
-#        a "I did not even have to suspend any normal running processes to crack that."
-#    if (attemptsBinary1>1 and attemptsBinary1<4):
-#        #show Ada happy
-#        a "Well played, personal computer, but the AI always comes out on top." 
-#    if (attemptsBinary1>3):
-#	#show Ada annoyed
-#	a "I can process yottaFLOPS but a simple password causes me this much difficulty? I have to question the definition of state-of-the-art hardware."
         
-label wegotthedeets:
+label pickNextPuzzleLGEasy:
+    $ quick_menu = False
+    if Logic_A_solved == False:
+        jump easyLGAPuzzle
+    if Logic_B_solved == False:
+        jump easyLGBPuzzle
+    if solved_LG_easy == False:
+        jump lastEasyLGPuzzle
+label easyLGAPuzzle:
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    window hide
+    show bg black with fade
+    $randomNumber = renpy.random.randint(0,2)
+    if randomNumber==0:
+        jump logicGate_easyA1
+    if randomNumber==1:
+        jump logicGate_easyA2
+    if randomNumber==2:
+        jump logicGate_easyA3
+            
+label easyLGBPuzzle:
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    window hide
+    $randomNumber2 = renpy.random.randint(0,2)
+    if randomNumber2==0:
+        jump logicGate_easyB1
+    if randomNumber2==1:
+        jump logicGate_easyB2
+    if randomNumber2==2:
+        jump logicGate_easyB3
+    jump logicGate_easyB1
+        
+label lastEasyLGPuzzle:
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    window hide
+    $randomNumber3 = renpy.random.randint(0,2)
+    if randomNumber3==0:
+        jump logicGate_easyC1
+    if randomNumber3==1:
+        jump logicGate_easyC2
+    if randomNumber3==2:
+        jump logicGate_easyC3
+        
+label lgEasyDone_talk:
+    $renpy.block_rollback()
+    stop music
+    scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
+    if lgEasy_tries == 0:
+        show Ada amused at right
+        a "I did not even have to suspend any of my normal running processes to crack that."
+    if (lgEasy_tries > 0) and (lgEasy_tries<4):
+        show Ada happy at right
+        a "Well played, personal computer, but the AI always comes out on top."
+    if (lgEasy_tries >3):
+        show Ada annoyed at right
+        a "I can process yottaFLOPS but a simple password causes me this much difficulty? I begin to question the definition of state-of-the-art hardware."
     show Ada neutral at right
     a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
     show Grace annoyed at left
     g "Of course not. That would be too easy."
-    hide Grace annoyed
-    hide Ada neutral
     "Grace looks around, thinking."
     show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
+    if(talkAdaHiroseOffice_value == 0):
+        a "I would like a word."
+    if (hiroseOfficeItems <3) or (hiroseTransitionItems<1):
+        a "Before we go, you may want to take another look around as well."
+    $ config.rollback_enabled = True
+    jump exploreHiroseOffice
+                   
+label wegotthedeets:
+    $ quick_menu = True
+    g "Now let's go nose around my mother's quarters."
+    a "If you insist."
     scene bg hirosePersonalArea with fade #at basicfade
     show Ada afraid at right
     a "We cannot hack this one. One incorrect guess and we will be locked out."

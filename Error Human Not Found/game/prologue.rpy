@@ -27,7 +27,7 @@ label prologue:
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
-    play sound 
+#    play sound 
     show Grace neutral at basicfade#left at basicfade #with fade
     #Insert SFX Typing here
     "Grace types away at her computer."
