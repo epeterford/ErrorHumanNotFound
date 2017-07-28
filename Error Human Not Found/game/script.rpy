@@ -67,7 +67,13 @@ image bg lgEasy4 = "NOT_instructions.png"
 image bg lgEasy5 = "AND_OR_instructions.png"
 image bg tutorial_inv_1 = "inv_instruction1.png"
 image bg tutorial_inv_2 = "inv_instruction2.png"
-
+image bg gramEasy1 = "easyGrammar_Tut1.png"
+image bg gramEasy2 = "easyGrammar_Tut2.png"
+image bg gramEasy3 = "easyGrammar_Tut3.png"
+image bg gramEasy4 = "easyGrammar_Tut4.png"
+image bg gramEasy5 = "easyGrammar_Tut5.png"
+image bg gramEasy6 = "easyGrammar_Tut6.png"
+image bg gramEasy7 = "easyGrammar_Tut7.png"
 
 ##The Conclave
 image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
@@ -225,6 +231,7 @@ label start:
     $ solved_LG_easy = False
     $ lgEasy_tries = 0
     $ tutorial_LGEasy = True
+    $ tutorial_gramEasy = True
     $ resume = ""
     $ callAttempts = 0
     $ balconyItems = 0

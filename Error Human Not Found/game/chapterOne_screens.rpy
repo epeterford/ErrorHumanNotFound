@@ -71,6 +71,124 @@ label chapterOne_screens:
             action Jump("hiroseOffice_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
+    screen tutorial_scrGramEasy_1:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_2:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_1")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_3:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_4")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_4:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960  
+            focus_mask True
+            action Jump("tutorial_GramEasy_5")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_5:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960  
+            focus_mask True
+            action Jump("tutorial_GramEasy_6")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_4")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_6:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1670
+            ypos 960  
+            focus_mask True
+            action Jump("tutorial_GramEasy_7")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_5")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrGramEasy_7:
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 1670
+            ypos 960 
+            focus_mask True
+            action Jump("chooseEasyGram")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos -15
+            ypos 960 
+            focus_mask True
+            action Jump("tutorial_GramEasy_6")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
     screen tutorial_scrLGEasy_1:
         imagebutton:
             idle "next.png" 
@@ -246,10 +364,10 @@ label chapterOne_screens:
             hover_sound "audio/ENHF_UI_Button_v1.ogg"
         if (hiroseTea_inv == False):
             imagebutton:
-                idle "hiroseTea.png" 
-                hover "hiroseTea_hover.png" 
-                xpos 591 
-                ypos 385 
+                idle "objects/hiroseTea.png" 
+                hover "objects/hiroseTea_hover.png" 
+                xpos 0
+                ypos 0
                 focus_mask True
                 action Jump("hiroseTea_label")
                 hover_sound "audio/ENHF_UI_Highlight.ogg"
@@ -424,6 +542,49 @@ label tutorial_LGEasy_5:
     scene bg lgEasy5 
     call screen tutorial_scrLGEasy_5
     
+label tutorial_GramEasy_1:
+    play music "music/BGM/Puzzle_BGM.ogg"
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy1 
+    call screen tutorial_scrGramEasy_1
+    
+label tutorial_GramEasy_2:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy2 
+    call screen tutorial_scrGramEasy_2
+        
+label tutorial_GramEasy_3:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy3 
+    call screen tutorial_scrGramEasy_3
+    
+label tutorial_GramEasy_4:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy4 
+    call screen tutorial_scrGramEasy_4
+    
+label tutorial_GramEasy_5:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy5 
+    call screen tutorial_scrGramEasy_5
+    
+label tutorial_GramEasy_6:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy6 
+    call screen tutorial_scrGramEasy_6
+
+label tutorial_GramEasy_7:
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy7 
+    call screen tutorial_scrGramEasy_7
+    
 label hiroseOffice_actions:
     window hide
     $ quick_menu = False
@@ -436,12 +597,25 @@ label hiroseTea_label:
     $ quick_menu = True
     $ hiroseTea_inv = True
     $ hiroseOfficeItems +=1
-    show image "hiroseTea_closeup.png" at centerScreen
+    show other darken
+    show image "objects/hiroseTea_closeup.png" at centerScreen
     window show
-    "A cup containing the dregs of a hybrid floral tea."
-    g "Roberta does drink some of the strangest teas. I'll stick to my coffee, thanks."
-    a "Humans and their caffeine..."
-    hide image "hiroseTea_closeup.png"
+    "A lukewarm cup of herbal tea. The lids on these reusable cups have a tendancy to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
+    hide image "objects/hiroseTea_closeup.png"
+    hide other darken
+    show Ada neutral at right
+    a "It makes me nervous, seeing that drink sitting by her computer."
+    show Grace snarky at left
+    g "Wow. The AI hasn't even been physical for a day and she recognizes that the lids here are suspicious at best."
+    show Ada surprised
+    a "The lid is structurally unstable as well?"
+    g "Yes! I swear these things barely stay on even when the cup's standing still!"
+    show Grace neutral
+    g "Wait, how does it even feel to have stuff spilled on you?" 
+    show Ada neutral
+    a "When I was young, a technician spilled some coffee onto a section of my servers. I suppose you'd liken it to being set on fire."
+    show Grace surprised
+    g "Oh..."
     window hide
     $ quick_menu = False
     jump exploreHiroseOffice

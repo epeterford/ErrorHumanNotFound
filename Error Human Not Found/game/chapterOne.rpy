@@ -110,7 +110,31 @@ label doorhack:
 
     show Grace snarky
     g "Call it a manual override."
- 
+    if (tutorial_gramEasy == True):
+        $ tutorial_gramEasy = False
+        jump tutorial_GramEasy_1
+
+label chooseEasyGram:
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    window hide
+    $randomNumberEasyGram = renpy.random.randint(0,4)
+    if randomNumberEasyGram==0:
+        jump eng_gram_e1
+    if randomNumberEasyGram==1:
+        jump eng_gram_e2
+    if randomNumberEasyGram==2:
+        jump eng_gram_e3
+    if randomNumberEasyGram==3:
+        jump eng_gram_e4
+    if randomNumberEasyGram==4:
+        jump eng_gram_e5
+
+label doorPuzzle:
+    stop music
+    scene bg hiroseDoor
+    call screen hiroseDoor
+    a "We cannot investigate anything until we get through the door, Grace."
+    
     #MIHIR IMPLEMENT HERE!!!!!
     #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
     #Also make sure to set quick_menu to False and set it back to true when done
@@ -125,7 +149,10 @@ label doorhack:
 #	#show Grace annoyed
 #	g "Apparently my hacking skills have become subpar. Too much legitimate coding."
 
- 
+label hiroseDoorPassed:
+    stop music
+    scene bg hiroseDoor
+    "Passed the puzzle."
     #transition to Hirose's reception  with a fade.
     scene bg hiroseReception
  
