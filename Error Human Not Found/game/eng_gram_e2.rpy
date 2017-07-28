@@ -39,7 +39,22 @@ init python:
       #  return
 
 screen logicGatese2:
-
+    key 'h' action Hide("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 260
+        ypos 200
+        focus_mask True
+        action Jump("gramEasyHints2")
+        hover_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 178
+        ypos 285
+    text "Attempts" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 358 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
         drag:
@@ -139,7 +154,7 @@ label eng_gram_e2:
     image eaeng_e2_tile2 = "letterS.png"
     show eaeng_e2_tile0 at Position(xpos = 470, xanchor = 0, ypos = 200, yanchor = 0)
     show eaeng_e2_tile1 at Position(xpos = 1250, xanchor = 0, ypos = 150, yanchor = 0)
-    show eaeng_e2_tile2 at Position(xpos = 1260, xanchor = 0, ypos = 165, yanchor = 0)
+    show eaeng_e2_tile2 at Position(xpos = 1265, xanchor = 0, ypos = 167, yanchor = 0)
     
     #row2 5-8
 
@@ -1644,6 +1659,7 @@ label gamefile_e2:
     if and5in1 == True:
         image eaeng_e2_tile42 = "leftTreegreenlong.png"
         image eaeng_e2_tile43 = "1_1_green.png"
+        play sound gramTree1
         show eaeng_e2_tile42 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e2_tile43 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
         
@@ -1652,6 +1668,7 @@ label gamefile_e2:
             image eaeng_e2_tile45 = "1_1_green.png"
             image eaeng_e2_tile46 = "solutionLine.png"
             image eaeng_e2_tile47 = "change.png"
+            play sound gramText1
             show eaeng_e2_tile44 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile45 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e2_tile46 at Position(xpos = 1025, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1665,6 +1682,7 @@ label gamefile_e2:
         if and1in3 == True or and2in3 == True or and4in3 == True or and5in3 == True or and6in3 == True:
             image eaeng_e2_tile48 = "leftTreered.png"
             image eaeng_e2_tile49 = "1_1_red.png"
+            play sound gramTree3
             show eaeng_e2_tile48 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile49 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
         elif and1in3 == False:
@@ -1676,6 +1694,7 @@ label gamefile_e2:
             image eaeng_e2_tile51 = "1_1_green.png"
             image eaeng_e2_tile52 = "solutionLine.png"
             image eaeng_e2_tile53 = "your.png"
+            play sound gramText2
             show eaeng_e2_tile50 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile51 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e2_tile52 at Position(xpos = 1175, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1689,6 +1708,7 @@ label gamefile_e2:
         if and1in4 == True or and2in4 == True or and3in4 == True or and4in4 == True or and5in4 == True:
             image eaeng_e2_tile54 = "rightTreered.png"
             image eaeng_e2_tile55 = "1_1_red.png"
+            play sound gramTree4
             show eaeng_e2_tile54 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile55 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
         elif and1in4 == False:
@@ -1714,6 +1734,7 @@ label gamefile_e2:
     if and1in2 == True:
         image eaeng_e2_tile60 = "rightTreegreenlong.png"
         image eaeng_e2_tile61 = "1_1_green.png"
+        play sound gramTree2
         show eaeng_e2_tile60 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e2_tile61 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
 
@@ -1722,6 +1743,7 @@ label gamefile_e2:
             image eaeng_e2_tile63 = "1_1_green.png"
             image eaeng_e2_tile64 = "solutionLine.png"
             image eaeng_e2_tile65 = "password.png"
+            play sound gramText3
             show eaeng_e2_tile62 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile63 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e2_tile64 at Position(xpos = 1325, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1735,6 +1757,7 @@ label gamefile_e2:
         if and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True:
             image eaeng_e2_tile66 = "leftTreered.png"
             image eaeng_e2_tile67 = "1_1_red.png"
+            play sound gramTree5
             show eaeng_e2_tile66 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile67 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
         elif and1in4 == False:
@@ -1746,6 +1769,7 @@ label gamefile_e2:
             image eaeng_e2_tile69 = "1_1_green.png"
             image eaeng_e2_tile70 = "solutionLine.png"
             image eaeng_e2_tile71 = "roberta.png"
+            play sound gramText2
             show eaeng_e2_tile68 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile69 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e2_tile70 at Position(xpos = 1475, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1759,6 +1783,7 @@ label gamefile_e2:
         if and1in6 == True or and3in6 == True or and4in6 == True or and5in6 == True or and6in6 == True:
             image eaeng_e2_tile72 = "rightTreered.png"
             image eaeng_e2_tile73 = "1_1_red.png"
+            play sound gramTree4
             show eaeng_e2_tile72 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e2_tile73 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
         elif and1in4 == False:
@@ -1785,6 +1810,7 @@ label gamefile_e2:
     if and1in1 == True or and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True:
          image eaeng_e2_tile74 = "leftTreeredlong.png"
          image eaeng_e2_tile75 = "1_1_red.png"
+         play sound gramTree3
          show eaeng_e2_tile74 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e2_tile75 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
     elif and1in1 == False:
@@ -1794,6 +1820,7 @@ label gamefile_e2:
     if and2in2 == True or and3in2 == True or and4in2 == True or and5in2 == True or and6in2 == True:
          image eaeng_e2_tile76 = "rightTreeredlong.png"
          image eaeng_e2_tile77 = "1_1_red.png"
+         play sound gramTree5
          show eaeng_e2_tile76 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e2_tile77 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
     elif and2in2 == False:
@@ -1816,15 +1843,19 @@ label gamefile_e2:
         show eaeng_e2_tile105 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
         show eaeng_e2_tile101 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
         show eaeng_e2_tile104 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
-
-        "Access Gained"
-
-        jump hiroseDoorPassed
+        play sound gramWin
+        jump gramEasyDone
     if slot_name == "null":
         $attempts +=1
 
     $attempts -=1
     if attempts ==0:
+        show eaeng_e2_tile102 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
+        show eaeng_e2_tile106 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
+        show eaeng_e2_tile103 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
+        show eaeng_e2_tile105 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
+        show eaeng_e2_tile101 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
+        show eaeng_e2_tile104 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
         hide eaeng_e2_tile42
         hide eaeng_e2_tile43
         hide eaeng_e2_tile44
@@ -1857,9 +1888,8 @@ label gamefile_e2:
         hide eaeng_e2_tile75
         hide eaeng_e2_tile76
         hide eaeng_e2_tile77
-
-        "You Lose Try Again"
-
-        jump chooseEasyGram    
+        play sound GramLose
+        $ attemptsLogicGate1 +=1
+        jump gramEasyLose  
     
     jump gamefile_e2

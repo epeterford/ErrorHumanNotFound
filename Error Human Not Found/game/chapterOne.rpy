@@ -8,7 +8,7 @@ label startChapterOne:
  
     "The door doesn't budge."
     "A voice issues from speakers near the door."
- 
+    play sound doorDenied
     tosh "The Director is not here at the moment. Please make an appointment."
     #Tosh's sprite isn't displayed here
     show Grace annoyed
@@ -110,6 +110,7 @@ label doorhack:
 
     show Grace snarky
     g "Call it a manual override."
+    $ config.rollback_enabled = False
     if (tutorial_gramEasy == True):
         $ tutorial_gramEasy = False
         jump tutorial_GramEasy_1
@@ -132,29 +133,29 @@ label chooseEasyGram:
 label doorPuzzle:
     stop music
     scene bg hiroseDoor
-    call screen hiroseDoor
+    show Ada neutral at right
+    play sound doorDenied
     a "We cannot investigate anything until we get through the door, Grace."
-    
-    #MIHIR IMPLEMENT HERE!!!!!
-    #WITH PUZZLE IMPLEMENTED, need to test that these function. For now, they are commented out.
-    #Also make sure to set quick_menu to False and set it back to true when done
-    #begin door hacking puzzle here, (GRAMMAR PUZZLE ONE) resume script once the puzzle concludes.
-#    if(attemptsLogicGate1==1):
-#        show Grace happy
-#        g "Yes! First try! Still got it. Nobody can touch these elite skills." 
-#    if (attemptsLogicGate1>1 and attempts<4):
-#        #show Grace happy
-#        g "Hey, wasn't perfect. But the door is open, and we haven't been caught." 
-#    if (attemptsLogicGate1>3):
-#	#show Grace annoyed
-#	g "Apparently my hacking skills have become subpar. Too much legitimate coding."
+    hide Ada
+    call screen doorPuzzle_scr
 
 label hiroseDoorPassed:
     stop music
-    scene bg hiroseDoor
-    "Passed the puzzle."
-    #transition to Hirose's reception  with a fade.
-    scene bg hiroseReception
+    play sound doorAccess
+    queue sound doorOpen1
+    queue sound doorOpen2
+    scene bg hiroseReception with fade
+    $renpy.block_rollback()
+    $ config.rollback_enabled = True
+    if(attemptsLogicGate1==0):
+        show Grace happy at left
+        g "Yes! First try! Still got it. Nobody can touch these elite skills." 
+    if (attemptsLogicGate1>1 and attempts<4):
+        show Grace happy at left
+        g "Hey, wasn't perfect. But the door is open, and we haven't been caught." 
+    if (attemptsLogicGate1>3):
+        show Grace annoyed at left
+        g "Apparently my hacking skills have become subpar. Too much legitimate coding."
  
     show Ada neutral at right
     a "Are you positive that being here is within protocol?"
@@ -454,10 +455,13 @@ label lgEasyDone_talk:
     "Grace looks around, thinking."
     show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
-    if(talkAdaHiroseOffice_value == 0):
-        a "I would like a word."
-    if (hiroseOfficeItems <3) or (hiroseTransitionItems<1):
+    if(talkAdaHiroseOffice_value == 0) and((hiroseOfficeItems <3) or (hiroseTransitionItems<1)):
+        a "I would like a word with you, please. I would also advise taking another look around."
+    if (talkAdaHiroseOffice_value > 0) and ((hiroseOfficeItems <3) or (hiroseTransitionItems<1)):
         a "Before we go, you may want to take another look around as well."
+    if(talkAdaHiroseOffice_value == 0)and(hiroseOfficeItems==3) and (hiroseTransitionItems==1):
+        a "I would like a word with you, please, before we enter the personal quarters of the Director."
+    $renpy.block_rollback()
     $ config.rollback_enabled = True
     jump exploreHiroseOffice
                    

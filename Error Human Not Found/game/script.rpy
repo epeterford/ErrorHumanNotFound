@@ -161,6 +161,25 @@ define audio.pipeFlowN = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_PipeF
 define audio.lgWin = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_RightOutput.ogg"
 define audio.lgLose = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_WrongOutput.ogg"
 
+define audio.gramWin = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_RightSolution.ogg"
+define audio.gramLose = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_WrongSolution.ogg"
+define audio.gramText1 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TextEnterNoise_01.ogg"
+define audio.gramText2 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TextEnterNoise_02.ogg"
+define audio.gramText3 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TextEnterNoise_03.ogg"
+define audio.gramTree1 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_01.ogg"
+define audio.gramTree2 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_02.ogg"
+define audio.gramTree3 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_03.ogg"
+define audio.gramTree4 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_04.ogg"
+define audio.gramTree5 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_05.ogg"
+
+define audio.doorOpen1 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_1.ogg"
+define audio.doorOpen2 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_2.ogg"
+define audio.doorClose1 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_CLOSE_1.ogg"
+define audio.doorClose2 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_CLOSE_2.ogg"
+define audio.doorDenied = "music/Object/Door_Audio/ENHF_Object_Door_AccessDenied.ogg"
+define audio.doorAccess= "music/Object/Door_Audio/ENHF_Object_Door_AccessGranted.ogg"
+
+
 
 init: 
     $ config.keymap['hide_windows'].remove('mouseup_2')
@@ -237,6 +256,8 @@ label start:
     $ balconyItems = 0
     $ moprScene = False
     $ LGEasyHints = 0
+    $ gramEasyHints = 0
+    $ attemptsLogicGate1 = 0
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0

@@ -480,5 +480,9 @@ label lynnfinallyfrickinanswers_SbE:
     #show Grace annoyed
     g "Let's go pay Ivan a visit."
     "Temporary end of Separate but Equal."
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $ stackDepth -=1
     return
     #jump chapterThree

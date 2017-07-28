@@ -16,6 +16,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
     screen lgEasyLose_scr:
         imagebutton:
             idle "yes.png" 
@@ -41,6 +42,61 @@ label chapterOne_screens:
             ypos 610
             focus_mask True
             action Jump("lgEasyDone_talk")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    screen lgEasyWin_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("pickNextPuzzleLGEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610
+            focus_mask True
+            action Jump("exploreHiroseOffice")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen gramEasyLose_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("chooseEasyGram")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610 
+            focus_mask True
+            action Jump("doorPuzzle")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen doorPuzzle_scr:
+        imagebutton:
+            idle "objects/hiroseDoor.png" 
+            hover "objects/hiroseDoor_hover.png" 
+            xpos 0
+            ypos 0
+            focus_mask True
+            action Jump("chooseEasyGram")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen gramEasyDone_scr:
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 815
+            ypos 610
+            focus_mask True
+            action Jump("hiroseDoorPassed")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen tutorial_scrInv_1:
@@ -982,7 +1038,203 @@ label LGEasyHintsC3:
     $ quick_menu = False
     hide other darken
     jump logicGate_easyC3
+    
+label gramEasyHints1:
+    $ quick_menu = True
+    $ remainder = gramEasyHints%3
+    image eaeng_e1_tile214 = "letterP.png"
+    image eaeng_e1_tile215 = "letterJ.png"
+    image eaeng_e1_tile216 = "letterM.png"
+    image eaeng_e1_tile217 = "letterL.png"
+    image eaeng_e1_tile218 = "letterN.png"
+    image eaeng_e1_tile219 = "letterK.png"
+    show eaeng_e1_tile214 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
+    show eaeng_e1_tile215 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
+    show eaeng_e1_tile216 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
+    show eaeng_e1_tile217 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
+    show eaeng_e1_tile218 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
+    show eaeng_e1_tile219 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ gramEasyHints +=1
+        a "N, L, M, and K are all substituted by words. I would use them on the bottom row only."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e1
+    if (remainder==1):
+        $ gramEasyHints +=1
+        $ hintYes = True
+        a "Remember if a tile is red, nothing below it will receive power. You will not be able to tell if it is correct or not until all tiles above a tile are green. "
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e1
+    if (remainder==2):
+        $ gramEasyHints +=1
+        a "P and J both must be substituted by other letters. That means they cannot go in the bottom row and be correct."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e1
+    $ quick_menu = False
+    jump eng_gram_e1
+    
+label gramEasyHints2:
+    $ quick_menu = True
+    $ remainder = gramEasyHints%3
+    image eaeng_e2_tile102 = "letterK.png"
+    image eaeng_e2_tile106 = "letterN.png"
+    image eaeng_e2_tile103 = "letterM.png"
+    image eaeng_e2_tile105 = "letterP.png"
+    image eaeng_e2_tile101 = "letterS.png"
+    image eaeng_e2_tile104 = "letterQ.png"
+    
 
+    show eaeng_e2_tile102 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
+    show eaeng_e2_tile106 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
+    show eaeng_e2_tile103 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
+    show eaeng_e2_tile105 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
+    show eaeng_e2_tile101 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
+    show eaeng_e2_tile104 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ gramEasyHints +=1
+        a "You have to use all the available slots. Just because they are green does not mean they will give us the correct answer."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e2
+    if (remainder==1):
+        $ gramEasyHints +=1
+        $ hintYes = True
+        a "M and Q only go to strings and not characters, so I would put them in the final row."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e2
+    if (remainder==2):
+        $ gramEasyHints +=1
+        a "N can only replace K, so make sure if you place N somewhere K is above it."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e2
+    $ quick_menu = False
+    jump eng_gram_e2
+    
+label gramEasyHints3:
+    $ quick_menu = True
+    $ remainder = gramEasyHints%3
+    image eaeng_e3_tile202 = "letterS.png"
+    image eaeng_e3_tile206 = "letterS.png"
+    image eaeng_e3_tile203 = "letterM.png"
+    image eaeng_e3_tile205 = "letterS.png"
+    image eaeng_e3_tile201 = "letterS.png"
+    image eaeng_e3_tile204 = "letterJ.png"
+    
+    show eaeng_e3_tile202 at Position(xpos = eae3and1x, xanchor = 0, ypos = eae3and1y, yanchor = 0)
+    show eaeng_e3_tile206 at Position(xpos = eae3and2x, xanchor = 0, ypos = eae3and2y, yanchor = 0)
+    show eaeng_e3_tile203 at Position(xpos = eae3and3x, xanchor = 0, ypos = eae3and3y, yanchor = 0)
+    show eaeng_e3_tile205 at Position(xpos = eae3and4x, xanchor = 0, ypos = eae3and4y, yanchor = 0)
+    show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0)
+    show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ gramEasyHints +=1
+        a "I do believe you should fill in the tree from the top to the bottom. The first rule, S can be substituted by SS, might be a good place to start."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e3
+    if (remainder==1):
+        $ gramEasyHints +=1
+        $ hintYes = True
+        a "S can also be substituted by MJ. Maybe try those on the left?"
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e3
+    if (remainder==2):
+        $ gramEasyHints +=1
+        a "S is also a terminal letter in two cases, so it should be on the bottom twice."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e3
+    $ quick_menu = False
+    jump eng_gram_e3
+    
+label gramEasyHints4:
+    $ quick_menu = True
+    $ remainder = gramEasyHints%3
+    image eaeng_e4_tile202 = "letterH.png"
+    image eaeng_e4_tile206 = "letterB.png"
+    image eaeng_e4_tile203 = "letterP.png"
+    image eaeng_e4_tile205 = "letterR.png"
+    image eaeng_e4_tile201 = "letterG.png"
+    image eaeng_e4_tile204 = "letterK.png"
+    
+
+    show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)
+    show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)
+    show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)
+    show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)
+    show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)
+    show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ gramEasyHints +=1
+        a "S can only be substituted by GH. I would try those in the middle row."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e4
+    if (remainder==1):
+        $ gramEasyHints +=1
+        $ hintYes = True
+        a "If I were you, Grace, I might try using P, B, R, and K in the bottom row."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e4
+    if (remainder==2):
+        $ gramEasyHints +=1
+        a "If a tile is red, none of the tiles below it will light up. Try to work from the top down, making sure every slot is green."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e4
+    $ quick_menu = False
+    jump eng_gram_e4
+    
+label gramEasyHints5:
+    $ quick_menu = True
+    $ remainder = gramEasyHints%3
+    image eaeng_e5_tile202 = "letterK.png"
+    image eaeng_e5_tile206 = "letterI.png"
+    image eaeng_e5_tile203 = "letterM.png"
+    image eaeng_e5_tile205 = "letterP.png"
+    image eaeng_e5_tile201 = "letterJ.png"
+    image eaeng_e5_tile204 = "letterG.png"
+    
+    show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0)
+    show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)
+    show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)
+    show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
+    show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
+    show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
+    show other darken
+    if (remainder == 0):
+        $ gramEasyHints +=1
+        a "K must be substituted by two other letters, which means wherever it goes, it must have two children slots."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e5
+    if (remainder==1):
+        $ gramEasyHints +=1
+        $ hintYes = True
+        a "Remember the order of substitution is important. S cannot be substituted by K on the left and J on the right."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e5
+    if (remainder==2):
+        $ gramEasyHints +=1
+        a "If a tile is not lighting up, make sure its parent, or the tile above it, is green."
+        hide other darken
+        $ quick_menu = False
+        jump eng_gram_e5
+    $ quick_menu = False
+    jump eng_gram_e5
+    
 label nextLGEasy:
     show other darken
     image segmentComplete = "segmentComplete.png"
@@ -1000,3 +1252,15 @@ label lgEasyDone:
     image passwordAccepted = "passwordAccepted.png"
     show passwordAccepted at centerScreen2
     call screen lgEasyDone_scr
+    
+label gramEasyDone:
+    show other darken
+    image passwordAccepted = "passwordAccepted.png"
+    show passwordAccepted at centerScreen2
+    call screen gramEasyDone_scr
+    
+label gramEasyLose:
+    show other darken
+    image segmentComplete = "passwordFail.png"
+    show segmentComplete at centerScreen2
+    call screen gramEasyLose_scr

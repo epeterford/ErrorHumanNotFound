@@ -508,5 +508,9 @@ label lynnfinallyfrickinanswers_E:
     #show Grace annoyed
     g "Let's go pay Ivan a visit."
     "Temporary end of Equal."
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
     return
     #jump chapterThree
