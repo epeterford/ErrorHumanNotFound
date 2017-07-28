@@ -18,25 +18,6 @@ init python:
                 return True
         return 
         
-#image blink:
- #   xpos 925 ypos 325
-  #  xanchor 1.0 yanchor 1.0
-   # "images/leftTree.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreegreen.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreered.png"
-    #2
-    #.15
-    #linear 0.5 alpha 1.0
-    #repeat
-
-     #   if drag_name == "gate slot one" && child == "images/1_1.png":
-      #  xpos 925 ypos 325
-      #  add "images/leftTreegreen.png"
-      #  return
 
 screen logicGatese1:
 
@@ -78,12 +59,7 @@ screen logicGatese1:
                 droppable False
                 dragged gate_dragged
                 xpos eae1and6x ypos eae1and6y
-       #drag:
-       #        drag_name "and_gate6"
-       #        child "letterP.png"
-       #        droppable False
-       #        dragged gate_dragged
-       #        xpos and7x ypos and7y
+
         
         #location to be dropped
         drag:
@@ -116,8 +92,6 @@ screen logicGatese1:
                 draggable False
                 child "images/border.png"
                 xpos 1490 ypos 510
-
-
 
 
 init:
@@ -264,14 +238,11 @@ label eng_gram_e1:
 
 
     #attempts for players
-    $ attempts = 15
+    $ attempts = 8
     
     call gamefile_e1
 
     label gamefile_e1:
-    #image moon = "images/blankTile.png"
-    #show blink
-    #calls jigsaw game with the images selected
     call screen logicGatese1
 
     if gate_name == "letterJ":
@@ -279,6 +250,10 @@ label eng_gram_e1:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other tile here
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -311,6 +286,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -344,6 +323,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -377,6 +360,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -410,6 +397,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -443,6 +434,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -478,6 +473,10 @@ label eng_gram_e1:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -511,6 +510,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -544,6 +547,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -577,6 +584,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -611,6 +622,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -644,6 +659,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -679,6 +698,10 @@ label eng_gram_e1:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -713,6 +736,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -747,6 +774,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -781,6 +812,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -815,6 +850,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -849,6 +888,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -886,6 +929,10 @@ label eng_gram_e1:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -920,6 +967,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -954,6 +1005,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -988,6 +1043,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1022,6 +1081,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1056,6 +1119,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1093,6 +1160,10 @@ label eng_gram_e1:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1127,6 +1198,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1161,6 +1236,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1195,6 +1274,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1229,6 +1312,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1263,6 +1350,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1300,6 +1391,10 @@ label eng_gram_e1:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1334,6 +1429,10 @@ label eng_gram_e1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1368,6 +1467,10 @@ label eng_gram_e1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1402,6 +1505,10 @@ label eng_gram_e1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1436,6 +1543,10 @@ label eng_gram_e1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1469,6 +1580,10 @@ label eng_gram_e1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae1and1x = 275
+               $ eae1and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae1and2x = 410
                $ eae1and2y = 575
@@ -1620,7 +1735,7 @@ label eng_gram_e1:
             image eaeng_e1_tile208 = "rightTreered.png"
             image eaeng_e1_tile209 = "1_1_red.png"
             show eaeng_e1_tile208 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile209 at Position(xpos = 1510, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile209 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
         elif and1in4 == False:
             hide eaeng_e1_tile208
             hide eaeng_e1_tile209
@@ -1676,7 +1791,7 @@ label eng_gram_e1:
         show eaeng_e1_tile219 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
         "Access Gained"
 
-        jump eng_gram_e2
+        jump hiroseDoorPassed
     if slot_name == "null":
         $attempts +=1
 
@@ -1717,7 +1832,7 @@ label eng_gram_e1:
 
         "You Lose Try Again"
 
-        jump eng_gram_e1
+        jump chooseEasyGram
     
 
 #    if and1in1 == True or and2in1 ==True or and3in1 ==True or and4in1 ==True:

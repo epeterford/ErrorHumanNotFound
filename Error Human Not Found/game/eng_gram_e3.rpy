@@ -284,6 +284,10 @@ label gamefile_e3:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other eaeng_e3_tile here
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -316,6 +320,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -349,6 +357,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -382,6 +394,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275 
                $ eae3and2y = 575
@@ -415,6 +431,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -448,6 +468,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -483,6 +507,10 @@ label gamefile_e3:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -516,6 +544,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -549,6 +581,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -582,6 +618,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -616,6 +656,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -649,6 +693,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -684,6 +732,10 @@ label gamefile_e3:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -718,6 +770,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -752,6 +808,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -786,6 +846,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -820,6 +884,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -854,6 +922,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -891,6 +963,10 @@ label gamefile_e3:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -925,6 +1001,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -959,6 +1039,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -993,6 +1077,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275 
                $ eae3and2y = 575 
@@ -1027,6 +1115,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1061,6 +1153,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1098,6 +1194,10 @@ label gamefile_e3:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1132,6 +1232,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1166,6 +1270,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1200,6 +1308,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1234,6 +1346,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1268,6 +1384,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1305,6 +1425,10 @@ label gamefile_e3:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
+            if and1in1 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in1 = False
             if and2in1 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1339,6 +1463,10 @@ label gamefile_e3:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
+            if and1in2 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in2 = False
             if and2in2 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1373,6 +1501,10 @@ label gamefile_e3:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
+            if and1in3 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in3 = False
             if and2in3 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1407,6 +1539,10 @@ label gamefile_e3:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
+            if and1in4 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in4 = False
             if and2in4 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1441,6 +1577,10 @@ label gamefile_e3:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
+            if and1in5 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in5 = False
             if and2in5 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
@@ -1474,6 +1614,10 @@ label gamefile_e3:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
+            if and1in6 == True:
+               $ eae3and1x = 275
+               $ eae3and1y = 575
+               $ and1in6 = False
             if and2in6 == True:
                $ eae3and2x = 275
                $ eae3and2y = 575
