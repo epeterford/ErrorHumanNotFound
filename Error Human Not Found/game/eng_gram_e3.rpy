@@ -1837,6 +1837,69 @@ label gamefile_e3:
          hide eaeng_e3_tile76
          hide eaeng_e3_tile77
 
+    if and3in1 == True:
+        image eaeng_e3_tile78 = "leftTreegreenlong.png"
+        image eaeng_e3_tile79 = "1_1_green.png"
+        show eaeng_e3_tile78 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
+        show eaeng_e3_tile79 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
+        
+        if and1in3 == True or and2in3 == True or and4in3 == True or and5in3 == True or and6in3 == True:
+            image eaeng_e3_tile80 = "leftTreered.png"
+            image eaeng_e3_tile81 = "1_1_red.png"
+            show eaeng_e3_tile80 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e3_tile81 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in5 == False:
+            hide eaeng_e3_tile80
+            hide eaeng_e3_tile81
+
+        if and1in4 == True or and2in4 == True or and4in4 == True or and5in4 == True or and6in4 == True:
+            image eaeng_e3_tile82 = "rightTreered.png"
+            image eaeng_e3_tile83 = "1_1_red.png"
+            show eaeng_e3_tile82 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e3_tile83 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in6 == False:
+            hide eaeng_e3_tile82
+            hide eaeng_e3_tile83
+
+    if and3in1 == False:
+        hide eaeng_e3_tile78
+        hide eaeng_e3_tile79
+        hide eaeng_e3_tile80
+        hide eaeng_e3_tile81
+        hide eaeng_e3_tile82
+        hide eaeng_e3_tile83
+
+    if and6in2 == True:
+        image eaeng_e3_tile84 = "rightTreegreenlong.png"
+        image eaeng_e3_tile85 = "1_1_green.png"
+        show eaeng_e3_tile84 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+        show eaeng_e3_tile85 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
+
+        if and1in5 == True or and2in5 == True or and3in5 == True or and4in5 == True or and5in5 == True:
+            image eaeng_e3_tile86 = "leftTreered.png"
+            image eaeng_e3_tile87 = "1_1_red.png"
+            show eaeng_e3_tile86 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e3_tile87 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in5 == False:
+            hide eaeng_e3_tile86
+            hide eaeng_e3_tile87
+
+        if and1in6 == True or and2in6 == True or and3in6 == True or and4in6 == True or and5in6 == True:
+            image eaeng_e3_tile88 = "rightTreered.png"
+            image eaeng_e3_tile89 = "1_1_red.png"
+            show eaeng_e3_tile88 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e3_tile89 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in6 == False:
+            hide eaeng_e3_tile88
+            hide eaeng_e3_tile89
+    if and6in2 == False:
+        hide eaeng_e3_tile84
+        hide eaeng_e3_tile85
+        hide eaeng_e3_tile86
+        hide eaeng_e3_tile87
+        hide eaeng_e3_tile88
+        hide eaeng_e3_tile89
+
     #win conditions
     if (and5in1 == True or and1in1 == True or and2in1 == True or and4in1 == True) and and3in3 == True and and6in4 == True and (and1in2 == True or and2in2 == True or and4in2 == True or and5in2 == True) and (and4in5 == True or and1in5 == True or and2in5 == True or and5in5 == True) and (and1in6 == True or and2in6 == True or and4in6 == True or and5in6 == True):
 
