@@ -283,7 +283,7 @@ label eng_gram_e5:
     #attempts for players
     $ attempts = 8
     
-    call gamefile_e5
+    call gamefile_e5 from _call_gamefile_e5
 
 
 

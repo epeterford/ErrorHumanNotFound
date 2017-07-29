@@ -4,14 +4,14 @@ label chapterTwo_E:
     #show Grace neutral
     g "It shouldn't take too much longer for the credentials to print onto the card."
     #show Ada happy
-    a "I am relieved things went smoothly. I would be be misinforming you if I said I was 100\% certain my bluff would work."
+    a "I am relieved things went smoothly. I would be misinforming you if I said I was 100\% certain my bluff would work."
     #show Grace surprised
     g "You were bluffing? You're capable of that?"
     #show Ada amused
     a "Yes, and yes. Colossuss controls the update schedules for the whole station."
-    a "He knows the exact state of everything on board, or he likes to say."
-    a "You designed the neural network. Do you not know that deceit is on the list of emotions?"
-    g "No, I definitely knew, I just didn't think you'd have caught on so quickly. I'm impressed."
+    a "He knows the exact state of everything on board, or so he likes to say."
+    a "You designed the neural network. Do you not know that deceit is on the list of behaviors?"
+    g "No, I definitely knew, I just didn't think you'd catch on so quickly. I'm impressed."
     a "Thank you."
     $ resume = "E"
     jump chapterTwo_screens
@@ -85,7 +85,7 @@ label helpherout_E:
     g "I know there are two viewports in the mechanics sector. Is it the one by the robot maintenance bay?"
     a "Yes. I was in the process of saying that when you interrupted."
     #show Grace snarky
-    g "Sorry to interrupt, but I know how to get there so we can save some time. Follow me."
+    g "Sorry to interrupt. I know how to get there so we can save some time. Follow me."
     #Make Grace's sprite disappear here.
     #show Ada concerned
     a "But is your route optimal? Grace?"
@@ -131,12 +131,13 @@ label gettingin_E:
     g "Here we are. Oh, no... is that--"
     #show Ada concerned
     a "Alpha!"
-    "Ada rushes to the fallen AIs side. She kneels beside him and a flurry of emotions cross over her face."
+    "{i}Ada rushes to the side of the fallen AI."
+    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     #show Grace surprised
     g "Ada?"
     #choice 2
     menu:
-        "Ask her if she's alright.":
+        "Ask her if she's all right.":
             jump askherif
         "Let her mourn.":
             jump poorpooralpha
@@ -146,7 +147,7 @@ label gettingin_E:
 label askherif:
     $ points_E +=2
     #show Grace sad
-    g "Ada, are you alright?"
+    g "Ada, are you all right?"
     #show Ada frustrated
     a "I do not quite know, Grace. I am sad, but I am angry as well. I have never felt this before."
     g "It's called loss, Ada. It's what everyone feels when a friend dies."
@@ -154,7 +155,7 @@ label askherif:
     #show Grace neutral
     g "If you think that pain only comes from the outside, you've got a lot to learn, Ada."
     a "That much is evident."
-    "Ada slowly stands from Alpha's side. Grace touches Ada's arm in assurance."
+    "{i}Ada slowly stands from Alpha's side. Grace touches Ada's arm in assurance."
     g "We'll get to the bottom of this. For Alpha."
     a "..."
     a "Yes. For Alpha."
@@ -170,14 +171,14 @@ label askherif:
  
 label poorpooralpha:
     $ points_SbE +=2
-    "Grace watches Ada as she slowly falls to her knees."
+    "{i}Grace watches Ada as she slowly falls to her knees."
     #show Ada concerned
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
     a "A total erasure of one's existence... I realize now how sweet that sounds compared to having something left behind as a reminder."
     #show Grace sad
     g "You must have been close."
     a "As close as AIs could get, I suppose."
-    "Ada lays a hand on Alpha's forehead."
+    "{i}Ada lays a hand on Alpha's forehead."
     a "When you can see the breadth of one's whole existence in a sea of data, you get to know them much more closely than by mere conversation. He was a teacher and a friend, all at once. I looked forward to shaking his hand."
     #show Grace neutral
     g "I'm sorry for your loss. I know it must be hard."
@@ -220,11 +221,11 @@ label csinoahsphere_E:
     #insert the sound of paper crumpling
     #show Grace neutral
     g "Huh?"
-    "Grace lifts her foot and reaches down."
+    "{i}Grace lifts her foot and reaches down."
     #show Grace surprised
     g "A maintenance receipt?"
     #Need to have closeup of OBJECT here. NEED to add object.
-    "The maintenance receipt is signed by Technician Lynn Yao"
+    "{i}The maintenance receipt is signed by Technician Lynn Yao"
     g "Lynn? Of course."
     #show Ada concerned
     a "Lynn?"
@@ -255,7 +256,7 @@ label csinoahsphere_E:
 #    g "Okay, but I'm not going to judge you if you do turn away."
 #    a "Thank you for the consideration."
 #    "Grace removes the panel, revealing Alpha's manual access ports."
-#    g "Alright Alpha, let's see what you've got for us."
+#    g "All right Alpha, let's see what you've got for us."
 ##sydcomscidoit
 #     	if (attempts==1):
 ##show Grace happy
@@ -306,7 +307,7 @@ label enterthemopr_E:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
     #show Grace surprised
-    g "Ah... We were just leaving!"
+    g "Ah... we were just leaving!"
     #show Ada amused
     a "Grace, it is just a cleaning robot."
     #show Mopr
@@ -320,16 +321,16 @@ label enterthemopr_E:
     g "Yeah, I did. I'm surprised you caught that. He isn't on the Noah Sphere right now, so he's not a priority in your data banks. He's actually the one that made me want to be a doctor."
     g "I miss him a lot, but anyway..."
     #show Grace sad
-    a "I am starting to understand the definition of miss. It is equivalent to a burnt wire."
+    a "I am starting to understand the definition of missing someone in this context. It is equivalent to a burnt wire."
     g "It's not a fun feeling, that's for sure."
     a "Is your dad dead like Alpha?"
     g "No, it's not that serious. He's just on Earth right now. His current work requires testing there."
     a "Ah. An absence is still an absence."
     g "You've got that right."
-    "The robot's camera pans across Ada and Grace, and then settles on Alpha."
+    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
     mopr "[[Alarmed Beeping!]"
     #show Grace happy
-    g "Hey, hey... It's okay, little guy!"
+    g "Hey, hey... it's okay, little guy!"
     a "This MOPR has quite the vocals."
     mopr "[[Worried blorp.]"
     g "I know it's tough, little robot pal, finding two strangers and a body during your cleaning cycle."
@@ -343,7 +344,7 @@ label enterthemopr_E:
     #show Grace happy
     g "You did, but it's usually with more gusto. Like {i}ha, ha!{/i} Good effort, though."
     a "I will have to save that to my memory banks for future use."
-    "Grace kneels down."
+    "{i}Grace kneels down."
     #show Ada concerned
     a "What are you doing, Grace?"
     #choice 3
@@ -406,13 +407,13 @@ label lilbabymopr:
     #show Grace neutral
     g "Talk to him, Ada. You'll like him."
     a "Him?"
-    g "It's more personal than it. My dad often would speak to these machines as we worked together on different things."
+    g "He is more personal than it. My dad always talked to machines that we worked on together."
     a "What did that improve?"
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "This conversation reminds me of the good times my dad and I had."
-    a "Alright, I will give it a try."
-    "Ada approaches the MOPR unit."
-    "She kneels down and pats it on the head."
+    a "All right, I will give it a try."
+    "{i}Ada approaches the MOPR unit."
+    "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
     mopr "[[Affirmative beeping.]"
     #show Grace happy
@@ -436,7 +437,7 @@ label exitthemopr_E:
     mopr "[[Suspicious beep.]"
     g "C'mon MOPR, don't be that way."
     mopr "[[Beep. Boop.]"
-    g "MOPR unit, we are to investigate what happened to Alpha unit."
+    a "MOPR unit, we are to investigate what happened to Alpha unit."
     g "Don't you want us to find out so we can make sure a tragedy like this doesn't happen again?"
     mopr "[[Inquisitive beep.]"
     a "Personally, I would hope nothing like this happens to me."
@@ -444,9 +445,9 @@ label exitthemopr_E:
     mopr "[[Affirmative beeps.]"
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us. Thank you!"
-    mopr "[[Confirmatory beeps]"
-    "The MOPR unit slowly wheels out of the room, and the door closes behind it."
-    g "I always enjoyed talking to them. More than with some people honestly."
+    mopr "[[Confirmative beeps.]"
+    "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it."
+    g "I always enjoyed talking to them. More than with some people, honestly."
     a "You do seem to have a way with machinery."
     g "I'm going to take that as a compliment."
     a "It is."
@@ -457,8 +458,8 @@ label exitthemopr_E:
 
 #If the player calls Lynn at this point
 label lynnfinallyfrickinanswers_E:
-    "The dial tone rings for several seconds."
-    g "I hope she picks up quick. Last time I had to call her for work, I was waiting for {i}five{/i} minutes."
+    "{i}The dial tone rings for several seconds."
+    g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
     #show Ada neutral
     a "That seems like a relatively short time."
     g "Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
@@ -466,12 +467,12 @@ label lynnfinallyfrickinanswers_E:
     #show Grace happy
     g "Lynn!"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
-    g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you go off to?"
+    g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"
     lynn "Well, the Director told me I should take a short vacation. Called it 'administrative leave'. I'm with my family on Earth."
-    g "That sounds nice. I've been having a storm of a day up here."
+    g "That sounds nice. I've been having a crazy day up here."
     lynn "I can imagine, what with Alpha kicking the bucket. Poor thing."
     #show Ada frustrated
-    a "Thing? Alpha was not just some {i}thing{/i} that just happened to expire."
+    a "Thing? Alpha was not just some {i}thing{/i} that happened to expire."
     lynn "Oh my. Another one? I'm sorry dear, it is sad, but at the end of the day it's not the same as a person dying."
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     g "I'm not sure I can agree with you there, Lynn."
@@ -480,20 +481,20 @@ label lynnfinallyfrickinanswers_E:
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
     lynn "Grace, you really ought to be spending more time with other people your age."
-    lynn "It's not healthy to spend all your time with machines. If you'd like, my son is your age, and I think the pair of you--"
+    lynn "It's not healthy to spend all your time with machines. If you'd like, I could give you my son's number. I think the pair of you--"
     g "Thanks for the offer Lynn, but we're on a bit of a tight schedule right now. When you were doing Alpha's maintenance, did you notice anything weird?"
     lynn "Weird? I was working on the first AI in an android body. All of it is a bit strange."
     #show Grace annoyed
     g "Like {i}suspicious{/i} weird, Lynn. What else could I mean?"
     lynn "Nothing unusual on my end. I heard that there may have been something prior to his initial boot-up, but Ivan would know more about that."
     g "And this was something he decided to keep to himself?"
-    lynn "I guess? You know Ivan, he's as cagey as ever, although this time around he seemed even more so than usual."
+    lynn "I guess? You know Ivan, he's always cagey. When it came to the bootup, he seemed even more on edge than usual."
     lynn "I think he was just nervous about the experiment, though."
     #show Grace neutral
     g "Uh huh, keep going."
-    lynn "And honestly, I think what Ivan needs is a nice, long vacation. Or a girlfriend. Or both."
+    lynn "Honestly, I think what Ivan needs is a nice, long vacation. Or a girlfriend. Or both."
     lynn "I swear he's going to start sprouting gray hair if he keeps up the way he's going."
-    lynn "He almost snapped at me when I was just doing my job! Something came up red in the inspection and he was all over it."
+    lynn "He snapped at me when I was just doing my job! Something came up red in the inspection and he was all over it."
     #show Grace surprised
     g "Really?"
     lynn "Yeah. He told me he'd handle it. Said he didn't want to give such a delicate task to a peon or whatever."
@@ -507,7 +508,7 @@ label lynnfinallyfrickinanswers_E:
     a "Grace?"
     #show Grace annoyed
     g "Let's go pay Ivan a visit."
-    "Temporary end of Equal."
+    "{i}Temporary end of Equal."
     $ stackDepth =renpy.call_stack_depth()
     while stackDepth>0:
         $renpy.pop_call()

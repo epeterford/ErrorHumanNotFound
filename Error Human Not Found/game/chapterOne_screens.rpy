@@ -656,7 +656,7 @@ label hiroseTea_label:
     show other darken
     show image "objects/hiroseTea_closeup.png" at centerScreen
     window show
-    "A lukewarm cup of herbal tea. The lids on these reusable cups have a tendancy to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
+    "{i}A lukewarm cup of herbal tea. The lids on these reusable cups have a tendancy to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
     hide image "objects/hiroseTea_closeup.png"
     hide other darken
     show Ada neutral at right
@@ -669,7 +669,7 @@ label hiroseTea_label:
     show Grace neutral
     g "Wait, how does it even feel to have stuff spilled on you?" 
     show Ada neutral
-    a "When I was young, a technician spilled some coffee onto a section of my servers. I suppose you'd liken it to being set on fire."
+    a "When I was young, a technician spilled some coffee onto a section of my servers. I suppose you would liken it to being set on fire."
     show Grace surprised
     g "Oh..."
     window hide
@@ -683,7 +683,7 @@ label hiroseTree:
     show other darken
     show image "objects/hiroseTree_closeup.png" at centerScreen
     window show
-    "A collection of exotic trees with seeds imported from Earth. It's rare to see this much plant-life in the office of a space station. "
+    "{i}A collection of exotic trees with seeds imported from Earth. It's rare to see this much plant-life in the office of a space station. "
     hide image "objects/hiroseTree_closeup.png"
     hide other darken
     show Grace frustrated at left
@@ -707,7 +707,7 @@ label hiroseBed_label:
     show other darken
     show image "objects/hiroseBed_closeup.png" at centerScreen
     window show
-    "A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs."
+    "{i}A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs."
     hide other darken
     hide image "objects/hiroseBed_closeup.png"
     show Ada amused at right
@@ -730,7 +730,7 @@ label hiroseRecorder_label:
     show other darken
     show image "objects/hiroseRecorder_closeup.png" at centerScreen
     window show
-    "This desk is made for Hirose's stenographer. This old-fashion style of recording events is rarely seen anymore, but dedicated practitioners in the art of writing shorthand have kept the profession alive."
+    "{i}This desk is made for Hirose's stenographer. This old-fashion style of recording events is rarely seen anymore, but dedicated practitioners in the art of writing shorthand have kept the profession alive."
     hide other darken
     hide image "objects/hiroseRecorder_closeup.png"
     show Grace frustrated at left
@@ -751,10 +751,9 @@ label hiroseWindow_label:
     $ quick_menu = True
     $ hiroseWindow_inv = True
     $ hirosePersonalItems_value += 1
-    show other darkenR
+    show other darken
     show image "objects/hiroseWindow_closeup.png" at centerScreen
-    window show
-    "An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
+    "{i}An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
     hide image "objects/hiroseWindow_closeup.png"
     hide other darken
     show Grace happy at left
@@ -767,7 +766,7 @@ label hiroseWindow_label:
     show Ada neutral
     a "My memory banks are far from exhaustive, Grace."
     show Grace neutral
-    g "Right Hotel metaphors remain the exclusive domain of humans for the forseeable future."
+    g "Right. Hotel metaphors remain the exclusive domain of humans for the forseeable future."
     window hide
     $ quick_menu = False
     jump hiroseBed

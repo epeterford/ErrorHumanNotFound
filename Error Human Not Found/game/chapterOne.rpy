@@ -6,8 +6,8 @@ label startChapterOne:
     show Grace neutral at left
     g "Here we are. Scan my badge and voila. Open."
  
-    "The door doesn't budge."
-    "A voice issues from speakers near the door."
+    "{i}The door doesn't budge."
+    "{i}A voice issues from speakers near the door."
     play sound doorDenied
     tosh "The Director is not here at the moment. Please make an appointment."
     #Tosh's sprite isn't displayed here
@@ -30,7 +30,7 @@ label startChapterOne:
     a "Let me get the door."
     show Ada neutral
     a "..."
-    "An awkward silence hangs."
+    "{i}An awkward silence hangs."
     show Grace neutral
     g "And this is supposed to...?"
 
@@ -372,7 +372,7 @@ label adaActualPuzzle1:
     $ quick_menu = True
     $ config.rollback_enabled = False
     window show
-    "Hirose's work computer. Grace and Ada are currently unable to access it."
+    "{i}Hirose's work computer. Grace and Ada are currently unable to access it."
     show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
     $ renpy.pause(0.5)
     if (tutorial_LGEasy == True):
@@ -526,8 +526,8 @@ label gotHirosePassword:
     window show
     $ quick_menu = True
     #Transition to Grace's Lab here
-    "Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
-    show Grace happy on left
+    "{i}Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
+    show Grace happy at left
     g "There. My keycard is now copying Hirose's access protocols."
     jump endChapterOne
 
@@ -564,7 +564,7 @@ label sortaroastada:
     a "Hm?"
     show Grace snarky
     g "Talking down to Tosh like that. I can't help but notice the giant grin on your face."
-    "Ada pauses, and she reaches up to touch her face."
+    "{i}Ada pauses, and she reaches up to touch her face."
     show Ada concerned
     a "I did not realize. I was not trying to be cruel, Grace."
     g "I didn't say you were cruel."
@@ -583,7 +583,7 @@ label actuallyroastada:
     g "I could've done that by myself, if I'd been so inclined."
     show Ada frustrated on right
     a "I beg to differ. I do not have to help you here, Grace."
-    "Grace sighs."
+    "{i}Grace sighs."
     show Grace neutral
     g "I didn't ask for you to help. You're the one who wanted to come along."
     show Ada Seething
@@ -629,12 +629,12 @@ label hirosePhoto_label:
     $ hirosePersonalItems_value += 1
     show image "hirosePhoto_closeup.png" at centerScreen
     window show
-    "A family portrait of Hirose, a young Grace, and Grace's father."
+    "{i}A family portrait of Hirose, a young Grace, and Grace's father."
     a "Is that your family?"
     g "Technically. My mother only half-counts."
     a "You were cute as a kid. What happened?"
     g "Ha. Funny."
-    "Grace starts to put the photo back."
+    "{i}Grace starts to put the photo back."
     a "Grace, I would look at the back of the photo."
     g "Why?"
     a "A calculated guess."
@@ -649,11 +649,12 @@ label hirosePhoto_label:
     jump hiroseBed
     
 label hirosePC_label:
+    show other darken
     show image "objects/hiroseComputer_closeup.png" at centerScreen
     window show
     $ quick_menu = True
     if hirosePhoto_inv == True and hirosePersonalItems_value == 3 :
-        g "Alright, I'll just log in, copy her credentials, and then we can leave."
+        g "All right, I'll just log in, copy her credentials, and then we can leave."
         # show image "hiroseComputerLogged.png"
         #play SFX typing
         hide image "hiroseComputer_closeup.png"

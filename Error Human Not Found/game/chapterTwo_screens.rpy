@@ -175,7 +175,7 @@ label graceLab_actions:
     
 label talkAdaGraceLab:
     scene bg G_deskArea
-    "Next click will jump."
+    "{i}Next click will jump."
     if(resume =="E"):
         jump resumeChapterTwo_E
     if(resume == "SbE"):
@@ -220,7 +220,7 @@ label gracePoster_inv:
     show other darken
     show image "objects/gracePoster_closeup.png" at centerScreen
     window show
-    "An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon."
+    "{i}An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon."
     hide image "objects/gracePoster_closeup.png"
     hide other darken
     #show Grace neutral
@@ -229,7 +229,7 @@ label gracePoster_inv:
     a "I detect no traces of curd."
     #show Grace annoyed
     g "No, Ada, what I meant was that I don't like how, er... to the point this poster is."
-    a "Is that not the point? To clearly indicate the poster's purpose while imparting the significance upon the viewer?"
+    a "Is that not the point? To clearly indicate the purpose of the poster while imparting the significance upon the viewer?"
     g "I want to keep defending my point, but that was solid."
     a "Solid logic is just another day on the job for me."
     jump graceLab_left1
@@ -254,33 +254,33 @@ label talkLynn:
         if(resume == "S"):
             jump lynnfinallyfrickinanswers_S
     if callAttempts <1:
-        "The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds."
         lynn "Hi!"
         #show Grace happy
         g "Lynn, hello. How are you--"
         lynn "You've reached my voicemail! Leave me a message after the beep."
-        "BEEP!"
-        "Grace hangs up."
+        "{i}BEEP!"
+        "{i}Grace hangs up."
         g "I feel deceived."
         $ callAttempts +=1
         jump balcony_actions
     if (callAttempts>0) and (callAttempts<4):
-        "The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds."
         lynn "Hi!"
         #show Grace frustrated
         g "..."
         lynn "You've reached my--"
-        "Grace hangs up."
+        "{i}Grace hangs up."
         g "Typical."
         $ callAttempts +=1
         jump balcony_actions
     if callAttempts>3:
-        "The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds."
         #show Grace frustrated
         g "Come on."
         lynn "Hi!"
         lynn "You've--"
-        "Grace hangs up."
+        "{i}Grace hangs up."
         $ balconyItems = 3 #CHANGE THIS. THIS IS JUST WHILE THE OTHER OBJECTS DO NOT EXIST
     jump balcony_actions
         

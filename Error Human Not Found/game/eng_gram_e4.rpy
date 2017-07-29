@@ -290,7 +290,7 @@ label eng_gram_e4:
     #attempts for players
     $ attempts = 8
     
-    call gamefile_e4
+    call gamefile_e4 from _call_gamefile_e4
 
 label gamefile_e4:
     #image moon = "images/blankeaeng_e4_tile.png"

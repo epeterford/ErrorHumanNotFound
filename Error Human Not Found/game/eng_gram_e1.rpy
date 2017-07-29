@@ -255,7 +255,7 @@ label eng_gram_e1:
     #attempts for players
     $ attempts = 8
     
-    call gamefile_e1
+    call gamefile_e1 from _call_gamefile_e1
 
     label gamefile_e1:
     call screen logicGatese1

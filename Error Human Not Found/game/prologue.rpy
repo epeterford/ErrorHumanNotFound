@@ -30,17 +30,17 @@ label prologue:
 #    play sound 
     show Grace neutral at basicfade#left at basicfade #with fade
     #Insert SFX Typing here
-    "Grace types away at her computer."
-    "Grace's bracelet beeps and flashes."
+    "{i}Grace types away at her computer.{/i}"
+    "{i}Grace's bracelet beeps and flashes.{/i}"
     
     #Insert SFX here
-    "DING. DING."
+    "{i}DING. DING."
  
     hide Grace neutral at basicfade
     show Grace annoyed at basicfade #at left with fade
     g "Hold on, I'm busy."
     #Insert SFX here
-    "DING! DING! DING!"
+    "{i}DING! DING! DING!{/i}"
  
     show Grace angry at basicfade
     g "Okay, okay, I get it!"
@@ -62,7 +62,7 @@ label answer:
  
     show Grace annoyed at left
     g "Really? A summons? I have so much work to do. Would it have killed her to just stop by my lab instead of having her secretary call on me? I am not her servant."
-    "Grace marches out of the room."
+    "{i}Grace marches out of the room."
     jump chambers
  
 label directChambers:
@@ -70,7 +70,7 @@ label directChambers:
     show Grace annoyed at left
     g "There's only one person who would call me at work after hours." 
     g "I suppose I should see what she wants."
-    "Grace shuts down her computer and exits the lab."
+    "{i}Grace shuts down her computer and exits the lab."
     jump chambers
 
 label chambers:
@@ -93,14 +93,14 @@ label thanks:
     show Tosh pleasant at right
     show Grace neutral at left
     g "Good evening to you, too."
-    "The secretary VI perks up and smiles at Grace."
+    "{i}The secretary VI perks up and smiles at Grace."
     secretary "You are most welcome. Help yourself to some complimentary oolong tea."
     show other darken
     show image "objects/tea_closeup.png" at centerScreen
-    "A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
     hide other darken
     hide image "objects/tea_closeup.png"
-    "Grace takes a sip."
+    "{i}Grace takes a sip."
     show Grace happy
     g "Ah, freshly made tea."
     secretary "The oxygen garden workers reported that this was their best harvest to date."
@@ -120,7 +120,7 @@ label shrug:
     g "As long as it means you will stop talking to me."
     show other darken
     show image "objects/tea_closeup.png" at centerScreen
-    "A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
     hide other darken
     hide image "objects/tea_closeup.png"
     show Grace happy
@@ -132,11 +132,11 @@ label shrug:
 label prologueResume1:
     scene bg conclaveDoor with fade #at basicfade
     #off screen dialogue from the Conclave ensues.
-    "Grace grows more and more impatient."
+    "{i}Grace grows more and more impatient."
     show Grace annoyed at left
     g "What is taking so long?"
-    "Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet."
-    "Voices can be heard from a crack in the door. Grace leans in to listen."
+    "{i}Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet."
+    "{i}Voices can be heard from a crack in the door. Grace leans in to listen."
     hide Grace annoyed
     
     h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to gain a grip on her and keep an eye on the other three elder AIs."
@@ -156,7 +156,7 @@ label prologueResume1:
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
     #insert SFX here
     scene bg conclave with fade #at basicfade
-    "The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
+    "{i}The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
     show Nevalinna speaking at right
@@ -177,7 +177,7 @@ label prologueResume1:
     g "Whatever, Godel."  
     h "That's enough, both of you."
     g "..."
-    "Hirose stares down Grace from her platform."
+    "{i}Hirose stares down Grace from her platform."
     g "Director, please inform me of current events involving Alpha."
     h "We are not exactly certain of the events that transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
@@ -216,7 +216,7 @@ label lessobvious:
     g "Did you look for anything that might suggest what could've occurred?"
     h "We're leaving that up to the investigators to figure out. As for you, please do as I instruct." 
     h " As difficult as it may be for you to believe, there are other people who are perfectly capable of answering what happened to Alpha."
-    g "Alright, fine. Keep me informed. I want to know what happened."
+    g "All right, fine. Keep me informed. I want to know what happened."
     jump prologueResume2
  
 label sassy:
@@ -234,7 +234,7 @@ label sassy:
     "A stare down between Grace and Hirose chills the room."
     g "Fine."
     show Grace snarky
-    "Grace turns to walk out of the room and speaks to herself."
+    "{i}Grace turns to walk out of the room and speaks to herself."
     g "We'll see about that."
     jump prologueResume2
  
@@ -247,7 +247,7 @@ label prologueResume2:
     scene bg G_main with fade #at basicfade
     window show
     $ quick_menu = True
-    "Grace enters her lab to be greeted with the sight of an android."
+    "{i}Grace enters her lab to be greeted with the sight of an android."
     show Grace surprised at left
      
     g "What the... Who are you? And what do you think you're doing in my lab?"
@@ -283,7 +283,7 @@ label prologueResume2:
 label boss:
     $ quick_menu = True
     show Grace snarky at left
-    g "Alright, but you follow my lead. And to be clear, if we get caught, I'm not taking the fall for you."
+    g "Okay, but you follow my lead. And to be clear, if we get caught, I'm not taking the fall for you."
     show Ada frustrated at right
     a "That is acceptable. I was not expecting you to anyway."
     g "While we're on the subject, don't expect anything from me outside of this investigation. I'll do the same for you."
@@ -301,7 +301,7 @@ label together:
     a "My thoughts exactly. I was not able to be there for him then, but I want to be here for him now."
     g "Who better to look into this than an AI and a researcher that knows this place like the back of her hand?"
     a "Humans memorize the backs of their hands?"
-    "Ada studies her hand."
+    "{i}Ada studies her hand."
     g "No--nevermind."
     a "Shall we get to it then? No point in waiting around to get caught."
     g "Absolutely."
@@ -328,9 +328,9 @@ label prologueResume3:
     show Grace neutral at left
     g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 
     g "We need to acquire her credentials to access the crime scene."
-    "The two start to leave." 
-    "Ada stumbles."
-    g "Err... are you going to be alright?"
+    "{i}The two start to leave." 
+    "{i}Ada stumbles."
+    g "Err... are you going to be all right?"
     show Ada amused at right
     a "It might take me a moment to get used to walking. But if a hominid like yourself could figure it out, then I anticipate little difficulty in doing so as well."
     jump chapterOne
