@@ -281,7 +281,7 @@ label eng_gram_e2:
     #attempts for players
     $ attempts = 8
     
-    call gamefile_e2
+    call gamefile_e2 from _call_gamefile_e2
 
 label gamefile_e2:
     #image moon = "images/blankTile.png"
@@ -1888,7 +1888,7 @@ label gamefile_e2:
         hide eaeng_e2_tile75
         hide eaeng_e2_tile76
         hide eaeng_e2_tile77
-        play sound GramLose
+        play sound gramLose
         $ attemptsLogicGate1 +=1
         jump gramEasyLose  
     
