@@ -549,7 +549,9 @@ label talkAdaHirosePersonal:
             "Crack a joke.":
                 jump toshgotwrecked
     else:
+        show Ada neutral at right
         a "Humans lack the capacity to retrieve stored information perfectly. It is likely your mother left some reminder of a password somewhere."
+        show Grace snarky at left
         g "I think you underestimate how much like a robot she is."
         window hide
         $ quick_menu = False
@@ -654,27 +656,41 @@ label hirosePC_label:
     window show
     $ quick_menu = True
     if hirosePhoto_inv == True and hirosePersonalItems_value == 3 :
+        hide other darken
+        hide image "objects/hiroseComputer_closeup.png"
+        show Grace neutral at left
         g "All right, I'll just log in, copy her credentials, and then we can leave."
         # show image "hiroseComputerLogged.png"
         #play SFX typing
-        hide image "hiroseComputer_closeup.png"
+        hide Ada
+        hide Grace
         #hide image "hiroseComputerLogged.png"
         jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
+        hide other darken
+        hide image "objects/hiroseComputer_closeup.png"
+        show Ada neutral at right
         a "We have the password. Are you sure you are ready? After we get the credentials we should not linger."
+        show Grace neutral at left
         g "I suppose I should take another look around."
-        hide image "hirosePhoto_closeup.png"
+        hide Grace
+        hide Ada
         window hide
         $ quick_menu = False
         jump hirosePersonalComputer
     else:
+        hide other darken
+        hide image "objects/hiroseComputer_closeup.png"
+        show Ada neutral at right
         a "Grace, if we attempt to log on without a concrete idea of the password, we will alert security to a breach."
+        show Grace neutral at left
         g "Right. I suppose I'll take another look around."
         g "Writing down a password kind of ruins the point of having one, though."
         a "Your mother is on the elderly side of the human age spectrum. Memory problems become more common."
         g "Please do tell her that. Make sure I'm there when you do."
         g "Come on, let's keep looking."
-        hide image "hirosePhoto_closeup.png"
+        hide Ada
+        hide Grace
         window hide
         $ quick_menu = False
         jump hirosePersonalComputer

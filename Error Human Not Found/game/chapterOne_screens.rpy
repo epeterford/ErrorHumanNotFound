@@ -656,7 +656,7 @@ label hiroseTea_label:
     show other darken
     show image "objects/hiroseTea_closeup.png" at centerScreen
     window show
-    "{i}A lukewarm cup of herbal tea. The lids on these reusable cups have a tendancy to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
+    "{i}A lukewarm cup of herbal tea. The lids on these reusable cups have a tendency to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
     hide image "objects/hiroseTea_closeup.png"
     hide other darken
     show Ada neutral at right
@@ -739,7 +739,7 @@ label hiroseRecorder_label:
     a "It does not seem that odd to me. The Director must always work at peak efficiency."
     show Grace neutral
     g "What does efficiency have to do with it?"
-    "Ada shrugs, although the motion is stiff."
+    "{i}Ada shrugs, although the motion is stiff."
     a "Perhaps she just prefers to read?"
     g "..."
     g "You've got me there."
@@ -989,7 +989,7 @@ label LGEasyHintsC2:
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
         $ quick_menu = False
         hide other darken
-        jump _easyC2
+        jump logicGate_easyC2
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
@@ -1260,6 +1260,6 @@ label gramEasyDone:
     
 label gramEasyLose:
     show other darken
-    image segmentComplete = "passwordFail.png"
-    show segmentComplete at centerScreen2
+    image gramEasyLoseFail = "passwordFail.png"
+    show gramEasyLoseFail at centerScreen2
     call screen gramEasyLose_scr

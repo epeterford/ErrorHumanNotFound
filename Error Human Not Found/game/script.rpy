@@ -111,6 +111,7 @@ image bg bbalconyTransition = "bg/Balcony_Transition.png"
 #Hallway Shots
 image bg Logic_Gate = "LOGIC_GATE_BG.png"
 image bg black = "blackScreen.png"
+image bg binary = "tileBackground.png"
 
 #Lab 2
 
