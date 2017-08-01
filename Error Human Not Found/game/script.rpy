@@ -243,6 +243,8 @@ label start:
     $ hirosePersonalItems = 0
     $ talkAdaHirosePersonal_value = 0
     $ hirosePersonalItems_value = 0
+    #Grace office variables
+    $ talkAdaGraceLab_times = 0
     $ graceRightDesk_value = 0
     $ graceLeft1Desk_value = 0
     $ graceLeft2Desk_value = 0

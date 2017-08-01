@@ -169,19 +169,49 @@ label chapterTwo_screens:
             
 label graceLab_actions:
     scene bg G_deskArea
+    #CHANGE the second desk when get last two items
+    if talkAdaGraceLab_times>0 and graceLeft1Desk_value == 3 and graceLeft2Desk_value == 1 and graceRightDesk_value==3:
+        if(resume =="E"):
+            jump resumeChapterTwo_E
+        if(resume == "SbE"):
+            jump resumeChapterTwo_SbE
+        if(resume == "S"):
+            jump resumeChapterTwo_S
     $ quick_menu = False
     window hide
     call screen graceLab_actionsScr
     
 label talkAdaGraceLab:
     scene bg G_deskArea
-    "{i}Next click will jump."
-    if(resume =="E"):
-        jump resumeChapterTwo_E
-    if(resume == "SbE"):
-         jump resumeChapterTwo_SbE
-    if(resume == "S"):
-         jump resumeChapterTwo_S
+    $ quick_menu = True
+    if (talkAdaGraceLab_times ==0):
+        if(resume =="E"):
+            jump talkAdaLab_E
+        if(resume == "SbE"):
+            jump talkAdaLab_SbE
+        if(resume == "S"):
+            jump talkAdaLab_S
+    if (talkAdaGraceLab_times ==1):
+        if(resume =="E"):
+            jump adaLabLoop1_E
+        if(resume == "SbE"):
+            jump adaLabLoop1_SbE
+        if(resume == "S"):
+            jump adaLabLoop1_S
+    if (talkAdaGraceLab_times >1) and (talkAdaGraceLab_times <4):
+        if(resume =="E"):
+            jump adaLabLoop2_E
+        if(resume == "SbE"):
+            jump adaLabLoop2_SbE
+        if(resume == "S"):
+            jump adaLabLoop2_S
+    if (talkAdaGraceLab_times >3):
+        if(resume =="E"):
+            jump adaLabLoop3_E
+        if(resume == "SbE"):
+            jump adaLabLoop3_SbE
+        if(resume == "S"):
+            jump adaLabLoop3_S
     
 label graceLab_inv:
     scene bg G_deskArea with fade

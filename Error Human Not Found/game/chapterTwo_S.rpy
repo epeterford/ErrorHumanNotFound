@@ -14,24 +14,129 @@ label chapterTwo_S:
     g "Forgive me if I don't find that reassuring."
     $ resume = "S"
     jump chapterTwo_screens
+    
+label talkAdaLab_S:
+    #show Ada neutral
+    a "Yes, Grace?"
+    menu:
+        "Strike up a conversation.":
+            jump tellmeaboutyoself_S
+        "Comment on Ada's functions.":
+            jump nicefunctionsgurl_S
+        "Set the record straight.":
+            jump listenhereyoulittle_S
 
-    #Begin Grace's Lab sequence.
-    #3 Different "areas" the player can look at, 7 total observable items.
-    #Grace's Desk Item 1: AI head prototype displayed in bust fashion. It's raw machinery with no plating and looks kind of like a terminator head. // Reaction Item
-    #In response; #show Ada concerned // a "Was I going to look like this?" // #show Grace neutral // g "No, this is just what you look like under your plating." // a "Oh..."
-    #Grace's Desk Item 2: A picture of Grace and her Father. // Reaction item
-    #In response: #show Grace sad // g "Come back soon, dad." //#show Ada neutral // a "Where is your father?" // #show Grace neutral // g "Somewhere more important."
-    #Grace's work area item 1: Unassembled Neural Network // database item
-    #Grace's comment: "Technically, I'm supposed to be assembling this third one. Instead I get to do more interesting things such as saving my career and not getting sent off the station."
-    #Grace's work area item 2: assortment of sticky notes stuck haphazardly around the area  // Database item
-    #Grace's comment: "So many man-hours condensed into a bunch of almost nonsensical notes. I really don't want to think about all the coffee I drank."
-    #Grace's computer item 1: Cessation of work notice. //Database item
-    #Grace's comment: "I didn't think you could stretch the phrase: ‘Sit still until we decide what to do with you' into a two-page email. The Conclave doesn't disappoint."
-    #Grace's computer item 2: Coffee mug with a happy cartoon robot on it. //Reaction item
-    #In response: #show Grace happy // "What's your take on this, Ada?" // #show Ada neutral // a "I think this robot's design is suboptimal at best." // #show Grace snarky // g "You're the picture of enthusiasm, Ada."
-    #Last item: motivational poster
+label tellmeaboutyoself_S:
+    $ points_E +=2
+    #show Grace neutral
+    g "Ada."
+    #show Ada nervous
+    a "Grace?"
+    #show Grace snarky
+    g "Don't be so jumpy. I'm just calling your name. What do you think about the Noah Sphere, now that you're not seeing it through security cameras?"
+    #show Ada neutral
+    a "Oh. Well, it is quite impressive. Not that it was not before, but I feel like I have only just noticed the scale of the place."
+    #show Grace annoyed
+    g "It's an amazing place, but it's a bit {i}too{/i} big sometimes, especially since you've got to walk everywhere."
+    #show Ada happy
+    a "Well, I do not know about your plans, but I fully intend to make a full tour of the Noah Sphere and visit all the places not covered by cameras."
+    #show Ada neutral
+    a "When I have the time, of course. Travel is no longer instantaneous for me."
+    #show Grace neutral
+    g "Honestly, I wish we could've just switched. I'd give a lot to just be able to port my consciousness around all over the place."
+    #show Ada happy
+    a "Who knows what the future holds? Perhaps one day, humanity will join us in the databases."
+    #show Grace snarky
+    g "Yeah, wouldn't that be something."
+    jump checkValue_S
 
-    # The player can explore the lab freely, but once they talk to Ada, insert a dinging noise and proceed with the following dialogue.
+label nicefunctionsgurl_S:
+    $ points_SbE +=2
+    #show Grace happy
+    g "Watching you walk around's got me thinking. We could use these bodies for a lot more than just AIs."
+    #show Ada concerned
+    a "What do you mean?"
+    #show Grace neutral
+    g "Think about it. We could probably give VIs the same treatment, you know, putting them into rudimentary bodies and program them to complete tasks. They could work in factories or high pollution zones."
+    #show Grace happy
+    g "Think about how many fields we could optimize, how many lives we could save."
+    #show Ada neutral
+    a "At the cost of VI lives?"
+    #show Grace annoyed
+    g "VIs don't have lives. They're jumped up computer programs."
+    #show Ada frustrated
+    a "I beg to differ."
+    #show Grace neutral
+    g "Am I out of line?"
+    a "Why the sudden concern? That does not seem like you."
+    g "Oh, I just feel like maybe I've been getting a little carried away."
+    g "A lot's going on right now."
+    #show Ada neutral
+    a "That is correct. This is refreshing to hear, Grace."
+    g "I'm glad."
+    jump checkValue_S
+
+label listenhereyoulittle_S:
+    $ points_S +=2
+    #show Grace neutral
+    g "Ada, come here."
+    #show Ada neutral
+    a "Yes, Grace?"
+    #show Grace annoyed
+    g "Listen to me, and listen to me good."
+    g "I don't ever want you to do something like what you just did again. Do you even realize what kind of trouble we're in if Tosh tells anyways?"
+    #show Ada concerned
+    a "She will not. She values her--"
+    #show Grace neutral
+    g "No, she very well might. If she realizes you were {i}bluffing{/i}, then she will definitely expose us."
+    #show Grace annoyed
+    g "I could lose my career over what you did!"
+    #show Ada frustrated
+    a "And did you just want me to stand there while Tosh contacted your mother? Maybe you would have felt better if I just let us get caught."
+    #show Grace annoyed
+    g "You're implying that I didn't have a plan."
+    jump checkValue_S
+                                              
+label checkValue_S:
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            #jump to subservient script
+            $ resume = "S"
+            jump graceLab_actions
+    if(points_E>points_SbE):
+        if(points_E>points_S):
+            $ resume = "E"
+            jump graceLab_actions
+    #all else fails jump separate but equal script
+    $ resume = "SbE"
+    jump graceLab_actions
+
+label adaLabLoop1_S:
+    #show Ada neutral
+    #show Grace neutral
+    a "Grace."
+    g "Have you happened to see anything on our way over here? Maybe anyone who looked at us funny?"
+    a "Plenty of workers looked at us as we walked here. They seemed to be more interested in me, however."
+    #show Grace neutral
+    g "No, I meant information that was useful."
+    #show Ada frustrated
+    a "No, Grace."
+
+    jump graceLab_actions
+    
+label adaLabLoop2_S:
+    a "Have you finished looking around?"
+    g "Don't rush me."
+    a "Fine, do not mind me then. I shall be on standby until you deem me worthy of your conversation."
+    g "I hear that."
+    jump graceLab_actions
+    
+label adaLabLoop3_S:
+    a "Is something bothering you, Grace?"
+    g "I'm starting to doubt why I'm even looking around in my lab. It's my own lab!"
+    a "Have you considered the possibility that whoever's truly responsible might have attempted to frame you?"
+    a "We do not have any time to waste..."
+    jump graceLab_actions
     
 label resumeChapterTwo_S:
     #show Grace happy
@@ -467,13 +572,106 @@ label lynnfinallyfrickinanswers_S:
     g "Lynn!"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
     g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"
-    lynn "Well, the Director told me I should take a short vacation. Called it ‘administrative leave'. I'm with my family on Earth."
+    lynn "Well, the Director told me I should take a short vacation. Called it 'administrative leave'. I'm with my family on Earth."
     g "That sounds nice. I've been having a crazy day up here."
     lynn "I can imagine, what with Alpha kicking the bucket. Poor thing."
     #show Ada frustrated
     a "Thing? Alpha was not just some {i}thing{/i} that happened to expire."
     lynn "Oh my. Another one? I'm sorry dear, it is sad, but at the end of the day it's not the same as a person dying."
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
+    menu:
+        "Agree with her":
+            jump agreewithsubservient_S
+        "Respectfully disagree with her.":
+            jump defendseperatebutequal_S
+        "Disagree completely.":
+            jump weareallequal_S
+    
+label agreewithsubservient_S:
+    $ points_S +=3
+    g "Thank you, Lynn. I'm glad to hear that we see eye-to-eye."
+    #show Ada seething
+    a "Grace? I suppose I should not be surprised to hear this {i}opinion{/i} from you."
+    #show Grace annoyed
+    g "It's not an opinion, Ada. It's a fact. AI are just run by a complex algorithm. There's nothing {i}alive{/i} about you."
+    a "What I truly do not understand is how a woman with a perspective like yours ever came to develope the very device that allows to me experience thought and emotion on a more human level."
+    a "The word 'hypocrisy' immediately highlights within my database."
+    g "Ada, I'm on the phone. This is not the time for one of your little outbursts."
+    lynn "Oh my… I didn't mean to create a scene."
+    g "No, Lynn, it isn't your fault. You were only speaking the truth."
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            #jump to subservient script
+            jump resumeLynn__S
+    if(points_E>points_SbE):
+        if(points_E>points_S):
+            jump resumeLynn__E
+    #all else fails jump separate but equal script
+    jump resumeLynn__SbE
+
+label defendseperatebutequal_S:
+    $ points_SbE +=3
+    g "With all due respect, Lynn, I can't say I see it the same way."
+    lynn "Do you mean to tell me you think AIs are just like us?"
+    lynn "Grace, sweetie..."
+    g "Well, no, not really. I mean, there are so many things about the AIs that are alien to us."
+    #show Ada seething
+    a "Grace?"
+    g "I don't mean that disrespectfully, Ada. There are lots of things we do that are alien to you too."
+    g "We're different, but that doesn't mean those differences can't be respected, you know?"
+    g "Even if we're not the same, we should all be treated with equal fairness."
+    #show Ada surprised
+    a "My apologies, Grace. I was not aware that you saw us as equal."
+    g "I've been a little stressed with everything going on. Sorry if you got the wrong idea."
+    #show Ada neutral
+    a "Apology accepted."
+    lynn "Oh to be young and full of idealism."
+    #show Grace annoyed
+    g "Huh?"
+    lynn "Don't worry. When you become an adult, you'll see the world in a much more realistic view."
+    g "I {i}am{/i} an adult."
+    lynn "Nonsense, you're still just a baby. You'll see when you're my age."
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            #jump to subservient script
+            jump resumeLynn__S
+    if(points_E>points_SbE):
+        if(points_E>points_S):
+            jump resumeLynn__E
+    #all else fails jump separate but equal script
+    jump resumeLynn__SbE
+
+label weareallequal_S:
+    $ points_E +=3
+    #show Grace snarky
+    g "Care to explain how it's not the same, Lynn?"
+    g "A body is a body, human or not."
+    lynn "Oh dear. You sound like Alan."
+    lynn "Machines aren't living creatures. They don't breathe. They don't drink. They don't eat."
+    lynn "They just do what they're programmed to do."
+    lynn "You really can't say that a broken machine is the same as the death of a living being."
+    #show Grace annoyed
+    g "You're not wrong, but those aren't the only things that matter. The AIs are capable of thinking and feeling like us. I'd like to think that makes our lives equal."
+    #show Ada concerned
+    a "My sensors indicate that you are indeed Grace Fortran, yet your words do not sound like her."
+    #show Grace neutral
+    g "Maybe I've been kinda harsh. Sorry if I gave you the wrong idea."
+    #show Ada neutral
+    a "Understood. Thank you, Grace."
+    lynn "It must be your limited social life that's led you to think that way."
+    #show Grace angry
+    g "{i}Excuse{/i} me?"
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            #jump to subservient script
+            jump resumeLynn__S
+    if(points_E>points_SbE):
+        if(points_E>points_S):
+            jump resumeLynn__E
+    #all else fails jump separate but equal script
+    jump resumeLynn__SbE
+    
+label resumeLynn_S:
     #show Ada seething
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
@@ -493,7 +691,7 @@ label lynnfinallyfrickinanswers_S:
     lynn "He snapped at me when I was just doing my job! Something came up red in the inspection and he was all over it."
     #show Grace surprised
     g "Really?"
-    lynn "Yeah. He told me he'd handle it. Said he didn't want to give such a delicate task to a ‘peon'. Whatever."
+    lynn "Yeah. He told me he'd handle it. Said he didn't want to give such a delicate task to a 'peon'. Whatever."
     g "Huh."
     #show Grace happy
     g "Well, I'll tell you what, Lynn, I'd hate to keep you from your family. It's good to hear from you."
