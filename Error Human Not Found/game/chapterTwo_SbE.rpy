@@ -243,6 +243,7 @@ label gettingin_SbE:
     a "Alpha!"
     "{i}Ada rushes to the side of the fallen AI."
     window hide
+    $ quick_menu = False
     scene bg balconyRamp with fade 
     $ renpy.pause(0.5)
     scene bg balconyCorner with fade
@@ -250,6 +251,7 @@ label gettingin_SbE:
     scene bg balconyLong with fade
     $ renpy.pause(0.5)
     scene bg balconyClose with fade
+    $ quick_menu = True
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     show Grace surprised
     g "Ada?"
