@@ -4,21 +4,14 @@ screen binaryMatch_med:
             button:
                 background None
                 if card["c_chosen"]:        # shows the face of the card
-                    #text card["c_value"]    # will show text
                     add card["c_value"]    # will show image
                     focus_mask card["c_value"]
                 else:                       # shows the back of the card
-                    #text "X"                # will show text
                     add "cardBack"                # will show image
                     focus_mask "cardBack"
                 action If ( (card["c_chosen"] or not can_clickMed), None, [SetDict(cards_listMed[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
                 
 init:
-#    python:
-#        def cards_shuffle(x):
-#            renpy.random.shuffle(x)
-#            return x
-        
     image A1_Med = "tileFront000.png"
     image A2_Med = "tileFront0.png"
     image B1_Med = "tileFront1.png"
@@ -40,7 +33,7 @@ label binaryMatchMedium:
     scene bg binary
     window hide
     $ quick_menu = False
-    $ attempts = 12
+    $ attempts = 18
     $ values_listMed = ["A1_Med", "A2_Med", "B1_Med", "B2_Med", "C1_Med", "C2_Med", "D1_Med", "D2_Med", "E1_Med", "E2_Med", "F1_Med", "F2_Med", "G1_Med", "G2_Med", "H1_Med", "H2_Med"]
     $ values_listMed = cards_shuffle(values_listMed)
     $ cards_listMed = []
@@ -100,24 +93,21 @@ label binaryMatchMedium:
             $ match = True
         if turned_cards_valuesMed[0]=="H2_Med" and turned_cards_valuesMed[1]=="H1_Med":
             $ match = True
-#        if turned_cards_values.count(turned_cards_values[0]) != len(turned_cards_values):
         if (match==True): 
             show binaryGreen at Position(xpos = 362, xanchor = 0, ypos = 899, yanchor = 0)
             $renpy.pause (1.0)
             hide binaryGreen
         
         if (match==False):
-            $ renpy.pause (1.0) #, hard = True)
+            show binaryRed at Position(xpos = 97, xanchor = 0, ypos = 899, yanchor = 0)
+            $renpy.pause (1.0)
             python:
                 for i in range (0, len(turned_cards_numbersMed) ):
                     cards_listMed[turned_cards_numbersMed[i]]["c_chosen"] = False
-            show binaryRed at Position(xpos = 97, xanchor = 0, ypos = 899, yanchor = 0)
-            $renpy.pause (1.0)
             hide binaryRed
         
             # If cards are matched, will check if player has opened all the cards
         if (attempts > 0):
-            $ renpy.pause (1.0, hard = True)
             python: 
                 for j in cards_listMed:
                     if j["c_chosen"] == False:
@@ -125,7 +115,6 @@ label binaryMatchMedium:
                 renpy.jump ("gameWin2")
 
         if (attempts ==0):
-            $ renpy.pause (1.0, hard = True)
             python: 
                 for j in cards_listMed:
                     if j["c_chosen"] == False:
@@ -135,41 +124,11 @@ label binaryMatchMedium:
         
 label gameWin2:
     "You won!"
-    hide A1_Med
-    hide A2_Med
-    hide B1_Med
-    hide B2_Med
-    hide C1_Med
-    hide C2_Med
-    hide D1_Med
-    hide D2_Med
-    hide E1_Med
-    hide E2_Med
-    hide F1_Med
-    hide F2_Med
-    hide G1_Med
-    hide G2_Med 
-    hide H1_Med 
-    hide H2_Med
+    hide screen binaryMatch_med
     jump doAgain
     
 label gameLose2:
     "You lose."
-    hide A1_Med
-    hide A2_Med
-    hide B1_Med
-    hide B2_Med
-    hide C1_Med
-    hide C2_Med
-    hide D1_Med
-    hide D2_Med
-    hide E1_Med
-    hide E2_Med
-    hide F1_Med
-    hide F2_Med
-    hide G1_Med
-    hide G2_Med 
-    hide H1_Med 
-    hide H2_Med
+    hide screen binaryMatch_med
     jump doAgain
                 

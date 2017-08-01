@@ -24,12 +24,15 @@ label doAgain:
     menu:
         "Binary match easy.":
             call binaryMatchEasy#memoria_game
-#        "Binary match medium.":
-#            call binaryMatchMedium
+        "Binary match medium.":
+            call binaryMatchMedium
+        "Binary match hard.":
+            call binaryMatchHard
         "End the game":
             jump endGame
     "Before the jump."
-    jump binaryMatchEasy
+    jump doAgain
+#    jump binaryMatchEasy
     # This ends the game.
     
 label endGame:
