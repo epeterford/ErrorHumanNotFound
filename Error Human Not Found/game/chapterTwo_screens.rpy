@@ -109,6 +109,15 @@ label chapterTwo_screens:
         text "[graceRightDesk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        if(gracePhoto_look == False):
+            imagebutton:
+                idle "objects/gracePhoto.png"
+                hover "objects/gracePhoto_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("gracePhoto_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -264,9 +273,26 @@ label gracePoster_inv:
     a "Solid logic is just another day on the job for me."
     jump graceLab_left1
     
-    #Comment need all the image buttons for objects
-    #Also need all the labels for the items
-    
+label gracePhoto_inv:
+    $ quick_menu = True
+    $ gracePhoto_look = True
+    $ graceRightDesk_value =+1
+    show other darken
+    show image "objects/gracePhoto_closeup.png" at centerScreen
+    window show
+    "{i}A framed picture of Grace and her father during the family's most recent vacation."
+    hide image "objects/gracePhoto_closeup.png"
+    hide other darken
+    show Ada neutral at right
+    a "Is this your fahter?"
+    show Grace happy at left 
+    g "I wish he was here, though. He's always out on projects."
+    show Ada happy 
+    a "Should it not be a positive thing that he has remained productive and employed?"
+    show Grace snarky
+    g "Oh, I know {i}that{/i}, it's just not having him around to keep Hirose distracted means she's alwyas got an eye on me."
+    jump graceLab_right
+
 label talkLynn:
     scene bg balconyClose
     if (balconyItems == 3) and (moprScene==False):
