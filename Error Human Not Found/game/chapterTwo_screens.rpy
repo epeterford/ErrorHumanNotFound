@@ -116,6 +116,24 @@ label chapterTwo_screens:
                 focus_mask True
                 action Jump("graceCandD_inv")
                 hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceBust_look == False):
+            imagebutton:
+                idle "objects/graceBust.png"
+                hover "objects/graceBust_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceBust_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceCoffee_look == False):
+            imagebutton:
+                idle "objects/graceCoffee.png"
+                hover "objects/graceCoffee_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceCoffee_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "button_empty.png"
             xpos 1630
@@ -136,6 +154,33 @@ label chapterTwo_screens:
         text "[graceRightDesk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        if(gracePhoto_look == False):
+            imagebutton:
+                idle "objects/gracePhoto.png"
+                hover "objects/gracePhoto_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("gracePhoto_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(gracePens_look == False):
+            imagebutton:
+                idle "objects/gracePens.png"
+                hover "objects/gracePens_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("gracePens_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceStickynotes_look == False):
+            imagebutton:
+                idle "objects/graceStickyNotes.png"
+                hover "objects/graceStickyNotes_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceStickyNotes_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -197,7 +242,7 @@ label chapterTwo_screens:
 label graceLab_actions:
     scene bg G_deskArea
     #CHANGE the second desk when get last two items
-    if talkAdaGraceLab_times>0 and graceLeft1Desk_value == 3 and graceLeft2Desk_value == 1 and graceRightDesk_value==3:
+    if talkAdaGraceLab_times>0 and graceLeft1Desk_value == 3 and graceLeft2Desk_value == 3 and graceRightDesk_value==3:
         if(resume =="E"):
             jump resumeChapterTwo_E
         if(resume == "SbE"):
@@ -212,6 +257,7 @@ label talkAdaGraceLab:
     scene bg G_deskArea
     $ quick_menu = True
     if (talkAdaGraceLab_times ==0):
+        $ talkAdaGraceLab_times +=1
         if(resume =="E"):
             jump talkAdaLab_E
         if(resume == "SbE"):
@@ -219,6 +265,7 @@ label talkAdaGraceLab:
         if(resume == "S"):
             jump talkAdaLab_S
     if (talkAdaGraceLab_times ==1):
+        $ talkAdaGraceLab_times +=1
         if(resume =="E"):
             jump adaLabLoop1_E
         if(resume == "SbE"):
@@ -226,6 +273,7 @@ label talkAdaGraceLab:
         if(resume == "S"):
             jump adaLabLoop1_S
     if (talkAdaGraceLab_times >1) and (talkAdaGraceLab_times <4):
+        $ talkAdaGraceLab_times +=1
         if(resume =="E"):
             jump adaLabLoop2_E
         if(resume == "SbE"):
@@ -233,6 +281,7 @@ label talkAdaGraceLab:
         if(resume == "S"):
             jump adaLabLoop2_S
     if (talkAdaGraceLab_times >3):
+        $ talkAdaGraceLab_times +=1
         if(resume =="E"):
             jump adaLabLoop3_E
         if(resume == "SbE"):
@@ -289,6 +338,8 @@ label gracePoster_inv:
     a "Is that not the point? To clearly indicate the purpose of the poster while imparting the significance upon the viewer?"
     g "I want to keep defending my point, but that was solid."
     a "Solid logic is just another day on the job for me."
+    $ quick_menu = False
+    window hide
     jump graceLab_left1
 
 label graceNeuralNetwork_inv:
@@ -321,6 +372,8 @@ label graceNeuralNetwork_inv:
     a "Ah, I see. I suppose you might say I think with my heart then?"
     show Grace happy
     g "Not a bad try, but you still need work on that humor."
+    $ quick_menu = False
+    window hide
     jump graceLab_left1
     
 label graceHardDrive_inv:
@@ -329,14 +382,72 @@ label graceHardDrive_inv:
     $ graceLeft1Desk_value +=1
     show other darken
     show image "objects/graceHarddrive_closeup.png" at centerScreen
-    "{i}Description to be inserted here at some point."
+    "{i}A semi-haphazardly stacked collection of external hard drives."
     hide other darken
     hide image "objects/graceHarddrive_closeup.png"
-    show Ada neutral at right
-    a "And maybe Tomas will give us actual dialogue."
-    show Grace snarky at left
-    g "Then again, maybe not."
+    show Ada concerned at right
+    a "Grace!"
+    show Grace surprised at left
+    g "What, Ada?! What's wrong?"
+    a "Your hard drives, Grace! You can't keep them like this."
+    "{i}Ada starts to pick up Grace's various hard drives."
+    show Grace annoyed
+    g "Hey! Stop that!"
+    "{i}Grace stops Ada."
+    g "What are you doing?"
+    show Ada neutral
+    a "These hard drives are just out here, instead of being in storage. These are very sub-optimal conditions."
+    show Grace neutral
+    g "And {i}what{/i} exacty is sub-optimal about keeping them where their information is needed?"
+    show Ada frustrated
+    a "What if something happens to them?"
+    show Grace snarky
+    g "Ada, the little baby hard drives will be fine. I'm still storing all my notes from the Markov project, so they need to be like that just a little bit longer." 
+    $ quick_menu = False
+    window hide
     jump graceLab_left1
+
+label graceBust_inv:
+    $ quick_menu = True
+    $ graceBust_look = True
+    $ graceLeft2Desk_value +=1
+    show other darken
+    show image "objects/graceBust_closeup.png" at centerScreen
+    "{i}The Conclave locked down any of Grace's computers attached to the central server, trying to ensure that she would stop working."
+    hide other darken
+    hide image "objects/graceBust_closeup.png"
+    show Grace snarky at left
+    g "What's your take on this, Ada?"
+    show Ada neutral at right
+    a "Hmm..."
+    a "The appearance of this robot is compatible with what humans find comfortable; however, the design itself is hardly optimal."
+    show Grace neutral
+    g "How so?"
+    show Ada concerned
+    a "This robot does not possess peripheral sensors, and it doesn't have any fingers. "
+    g "Noted."
+    jump graceLab_left2
+    
+label graceCoffee_inv:
+    $ quick_menu = True
+    $ graceCandD_look = True
+    $ graceLeft2Desk_value +=1
+    show other darken
+    show image "objects/graceCoffee_closeup.png" at centerScreen
+    "{i}A red mug with a cartoon robot on the side, the mascot of the popular brand, Starbots Coffee. On Earth, cafés for Starbots can be found in countires all over."
+    hide other darken
+    hide image "objects/graceCoffee_closeup.png"
+    show Grace snarky at left
+    g "What's your take on this, Ada?"
+    show Ada neutral at right
+    a "Hmm..."
+    a "The robot's appearance is compatible with what humans find comfortable; however, the design itself is hardly optimal."
+    show Grace neutral
+    g "How so?"
+    show Ada concerned
+    a "This robot does not possess peripheral sensors, and it doesn't have any fingers. "
+    g "Noted."
+    jump graceLab_left2
     
 label graceCandD_inv:
     $ quick_menu = True
@@ -353,13 +464,100 @@ label graceCandD_inv:
     g "That's exactly what this says."
     g "Roberta and the Conclave think they're so great with their higher-than-thou mentalities."
     a "They are effectively your superiors, though. Is that not correct?"
-    a "Will this impact your ability to assist me in uncovering the origin of Alpha's destruction?"
+    a "Will this impact your ability to assist me in uncovering the origin the destruction of Alpha?"
     g "Of course not. This is my career on the line, not theirs. If they don't like it, they can go debug my compiler."
     show Ada surprised
     a "Grace, are you sure that is an acceptable perspective to have?"
     g "I'll send them an apology when I decide to care."
+    $ quick_menu = False
+    window hide
     jump graceLab_left2
         
+label gracePhoto_inv:
+    $ quick_menu = True
+    $ gracePhoto_look = True
+    $ graceRightDesk_value +=1
+    show other darken
+    show image "objects/gracePhoto_closeup.png" at centerScreen
+    window show
+    "{i}A framed picture of Grace and her father during the family's most recent vacation."
+    hide image "objects/gracePhoto_closeup.png"
+    hide other darken
+    show Ada neutral at right
+    a "Is this your fatger?"
+    show Grace happy at left 
+    g "It is! This was from our vacation to the Hawaii Preserve."
+    show Grace sad
+    g "I wish he was here, though. He's always out on projects."
+    show Ada happy 
+    a "Should it not be a positive thing that he has remained productive and employed?"
+    show Grace snarky
+    g "Oh, I know {i}that{/i}, it's just not having him around to keep Hirose distracted means she's always got an eye on me."
+    $ quick_menu = False
+    window hide
+    jump graceLab_right
+    
+label gracePens_inv:
+    $ quick_menu = True
+    $ gracePens_look = True
+    $ graceRightDesk_value +=1
+    show other darken
+    show image "objects/gracePens_closeup.png" at centerScreen
+    window show
+    "{i}A ceramic cup containing several pens. With communication between humans and AI being so important on the Noah Sphere, not many scientists keep pens around. Most rely entirely on typed text that can easily be delivered and processed by AI."
+    hide image "objects/gracePens_closeup.png"
+    hide other darken
+    show Ada surprised at right
+    a "Are these pens? Why do you use such archaic tools?"
+    show Grace neutral at left
+    g "Hey, sometimes just writing something down is better than putting it on a computer."
+    show Ada surprised
+    a "Is collecting pens a human habit? This is the first I have heard of it."
+    show Grace snarky
+    g "I'd like to think that I'm about as defensive of my pens as the next person."
+    show Grace neutral
+    g "It's normal, I promise!"
+    show Ada neutral 
+    a "Note to self: Humans are territorial about writing implements."
+    $ quick_menu = False
+    window hide
+    jump graceLab_right
+    
+label graceStickyNotes_inv:
+    $ quick_menu = True
+    $ graceStickynotes_look = True
+    $ graceRightDesk_value +=1
+    show other darken
+    show image "objects/graceStickyNotes_closeup1.png" at centerScreen
+    "{i}A sprawl of binders, folders, and post-it notes scattered across the desk.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer."
+    "{i}One of Grace's notes. The image seems to be related to her feelings of the Conclave stifling her."
+    hide image "objects/graceStickyNotes_closeup1.png"
+    show image "objects/graceStickyNotes_closeup2.png" at centerScreen
+    "{i}A quick state machine for something Grace was working on. The doodle in the corner seems to indicate it did not go as planned."
+    hide image "objects/graceStickyNotes_closeup2.png"
+    show image "objects/graceStickyNotes_closeup3.png" at centerScreen
+    "{i}A diagram of an Arithmetic Logic Unit. This particular one can perform 16 functions."
+    hide image "objects/graceStickyNotes_closeup3.png"
+    show image "objects/graceStickyNotes_closeup4.png" at centerScreen
+    "{i}Part of the notes for Grace's work on Ada's neural network. Adding pain receptors prevents actions that would damage the chassis."
+    hide image "objects/graceStickyNotes_closeup4.png"
+    show image "objects/graceStickyNotes_closeup5.png" at centerScreen
+    "{i}This sketch seems somewhat like the mascot of the coffee shop on station. It was likely inspired by a late-night caffeine binge."
+    hide image "objects/graceStickyNotes_closeup5.png"
+    hide other darken
+    show Ada concerned at right
+    a "What {i}is{/i} all this?"
+    show Grace happy at left
+    g "These are all of my research notes for the Markov Project, and the occasional doodle."
+    a "But why? This is such an incredibly archaic form of information storage. Half of these notes are not even labelled {i}or{/i} legible."
+    show Grace snarky
+    g "And yet I know what they all mean."
+    show Ada neutral
+    a "Note to self: Humans are proud of their ability for abstract data storage."
+    $ quick_menu = False
+    window hide
+    jump graceLab_right
+    
 label talkLynn:
     scene bg balconyClose
     if (balconyItems == 3) and (moprScene==False):
