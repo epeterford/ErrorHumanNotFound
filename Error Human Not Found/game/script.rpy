@@ -231,6 +231,7 @@ label start:
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
     $ centerScreen2 = Position(xpos=0.5, xanchor =0.5, ypos =0.35, yanchor = 0.2)
     $ near_left = Position(xpos=0.25, ypos = 0.5)
+    #hirose variables
     $ hiroseTea_inv = False
     $ hiroseOfficeComputer = False
     $ hiroseTree_inv = False
@@ -248,6 +249,15 @@ label start:
     $ graceRightDesk_value = 0
     $ graceLeft1Desk_value = 0
     $ graceLeft2Desk_value = 0
+    $ graceNeuralNetwork_look = False
+    $ graceHardDrive_look = False
+    $ graceCandD_look = False
+    $ graceCoffee_look = False
+    $ graceBust_look = False
+    $ gracePhoto_look = False
+    $ gracePens_look = False
+    $ graceStickynotes_look = False
+    
     $ Logic_A_solved = False
     $ Logic_B_solved = False
     $ solved_LG_easy = False

@@ -63,6 +63,24 @@ label chapterTwo_screens:
                 focus_mask True
                 action Jump("gracePoster_inv")
                 hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceNeuralNetwork_look == False):
+            imagebutton:
+                idle "objects/graceNeuralNetwork.png"
+                hover "objects/graceNeuralNetwork_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceNeuralNetwork_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceHardDrive_look == False):
+            imagebutton:
+                idle "objects/graceHarddrive.png"
+                hover "objects/graceHarddrive_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceHardDrive_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -82,6 +100,23 @@ label chapterTwo_screens:
             
     screen graceLab_left2Scr:
         imagebutton:
+            idle "arrowR.png"
+            hover "arrowR_hover.png"
+            xpos 1730
+            ypos 710
+            focus_mask True
+            action Jump("graceLab_left1")
+            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if(graceCandD_look == False):
+            imagebutton:
+                idle "objects/graceC&D.png"
+                hover "objects/graceC&D_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("graceCandD_inv")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
             idle "button_empty.png"
             xpos 1630
             ypos 10
@@ -90,14 +125,6 @@ label chapterTwo_screens:
         text "[graceLeft2Desk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        imagebutton:
-            idle "arrowR.png"
-            hover "arrowR_hover.png"
-            xpos 1730
-            ypos 710
-            focus_mask True
-            action Jump("graceLab_left1")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen graceLab_right:
         imagebutton:
@@ -263,10 +290,76 @@ label gracePoster_inv:
     g "I want to keep defending my point, but that was solid."
     a "Solid logic is just another day on the job for me."
     jump graceLab_left1
+
+label graceNeuralNetwork_inv:
+    $ quick_menu = True
+    $ graceNeuralNetwork_look = True
+    $ graceLeft1Desk_value +=1
+    show other darken
+    show image "objects/graceNeuralNetwork_closeup1.png" at centerScreen
+    "{i}This diagram shows some of the connections in the human brain, mapped organically."
+    hide image "objects/graceNeuralNetwork_closeup1.png"
+    show image "objects/graceNeuralNetwork_closeup2.png" at centerScreen
+    "{i}This diagram represents a map of the human brain in terms of visible inputs that undergo processing--the hidden portion--and the visible outputs from those inputs."
+    hide image "objects/graceNeuralNetwork_closeup2.png"
+    show image "objects/graceNeuralNetwork_closeup3.png" at centerScreen
+    "{i}This diagram shows the neurons in the human brain, the inspiration for the neural networks Grace programmed."
+    hide image "objects/graceNeuralNetwork_closeup3.png"
+    show image "objects/graceNeuralNetwork_closeup4.png" at centerScreen
+    "{i}Some lines of Grace's code, written in an integrated development environment."
+    hide image "objects/graceNeuralNetwork_closeup4.png"
+    hide other darken
+    show Ada neutral at right
+    a "So, this is what is inside my head."
+    show Grace snarky at left
+    g "It's mounted in your chest, actually."
+    show Ada concerned
+    a "What?"
+    show Grace neutral
+    g "Yeah. You have a lot of processors in your head, but your actual core's in your chest. It's safer that way. Plus, the scale isn't exactly one-to-one with the human brain."
+    show Ada neutral
+    a "Ah, I see. I suppose you might say I think with my heart then?"
+    show Grace happy
+    g "Not a bad try, but you still need work on that humor."
+    jump graceLab_left1
     
-    #Comment need all the image buttons for objects
-    #Also need all the labels for the items
+label graceHardDrive_inv:
+    $ quick_menu = True
+    $ graceHardDrive_look = True
+    $ graceLeft1Desk_value +=1
+    show other darken
+    show image "objects/graceHarddrive_closeup.png" at centerScreen
+    "{i}Description to be inserted here at some point."
+    hide other darken
+    hide image "objects/graceHarddrive_closeup.png"
+    show Ada neutral at right
+    a "And maybe Tomas will give us actual dialogue."
+    show Grace snarky at left
+    g "Then again, maybe not."
+    jump graceLab_left1
     
+label graceCandD_inv:
+    $ quick_menu = True
+    $ graceCandD_look = True
+    $ graceLeft2Desk_value +=1
+    show other darken
+    show image "objects/graceC&D_closeup.png" at centerScreen
+    "{i}The Conclave locked down any of Grace's computers attached to the central server, trying to ensure that she would stop working."
+    hide other darken
+    hide image "objects/graceC&D_closeup.png"
+    show Ada neutral at right
+    a "It appears that you have been restricted from continuing your work. Is this because of Alpha?"
+    show Grace frustrated at left
+    g "That's exactly what this says."
+    g "Roberta and the Conclave think they're so great with their higher-than-thou mentalities."
+    a "They are effectively your superiors, though. Is that not correct?"
+    a "Will this impact your ability to assist me in uncovering the origin of Alpha's destruction?"
+    g "Of course not. This is my career on the line, not theirs. If they don't like it, they can go debug my compiler."
+    show Ada surprised
+    a "Grace, are you sure that is an acceptable perspective to have?"
+    g "I'll send them an apology when I decide to care."
+    jump graceLab_left2
+        
 label talkLynn:
     scene bg balconyClose
     if (balconyItems == 3) and (moprScene==False):
