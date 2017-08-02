@@ -1631,66 +1631,140 @@ label eng_gram_e1:
             $ and6in6 = True
 
 
-    if and5in1 == True:
+    if and5in1 == True and and1in2 == True:
         image eaeng_e1_tile182 = "leftTreegreenlong.png"
         image eaeng_e1_tile183 = "1_1_green.png"
-        play sound gramTree1
+        image eaeng_e1_tile184 = "rightTreegreenlong.png"
+        image eaeng_e1_tile185 = "1_1_green.png"
+        #play sound gramTree1
         show eaeng_e1_tile182 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e1_tile183 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
+        show eaeng_e1_tile184 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+        show eaeng_e1_tile185 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
         
-        if and3in3 == True:
-            image eaeng_e1_tile184 = "leftTreegreen.png"
-            image eaeng_e1_tile185 = "1_1_green.png"
-            image eaeng_e1_tile186 = "solutionLine.png"
-            image eaeng_e1_tile187 = "the.png"
-            play sound gramText1
-            show eaeng_e1_tile184 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile185 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
-            show eaeng_e1_tile186 at Position(xpos = 1025, xanchor = 0, ypos = 600, yanchor = 0)
-            show eaeng_e1_tile187 at Position(xpos = 990, xanchor = 0, ypos = 700, yanchor = 0)
-        if and3in3 == False:
-            hide eaeng_e1_tile184
-            hide eaeng_e1_tile185
-            hide eaeng_e1_tile186
-            hide eaeng_e1_tile187
-     
-        if and1in3 == True or and2in3 == True or and4in3 == True or and5in3 == True or and6in3 == True:
-            image eaeng_e1_tile188 = "leftTreered.png"
-            image eaeng_e1_tile189 = "1_1_red.png"
-            play sound gramTree4
-            show eaeng_e1_tile188 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile189 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in3 == False:
-            hide eaeng_e1_tile188
-            hide eaeng_e1_tile189
-
-        if and6in4 == True:
+        if and3in3 == True and and6in4 == True:
+            image eaeng_e1_tile186 = "leftTreegreen.png"
+            image eaeng_e1_tile187 = "1_1_green.png"
+            image eaeng_e1_tile188 = "solutionLine.png"
+            image eaeng_e1_tile189 = "the.png"
             image eaeng_e1_tile190 = "rightTreegreen.png"
             image eaeng_e1_tile191 = "1_1_green.png"
             image eaeng_e1_tile192 = "solutionLine.png"
             image eaeng_e1_tile193 = "password.png"
-            play sound gramText1
+            #play sound gramText1
+            show eaeng_e1_tile186 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile187 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile188 at Position(xpos = 1025, xanchor = 0, ypos = 600, yanchor = 0)
+            show eaeng_e1_tile189 at Position(xpos = 990, xanchor = 0, ypos = 700, yanchor = 0)
             show eaeng_e1_tile190 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e1_tile191 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e1_tile192 at Position(xpos = 1175, xanchor = 0, ypos = 600, yanchor = 0)
             show eaeng_e1_tile193 at Position(xpos = 1145, xanchor = 0, ypos = 700, yanchor = 0)
-        if and6in4 == False:
+        if and3in3 == False or and6in4 == False:
+            hide eaeng_e1_tile186
+            hide eaeng_e1_tile187
+            hide eaeng_e1_tile188
+            hide eaeng_e1_tile189
             hide eaeng_e1_tile190
             hide eaeng_e1_tile191
             hide eaeng_e1_tile192
             hide eaeng_e1_tile193
 
-        if and1in4 == True or and2in4 == True or and3in4 == True or and4in4 == True or and5in4 == True:
-            image eaeng_e1_tile194 = "rightTreered.png"
-            image eaeng_e1_tile195 = "1_1_red.png"
-            play sound gramTree4
-            show eaeng_e1_tile194 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile195 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in4 == False:
+        if and4in5 == True and and2in6 == True:
+            image eaeng_e1_tile194 = "leftTreegreen.png"
+            image eaeng_e1_tile195 = "1_1_green.png"
+            image eaeng_e1_tile196 = "solutionLine.png"
+            image eaeng_e1_tile197 = "is.png"
+            image eaeng_e1_tile198 = "rightTreegreen.png"
+            image eaeng_e1_tile199 = "1_1_green.png"
+            image eaeng_e1_tile200 = "solutionLine.png"
+            image eaeng_e1_tile201 = "oolong.png"
+            #play sound gramText2
+            show eaeng_e1_tile194 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile195 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile196 at Position(xpos = 1325, xanchor = 0, ypos = 600, yanchor = 0)
+            show eaeng_e1_tile197 at Position(xpos = 1298, xanchor = 0, ypos = 700, yanchor = 0)
+            show eaeng_e1_tile198 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile199 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile200 at Position(xpos = 1475, xanchor = 0, ypos = 600, yanchor = 0)
+            show eaeng_e1_tile201 at Position(xpos = 1450, xanchor = 0, ypos = 700, yanchor = 0)
+        if and4in5 == False or and2in6 == False:
             hide eaeng_e1_tile194
             hide eaeng_e1_tile195
+            hide eaeng_e1_tile196
+            hide eaeng_e1_tile197
+            hide eaeng_e1_tile198
+            hide eaeng_e1_tile199
+            hide eaeng_e1_tile200
+            hide eaeng_e1_tile201
 
-    if and5in1 == False:
+
+        if (and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True) and (and1in6 == True or and3in6 == True or and4in6 == True or and5in6 == True or and6in6 == True):
+            image eaeng_e1_tile202 = "leftTreered.png"
+            image eaeng_e1_tile203 = "1_1_red.png"
+            image eaeng_e1_tile204 = "rightTreered.png"
+            image eaeng_e1_tile205 = "1_1_red.png"
+            #play sound gramTree5
+            show eaeng_e1_tile202 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile203 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile204 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile205 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in5 == False or and1in6 == False:
+            hide eaeng_e1_tile202
+            hide eaeng_e1_tile203
+            hide eaeng_e1_tile204
+            hide eaeng_e1_tile205
+
+        if and4in5 == True and (and1in6 == True or and3in6 == True or and5in6 == True or and6in6 == True) or and2in6 == True and (and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True):
+            image eaeng_e1_tile206 = "leftTreered.png"
+            image eaeng_e1_tile207 = "1_1_red.png"
+            image eaeng_e1_tile208 = "rightTreered.png"
+            image eaeng_e1_tile209 = "1_1_red.png"
+            #play sound gramTree5
+            show eaeng_e1_tile206 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile207 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile208 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile209 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in5 == False or and1in6 == False:
+            hide eaeng_e1_tile206
+            hide eaeng_e1_tile207
+            hide eaeng_e1_tile208
+            hide eaeng_e1_tile209
+
+        if (and1in3 == True or and2in3 == True or and4in3 == True or and5in3 == True or and6in3 == True) and (and1in4 == True or and2in4 == True or and3in4 == True or and4in4 == True or and5in4 == True):
+            image eaeng_e1_tile210 = "leftTreered.png"
+            image eaeng_e1_tile211 = "1_1_red.png"
+            image eaeng_e1_tile212 = "rightTreered.png"
+            image eaeng_e1_tile213 = "1_1_red.png"
+            #play sound gramTree4
+            show eaeng_e1_tile210 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile211 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile212 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile213 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in3 == False:
+            hide eaeng_e1_tile210
+            hide eaeng_e1_tile211
+            hide eaeng_e1_tile212
+            hide eaeng_e1_tile213
+
+        if and3in3 == True and (and1in4 == True or and2in4 == True or and4in4 == True or and5in4 == True) or and6in4 == True and (and1in3 == True or and2in3 == True or and4in3 == True or and3in4 == True):
+            image eaeng_e1_tile214 = "leftTreered.png"
+            image eaeng_e1_tile215 = "1_1_red.png"
+            image eaeng_e1_tile216 = "rightTreered.png"
+            image eaeng_e1_tile217 = "1_1_red.png"
+            #play sound gramTree4
+            show eaeng_e1_tile214 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile215 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
+            show eaeng_e1_tile216 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
+            show eaeng_e1_tile217 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
+        elif and1in3 == False or and1in4 == False: 
+            hide eaeng_e1_tile214
+            hide eaeng_e1_tile215
+            hide eaeng_e1_tile216
+            hide eaeng_e1_tile217
+
+
+    if and5in1 == False or and1in2 == False:
         hide eaeng_e1_tile182
         hide eaeng_e1_tile183
         hide eaeng_e1_tile184
@@ -1705,67 +1779,6 @@ label eng_gram_e1:
         hide eaeng_e1_tile193
         hide eaeng_e1_tile194
         hide eaeng_e1_tile195
-
-    if and1in2 == True:
-        image eaeng_e1_tile196 = "rightTreegreenlong.png"
-        image eaeng_e1_tile197 = "1_1_green.png"
-        play sound gramTree1
-        show eaeng_e1_tile196 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
-        show eaeng_e1_tile197 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
-
-        if and4in5 == True:
-            image eaeng_e1_tile198 = "leftTreegreen.png"
-            image eaeng_e1_tile199 = "1_1_green.png"
-            image eaeng_e1_tile200 = "solutionLine.png"
-            image eaeng_e1_tile201 = "is.png"
-            play sound gramText2
-            show eaeng_e1_tile198 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile199 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
-            show eaeng_e1_tile200 at Position(xpos = 1325, xanchor = 0, ypos = 600, yanchor = 0)
-            show eaeng_e1_tile201 at Position(xpos = 1298, xanchor = 0, ypos = 700, yanchor = 0)
-        if and4in5 == False:
-            hide eaeng_e1_tile198
-            hide eaeng_e1_tile199
-            hide eaeng_e1_tile200
-            hide eaeng_e1_tile201
-
-        if and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True:
-            image eaeng_e1_tile202 = "leftTreered.png"
-            image eaeng_e1_tile203 = "1_1_red.png"
-            play sound gramTree5
-            show eaeng_e1_tile202 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile203 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in4 == False:
-            hide eaeng_e1_tile202
-            hide eaeng_e1_tile203
-
-        if and2in6 == True:
-            image eaeng_e1_tile204 = "rightTreegreen.png"
-            image eaeng_e1_tile205 = "1_1_green.png"
-            image eaeng_e1_tile206 = "solutionLine.png"
-            image eaeng_e1_tile207 = "oolong.png"
-            play sound gramText1
-            show eaeng_e1_tile204 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile205 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
-            show eaeng_e1_tile206 at Position(xpos = 1475, xanchor = 0, ypos = 600, yanchor = 0)
-            show eaeng_e1_tile207 at Position(xpos = 1450, xanchor = 0, ypos = 700, yanchor = 0)
-        if and2in6 == False:
-            hide eaeng_e1_tile204
-            hide eaeng_e1_tile205
-            hide eaeng_e1_tile206
-            hide eaeng_e1_tile207
-
-        if and1in6 == True or and3in6 == True or and4in6 == True or and5in6 == True or and6in6 == True:
-            image eaeng_e1_tile208 = "rightTreered.png"
-            image eaeng_e1_tile209 = "1_1_red.png"
-            play sound gramTree5
-            show eaeng_e1_tile208 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e1_tile209 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in4 == False:
-            hide eaeng_e1_tile208
-            hide eaeng_e1_tile209
-    
-    if and1in2 == False:
         hide eaeng_e1_tile196
         hide eaeng_e1_tile197
         hide eaeng_e1_tile198
@@ -1780,96 +1793,124 @@ label eng_gram_e1:
         hide eaeng_e1_tile207
         hide eaeng_e1_tile208
         hide eaeng_e1_tile209
+        hide eaeng_e1_tile210
+        hide eaeng_e1_tile211
+        hide eaeng_e1_tile212
+        hide eaeng_e1_tile213
+        hide eaeng_e1_tile214
+        hide eaeng_e1_tile215
+        hide eaeng_e1_tile216
+        hide eaeng_e1_tile217
 
     
-    if and1in1 == True or and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True:
-         image eaeng_e1_tile210 = "leftTreeredlong.png"
-         image eaeng_e1_tile211 = "1_1_red.png"
-         play sound gramTree4
-         show eaeng_e1_tile210 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
-         show eaeng_e1_tile211 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
-    elif and1in1 == False:
-         hide eaeng_e1_tile210
-         hide eaeng_e1_tile211
+    if (and1in1 == True or and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True) and (and2in2 == True or and3in2 == True or and4in2 == True or and5in2 == True or and6in2 == True):
+         image eaeng_e1_tile218 = "leftTreeredlong.png"
+         image eaeng_e1_tile219 = "1_1_red.png"
+         image eaeng_e1_tile220 = "rightTreeredlong.png"
+         image eaeng_e1_tile221 = "1_1_red.png"
+         #play sound gramTree4
+         show eaeng_e1_tile218 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
+         show eaeng_e1_tile219 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
+         show eaeng_e1_tile220 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+         show eaeng_e1_tile221 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
+    elif and1in1 == False or and2in2 == False:
+         hide eaeng_e1_tile218
+         hide eaeng_e1_tile219
+         hide eaeng_e1_tile220
+         hide eaeng_e1_tile221
 
-    if and2in2 == True or and3in2 == True or and4in2 == True or and5in2 == True or and6in2 == True:
-         image eaeng_e1_tile212 = "rightTreeredlong.png"
-         image eaeng_e1_tile213 = "1_1_red.png"
-         play sound gramTree3
-         show eaeng_e1_tile212 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
-         show eaeng_e1_tile213 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
-    elif and2in2 == False:
-         hide eaeng_e1_tile212
-         hide eaeng_e1_tile213
+    if and5in1 == True and (and2in2 == True or and3in2 == True or and4in2 == True or and6in2 == True) or and1in2 == True and (and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True):
+         image eaeng_e1_tile222 = "leftTreeredlong.png"
+         image eaeng_e1_tile223 = "1_1_red.png"
+         image eaeng_e1_tile224 = "rightTreeredlong.png"
+         image eaeng_e1_tile225 = "1_1_red.png"
+         show eaeng_e1_tile222 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
+         show eaeng_e1_tile223 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
+         show eaeng_e1_tile224 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+         show eaeng_e1_tile225 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
+    elif and2in2 == False or and2in1 == False:
+         hide eaeng_e1_tile222
+         hide eaeng_e1_tile223
+         hide eaeng_e1_tile224
+         hide eaeng_e1_tile225
+
 
     #win conditions
     if and5in1 == True and and3in3 == True and and6in4 == True and and1in2 == True and and4in5 == True and and2in6 == True: 
-        image eaeng_e1_tile214 = "letterP.png"
-        image eaeng_e1_tile215 = "letterJ.png"
-        image eaeng_e1_tile216 = "letterM.png"
-        image eaeng_e1_tile217 = "letterL.png"
-        image eaeng_e1_tile218 = "letterN.png"
-        image eaeng_e1_tile219 = "letterK.png"
-        show eaeng_e1_tile214 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
-        show eaeng_e1_tile215 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
-        show eaeng_e1_tile216 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
-        show eaeng_e1_tile217 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
-        show eaeng_e1_tile218 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
-        show eaeng_e1_tile219 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+        image eaeng_e1_tile226 = "letterP.png"
+        image eaeng_e1_tile227 = "letterJ.png"
+        image eaeng_e1_tile228 = "letterM.png"
+        image eaeng_e1_tile229 = "letterL.png"
+        image eaeng_e1_tile230 = "letterN.png"
+        image eaeng_e1_tile231 = "letterK.png"
+        show eaeng_e1_tile226 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
+        show eaeng_e1_tile227 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
+        show eaeng_e1_tile228 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
+        show eaeng_e1_tile229 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
+        show eaeng_e1_tile230 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
+        show eaeng_e1_tile231 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
         play sound gramWin
-        jump gramEasyDone
+        "Access Gained"
+
+        jump eng_gram_e1
     if slot_name == "null":
         $attempts +=1
 
     $attempts -=1
     if attempts ==0:
-        image eaeng_e1_tile214 = "letterP.png"
-        image eaeng_e1_tile215 = "letterJ.png"
-        image eaeng_e1_tile216 = "letterM.png"
-        image eaeng_e1_tile217 = "letterL.png"
-        image eaeng_e1_tile218 = "letterN.png"
-        image eaeng_e1_tile219 = "letterK.png"
-        show eaeng_e1_tile214 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
-        show eaeng_e1_tile215 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
-        show eaeng_e1_tile216 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
-        show eaeng_e1_tile217 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
-        show eaeng_e1_tile218 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
-        show eaeng_e1_tile219 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
-        hide tile42
-        hide tile43
-        hide tile44
-        hide tile45
-        hide tile46
-        hide tile47
-        hide tile48
-        hide tile49
-        hide tile50
-        hide tile51
-        hide tile52
-        hide tile53
-        hide tile54
-        hide tile55
-        hide tile56
-        hide tile61
-        hide tile62
-        hide tile63
-        hide tile64
-        hide tile65
-        hide tile66
-        hide tile67
-        hide tile68
-        hide tile69
-        hide tile70
-        hide tile71
-        hide tile72
-        hide tile73
-        hide tile74
-        hide tile75
-        hide tile76
-        hide tile77
+        image eaeng_e1_tile232 = "letterP.png"
+        image eaeng_e1_tile233 = "letterJ.png"
+        image eaeng_e1_tile234 = "letterM.png"
+        image eaeng_e1_tile235 = "letterL.png"
+        image eaeng_e1_tile236 = "letterN.png"
+        image eaeng_e1_tile237 = "letterK.png"
+        show eaeng_e1_tile232 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
+        show eaeng_e1_tile233 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
+        show eaeng_e1_tile234 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
+        show eaeng_e1_tile235 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
+        show eaeng_e1_tile236 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
+        show eaeng_e1_tile237 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+        hide eaeng_e1_tile182
+        hide eaeng_e1_tile183
+        hide eaeng_e1_tile184
+        hide eaeng_e1_tile185
+        hide eaeng_e1_tile186
+        hide eaeng_e1_tile187
+        hide eaeng_e1_tile188
+        hide eaeng_e1_tile189
+        hide eaeng_e1_tile190
+        hide eaeng_e1_tile191
+        hide eaeng_e1_tile192
+        hide eaeng_e1_tile193
+        hide eaeng_e1_tile194
+        hide eaeng_e1_tile195
+        hide eaeng_e1_tile196
+        hide eaeng_e1_tile197
+        hide eaeng_e1_tile198
+        hide eaeng_e1_tile199
+        hide eaeng_e1_tile200
+        hide eaeng_e1_tile201
+        hide eaeng_e1_tile202
+        hide eaeng_e1_tile203
+        hide eaeng_e1_tile204
+        hide eaeng_e1_tile205
+        hide eaeng_e1_tile206
+        hide eaeng_e1_tile207
+        hide eaeng_e1_tile208
+        hide eaeng_e1_tile209
+        hide eaeng_e1_tile210
+        hide eaeng_e1_tile211
+        hide eaeng_e1_tile212
+        hide eaeng_e1_tile213
+        hide eaeng_e1_tile214
+        hide eaeng_e1_tile215
+        hide eaeng_e1_tile216
+        hide eaeng_e1_tile217
         play sound gramLose
         $ attemptsLogicGate1 +=1
-        jump gramEasyLose
+        "You Lose Try Again"
+
+        jump eng_gram_e1
     
 
 #    if and1in1 == True or and2in1 ==True or and3in1 ==True or and4in1 ==True:
