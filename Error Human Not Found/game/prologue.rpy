@@ -154,6 +154,7 @@ label prologueResume1:
     h "When will the external investigators be here?"
     cray "Eighteen hours, Director."
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
+    
     #insert SFX here
     scene bg conclaveOccupied with fade #at basicfade
     "{i}The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
@@ -161,10 +162,13 @@ label prologueResume1:
     show Grace frustrated at left
     show Nevalinna speaking at right
     neva "What is the meaning of this, Doctor Fortran?"
-    hide Nevalinna speaking
+    hide Nevalinna
+    show Godel speaking at right
     godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
+    show Cray speaking at center
     cray "Director, are you just going to allow--"
     h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
+    hide Godel
     g "I couldn't help but overhear. Especially with Cray's voice being so loud."
     cray "Excuse me, but--"
     g "What's going on? What happened to Alpha?"
@@ -173,6 +177,7 @@ label prologueResume1:
     g "My tone is always reasonable. I want to know what happened to the AI I was working with."
     godel "That's not the proper way you speak to the Director. Check your manners. "
     g "Mind your own business."
+    show Godel speaking at right
     godel "Well, I've never!"
     g "Whatever, Godel."  
     h "That's enough, both of you."
@@ -182,6 +187,7 @@ label prologueResume1:
     h "We are not exactly certain of the events that transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
     g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
+    show Cray speaking at center
     cray "That's what we don't understand, Alpha was--"
     h "Like I stated, we are not positive of the reason yet. We ordered a team of external investigators to inspect the situation."
     g "What? Why external investigators? We couldn't keep this among our own crew?"
