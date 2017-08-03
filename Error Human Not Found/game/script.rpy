@@ -24,7 +24,10 @@ define mopr = Character("M.O.P.R", color="#ad0000")
 #define = Character("", color="#000000")
 
 #Sprites for the Conclave
-image Nevalinna speaking = "sprites/nevalinna_speaking.png"
+image Nevalinna speaking = "sprites/Nevalinna.png"
+image Cray speaking = "sprites/Cray.png"
+image Knuth speaking = "sprites/Knuth.png"
+image Godel speaking = "sprites/Godel.png"
 image Grace snarky = "sprites/grace_snarky.png"
 image Grace happy = "sprites/grace_happy.png"
 image Grace angry = "sprites/grace_angry.png"
@@ -79,6 +82,7 @@ image bg gramEasy7 = "easyGrammar_Tut7.png"
 image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
 image bg conclaveDoor = "bg/ConclaveReception_Close.png"
 image bg conclave = "bg/Conclave_Proper.png"
+image bg conclaveOccupied = "bg/Conclave_Occupied.png"
 image other darken = "blackout.png"
                        
 #Hirose's Space

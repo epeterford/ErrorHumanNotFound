@@ -155,7 +155,7 @@ label prologueResume1:
     cray "Eighteen hours, Director."
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
     #insert SFX here
-    scene bg conclave with fade #at basicfade
+    scene bg conclaveOccupied with fade #at basicfade
     "{i}The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
