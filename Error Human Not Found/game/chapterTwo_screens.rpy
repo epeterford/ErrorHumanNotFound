@@ -456,7 +456,7 @@ label graceBust_inv:
     
 label graceCoffee_inv:
     $ quick_menu = True
-    $ graceCandD_look = True
+    $ graceCoffee_look = True
     $ graceLeft2Desk_value +=1
     show other darken
     show image "objects/graceCoffee_closeup.png" at centerScreen

@@ -461,7 +461,11 @@ label enterthemopr_S:
     "{i}Grace kneels down."
     show Ada concerned
     a "What are you doing, Grace?"
+    hide Ada
+    hide Grace
+    hide Mopr
     #choice 3
+    $ quick_menu = False
     menu:
         "Let her know you've got it handled.":
             jump igotit_S
@@ -497,6 +501,7 @@ label igotit_S:
 label leavemealoneada_S:
     $ points_S +=2
     show Grace frustrated at left
+    show Mopr at center
     g "Not now, Ada. I know what I'm doing."
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
     g "Did I ask for your help? I've got this, on my own level, thank you very much."

@@ -166,21 +166,25 @@ label prologueResume1:
     hide Nevalinna
     show Godel speaking at right
     godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
-    show Cray speaking at center
-    cray "Director, are you just going to allow--"
-    h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
     hide Godel
+    show Cray speaking at right
+    cray "Director, are you just going to allow--"
+    hide Cray
+    h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
     g "I couldn't help overhearing. Cray talks awfully loud for a conversation that is supposedly hush-hush."
+    show Cray speaking at right
     cray "Excuse me, but--"
     g "What's going on? What happened to Alpha?"
+    hide Cray at right
     #show director neutral
     h "Once you take on a more reasonable tone, we'll discuss what occurred."
     g "My tone is always {i}reasonable{/i}. I want to know what happened to the AI I was working with."
+    show Godel speaking at right
     godel "That's not the proper way you speak to the Director. Check your manners. "
     g "Mind your own business."
-    show Godel speaking at right
     godel "Well, I've never!"
     g "Whatever, Godel."  
+    hide Godel
     h "That's enough, both of you."
     g "..."
     "{i}Hirose stares down Grace from her platform."
@@ -188,8 +192,9 @@ label prologueResume1:
     h "We are not certain of what transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
     g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
-    show Cray speaking at center
+    show Cray speaking at right
     cray "That's what we don't understand, Alpha was--"
+    hide Cray
     h "As I said, the root cause is yet to be determined. We ordered a team of external investigators to inspect the situation."
     g "What? Why external investigators? We couldn't keep this among our own crew?"
     h "Almost everyone on the station worked with Alpha." 
@@ -197,7 +202,9 @@ label prologueResume1:
     g "Everything was running smoothly as of yesterday, including his neural network." 
     g "Any type of malfunction should have been caught in the system. I just can't believe something like this happened."
     g "All glitches were worked out with the prototype. This cannot be random chance."
+    show Cray speaking at right
     cray "We can't believe it either, we--"
+    hide Cray
     h "Grace, you were summoned today because of your involvement with Alpha's process."
     h "Your research shall be suspended until we have a clear idea of what happened."
     

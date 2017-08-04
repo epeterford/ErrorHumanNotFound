@@ -449,7 +449,11 @@ label enterthemopr_SbE:
     "{i}Grace kneels down."
     show Ada concerned
     a "What are you doing, Grace?"
+    hide Ada
+    hide Grace
+    hide Mopr
     #choice 3
+    $ quick_menu = False
     menu:
         "Let her know you've got it handled.":
             jump igothisada_SbE
@@ -481,12 +485,16 @@ label igothisada_SbE:
 label shutupada_SbE:
     $ points_S +=2
     show Grace frustrated at left
+    show Mopr at center
     g "Not now, Ada. I know what I'm doing."
+    show Ada annoyed at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
     g "Did I ask for your help? I've got this, on my own level, thank you very much."
     a "I detect sarcasm in your behavior."
+    show Grace snarky
     g "No, really?"
     a "..."
+    show Grace frustrated
     g "I appreciate that you have your capabilities as an android, but in case you need a reminder, us {i}humans{/i} created you."
     a "I am aware of that. I did not--"
     g "How about we stop talking so we don't get caught? And by that, I mean you let me do my job."
@@ -505,6 +513,7 @@ label shutupada_SbE:
 label alilhelphere_SbE:
     $ points_E +=2
     show Grace neutral at left
+    show Mopr at center
     g "If you talk it, I'm sure you'd like it."
     a "What do you mean?"
     g "My dad always talked to machines that we worked on together."
@@ -529,6 +538,7 @@ label alilhelphere_SbE:
     jump exitthemopr_SbE
 
 label exitthemopr_SbE:
+    show Mopr at center
     mopr "[[Questioning beep boop?]"
     show Grace happy at left
     g "Don't worry about it. Tell you what, why don't you go do the rest of your cycle, hmm?"
