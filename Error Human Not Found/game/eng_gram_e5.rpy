@@ -1895,19 +1895,21 @@ label gamefile_e5:
         show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
         show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
         play sound gramWin
-
-        jump eng_gram_e5
+        $ renpy.pause(1.0)
+        jump gramEasyDone
     if slot_name == "null":
         $attempts +=1
 
     $attempts -=1
     if attempts ==0:
+        play sound gramLose
         show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0)
         show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)
         show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)
         show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
         show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
         show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
+        $ renpy.pause(1.0)
         hide eaeng_e5_tile42
         hide eaeng_e5_tile43
         hide eaeng_e5_tile44
@@ -1940,11 +1942,8 @@ label gamefile_e5:
         hide eaeng_e5_tile75
         hide eaeng_e5_tile76
         hide eaeng_e5_tile77
-        play sound gramLose
         $ attemptsLogicGate1 +=1
-
-        "You lose try again"
-        jump eng_gram_e5
+        jump gramEasyLose
           
     
     jump gamefile_e5

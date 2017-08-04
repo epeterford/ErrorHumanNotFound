@@ -227,6 +227,33 @@ label chapterTwo_screens:
             hover_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen balcony_alphaScr:
+        imagebutton:
+            idle "button_empty.png"
+            xpos 1630
+            ypos 10
+        text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text "[alphaBodyItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
+        text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        if (binaryEasyDone == False) and (loopLogicEasyDone==False):
+            imagebutton: 
+                idle "objects/alpha.png"
+                hover "objects/alpha_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("loopLogicEasyChoose")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        if (binaryEasyDone == False) and (loopLogicEasyDone==True):
+            imagebutton: 
+                idle "objects/alpha.png"
+                hover "objects/alpha_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("binaryEasy")
+                hover_sound "audio/ENHF_UI_Button_v1.ogg"
         #Add explorable objects here
         imagebutton:
             idle "arrow.png"
@@ -237,7 +264,6 @@ label chapterTwo_screens:
             action Jump("balcony_inv")
             hover_sound "audio/ENHF_UI_Button_v1.ogg"
 
-            
             
 label graceLab_actions:
     scene bg G_deskArea
@@ -617,6 +643,25 @@ label balcony_alpha:
     scene bg balconyTop with fade
     call screen balcony_alphaScr
     
+label loopLogicEasyChoose:
+    #if (tutorial_loopLogicEasy == False):
+        #jump tutorial_LLEasy
+    $randomNumberEasyLL = renpy.random.randint(0,1)
+    if randomNumberEasyLL==0:
+        jump loopLogic_easy4
+    if randomNumberEasyLL==1:
+        jump loopLogic_easy5
+
+label binaryEasy:
+    #if (tutorial_binaryEasy == False):
+        #jump tutorial_2Bit
+    call binaryMatchEasy
+
+#label tutorial_LLEasy:
+    
+#label tutorial_2Bit:
+    
+
 
 ##Window Interactible 1: The View: A view of Earth with the Moon peeking over the Earth // Reaction Item
 #	In Response: #show Grace neutral // g "At least he died looking at a beautiful view." // #show Ada neutral // a "I do not recall being able to see this from the security cameras."

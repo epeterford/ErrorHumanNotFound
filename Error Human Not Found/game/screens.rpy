@@ -349,6 +349,17 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
+    #Implement hotspot imagemap here
+    imagemap:
+        ground "gui/overlay/game_menu.png"
+        idle "gui/overlay/game_menu.png"
+        hover "gui/overlay/game_menu_hover.png"
+                
+        hotspot (12, 83, 315, 95) action Start()
+        hotspot (12, 186, 315, 95) action ShowMenu("load")
+        hotspot (12, 314, 315, 95) action ShowMenu("preferences")
+        hotspot (12, 438, 315, 95) action ShowMenu("about")
+        hotspot (12, 569, 315, 95) action Help()
 
     vbox:
         style_prefix "navigation"
@@ -447,7 +458,7 @@ screen game_menu(title, scroll=None):
 #        hotspot (12, 438, 315, 95) action ShowMenu("about")
 #        hotspot (12, 569, 315, 95) action Help()
 
-    style_prefix "game_menu"
+#    style_prefix "game_menu"
 
     if main_menu:
         add gui.main_menu_background

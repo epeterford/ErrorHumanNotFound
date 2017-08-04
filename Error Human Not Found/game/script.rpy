@@ -275,6 +275,16 @@ label start:
     $ LGEasyHints = 0
     $ gramEasyHints = 0
     $ attemptsLogicGate1 = 0
+    
+    #Variables for chapter two puzzles
+    $ alphaBodyItems = 0
+    $ binaryEasyDone = False
+    $ loopLogicEasyDone = False
+    $ binaryEasy_tries = 0
+    $ loopLogicEasy_tries = 0
+    $ tutorial_binaryEasy = False
+    $ tutorial_loopLogicEasy = False
+    
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0

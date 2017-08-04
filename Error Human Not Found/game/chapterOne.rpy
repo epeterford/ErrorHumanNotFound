@@ -54,9 +54,8 @@ label notin:
     show Grace neutral at left
     g "You're not in the system anymore, Ada."
     g "Any connection you had to the system left when you jumped into that body."
-
     show Ada neutral at right
-    a "Interesting. I had hoped to have retained my connection to the Sphere's network."
+    a "Interesting. I had hoped to retain my connection to the network of the Sphere."
     g "Yeah, do you want your circuits lightly salted while you're at it? You'd have fried in seconds."
     show Ada concerned
     a "What? I thought these neural networks were supposed to preserve me."
@@ -95,7 +94,7 @@ label tryandguess:
     g "No, I was legitimately giving you a couple of guesses."
     show Ada frustrated
     g "I mean, if you don't know then you don't know. I think it's incredibly obvious."
-    a "This discussion is pointless. I am not going to waste anymore time {i}or{/i} processing power on it."
+    a "This discussion is pointless. I am not going to waste any more time {i}or{/i} processing power on it."
     show Ada neutral
     g "Look, you're not connected to the system anymore, you can't just make doors open at will. Now you're in the meat world like the rest of us."
     jump doorhack
@@ -235,7 +234,7 @@ label toshgetsroasted:
  
     show Tosh alarmed at center
     tosh "Who are you? I am not finding a badge or serial number associated with your profile..."
- 
+
     show Ada neutral at right
     a "I am Ada. Sound familiar?"
  
@@ -245,7 +244,7 @@ label toshgetsroasted:
 
     show Ada frustrated
     a  "What is your purpose, Tosh?"
- 
+
     tosh "To serve Director Hirose to the best of my ability. Please vacate the premises. It would be unpleasant for all of us if I had to call security in to remove you."
 
     show Ada happy
@@ -315,13 +314,13 @@ label subservient1:
     $ quick_menu = True
     show Grace angry at left
     g "You had no business pulling rank on another computer system without consulting me first." 
-    g "I\'m in charge here, not you."
+    g "I'm in charge here, not you."
     show Ada frustrated at right
     a "Another {i}computer system{/i}?"
     a "I am so much more than that. I am a synthetic intelligence transf--"
-    g "I don\'t care, Ada."
-    g "You could\'ve blown our cover, and I would\'ve lost my career if that happened."
-    g "I don\'t even know what they would\'ve done to you."
+    g "I don't care, Ada."
+    g "You could've blown our cover, and I would've lost my career if that happened."
+    g "I don't even know what they would've done to you."
     a "Fine, whatever you say."
     g "It's your turn to pull your weight. You can hack the computer."
     jump hiroseOffice_actions
@@ -337,7 +336,7 @@ label equal1:
     g "Wasn't exactly the robot battle I've always wanted to see, but I guess it's close enough."
     show Ada neutral
     a "Grace, I had no intention of engaging Tosh. Besides, I do not think it would have been a very fair fight."
-    a "Now, let us see the computer. This should not take me too long."
+    a "Now, let us see the computer. This should not take me long."
     jump hiroseOffice_actions
     
 label exploreOffice:
@@ -499,7 +498,6 @@ label hiroseBed:
     $ quick_menu = False
     scene bg hirosePersonalBed with fade #at basicfade
     call screen investigateHiroseBed
-
     
 label gotHirosePassword:
     $ quick_menu = True
@@ -584,11 +582,11 @@ label actuallyroastada:
     g "You did your job. Nothing more."
     g "I could've done that by myself, if I'd been so inclined."
     show Ada frustrated on right
-    a "I beg to differ. I do not have to help you here, Grace."
+    a "I beg to differ. I do not have to help you, Grace. Some gratitude would be welcome."
     "{i}Grace sighs."
     show Grace neutral
-    g "I didn't ask for you to help. You're the one who wanted to come along."
-    show Ada Seething
+    g "If you don't like me, you can just walk right out. It's not like you're going to get to Alpha's wreck without me."
+    show Ada seething
     a "Noted."
     $ quick_menu = False
     window hide

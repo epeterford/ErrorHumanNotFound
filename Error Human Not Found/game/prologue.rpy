@@ -139,17 +139,18 @@ label prologueResume1:
     "{i}Voices can be heard from a crack in the door. Grace leans in to listen."
     hide Grace annoyed
     
-    h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to gain a grip on her and keep an eye on the other three elder AIs."
-    h "Colossus is keeping everything quiet but there's only so much we can keep contained."
+    h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to reign her in and keep an eye on the elder AIs."
+    h "Colossus is keeping everything quiet for now but it's only a matter of time until something gets out."
     h "Alpha was, after all, the first of them to acquire a physical form. There's the risk of an uproar. How is Blue responding to this?"
     knuth "Blue is concerned, but she's holding her own. No excessive disobedience." 
-    knuth "Just curiosity, and I think anguish? It's hard to tell with her. She just flashed a sad face and then exploded with other random emoticons."
+    knuth "She seems curious primarily and perhaps a little anguished? It's hard to tell when someone has a screen for a face."
+    knuth "Blue flashed a sad face and then began exploding with random emoticons."
     h "I expected as much. And Watson?"
     knuth "Well, you know Watson. He's difficult to get in touch with." 
     knuth "Probably off gallivanting around in some system, having a grand old time and unaware of what's happening at home base. AWOL as usual."
     neva "Well at least we don't have to worry about him for now. He'd probably get in the way."
     h "He certainly would. When he resurfaces, however, we'll want to get in touch." 
-    h "Let's not forget that point. We have the project leads suspended until further notice, correct?"
+    h "We have other priorities to attend to in the meantime. The project leads are all suspended until further notice, correct?"
     cray "Yes, Director."
     h "When will the external investigators be here?"
     cray "Eighteen hours, Director."
@@ -169,12 +170,12 @@ label prologueResume1:
     cray "Director, are you just going to allow--"
     h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
     hide Godel
-    g "I couldn't help but overhear. Especially with Cray's voice being so loud."
+    g "I couldn't help overhearing. Cray talks awfully loud for a conversation that is supposedly hush-hush."
     cray "Excuse me, but--"
     g "What's going on? What happened to Alpha?"
     #show director neutral
     h "Once you take on a more reasonable tone, we'll discuss what occurred."
-    g "My tone is always reasonable. I want to know what happened to the AI I was working with."
+    g "My tone is always {i}reasonable{/i}. I want to know what happened to the AI I was working with."
     godel "That's not the proper way you speak to the Director. Check your manners. "
     g "Mind your own business."
     show Godel speaking at right
@@ -184,15 +185,15 @@ label prologueResume1:
     g "..."
     "{i}Hirose stares down Grace from her platform."
     g "Director, please inform me of current events involving Alpha."
-    h "We are not exactly certain of the events that transpired at this time, but unfortunately Alpha is no longer with us."
+    h "We are not certain of what transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
     g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
     show Cray speaking at center
     cray "That's what we don't understand, Alpha was--"
-    h "Like I stated, we are not positive of the reason yet. We ordered a team of external investigators to inspect the situation."
+    h "As I said, the root cause is yet to be determined. We ordered a team of external investigators to inspect the situation."
     g "What? Why external investigators? We couldn't keep this among our own crew?"
     h "Almost everyone on the station worked with Alpha." 
-    h "We need an unbiased examination of the crime scene. We also need to interrogate all those involved to truly determine what, or who, was at fault."
+    h "We need an unbiased examination of the crime scene. We also need to interrogate all those involved to truly determine what, or {i}who{/i}, was at fault."
     g "Everything was running smoothly as of yesterday, including his neural network." 
     g "Any type of malfunction should have been caught in the system. I just can't believe something like this happened."
     g "All glitches were worked out with the prototype. This cannot be random chance."
@@ -220,8 +221,8 @@ label lessobvious:
     show Grace annoyed
     g "But did you check his charts? Did you search through his databanks at least?" 
     g "Did you look for anything that might suggest what could've occurred?"
-    h "We're leaving that up to the investigators to figure out. As for you, please do as I instruct." 
-    h " As difficult as it may be for you to believe, there are other people who are perfectly capable of answering what happened to Alpha."
+    h "We're leaving that up to the investigators. As for you, please do as I instruct." 
+    h " As difficult as it may be for you to believe, there {i}are{/i} other people who are capable of figuring out what happened to Alpha."
     g "All right, fine. Keep me informed. I want to know what happened."
     jump prologueResume2
  
@@ -230,14 +231,14 @@ label sassy:
     show Grace angry at left
     g "You've got to be kidding me. My research could help discover what happened to him."
     h "You're a suspect, Doctor Fortran. I don't think you understand the severity of the position you are in." 
-    h "This isn't something you get to stand here and pontificate about. Your work can wait until the investigation is over."
-    g "I want to know what happened to Alpha. I have the right as one of the researchers who worked with him and his android body." 
+    h "Grace, you do not get to stand here and pontificate. Your work can wait until the investigation is over."
+    g "I want to know what happened to Alpha. I have a right as one of the researchers who worked with him." 
     g "Waiting for so long is a waste of time."
     h "You'll stay out of this and let the investigators do their job."
     g "This is ridiculous. You're not doing enough!"
     #show Hirose irritated
     h "You are not to be involved, and that's final."
-    "A stare down between Grace and Hirose chills the room."
+    "{i}A stare down between Grace and Hirose chills the room."
     g "Fine."
     show Grace snarky
     "{i}Grace turns to walk out of the room and speaks to herself."
@@ -259,12 +260,12 @@ label prologueResume2:
     g "What the... Who are you? And what do you think you're doing in my lab?"
     show Ada neutral at right
     a "Grace, it is I, Ada." 
-    a "I have uploaded myself into a physical form to solve the death of my friend."
+    a "I have uploaded myself into my android so I may uncover what happened to my friend."
     a "However, I cannot hope to accomplish as much as I would have liked without the physical advantage you humans possess."
     show Grace annoyed
     g "Oh, give me a break. Alpha just died, and now you're in my office?" 
     g "I've got enough on my plate right now. If someone finds you in here--"
-    a "I am not sure that I care. Alpha was not just my associate, he was my friend. Alpha's now dead and I need to know what happened to him."
+    a "I am not sure that I care. Alpha was not just my associate, he was my friend. Alpha is dead now and I need to know what happened to him."
     show Grace surprised
     g "Yeah, I understand that his death is unnerving, but a lot is happening right now. The Conclave is shutting down the labs and everything."
     g "They're bringing outside investigators to find out what happened to him. I want to know what happened too, but we've got strict orders from the Director-"
@@ -319,8 +320,8 @@ label reluctant:
     show Grace neutral at left
     g "I guess we could do that. But you know that a human, i.e. me, is going to get the axe rather than the sidekick robot."
     show Ada seething at right
-    a "Excuse me? A robot? I'll have you know that I can process faster than you or any robot can think." 
-    a "I am an AI inhabiting an android body, not the equivalent of a toaster. I am no one's sidekick."
+    a "Excuse me? A robot? I will have you know that I can process faster than you or any robot can think." 
+    a "I am an AI inhabiting an android body, not the equivalent of a toaster. I am sidekick to no one."
     show Grace surprised
     g "Okay, okay. Calm down."
     a "I am the epitome of calm."
