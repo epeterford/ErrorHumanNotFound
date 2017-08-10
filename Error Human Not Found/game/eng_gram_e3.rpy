@@ -16,7 +16,7 @@ init python:
                 store.slot_name = drop.drag_name
             
                 return True
-        return 
+        return True 
         
 #image blink:
  #   xpos 925 ypos 325
@@ -1966,6 +1966,7 @@ label gamefile_e3:
 
     #win conditions
     if (and5in1 == True or and1in1 == True or and2in1 == True or and4in1 == True) and and3in3 == True and and6in4 == True and (and1in2 == True or and2in2 == True or and4in2 == True or and5in2 == True) and (and4in5 == True or and1in5 == True or and2in5 == True or and5in5 == True) and (and1in6 == True or and2in6 == True or and4in6 == True or and5in6 == True):
+
         image eaeng_e3_tile202 = "letterS.png"
         image eaeng_e3_tile206 = "letterS.png"
         image eaeng_e3_tile203 = "letterM.png"
@@ -1980,22 +1981,22 @@ label gamefile_e3:
         show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0)
         show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0)
         play sound gramWin
-        $ renpy.pause(1.0)
-        jump gramEasyDone
-        
+
+        "Access Gained"
+
+
+        jump eng_gram_e3
     if slot_name == "null":
         $attempts +=1
 
     $attempts -=1
     if attempts ==0:
-        play sound gramLose
         show eaeng_e3_tile202 at Position(xpos = eae3and1x, xanchor = 0, ypos = eae3and1y, yanchor = 0)
         show eaeng_e3_tile206 at Position(xpos = eae3and2x, xanchor = 0, ypos = eae3and2y, yanchor = 0)
         show eaeng_e3_tile203 at Position(xpos = eae3and3x, xanchor = 0, ypos = eae3and3y, yanchor = 0)
         show eaeng_e3_tile205 at Position(xpos = eae3and4x, xanchor = 0, ypos = eae3and4y, yanchor = 0)
         show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0)
         show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0)
-        $ renpy.pause(1.0)
         hide eaeng_e3_tile42
         hide eaeng_e3_tile43
         hide eaeng_e3_tile44
@@ -2028,7 +2029,8 @@ label gamefile_e3:
         hide eaeng_e3_tile75
         hide eaeng_e3_tile76
         hide eaeng_e3_tile77
+        play sound gramLose
         $ attemptsLogicGate1 +=1
-        jump gramEasyLose  
+        jump eng_gram_e3   
     
     jump gamefile_e3

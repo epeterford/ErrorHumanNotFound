@@ -16,7 +16,7 @@ init python:
                 store.slot_name = drop.drag_name
             
                 return True
-        return 
+        return True 
         
 #image blink:
  #   xpos 925 ypos 325

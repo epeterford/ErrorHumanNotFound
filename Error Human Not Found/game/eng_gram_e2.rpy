@@ -16,7 +16,7 @@ init python:
                 store.slot_name = drop.drag_name
             
                 return True
-        return 
+        return True 
         
 #image blink:
  #   xpos 925 ypos 325
@@ -1978,21 +1978,20 @@ label gamefile_e2:
         show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
         show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
         play sound gramWin
-        $ renpy.pause(1.0)
-        jump gramEasyDone
+        "Access Gained"
+
+        jump eng_gram_e2
     if slot_name == "null":
         $attempts +=1
 
     $attempts -=1
     if attempts ==0:
-        play sound GramLose
         show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
         show eaeng_e2_tile111 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
         show eaeng_e2_tile108 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
         show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
         show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
         show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
-        $ renpy.pause(1.0)
         hide eaeng_e2_tile42
         hide eaeng_e2_tile43
         hide eaeng_e2_tile44
@@ -2050,7 +2049,10 @@ label gamefile_e2:
         hide eaeng_e2_tile100
         hide eaeng_e2_tile101
 
+        play sound GramLose
         $ attemptsLogicGate1 +=1
-        jump gramEasyLose
+
+        "You lose try again"
+        jump eng_gram_e2  
     
     jump gamefile_e2
