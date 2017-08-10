@@ -1,38 +1,31 @@
 label prologue:
-    stop channel00 
-    stop channel01 
-    stop channel02 
-    stop channel03 
-    stop channel04 
-    stop channel05 
-    stop channel06 
-    stop channel07 
-    stop channel08 
-    stop channel09 
-    stop channel10 
-    stop channel11 
-    stop channel12 
-    #    play channel00 lab2_00
-    #    play channel01 lab2_01
-    #    play channel02 lab2_02
-    #    play channel03 lab2_03
-    #    play channel04 lab2_04
-    #    play channel05 lab2_05
-    #    play channel06 lab2_06
-    #    play channel07 lab2_07
-    #    play channel08 lab2_08
-    #    play channel09 lab2_09
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
+    stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    
+    play channel00 labBGM_0 fadeout 1.0 fadein 1.0
+    play channel01 labBGM_1 fadeout 1.0 fadein 1.0
+    play channel02 labBGM_2 fadeout 1.0 fadein 1.0
+    play channel03 labBGM_3 fadeout 1.0 fadein 1.0
+    play channel04 labBGM_4 fadeout 1.0 fadein 1.0
+    play channel05 labBGM_5 fadeout 1.0 fadein 1.0
+
     window show
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
-#    play sound 
+    play sound typing 
     show Grace neutral at basicfade#left at basicfade #with fade
     #Insert SFX Typing here
     "{i}Grace types away at her computer.{/i}"
     "{i}Grace's bracelet beeps and flashes.{/i}"
-    
+    play sound beepSoft
+    queue sound beepSoft
     #Insert SFX here
     "{i}DING. DING."
  
@@ -40,6 +33,14 @@ label prologue:
     show Grace annoyed at basicfade #at left with fade
     g "Hold on, I'm busy."
     #Insert SFX here
+    play sound beepMedium
+    queue sound beepMedium
+    "{i}DING! DING!"
+    
+    g "Just a second!"
+    play sound beepLoud
+    queue sound beepLoud
+    queue sound beepLoud
     "{i}DING! DING! DING!{/i}"
  
     show Grace angry at basicfade
@@ -63,6 +64,7 @@ label answer:
     show Grace annoyed at left
     g "Really? A summons? I have so much work to do. Would it have killed her to just stop by my lab instead of having her secretary call on me? I am not her servant."
     "{i}Grace marches out of the room."
+    play sound graceWalk
     jump chambers
  
 label directChambers:
@@ -71,12 +73,24 @@ label directChambers:
     g "There's only one person who would call me at work after hours." 
     g "I suppose I should see what she wants."
     "{i}Grace shuts down her computer and exits the lab."
+    play sound graceWalk
     jump chambers
 
 label chambers:
+    #When the ambience is available, just change to play with fadeout 1.0 fadein 1.0
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    $ date_ref = "November 17th, 2167"
+    $ time_ref = "17:18"
+    $ loc_ref = "The Conclave's Reception"
     $ quick_menu = True
     scene bg conclaveWaitingRoom with fade #at basicfade 
     #Grace arrives at the chambers and is greeted by a secretary VI.
+    play sound toshStartup
     show Tosh pleasant at right
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
@@ -100,6 +114,7 @@ label thanks:
     "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
     hide other darken
     hide image "objects/tea_closeup.png"
+    play sound graceTea
     "{i}Grace takes a sip."
     show Grace happy
     g "Ah, freshly made tea."
@@ -125,6 +140,7 @@ label shrug:
     hide image "objects/tea_closeup.png"
     show Grace happy
     g "Ah, freshly made tea."
+    play sound graceTea
     secretary "The oxygen garden workers reported that this was their best harvest to date."
     g "I can taste it!"
     jump prologueResume1 
@@ -135,6 +151,7 @@ label prologueResume1:
     "{i}Grace grows more and more impatient."
     show Grace annoyed at left
     g "What is taking so long?"
+    play sound pickup
     "{i}Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet."
     "{i}Voices can be heard from a crack in the door. Grace leans in to listen."
     hide Grace annoyed
@@ -157,8 +174,13 @@ label prologueResume1:
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
     
     #insert SFX here
+    play sound doorOpen2
+    queue sound doorClose2
     scene bg conclaveOccupied with fade #at basicfade
-    "{i}The doors slide open. Grace stumbles into the room to be greeted by Director ROBERTA HIROSE, and the four Chiefs of different divisions on the Noah Sphere."
+    $ date_ref = "November 17th, 2167"
+    $ time_ref = "17:26"
+    $ loc_ref = "The Conclave"
+    "{i}The doors slide open. Grace stumbles into the room to be greeted by Director Roberta Hirose and the four Chiefs of the different divisions on the Noah Sphere."
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
     show Nevalinna speaking at right
@@ -179,9 +201,11 @@ label prologueResume1:
     #show director neutral
     h "Once you take on a more reasonable tone, we'll discuss what occurred."
     g "My tone is always {i}reasonable{/i}. I want to know what happened to the AI I was working with."
-    show Godel speaking at right
-    godel "That's not the proper way you speak to the Director. Check your manners. "
+    show Knuth speaking at right
+    knuth "That's not the proper way you speak to the Director. Check your manners. "
+    hide Knuth
     g "Mind your own business."
+    show Godel speaking at right
     godel "Well, I've never!"
     g "Whatever, Godel."  
     hide Godel
@@ -231,6 +255,8 @@ label lessobvious:
     h "We're leaving that up to the investigators. As for you, please do as I instruct." 
     h " As difficult as it may be for you to believe, there {i}are{/i} other people who are capable of figuring out what happened to Alpha."
     g "All right, fine. Keep me informed. I want to know what happened."
+    play sound doorOpen2
+    queue sound doorClose2
     jump prologueResume2
  
 label sassy:
@@ -250,10 +276,13 @@ label sassy:
     show Grace snarky
     "{i}Grace turns to walk out of the room and speaks to herself."
     g "We'll see about that."
+    play sound doorOpen2
+    queue sound doorClose2
     jump prologueResume2
  
 label prologueResume2:
     window hide
+    queue sound graceWalk
     $ quick_menu = False
     scene bg hallwayGrace with fade #at basicfade
     $ renpy.pause(0.5)
@@ -261,7 +290,14 @@ label prologueResume2:
     scene bg G_main with fade #at basicfade
     window show
     $ quick_menu = True
+    play channel00 labBGM_0
+    play channel01 labBGM_1
+    play channel02 labBGM_2
+    play channel03 labBGM_3
+    play channel04 labBGM_4
+    play channel05 labBGM_5
     "{i}Grace enters her lab to be greeted with the sight of an android."
+    stop sound fadeout 0.5
     show Grace surprised at left
      
     g "What the... Who are you? And what do you think you're doing in my lab?"
@@ -278,7 +314,9 @@ label prologueResume2:
     g "They're bringing outside investigators to find out what happened to him. I want to know what happened too, but we've got strict orders from the Director-"
     show Ada concerned
     a "When do the investigators come?"
+    show Grace neutral
     g "Eighteen hours."
+    show Ada neutral
     a "That is more than adequate time."
     g "Time for what? What are you planning?"
     a "If you wish to help me understand the circumstances that led to Alpha's death, then we'll find a way around the Conclave's orders. Are you with me?"
@@ -343,7 +381,9 @@ label prologueResume3:
     g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 
     g "We need to acquire her credentials to access the crime scene."
     "{i}The two start to leave." 
+    play sound adaClumsy
     "{i}Ada stumbles."
+    stop sound fadeout 0.5
     g "Err... are you going to be all right?"
     show Ada amused at right
     a "It might take me a moment to get used to walking. But if a hominid like yourself could figure it out, then I anticipate little difficulty in doing so as well."

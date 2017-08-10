@@ -26,7 +26,7 @@ init python:
 define gui.accent_color = '#0099cc'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#555555'
+define gui.idle_color = '#b5d0fc' #'#555555'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -82,11 +82,18 @@ define gui.notify_text_size = 24
 define gui.title_text_size = 75
 
 
+
+
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
+define gui.history_menu_background = "gui/overlay/history.png"
+define gui.help_menu_background = "gui/overlay/help.png"
+define gui.about_menu_background = "gui/overlay/about.png"
+
+define gui.about_text_xmaximum = 1200
 
 ## Should we show the name and version of the game?
 define gui.show_name = True

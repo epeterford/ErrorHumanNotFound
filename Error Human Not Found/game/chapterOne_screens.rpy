@@ -8,6 +8,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("pickNextPuzzleLGEasy")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "no.png" 
             hover "no_hover.png" 
@@ -16,6 +17,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen lgEasyLose_scr:
         imagebutton:
@@ -26,6 +28,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("pickNextPuzzleLGEasy")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "no.png" 
             hover "no_hover.png" 
@@ -34,6 +37,8 @@ label chapterOne_screens:
             focus_mask True
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
     screen lgEasyDone_scr:
         imagebutton:
             idle "finish.png" 
@@ -43,6 +48,8 @@ label chapterOne_screens:
             focus_mask True
             action Jump("lgEasyDone_talk")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
     screen lgEasyWin_scr:
         imagebutton:
             idle "yes.png" 
@@ -52,6 +59,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("pickNextPuzzleLGEasy")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "no.png" 
             hover "no_hover.png" 
@@ -60,6 +68,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen gramEasyLose_scr:
         imagebutton:
@@ -70,6 +79,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("chooseEasyGram")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "no.png" 
             hover "no_hover.png" 
@@ -78,6 +88,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("doorPuzzle")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen doorPuzzle_scr:
         imagebutton:
@@ -87,7 +98,8 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("chooseEasyGram")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
             
     screen gramEasyDone_scr:
         imagebutton:
@@ -98,13 +110,14 @@ label chapterOne_screens:
             focus_mask True
             action Jump("hiroseDoorPassed")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen tutorial_scrInv_1:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_Inv_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -113,26 +126,28 @@ label chapterOne_screens:
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_Inv_1")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+
         imagebutton:
             idle "finish.png" 
             hover "finish_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("hiroseOffice_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen tutorial_scrGramEasy_1:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -141,16 +156,17 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_1")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -159,16 +175,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -177,16 +193,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960  
+            xpos 1650
+            ypos 940  
             focus_mask True
             action Jump("tutorial_GramEasy_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -195,16 +211,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960  
+            xpos 1650
+            ypos 940  
             focus_mask True
             action Jump("tutorial_GramEasy_6")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -213,16 +229,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960  
+            xpos 1650
+            ypos 940  
             focus_mask True
             action Jump("tutorial_GramEasy_7")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -231,16 +247,17 @@ label chapterOne_screens:
         imagebutton:
             idle "finish.png" 
             hover "finish_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("chooseEasyGram")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_GramEasy_6")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -249,8 +266,8 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -259,16 +276,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_1")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -277,16 +294,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -295,16 +312,16 @@ label chapterOne_screens:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
-            xpos 1670
-            ypos 960  
+            xpos 1650
+            ypos 940  
             focus_mask True
             action Jump("tutorial_LGEasy_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -313,16 +330,17 @@ label chapterOne_screens:
         imagebutton:
             idle "finish.png" 
             hover "finish_hover.png" 
-            xpos 1670
-            ypos 960 
+            xpos 1650
+            ypos 940 
             focus_mask True
             action Jump("easyLGAPuzzle")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png" 
             hover "back_hover.png" 
-            xpos -15
-            ypos 960 
+            xpos 0
+            ypos 940 
             focus_mask True
             action Jump("tutorial_LGEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
@@ -336,6 +354,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("talkAdaHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "investigate.png" 
             hover "investigate_hover.png" 
@@ -344,6 +363,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("exploreOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen hiroseOffice1_scr:
         imagebutton:
@@ -363,7 +383,8 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseTree")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "arrow.png"
             hover "arrow_hover.png"
@@ -371,7 +392,8 @@ label chapterOne_screens:
             ypos 700
             focus_mask True
             action Jump("hiroseOffice2")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png"
             hover "back_hover.png"
@@ -379,7 +401,7 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("hiroseOffice_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen hiroseOffice2_scr:
         imagebutton:
@@ -389,7 +411,8 @@ label chapterOne_screens:
             ypos 308 
             focus_mask True
             action Jump("exploreHiroseOffice")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowL.png" 
             hover "arrowL_hover.png" 
@@ -397,7 +420,8 @@ label chapterOne_screens:
             ypos 308 
             focus_mask True
             action Jump("exploreOffice")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen investigateOffice:
         #text "Items: [hiroseOfficeItems]/3" xpos 1750 ypos 10 color "#dddddd"
@@ -417,7 +441,8 @@ label chapterOne_screens:
             ypos 345 
             focus_mask True
             action Jump("hiroseOffice2")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         if (hiroseTea_inv == False):
             imagebutton:
                 idle "objects/hiroseTea.png" 
@@ -426,7 +451,8 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseTea_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseRecorder_inv == False):
             imagebutton:
                 idle "objects/hiroseRecorder.png" 
@@ -435,7 +461,8 @@ label chapterOne_screens:
                 ypos 0 
                 focus_mask True
                 action Jump("hiroseRecorder_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseOfficeComputer == False):
             imagebutton:
                 idle "objects/hiroseOfficialComputer.png" 
@@ -444,7 +471,8 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("adaActualPuzzle1")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
                 
     screen hirosePersonalArea_scr:
         imagebutton:
@@ -455,6 +483,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("talkAdaHirosePersonal")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "investigate.png" 
             hover "investigate_hover.png" 
@@ -463,6 +492,7 @@ label chapterOne_screens:
             focus_mask True
             action Jump("hirosePersonalArea_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen hirosePersonalArea_invScr:
         imagebutton:
@@ -472,7 +502,8 @@ label chapterOne_screens:
             ypos 351
             focus_mask True
             action Jump("hirosePersonalComputer")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrow.png"
             hover "arrow_hover.png"
@@ -480,7 +511,8 @@ label chapterOne_screens:
             ypos 650
             focus_mask True
             action Jump("hiroseBed")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png"
             hover "back_hover.png"
@@ -488,7 +520,8 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("hirosePersonalArea_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+
             
     screen investigateHirosePC:
         imagebutton:
@@ -498,7 +531,8 @@ label chapterOne_screens:
             ypos 890
             focus_mask True
             action Jump("hirosePersonalArea_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "objects/hiroseComputer.png"
             hover "objects/hiroseComputer_hover.png"
@@ -506,7 +540,8 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("hirosePC_label")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
             
     screen investigateHiroseBed:
         imagebutton:
@@ -525,7 +560,8 @@ label chapterOne_screens:
             ypos 890 
             focus_mask True
             action Jump("hirosePersonalArea_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         if (hiroseBed_inv == False):
             imagebutton:
                 idle "objects/hiroseBed.png" 
@@ -534,7 +570,8 @@ label chapterOne_screens:
                 ypos 0 
                 focus_mask True
                 action Jump("hiroseBed_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseWindow_inv == False):
             imagebutton:
                 idle "objects/hiroseWindow.png" 
@@ -543,7 +580,8 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseWindow_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hirosePhoto_inv == False):
             imagebutton:
                 idle "hirosePhoto.png" 
@@ -552,7 +590,8 @@ label chapterOne_screens:
                 ypos 729 
                 focus_mask True
                 action Jump("hirosePhoto_label")
-                hover_sound "audio/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
     jump tutorial_Inv_1
             
 label tutorial_Inv_1:
@@ -612,6 +651,7 @@ label tutorial_GramEasy_2:
     call screen tutorial_scrGramEasy_2
         
 label tutorial_GramEasy_3:
+    play sound ["<silence 3.0>"]
     window hide
     $ quick_menu = False
     scene bg gramEasy3 

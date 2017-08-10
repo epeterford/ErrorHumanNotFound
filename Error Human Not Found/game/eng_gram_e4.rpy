@@ -47,7 +47,8 @@ screen logicGatese4:
         ypos 200
         focus_mask True
         action Jump("gramEasyHints4")
-        hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
         idle "button_empty2.png"
         xpos 178
@@ -1668,12 +1669,15 @@ label gamefile_e4:
             $ and6in5 = False
             $ and6in6 = True
 
-
+    play sound gramTree2
     if and5in1 == True and and1in2 == True:
         image eaeng_e4_tile42 = "leftTreegreenlong.png"
         image eaeng_e4_tile43 = "1_1_green.png"
         image eaeng_e4_tile60 = "rightTreegreenlong.png"
         image eaeng_e4_tile61 = "1_1_green.png"
+        if (gramRow1_sound==0):
+            play sound gramTree1
+            $gramRow1_sound+=1
         #play sound gramTree2
         #play sound gramTree1
         show eaeng_e4_tile42 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
@@ -1691,7 +1695,12 @@ label gamefile_e4:
             image eaeng_e4_tile51 = "1_1_green.png"
             image eaeng_e4_tile52 = "solutionLine.png"
             image eaeng_e4_tile53 = "friend.png"
-            #play sound gramText2
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramText1
+                $gramRow2_soundA +=1
+            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
+                play sound gramText1
+                $gramRow2_soundA +=1
             show eaeng_e4_tile44 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile45 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile46 at Position(xpos = 1025, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1718,7 +1727,10 @@ label gamefile_e4:
             image eaeng_e4_tile49 = "1_1_red.png"
             image eaeng_e4_tile54 = "rightTreered.png"
             image eaeng_e4_tile55 = "1_1_red.png"
-            #play sound gramTree3
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramTree5
+            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
+                play sound gramTree5
             show eaeng_e4_tile48 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile49 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
             #play sound gramTree5
@@ -1740,7 +1752,12 @@ label gamefile_e4:
             image eaeng_e4_tile69 = "1_1_green.png"
             image eaeng_e4_tile70 = "solutionLine.png"
             image eaeng_e4_tile71 = "enter.png"
-            #play sound gramText2
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramText1
+                $gramRow2_soundB +=1
+            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
+                play sound gramText1
+                $gramRow2_soundB +=1
             show eaeng_e4_tile62 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile63 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile64 at Position(xpos = 1325, xanchor = 0, ypos = 600, yanchor = 0)
@@ -1766,7 +1783,10 @@ label gamefile_e4:
             image eaeng_e4_tile67 = "1_1_red.png"
             image eaeng_e4_tile72 = "rightTreered.png"
             image eaeng_e4_tile73 = "1_1_red.png"
-            #play sound gramTree5
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramTree5
+            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
+                play sound gramTree5
             show eaeng_e4_tile66 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile67 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile72 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
@@ -1782,7 +1802,10 @@ label gamefile_e4:
             image eaeng_e4_tile75 = "1_1_red.png"
             image eaeng_e4_tile76 = "rightTreered.png"
             image eaeng_e4_tile77 = "1_1_red.png"
-            #play sound gramTree3
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramTree5
+            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
+                play sound gramTree5
             show eaeng_e4_tile74 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile75 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
             #play sound gramTree5
@@ -1800,7 +1823,10 @@ label gamefile_e4:
             image eaeng_e4_tile79 = "1_1_red.png"
             image eaeng_e4_tile80 = "rightTreered.png"
             image eaeng_e4_tile81 = "1_1_red.png"
-            #play sound gramTree5
+            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+                play sound gramTree5
+            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
+                play sound gramTree5
             show eaeng_e4_tile78 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile79 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile80 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
@@ -1858,7 +1884,8 @@ label gamefile_e4:
          image eaeng_e4_tile83 = "1_1_red.png"
          image eaeng_e4_tile84 = "rightTreeredlong.png"
          image eaeng_e4_tile85 = "1_1_red.png"
-         #play sound gramTree5
+         if(gramRow1_sound==0):
+             play sound gramTree5
          show eaeng_e4_tile82 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e4_tile83 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
          #play sound gramTree4
@@ -1875,6 +1902,8 @@ label gamefile_e4:
          image eaeng_e4_tile87 = "1_1_red.png"
          image eaeng_e4_tile88 = "rightTreeredlong.png"
          image eaeng_e4_tile89 = "1_1_red.png"
+         if (gramRow1_sound==0):
+             play sound gramTree5
          #play sound gramTree5
          show eaeng_e4_tile86 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e4_tile87 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
@@ -1903,15 +1932,25 @@ label gamefile_e4:
         show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)
         show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)
         show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)
-        play sound gramWin
+        queue sound gramWin
         $ renpy.pause(1.0)
         jump gramEasyDone
     if slot_name == "null":
         $attempts +=1
 
-    $attempts -=1
+    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        $ attempts -=1
+    else:
+       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+           $ attempts -=1
+           $ temp_slot = slot_name
+           $ temp_gate = gate_name
+    $ temp_slot = ""
+    $ temp_gate = ""  
     if attempts ==0:
-        play sound gramLose
+        queue sound gramLose
         show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)
         show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)
         show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)

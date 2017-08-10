@@ -510,7 +510,7 @@ label gracePhoto_inv:
     hide image "objects/gracePhoto_closeup.png"
     hide other darken
     show Ada neutral at right
-    a "Is this your fatger?"
+    a "Is this your father?"
     show Grace happy at left 
     g "It is! This was from our vacation to the Hawaii Preserve."
     show Grace sad

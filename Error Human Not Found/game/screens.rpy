@@ -70,12 +70,9 @@ style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
-
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
-
-
 
 ################################################################################
 ## In-game screens
@@ -204,7 +201,9 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption action i.action:
+                activate_sound "music/UI/Dialogue_Select/EHNF_UI_DialogueSelect_Click.ogg"
+                hover_sound "music/UI/Dialogue_Select/EHNF_UI_DialogueSelect_Highlight.ogg"
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -235,23 +234,6 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-#screen game_menu():
-#    zorder 100
-#    if game_menu:
-#        imagebutton:
-#            idle "back.png"
-#            hover "back_hover.png"
-#            xpos 0
-#            ypos 0
-#            focus_mask True
-#            action Jump("hiroseOffice_actions")
-#            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-            
-#init python:
-#    config.overlay_screens.append("game_menu")
-
-#default quick_menu = True
-
 style quick_button is default
 style quick_button_text is button_text
 
@@ -260,7 +242,6 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
-
 
 screen quick_menu():
 
@@ -275,6 +256,8 @@ screen quick_menu():
             ypos 989
             focus_mask True
             action ShowMenu("journal")
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Preferences
             idle "prefs_idle.png"
             hover "prefs_hover.png"
@@ -282,6 +265,8 @@ screen quick_menu():
             ypos 989
             focus_mask True
             action ShowMenu('preferences')
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #History
             idle "history_idle.png"
             hover "history_hover.png"
@@ -289,6 +274,8 @@ screen quick_menu():
             ypos 989
             focus_mask True
             action ShowMenu('history')
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Save
             idle "save_idle.png"
             hover "save_hover.png"
@@ -296,6 +283,8 @@ screen quick_menu():
             ypos 989
             focus_mask True
             action ShowMenu('save')
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Skip
             idle "skip_idle.png"
             hover "skip_hover.png"
@@ -303,27 +292,13 @@ screen quick_menu():
             ypos 989
             focus_mask True
             action Skip() alternate Skip(fast=True, confirm=True)
-#        imagebutton: #Auto
-#            idle "auto_idle.png"
-#            hover "auto_hover.png"
-#            xpos 435
-#            ypos 1020
-#            focus_mask True
-#            action Preference("auto-forward", "toggle")
-#        imagebutton: #Back
-#            idle "back_idle.png"
-#            hover "back_hover2.png"
-#            xpos 857
-#            ypos 1020
-#            focus_mask True
-#            action Rollback()
-#            textbutton _("Q.Save") action QuickSave()
-#            textbutton _("Q.Load") action QuickLoad()
-
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
 init python:
+    import math
     config.overlay_screens.append("quick_menu")
     #config.overlay_screens.append("game_menu")
 
@@ -351,66 +326,57 @@ style quick_button_text:
 screen navigation():
     #Implement hotspot imagemap here
     imagemap:
-        ground "gui/overlay/game_menu.png"
-        idle "gui/overlay/game_menu.png"
-        hover "gui/overlay/game_menu_hover.png"
+        ground "gui/overlay/side_menu.png"
+        idle "gui/overlay/side_menu.png"
+        hover "gui/overlay/side_menu_hover.png"
+        selected_idle "gui/overlay/side_menu_selected.png"
+        selected_hover "gui/overlay/side_menu_selected.png" 
                 
-        hotspot (12, 83, 315, 95) action Start()
-        hotspot (12, 186, 315, 95) action ShowMenu("load")
-        hotspot (12, 314, 315, 95) action ShowMenu("preferences")
-        hotspot (12, 438, 315, 95) action ShowMenu("about")
-        hotspot (12, 569, 315, 95) action Help()
-
-    vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc"):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        hotspot (27, 193, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#History
+        hotspot (27, 280, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Save
+        hotspot (27, 363, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Load
+        hotspot (27, 448, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Settings
+        hotspot (27, 533, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Main Menu
+        hotspot (27, 624, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #About
+        hotspot (27, 711, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Help
+        hotspot (27, 796, 290, 85) action Quit(confirm=not main_menu):
+            if(not main_menu):
+                activate_sound"music/UI/ENHF_UI_Button_v2.ogg" 
+            if(main_menu):
+                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Quit
+        hotspot (27, 976, 290, 85) action Return() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Return
 
 
-style navigation_button is gui_button
-style navigation_button_text is gui_button_text
 
-style navigation_button:
-    size_group "navigation"
-    properties gui.button_properties("navigation_button")
+#        if _in_replay:
 
-style navigation_button_text:
-    properties gui.button_text_properties("navigation_button")
+#            textbutton _("End Replay") action EndReplay(confirm=True)
+
+#        elif not main_menu:
+
+#            textbutton _("Main Menu") action MainMenu()
+
+#        textbutton _("About") action ShowMenu("about")
+
+#        if renpy.variant("pc"):
+
+#            ## Help isn't necessary or relevant to mobile devices.
+#            textbutton _("Help") action ShowMenu("help")
+
+#            ## The quit button is banned on iOS and unnecessary on Android.
+#            textbutton _("Quit") action Quit(confirm=not main_menu)
+
+
+#style navigation_button is gui_button
+#style navigation_button_text is gui_button_text
+
+#style navigation_button:
+#    size_group "navigation"
+#    properties gui.button_properties("navigation_button")
+
+#style navigation_button_text:
+#    properties gui.button_text_properties("navigation_button")
 
 
 ## Main Menu screen ############################################################
@@ -426,12 +392,12 @@ screen main_menu:
         idle "mm_idle.png"
         hover "mm_hover.png"
             
-        hotspot (12, 83, 315, 95) action Start()
-        hotspot (12, 186, 315, 95) action ShowMenu("load")
-        hotspot (12, 314, 315, 95) action ShowMenu("preferences")
-        hotspot (12, 438, 315, 95) action ShowMenu("about")
-        hotspot (12, 569, 315, 95) action Help()
-        hotspot (12, 828, 315, 95) action Quit(confirm=False)
+        hotspot (12, 83, 315, 95) action Start() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 186, 315, 95) action ShowMenu("load") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 314, 315, 95) action ShowMenu("preferences") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 438, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 569, 315, 95) action Help() activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 828, 315, 95) action Quit(confirm=False) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 #        hotspot (12, 700, 315, 95) action Help() Database
 #        hotspot (12, 927, 315, 95) action Quit(confirm=False) Credits
         
@@ -462,6 +428,11 @@ screen game_menu(title, scroll=None):
 
     if main_menu:
         add gui.main_menu_background
+    
+    if _history:
+        add gui.history_menu_background
+    if (title=="About"):
+        add gui.about_menu_background
     else:
         add gui.game_menu_background
 
@@ -508,13 +479,6 @@ screen game_menu(title, scroll=None):
                     transclude
 
     use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -597,19 +561,17 @@ screen about():
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
     use game_menu(_("About"), scroll="viewport"):
-
         style_prefix "about"
-
         vbox:
-
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            
+            label "[config.name!t]\n" xpos 500
+           # text _("Version [config.version!t]\n") xpos 650
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n" xpos 100
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]") xpos 100
 
 
 ## This is redefined in options.rpy to add text to the about screen.
@@ -618,10 +580,13 @@ define gui.about = ""
 
 style about_label is gui_label
 style about_label_text is gui_label_text
-style about_text is gui_text
-
+style about_text is gui_text:
+    xmaximum gui.about_text_xmaximum
+#    is gui_textR
+style about_xmaximum is about_text_xmaximum
 style about_label_text:
     size gui.label_text_size
+ 
 
 
 ## Load and Save screens #######################################################
@@ -632,96 +597,273 @@ style about_label_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
-
+init python:
+    config.thumbnail_width = 385#428
+    config.thumbnail_height = 217#240
 screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    imagemap:   
+        ground "gui/overlay/save_ground3.png"
+        idle "gui/overlay/save_idle3.png"
+        hover "gui/overlay/save_hover3.png"
+        selected_idle "gui/overlay/save_selected3.png"
+        selected_hover "gui/overlay/save_selected_hover3.png"
+        cache False
+        
+        hotspot (484, 754, 76, 291) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        
+        hotspot (1812, 24, 84, 133) clicked FilePage(1) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 157, 84, 128) clicked FilePage(2) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 285, 84, 128) clicked FilePage(3) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 413, 84, 128) clicked FilePage(4) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 541, 84, 125) clicked FilePage(5) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 666, 84, 128) clicked FilePage(6) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 794, 84, 131) clicked FilePage(7) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 925, 84, 132) clicked FilePage(8) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
+        hotspot (623, 83, 535, 280) clicked FileSave(1):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(1)  
+            add FileScreenshot(1) xalign 0.7 yalign 0.47
+#            add AlphaMask((FileScreenshot(1)), "gui/overlay/alphaMask2.png") xalign 0.5 yalign 0.45
+            text FileTime(1, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(1):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(1)#clicked FileSave(1):
+            #use load_save_slot(number=1) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+        hotspot (1205, 83, 535, 280) clicked FileSave(2):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(2) 
+#            add AlphaMask((FileScreenshot(2)), "gui/overlay/alphaMask3.png") xalign 0.7 yalign 0.45
+            add FileScreenshot(2) xalign 0.7 yalign 0.47
+            text FileTime(2, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(2):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(2) 
+#            use load_save_slot(number=2) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+        hotspot (623, 395, 535, 280) clicked FileSave(3):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(3) 
+            add FileScreenshot(3) xalign 0.7 yalign 0.47
+            text FileTime(3, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(3):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(3) 
+#            use load_save_slot(number=3) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+        hotspot (1205, 395, 535, 280) clicked FileSave(4):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(4) 
+            add FileScreenshot(4) xalign 0.7 yalign 0.47
+            text FileTime(4, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(4):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(4) 
+#            use load_save_slot(number=4) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+        hotspot (623, 713, 535, 280) clicked FileSave(5):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(5) 
+            add FileScreenshot(5) xalign 0.7 yalign 0.47
+            text FileTime(5, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(5):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(5) 
+#            use load_save_slot(number=3) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+        hotspot (1205, 713, 535, 280) clicked FileSave(6):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(6) 
+            add FileScreenshot(6) xalign 0.7 yalign 0.47
+            text FileTime(6, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(6):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(6) 
 
+    imagemap:
+        ground "gui/overlay/side_menu.png"
+        idle "gui/overlay/side_menu.png"
+        hover "gui/overlay/side_menu_hover.png"
+        selected_idle "gui/overlay/side_menu_selected.png"
+        selected_hover "gui/overlay/side_menu_selected.png" 
+                
+        hotspot (27, 193, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#History
+        hotspot (27, 280, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Save
+        hotspot (27, 363, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Load
+        hotspot (27, 448, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Settings
+        hotspot (27, 533, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Main Menu
+        hotspot (27, 624, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #About
+        hotspot (27, 711, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Help
+        hotspot (27, 796, 290, 85) action Quit(confirm=not main_menu):
+            if(not main_menu):
+                activate_sound"music/UI/ENHF_UI_Button_v2.ogg" 
+            if(main_menu):
+                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Quit
+        hotspot (27, 976, 290, 85) action Return()activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    imagemap:   
+        ground "gui/overlay/load_ground.png"
+        idle "gui/overlay/load_idle.png"
+        hover "gui/overlay/load_hover.png"
+        selected_idle "gui/overlay/load_selected.png"
+        selected_hover "gui/overlay/load_selected_hover.png"
+        cache False
+        
+        hotspot (484,444, 76, 291) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        
+        hotspot (1812, 24, 84, 133) clicked FilePage(1) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 157, 84, 128) clicked FilePage(2) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 285, 84, 128) clicked FilePage(3) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 413, 84, 128) clicked FilePage(4) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 541, 84, 125) clicked FilePage(5) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 666, 84, 128) clicked FilePage(6) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 794, 84, 131) clicked FilePage(7) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1812, 925, 84, 132) clicked FilePage(8) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
+        hotspot (623, 83, 535, 280) clicked FileLoad(1):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(1)  
+            add FileScreenshot(1) xalign 0.7 yalign 0.47
+            text FileTime(1, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(1):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(1)#clicked FileSave(1):
+            #use load_save_slot(number=1) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+            
+        hotspot (1205, 83, 535, 280) clicked FileLoad(2):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(2) 
+#            add AlphaMask((FileScreenshot(2)), "gui/overlay/alphaMask3.png") xalign 0.7 yalign 0.45
+            add FileScreenshot(2) xalign 0.7 yalign 0.47
+            text FileTime(2, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(2):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(2) 
+#            use load_save_slot(number=2) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
 
-screen file_slots(title):
+        hotspot (623, 395, 535, 280) clicked FileLoad(3):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(3) 
+            add FileScreenshot(3) xalign 0.7 yalign 0.47
+            text FileTime(3, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(3):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(3) 
+#            use load_save_slot(number=3) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+        hotspot (1205, 395, 535, 280) clicked FileLoad(4):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(4) 
+            add FileScreenshot(4) xalign 0.7 yalign 0.47
+            text FileTime(4, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(4):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(4) 
+#            use load_save_slot(number=4) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
 
-    use game_menu(title):
+        hotspot (623, 713, 535, 280) clicked FileLoad(5):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(5) 
+            add FileScreenshot(5) xalign 0.7 yalign 0.47
+            text FileTime(5, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(5):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(5) 
+#            use load_save_slot(number=3) #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
 
-        fixed:
+        hotspot (1205, 713, 535, 280) clicked FileLoad(6):
+            activate_sound"music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action FileAction(6) 
+            add FileScreenshot(6) xalign 0.7 yalign 0.47
+            text FileTime(6, format=_("{#file_time}%A, %B %d, %H:%M"), empty=_("")):
+                style "slot_time_text"
+                yalign 1.1
+                xpos 19
+                size 28
+            text FileSaveName(6):
+                style "slot_name_text"
+            key "save_delete" action FileDelete(6) 
 
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
-
-            ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
-
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
-
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
-
-                xalign 0.5
-                yalign 0.5
-
-                spacing gui.slot_spacing
-
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
-
-                    $ slot = i + 1
-
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## Buttons to access other pages.
-            hbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                spacing gui.page_spacing
-
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
+    imagemap:
+        ground "gui/overlay/side_menu.png"
+        idle "gui/overlay/side_menu.png"
+        hover "gui/overlay/side_menu_hover.png"
+        selected_idle "gui/overlay/side_menu_selected.png"
+        selected_hover "gui/overlay/side_menu_selected.png"  
+        hotspot (27, 193, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#History
+        hotspot (27, 280, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Save
+        hotspot (27, 363, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Load
+        hotspot (27, 448, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Settings
+        hotspot (27, 533, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Main Menu
+        hotspot (27, 624, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #About
+        hotspot (27, 711, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Help
+        hotspot (27, 796, 290, 85) action Quit(confirm=not main_menu):
+            if(not main_menu):
+                activate_sound"music/UI/ENHF_UI_Button_v2.ogg" 
+            if(main_menu):
+                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Quit
+        hotspot (27, 976, 290, 85) action Return() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
 style page_label is gui_label
 style page_label_text is gui_label_text
@@ -729,9 +871,9 @@ style page_button is gui_button
 style page_button_text is gui_button_text
 
 style slot_button is gui_button
-style slot_button_text is gui_button_text
-style slot_time_text is slot_button_text
-style slot_name_text is slot_button_text
+style slot_button_text is sl_button_text
+style slot_time_text is sl_button_text
+style slot_name_text is sl_button_text
 
 style page_label:
     xpadding 75
@@ -753,179 +895,255 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
-
-
+init -1:
+    define gui.sl_button_width = 350
+    define gui.sl_button_height = 309
+    define gui.sl_button_text_idle_color = "#ffffff"
 ## Preferences screen ##########################################################
 ##
 ## The preferences screen allows the player to configure the game to better suit
 ## themselves.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
+screen window_display:
+    add "gui/overlay/window_true.png"
+    
+screen fullscreen_display:
+    add "gui/overlay/fullscreen_true.png"
+    
+screen music_options:
+    add "gui/overlay/music_hints.png"
+
+screen sfx_options:
+    add "gui/overlay/sfx_hints.png"
+
+screen mute_options:
+    add "gui/overlay/mute_hints.png"
+
+screen textSpeed_options:
+    add "gui/overlay/textSpeed_hints.png"
+    
+screen autoForward_options:
+    add "gui/overlay/autoForward_hints.png"
+    
+screen skip_options:
+    add "gui/overlay/skip_hints.png"
+
+screen unseenText_options:
+    add "gui/overlay/unseenText_hints.png"
+
+screen afterChoice_options:
+    add "gui/overlay/afterChoice_hints.png"
+    
+screen transitions_options:
+    add "gui/overlay/transitions_hints.png"
+    
+screen display_options:
+    add "gui/overlay/display_hints.png"
 
 screen preferences():
-
+    $ musicVolumeVal = _preferences.get_volume('music')
+    $ soundVolumeVal = _preferences.get_volume('sfx')
+    $ textSpeedVal = _preferences.text_cps
+    $ autoForwardVal = _preferences.afm_time
+    if (musicVolumeVal<0):
+        $musicVolumeVal=0.0
+    if (musicVolumeVal>1.0):
+        $musicVolumeVal=1.0
+    if (soundVolumeVal<0):
+        $soundVolumeVal = 0.0
+    if (soundVolumeVal>1.0):
+        $soundVolumeVal = 1.0
+    if (textSpeedVal<0) or (textSpeedVal==0):
+        $textSpeedVal = 1
+    if (textSpeedVal >200):
+        $textSpeedVal = 200
+    if not(autoForwardVal==None):
+        $autoForwardVal = math.trunc(autoForwardVal)
+        if (autoForwardVal >30):
+            $autoForwardVal = 30
+        if (autoForwardVal < 0):
+            $autoForwardVal = 0
     tag menu
+    
+    mousearea: #Music volume
+        area (589, 131, 1200,73)
+        hovered Show("music_options") #, transition = dissolve)
+        unhovered Hide("music_options") #, transition = dissolve)
+    
+    mousearea: #SFX
+        area (554, 204, 1235, 73) #transitions
+        hovered Show("sfx_options")#, transition=dissolve)
+        unhovered Hide("sfx_options")#, transition=dissolve)
+    
+    mousearea: #Mute All words
+        area (790, 279, 410, 73) #skip
+        hovered Show("mute_options")#, transition=dissolve)
+        unhovered Hide("mute_options")#, transition=dissolve)
+        
+    mousearea: #Mute All box
+        area (1460, 274, 128, 90) #skip
+        hovered Show("mute_options")#, transition=dissolve)
+        unhovered Hide("mute_options")#, transition=dissolve)
 
-    if renpy.mobile:
-        $ cols = 2
-    else:
-        $ cols = 4
+    mousearea: #Text speed
+        area (636, 410, 1153, 73)
+        hovered Show("textSpeed_options")#, transition=dissolve)
+        unhovered Hide("textSpeed_options")#, transition=dissolve)
+        
+    mousearea: #Auto Forward
+        area (551, 483, 1238, 73) 
+        hovered Show("autoForward_options")#, transition=dissolve)
+        unhovered Hide("autoForward_options")#, transition=dissolve)
+        
+    mousearea: #Skip
+        area (984, 562, 220, 73) 
+        hovered Show("skip_options")#, transition=dissolve)
+        unhovered Hide("skip_options")#, transition=dissolve)
+        
+    mousearea: #Unseen Text
+        area (1217, 648, 188, 60) 
+        hovered Show("unseenText_options")#, transition=dissolve)
+        unhovered Hide("unseenText_options")#, transition=dissolve)
+        
+    mousearea: #Unseen Text box
+        area (1249, 562, 117, 76) 
+        hovered Show("unseenText_options")#, transition=dissolve)
+        unhovered Hide("unseenText_options")#, transition=dissolve)
+        
+    mousearea: #After choices
+        area (1449, 648, 169, 64) 
+        hovered Show("afterChoice_options")#, transition=dissolve)
+        unhovered Hide("afterChoice_options")#, transition=dissolve)
+        
+    mousearea: #After choices box
+        area (1467, 562, 130, 76) 
+        hovered Show("afterChoice_options")#, transition=dissolve)
+        unhovered Hide("afterChoice_options")#, transition=dissolve)
+        
+    mousearea: #Transitions
+        area (1624, 648, 263, 32) 
+        hovered Show("transitions_options")#, transition=dissolve)
+        unhovered Hide("transitions_options")#, transition=dissolve)
+        
+    mousearea: #Transitions box
+        area (1688, 562, 114, 76) 
+        hovered Show("transitions_options")#, transition=dissolve)
+        unhovered Hide("transitions_options")#, transition=dissolve)
+        
+    mousearea: #Display
+        area (834, 679, 955, 149) 
+        hovered Show("display_options")#, transition=dissolve)
+        unhovered Hide("display_options")#, transition=dissolve)
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    imagemap:   
+        ground "gui/overlay/options_ground.png"
+        idle "gui/overlay/options_idle.png"
+        hover "gui/overlay/options_hover.png"
+        selected_idle "gui/overlay/options_selected.png"
+        selected_hover "gui/overlay/options_selected_hover.png"
+#        alpha True
+        
+        #Display 
+        hotspot (1269, 693, 77, 112) action Preference("display", "toggle")
+        hotspot (1692, 693, 77, 112)action Preference("display", "toggle")
+        
+        #Volume
+        #Music arrows
+        hotspot (1276, 131, 71, 69) action Preference("music volume", musicVolumeVal-0.1)
+        hotspot (1704, 131, 61, 69) action Preference("music volume", musicVolumeVal+0.1)
+        
+        hotspot (1276, 200, 71, 83) action (Preference("sound volume", soundVolumeVal-0.1), Play("sound", config.sample_sound))
+        hotspot (1704, 200, 71, 83) action (Preference("sound volume", soundVolumeVal+0.1), Play("sound", config.sample_sound))
+#        hotspot (1276, 94, 71, 69) action Preference("music volume", 0.0)
+#        hotspot (1704, 94, 61, 69) action Preference("music volume", 1.0) #max/min volumes on arrows
+#        hotspot (1276, 163, 71, 83) action Preference("sound volume", 0.0)
+#        hotspot (1704, 163, 71, 83) action Preference("sound volume", 1.0)
+        bar pos (1700, 131) value Preference("music volume") style "pref_slider" 
+        bar pos (1700, 210) value Preference("sound volume") style "pref_slider" #action Play("sound", config.sample_sound)
+        hotspot (1460, 274, 128, 90) action Preference("all mute", "toggle")
 
-        vbox:
+        #Skip Options
+        hotspot (1249, 562, 117, 76) action Preference("skip", "toggle")
+        hotspot (1688, 562, 114, 76) action InvertSelected(Preference("transitions", "toggle"))
+        hotspot (1467, 562, 130, 76) action Preference("after choices", "toggle")
+        
+#        hotspot (1276, 363, 71, 83) action Preference("text speed", 1) #Set to minimum on click
+#        hotspot (1704, 363, 71, 83) action Preference("text speed", 200) #Set to maximum on click
+        if((textSpeedVal-20)==0):
+            hotspot (1276, 400, 71, 83) action Preference("text speed", 1)
+        else:
+            hotspot (1276, 400, 71, 83) action Preference("text speed", textSpeedVal-20)
+        hotspot (1704, 400, 71, 83) action Preference("text speed", textSpeedVal+20)
+        
+        if not(autoForwardVal==None):
+#            if (autoForwardVal ==0) or (autoForwardVal<0):
+#                hotspot (1276, 446, 71, 83) action Preference("auto-forward time", 0)R
+#            if (autoForwardVal>0) and (autoForwardVal<40):
+            hotspot (1276, 483, 71, 83) action Preference("auto-forward time", autoForwardVal-3)
+            hotspot (1704, 483, 71, 83) action Preference("auto-forward time", autoForwardVal+3)
+#            if (autoForwardVal==40) or (autoForwardVal>40):
+#                hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)
+            
+        bar pos (1700, 416) value Preference("text speed") style "pref_slider"
+        
+        bar pos (1700, 492) value Preference("auto-forward time") style "pref_slider"
+#        hotspot (1276, 446, 71, 83) action Preference("auto-forward time", 0)
+#        hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)#autoForwardVal+10)
 
-            hbox:
-                box_wrap True
+    imagemap:
+        ground "gui/overlay/side_menu.png"
+        idle "gui/overlay/side_menu.png"
+        hover "gui/overlay/side_menu_hover.png"
+        selected_idle "gui/overlay/side_menu_selected.png"
+        selected_hover "gui/overlay/side_menu_selected.png" 
+                
+        hotspot (27, 193, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#History
+        hotspot (27, 280, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Save
+        hotspot (27, 363, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Load
+        hotspot (27, 448, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Settings
+        hotspot (27, 533, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Main Menu
+        hotspot (27, 624, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #About
+        hotspot (27, 711, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" #Help
+        hotspot (27, 796, 290, 85) action Quit(confirm=not main_menu):
+            if(not main_menu):
+                activate_sound"music/UI/ENHF_UI_Button_v2.ogg" 
+            if(main_menu):
+                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"#Quit
+        hotspot (27, 976, 290, 85) action Return() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        
+    if (_preferences.fullscreen==False):
+        imagebutton:
+            idle "gui/overlay/window_true.png"
+            xpos 0
+            ypos 0
+    if (_preferences.fullscreen==True):
+        imagebutton:
+            idle "gui/overlay/fullscreen_true.png"
+            xpos 0
+            ypos 0
+        
+init -100 python:
+    config.default_afm_enable = True
+    config.default_afm_time =40
+init -2 python:
+    musicVolumeVal = _preferences.get_volume('music')
+    soundVolumeVal = _preferences.get_volume('sfx')
+    textSpeedVal = _preferences.text_cps
+    autoForwardVal = _preferences.afm_time
+    style.pref_slider.left_bar = "gui/overlay/slider_right.png" #full
+    style.pref_slider.right_bar = "gui/overlay/slider_left.png" #empty
+    style.pref_slider.hover_left_bar = "gui/overlay/slider_right_hover.png" #full
+    style.pref_slider.hover_right_bar = "gui/overlay/slider_left_hover.png" #empty
+    style.pref_slider.xalign = 0.0
 
-                if renpy.variant("pc"):
+    style.pref_slider.xmaximum = 352   # width of your left_bar image.
+    style.pref_slider.xminimum = 352 
+    style.pref_slider.yminimum = 64
+    style.pref_slider.ymaximum = 64    # height of your left_bar image.  Probably will be the height of the red part of the bar plus the slider's height.
 
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-
-                vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Sound Volume")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
-
-style pref_label is gui_label
-style pref_label_text is gui_label_text
-style pref_vbox is vbox
-
-style radio_label is pref_label
-style radio_label_text is pref_label_text
-style radio_button is gui_button
-style radio_button_text is gui_button_text
-style radio_vbox is pref_vbox
-
-style check_label is pref_label
-style check_label_text is pref_label_text
-style check_button is gui_button
-style check_button_text is gui_button_text
-style check_vbox is pref_vbox
-
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
-
-style mute_all_button is check_button
-style mute_all_button_text is check_button_text
-
-style pref_label:
-    top_margin gui.pref_spacing
-    bottom_margin 3
-
-style pref_label_text:
-    yalign 1.0
-
-style pref_vbox:
-    xsize 338
-
-style radio_vbox:
-    spacing gui.pref_button_spacing
-
-style radio_button:
-    properties gui.button_properties("radio_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
-
-style radio_button_text:
-    properties gui.button_text_properties("radio_button")
-
-style check_vbox:
-    spacing gui.pref_button_spacing
-
-style check_button:
-    properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
-
-style check_button_text:
-    properties gui.button_text_properties("check_button")
-
-style slider_slider:
-    xsize 525
-
-style slider_button:
-    properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 15
-
-style slider_button_text:
-    properties gui.button_text_properties("slider_button")
-
-style slider_vbox:
-    xsize 675
-
-
+    style.pref_slider.thumb = None    
 ## History screen ##############################################################
 ##
 ## This is a screen that displays the dialogue history to the player. While
@@ -933,26 +1151,68 @@ style slider_vbox:
 ## dialogue history stored in _history_list.
 ##
 ## https://www.renpy.org/doc/html/history.html
+screen history_menu(title, scroll=None):
+    add gui.history_menu_background
+
+    frame:
+        style "history_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "history_menu_navigation_frame"
+
+            frame:
+                style "history_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial 1.0
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    use navigation
 
 screen history():
-
     tag menu
-
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport")):
+    use history_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport")):
 
         style_prefix "history"
-
+    
         for h in _history_list:
 
             window:
-
                 ## This lays things out properly if history_height is None.
                 has fixed:
                     yfit True
-
                 if h.who:
 
                     label h.who:
@@ -968,13 +1228,54 @@ screen history():
         if not _history_list:
             label _("The dialogue history is empty.")
 
+style history_menu_outer_frame is empty
+style history_menu_navigation_frame is empty
+style history_menu_content_frame is empty
+style history_menu_viewport is gui_viewport
+style history_menu_side is gui_side
+style history_menu_scrollbar is gui_vscrollbar
+
+style history_menu_label is gui_label
+style history_menu_label_text is gui_label_text
+
+style history_menu_outer_frame:
+    bottom_padding 45
+    top_padding 180
+
+#    background "gui/overlay/game_menu.png"
+
+style history_menu_navigation_frame:
+    xsize 420
+    yfill True
+
+style history_menu_content_frame:
+    left_margin 50
+    right_margin 30
+    top_margin 15
+
+style history_menu_viewport:
+    xsize 1420
+
+style history_menu_vscrollbar:
+    unscrollable gui.unscrollable
+
+style history_menu_side:
+    spacing 15
+
+style history_menu_label:
+    xpos 60
+    ysize 180
+
+style history_menu_label_text:
+    size gui.title_text_size
+    color gui.accent_color
+    yalign 0.5
 
 style history_window is empty
 
 style history_name is gui_label
 style history_name_text is gui_label_text
 style history_text is gui_text
-
 style history_text is gui_text
 
 style history_label is gui_label
@@ -991,7 +1292,7 @@ style history_name:
     xsize gui.history_name_width
 
 style history_name_text:
-    min_width gui.history_name_width
+    min_width gui.history_name_width + 20
     text_align gui.history_name_xalign
 
 style history_text:
@@ -1019,152 +1320,179 @@ style history_label_text:
 screen help():
 
     tag menu
-
+    add gui.help_menu_background
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    frame:
+        style "game_menu_outer_frame"
 
-        style_prefix "help"
+        hbox:
 
-        vbox:
-            spacing 23
+            ## Reserve space for the navigation section.
+            frame:
+                style "game_menu_navigation_frame"
 
-            hbox:
+            frame:
+                style "game_menu_content_frame"
 
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+#                if scroll == "viewport":
 
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+#                viewport:
+#                    scrollbars "vertical"
+#                    mousewheel True
+#                    draggable True
 
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+#                    side_yfill True
+
+#                    vbox:
+#                        transclude
+
+
+    use navigation
+
+    style_prefix "help"
+
+    vbox:
+        spacing 23
+
+        hbox:
+
+            textbutton _("Keyboard") action SetScreenVariable("device", "keyboard") xpos 900 ypos 180 activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            textbutton _("Mouse") action SetScreenVariable("device", "mouse") xpos 1000 ypos 180 activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+
+            if GamepadExists():
+                textbutton _("Gamepad") action SetScreenVariable("device", "gamepad") xpos 680 ypos 200 activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+
+        if device == "keyboard":
+            use keyboard_help
+        elif device == "mouse":
+            use mouse_help
+        elif device == "gamepad":
+            use gamepad_help
 
 
 screen keyboard_help():
 
     hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
+        label _("Enter") xpos 510 ypos 200 
+        text _("Advances dialogue and activates the interface.") xpos 530 ypos 200
 
     hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
+        label _("Space") xpos  510 ypos 200
+        text _("Advances dialogue without selecting choices.") xpos 530 ypos 200
 
     hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
+        label _("Arrow Keys") xpos 510 ypos 200
+        text _("Navigate the interface.")xpos 530 ypos 200
 
     hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
+        label _("Escape")xpos 510 ypos 200
+        text _("Accesses the game menu.")xpos 530 ypos 200
 
     hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
+        label _("Ctrl")xpos 510 ypos 200
+        text _("Skips dialogue while held down.")xpos 530 ypos 200
 
     hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
+        label _("Tab")xpos 510 ypos 200
+        text _("Toggles dialogue skipping.")xpos 530 ypos 200
 
     hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
+        label _("Page Up")xpos 510 ypos 200
+        text _("Rolls back to earlier dialogue.")xpos 530 ypos 200
 
     hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
+        label _("Page Down")xpos 510 ypos 200
+        text _("Rolls forward to later dialogue.")xpos 530  ypos 200
 
     hbox:
-        label "H"
-        text _("Hides the user interface.")
+        label "H"xpos 510 ypos 200
+        text _("Hides the user interface when not in a puzzle.")xpos 530 ypos 200
 
     hbox:
-        label "S"
-        text _("Takes a screenshot.")
+        label "S"xpos 510 ypos 200
+        text _("Takes a screenshot.")xpos 530 ypos 200
 
     hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+        label "V"xpos 510  ypos 200
+        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")xpos 530 ypos 200
 
 
 screen mouse_help():
 
     hbox:
-        label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
+        label _("Left Click")xpos 510 ypos 200
+        text _("Advances dialogue and activates the interface.")xpos 530 ypos 200
 
     hbox:
-        label _("Middle Click")
-        text _("Hides the user interface.")
+        label _("Right Click")xpos 510 ypos 200
+        text _("Accesses the game menu.")xpos 530 ypos 200
 
     hbox:
-        label _("Right Click")
-        text _("Accesses the game menu.")
+        label _("Mouse Wheel Up")xpos 510 ypos 200
+        text _("Rolls back to earlier dialogue.")xpos 530 ypos 200
 
     hbox:
-        label _("Mouse Wheel Up\nClick Rollback Side")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Mouse Wheel Down")
-        text _("Rolls forward to later dialogue.")
+        label _("Mouse Wheel Down")xpos 510 ypos 200
+        text _("Rolls forward to later dialogue.")xpos 530 ypos 200
 
 
 screen gamepad_help():
 
     hbox:
-        label _("Right Trigger\nA/Bottom Button")
-        text _("Advances dialogue and activates the interface.")
+        label _("Right Trigger\nA/Bottom Button")xpos 510 ypos 200
+        text _("Advances dialogue and activates the interface.")xpos 530 ypos 200
 
     hbox:
-        label _("Left Trigger\nLeft Shoulder")
-        text _("Rolls back to earlier dialogue.")
+        label _("Left Trigger\nLeft Shoulder")xpos 510 ypos 200
+        text _("Rolls back to earlier dialogue.")xpos 530 ypos 200
 
     hbox:
-        label _("Right Shoulder")
-        text _("Rolls forward to later dialogue.")
+        label _("Right Shoulder")xpos 510 ypos 200
+        text _("Rolls forward to later dialogue.")xpos 530 ypos 200
 
     hbox:
-        label _("D-Pad, Sticks")
-        text _("Navigate the interface.")
+        label _("D-Pad, Sticks")xpos 510 ypos 200
+        text _("Navigate the interface.")xpos 530 ypos 200
 
     hbox:
-        label _("Start, Guide")
-        text _("Accesses the game menu.")
+        label _("Start, Guide")xpos 510 ypos 200
+        text _("Accesses the game menu.")xpos 530 ypos 200
 
     hbox:
-        label _("Y/Top Button")
-        text _("Hides the user interface.")
+        label _("Y/Top Button")xpos 510 ypos 200
+        text _("Hides the user interface.")xpos 530 ypos 200
 
-    textbutton _("Calibrate") action GamepadCalibrate()
+    textbutton _("Calibrate") action GamepadCalibrate()xpos 510 ypos 200
 
 
-style help_button is gui_button
+style help_button is gui_button:
+    font gui.name_text_font
 style help_button_text is gui_button_text
-style help_label is gui_label
+style help_label is gui_label:
+    font gui.name_text_font
 style help_label_text is gui_label_text
 style help_text is gui_text
 
 style help_button:
     properties gui.button_properties("help_button")
     xmargin 12
+    font gui.name_text_font
 
 style help_button_text:
     properties gui.button_text_properties("help_button")
+    font gui.name_text_font
 
 style help_label:
     xsize 375
     right_padding 30
+    font gui.name_text_font
 
 style help_label_text:
     size gui.text_size
     xalign 1.0
     text_align 1.0
+    font gui.name_text_font
 
 
 
@@ -1206,11 +1534,11 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Yes") action yes_action activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                textbutton _("No") action no_action activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
     ## Right-click and escape answer "no".
-    key "game_menu" action no_action
+    key "game_menu" action no_action activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg"
 
 
 style confirm_frame is gui_frame
@@ -1295,7 +1623,7 @@ style skip_triangle:
 ## Notify screen ###############################################################
 ##
 ## The notify screen is used to show the player a message. (For example, when
-## the game is quicksaved or a screenshot has been taken.)
+## the game is quickd or a screenshot has been taken.)
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
 

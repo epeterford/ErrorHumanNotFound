@@ -224,13 +224,14 @@ screen logicGatesEasyA2:
         ypos 890
         focus_mask True
         action Jump("LGEasyHintsA2")
-        hover_sound "audio/ENHF_UI_Button_v1.ogg"
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
         idle "button_empty.png"
         xpos 1515
         ypos 890
     text "Attempts" xpos 1530 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
-    text ": " xpos 1716 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
+    text ": " xpos 1720 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
     text "[attempts]" xpos 1735 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     
     #drags and drop location
