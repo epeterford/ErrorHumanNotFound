@@ -16,7 +16,7 @@ init python:
                 store.slot_name = drop.drag_name
             
                 return True
-        return 
+        return True 
         
 
 screen logicGatese1:
@@ -1879,12 +1879,24 @@ label eng_gram_e1:
         show eaeng_e1_tile229 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
         show eaeng_e1_tile230 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
         show eaeng_e1_tile231 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+<<<<<<< HEAD
         queue sound gramWin
         $ renpy.pause(1.0)
         jump gramEasyDone   
     
     if attempts ==0:
         queue sound gramLose
+=======
+        play sound gramWin
+        "Access Gained"
+
+        jump eng_gram_e1
+    if slot_name == "null":
+        $attempts +=1
+
+    $attempts -=1
+    if attempts ==0:
+>>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
         image eaeng_e1_tile232 = "letterP.png"
         image eaeng_e1_tile233 = "letterJ.png"
         image eaeng_e1_tile234 = "letterM.png"
@@ -1897,7 +1909,6 @@ label eng_gram_e1:
         show eaeng_e1_tile235 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
         show eaeng_e1_tile236 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
         show eaeng_e1_tile237 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
-        $ renpy.pause(1.0)
         hide eaeng_e1_tile182
         hide eaeng_e1_tile183
         hide eaeng_e1_tile184
@@ -1934,8 +1945,11 @@ label eng_gram_e1:
         hide eaeng_e1_tile215
         hide eaeng_e1_tile216
         hide eaeng_e1_tile217
+        play sound gramLose
         $ attemptsLogicGate1 +=1
-        jump gramEasyLose
+        "You Lose Try Again"
+
+        jump eng_gram_e1
     
 
 #    if and1in1 == True or and2in1 ==True or and3in1 ==True or and4in1 ==True:
