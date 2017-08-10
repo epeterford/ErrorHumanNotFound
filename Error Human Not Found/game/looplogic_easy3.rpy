@@ -16,8 +16,7 @@
                 store.slot_name = drop.drag_name
             
                 return True
-        #return True 
-        return
+        return True 
 
 init:
     image bg looplogic_bg = "LoopLogic_background.png"
