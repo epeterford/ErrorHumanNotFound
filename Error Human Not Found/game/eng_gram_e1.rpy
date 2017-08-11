@@ -115,6 +115,9 @@ init:
 
 label eng_gram_e1:
 
+    $ gate_name= ""
+    $ slot_name = ""
+
     scene bg Eng_Tile
     $ quick_menu = False
     $ game_menu = True
@@ -1630,6 +1633,9 @@ label eng_gram_e1:
             $ and6in4 = False
             $ and6in5 = False
             $ and6in6 = True
+
+
+
     if temp_slot == "" and temp_gate == "" and slot_name != "null":
         $ temp_slot = slot_name
         $ temp_gate = gate_name
@@ -1642,6 +1648,9 @@ label eng_gram_e1:
     $ temp_slot = ""
     $ temp_gate = "" 
     play sound gramTree2
+
+
+
     if and5in1 == True and and1in2 == True:
         image eaeng_e1_tile182 = "leftTreegreenlong.png"
         image eaeng_e1_tile183 = "1_1_green.png"

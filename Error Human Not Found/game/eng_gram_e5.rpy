@@ -124,6 +124,9 @@ init:
 
 label eng_gram_e5:
 
+    $ gate_name= ""
+    $ slot_name = ""
+
     scene bg Eng_Tile
     $ quick_menu = False
     $ game_menu = True
@@ -1654,7 +1657,6 @@ label gamefile_e5:
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
            $ attempts -=1
-           "[gate_name] [slot_name]"
       
     else:
        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):

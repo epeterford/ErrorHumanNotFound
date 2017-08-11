@@ -122,6 +122,9 @@ init:
 
 label eng_gram_e2:
 
+    $ gate_name= ""
+    $ slot_name = ""
+
     scene bg Eng_Tile
     $ quick_menu = False
     $ game_menu = True
