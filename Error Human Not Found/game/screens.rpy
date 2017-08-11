@@ -1040,14 +1040,6 @@ screen preferences():
         area (834, 679, 955, 149) 
         hovered Show("display_options")#, transition=dissolve)
         unhovered Hide("display_options")#, transition=dissolve)
-    imagebutton:
-            idle "images/objects/remote_idle.png"
-            hover "images/objects/remote_hover.png"
-            xpos 0
-            ypos 0
-            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
-            activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
-            action Jump("label_remoteComments")
             
     imagemap:   
         ground "gui/overlay/options_ground.png"
@@ -1119,7 +1111,26 @@ screen preferences():
             idle "gui/overlay/fullscreen_true.png"
             xpos 0
             ypos 0
-        
+    imagebutton:
+        idle "gui/overlay/remote_idle.png"
+        hover "gui/overlay/remote_hover.png"
+        xpos 0
+        ypos 0
+        hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+#            action Jump("label_remoteComments")
+#            if (blue_remoteClicks ==0):
+#                selected "gui/overlay/blue_remote1.png"
+#                action $blue_remoteClicks +=1
+#            if (blue_remoteClicks==2):
+#                selected "gui/overlay/blue_remote2.png"
+#                $blue_remoteClicks +=1
+#            if (blue_remoteClicks ==3):
+#                selected "gui/overlay/blue_remote3.png"
+#                $blue_remoteClicks +=1
+#            if (blue_remoteClicks >3):
+#                selected "gui/overlay/blue_remote4.png"
+#                $blue_remoteClicks +=1
 init -100 python:
     config.default_afm_enable = True
     config.default_afm_time =40
@@ -1141,20 +1152,7 @@ init -2 python:
     style.pref_slider.ymaximum = 64    # height of your left_bar image.  Probably will be the height of the red part of the bar plus the slider's height.
 
     style.pref_slider.thumb = None    
-label label_remoteComments:
-    if (blue_remoteClicks ==0):
-        show image "gui/overlay/blue_remote1.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks==2):
-        show image "gui/overlay/blue_remote2.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks ==3):
-        show image "gui/overlay/blue_remote3.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks >3):
-        show image "gui/overlay/blue_remote4.png"
-        $blue_remoteClicks +=1
-#    Show("remote_comments")
+
 ## History screen ##############################################################
 ##
 ## This is a screen that displays the dialogue history to the player. While
