@@ -32,7 +32,7 @@ define config.version = "1.0"
 define gui.about = _("{i}Error: Human Not Found{/i} is an educational game developed by"
                       "students from Full Sail University, working at CelleC Games.\n\n"
                       
-                      "To see more of our educational games, visit cellecgames.com")
+                      "To see more of our educational games, visit {a=http://www.cellecgames.com/}cellecgames.com{/a}")
 
 
 ## A short name for the game used for executables and directories in the built

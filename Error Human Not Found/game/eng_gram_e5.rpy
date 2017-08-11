@@ -18,25 +18,6 @@ init python:
                 return True
         return True 
         
-#image blink:
- #   xpos 925 ypos 325
-  #  xanchor 1.0 yanchor 1.0
-   # "images/leftTree.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreegreen.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreered.png"
-    #2
-    #.15
-    #linear 0.5 alpha 1.0
-    #repeat
-
-     #   if drag_name == "gate slot one" && child == "images/1_1.png":
-      #  xpos 925 ypos 325
-      #  add "images/leftTreegreen.png"
-      #  return
 
 screen logicGatese5:
     key 'h' action Hide("")
@@ -54,7 +35,7 @@ screen logicGatese5:
         xpos 178
         ypos 285
     text "Attempts" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 358 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text ": " xpos 365 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
@@ -1668,21 +1649,19 @@ label gamefile_e5:
             $ and6in5 = False
             $ and6in6 = True
 
-
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
-        $ temp_slot = slot_name
-        $ temp_gate = gate_name
-        if temp_slot != "" and temp_gate != "":
-            $ attempts -=1
-            
+       $ temp_slot = slot_name
+       $ temp_gate = gate_name
+       if temp_slot != "" and temp_gate != "":
+           $ attempts -=1
+           "[gate_name] [slot_name]"
       
     else:
-        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-            $ attempts -=1
-            $ temp_slot = slot_name
-            $ temp_gate = gate_name
-
-
+       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+           $ attempts -=1
+           $ temp_slot = slot_name
+           $ temp_gate = gate_name
+           
     play sound gramTree2
     if and5in1 == True and  and1in2 == True:
         image eaeng_e5_tile42 = "leftTreegreenlong.png"
@@ -1930,39 +1909,8 @@ label gamefile_e5:
         show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
         show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
         show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
-<<<<<<< HEAD
         queue sound gramWin
         $ renpy.pause(1.0)
-        jump gramEasyDone
-=======
-        play sound gramWin
-
-        jump eng_gram_e5
->>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-
-
-    #if temp_slot == "" and temp_gate == "" and slot_name != "null":
-    #    $ temp_slot = slot_name
-    #    $ temp_gate = gate_name
-    #    $ attempts -=1
-    #else:
-    #   if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-    #       $ attempts -=1
-    #       $ temp_slot = slot_name
-    #       $ temp_gate = gate_name
-    #$ temp_slot = ""
-    #$ temp_gate = ""  
-    if attempts ==0:
-<<<<<<< HEAD
-        queue sound gramLose
-=======
->>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-        show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0)
-        show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)
-        show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)
-        show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
-        show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
-        show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
         hide eaeng_e5_tile42
         hide eaeng_e5_tile43
         hide eaeng_e5_tile44
@@ -1995,11 +1943,51 @@ label gamefile_e5:
         hide eaeng_e5_tile75
         hide eaeng_e5_tile76
         hide eaeng_e5_tile77
-        play sound gramLose
+        jump gramEasyDone
+ 
+    if attempts ==0:
+        queue sound gramLose
+        show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0)
+        show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)
+        show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)
+        show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
+        show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
+        show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
+        $renpy.pause(1.5)
+        hide eaeng_e5_tile42
+        hide eaeng_e5_tile43
+        hide eaeng_e5_tile44
+        hide eaeng_e5_tile45
+        hide eaeng_e5_tile46
+        hide eaeng_e5_tile47
+        hide eaeng_e5_tile48
+        hide eaeng_e5_tile49
+        hide eaeng_e5_tile50
+        hide eaeng_e5_tile51
+        hide eaeng_e5_tile52
+        hide eaeng_e5_tile53
+        hide eaeng_e5_tile54
+        hide eaeng_e5_tile55
+        hide eaeng_e5_tile56
+        hide eaeng_e5_tile61
+        hide eaeng_e5_tile62
+        hide eaeng_e5_tile63
+        hide eaeng_e5_tile64
+        hide eaeng_e5_tile65
+        hide eaeng_e5_tile66
+        hide eaeng_e5_tile67
+        hide eaeng_e5_tile68
+        hide eaeng_e5_tile69
+        hide eaeng_e5_tile70
+        hide eaeng_e5_tile71
+        hide eaeng_e5_tile72
+        hide eaeng_e5_tile73
+        hide eaeng_e5_tile74
+        hide eaeng_e5_tile75
+        hide eaeng_e5_tile76
+        hide eaeng_e5_tile77
         $ attemptsLogicGate1 +=1
-
-        "You lose try again"
-        jump eng_gram_e5
+        jump gramEasyLose
           
     
     jump gamefile_e5

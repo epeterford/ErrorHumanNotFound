@@ -35,7 +35,7 @@ screen logicGatese1:
         xpos 178
         ypos 285
     text "Attempts" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 358 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text ": " xpos 365 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
@@ -1879,36 +1879,8 @@ label eng_gram_e1:
         show eaeng_e1_tile229 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
         show eaeng_e1_tile230 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
         show eaeng_e1_tile231 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
-<<<<<<< HEAD
         queue sound gramWin
         $ renpy.pause(1.0)
-        jump gramEasyDone   
-    
-    if attempts ==0:
-        queue sound gramLose
-=======
-        play sound gramWin
-        "Access Gained"
-
-        jump eng_gram_e1
-    #if slot_name == "null":
-    #    $attempts +=1
-
-    #$attempts -=1
-    if attempts ==0:
->>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-        image eaeng_e1_tile232 = "letterP.png"
-        image eaeng_e1_tile233 = "letterJ.png"
-        image eaeng_e1_tile234 = "letterM.png"
-        image eaeng_e1_tile235 = "letterL.png"
-        image eaeng_e1_tile236 = "letterN.png"
-        image eaeng_e1_tile237 = "letterK.png"
-        show eaeng_e1_tile232 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
-        show eaeng_e1_tile233 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
-        show eaeng_e1_tile234 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
-        show eaeng_e1_tile235 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
-        show eaeng_e1_tile236 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
-        show eaeng_e1_tile237 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
         hide eaeng_e1_tile182
         hide eaeng_e1_tile183
         hide eaeng_e1_tile184
@@ -1945,18 +1917,59 @@ label eng_gram_e1:
         hide eaeng_e1_tile215
         hide eaeng_e1_tile216
         hide eaeng_e1_tile217
-        play sound gramLose
-        $ attemptsLogicGate1 +=1
-        "You Lose Try Again"
-
-        jump eng_gram_e1
+        jump gramEasyDone  
     
-
-#    if and1in1 == True or and2in1 ==True or and3in1 ==True or and4in1 ==True:
-#        image tile109 = "leftTreegreen.png"
-#        #shows tiles
-#        show tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
-#    if and1in1 == False and and2in1 == False and and3in1 == False and and4in1 ==False:
-#        hide tile109      
+    if attempts==0:
+        queue sound gramLose
+        image eaeng_e1_tile232 = "letterP.png"
+        image eaeng_e1_tile233 = "letterJ.png"
+        image eaeng_e1_tile234 = "letterM.png"
+        image eaeng_e1_tile235 = "letterL.png"
+        image eaeng_e1_tile236 = "letterN.png"
+        image eaeng_e1_tile237 = "letterK.png"
+        show eaeng_e1_tile232 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
+        show eaeng_e1_tile233 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
+        show eaeng_e1_tile234 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
+        show eaeng_e1_tile235 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
+        show eaeng_e1_tile236 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
+        show eaeng_e1_tile237 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+        $renpy.pause(1.5)
+        hide eaeng_e1_tile182
+        hide eaeng_e1_tile183
+        hide eaeng_e1_tile184
+        hide eaeng_e1_tile185
+        hide eaeng_e1_tile186
+        hide eaeng_e1_tile187
+        hide eaeng_e1_tile188
+        hide eaeng_e1_tile189
+        hide eaeng_e1_tile190
+        hide eaeng_e1_tile191
+        hide eaeng_e1_tile192
+        hide eaeng_e1_tile193
+        hide eaeng_e1_tile194
+        hide eaeng_e1_tile195
+        hide eaeng_e1_tile196
+        hide eaeng_e1_tile197
+        hide eaeng_e1_tile198
+        hide eaeng_e1_tile199
+        hide eaeng_e1_tile200
+        hide eaeng_e1_tile201
+        hide eaeng_e1_tile202
+        hide eaeng_e1_tile203
+        hide eaeng_e1_tile204
+        hide eaeng_e1_tile205
+        hide eaeng_e1_tile206
+        hide eaeng_e1_tile207
+        hide eaeng_e1_tile208
+        hide eaeng_e1_tile209
+        hide eaeng_e1_tile210
+        hide eaeng_e1_tile211
+        hide eaeng_e1_tile212
+        hide eaeng_e1_tile213
+        hide eaeng_e1_tile214
+        hide eaeng_e1_tile215
+        hide eaeng_e1_tile216
+        hide eaeng_e1_tile217
+        jump gramEasyLose
     
     jump gamefile_e1

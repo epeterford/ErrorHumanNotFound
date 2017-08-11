@@ -16,31 +16,7 @@ init python:
                 store.slot_name = drop.drag_name
             
                 return True
-<<<<<<< HEAD
-        return 
-=======
         return True 
-        
-#image blink:
- #   xpos 925 ypos 325
-  #  xanchor 1.0 yanchor 1.0
-   # "images/leftTree.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreegreen.png"
-    #2
-    #linear 0.5 alpha 1.0
-    #"images/leftTreered.png"
-    #2
-    #.15
-    #linear 0.5 alpha 1.0
-    #repeat
-
-     #   if drag_name == "gate slot one" && child == "images/1_1.png":
-      #  xpos 925 ypos 325
-      #  add "images/leftTreegreen.png"
-      #  return
->>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
 
 screen logicGatese2:
     key 'h' action Hide("")
@@ -58,7 +34,7 @@ screen logicGatese2:
         xpos 178
         ypos 285
     text "Attempts" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 358 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text ": " xpos 365 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
 
     draggroup:
@@ -2021,30 +1997,9 @@ label gamefile_e2:
         show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
         show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
         show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
-<<<<<<< HEAD
+
         queue sound gramWin
         $ renpy.pause(1.0)
-        jump gramEasyDone
-        
-    if attempts ==0:
-        queue sound gramLose
-=======
-        play sound gramWin
-        "Access Gained"
-
-        jump eng_gram_e2
-    #if slot_name == "null":
-    #    $attempts +=1
-
-    #$attempts -=1
-    if attempts ==0:
->>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-        show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
-        show eaeng_e2_tile111 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
-        show eaeng_e2_tile108 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
-        show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
-        show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
-        show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
         hide eaeng_e2_tile42
         hide eaeng_e2_tile43
         hide eaeng_e2_tile44
@@ -2101,11 +2056,82 @@ label gamefile_e2:
         hide eaeng_e2_tile99
         hide eaeng_e2_tile100
         hide eaeng_e2_tile101
-
-        play sound GramLose
+        
+        jump gramEasyDone
+        
+        
+    if attempts ==0:
+        queue sound gramLose
+        image eaeng_e2_tile107 = "letterK.png"
+        image eaeng_e2_tile111 = "letterN.png"
+        image eaeng_e2_tile108 = "letterM.png"
+        image eaeng_e2_tile110 = "letterP.png"
+        image eaeng_e2_tile106 = "letterS.png"
+        image eaeng_e2_tile109 = "letterQ.png"
+        show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
+        show eaeng_e2_tile111 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
+        show eaeng_e2_tile108 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
+        show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
+        show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
+        show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
+        $ renpy.pause(1.5)
+        hide eaeng_e2_tile42
+        hide eaeng_e2_tile43
+        hide eaeng_e2_tile44
+        hide eaeng_e2_tile45
+        hide eaeng_e2_tile46
+        hide eaeng_e2_tile47
+        hide eaeng_e2_tile48
+        hide eaeng_e2_tile49
+        hide eaeng_e2_tile50
+        hide eaeng_e2_tile51
+        hide eaeng_e2_tile52
+        hide eaeng_e2_tile53
+        hide eaeng_e2_tile54
+        hide eaeng_e2_tile55
+        hide eaeng_e2_tile60
+        hide eaeng_e2_tile61
+        hide eaeng_e2_tile62
+        hide eaeng_e2_tile63
+        hide eaeng_e2_tile64
+        hide eaeng_e2_tile65
+        hide eaeng_e2_tile66
+        hide eaeng_e2_tile67
+        hide eaeng_e2_tile68
+        hide eaeng_e2_tile69
+        hide eaeng_e2_tile70
+        hide eaeng_e2_tile71
+        hide eaeng_e2_tile72
+        hide eaeng_e2_tile73
+        hide eaeng_e2_tile74
+        hide eaeng_e2_tile75
+        hide eaeng_e2_tile76
+        hide eaeng_e2_tile77
+        hide eaeng_e2_tile78
+        hide eaeng_e2_tile79
+        hide eaeng_e2_tile80
+        hide eaeng_e2_tile81
+        hide eaeng_e2_tile82
+        hide eaeng_e2_tile83
+        hide eaeng_e2_tile84
+        hide eaeng_e2_tile85
+        hide eaeng_e2_tile86
+        hide eaeng_e2_tile87
+        hide eaeng_e2_tile88
+        hide eaeng_e2_tile89
+        hide eaeng_e2_tile90
+        hide eaeng_e2_tile91
+        hide eaeng_e2_tile92
+        hide eaeng_e2_tile93
+        hide eaeng_e2_tile94
+        hide eaeng_e2_tile95
+        hide eaeng_e2_tile96
+        hide eaeng_e2_tile97
+        hide eaeng_e2_tile98
+        hide eaeng_e2_tile99
+        hide eaeng_e2_tile100
+        hide eaeng_e2_tile101
         $ attemptsLogicGate1 +=1
-
-        "You lose try again"
-        jump eng_gram_e2  
+        jump gramEasyLose
     
     jump gamefile_e2

@@ -156,7 +156,7 @@ label chooseEasyGram:
     $gramRow2_soundB = 0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     window hide
-    jump eng_gram_e1
+    jump eng_gram_e5
 #    $randomNumberEasyGram = renpy.random.randint(0,4)
 #    if randomNumberEasyGram==0:
 #        jump eng_gram_e1
