@@ -1944,8 +1944,8 @@ label gamefile_e4:
 
         jump eng_gram_e4
 >>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-    if slot_name == "null":
-        $attempts +=1
+    #if slot_name == "null":
+    #    $attempts +=1
 
     if temp_slot == "" and temp_gate == "" and slot_name != "null":
         $ temp_slot = slot_name

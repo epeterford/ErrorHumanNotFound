@@ -403,19 +403,18 @@ label gamefile_lle3:
 
 
 
-    #"[gate_name] [slot_name] [temp_slot] [temp_gate]"
-    if temp_slot == "" and temp_gate == "" and slot_name != "":
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
+            
+      
+    else:
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
-            $ attempts -=1
-            #"empty"
-    else:
-        if slot_name != "":
-            if (temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate):
-                $ attempts -=1
-                $ temp_slot = slot_name
-                $ temp_gate = gate_name
-                #"main loop"
 
 
 #*******************************************

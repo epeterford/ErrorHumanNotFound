@@ -280,6 +280,10 @@ label eng_gram_e5:
     $ and6in7 = False
 
 
+    #gate test vars
+    $ temp_slot = ""
+    $ temp_gate = ""
+
 
     #attempts for players
     $ attempts = 8
@@ -1664,6 +1668,21 @@ label gamefile_e5:
             $ and6in5 = False
             $ and6in6 = True
 
+
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
+            
+      
+    else:
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
+
+
     play sound gramTree2
     if and5in1 == True and  and1in2 == True:
         image eaeng_e5_tile42 = "leftTreegreenlong.png"
@@ -1920,20 +1939,19 @@ label gamefile_e5:
 
         jump eng_gram_e5
 >>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
-    if slot_name == "null":
-        $attempts +=1
 
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
-        $ temp_slot = slot_name
-        $ temp_gate = gate_name
-        $ attempts -=1
-    else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
-    $ temp_slot = ""
-    $ temp_gate = ""  
+
+    #if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    #    $ temp_slot = slot_name
+    #    $ temp_gate = gate_name
+    #    $ attempts -=1
+    #else:
+    #   if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+    #       $ attempts -=1
+    #       $ temp_slot = slot_name
+    #       $ temp_gate = gate_name
+    #$ temp_slot = ""
+    #$ temp_gate = ""  
     if attempts ==0:
 <<<<<<< HEAD
         queue sound gramLose

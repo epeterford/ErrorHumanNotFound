@@ -2033,10 +2033,10 @@ label gamefile_e2:
         "Access Gained"
 
         jump eng_gram_e2
-    if slot_name == "null":
-        $attempts +=1
+    #if slot_name == "null":
+    #    $attempts +=1
 
-    $attempts -=1
+    #$attempts -=1
     if attempts ==0:
 >>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
         show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)

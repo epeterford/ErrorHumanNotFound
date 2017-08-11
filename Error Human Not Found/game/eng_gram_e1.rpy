@@ -1891,10 +1891,10 @@ label eng_gram_e1:
         "Access Gained"
 
         jump eng_gram_e1
-    if slot_name == "null":
-        $attempts +=1
+    #if slot_name == "null":
+    #    $attempts +=1
 
-    $attempts -=1
+    #$attempts -=1
     if attempts ==0:
 >>>>>>> 4b1ab33896336bf21d00437bf2500feea255cfb8
         image eaeng_e1_tile232 = "letterP.png"
