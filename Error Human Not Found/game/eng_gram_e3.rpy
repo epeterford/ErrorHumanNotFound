@@ -123,6 +123,9 @@ init:
 
 label eng_gram_e3:
 
+    $ gate_name= ""
+    $ slot_name = ""
+
     scene bg Eng_Tile
     $ quick_menu = False
     $ game_menu = True
@@ -1640,6 +1643,20 @@ label gamefile_e3:
             $ and6in4 = False
             $ and6in5 = False
             $ and6in6 = True
+
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+       $ temp_slot = slot_name
+       $ temp_gate = gate_name
+       if temp_slot != "" and temp_gate != "":
+           $ attempts -=1
+      
+    else:
+       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+           $ attempts -=1
+           $ temp_slot = slot_name
+           $ temp_gate = gate_name
+
+    play sound gramTree2
 
 
     if (and1in1 == True or and2in1 == True or and4in1 == True) and (and5in2 == True):
