@@ -924,8 +924,29 @@ screen transitions_options:
     
 screen display_options:
     add "gui/overlay/display_hints.png"
+    
+#screen dispaly_comments:
+#    if ():
+#        add""
+#    if ():
+#        add ""
+
+screen remote_comments:
+    if (blue_remoteClicks ==0):
+        add "gui/overlay/blue_remote1.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks==2):
+        add "gui/overlay/blue_remote2.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks ==3):
+        add "gui/overlay/blue_remote3.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks >3):
+        add "gui/overlay/blue_remote4.png"
+        $blue_remoteClicks +=1
 
 screen preferences():
+    $ blue_remoteClicks = 0
     $ musicVolumeVal = _preferences.get_volume('music')
     $ soundVolumeVal = _preferences.get_volume('sfx')
     $ textSpeedVal = _preferences.text_cps
@@ -1019,7 +1040,15 @@ screen preferences():
         area (834, 679, 955, 149) 
         hovered Show("display_options")#, transition=dissolve)
         unhovered Hide("display_options")#, transition=dissolve)
-
+    imagebutton:
+            idle "images/objects/remote_idle.png"
+            hover "images/objects/remote_hover.png"
+            xpos 0
+            ypos 0
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+            action Jump("label_remoteComments")
+            
     imagemap:   
         ground "gui/overlay/options_ground.png"
         idle "gui/overlay/options_idle.png"
@@ -1029,43 +1058,43 @@ screen preferences():
 #        alpha True
         
         #Display 
-        hotspot (1269, 693, 77, 112) action Preference("display", "toggle")
-        hotspot (1692, 693, 77, 112)action Preference("display", "toggle")
+        hotspot (1269, 696, 77, 109) action Preference("display", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1692, 693, 77, 112)action Preference("display", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         
         #Volume
         #Music arrows
-        hotspot (1276, 131, 71, 69) action Preference("music volume", musicVolumeVal-0.1)
-        hotspot (1704, 131, 61, 69) action Preference("music volume", musicVolumeVal+0.1)
+        hotspot (1276, 131, 71, 69) action Preference("music volume", musicVolumeVal-0.1) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1704, 131, 61, 69) action Preference("music volume", musicVolumeVal+0.1) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         
-        hotspot (1276, 200, 71, 83) action (Preference("sound volume", soundVolumeVal-0.1), Play("sound", config.sample_sound))
-        hotspot (1704, 200, 71, 83) action (Preference("sound volume", soundVolumeVal+0.1), Play("sound", config.sample_sound))
+        hotspot (1276, 200, 71, 83) action (Preference("sound volume", soundVolumeVal-0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1704, 200, 71, 83) action (Preference("sound volume", soundVolumeVal+0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 #        hotspot (1276, 94, 71, 69) action Preference("music volume", 0.0)
 #        hotspot (1704, 94, 61, 69) action Preference("music volume", 1.0) #max/min volumes on arrows
 #        hotspot (1276, 163, 71, 83) action Preference("sound volume", 0.0)
 #        hotspot (1704, 163, 71, 83) action Preference("sound volume", 1.0)
-        bar pos (1700, 131) value Preference("music volume") style "pref_slider" 
+        bar pos (1700, 131) value Preference("music volume") style "pref_slider"  
         bar pos (1700, 210) value Preference("sound volume") style "pref_slider" #action Play("sound", config.sample_sound)
-        hotspot (1460, 274, 128, 90) action Preference("all mute", "toggle")
+        hotspot (1460, 274, 128, 90) action Preference("all mute", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
         #Skip Options
-        hotspot (1249, 562, 117, 76) action Preference("skip", "toggle")
-        hotspot (1688, 562, 114, 76) action InvertSelected(Preference("transitions", "toggle"))
-        hotspot (1467, 562, 130, 76) action Preference("after choices", "toggle")
+        hotspot (1249, 562, 117, 76) action Preference("skip", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"  
+        hotspot (1688, 562, 114, 76) action InvertSelected(Preference("transitions", "toggle")) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1467, 562, 130, 76) action Preference("after choices", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         
 #        hotspot (1276, 363, 71, 83) action Preference("text speed", 1) #Set to minimum on click
 #        hotspot (1704, 363, 71, 83) action Preference("text speed", 200) #Set to maximum on click
         if((textSpeedVal-20)==0):
-            hotspot (1276, 400, 71, 83) action Preference("text speed", 1)
+            hotspot (1276, 400, 71, 83) action Preference("text speed", 1) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         else:
-            hotspot (1276, 400, 71, 83) action Preference("text speed", textSpeedVal-20)
-        hotspot (1704, 400, 71, 83) action Preference("text speed", textSpeedVal+20)
+            hotspot (1276, 400, 71, 83) action Preference("text speed", textSpeedVal-20) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (1704, 400, 71, 83) action Preference("text speed", textSpeedVal+20) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         
         if not(autoForwardVal==None):
 #            if (autoForwardVal ==0) or (autoForwardVal<0):
 #                hotspot (1276, 446, 71, 83) action Preference("auto-forward time", 0)R
 #            if (autoForwardVal>0) and (autoForwardVal<40):
-            hotspot (1276, 483, 71, 83) action Preference("auto-forward time", autoForwardVal-3)
-            hotspot (1704, 483, 71, 83) action Preference("auto-forward time", autoForwardVal+3)
+            hotspot (1276, 483, 71, 83) action Preference("auto-forward time", autoForwardVal-3) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            hotspot (1704, 483, 71, 83) action Preference("auto-forward time", autoForwardVal+3) activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 #            if (autoForwardVal==40) or (autoForwardVal>40):
 #                hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)
             
@@ -1082,7 +1111,7 @@ screen preferences():
         
     if (_preferences.fullscreen==False):
         imagebutton:
-            idle "gui/overlay/window_true.png"
+            idle "gui/overlay/window_true.png" 
             xpos 0
             ypos 0
     if (_preferences.fullscreen==True):
@@ -1094,6 +1123,7 @@ screen preferences():
 init -100 python:
     config.default_afm_enable = True
     config.default_afm_time =40
+    blue_remoteClicks = 0
 init -2 python:
     musicVolumeVal = _preferences.get_volume('music')
     soundVolumeVal = _preferences.get_volume('sfx')
@@ -1111,6 +1141,20 @@ init -2 python:
     style.pref_slider.ymaximum = 64    # height of your left_bar image.  Probably will be the height of the red part of the bar plus the slider's height.
 
     style.pref_slider.thumb = None    
+label label_remoteComments:
+    if (blue_remoteClicks ==0):
+        show image "gui/overlay/blue_remote1.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks==2):
+        show image "gui/overlay/blue_remote2.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks ==3):
+        show image "gui/overlay/blue_remote3.png"
+        $blue_remoteClicks +=1
+    if (blue_remoteClicks >3):
+        show image "gui/overlay/blue_remote4.png"
+        $blue_remoteClicks +=1
+#    Show("remote_comments")
 ## History screen ##############################################################
 ##
 ## This is a screen that displays the dialogue history to the player. While
