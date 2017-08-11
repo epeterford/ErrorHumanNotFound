@@ -503,6 +503,7 @@ label leavemealoneada_S:
     show Grace frustrated at left
     show Mopr at center
     g "Not now, Ada. I know what I'm doing."
+    show Ada annoyed at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
     g "Did I ask for your help? I've got this, on my own level, thank you very much."
     a "I detect sarcasm in your behavior."
@@ -511,7 +512,7 @@ label leavemealoneada_S:
     g "I appreciate that you have your capabilities as an android, but in case you need a reminder, us {i}humans{/i} created you."
     a "I am aware of that. I did not--"
     g "How about we stop talking so we don't get caught? And by that, I mean you let me do my job."
-    show Ada frustrated right
+    show Ada frustrated
     a "Fine."
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -525,8 +526,10 @@ label leavemealoneada_S:
 
 label calmdown_S:
     $ points_E += 2
+    show Mopr at center
     show Grace neutral at left
     g "If you talk it, I'm sure you'd like it."
+    show Ada neutral at right
     a "What do you mean?"
     g "My dad always talked to machines that we worked on together."
     a "What did that improve?"
@@ -536,8 +539,9 @@ label calmdown_S:
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
     mopr "[[Affirmative beeping.]"
-    show Grace happy at right
+    show Grace happy at left
     g "See? It trusts you."
+    show Ada happy at left
     a "It appears that way."
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -550,17 +554,20 @@ label calmdown_S:
     jump exitthemopr_SbE
 
 label exitthemopr_S:
+    show Mopr at center
     mopr "[[Questioning beep boop?]"
     show Grace happy at left
     g "Don't worry about it. Tell you what, why don't you go finish the rest of your cycle, hmm?"
     mopr "[[Suspicious beep!]"
     g "C'mon MOPR, don't be that way."
     mopr "[[Beep. Boop.]"
+    show Ada concerned at right
     a "MOPR unit, we are investigating what happened to Alpha unit."
     mopr "[[Inquisitive beep.]"
     a "We want to know what caused this, so that this tragedy does not happen again."
     mopr "[[Sad beeps.]"
     mopr "[[Affirmative beeps!]"
+    show ADa happy
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us."
     mopr "[[Confirmative beeps.]"

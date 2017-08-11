@@ -515,6 +515,7 @@ label alilhelphere_SbE:
     show Grace neutral at left
     show Mopr at center
     g "If you talk it, I'm sure you'd like it."
+    show Ada neutral at right
     a "What do you mean?"
     g "My dad always talked to machines that we worked on together."
     a "What did that improve?"
@@ -526,6 +527,7 @@ label alilhelphere_SbE:
     mopr "[[Affirmative beeping.]"
     show Grace happy
     g "See? It trusts you."
+    show Ada happy
     a "It appears that way."
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -545,12 +547,14 @@ label exitthemopr_SbE:
     mopr "[[Suspicious beep.]"
     g "C'mon MOPR, don't be that way."
     mopr "[[Beep. Boop.]"
+    show Ada concerned at right
     a "MOPR unit, we are here to investigate what happened to Alpha unit."
     g "Don't you want us to find out so we can make sure a tragedy like this doesn't happen again?"
     mopr "[[Inquisitive beep.]"
     a "Personally, I would hope nothing like this happens to me."
     mopr "[[Sad beeps.]"
     mopr "[[Affirmative beeps.]"
+    show Ada happy
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us."
     mopr "[[Confirmative beeps.]"

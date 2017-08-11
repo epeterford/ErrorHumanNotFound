@@ -501,6 +501,7 @@ label byefelicia:
     show Grace frustrated at left
     show Mopr at center
     g "Not now, Ada. I know what I'm doing."
+    show Ada concerned at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
     a "I'm aware of your abilities, Ada, but let me give this a try."
     g "I know what I'm doing."
@@ -523,7 +524,9 @@ label byefelicia:
 label lilbabymopr:
     $ points_E +=2
     show Grace neutral at left
+    show Mopr at center
     g "Talk to him, Ada. You'll like him."
+    show Ada neutral at right
     a "Him?"
     g "He is more personal than it. My dad always talked to machines that we worked on together."
     a "What did that improve?"
@@ -549,18 +552,21 @@ label lilbabymopr:
     jump exitthemopr_SbE
  
 label exitthemopr_E:
+    show Mopr at center
     mopr "[[Questioning beep boop.]"
     show Grace happy at left
     g "It's okay, MOPR. We just want to help. You can continue cleaning and just ignore us, okay?"
     mopr "[[Suspicious beep.]"
     g "C'mon MOPR, don't be that way."
     mopr "[[Beep. Boop.]"
+    show Ada concerned at right
     a "MOPR unit, we are to investigate what happened to Alpha unit."
     g "Don't you want us to find out so we can make sure a tragedy like this doesn't happen again?"
     mopr "[[Inquisitive beep.]"
     a "Personally, I would hope nothing like this happens to me."
     mopr "[[Sad beeps.]"
     mopr "[[Affirmative beeps.]"
+    show Ada happy
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us. Thank you!"
     mopr "[[Confirmative beeps.]"
