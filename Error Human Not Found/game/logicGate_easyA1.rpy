@@ -21,9 +21,9 @@ init python:
             return True
         return True
 label logicGate_easyA1:
-    $renpy.block_rollback()
     $quick_menu = False
-
+    $config.skipping=None
+    $renpy.block_rollback()
     #loads background
     scene bg Logic_Gate
     
@@ -162,8 +162,19 @@ label gamefileA1:
             $ and1x = 1111
             $ and1y = 608
             $ and1in1 = True
-
-
+            
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
+      
+    else:
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
+    
 #*******************************************
 #************image zone*********************
 #*******************************************
@@ -184,9 +195,6 @@ label gamefileA1:
         show eatile42 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
         show eaend2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
         
-    if slot_name == "null":
-        $attempts +=1
-        
 #win conditions ********
     if and1in1 == True: 
         image eatile100 = "AND_Gate.png"
@@ -195,9 +203,7 @@ label gamefileA1:
         $ renpy.pause(1.0)
         $ Logic_A_solved = True
         jump nextLGEasy
-
-        
-    $ attempts -= 1
+    
     if attempts == 0:
         #"you lose try again"
         jump exploreHiroseOffice
@@ -205,7 +211,17 @@ label gamefileA1:
     jump gamefileA1
     
 screen logicGatesEasyA1:
-    key 'h' action Hide("")
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $config.skipping=None
+    $renpy.block_rollback()
     imagebutton:
         idle "hints_idle.png"
         hover "hints_hover.png"

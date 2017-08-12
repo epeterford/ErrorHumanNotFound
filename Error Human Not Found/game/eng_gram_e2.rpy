@@ -20,6 +20,14 @@ init python:
 
 screen logicGatese2:
     key 'h' action Hide("")
+    key 'K_PAGEUP' action Hide("")
+    key 'repeat_K_PAGEUP' action Hide("")
+    key 'K_AC_BACK' action Hide("")
+    key 'mousedown_4' action Hide("")
+    key 'K_LCTRL' action Skip("")
+    key 'K_RCTRL' action Skip("")
+    key 'K_TAB' action Hide("")
+    key '>' action Skip("")
     imagebutton:
         idle "hints_idle.png"
         hover "hints_hover.png"
@@ -121,7 +129,7 @@ init:
     image bg Eng_Tile = "eng_tile_bg.png"
 
 label eng_gram_e2:
-
+    $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
 
@@ -1639,15 +1647,16 @@ label gamefile_e2:
             $ and6in4 = False
             $ and6in5 = False
             $ and6in6 = True
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
-        $ temp_slot = slot_name
-        $ temp_gate = gate_name
-        $ attempts -=1
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+       $ temp_slot = slot_name
+       $ temp_gate = gate_name
+       if temp_slot != "" and temp_gate != "":
+           $ attempts -=1
     else:
-        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
            $ attempts -=1
            $ temp_slot = slot_name
-           $ temp_gate = gate_name  
+           $ temp_gate = gate_name
     play sound gramTree2
     if and5in1 == True and and1in2 == True:
         image eaeng_e2_tile42 = "leftTreegreenlong.png"

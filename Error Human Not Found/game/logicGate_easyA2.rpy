@@ -22,6 +22,7 @@ init python:
         return True
 
 label logicGate_easyA2:  #logicGate_easyA2
+    $config.skipping=None
     $renpy.block_rollback()
     $quick_menu = False
     #loads background
@@ -193,8 +194,17 @@ label gamefileA2:
         show ea1end2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
         
         
-    if slot_name == "null":
-        $attempts +=1
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
+      
+    else:
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
         
 #win conditions ********
     if and1in1 == True: 
@@ -206,8 +216,6 @@ label gamefileA2:
         jump nextLGEasy
         #jump logicGate_easyA2
 
-        
-    $ attempts -= 1
     if attempts == 0:
         "you lose try again"
         jump exploreHiroseOffice
@@ -216,7 +224,16 @@ label gamefileA2:
     
 #area for dragables
 screen logicGatesEasyA2:
-    key 'h' action Hide("")
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $config.skipping=None
     imagebutton:
         idle "hints_idle.png"
         hover "hints_hover.png"

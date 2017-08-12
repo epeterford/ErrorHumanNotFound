@@ -925,28 +925,96 @@ screen transitions_options:
 screen display_options:
     add "gui/overlay/display_hints.png"
     
-#screen dispaly_comments:
-#    if ():
-#        add""
-#    if ():
-#        add ""
+screen blue_leftFace: #Done
+    add "gui/overlay/blue_face_left.png"
 
-screen remote_comments:
-    if (blue_remoteClicks ==0):
-        add "gui/overlay/blue_remote1.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks==2):
-        add "gui/overlay/blue_remote2.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks ==3):
-        add "gui/overlay/blue_remote3.png"
-        $blue_remoteClicks +=1
-    if (blue_remoteClicks >3):
-        add "gui/overlay/blue_remote4.png"
-        $blue_remoteClicks +=1
+screen blue_rightFace: #Done
+    add "gui/overlay/blue_face_right.png"
+    
+screen blue_afterChoice:
+    add "gui/overlay/blue_afterChoices.png"
+    
+screen blue_autoHigh: #Done
+    add "gui/overlay/blue_auto_high.png"
+    
+screen blue_autoMed: #Done
+    add "gui/overlay/blue_auto_medium.png"
+    
+screen blue_autoLow: #Done
+    add "gui/overlay/blue_auto_off.png"
+    
+screen blue_fullscreen: #Done
+    add "gui/overlay/blue_fullscreen.png"
+    
+screen blue_musicHigh: #Done
+    add "gui/overlay/blue_music_high.png"
+    
+screen blue_musicMed: #Done
+    add "gui/overlay/blue_music_medium.png"
+    
+screen blue_musicLow: #Done
+    add "gui/overlay/blue_music_low.png"
+    
+screen blue_mute: 
+    add "gui/overlay/blue_mute.png"
+    
+screen blue_soundHigh: #Done
+    add "gui/overlay/blue_sound_high.png"
+    
+screen blue_soundLow: #Done
+    add "gui/overlay/blue_sound_low.png"
+    
+screen blue_soundMed(): #Done
+    add "gui/overlay/blue_sound_medium.png"
+    
+screen blue_textSpeedHigh(): #Done
+    add "gui/overlay/blue_textspeed_high.png"
+    
+screen blue_textSpeedLow(): #Done
+    add "gui/overlay/blue_textspeed_low.png"
+    
+screen blue_textSpeedMed(): #Done
+    add "gui/overlay/blue_textspeed_medium.png"
+    
+screen blue_title(): #Done
+    add "gui/overlay/blue_title.png"
+    
+screen blue_transitions():
+    add "gui/overlay/blue_transitions.png"
+    
+screen blue_unseen():
+    add "gui/overlay/blue_unseen.png"
+    
+screen blue_window(): #Done
+    add "gui/overlay/blue_window.png"
+
+screen remote_comments0(): #Done
+    add "gui/overlay/blue_remote0.png"
+
+screen remote_comments1(): #Done
+    add "gui/overlay/blue_remote1.png"
+    
+screen remote_comments2(): #Done
+    add "gui/overlay/blue_remote2.png"
+        
+screen remote_comments3(): #Done
+    add "gui/overlay/blue_remote3.png"
+        
+screen remote_comments4(): #Done
+    add "gui/overlay/blue_remote4.png"
+    
+screen blue_neutral():
+    add "gui/overlay/blue_neutral.png"
 
 screen preferences():
-    $ blue_remoteClicks = 0
+#    $ blue_remoteClicks +=1
+    $ chairResponse = renpy.random.randint(0,8)
+    if(blueLastChair == chairResponse):
+        if(chairResponse>0):
+            $chairResponse -=1
+        else:
+            $chairResponse = 8
+    $blueLastChair = chairResponse
     $ musicVolumeVal = _preferences.get_volume('music')
     $ soundVolumeVal = _preferences.get_volume('sfx')
     $ textSpeedVal = _preferences.text_cps
@@ -1040,14 +1108,108 @@ screen preferences():
         area (834, 679, 955, 149) 
         hovered Show("display_options")#, transition=dissolve)
         unhovered Hide("display_options")#, transition=dissolve)
-            
+        
+#    mousearea: #Blue
+#        area ((581, 823, 29, 84), (581, 1006, 95, 74))
+#        hovered Show("blue_chair")
+#        unhovered Hide("blue_chair")
+
+    mousearea: #Blue left face
+        area(834, 791, 312, 288)
+        hovered Show("blue_leftFace")
+        unhovered Hide("blue_leftFace")
+        
+    mousearea: #Error tag
+        area(1146, 791, 329, 289)
+        hovered Show("blue_title")
+        unhovered Hide("blue_title")
+        
+    mousearea: #Blue right face
+        area(1475, 791, 301, 289)
+        hovered Show("blue_rightFace")
+        unhovered Hide("blue_rightFace")
+        
+    mousearea: #Blue main
+        area(371, 823, 210, 257)
+        if (chairResponse==0):
+            if(musicVolumeVal <= 0.10):
+                hovered Show("blue_musicLow")
+            if(musicVolumeVal > 0.1) and (musicVolumeVal<0.9):
+                hovered Show("blue_musicMed")
+            if(musicVolumeVal >=0.9):
+                hovered Show("blue_musicHigh")
+        if (chairResponse==1):
+            if(soundVolumeVal <= 0.1):
+                hovered Show("blue_soundLow")
+            if(soundVolumeVal > 0.1) and (soundVolumeVal<0.9):
+                hovered Show("blue_soundMed")
+            if(soundVolumeVal >=0.9):
+                hovered Show("blue_soundHigh")
+        if (chairResponse==2):
+            if(textSpeedVal <=20):
+                hovered Show("blue_textSpeedLow")
+            if(textSpeedVal > 20) and (textSpeedVal<180):
+                hovered Show("blue_textSpeedMed")
+            if(textSpeedVal >=180):
+                hovered Show("blue_textSpeedHigh")
+        if (chairResponse==3):
+            if(autoForwardVal <=3):
+                hovered Show("blue_autoLow")
+            if(autoForwardVal >3) and (autoForwardVal<27):
+                hovered Show("blue_autoMed")
+            if(autoForwardVal >=27):
+                hovered Show("blue_autoHigh")
+        if(chairResponse==4):
+            if (_preferences.fullscreen==False):
+                hovered Show("blue_window")
+            if (_preferences.fullscreen==True):
+                hovered Show("blue_fullscreen")
+        if(chairResponse==5):
+            if(_preferences.get_volume('sfx')==0) and (_preferences.get_volume('music')==0): #(_preferences.muteAll = True):
+                hovered Show("blue_mute")
+            else:
+                hovered Show("blue_neutral")
+        if(chairResponse==6):
+            if(_preferences.skip_unseen==True):
+                hovered Show("blue_unseen")
+            else:
+                hovered Show("blue_neutral")
+        if(chairResponse==7):
+            if(_preferences.skip_after_choices == True):
+                hovered Show("blue_afterChoice")
+            else:
+                hovered Show("blue_neutral")
+        if(chairResponse==8):
+            if(_preferences.transitions==0):
+                hovered Show("blue_transitions")
+            else:
+                hovered Show("blue_neutral")
+        unhovered (Hide("blue_soundHigh"), Hide("blue_soundLow"), Hide("blue_soundMed"), 
+            Hide("blue_musicLow"), Hide("blue_musicMed"), Hide("blue_musicHigh"), Hide("blue_textSpeedLow"),
+            Hide("blue_textSpeedHigh"), Hide("blue_textSpeedMed"), Hide("blue_autoLow"), Hide("blue_autoMed"),
+            Hide("blue_autoHigh"), Hide("blue_fullscreen"), Hide("blue_window"), Hide("blue_mute"), 
+            Hide("blue_unseen"), Hide("blue_transitions"), Hide("blue_afterChoice"), Hide("blue_neutral"))
+        
+    mousearea: #Blue's remote
+        area (581, 907, 81, 100)
+        if (blue_remoteClicks==0):
+            hovered Show("remote_comments0")
+        if (blue_remoteClicks==1):
+            hovered Show("remote_comments1")
+        if (blue_remoteClicks==2):
+            hovered Show("remote_comments2")
+        if (blue_remoteClicks==3):
+            hovered Show("remote_comments3")
+        if (blue_remoteClicks>3):
+            hovered Show("remote_comments4")
+        unhovered (Hide("remote_comments0"), Hide("remote_comments1"), Hide("remote_comments2"), Hide("remote_comments3"), Hide("remote_comments4"))
+   
     imagemap:   
         ground "gui/overlay/options_ground.png"
         idle "gui/overlay/options_idle.png"
         hover "gui/overlay/options_hover.png"
         selected_idle "gui/overlay/options_selected.png"
         selected_hover "gui/overlay/options_selected_hover.png"
-#        alpha True
         
         #Display 
         hotspot (1269, 696, 77, 109) action Preference("display", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
@@ -1060,10 +1222,7 @@ screen preferences():
         
         hotspot (1276, 200, 71, 83) action (Preference("sound volume", soundVolumeVal-0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         hotspot (1704, 200, 71, 83) action (Preference("sound volume", soundVolumeVal+0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
-#        hotspot (1276, 94, 71, 69) action Preference("music volume", 0.0)
-#        hotspot (1704, 94, 61, 69) action Preference("music volume", 1.0) #max/min volumes on arrows
-#        hotspot (1276, 163, 71, 83) action Preference("sound volume", 0.0)
-#        hotspot (1704, 163, 71, 83) action Preference("sound volume", 1.0)
+
         bar pos (1700, 131) value Preference("music volume") style "pref_slider"  
         bar pos (1700, 210) value Preference("sound volume") style "pref_slider" #action Play("sound", config.sample_sound)
         hotspot (1460, 274, 128, 90) action Preference("all mute", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
@@ -1096,6 +1255,18 @@ screen preferences():
 #        hotspot (1276, 446, 71, 83) action Preference("auto-forward time", 0)
 #        hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)#autoForwardVal+10)
 
+    imagebutton:
+        idle "gui/overlay/remote_idle.png"
+        hover "gui/overlay/remote_hover.png"
+        xpos 0
+        ypos 0
+        focus_mask True
+        hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        activate_sound "music/UI/ENHF_UI_Button_v2.ogg"
+        if (blue_remoteClicks<4):
+            action SetVariable("blue_remoteClicks", blue_remoteClicks + 1)
+        else:
+            action SetVariable("blue_remoteClicks", 0)
     if (main_menu):
         use navigation_mm
     if (not main_menu):
@@ -1111,30 +1282,13 @@ screen preferences():
             idle "gui/overlay/fullscreen_true.png"
             xpos 0
             ypos 0
-    imagebutton:
-        idle "gui/overlay/remote_idle.png"
-        hover "gui/overlay/remote_hover.png"
-        xpos 0
-        ypos 0
-        hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
-        activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
-#            action Jump("label_remoteComments")
-#            if (blue_remoteClicks ==0):
-#                selected "gui/overlay/blue_remote1.png"
-#                action $blue_remoteClicks +=1
-#            if (blue_remoteClicks==2):
-#                selected "gui/overlay/blue_remote2.png"
-#                $blue_remoteClicks +=1
-#            if (blue_remoteClicks ==3):
-#                selected "gui/overlay/blue_remote3.png"
-#                $blue_remoteClicks +=1
-#            if (blue_remoteClicks >3):
-#                selected "gui/overlay/blue_remote4.png"
-#                $blue_remoteClicks +=1
+  
 init -100 python:
     config.default_afm_enable = True
     config.default_afm_time =40
     blue_remoteClicks = 0
+    blueChairOptions = 0
+    blueLastChair = -1
 init -2 python:
     musicVolumeVal = _preferences.get_volume('music')
     soundVolumeVal = _preferences.get_volume('sfx')

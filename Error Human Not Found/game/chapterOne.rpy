@@ -156,18 +156,18 @@ label chooseEasyGram:
     $gramRow2_soundB = 0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     window hide
-    jump eng_gram_e5
-#    $randomNumberEasyGram = renpy.random.randint(0,4)
-#    if randomNumberEasyGram==0:
-#        jump eng_gram_e1
-#    if randomNumberEasyGram==1:
-#        jump eng_gram_e2
-#    if randomNumberEasyGram==2:
-#        jump eng_gram_e3
-#    if randomNumberEasyGram==3:
-#        jump eng_gram_e4
-#    if randomNumberEasyGram==4:
-#        jump eng_gram_e5
+#    jump eng_gram_e1
+    $randomNumberEasyGram = renpy.random.randint(0,4)
+    if randomNumberEasyGram==0:
+        jump eng_gram_e1
+    if randomNumberEasyGram==1:
+        jump eng_gram_e2
+    if randomNumberEasyGram==2:
+        jump eng_gram_e3
+    if randomNumberEasyGram==3:
+        jump eng_gram_e4
+    if randomNumberEasyGram==4:
+        jump eng_gram_e5
 
 label doorPuzzle:
     stop music fadeout 1.0
@@ -586,13 +586,14 @@ label easyLGBPuzzle:
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     window hide
     $randomNumber2 = renpy.random.randint(0,2)
-    if randomNumber2==0:
-        jump logicGate_easyB1
-    if randomNumber2==1:
-        jump logicGate_easyB2
-    if randomNumber2==2:
-        jump logicGate_easyB3
     jump logicGate_easyB1
+#    if randomNumber2==0:
+#        jump logicGate_easyB1
+#    if randomNumber2==1:
+#        jump logicGate_easyB2
+#    if randomNumber2==2:
+#        jump logicGate_easyB3
+#    jump logicGate_easyB1
         
 label lastEasyLGPuzzle:
     stop channel00 fadeout 1.0

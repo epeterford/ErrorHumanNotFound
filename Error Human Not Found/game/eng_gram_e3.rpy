@@ -20,6 +20,14 @@ init python:
 
 screen logicGatese3:
     key 'h' action Hide("")
+    key 'K_PAGEUP' action Hide("")
+    key 'repeat_K_PAGEUP' action Hide("")
+    key 'K_AC_BACK' action Hide("")
+    key 'mousedown_4' action Hide("")
+    key 'K_LCTRL' action Skip("")
+    key 'K_RCTRL' action Skip("")
+    key 'K_TAB' action Hide("")
+    key '>' action Skip("")
     imagebutton:
         idle "hints_idle.png"
         hover "hints_hover.png"
@@ -122,7 +130,7 @@ init:
     image bg Eng_Tile = "eng_tile_bg.png"
 
 label eng_gram_e3:
-
+    $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
 

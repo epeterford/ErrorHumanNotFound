@@ -812,115 +812,109 @@ label hiroseWindow_label:
     jump hiroseBed
     
 label LGEasyHintsA1:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = LGEasyHints%3
-    image EB111tile07_02 = "and_Gate.png"
-    show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    show other darken
+    show eatile100 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA1
+        hide other darken onlayer screens
+        hide eatile100 onlayer screens
+        jump gamefileA1
     if (remainder==1):
         $ LGEasyHints +=1
-        $ hintYes = True
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA1
+        hide other darken onlayer screens
+        hide eatile100 onlayer screens
+        jump gamefileA1
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA1
+        hide other darken onlayer screens
+        hide eatile100 onlayer screens
+        jump gamefileA1
     $ quick_menu = False
-    jump logicGate_easyA1
+    jump gamefileA1
     
 label LGEasyHintsA2:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = LGEasyHints%3
-    image EB111tile07_02A2 = "OR_Gate.png"
-    show EB111tile07_02A2 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    show other darken
+    show ea1tile100 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA2
+        hide other darken onlayer screens
+        hide ea1tile100 onlayer screens
+        jump gamefileA2
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA2
+        hide other darken onlayer screens
+        hide ea1tile100 onlayer screens
+        jump gamefileA2
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA2
-    $ quick_menu = False
-    jump logicGate_easyA2
+        hide other darken onlayer screens
+        hide ea1tile100 onlayer screens
+        jump gamefileA2
+    jump gamefileA2
     
 label LGEasyHintsA3:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = LGEasyHints%3
-    image EB111tile07_02A3 = "OR_Gate.png"
-    show EB111tile07_02A3 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    show other darken
+    show ea3tile100 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA3
+        hide other darken onlayer screens
+        hide ea3tile100 onlayer screens
+        jump gamefileA3
     if (remainder ==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA3
+        hide other darken onlayer screens
+        hide ea3tile100 onlayer screens
+        jump gamefileA3
     if (remainder ==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyA3
-    $ quick_menu = False
-    jump logicGate_easyA3
+        hide other darken onlayer screens
+        hide ea3tile100 onlayer screens
+        jump gamefileA3
+    jump gamefileA3
     
 label LGEasyHintsB1:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = LGEasyHints%3
-    image EB111tile07_02 = "and_Gate.png"
-    show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    image EB111tile07_08 = "or_Gate.png"
-    show EB111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-    show other darken
+    show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EB111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB1
+        hide other darken onlayer screens
+        hide EB111tile07_02 onlayer screens
+        hide EB111tile07_08 onlayer screens
+        jump gamefileB1
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB1
+        hide other darken onlayer screens
+        hide EB111tile07_02 onlayer screens
+        hide EB111tile07_08 onlayer screens
+        jump gamefileB1
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB1
-    $ quick_menu = False
-    jump logicGate_easyB1
+        hide other darken onlayer screens
+        hide EB111tile07_02 onlayer screens
+        hide EB111tile07_08 onlayer screens
+        jump gamefileB1
+    jump gamefileB1
     
 label LGEasyHintsB2:
     $ quick_menu = True
@@ -1079,200 +1073,252 @@ label LGEasyHintsC3:
     jump logicGate_easyC3
     
 label gramEasyHints1:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = gramEasyHints%3
-    image eaeng_e1_tile214 = "letterP.png"
-    image eaeng_e1_tile215 = "letterJ.png"
-    image eaeng_e1_tile216 = "letterM.png"
-    image eaeng_e1_tile217 = "letterL.png"
-    image eaeng_e1_tile218 = "letterN.png"
-    image eaeng_e1_tile219 = "letterK.png"
-    show eaeng_e1_tile214 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0)
-    show eaeng_e1_tile215 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0)
-    show eaeng_e1_tile216 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0)
-    show eaeng_e1_tile217 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
-    show eaeng_e1_tile218 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
-    show eaeng_e1_tile219 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
-    show other darken
+    show eaeng_e1_tile226 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile227 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile228 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile229 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile230 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile231 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
-        a "N, L, M, and K are all substituted by words. I would use them on the bottom row only."
-        hide other darken
+        a "N, L, M, and K are all terminal or final substitutions since they are replaced by strings. I would use them on the bottom row only."
+        hide eaeng_e1_tile226 onlayer screens
+        hide eaeng_e1_tile227 onlayer screens
+        hide eaeng_e1_tile228 onlayer screens
+        hide eaeng_e1_tile229 onlayer screens
+        hide eaeng_e1_tile230 onlayer screens
+        hide eaeng_e1_tile231 onlayer screens
+        hide other darken onlayer screens
         $ quick_menu = False
-        jump eng_gram_e1
+        jump gamefile_e1
     if (remainder==1):
         $ gramEasyHints +=1
-        $ hintYes = True
         a "Remember if a tile is red, nothing below it will receive power. You will not be able to tell if it is correct or not until all tiles above a tile are green. "
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e1
+        hide eaeng_e1_tile226 onlayer screens
+        hide eaeng_e1_tile227 onlayer screens
+        hide eaeng_e1_tile228 onlayer screens
+        hide eaeng_e1_tile229 onlayer screens
+        hide eaeng_e1_tile230 onlayer screens
+        hide eaeng_e1_tile231 onlayer screens
+        hide other darken onlayer screens
+        jump gamefile_e1
     if (remainder==2):
         $ gramEasyHints +=1
-        a "P and J both must be substituted by other letters. That means they cannot go in the bottom row and be correct."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e1
+        a "P and J both must be replaced by other letters. That means they cannot go in the bottom row and be correct."
+        hide eaeng_e1_tile226 onlayer screens
+        hide eaeng_e1_tile227 onlayer screens
+        hide eaeng_e1_tile228 onlayer screens
+        hide eaeng_e1_tile229 onlayer screens
+        hide eaeng_e1_tile230 onlayer screens
+        hide eaeng_e1_tile231 onlayer screens
+        hide other darken onlayer screens
+        jump gamefile_e1
     $ quick_menu = False
-    jump eng_gram_e1
+    jump gamefile_e1
     
 label gramEasyHints2:
-    $ quick_menu = True
     $ remainder = gramEasyHints%3
-    image eaeng_e2_tile102 = "letterK.png"
-    image eaeng_e2_tile106 = "letterN.png"
-    image eaeng_e2_tile103 = "letterM.png"
-    image eaeng_e2_tile105 = "letterP.png"
-    image eaeng_e2_tile101 = "letterS.png"
-    image eaeng_e2_tile104 = "letterQ.png"
-    
-
-    show eaeng_e2_tile102 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0)
-    show eaeng_e2_tile106 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0)
-    show eaeng_e2_tile103 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0)
-    show eaeng_e2_tile105 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
-    show eaeng_e2_tile101 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
-    show eaeng_e2_tile104 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
-    show other darken
+    show screen disable_hide
+    show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile111 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile108 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
         a "You have to use all the available slots. Just because they are green does not mean they will give us the correct answer."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e2
+        hide other darken onlayer screens
+        hide eaeng_e2_tile107 onlayer screens
+        hide eaeng_e2_tile111 onlayer screens
+        hide eaeng_e2_tile108 onlayer screens
+        hide eaeng_e2_tile110 onlayer screens
+        hide eaeng_e2_tile106 onlayer screens
+        hide eaeng_e2_tile109 onlayer screens        
+        jump gamefile_e2
     if (remainder==1):
         $ gramEasyHints +=1
-        $ hintYes = True
-        a "M and Q only go to strings and not characters, so I would put them in the final row."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e2
+        a "M and Q are terminal and go to string. They have no further substitutions, so I would put them in the final row."
+        hide other darken onlayer screens
+        hide eaeng_e2_tile107 onlayer screens
+        hide eaeng_e2_tile111 onlayer screens
+        hide eaeng_e2_tile108 onlayer screens
+        hide eaeng_e2_tile110 onlayer screens
+        hide eaeng_e2_tile106 onlayer screens
+        hide eaeng_e2_tile109 onlayer screens   
+        jump gamefile_e2
     if (remainder==2):
         $ gramEasyHints +=1
-        a "N can only replace K, so make sure if you place N somewhere K is above it."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e2
+        a "N can only be substituted as PN, which is a substitution for K. That means K has to be above N."
+        hide other darken onlayer screens
+        hide eaeng_e2_tile107 onlayer screens
+        hide eaeng_e2_tile111 onlayer screens
+        hide eaeng_e2_tile108 onlayer screens
+        hide eaeng_e2_tile110 onlayer screens
+        hide eaeng_e2_tile106 onlayer screens
+        hide eaeng_e2_tile109 onlayer screens   
+        jump gamefile_e2
     $ quick_menu = False
-    jump eng_gram_e2
+    jump gamefile_e2
     
 label gramEasyHints3:
-    $ quick_menu = True
     $ remainder = gramEasyHints%3
-    image eaeng_e3_tile202 = "letterS.png"
-    image eaeng_e3_tile206 = "letterS.png"
-    image eaeng_e3_tile203 = "letterM.png"
-    image eaeng_e3_tile205 = "letterS.png"
-    image eaeng_e3_tile201 = "letterS.png"
-    image eaeng_e3_tile204 = "letterJ.png"
-    
-    show eaeng_e3_tile202 at Position(xpos = eae3and1x, xanchor = 0, ypos = eae3and1y, yanchor = 0)
-    show eaeng_e3_tile206 at Position(xpos = eae3and2x, xanchor = 0, ypos = eae3and2y, yanchor = 0)
-    show eaeng_e3_tile203 at Position(xpos = eae3and3x, xanchor = 0, ypos = eae3and3y, yanchor = 0)
-    show eaeng_e3_tile205 at Position(xpos = eae3and4x, xanchor = 0, ypos = eae3and4y, yanchor = 0)
-    show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0)
-    show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0)
-    show other darken
+    show screen disable_hide
+    show eaeng_e3_tile202 at Position(xpos = eae3and1x, xanchor = 0, ypos = eae3and1y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile206 at Position(xpos = eae3and2x, xanchor = 0, ypos = eae3and2y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile203 at Position(xpos = eae3and3x, xanchor = 0, ypos = eae3and3y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile205 at Position(xpos = eae3and4x, xanchor = 0, ypos = eae3and4y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
-        a "I do believe you should fill in the tree from the top to the bottom. The first rule, S can be substituted by SS, might be a good place to start."
-        hide other darken
+        a "I do believe you should fill in the tree from the top to the bottom. The first rule, S can be substituted by SK, might be a good place to start."
+        hide other darken onlayer screens
+        hide eaeng_e3_tile202 onlayer screens
+        hide eaeng_e3_tile206 onlayer screens
+        hide eaeng_e3_tile203 onlayer screens
+        hide eaeng_e3_tile205 onlayer screens
+        hide eaeng_e3_tile201 onlayer screens
+        hide eaeng_e3_tile204 onlayer screens
         $ quick_menu = False
-        jump eng_gram_e3
+        jump gamefile_e3
     if (remainder==1):
         $ gramEasyHints +=1
         $ hintYes = True
         a "S can also be substituted by MJ. Maybe try those on the left?"
-        hide other darken
+        hide other darken onlayer screens
+        hide eaeng_e3_tile202 onlayer screens
+        hide eaeng_e3_tile206 onlayer screens
+        hide eaeng_e3_tile203 onlayer screens
+        hide eaeng_e3_tile205 onlayer screens
+        hide eaeng_e3_tile201 onlayer screens
+        hide eaeng_e3_tile204 onlayer screens
         $ quick_menu = False
-        jump eng_gram_e3
+        jump gamefile_e3
     if (remainder==2):
         $ gramEasyHints +=1
         a "S is also a terminal letter in two cases, so it should be on the bottom twice."
-        hide other darken
+        hide other darken onlayer screens
+        hide eaeng_e3_tile202 onlayer screens
+        hide eaeng_e3_tile206 onlayer screens
+        hide eaeng_e3_tile203 onlayer screens
+        hide eaeng_e3_tile205 onlayer screens
+        hide eaeng_e3_tile201 onlayer screens
+        hide eaeng_e3_tile204 onlayer screens
         $ quick_menu = False
-        jump eng_gram_e3
+        jump gamefile_e3
     $ quick_menu = False
-    jump eng_gram_e3
+    jump gamefile_e3
+    
+screen disable_hide():
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
     
 label gramEasyHints4:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = gramEasyHints%3
-    image eaeng_e4_tile202 = "letterH.png"
-    image eaeng_e4_tile206 = "letterB.png"
-    image eaeng_e4_tile203 = "letterP.png"
-    image eaeng_e4_tile205 = "letterR.png"
-    image eaeng_e4_tile201 = "letterG.png"
-    image eaeng_e4_tile204 = "letterK.png"
-    
-
-    show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)
-    show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)
-    show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)
-    show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)
-    show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)
-    show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)
-    show other darken
+    show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
         a "S can only be substituted by GH. I would try those in the middle row."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e4
+        hide other darken onlayer screens
+        hide eaeng_e4_tile202 onlayer screens
+        hide eaeng_e4_tile206 onlayer screens
+        hide eaeng_e4_tile203 onlayer screens
+        hide eaeng_e4_tile205 onlayer screens
+        hide eaeng_e4_tile201 onlayer screens
+        hide eaeng_e4_tile204 onlayer screens
+        jump gamefile_e4
     if (remainder==1):
         $ gramEasyHints +=1
         $ hintYes = True
-        a "If I were you, Grace, I might try using P, B, R, and K in the bottom row."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e4
+        a "If I were you, Grace, I might try using P, B, R, and K in the bottom row, since the substitutions for those are strings."
+        hide other darken onlayer screens
+        hide eaeng_e4_tile202 onlayer screens
+        hide eaeng_e4_tile206 onlayer screens
+        hide eaeng_e4_tile203 onlayer screens
+        hide eaeng_e4_tile205 onlayer screens
+        hide eaeng_e4_tile201 onlayer screens
+        hide eaeng_e4_tile204 onlayer screens
+        jump gamefile_e4
     if (remainder==2):
         $ gramEasyHints +=1
         a "If a tile is red, none of the tiles below it will light up. Try to work from the top down, making sure every slot is green."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e4
+        hide other darken onlayer screens
+        hide eaeng_e4_tile202 onlayer screens
+        hide eaeng_e4_tile206 onlayer screens
+        hide eaeng_e4_tile203 onlayer screens
+        hide eaeng_e4_tile205 onlayer screens
+        hide eaeng_e4_tile201 onlayer screens
+        hide eaeng_e4_tile204 onlayer screens
+        jump gamefile_e4
     $ quick_menu = False
-    jump eng_gram_e4
+    jump gamefile_e4
     
 label gramEasyHints5:
-    $ quick_menu = True
-    $ remainder = gramEasyHints%3
-    image eaeng_e5_tile202 = "letterK.png"
-    image eaeng_e5_tile206 = "letterI.png"
-    image eaeng_e5_tile203 = "letterM.png"
-    image eaeng_e5_tile205 = "letterP.png"
-    image eaeng_e5_tile201 = "letterJ.png"
-    image eaeng_e5_tile204 = "letterG.png"
-    
-    show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0)
-    show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)
-    show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)
-    show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)
-    show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)
-    show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)
-    show other darken
+    show screen disable_hide
+    $ remainder = gramEasyHint
+    show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0) onlayer screens
+    show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)onlayer screens
+    show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)onlayer screens
+    show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)onlayer screens
+    show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)onlayer screens
+    show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)onlayer screens
+    show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
         a "K must be substituted by two other letters, which means wherever it goes, it must have two children slots."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e5
+        hide other darken onlayer screens
+        hide eaeng_e5_tile202 onlayer screens
+        hide eaeng_e5_tile206 onlayer screens
+        hide eaeng_e5_tile203 onlayer screens
+        hide eaeng_e5_tile205 onlayer screens
+        hide eaeng_e5_tile201 onlayer screens
+        hide eaeng_e5_tile204 onlayer screens
+        jump gamefile_e5
     if (remainder==1):
         $ gramEasyHints +=1
         $ hintYes = True
-        a "Remember the order of substitution is important. S cannot be substituted by K on the left and J on the right."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e5
+        a "Remember the order of substitution is important. S cannot be substituted by K on the left and J on the right; it has to be JK."
+        hide other darken onlayer screens
+        hide eaeng_e5_tile202 onlayer screens
+        hide eaeng_e5_tile206 onlayer screens
+        hide eaeng_e5_tile203 onlayer screens
+        hide eaeng_e5_tile205 onlayer screens
+        hide eaeng_e5_tile201 onlayer screens
+        hide eaeng_e5_tile204 onlayer screens
+        jump gamefile_e5
     if (remainder==2):
         $ gramEasyHints +=1
-        a "If a tile is not lighting up, make sure its parent, or the tile above it, is green."
-        hide other darken
-        $ quick_menu = False
-        jump eng_gram_e5
+        a "If a tile is not lighting up, make sure its parent, or the tile above it, is green, and that the other part of the substitution is also filled."
+        hide other darken onlayer screens
+        hide eaeng_e5_tile202 onlayer screens
+        hide eaeng_e5_tile206 onlayer screens
+        hide eaeng_e5_tile203 onlayer screens
+        hide eaeng_e5_tile205 onlayer screens
+        hide eaeng_e5_tile201 onlayer screens
+        hide eaeng_e5_tile204 onlayer screens
+        jump gamefile_e5
     $ quick_menu = False
-    jump eng_gram_e5
+    jump gamefile_e5
     
 label nextLGEasy:
     show other darken
