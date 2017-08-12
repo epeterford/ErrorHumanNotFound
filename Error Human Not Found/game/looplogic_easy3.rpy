@@ -31,11 +31,11 @@ label loopLogic_easy3: #loopLogic_easy5
     show LLE_3_tile1 at Position(xpos = 330, xanchor = 0, ypos = 240, yanchor = 0)   
 
     #top right blue
-    image LLE_3_tile2 = "B_horizontal.png"
+    image LLE_3_tile2 = "W_horizontal.png"
     show LLE_3_tile2 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
-    image LLE_3_tile3 = "B_horizontal.png"
+    image LLE_3_tile3 = "W_horizontal.png"
     show LLE_3_tile3 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
-    image LLE_3_tile4 = "B_horizontal.png"
+    image LLE_3_tile4 = "W_horizontal.png"
     show LLE_3_tile4 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
     image LLE_3_tile5 = "blank_node.png"
     show LLE_3_tile5 at Position(xpos = 655, xanchor = 0, ypos = 240, yanchor = 0)
@@ -457,6 +457,22 @@ label gamefile_lle3:
             hide LLE_3_tile41
             hide LLE_3_tile42
             hide LLE_3_tile43
+
+        if if1in3 == True:
+            image LLE_3_tile71 = "B_connect_node.png"
+            show LLE_3_tile71 at Position(xpos = 400, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile67 = "B_horizontal.png"
+            show LLE_3_tile67 at Position(xpos = 430, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile68 = "B_horizontal.png"
+            show LLE_3_tile68 at Position(xpos = 505, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile69 = "B_horizontal.png"
+            show LLE_3_tile69 at Position(xpos = 580, xanchor = 0, ypos = 485, yanchor = 0)
+        
+        if if1in3 == False:
+            hide LLE_3_tile71
+            hide LLE_3_tile67
+            hide LLE_3_tile68
+            hide LLE_3_tile69
    
     if if2in2 == False:
         hide LLE_3_tile34
@@ -469,6 +485,10 @@ label gamefile_lle3:
         hide LLE_3_tile41
         hide LLE_3_tile42
         hide LLE_3_tile43
+        hide LLE_3_tile71
+        hide LLE_3_tile67
+        hide LLE_3_tile68
+        hide LLE_3_tile69
 
 
     if if1in1 == True:
@@ -478,11 +498,68 @@ label gamefile_lle3:
         show LLE_3_tile47 at Position(xpos = 830, xanchor = 0, ypos = 270, yanchor = 0)
         image LLE_3_tile48 = "B_end_on.png"
         show LLE_3_tile48 at Position(xpos = 906, xanchor = 0, ypos = 239, yanchor = 0)
+        image LLE_3_tile49 = "B_horizontal.png"
+        show LLE_3_tile49 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile50 = "B_horizontal.png"
+        show LLE_3_tile50 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile51 = "B_horizontal.png"
+        show LLE_3_tile51 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
         
     if if1in1 == False:
         hide LLE_3_tile46
         hide LLE_3_tile47
         hide LLE_3_tile48
+        hide LLE_3_tile49
+        hide LLE_3_tile50
+        hide LLE_3_tile51
+
+    if if2in1 == True:
+        image LLE_3_tile61 = "G_horizontal_ll.png"
+        show LLE_3_tile61 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile62 = "G_horizontal_ll.png"
+        show LLE_3_tile62 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile63 = "G_horizontal_ll.png"
+        show LLE_3_tile63 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
+        
+    if if2in1 == False:
+        hide LLE_3_tile61
+        hide LLE_3_tile62
+        hide LLE_3_tile63
+
+    if if1in2 == True:
+        image LLE_3_tile70 = "B_vertical_short.png"
+        show LLE_3_tile70 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
+
+        if if2in3 == True or else1in3 == True:
+            image LLE_3_tile64 = "G_horizontal_ll.png"
+            show LLE_3_tile64 at Position(xpos = 430, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile65 = "G_horizontal_ll.png"
+            show LLE_3_tile65 at Position(xpos = 505, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile66 = "G_horizontal_ll.png"
+            show LLE_3_tile66 at Position(xpos = 580, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile72 = "G_connect_node.png"
+            show LLE_3_tile72 at Position(xpos = 400, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile73 = "G_connect_pipe.png"
+            show LLE_3_tile73 at Position(xpos = 357, xanchor = 0, ypos = 495, yanchor = 0)
+            image LLE_3_tile74 = "G_connect_node.png"
+            show LLE_3_tile74 at Position(xpos = 330, xanchor = 0, ypos = 485, yanchor = 0)
+        
+        if if2in3 == False and else1in3 == False:
+            hide LLE_3_tile64
+            hide LLE_3_tile65
+            hide LLE_3_tile66
+            hide LLE_3_tile72
+            hide LLE_3_tile73
+            hide LLE_3_tile74
+
+    if if1in2 == False:
+        hide LLE_3_tile70
+        hide LLE_3_tile64
+        hide LLE_3_tile65
+        hide LLE_3_tile66
+        hide LLE_3_tile72
+        hide LLE_3_tile73
+        hide LLE_3_tile74
 
 
         
