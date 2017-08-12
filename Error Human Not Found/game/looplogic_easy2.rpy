@@ -28,7 +28,7 @@ label looplogic_easy2: #loopLogic_easy5
     scene bg looplogic_bg
     
    
-    image LLE_2_tile1 = "B_horizontal.png"
+    image LLE_2_tile1 = "W_horizontal.png"
     show LLE_2_tile1 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
     image LLE_2_tile2 = "blank_node.png"
     show LLE_2_tile2 at Position(xpos = 180, xanchor = 0, ypos = 220, yanchor = 0)  
@@ -36,11 +36,11 @@ label looplogic_easy2: #loopLogic_easy5
     show LLE_2_tile3 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
     image LLE_2_tile4 = "B_end_off.png"
     show LLE_2_tile4 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
-    image LLE_2_tile5 = "B_vertical.png"
+    image LLE_2_tile5 = "W_vertical.png"
     show LLE_2_tile5 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
-    image LLE_2_tile6 = "B_vertical.png"
+    image LLE_2_tile6 = "W_vertical.png"
     show LLE_2_tile6 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
-    image LLE_2_tile7 = "B_corner_LB.png"
+    image LLE_2_tile7 = "W_corner_LB.png"
     show LLE_2_tile7 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
 
     image LLE_2_tile8 = "B_horizontal.png"
@@ -405,10 +405,23 @@ label gamefile_lle2:
         show LLE_2_tile46 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
         image LLE_2_tile47 = "B_end_on.png"
         show LLE_2_tile47 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
+
+        image LLE_2_tile48 = "B_horizontal.png"
+        show LLE_2_tile48 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
+        image LLE_2_tile49 = "B_vertical.png"
+        show LLE_2_tile49 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
+        image LLE_2_tile50 = "B_vertical.png"
+        show LLE_2_tile50 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
+        image LLE_2_tile51 = "B_corner_LB.png"
+        show LLE_2_tile51 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
         
     if if2in1 == False and if1in1 == False:
         hide LLE_2_tile46
         hide LLE_2_tile47
+        hide LLE_2_tile48
+        hide LLE_2_tile49
+        hide LLE_2_tile50
+        hide LLE_2_tile51
 
 
         

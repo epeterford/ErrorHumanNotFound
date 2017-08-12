@@ -28,7 +28,7 @@ label looplogic_easy1: #loopLogic_easy5
     scene bg looplogic_bg
     
    
-    image LLE_1_tile1 = "G_horizontal_ll.png"
+    image LLE_1_tile1 = "W_horizontal.png"
     show LLE_1_tile1 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
     image LLE_1_tile2 = "blank_node.png"
     show LLE_1_tile2 at Position(xpos = 180, xanchor = 0, ypos = 220, yanchor = 0)  
@@ -36,11 +36,11 @@ label looplogic_easy1: #loopLogic_easy5
     show LLE_1_tile3 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
     image LLE_1_tile4 = "G_end_off.png"
     show LLE_1_tile4 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
-    image LLE_1_tile5 = "G_vertical_ll.png"
+    image LLE_1_tile5 = "W_vertical.png"
     show LLE_1_tile5 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
-    image LLE_1_tile6 = "G_vertical_ll.png"
+    image LLE_1_tile6 = "W_vertical.png"
     show LLE_1_tile6 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
-    image LLE_1_tile7 = "G_corner_LB.png"
+    image LLE_1_tile7 = "W_corner_LB.png"
     show LLE_1_tile7 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
 
     image LLE_1_tile8 = "G_horizontal_ll.png"
@@ -406,10 +406,22 @@ label gamefile_lle1:
         show LLE_1_tile46 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
         image LLE_1_tile47 = "G_end_on.png"
         show LLE_1_tile47 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
+        image LLE_1_tile48 = "G_horizontal_ll.png"
+        show LLE_1_tile48 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
+        image LLE_1_tile49 = "G_vertical_ll.png"
+        show LLE_1_tile49 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
+        image LLE_1_tile50 = "G_vertical_ll.png"
+        show LLE_1_tile50 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
+        image LLE_1_tile51 = "G_corner_LB.png"
+        show LLE_1_tile51 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
         
     if if2in1 == False and if1in1 == False:
         hide LLE_1_tile46
         hide LLE_1_tile47
+        hide LLE_1_tile48
+        hide LLE_1_tile49
+        hide LLE_1_tile50
+        hide LLE_1_tile51
 
         
     #if slot_name == "null":
