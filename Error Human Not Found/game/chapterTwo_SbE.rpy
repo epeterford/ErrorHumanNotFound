@@ -603,6 +603,8 @@ label lynnfinallyfrickinanswers_SbE:
     a "Thing? Alpha was not just some {i}thing{/i} that happened to expire."
     lynn "Oh my. Another one? I'm sorry dear, it is sad, but at the end of the day it's not the same as a person dying."
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
+    hide Grace
+    hide Ada
     menu:
         "Agree with her":
             jump agreewithsubservient_SbE
@@ -626,12 +628,12 @@ label agreewithsubservient_SbE:
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
-            jump resumeLynn__S
+            jump resumeLynn_S
     if(points_E>points_SbE):
         if(points_E>points_S):
-            jump resumeLynn__E
+            jump resumeLynn_E
     #all else fails jump separate but equal script
-    jump resumeLynn__SbE
+    jump resumeLynn_SbE
 
 label defendseperatebutequal_SbE:
     $ points_SbE +=3
@@ -655,12 +657,12 @@ label defendseperatebutequal_SbE:
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
-            jump resumeLynn__S
+            jump resumeLynn_S
     if(points_E>points_SbE):
         if(points_E>points_S):
-            jump resumeLynn__E
+            jump resumeLynn_E
     #all else fails jump separate but equal script
-    jump resumeLynn__SbE
+    jump resumeLynn_SbE
 
 label weareallequal_SbE:
     $ points_E +=3
@@ -685,12 +687,12 @@ label weareallequal_SbE:
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
-            jump resumeLynn__S
+            jump resumeLynn_S
     if(points_E>points_SbE):
         if(points_E>points_S):
-            jump resumeLynn__E
+            jump resumeLynn_E
     #all else fails jump separate but equal script
-    jump resumeLynn__SbE
+    jump resumeLynn_SbE
    
 label resumeLynn_SbE:
     show Ada seething at right
