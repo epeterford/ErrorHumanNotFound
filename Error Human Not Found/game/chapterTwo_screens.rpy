@@ -847,14 +847,14 @@ label graceStickyNotes_inv:
     
 label talkLynn:
     scene bg balconyClose
-    if (alphaBodyItems == 3) and (baconyItems==1) and (moprScene==False):
+    if (alphaBodyItems == 3) and (balconyItems==1) and (moprScene==False):
         if(resume =="E"):
             jump enterthemopr_E
         if(resume == "SbE"):
             jump enterthemopr_SbE
         if(resume == "S"):
             jump enterthemopr_S
-    if(alphaBodyItems == 3) and (baconyItems==1) and(moprScene==True):
+    if(alphaBodyItems == 3) and (balconyItems==1) and(moprScene==True):
         if(resume =="E"):
             jump lynnfinallyfrickinanswers_E
         if(resume == "SbE"):
@@ -1037,7 +1037,7 @@ label balconyView_label:
     hide Grace
     window hide
     $quick_menu = False
-    jump balcony_alpha
+    jump balcony_inv
 
 label tutorial_LLEasy:
     window hide

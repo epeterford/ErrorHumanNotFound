@@ -238,6 +238,7 @@ label adapls_E:
     jump gettingin_SbE
  
 label gettingin_E:
+    scene bg balconyMain with fade
     #Display the crime scene background. The background comes up before the character sprites do.
     show Grace neutral at left
     g "Here we are. Oh, no... is that--"
