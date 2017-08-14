@@ -1,5 +1,136 @@
 label chapterTwo_screens:
     $ gracePoster_look = False
+    
+    screen tutorial_scrLL_1:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LL_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrLL_2:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LLEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LL_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    
+    screen tutorial_scrLL_3:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LL_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("loopLogicEasyChoose")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
+    screen tutorial_scrBinary2Bit_1:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrBinary2Bit_2:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_1")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    
+    screen tutorial_scrBinary2Bit_3:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_2")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_4")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrBinary2Bit_4:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("s")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            
+    screen tutorial_scrBinary2Bit_5:
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_Binary2Bit_4")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("binaryEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
     screen graceLab_actionsScr:
         imagebutton:
             idle "adaTalk.png" 
@@ -9,6 +140,7 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("talkAdaGraceLab")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "investigate.png" 
             hover "investigate_hover.png" 
@@ -17,6 +149,7 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("graceLab_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen graceLab_invScr:
         imagebutton:
@@ -26,7 +159,8 @@ label chapterTwo_screens:
             ypos 170
             focus_mask True
             action Jump("graceLab_left1")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowR.png"
             hover "arrowR_hover.png"
@@ -34,7 +168,8 @@ label chapterTwo_screens:
             ypos 480
             focus_mask True
             action Jump("graceLab_right")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png"
             hover "back_hover.png"
@@ -42,7 +177,7 @@ label chapterTwo_screens:
             ypos 0
             focus_mask True
             action Jump("graceLab_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen graceLab_left1Scr:
         imagebutton:
@@ -62,7 +197,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("gracePoster_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(graceNeuralNetwork_look == False):
             imagebutton:
                 idle "objects/graceNeuralNetwork.png"
@@ -71,7 +207,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceNeuralNetwork_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(graceHardDrive_look == False):
             imagebutton:
                 idle "objects/graceHarddrive.png"
@@ -80,7 +217,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceHardDrive_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -88,7 +226,8 @@ label chapterTwo_screens:
             ypos 890
             focus_mask True
             action Jump("graceLab_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "arrowL.png"
             hover "arrowL_hover.png"
@@ -96,17 +235,19 @@ label chapterTwo_screens:
             ypos 710
             focus_mask True
             action Jump("graceLab_left2")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen graceLab_left2Scr:
         imagebutton:
             idle "arrowR.png"
             hover "arrowR_hover.png"
             xpos 1730
-            ypos 710
+            ypos 210
             focus_mask True
             action Jump("graceLab_left1")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         if(graceCandD_look == False):
             imagebutton:
                 idle "objects/graceC&D.png"
@@ -115,7 +256,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceCandD_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(graceBust_look == False):
             imagebutton:
                 idle "objects/graceBust.png"
@@ -124,7 +266,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceBust_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(graceCoffee_look == False):
             imagebutton:
                 idle "objects/graceCoffee.png"
@@ -133,7 +276,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceCoffee_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "button_empty.png"
             xpos 1630
@@ -162,7 +306,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("gracePhoto_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(gracePens_look == False):
             imagebutton:
                 idle "objects/gracePens.png"
@@ -171,7 +316,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("gracePens_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if(graceStickynotes_look == False):
             imagebutton:
                 idle "objects/graceStickyNotes.png"
@@ -180,7 +326,8 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("graceStickyNotes_inv")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -188,7 +335,8 @@ label chapterTwo_screens:
             ypos 890
             focus_mask True
             action Jump("graceLab_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen balcony_actionsScr:
         imagebutton:
@@ -199,6 +347,7 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("talkLynn")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "investigate.png" 
             hover "investigate_hover.png" 
@@ -207,8 +356,19 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("balcony_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen balcony_invScr:
+        if(balconyView_look==False):
+            imagebutton:
+                idle "objects/balconyWindow_idle.png" 
+                hover "objects/balconyWindow_hover.png" 
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("balconyView_label")
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "arrowD.png"
             hover "arrowD_hover.png"
@@ -216,7 +376,8 @@ label chapterTwo_screens:
             ypos 200
             focus_mask True
             action Jump("balcony_alpha")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
         imagebutton:
             idle "back.png"
             hover "back_hover.png"
@@ -224,18 +385,18 @@ label chapterTwo_screens:
             ypos 0
             focus_mask True
             action Jump("balcony_actions")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-            
-    screen balcony_alphaScr:
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "button_empty.png"
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
-        text "[alphaBodyItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        text "[balconyItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
-        text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+                
+    screen balcony_alphaScr:
         if (binaryEasyDone == False) and (loopLogicEasyDone==False):
             imagebutton: 
                 idle "objects/alpha.png"
@@ -244,8 +405,9 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("loopLogicEasyChoose")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
-        if (binaryEasyDone == False) and (loopLogicEasyDone==True):
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        elif (binaryEasyDone == False) and (loopLogicEasyDone==True):
             imagebutton: 
                 idle "objects/alpha.png"
                 hover "objects/alpha_hover.png"
@@ -253,17 +415,47 @@ label chapterTwo_screens:
                 ypos 0
                 focus_mask True
                 action Jump("binaryEasy")
-                hover_sound "audio/ENHF_UI_Button_v1.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        if (balconyJumpdrive_look==False):
+            imagebutton: 
+                idle "objects/jumpdrive1_idle.png"
+                hover "objects/jumpdrive1_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("jumpdrive1_label")
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        if (balconyScratches_look==False):
+            imagebutton: 
+                idle "objects/scratches_idle.png"
+                hover "objects/scratches_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("scratches_label")
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         #Add explorable objects here
+        imagebutton:
+            idle "button_empty.png"
+            xpos 1630
+            ypos 70
+        text "Items" xpos 1650 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
+        text ": " xpos 1775 ypos 68 color "#0060db" font "Bitter-Bold.otf" size 50
+        text "[alphaBodyItems]" xpos 1800 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
+        text "/" xpos 1827 ypos 85 color "#0060db" font "Bitter-Bold.otf"
+        text "3" xpos 1850 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
         imagebutton:
             idle "arrow.png"
             hover "arrow_hover.png"
-            xpos 860
+            xpos 400
             ypos 0
             focus_mask True
             action Jump("balcony_inv")
-            hover_sound "audio/ENHF_UI_Button_v1.ogg"
-
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
 label graceLab_actions:
     scene bg G_deskArea
@@ -355,15 +547,19 @@ label gracePoster_inv:
     "{i}An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon."
     hide image "objects/gracePoster_closeup.png"
     hide other darken
-    #show Grace neutral
+    show Grace neutral at left
     g "This poster is so cheesy."
-    #show Ada neutral
+    show Ada neutral at right
     a "I detect no traces of curd."
-    #show Grace annoyed
+    show Grace annoyed
     g "No, Ada, what I meant was that I don't like how, er... to the point this poster is."
     a "Is that not the point? To clearly indicate the purpose of the poster while imparting the significance upon the viewer?"
+    show Grace snarky
     g "I want to keep defending my point, but that was solid."
+    show Ada amused
     a "Solid logic is just another day on the job for me."
+    hide Ada
+    hide Grace
     $ quick_menu = False
     window hide
     jump graceLab_left1
@@ -439,19 +635,21 @@ label graceBust_inv:
     $ graceLeft2Desk_value +=1
     show other darken
     show image "objects/graceBust_closeup.png" at centerScreen
-    "{i}The Conclave locked down any of Grace's computers attached to the central server, trying to ensure that she would stop working."
+    "{i}This prototype for an AI chassis' head is missing its outer plating, giving it a skull-like appearance. Alan Asimov went through several designs for the AI androids before settling on the ones used for Alpha and Ada."
     hide other darken
     hide image "objects/graceBust_closeup.png"
     show Grace snarky at left
-    g "What's your take on this, Ada?"
+    g "I remember when we finished this prototype. Alan couldn't stop talking about this old film movie."
     show Ada neutral at right
-    a "Hmm..."
-    a "The appearance of this robot is compatible with what humans find comfortable; however, the design itself is hardly optimal."
+    a "A film?"
     show Grace neutral
-    g "How so?"
+    g "Yeah. Back before the second milennium, people used to record movies on physical film."
+    a "May I enquire what this 'film' was called?"
+    g "I don't remember. I'd have to ask Alan. I think it was {i}Exterminator{/i} or something like that. He told me it was about an AI, of all things."
     show Ada concerned
-    a "This robot does not possess peripheral sensors, and it doesn't have any fingers. "
-    g "Noted."
+    a "A rogue AI?"
+    g "I guess it was just science fiction back then, but nowadays, something like that would mean something completely different."
+    $quick_menu = False
     jump graceLab_left2
     
 label graceCoffee_inv:
@@ -510,7 +708,7 @@ label gracePhoto_inv:
     hide image "objects/gracePhoto_closeup.png"
     hide other darken
     show Ada neutral at right
-    a "Is this your father?"
+    a "This is your father again, correct?"
     show Grace happy at left 
     g "It is! This was from our vacation to the Hawaii Preserve."
     show Grace sad
@@ -554,8 +752,10 @@ label graceStickyNotes_inv:
     $ graceStickynotes_look = True
     $ graceRightDesk_value +=1
     show other darken
-    show image "objects/graceStickyNotes_closeup1.png" at centerScreen
+    show image "objects/graceStickyNotes_closeup0.png" at centerScreen
     "{i}A sprawl of binders, folders, and post-it notes scattered across the desk.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer."
+    hide image "objects/graceStickyNotes_closeup0.png"
+    show image "objects/graceStickyNotes_closeup1.png" at centerScreen
     "{i}One of Grace's notes. The image seems to be related to her feelings of the Conclave stifling her."
     hide image "objects/graceStickyNotes_closeup1.png"
     show image "objects/graceStickyNotes_closeup2.png" at centerScreen
@@ -644,22 +844,277 @@ label balcony_alpha:
     call screen balcony_alphaScr
     
 label loopLogicEasyChoose:
-    #if (tutorial_loopLogicEasy == False):
-        #jump tutorial_LLEasy
-    $randomNumberEasyLL = renpy.random.randint(0,1)
-    if randomNumberEasyLL==0:
-        jump loopLogic_easy4
-    if randomNumberEasyLL==1:
-        jump loopLogic_easy5
+    $LLEasyHints=0
+    if (tutorial_loopLogicEasy == False):
+        jump tutorial_LLEasy
+    $slot_name = ""
+    $gate_name = ""
+    $temp_gate = ""
+    $temp_slot = ""
+    $randomNumberEasyLL = renpy.random.randint(0,4)
+    jump loopLogic_easy2
+#    if randomNumberEasyLL==0:
+#        jump loopLogic_easy4
+#    if randomNumberEasyLL==1:
+#        jump loopLogic_easy5
+#    if randomNumberEasyLL==2:
+#        jump loopLogic_easy1
+#    if randomNumberEasyLL==3:
+#        jump looplogic_easy2
+#    if randomNumberEasyLL==4:
+#        jump looplogic_easy3
 
 label binaryEasy:
-    #if (tutorial_binaryEasy == False):
-        #jump tutorial_2Bit
+    if (tutorial_binaryEasy == False):
+        jump tutorial_Binary2Bit_1
     call binaryMatchEasy
 
-#label tutorial_LLEasy:
+label tutorial_Binary2Bit_1:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_binary2Bit_1
+    call screen tutorial_scrBinary2Bit_1
+    
+label tutorial_Binary2Bit_2:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_binary2Bit_2
+    call screen tutorial_scrBinary2Bit_2
+    
+label tutorial_Binary2Bit_3:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_binary2Bit_3
+    call screen tutorial_scrBinary2Bit_3
+    
+label tutorial_Binary2Bit_4:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_binary2Bit_4
+    call screen tutorial_scrBinary2Bit_4
+    
+label tutorial_Binary2Bit_5:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_binary2Bit_5
+    call screen tutorial_scrBinary2Bit_5
+    $ tutorial_binaryEasy = True
+    
+label scratches_label:
+    $quick_menu = True
+    $balconyScratches_look = True
+    $alphaBodyItems +=1
+    show other darken
+    show image "objects/scratches_closeup.png" at centerScreen
+    "{i}A damaged railing. The depressions resemble a hand. The gouges look similar to the marks on the floor as well."
+    hide other darken
+    hide image "objects/scratches_closeup.png"
+    show Grace surprised at left
+    g "Wow, he must've been in some real pain if he scratched the railing like this."
+    show Ada seething at right
+    a "Shorted wires is one of the worst sensations a machine can feel."
+    show Grace neutral
+    g "How so?"
+    a "Imagine if your veins ignited and all your blood went straight to your brain. It is a terrible mix of agony and deliriousness."
+    show Grace sad
+    g "Jeez, I wouldn't even wish that on Ivan."
+    show Ada neutral
+    a "Ivan?"
+    g "Don't worry about it."
+    hide Ada
+    hide Grace
+    window hide
+    $quick_menu = False
+    jump balcony_alpha
+    
+label jumpdrive1_label:
+    $quick_menu = True
+    $balconyJumpdrive_look = True
+    $alphaBodyItems +=1
+    show other darken
+    show image "objects/jumpdrive_closeup.png" at centerScreen
+    "{i}A small pendrive found by Alpha's hand. Besides the strangeness of where it was found, it is otherwise unremarkable."
+    hide other darken
+    hide image "objects/jumpdrive_closeup.png"
+    show Grace happy at left
+    g "A standard issue Noah Sphere thumbdrive, eh? Now we've got something."
+    show Ada neutral at right
+    a "A data drive? Please, let me see it."
+    show Grace neutral
+    g "Hold on for now, we haven't finished looking around. Let's not get distracted."
+    hide Ada
+    hide Grace
+    window hide
+    $quick_menu = False
+    jump balcony_alpha
+    
+label balconyView_label:
+    $quick_menu = True
+    $balconyView_look = True
+    $ balconyItems +=1
+    show other darken
+    show image "objects/balconyWindow_closeup.png" at centerScreen
+    "{i}Another window view of the nebula, this time around one of the many gardens on the Noah Sphere. It was in the past century that the solar system drifted into the depths of the nebula. 
+     {i}On Earth, the night sky lights up with the colorful glow of the space clouds."
+    hide other darken
+    hide image "objects/balconyWindow_closeup.png"
+    show Ada happy at right
+    a "To think that the Earth's solar system drifted into a nebula so unexpectedly satisfies my probability calculator."
+    show Grace snarky at left
+    g "I'm sorry, what?"
+    a "Improbabilities on a cosmic scale. A scale where even the smallest variable can alter the course of galaxies."
+    g "Oh. You really like space, don't you?"
+    a "Why would I not? It is the closest thing to existing within a server bank."
+    show Grace surprised
+    g "Is that what the inside of a computer looks like? Empty space with points of interest?"
+    show Ada neutral
+    a "No, it is so much more than that. So much more than what can possibly be explained with words."
+    g "Remind me to ask you again when we have time."
+    a "It is small comfort, but at least Alpha was able to experience this before he died."
+    show Grace sad
+    g "Small comforts are still something."
+    hide Ada
+    hide Grace
+    window hide
+    $quick_menu = False
+    jump balcony_alpha
+
+label tutorial_LLEasy:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_LL1
+    call screen tutorial_scrLL_1
+    
+label tutorial_LL_2:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_LL2
+    call screen tutorial_scrLL_2    
+    
+label tutorial_LL_3:
+    window hide
+    $ tutorial_loopLogicEasy = True
+    $ quick_menu = False
+    scene bg tutorial_LL3
+    call screen tutorial_scrLL_3     
+    
+label loopLogic_EasyHints1:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLEasyHints%3 
+    show LLE_1_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)onlayer screens
+    show LLE_1_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
+    show LLE_1_tile53 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)  onlayer screens
+    show other darken onlayer screens
+    if (remainder==0):
+        $LLEasyHints +=1
+        a "Since there are no blue ifs, the else must be used to get the blue."
+        hide other darken onlayer screens
+        hide LLE_1_tile51 onlayer screens
+        hide LLE_1_tile52 onlayer screens
+        hide LLE_1_tile53 onlayer screens
+        jump gamefile_lle1
+    if (remainder==1):
+        $LLEasyHints +=1
+        a "We have two green ifs and two green lights. I would try placing a green if where I wanted a green light on."
+        hide other darken onlayer screens
+        hide LLE_1_tile51 onlayer screens
+        hide LLE_1_tile52 onlayer screens
+        hide LLE_1_tile53 onlayer screens
+        jump gamefile_lle1
+    if (remainder==2):
+        $LLEasyHints +=1
+        a "Remember that an else can only be placed after an if, so make sure you have an if gate in before you try to use the else."
+        hide other darken onlayer screens
+        hide LLE_1_tile51 onlayer screens
+        hide LLE_1_tile52 onlayer screens
+        hide LLE_1_tile53 onlayer screens
+        jump gamefile_lle1
+    jump gamefile_lle1
+    
+label loopLogic_EasyHints2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLEasyHints%3 
+    show LLE_2_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)onlayer screens
+    show LLE_2_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
+    show LLE_2_tile53 at Position(xpos = else1x, xanchor = 0, ypos =else1y, yanchor = 0)  onlayer screens
+    show other darken onlayer screens
+    if (remainder==0):
+        $LLEasyHints +=1
+        a "There are two blue lights, and two blue ifs. Probability indicates this is likely not a coincidence."
+        hide other darken onlayer screens
+        hide LLE_2_tile51 onlayer screens
+        hide LLE_2_tile52  onlayer screens
+        hide LLE_2_tile53 onlayer screens
+        jump gamefile_lle2
+    if (remainder==1):
+        $LLEasyHints +=1
+        a "There is a green light, but no green ifs. I would suggest using the else to get the green light to turn on."
+        hide other darken onlayer screens
+        hide LLE_2_tile51 onlayer screens
+        hide LLE_2_tile52 onlayer screens
+        hide LLE_2_tile53 onlayer screens
+        jump gamefile_lle2
+    if (remainder==2):
+        $LLEasyHints +=1
+        a "An if can be used by itself, but an else must be paired with an if."
+        hide other darken onlayer screens
+        hide LLE_2_tile51 onlayer screens
+        hide LLE_2_tile52  onlayer screens
+        hide LLE_2_tile53 onlayer screens
+        jump gamefile_lle2
+    jump gamefile_lle2
+    
+#label loopLogic_EasyHints3:
+    
+label loopLogic_EasyHints4:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLEasyHints%3 
+    show LLE4999tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)onlayer screens
+    show LLE4999tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
+    show LLE4999tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)  onlayer screens
+    show other darken onlayer screens
+    if (remainder==0):
+        $LLEasyHints +=1
+        a "There are two green lights, and one green if. The if can stand by itself, remember."
+        hide other darken onlayer screens
+        hide LLE4999tile2 onlayer screens
+        hide LLE4999tile13 onlayer screens
+        hide LLE4999tile17 onlayer screens
+        jump Gamefile_lle4
+    if (remainder==1):
+        $LLEasyHints +=1
+        a "There is one blue if and only one blue light. I think you should probably put the if by the blue light."
+        hide other darken onlayer screens
+        hide LLE4999tile2 onlayer screens
+        hide LLE4999tile13 onlayer screens
+        hide LLE4999tile17 onlayer screens
+        jump Gamefile_lle4
+    if (remainder==2):
+        $LLEasyHints +=1
+        a "The else has to be paired with an if, remember, and it will let through whatever color the if {i}is not{/i}."
+        hide other darken onlayer screens
+        hide LLE4999tile2 onlayer screens
+        hide LLE4999tile13 onlayer screens
+        hide LLE4999tile17 onlayer screens
+        jump Gamefile_lle4
+    jump Gamefile_lle4
+    
+#label loopLogic_EasyHints5:
+    
+#label LL_easyLose:
+    
+#label LL_easyWin:
     
 #label tutorial_2Bit:
+    
+#label binary_easyHints:
+    
+#label binary_easyLose:
+    
+#label binary_easyWin:
     
 
 

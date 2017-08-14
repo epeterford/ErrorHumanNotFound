@@ -1,12 +1,12 @@
 label prologue:
-    stop channel06 fadeout 1.0
-    stop channel07 fadeout 1.0
-    stop channel08 fadeout 1.0
-    stop channel09 fadeout 1.0
-    stop channel10 fadeout 1.0
-    stop channel11 fadeout 1.0
-    stop channel12 fadeout 1.0
-    
+#    stop channel06 fadeout 1.0
+#    stop channel07 fadeout 1.0
+#    stop channel08 fadeout 1.0
+#    stop channel09 fadeout 1.0
+#    stop channel10 fadeout 1.0
+#    stop channel11 fadeout 1.0
+#    stop channel12 fadeout 1.0
+    stop music fadeout 1.0
     play channel00 labBGM_0 fadeout 1.0 fadein 1.0
     play channel01 labBGM_1 fadeout 1.0 fadein 1.0
     play channel02 labBGM_2 fadeout 1.0 fadein 1.0
@@ -91,6 +91,7 @@ label chambers:
     scene bg conclaveWaitingRoom with fade #at basicfade 
     #Grace arrives at the chambers and is greeted by a secretary VI.
     play sound toshStartup
+    play music conclaveReceptionAmb fadeout 1.0 fadein 1.0
     show Tosh pleasant at right
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
@@ -174,6 +175,7 @@ label prologueResume1:
     h "Good. Please ensure no one gets in their way. Speaking of, Grace should be here by now."
     
     #insert SFX here
+    stop music fadeout 1.0
     play sound doorOpen2
     queue sound doorClose2
     scene bg conclaveOccupied with fade #at basicfade
@@ -387,6 +389,12 @@ label prologueResume3:
     g "Err... are you going to be all right?"
     show Ada amused at right
     a "It might take me a moment to get used to walking. But if a hominid like yourself could figure it out, then I anticipate little difficulty in doing so as well."
+    $quick_menu = False
+    window hide
+    scene bg black with fade
+    scene bg chapterOne with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     jump chapterOne
 
 

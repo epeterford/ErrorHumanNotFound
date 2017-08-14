@@ -98,7 +98,7 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("chooseEasyGram")
-            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
             activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
             
     screen gramEasyDone_scr:
@@ -383,7 +383,7 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseTree")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "arrow.png"
@@ -451,7 +451,7 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseTea_label")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseRecorder_inv == False):
             imagebutton:
@@ -461,7 +461,7 @@ label chapterOne_screens:
                 ypos 0 
                 focus_mask True
                 action Jump("hiroseRecorder_label")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseOfficeComputer == False):
             imagebutton:
@@ -471,7 +471,7 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("adaActualPuzzle1")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
                 
     screen hirosePersonalArea_scr:
@@ -540,7 +540,7 @@ label chapterOne_screens:
             ypos 0
             focus_mask True
             action Jump("hirosePC_label")
-            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
             activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
             
     screen investigateHiroseBed:
@@ -570,7 +570,7 @@ label chapterOne_screens:
                 ypos 0 
                 focus_mask True
                 action Jump("hiroseBed_label")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hiroseWindow_inv == False):
             imagebutton:
@@ -580,7 +580,7 @@ label chapterOne_screens:
                 ypos 0
                 focus_mask True
                 action Jump("hiroseWindow_label")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hirosePhoto_inv == False):
             imagebutton:
@@ -590,7 +590,7 @@ label chapterOne_screens:
                 ypos 729 
                 focus_mask True
                 action Jump("hirosePhoto_label")
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
     jump tutorial_Inv_1
             
@@ -917,160 +917,164 @@ label LGEasyHintsB1:
     jump gamefileB1
     
 label LGEasyHintsB2:
-    $ quick_menu = True
+    show screen disable_hide
     $ remainder = LGEasyHints%3
-    image EB25end1 = "light_g_on.png"
-    show EB25end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
-    image EB25tile04_03 = "and_Gate.png"
-    show EB25tile04_03 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
-    image EB25tile01_07 = "or_Gate.png"
-    show EB25tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
-    show other darken
+    show EB211tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EB211tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     if (remainder== 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB2
+        hide other darken onlayer screens
+        hide EB211tile07_02 onlayer screens
+        hide EB211tile07_08 onlayer screens
+        jump gamefileB2
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB2
+        hide other darken onlayer screens
+        hide EB211tile07_02 onlayer screens
+        hide EB211tile07_08 onlayer screens
+        jump gamefileB2
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB2
-    $ quick_menu = False
-    jump logicGate_easyB2
+        hide other darken onlayer screens
+        hide EB211tile07_02 onlayer screens
+        hide EB211tile07_08 onlayer screens
+        jump gamefileB2
+    jump gamefileB2
     
 label LGEasyHintsB3:
-    image EB311tile07_02 = "and_Gate.png"
-    show EB311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    image EB311tile07_08 = "or_Gate.png"
-    show EB311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-    show other darken
-    $ quick_menu = True
+    show EB311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EB311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
+    show screen disable_hide
     $ remainder = LGEasyHints%3
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB3
+        hide other darken onlayer screens
+        hide EB311tile07_02 onlayer screens
+        hide EB311tile07_08 onlayer screens
+        jump gamefileB3
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB3
+        hide other darken onlayer screens
+        hide EB311tile07_02 onlayer screens
+        hide EB311tile07_08 onlayer screens
+        jump gamefileB3
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        hide other darken
-        $ quick_menu = False
-        jump logicGate_easyB3
-    $ quick_menu = False
-    jump logicGate_easyB3
+        hide other darken onlayer screens
+        hide EB311tile07_02 onlayer screens
+        hide EB311tile07_08 onlayer screens
+        jump gamefileB3
+    jump gamefileB3
     
 label LGEasyHintsC1:
-    image EC111tile02_09 = "not_Gate.png"
-    show EC111tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
-    image EC111tile07_02 = "and_Gate.png"
-    show EC111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    image EC111tile07_08 = "or_Gate.png"
-    show EC111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-    show other darken
-    $ quick_menu = True
+    show EC111tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0) onlayer screens
+    show EC111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EC111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
+    show screen disable_hide
     $ remainder = LGEasyHints%3
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC1
+        hide other darken onlayer screens
+        hide EC111tile02_09 onlayer screens
+        hide EC111tile07_02 onlayer screens
+        hide EC111tile07_08 onlayer screens
+        jump gamefileC1
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC1
+        hide other darken onlayer screens
+        hide EC111tile02_09 onlayer screens
+        hide EC111tile07_02 onlayer screens
+        hide EC111tile07_08 onlayer screens
+        jump gamefileC1
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC1
-    $ quick_menu = False
-    hide other darken
-    jump logicGate_easyC1
+        hide other darken onlayer screens
+        hide EC111tile02_09 onlayer screens
+        hide EC111tile07_02 onlayer screens
+        hide EC111tile07_08 onlayer screens
+        jump gamefileC1
+    hide other darken onlayer screens
+    jump gamefileC1
     
 label LGEasyHintsC2:
-    $ quick_menu = True
-    image EC211tile02_09 = "not_Gate.png"
-    show EC211tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
-    image EC211tile07_02 = "and_Gate.png"
-    show EC211tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    image EC211tile07_08 = "or_Gate.png"
-    show EC211tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-    show other darken
+    show screen disable_hide
+    show EC211tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0) onlayer screens
+    show EC211tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EC211tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     $ remainder = LGEasyHints%3
     if (remainder==0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC2
+        hide EC211tile02_09 onlayer screens
+        hide EC211tile07_02 onlayer screens
+        hide EC211tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC2
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC2
+        hide EC211tile02_09 onlayer screens
+        hide EC211tile07_02 onlayer screens
+        hide EC211tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC2
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC2
-    $ quick_menu = False
-    hide other darken
-    jump logicGate_easyC2
+        hide EC211tile02_09 onlayer screens
+        hide EC211tile07_02 onlayer screens
+        hide EC211tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC2
+    hide other darken onlayer screens
+    jump gamefileC2
     
 label LGEasyHintsC3:
-    $ quick_menu = True
-    image EC311tile02_09 = "not_Gate.png"
-    show EC311tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
-    image EC311tile07_02 = "and_Gate.png"
-    show EC311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-    image EC311tile07_08 = "or_Gate.png"
-    show EC311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-    show other darken
+    show screen disable_hide
+    show EC311tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0) onlayer screens
+    show EC311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show EC311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
     $ remainder = LGEasyHints%3
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC3
+        hide EC311tile02_09 onlayer screens
+        hide EC311tile07_02 onlayer screens
+        hide EC311tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC3
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC3
+        hide EC311tile02_09 onlayer screens
+        hide EC311tile07_02 onlayer screens
+        hide EC311tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC3
     if (remainder==2):
         $ LGEasyHints += 1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
-        $ quick_menu = False
-        hide other darken
-        jump logicGate_easyC3
-    $ quick_menu = False
-    hide other darken
-    jump logicGate_easyC3
+        hide EC311tile02_09 onlayer screens
+        hide EC311tile07_02 onlayer screens
+        hide EC311tile07_08 onlayer screens
+        hide other darken onlayer screens
+        jump gamefileC3
+    hide other darken onlayer screens
+    jump gamefileC3
     
 label gramEasyHints1:
     show screen disable_hide

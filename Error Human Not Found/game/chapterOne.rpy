@@ -1,7 +1,5 @@
 label chapterOne:
-    jump startChapterOne
-
-label startChapterOne:
+    $quick_menu = True
     play channel00 hiroseOffice1_00 fadeout 1.0 fadein 1.0
     play channel01 hiroseOffice1_01 fadeout 1.0 fadein 1.0
     play channel02 hiroseOffice1_02 fadeout 1.0 fadein 1.0
@@ -224,6 +222,7 @@ label hiroseDoorPassed:
     
     show Grace snarky
     g "Let's just say that whoever updates key card access needs to do their job faster."
+    play sound toshStartup
  
     show Tosh pleasant at center
     tosh "Hello, Doctor Fortran!"
@@ -324,7 +323,9 @@ label toshgetsroasted:
  
 label adadoxxeshirose:
     g "Now that we've passed the gatekeeper, let's get what we came here for."
-    scene bg hiroseOfficeMain  
+    $renpy.music.play("music/Character/ADA/EHNF_ADA_Movement_Normal.ogg", channel='sound02', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
+    $renpy.music.play("music/Character/Grace/EHNF_Grace_Footsteps_Normal.ogg", channel='sound01', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
+    scene bg hiroseOfficeMain with fade
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
@@ -360,6 +361,9 @@ label adadoxxeshirose:
 #    play channel15 hiroseOffice2_15 fadeout 1.0 fadein 1.0
 #    play channel16 hiroseOffice2_16 fadeout 1.0 fadein 1.0
     show Grace neutral at left
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
+    
     g "It almost hurts to admit it, but I'm incredibly jealous of this office. Don't have the same view from my little lab."
     $ talkAdaHiroseOffice_value = 0
     jump chapterOne_screens
@@ -586,14 +590,13 @@ label easyLGBPuzzle:
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     window hide
     $randomNumber2 = renpy.random.randint(0,2)
+    if randomNumber2==0:
+        jump logicGate_easyB1
+    if randomNumber2==1:
+        jump logicGate_easyB2
+    if randomNumber2==2:
+        jump logicGate_easyB3
     jump logicGate_easyB1
-#    if randomNumber2==0:
-#        jump logicGate_easyB1
-#    if randomNumber2==1:
-#        jump logicGate_easyB2
-#    if randomNumber2==2:
-#        jump logicGate_easyB3
-#    jump logicGate_easyB1
         
 label lastEasyLGPuzzle:
     stop channel00 fadeout 1.0
@@ -690,7 +693,10 @@ label hirosePersonalArea_actions:
     #insert exploration here. Must pick up photo before being able to open computer.
     window hide
     $ quick_menu = False
-    scene bg hirosePersonalArea
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+        scene bg hirosePersonalArea_logged
+    else:
+        scene bg hirosePersonalArea
     call screen hirosePersonalArea_scr
         
 label hirosePersonalArea_inv:
@@ -703,7 +709,10 @@ label hirosePersonalArea_inv:
  
 label hirosePersonalComputer:
     $ quick_menu = False
-    scene bg hirosePersonalComputer with fade #at basicfade
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+        scene bg hirosePersonalComputer_logged
+    else:
+        scene bg hirosePersonalComputer with fade #at basicfade
     call screen investigateHirosePC
 
 label hiroseBed:
@@ -715,12 +724,14 @@ label gotHirosePassword:
     #INSERT SFX and BGM here
     $ quick_menu = True
     show Grace happy at left
-    g "We've got it!"
+    g "At least her lack of personal stuff means finding the important data is easy."
     show Grace neutral at left
     g "Let's get back to my lab. We've got some work to do before we can use this."
+    $renpy.music.play("music/Character/ADA/EHNF_ADA_Movement_Normal.ogg", channel='sound02', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
+    $renpy.music.play("music/Character/Grace/EHNF_Grace_Footsteps_Normal.ogg", channel='sound01', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     $ quick_menu = False
     window hide
-    scene bg hirosePersonalArea with fade #at basicfade
+    scene bg hirosePersonalArea_logged with fade #at basicfade
     $ renpy.pause(0.8)
     scene bg hiroseOfficeMain with fade #at basicfade
     $ renpy.pause(0.8)
@@ -728,6 +739,20 @@ label gotHirosePassword:
     $ renpy.pause(0.8)
     scene bg hallwayGrace with fade #at basicfade
     $ renpy.pause(0.8)
+    play channel00 labBGM_0 fadeout 1.0 fadein 1.0
+    play channel01 labBGM_1 fadeout 1.0 fadein 1.0
+    play channel02 labBGM_2 fadeout 1.0 fadein 1.0
+    play channel03 labBGM_3 fadeout 1.0 fadein 1.0
+    play channel04 labBGM_4 fadeout 1.0 fadein 1.0
+    play channel05 labBGM_5 fadeout 1.0 fadein 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0 
+    stop channel08 fadeout 1.0 
+    stop channel09 fadeout 1.0 
+    stop channel10 fadeout 1.0 
+    stop channel11 fadeout 1.0 
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0 
     scene bg G_main with fade #at basicfade
     $ renpy.pause(0.8)
     scene bg G_deskArea with fade #at basicfade
@@ -737,6 +762,8 @@ label gotHirosePassword:
     window show
     $ quick_menu = True
     #Transition to Grace's Lab here
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     "{i}Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
     show Grace happy at left
     g "There. My keycard is now copying Hirose's access protocols."
@@ -752,6 +779,8 @@ label talkAdaHirosePersonal:
         $ talkAdaHirosePersonal_value +=1
         #choice 4
         $ quick_menu = False
+        hide Ada
+        hide Grace
         menu:
             "Comment on her expression.":
                 jump sortaroastada
@@ -771,9 +800,9 @@ label talkAdaHirosePersonal:
 label sortaroastada:
     $ points_SbE +=2
     $ quick_menu = True
-    show Grace surprised on left
+    show Grace surprised at left
     g "Did you enjoy that?"
-    show Ada neutral on right
+    show Ada neutral at right
     a "Hm?"
     show Grace snarky
     g "Talking down to Tosh like that. I can't help but notice the giant grin on your face."
@@ -791,10 +820,10 @@ label sortaroastada:
 label actuallyroastada:
     $ points_S +=2
     $ quick_menu = True
-    show Grace annoyed on left
+    show Grace annoyed at left
     g "You did your job. Nothing more."
     g "I could've done that by myself, if I'd been so inclined."
-    show Ada frustrated on right
+    show Ada frustrated at right
     a "I beg to differ. I do not have to help you, Grace. Some gratitude would be welcome."
     "{i}Grace sighs."
     show Grace neutral
@@ -808,9 +837,9 @@ label actuallyroastada:
 label toshgotwrecked:
     $ points_E +=2
     $ quick_menu = True
-    show Grace happy on left
+    show Grace happy at left
     g "I've got to say, I never liked that VI."
-    show Ada amused on right
+    show Ada amused at right
     a "Really?"
     show Grace neutral
     g "Too chipper for my liking. It's like she's too helpful."
@@ -827,6 +856,15 @@ label toshgotwrecked:
 
 #end the chapter here, go to Chapter 2
 label endChapterOne:
+    #Chapter transition here
+    hide Ada
+    hide Grace
+    $quick_menu = False
+    window hide
+    scene bg black with fade
+    scene bg chapterTwo with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             jump chapterTwo_S
@@ -866,17 +904,23 @@ label hirosePC_label:
     show image "objects/hiroseComputer_closeup.png" at centerScreen
     window show
     $ quick_menu = True
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 :
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Grace neutral at left
         g "All right, I'll just log in, copy her credentials, and then we can leave."
-        # show image "hiroseComputerLogged.png"
-        #play SFX typing
-        play sound typing
-        hide Ada
         hide Grace
-        #hide image "hiroseComputerLogged.png"
+        hide Ada
+        window hide
+        $quick_menu = False
+        play sound typing
+        show other darken
+        show image "images/objects/hiroseComputerLogged.png" at centerScreen
+        #play SFX typing
+        g "Just a second to copy over the files... and we're good!"
+        hide other darken
+        hide image "images/objects/hiroseComputerLogged.png"
+        $quick_menu = True
         jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
         hide other darken
@@ -899,7 +943,9 @@ label hirosePC_label:
         g "Right. I suppose I'll take another look around."
         g "Writing down a password kind of ruins the point of having one, though."
         a "Your mother is on the elderly side of the human age spectrum. Memory problems become more common."
+        show Grace snarky
         g "Please do tell her that. Make sure I'm there when you do."
+        show Grace neutral
         g "Come on, let's keep looking."
         hide Ada
         hide Grace

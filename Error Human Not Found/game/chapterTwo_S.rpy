@@ -1,5 +1,6 @@
 label chapterTwo_S:
-
+    scene bg G_deskArea
+    $quick_menu=True
     #Start the scene in Grace's lab. 
     show Grace neutral at left
     g "It shouldn't take too much longer for the credentials to print onto the card."
@@ -18,6 +19,7 @@ label chapterTwo_S:
 label talkAdaLab_S:
     show Ada neutral at right
     a "Yes, Grace?"
+    $ quick_menu = False
     menu:
         "Strike up a conversation.":
             jump tellmeaboutyoself_S
@@ -27,6 +29,7 @@ label talkAdaLab_S:
             jump listenhereyoulittle_S
 
 label tellmeaboutyoself_S:
+    $ quick_menu = True
     $ points_E +=2
     show Grace neutral at left
     g "Ada."
@@ -51,6 +54,7 @@ label tellmeaboutyoself_S:
     jump checkValue_S
 
 label nicefunctionsgurl_S:
+    $ quick_menu = True
     $ points_SbE +=2
     show Grace happy at left
     g "Watching you walk around's got me thinking. We could use these bodies for a lot more than just AIs."
@@ -77,6 +81,7 @@ label nicefunctionsgurl_S:
     jump checkValue_S
 
 label listenhereyoulittle_S:
+    $ quick_menu = True
     $ points_S +=2
     show Grace neutral at left
     g "Ada, come here."
@@ -151,8 +156,10 @@ label resumeChapterTwo_S:
     "{i}Ada gives Grace a long look before answering."
 
     a "Viewport 275, which intersects with corridor 5-673-A. If we take maintenance shaft 79-DG we should--"
-    
+    hide Ada
+    hide Grace
     #choice 1
+    $ quick_menu = False
     menu:
         "Let her finish.":
             jump hurryupada
@@ -163,6 +170,7 @@ label resumeChapterTwo_S:
 
 label hurryupada:
     $ points_E +=2
+    $ quick_menu = True
     show Ada neutral at right
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
     a "If we do, I postulate a 33\% decrease in time efficiency. I think we can make it up, though."
@@ -190,6 +198,7 @@ label hurryupada:
 
 label doyouneedassistance:
     $ points_SbE +=2
+    $ quick_menu = True
     g "Ada."
     show Ada frustrated at right
     a "Yes?"
@@ -217,6 +226,7 @@ label doyouneedassistance:
 
 label plsstop:
     $ points_S +=2
+    $ quick_menu = True
     show Grace annoyed at left
     g "Ada!"
     show Ada concerned at right
@@ -260,9 +270,11 @@ label gettingin_S:
     scene bg balconyClose with fade
     $ quick_menu = True
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
-    show Grace surprised
+    show Grace surprised at left
     g "Ada?"
+    hide Grace
     #choice 2
+    $ quick_menu = False
     menu:
         "Ask her if she's all right.":
             jump uokada_S
@@ -272,6 +284,7 @@ label gettingin_S:
             jump alphadistraction_S
 
 label uokada_S:
+    $ quick_menu = True
     $ points_E +=2
     show Grace sad at left
     g "Ada, are you all right?"
@@ -296,6 +309,7 @@ label uokada_S:
     jump csinoahsphere_SbE
 
 label mourn_S:
+    $ quick_menu = True
     $ points_SbE +=2
     "{i}Grace crosses her arms, watching Ada as she slowly falls to her knees."
     show Ada concerned at right
@@ -321,6 +335,7 @@ label mourn_S:
     jump csinoahsphere_SbE
 
 label alphadistraction_S:
+    $ quick_menu = True
     $ points_S +=2
     show Grace neutral at left
     g "Ada?"

@@ -22,12 +22,11 @@ init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_easy4: #loopLogic_easy5
+    $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
     #loads background
     scene bg looplogic_bg
-    
-    
     
     image LLE4tile = "G_end_off.png"
     show LLE4tile at Position(xpos = 186, xanchor = 0, ypos = 435, yanchor = 0)
@@ -121,15 +120,15 @@ label loopLogic_easy4: #loopLogic_easy5
 
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
     jump Gamefile_lle4
     
     
 label Gamefile_lle4:
-    
+    $config.skipping=None
     #calls game screen
-    call screen LoopLogicE5
+    call screen LoopLogicE4
     
     #the first logic gate *******************************************************************************
     if gate_name == "G_if_gate":
@@ -485,9 +484,6 @@ label Gamefile_lle4:
         hide LLE432tile18
         hide LLE43tile94
         hide LLE43tile19
-    
-
-
         
         
 #win conditions ********
@@ -517,8 +513,32 @@ label Gamefile_lle4:
     
     jump Gamefile_lle4
 
-screen LoopLogicE5:
-    
+screen LoopLogicE4:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints4")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #if gates

@@ -21,7 +21,8 @@
 init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
-label looplogic_easy2: #loopLogic_easy5
+label loopLogic_easy2: #loopLogic_easy5
+    $config.skipping=None
     #loads background
     $ gate_name= ""
     $ slot_name = ""
@@ -147,15 +148,15 @@ label looplogic_easy2: #loopLogic_easy5
 
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
     jump gamefile_lle2
     
     
 label gamefile_lle2:
-    
+    $config.skipping=None
     #calls game screen
-    call screen logicGatesMA1
+    call screen loopLogic_easy2Scr
     
 
 
@@ -422,11 +423,6 @@ label gamefile_lle2:
         hide LLE_2_tile49
         hide LLE_2_tile50
         hide LLE_2_tile51
-
-
-        
-    #if slot_name == "null":
-    #    $attempts +=1
         
 #win conditions ********
     if (if1in2 == True or if2in2 == True) and else1in3 == True and (if2in1 == True or if1in1 == True):
@@ -444,20 +440,43 @@ label gamefile_lle2:
         show LLE_2_tile53 at Position(xpos = 770, xanchor = 0, ypos = 715, yanchor = 0)
 
         "game"
-        jump looplogic_easy1
+        jump balcony_alpha
 
-        
-    #$ attempts -= 1
     if attempts == 0:
-
-
+        show LLE_2_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLE_2_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLE_2_tile53 at Position(xpos = else1x, xanchor = 0, ypos =else1y, yanchor = 0)
         "you lose try again"
-        jump looplogic_easy1
+        jump balcony_alpha
     
     jump gamefile_lle2
 
-screen logicGatesMA1:
-    
+screen loopLogic_easy2Scr:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints2")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #if gates

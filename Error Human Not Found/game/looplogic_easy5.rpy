@@ -22,6 +22,7 @@ init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_easy5: #loopLogic_easy5
+    $config.skipping=None
     #loads background
     $ gate_name= ""
     $ slot_name = ""
@@ -126,7 +127,7 @@ label loopLogic_easy5: #loopLogic_easy5
     
     
 label Gamefile_lle5:
-    
+    $config.skipping=None
     #calls game screen
     call screen LoopLogicE5
     
@@ -517,7 +518,15 @@ label Gamefile_lle5:
     jump Gamefile_lle5
 
 screen LoopLogicE5:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
     #drags and drop location
     draggroup:
             #if gates

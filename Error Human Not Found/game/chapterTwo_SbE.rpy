@@ -1,5 +1,6 @@
 label chapterTwo_SbE:
-
+    scene bg G_deskArea
+    $quick_menu=True
     #Start the scene in Grace's lab. 
     show Grace neutral at left
     g "It shouldn't take too much longer for the credentials to print onto the card."
@@ -18,6 +19,7 @@ label chapterTwo_SbE:
 label talkAdaLab_SbE:
     show Ada neutral at right
     a "Yes, Grace? Your facial expression suggests inquisitiveness."
+    $ quick_menu = False
     menu:
         "Strike up a conversation.":
             jump tellmeaboutyoself_SbE
@@ -150,6 +152,9 @@ label resumeChapterTwo_SbE:
 
     a "Viewport 275, which intersects with corridor 5-673-A. If we take maintenance shaft 79-DG we should--"
     #choice 1
+    hide Ada
+    hide Grace
+    $ quick_menu = False
     menu:
         "Let her finish.":
             jump letherfinish_SbE
@@ -160,6 +165,7 @@ label resumeChapterTwo_SbE:
 
 label letherfinish_SbE:
     $ points_E +=2
+    $ quick_menu = True
     show Ada neutral at right
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
     a "If we do, I calculate a 33\% decrease in efficiency. I think we can make it up, though."
@@ -185,6 +191,7 @@ label letherfinish_SbE:
 
 label helpherout_SbE:
     $ points_SbE +=2
+    $ quick_menu = True
     g "Ada."
     show Ada frustrated at right
     a "Yes?"
@@ -209,6 +216,7 @@ label helpherout_SbE:
     jump gettingin_SbE
 
 label adapls_SbE:
+    $ quick_menu = True
     $ points_S +=2
     show Grace annoyed at left
     g "Ada!"
@@ -253,8 +261,10 @@ label gettingin_SbE:
     scene bg balconyClose with fade
     $ quick_menu = True
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
-    show Grace surprised
+    show Grace surprised at left
     g "Ada?"
+    hide Grace
+    $ quick_menu = False
     #choice 2
     menu:
         "Ask her if she's all right.":
@@ -266,6 +276,7 @@ label gettingin_SbE:
             
 label askherifshesalright:
     $ points_E +=2
+    $ quick_menu = True
     show Grace sad at left
     g "Ada, are you all right?"
     show Ada frustrated at right
@@ -291,6 +302,7 @@ label askherifshesalright:
     jump csinoahsphere_SbE
 
 label lethermourn:
+    $ quick_menu = True
     $ points_SbE +=2
     "{i}Grace crosses her arms and watches as Ada slowly falls to her knees."
     show Ada concerned at right
@@ -314,6 +326,7 @@ label lethermourn:
     jump csinoahsphere_SbE
 
 label wegotstufftodo:
+    $ quick_menu = True
     $ points_S +=2
     show Grace neutral at left
     g "Ada..."

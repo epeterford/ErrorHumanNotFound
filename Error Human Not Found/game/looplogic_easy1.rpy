@@ -21,12 +21,82 @@
 init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
-label looplogic_easy1: #loopLogic_easy5
+screen loopLogicEasy_1Scr:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    #drags and drop location
+    draggroup:
+            #if gates
+            drag:
+                drag_name "G_if_gate1"
+                child "G_if.png"
+                droppable False
+                dragged gate_dragged
+                xpos if1x ypos if1y
+            drag:
+                drag_name "G_if_gate2"
+                child "G_if.png"
+                droppable False
+                dragged gate_dragged
+                xpos if2x ypos if2y  
+            #else gate
+            drag:
+                drag_name "G_else_gate"
+                child "G_else.png"
+                droppable False
+                dragged gate_dragged
+                xpos else1x ypos else1y
+
+            #location to be dropped
+            drag:
+                drag_name "gate slot one"
+                child "cover.png"
+                draggable False
+                xpos gate1x ypos gate1y
+           
+            drag:
+                drag_name "gate slot two"
+                child "cover.png"
+                draggable False
+                xpos gate2x ypos gate2y
+                
+            drag:
+                drag_name "gate slot three"
+                child "cover.png"
+                draggable False
+                xpos gate3x ypos gate3y
+                
+label loopLogic_easy1: #loopLogic_easy5
+    $config.skipping=None
     #loads background
     $ gate_name= ""
     $ slot_name = ""
     scene bg looplogic_bg
-    
+    $ quick_menu = False
+    $ game_menu = True
    
     image LLE_1_tile1 = "W_horizontal.png"
     show LLE_1_tile1 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
@@ -147,15 +217,15 @@ label looplogic_easy1: #loopLogic_easy5
 
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
-    jump gamefile_lle1
+    call gamefile_lle1
     
     
 label gamefile_lle1:
-    
+    $config.skipping=None
     #calls game screen
-    call screen logicGatesMA1
+    call screen loopLogicEasy_1Scr
     
 
 
@@ -424,9 +494,6 @@ label gamefile_lle1:
         hide LLE_1_tile51
 
         
-    #if slot_name == "null":
-     #   $attempts +=1
-        
 #win conditions ********
     if (if1in2 == True or if2in2 == True) and else1in3 == True and (if2in1 == True or if1in1 == True):
         image LLE_1_tile48 = "G_end_on.png"
@@ -443,59 +510,18 @@ label gamefile_lle1:
         show LLE_1_tile53 at Position(xpos = 770, xanchor = 0, ypos = 715, yanchor = 0)
 
         "game"
-        jump looplogic_easy1
+        jump balcony_alpha
 
         
     #$ attempts -= 1
     if attempts == 0:
-
-
+        show LLE_1_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLE_1_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLE_1_tile53 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
         "you lose try again"
-        jump looplogic_easy1
+        jump balcony_alpha
     
     jump gamefile_lle1
 
-screen logicGatesMA1:
-    
-    #drags and drop location
-    draggroup:
-            #if gates
-            drag:
-                drag_name "G_if_gate1"
-                child "G_if.png"
-                droppable False
-                dragged gate_dragged
-                xpos if1x ypos if1y
-            drag:
-                drag_name "G_if_gate2"
-                child "G_if.png"
-                droppable False
-                dragged gate_dragged
-                xpos if2x ypos if2y  
-            #else gate
-            drag:
-                drag_name "G_else_gate"
-                child "G_else.png"
-                droppable False
-                dragged gate_dragged
-                xpos else1x ypos else1y
 
-            #location to be dropped
-            drag:
-                drag_name "gate slot one"
-                child "cover.png"
-                draggable False
-                xpos gate1x ypos gate1y
-           
-            drag:
-                drag_name "gate slot two"
-                child "cover.png"
-                draggable False
-                xpos gate2x ypos gate2y
-                
-            drag:
-                drag_name "gate slot three"
-                child "cover.png"
-                draggable False
-                xpos gate3x ypos gate3y
 

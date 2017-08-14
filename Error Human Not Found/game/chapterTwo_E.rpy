@@ -1,5 +1,6 @@
 label chapterTwo_E:
- 
+    scene bg G_deskArea
+    $quick_menu=True
     #Start the scene in Grace's lab.
     show Grace neutral at left
     g "It shouldn't take too much longer for the credentials to print onto the card."
@@ -18,6 +19,7 @@ label chapterTwo_E:
 label talkAdaLab_E:
     show Ada happy at right
     a "Can I help you with something, Grace?"
+    $ quick_menu = False
     menu:
         "Strike up a conversation.":
             jump tellmeaboutyoself_E
@@ -27,6 +29,7 @@ label talkAdaLab_E:
             jump listenhereyoulittle_E
 
 label tellmeaboutyoself_E:
+    $ quick_menu = True
     show Grace neutral at left
     g "How does it feel? Being physical?"
     show Ada nervous at right
@@ -45,6 +48,7 @@ label tellmeaboutyoself_E:
     jump checkValue_E
 
 label nicefunctionsgurl_E:
+    $ quick_menu = True
     show Grace happy at left
     g "Watching you move around has been pretty enlightening."
     show Ada concerned at right
@@ -69,6 +73,7 @@ label nicefunctionsgurl_E:
     jump checkValue_E
 
 label listenhereyoulittle_E:
+    $ quick_menu = True
     show Grace neutral at left
     g "Ada."
     show Ada neutral at right
@@ -143,6 +148,9 @@ label resumeChapterTwo_E:
  
     a "Viewport 275, which intersects with corridor 5-673-A. If we take maintenance shaft 79-DG we should--"
     #choice 1
+    hide Ada
+    hide Grace
+    $ quick_menu = False
     menu:
         "Let her finish.":
             jump letherfinish_E
@@ -153,6 +161,7 @@ label resumeChapterTwo_E:
  
 label letherfinish_E:
     $ points_E +=2
+    $ quick_menu = True
     show Ada neutral at right
     a "--be able to get there in an optimal amount of time, provided we do not run into anyone who wants to ask us any questions."
     a "If we do, I calculate a 33\% decrease in time efficiency. I think we can make it up, though."
@@ -177,6 +186,7 @@ label letherfinish_E:
     jump gettingin_SbE
  
 label helpherout_E:
+    $ quick_menu = True
     $ points_SbE +=2
     g "Ada."
     show Ada frustrated at right
@@ -203,6 +213,7 @@ label helpherout_E:
  
 label adapls_E:
     $ points_S +=2
+    $ quick_menu = True
     show Grace annoyed at left
     g "Ada!"
     show Ada concerned at right
@@ -259,6 +270,7 @@ label gettingin_E:
 
 label askherif:
     $ points_E +=2
+    $ quick_menu = True
     show Grace sad at left
     g "Ada, are you all right?"
     show Ada frustrated at right
@@ -284,6 +296,7 @@ label askherif:
  
 label poorpooralpha:
     $ points_SbE +=2
+    $ quick_menu = True
     "{i}Grace watches Ada as she slowly falls to her knees."
     show Ada concerned at right
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
@@ -308,6 +321,7 @@ label poorpooralpha:
  
 label moveitalong:
     $ points_S +=2
+    $ quick_menu = True
     show Grace neutral at left
     g "Ada..."
     show Ada concerned at right

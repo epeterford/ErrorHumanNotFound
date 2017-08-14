@@ -77,6 +77,14 @@ image bg gramEasy4 = "easyGrammar_Tut4.png"
 image bg gramEasy5 = "easyGrammar_Tut5.png"
 image bg gramEasy6 = "easyGrammar_Tut6.png"
 image bg gramEasy7 = "easyGrammar_Tut7.png"
+image bg tutorial_binary2Bit_1 = "binary_tutorial1.png"
+image bg tutorial_binary2Bit_2 = "binary_tutorial2.png"
+image bg tutorial_binary2Bit_3 = "binary_tutorial3.png"
+image bg tutorial_binary2Bit_4 = "binary_tutorial4.png"
+image bg tutorial_binary2Bit_5 = "binary_tutorial5.png"
+image bg tutorial_LL1 = "ll_easy_Tutorial.png"
+image bg tutorial_LL2 = "ll_easy_Tutorial2.png"
+image bg tutorial_LL3 = "ll_easy_Tutorial3.png"
 
 ##The Conclave
 image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
@@ -93,7 +101,9 @@ image bg hiroseOfficeMain = "bg/Hirose_OfficeMain.png"
 image bg hiroseOfficeTransition = "bg/Hirose_OfficeTransition.png"
 image bg hirosePersonalBed = "bg/Hirose_PersonalBed.png"
 image bg hirosePersonalComputer = "bg/Hirose_PersonalComputer.png"
+image bg hirosePersonalComputer_logged = "bg/Hirose_PersonalComputerLoggedIn.png"
 image bg hirosePersonalArea = "bg/Hirose_PersonalMain.png"
+image bg hirosePersonalArea_logged = "bg/Hirose_PersonalMain_Login.png"
 image bg hiroseReception = "bg/Hirose_Reception.png"
 #$ hiroseTea_inv = False
 #$ hiroseSafe_inv = False
@@ -111,6 +121,16 @@ image bg balconyClose = "bg/Balcony_RailingClose.png"
 image bg balconyLong = "bg/Balcony_RailingLong.png"
 image bg balconyRamp = "bg/Balcony_Ramp.png"
 image bg bbalconyTransition = "bg/Balcony_Transition.png"
+
+#Transition shots
+image bg prologue = "images/bg/PrologueTransition.png"
+image bg chapterOne = "images/bg/ChapterOneTransition.png"
+image bg chapterTwo = "images/bg/ChapterTwoTransition.png"
+image bg chapterThree = "images/bg/ChapterThreeTransition.png"
+image bg chapterFour = "images/bg/ChapterFourTransition.png"
+image bg chapterFiveS= "images/bg/ChapterFiveSTransition.png"
+image bg chapterFiveSbE = "images/bg/ChapterFiveSbETransition.png"
+image bg chapterFiveE = "images/bg/ChapterFiveETransition.png"
 
 #Hallway Shots
 image bg Logic_Gate = "LOGIC_GATE_BG.png"
@@ -171,6 +191,10 @@ define audio.balconyAmb1 = "music/Amb/Balcony/EHNF_BAL_L1.ogg"
 define audio.balconyAmb2 = "music/Amb/Balcony/EHNF_BAL_L2.ogg"
 define audio.balconyAmb3 = "music/Amb/Balcony/EHNF_BAL_L3.ogg"
 define audio.balconyAmb4 = "music/Amb/Balcony/EHNF_BAL_L4.ogg"
+
+#Conclave audio
+define audio.conclaveReceptionAmb = "music/amb/Conclave/Ambiance_Conclave_Reception_Area.ogg"
+#define audio.conclaveProperAmb = "music/amb/Conclave/Ambiance_Conclave_Proper.ogg"
 
 #Grace lab audio
 define audio.typing = "music/Amb/Grace_Lab/Typing/EHNF_AMB_Grace_Lab_TYP_L_0.ogg"
@@ -322,6 +346,8 @@ define audio.ogBGM_8 = "music/BGM/Oxygen_Garden/EHNF_L8_BGM_Oxy_Room_Short_Verb.
 #Ada
 define audio.adaClumsy = "music/Character/ADA/EHNF_ADA_Movement_Clumsy.ogg"
 define audio.adaDoor = "music/Character/ADA/EHNF_ADA_Movement_Clumsy_Door.ogg"
+define audio.adaWalk = "music/Character/ADA/EHNF_ADA_Movement_Normal.ogg"
+define audio.adaGraceful = "music/Character/ADA/EHNF_ADA_Movement_Graceful.ogg"
 
 #Alpha
 define audio.alphaFailure = "music/Character/ALPHA/EHNF_Character_Alpha_Failure.ogg"
@@ -376,6 +402,9 @@ define audio.marching = "music/Object/Misc_Audio/EHNF_InvestigatorsMarching.ogg"
 define audio.clue = "music/Object/Misc_Audio/EHNF_Item_Clue.ogg"
 define audio.pickup = "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
 define aduio.speakerCrackle = "music/Object/Misc_Audio/EHNF_Speaker_Crackle1.ogg"
+define audio.shortWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_1Sec.ogg"
+define audio.longWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_20Sec.ogg"
+
 
 #Raptor
 define audio.raptor1 = "music/Object/Raptor_Audio/Robot_Velociraptor1.ogg"
@@ -390,7 +419,9 @@ define audio.braceletSelect = "music/UI/Bracelet_Phone/EHNF_UI_BRACELET_PHONE_SE
 define audio.dialogueSelect = "music/UI/Dialogue_Select/EHNF_UI_DialogueSelect_Click.ogg"
 define audio.dialogueHighlight = "music/UI/Dialogue_Select/EHNF_UI_DialogueSelect_Highlight.ogg"
 
-#Investigate. Currently empty folder.
+#Investigate
+define audio.investigateHighlight = "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+define audio.investigateSelect = "music/UI/Investigate/ENHF_Investigate_Selected.ogg"
 
 #logicGatePuzzle
 define audio.lgFlow1 = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_PipeFlow_01.ogg"
@@ -401,6 +432,7 @@ define audio.lgLose = "music/UI/logicGatePuzzle/EHNF_UI_LogicGatePuzzle_WrongOut
 
 #Main Menu
 define audio.mmHighlight = "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+define audio.mmClick = "music/UI/mainMenu/ENHF_UI_MM_Click.ogg"
 
 #Binary Puzzle
 define audio.binaryRight = "music/UI/Puzzle/EHNF_UI_Puzzle_BinaryCorrectLight.ogg"
@@ -442,6 +474,11 @@ init python:
     renpy.music.register_channel("channel19", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel20", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel21", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    
+    
+    renpy.music.register_channel("sound01", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("sound02", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("sound03", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
 
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
@@ -450,7 +487,6 @@ init python:
 label start:
     $ slot_name = ""
     $ gate_name = ""
-    stop music
     $ points_SbE = 0
     $ points_E = 0
     $ points_S = 0
@@ -493,12 +529,18 @@ label start:
     $ tutorial_LGEasy = True
     $ tutorial_gramEasy = True
     $ resume = ""
-    $ callAttempts = 0
-    $ balconyItems = 0
-    $ moprScene = False
     $ LGEasyHints = 0
     $ gramEasyHints = 0
     $ attemptsLogicGate1 = 0
+    
+    #Balcony variables
+    $ callAttempts = 0
+    $ balconyItems = 0
+    $ moprScene = False
+    $ balconyView_look = False
+    $ alphaBody_look = False
+    $ balconyJumpdrive_look = False
+    $ balconyScratches_look = False
     
     #Variables for chapter two puzzles
     $ alphaBodyItems = 0
@@ -519,21 +561,21 @@ label start:
             linear 0.3 alpha 1.0
         on hide:
             linear 0.1 alpha 0.0   
-
+    #$renpy.music.play("music/EHNF_Main_Theme.ogg", channel='music', loop=True, fadeout=1.0, synchro_start=False, fadein=1.0, tight=True, if_changed=True)
     #play music "audio/Main_Title_BGM.wav"
-    play channel00 mt_bellsL fadein 1.0
-    play channel01 mt_bellsR fadein 1.0
-    play channel02 mt_piano fadein 1.0
-    play channel03 mt_ghostBus fadein 1.0
-    play channel04 mt_ghostL fadein 1.0
-    play channel05 mt_ghostR fadein 1.0
-    play channel06 mt_orchestra fadein 1.0
-    play channel07 mt_sciFi fadein 1.0
-    play channel08 mt_touchOrchestra fadein 1.0
-    play channel09 mt_tornado fadein 1.0
-    play channel10 mt_ultrasweeper fadein 1.0
-    play channel11 mt_violins fadein 1.0
-    play channel12 mt_wistful fadein 1.0
+#    play channel00 mt_bellsL fadein 1.0
+#    play channel01 mt_bellsR fadein 1.0
+#    play channel02 mt_piano fadein 1.0
+#    play channel03 mt_ghostBus fadein 1.0
+#    play channel04 mt_ghostL fadein 1.0
+#    play channel05 mt_ghostR fadein 1.0
+#    play channel06 mt_orchestra fadein 1.0
+#    play channel07 mt_sciFi fadein 1.0
+#    play channel08 mt_touchOrchestra fadein 1.0
+#    play channel09 mt_tornado fadein 1.0
+#    play channel10 mt_ultrasweeper fadein 1.0
+#    play channel11 mt_violins fadein 1.0
+#    play channel12 mt_wistful fadein 1.0
 
     window hide
     scene bg openCrawlBG at basicfade
@@ -552,7 +594,10 @@ label start:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
-    
+    show bg black with fade
+    scene bg prologue with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     scene bg G_deskArea with fade #at basicfade
     with None 
     $ quick_menu = True

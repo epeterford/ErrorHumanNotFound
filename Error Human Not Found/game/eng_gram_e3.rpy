@@ -1894,7 +1894,7 @@ label gamefile_e3:
         hide eaeng_e3_tile112
         hide eaeng_e3_tile113
 
-    play sound gramTree2
+#    play sound gramTree2
     if (and6in1 == True or and5in1 == True) and (and3in2 == True or and1in2 == True or and2in2 == True or and4in2 == True):
          image eaeng_e3_tile74 = "leftTreeredlong.png"
          image eaeng_e3_tile75 = "1_1_red.png"
