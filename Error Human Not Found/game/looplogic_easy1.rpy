@@ -1,27 +1,4 @@
-﻿init python:
-    def gate_dragged(drags,drop):
-        if not drop:
-            store.gate_name = drags[0].drag_name
-            store.slot_name = "null"
-            return True
-                
-        if drop:
-            dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
-            dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
-            dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
-            if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
-                drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
-                
-                store.gate_name = drags[0].drag_name
-                store.slot_name = drop.drag_name
-            
-                return True
-        return True 
-
-init:
-    image bg looplogic_bg = "LoopLogic_background.png"
-
-screen loopLogicEasy_1Scr:
+﻿screen loopLogicEasy_1Scr:
     key 'h'action NullAction()# action Hide("")
     key 'K_PAGEUP' action NullAction()# action Hide("")
     key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
@@ -472,26 +449,26 @@ label gamefile_lle1:
 
 
     if if2in1 == True or if1in1 == True:
-        image LLE_1_tile46 = "G_vertical_ll.png"
-        show LLE_1_tile46 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
-        image LLE_1_tile47 = "G_end_on.png"
-        show LLE_1_tile47 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
-        image LLE_1_tile48 = "G_horizontal_ll.png"
-        show LLE_1_tile48 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
-        image LLE_1_tile49 = "G_vertical_ll.png"
-        show LLE_1_tile49 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
-        image LLE_1_tile50 = "G_vertical_ll.png"
-        show LLE_1_tile50 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
-        image LLE_1_tile51 = "G_corner_LB.png"
-        show LLE_1_tile51 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
+        image LLE_1_tile46A = "G_vertical_ll.png"
+        show LLE_1_tile46A at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
+        image LLE_1_tile47A = "G_end_on.png"
+        show LLE_1_tile47A at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
+        image LLE_1_tile48A = "G_horizontal_ll.png"
+        show LLE_1_tile48A at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
+        image LLE_1_tile49A = "G_vertical_ll.png"
+        show LLE_1_tile49A at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
+        image LLE_1_tile50A = "G_vertical_ll.png"
+        show LLE_1_tile50A at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
+        image LLE_1_tile51A = "G_corner_LB.png"
+        show LLE_1_tile51A at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
         
     if if2in1 == False and if1in1 == False:
-        hide LLE_1_tile46
-        hide LLE_1_tile47
-        hide LLE_1_tile48
-        hide LLE_1_tile49
-        hide LLE_1_tile50
-        hide LLE_1_tile51
+        hide LLE_1_tile46A
+        hide LLE_1_tile47A
+        hide LLE_1_tile48A
+        hide LLE_1_tile49A
+        hide LLE_1_tile50A
+        hide LLE_1_tile51A
 
         
 #win conditions ********

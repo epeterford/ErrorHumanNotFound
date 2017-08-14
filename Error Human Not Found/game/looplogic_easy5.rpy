@@ -1,24 +1,4 @@
-﻿init python:
-    def gate_dragged(drags,drop):
-        if not drop:
-            store.gate_name = drags[0].drag_name
-            store.slot_name = "null"
-            return True
-                
-        if drop:
-            dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
-            dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
-            dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
-            if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
-                drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
-                
-                store.gate_name = drags[0].drag_name
-                store.slot_name = drop.drag_name
-            
-                return True
-        return True 
-
-init:
+﻿init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_easy5: #loopLogic_easy5
@@ -356,10 +336,6 @@ label Gamefile_lle5:
         hide LLE5tile108
         hide LLE5tile109
         hide LLE5tile110
-
-
-
-
     
     if if1in2 == True:
         image LLE51tile0 = "g_vertical_ll.png"
@@ -486,8 +462,6 @@ label Gamefile_lle5:
         hide LLE532tile18
         hide LLE53tile94
         
-
-        
 #win conditions ********
     if if1in2 == True and if2in1 == True and if3in3 == True:
         image LLE599tile2 = "G_if.png"
@@ -528,6 +502,22 @@ screen LoopLogicE5:
     key 'K_TAB' action NullAction() #action Hide("")
     key '>' action NullAction() #action Skip("")
     #drags and drop location
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
             #if gates
             drag:

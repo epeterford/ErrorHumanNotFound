@@ -1,22 +1,23 @@
-﻿init python:
-    def gate_dragged(drags,drop):
-        if not drop:
-            store.gate_name = drags[0].drag_name
-            store.slot_name = "null"
-            return True
-                
-        if drop:
-            dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
-            dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
-            dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
-            if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
-                drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
-                
+﻿init -100:
+    python:
+        def gate_dragged(drags,drop):
+            if not drop:
                 store.gate_name = drags[0].drag_name
-                store.slot_name = drop.drag_name
-            
+                store.slot_name = "null"
                 return True
-        return True 
+                    
+            if drop:
+                dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
+                dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
+                dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
+                if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
+                    drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
+                    
+                    store.gate_name = drags[0].drag_name
+                    store.slot_name = drop.drag_name
+                
+                    return True
+            return True 
 
 init:
     image bg looplogic_bg = "LoopLogic_background.png"
@@ -149,7 +150,7 @@ label loopLogic_easy3: #loopLogic_easy5
     $ temp_gate = ""
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
     jump gamefile_lle3
     
@@ -157,7 +158,7 @@ label loopLogic_easy3: #loopLogic_easy5
 label gamefile_lle3:
     $config.skipping=None
     #calls game screen
-    call screen logicGatesMA1
+    call screen loopLogic_easy3Scr
 
 
 
@@ -190,11 +191,6 @@ label gamefile_lle3:
             $ if1in2 = False
             $ if1in3 = False
 
-            #if if1x == gate1x and if1y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
- 
-
             
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -217,9 +213,6 @@ label gamefile_lle3:
             $ if1in2 = True
             $ if1in3 = False
 
-            #if if1x == gate2x and if1y == gate2y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
         #gate slot numeber three *******************************
         if slot_name == "gate slot three":
@@ -242,10 +235,6 @@ label gamefile_lle3:
             $ if1in2 = False
             $ if1in3 = True
 
-            #if if1x == gate3x and if1y == gate3y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-            
     #the first logic gate *******************************************************************************
     if gate_name == "G_if_gate":
         #gate slot numeber one *******************************
@@ -270,10 +259,6 @@ label gamefile_lle3:
             $ if2in2 = False
             $ if2in3 = False
 
-            #if if2x == gate1x and if2y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-
 
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -296,10 +281,6 @@ label gamefile_lle3:
             $ if2in2 = True
             $ if2in3 = False
 
-            #if if2x == gate2x and if2y == gate2y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-            
         #gate slot numeber three *******************************
         if slot_name == "gate slot three":
             if if1in3 == True:
@@ -321,9 +302,6 @@ label gamefile_lle3:
             $ if2in2 = False
             $ if2in3 = True
 
-            #if if2x == gate3x and if2y == gate3y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
     #the third logic gate *******************************************************************************
     if gate_name == "G_else_gate":
@@ -347,10 +325,6 @@ label gamefile_lle3:
             $ else1in1 = True
             $ else1in2 = False
             $ else1in3 = False
-
-            #if else1x == gate1x and else1y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -580,7 +554,7 @@ label gamefile_lle3:
         show LLE_3_tile60 at Position(xpos = 655, xanchor = 0, ypos = 455, yanchor = 0)
 
         "game"
-        jump loopLogic_easy3
+        jump balcony_alpha
 
     #if slot_name == "null":
     #    $attempts +=1
@@ -588,14 +562,16 @@ label gamefile_lle3:
         
     #$ attempts -= 1
     if attempts == 0:
-
+        show LLE_3_tile58 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLE_3_tile59 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLE_3_tile60 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
 
         "you lose try again"
-        jump loopLogic_easy3
+        jump balcony_alpha
     
     jump gamefile_lle3
 
-screen logicGatesMA1:
+screen loopLogic_easy3Scr:
     key 'h'action NullAction()# action Hide("")
     key 'K_PAGEUP' action NullAction()# action Hide("")
     key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
@@ -605,6 +581,22 @@ screen logicGatesMA1:
     key 'K_RCTRL' action NullAction() #action Skip("")
     key 'K_TAB' action NullAction() #action Hide("")
     key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints3")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #if gates

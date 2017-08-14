@@ -1,23 +1,3 @@
-init python:
-    def gate_dragged(drags,drop):
-        if not drop:
-            store.gate_name = drags[0].drag_name
-            store.slot_name = "null"
-            return True
-                
-        if drop:
-            dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
-            dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
-            dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
-            if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
-                drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
-                
-                store.gate_name = drags[0].drag_name
-                store.slot_name = drop.drag_name
-            
-                return True
-        return True 
-        
 
 screen logicGatese5:
     key 'h' action Hide("")
@@ -280,7 +260,7 @@ label eng_gram_e5:
     #attempts for players
     $ attempts = 8
     
-    call gamefile_e5
+    jump gamefile_e5
 
 
 

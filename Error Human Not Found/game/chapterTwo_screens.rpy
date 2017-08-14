@@ -852,7 +852,7 @@ label loopLogicEasyChoose:
     $temp_gate = ""
     $temp_slot = ""
     $randomNumberEasyLL = renpy.random.randint(0,4)
-    jump loopLogic_easy2
+    jump loopLogic_easy5
 #    if randomNumberEasyLL==0:
 #        jump loopLogic_easy4
 #    if randomNumberEasyLL==1:
@@ -1008,7 +1008,7 @@ label loopLogic_EasyHints1:
     show other darken onlayer screens
     if (remainder==0):
         $LLEasyHints +=1
-        a "Since there are no blue ifs, the else must be used to get the blue."
+        a "Since there are no blue IFs, the ELSE must be used to get the blue."
         hide other darken onlayer screens
         hide LLE_1_tile51 onlayer screens
         hide LLE_1_tile52 onlayer screens
@@ -1016,7 +1016,7 @@ label loopLogic_EasyHints1:
         jump gamefile_lle1
     if (remainder==1):
         $LLEasyHints +=1
-        a "We have two green ifs and two green lights. I would try placing a green if where I wanted a green light on."
+        a "We have two green IFs and two green lights. I would try placing a green IF where I wanted a green light on."
         hide other darken onlayer screens
         hide LLE_1_tile51 onlayer screens
         hide LLE_1_tile52 onlayer screens
@@ -1024,7 +1024,7 @@ label loopLogic_EasyHints1:
         jump gamefile_lle1
     if (remainder==2):
         $LLEasyHints +=1
-        a "Remember that an else can only be placed after an if, so make sure you have an if gate in before you try to use the else."
+        a "Remember that an ELSE can only be placed after an IF, so make sure you have an IF gate in before you try to use the ELSE."
         hide other darken onlayer screens
         hide LLE_1_tile51 onlayer screens
         hide LLE_1_tile52 onlayer screens
@@ -1042,7 +1042,7 @@ label loopLogic_EasyHints2:
     show other darken onlayer screens
     if (remainder==0):
         $LLEasyHints +=1
-        a "There are two blue lights, and two blue ifs. Probability indicates this is likely not a coincidence."
+        a "There are two blue lights, and two blue IFs. Probability indicates this is likely not a coincidence."
         hide other darken onlayer screens
         hide LLE_2_tile51 onlayer screens
         hide LLE_2_tile52  onlayer screens
@@ -1050,7 +1050,7 @@ label loopLogic_EasyHints2:
         jump gamefile_lle2
     if (remainder==1):
         $LLEasyHints +=1
-        a "There is a green light, but no green ifs. I would suggest using the else to get the green light to turn on."
+        a "There is a green light, but no green IFs. I would suggest using the ELSE to get the green light to turn on."
         hide other darken onlayer screens
         hide LLE_2_tile51 onlayer screens
         hide LLE_2_tile52 onlayer screens
@@ -1058,7 +1058,7 @@ label loopLogic_EasyHints2:
         jump gamefile_lle2
     if (remainder==2):
         $LLEasyHints +=1
-        a "An if can be used by itself, but an else must be paired with an if."
+        a "An IF can be used by itself, but an ELSE must be paired with an IF."
         hide other darken onlayer screens
         hide LLE_2_tile51 onlayer screens
         hide LLE_2_tile52  onlayer screens
@@ -1066,7 +1066,39 @@ label loopLogic_EasyHints2:
         jump gamefile_lle2
     jump gamefile_lle2
     
-#label loopLogic_EasyHints3:
+label loopLogic_EasyHints3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLEasyHints%3 
+    show LLE_3_tile58 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0) onlayer screens
+    show LLE_3_tile59 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
+    show LLE_3_tile60 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0) onlayer screens
+    show other darken onlayer screens
+    if (remainder==0):
+        $LLEasyHints +=1
+        a "Since there is one IF of each color, the ELSE must be used to get one of the blue lights to turn on."
+        hide other darken onlayer screens
+        hide LLE_3_tile58 onlayer screens
+        hide LLE_3_tile59 onlayer screens
+        hide LLE_3_tile60 onlayer screens
+        jump gamefile_lle3
+    if (remainder==1):
+        $LLEasyHints +=1
+        a "An ELSE cannot stand by itself. I would use the blue IF to turn on the light that has only one pipe flowing to it."
+        hide other darken onlayer screens
+        hide LLE_3_tile58 onlayer screens
+        hide LLE_3_tile59 onlayer screens
+        hide LLE_3_tile60 onlayer screens
+        jump gamefile_lle3
+    if (remainder==2):
+        $LLEasyHints +=1
+        a "There is one green IF and one green light. I would try putting the green IF by the light if I were you, Grace."
+        hide other darken onlayer screens
+        hide LLE_3_tile58 onlayer screens
+        hide LLE_3_tile59 onlayer screens
+        hide LLE_3_tile60 onlayer screens
+        jump gamefile_lle3
+    jump gamefile_lle3
     
 label loopLogic_EasyHints4:
     show screen disable_hide
@@ -1078,7 +1110,7 @@ label loopLogic_EasyHints4:
     show other darken onlayer screens
     if (remainder==0):
         $LLEasyHints +=1
-        a "There are two green lights, and one green if. The if can stand by itself, remember."
+        a "There are two green lights, and one green IF. The IF can stand by itself, remember."
         hide other darken onlayer screens
         hide LLE4999tile2 onlayer screens
         hide LLE4999tile13 onlayer screens
@@ -1086,7 +1118,7 @@ label loopLogic_EasyHints4:
         jump Gamefile_lle4
     if (remainder==1):
         $LLEasyHints +=1
-        a "There is one blue if and only one blue light. I think you should probably put the if by the blue light."
+        a "There is one blue IF and only one blue light. I think you should put the IF by the blue light."
         hide other darken onlayer screens
         hide LLE4999tile2 onlayer screens
         hide LLE4999tile13 onlayer screens
@@ -1094,7 +1126,7 @@ label loopLogic_EasyHints4:
         jump Gamefile_lle4
     if (remainder==2):
         $LLEasyHints +=1
-        a "The else has to be paired with an if, remember, and it will let through whatever color the if {i}is not{/i}."
+        a "The ELSE has to be paired with an IF, remember, and it will let through whatever color the IF {i}is not{/i}."
         hide other darken onlayer screens
         hide LLE4999tile2 onlayer screens
         hide LLE4999tile13 onlayer screens
