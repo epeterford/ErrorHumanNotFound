@@ -216,7 +216,6 @@ label helpherout_SbE:
     jump gettingin_SbE
 
 label adapls_SbE:
-    $ quick_menu = True
     $ points_S +=2
     show Grace annoyed at left
     g "Ada!"
@@ -244,6 +243,7 @@ label adapls_SbE:
 
 label gettingin_SbE:
     show bg balconyMain with fade
+    $quick_menu = True
     #Display the crime scene background. The background comes up before the character sprites do.
     show Grace neutral at left 
     g "Here we are. That must be--"
@@ -352,6 +352,7 @@ label wegotstufftodo:
 
 label csinoahsphere_SbE:
     #insert the sound of paper crumpling
+    $quick_menu = True
     show Grace neutral at left
     g "Huh?"
     "{i}Grace lifts her foot and reaches down."
@@ -435,6 +436,7 @@ label csinoahsphere_SbE:
 label enterthemopr_SbE:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
+    $quick_menu = True
     show Grace surprised at left
     g "Ah... we were just leaving!"
     show Ada amused at right
@@ -476,6 +478,7 @@ label enterthemopr_SbE:
             jump alilhelphere_SbE
 
 label igothisada_SbE:
+    $quick_menu = True
     show Grace neutral at left
     $ points_SbE +=2
     g "Robotics is what I grew up with, Ada. Let me handle this."
@@ -496,6 +499,7 @@ label igothisada_SbE:
     jump exitthemopr_SbE
 
 label shutupada_SbE:
+    $quick_menu = True
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
@@ -524,6 +528,7 @@ label shutupada_SbE:
     jump exitthemopr_SbE
 
 label alilhelphere_SbE:
+    $quick_menu = True
     $ points_E +=2
     show Grace neutral at left
     show Mopr at center
@@ -553,6 +558,7 @@ label alilhelphere_SbE:
     jump exitthemopr_SbE
 
 label exitthemopr_SbE:
+    $quick_menu = True
     show Mopr at center
     mopr "[[Questioning beep boop?]"
     show Grace happy at left
@@ -585,10 +591,12 @@ label exitthemopr_SbE:
 #If the player calls Lynn at this point
 
 label lynnfinallyfrickinanswers_SbE: 
+    $quick_menu = True
     "{i}The dial tone rings for several seconds."
+    show Grae neutral at left
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait {i}ten{/i} minutes."
     "{i}The dial tone rings for several seconds."
-    show Ada neutral at left
+    show Ada neutral at right
     a "That seems like a relatively short time."
     g "I don't live forever like you. Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
     lynn "Hello?"
@@ -605,6 +613,7 @@ label lynnfinallyfrickinanswers_SbE:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    $quick_menu = false
     menu:
         "Agree with her":
             jump agreewithsubservient_SbE
@@ -616,6 +625,7 @@ label lynnfinallyfrickinanswers_SbE:
  
 label agreewithsubservient_SbE:
     $ points_S +=3
+    $quick_menu = True
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
     show Ada seething at right
     a "Grace? Do you honestly see yourself as above Alpha and I?"
@@ -637,6 +647,7 @@ label agreewithsubservient_SbE:
 
 label defendseperatebutequal_SbE:
     $ points_SbE +=3
+    $quick_menu = True
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are just like us?"
     lynn "Grace, sweetie…"
@@ -666,6 +677,7 @@ label defendseperatebutequal_SbE:
 
 label weareallequal_SbE:
     $ points_E +=3
+    $quick_menu = True
     show Grace snarky at left
     g "Care to explain how it's not the same, Lynn?"
     g "A body is a body, human or not."
@@ -695,6 +707,7 @@ label weareallequal_SbE:
     jump resumeLynn_SbE
    
 label resumeLynn_SbE:
+    $quick_menu = True
     show Ada seething at right
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."

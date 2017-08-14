@@ -106,6 +106,7 @@ label checkValue_E:
     jump graceLab_actions
 
 label adaLabLoop1_E:
+    $quick_menu = True
     show Ada neutral at right
     show Grace neutral at left
     a "Do you need some assistance, Grace?"
@@ -122,6 +123,7 @@ label adaLabLoop1_E:
     jump graceLab_actions
     
 label adaLabLoop2_E:
+    $quick_menu = True
     a "Grace, has your task been completed?"
     g "Is someone coming this way?"
     a "No. I am just concerned about how long this will take."
@@ -130,6 +132,7 @@ label adaLabLoop2_E:
     jump graceLab_actions
     
 label adaLabLoop3_E:
+    $quick_menu = True
     a "Is something bothering you, Grace?"
     g "No, I guess I just thought you might have some insight, or something along those lines."
     a "You must not let yourself become too worried. This is only the start of the investigation, so you should not be disheartened if you do not find anything here."
@@ -238,6 +241,7 @@ label adapls_E:
     jump gettingin_SbE
  
 label gettingin_E:
+    $quick_menu = True
     scene bg balconyMain with fade
     #Display the crime scene background. The background comes up before the character sprites do.
     show Grace neutral at left
@@ -346,6 +350,7 @@ label moveitalong:
     jump csinoahsphere_SbE
  
 label csinoahsphere_E:
+    $quick_menu = True
     #insert the sound of paper crumpling
     show Grace neutral at left
     g "Huh?"
@@ -434,6 +439,7 @@ label csinoahsphere_E:
 label enterthemopr_E:
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
+    $quick_menu = True
     show Grace surprised at left
     g "Ah... we were just leaving!"
     show Ada amused at right
@@ -489,6 +495,7 @@ label enterthemopr_E:
             jump lilbabymopr
  
 label ackchually:
+    $quick_menu = True
     $ points_SbE +=2
     show Grace neutral at left
     g "When I was a kid, I wanted one of these instead of a dog."
@@ -512,6 +519,7 @@ label ackchually:
     jump exitthemopr_SbE
  
 label byefelicia:
+    $quick_menu = True
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
@@ -537,6 +545,7 @@ label byefelicia:
 
  
 label lilbabymopr:
+    $quick_menu = True
     $ points_E +=2
     show Grace neutral at left
     show Mopr at center
@@ -567,6 +576,7 @@ label lilbabymopr:
     jump exitthemopr_SbE
  
 label exitthemopr_E:
+    $quick_menu = True
     show Mopr at center
     mopr "[[Questioning beep boop.]"
     show Grace happy at left
@@ -597,6 +607,7 @@ label exitthemopr_E:
 
 #If the player calls Lynn at this point
 label lynnfinallyfrickinanswers_E:
+    $quick_menu = True
     "{i}The dial tone rings for several seconds."
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
     show Ada neutral at right
@@ -625,6 +636,7 @@ label lynnfinallyfrickinanswers_E:
             jump weareallequal_E
     
 label agreewithsubservient_E:
+    $quick_menu = True
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
     show Ada seething at right
     a "Grace? Do you honestly see yourself as above Alpha and I?"
@@ -646,6 +658,7 @@ label agreewithsubservient_E:
     jump resumeLynn_SbE
 
 label defendseperatebutequal_E:
+    $quick_menu = True
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are the same as us?"
     lynn "Grace, sweetie..."
@@ -673,6 +686,7 @@ label defendseperatebutequal_E:
     jump resumeLynn_SbE
 
 label weareallequal_E:
+    $quick_menu = True
     show Grace annoyed at left
     g "That's cruel, Lynn."
     g "How could it not be the same?"
@@ -703,6 +717,7 @@ label weareallequal_E:
     jump resumeLynn_SbE
 
 label resumeLynn_E:
+    $quick_menu = True
     show Ada seething at right
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."

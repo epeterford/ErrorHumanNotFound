@@ -117,6 +117,7 @@ label checkValue_S:
     jump graceLab_actions
 
 label adaLabLoop1_S:
+    $quick_menu = True
     show Ada neutral at right
     show Grace neutral at left
     a "Grace."
@@ -254,6 +255,7 @@ label plsstop:
 label gettingin_S:
     show bg balconyMain with fade
     #Display the crime scene background. The background comes up before the character sprites do.
+    $quick_menu = True
     show Grace neutral at left
     g "Here we are. That must be--"
     show Ada concerned at right
@@ -362,6 +364,7 @@ label alphadistraction_S:
 
 label csinoahsphere_S:
     #insert the sound of paper crumpling
+    $quick_menu = True
     show Grace neutral at left
     g "Huh?"
     "Grace lifts her foot and reaches down."
@@ -490,6 +493,7 @@ label enterthemopr_S:
             jump calmdown_S
 
 label igotit_S:
+    $quick_menu = True
     $ points_SbE += 2
     show Grace neutral at left
     g "I grew up with robotics, Ada."
@@ -514,6 +518,7 @@ label igotit_S:
     jump exitthemopr_SbE
 
 label leavemealoneada_S:
+    $quick_menu = True
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
@@ -540,6 +545,7 @@ label leavemealoneada_S:
     jump exitthemopr_SbE
 
 label calmdown_S:
+    $quick_menu = True
     $ points_E += 2
     show Mopr at center
     show Grace neutral at left
@@ -596,6 +602,7 @@ label exitthemopr_S:
     ##After this scene, return to the investigation.
     
 label lynnfinallyfrickinanswers_S:
+    $quick_menu = True
     "{i}The dial tone rings for several seconds."
     g "I hope she picks up quick. Last time I called her I had to wait {i}ten{/i} minutes."
     show Ada neutral at right
@@ -615,6 +622,7 @@ label lynnfinallyfrickinanswers_S:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    $quick_menu = false
     menu:
         "Agree with her":
             jump agreewithsubservient_S
@@ -624,6 +632,7 @@ label lynnfinallyfrickinanswers_S:
             jump weareallequal_S
     
 label agreewithsubservient_S:
+    $quick_menu = True
     $ points_S +=3
     g "Thank you, Lynn. I'm glad to hear that we see eye-to-eye."
     show Ada seething at right
@@ -646,6 +655,7 @@ label agreewithsubservient_S:
     jump resumeLynn_SbE
 
 label defendseperatebutequal_S:
+    $quick_menu = True
     $ points_SbE +=3
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are just like us?"
@@ -679,6 +689,7 @@ label defendseperatebutequal_S:
 
 label weareallequal_S:
     $ points_E +=3
+    $quick_menu = True
     show Grace snarky at left
     g "Care to explain how it's not the same, Lynn?"
     g "A body is a body, human or not."
@@ -708,6 +719,7 @@ label weareallequal_S:
     jump resumeLynn_SbE
     
 label resumeLynn_S:
+    $quick_menu = True
     show Ada seething at right
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
