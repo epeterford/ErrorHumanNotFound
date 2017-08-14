@@ -101,7 +101,7 @@ label loopLogic_easy5: #loopLogic_easy5
 
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
     jump Gamefile_lle5
     
@@ -472,22 +472,13 @@ label Gamefile_lle5:
 
         image LLE599tile17 = "G_else.png"
         show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
-        "game"
-        jump loopLogic_easy5
+        jump llEasyWin
 
-        
-    #$ attempts -= 1
     if attempts == 0:
-        image LLE5999tile2 = "G_if.png"
-        show LLE5999tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
-
-        image LLE5999tile13 = "B_if.png"
-        show LLE5999tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
-
-        image LLE5999tile17 = "G_else.png"
-        show LLE5999tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
-        "you lose try again"
-        jump loopLogic_easy5
+        show LLE599tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLE599tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
+        jump llEasyLose
     
     jump Gamefile_lle5
 
@@ -508,7 +499,7 @@ screen LoopLogicE5:
         xpos 1545
         ypos 220
         focus_mask True
-        action Jump("loopLogic_EasyHints1")
+        action Jump("loopLogic_EasyHints5")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
@@ -543,18 +534,18 @@ screen LoopLogicE5:
             #location to be dropped
             drag:
                 drag_name "gate slot one"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate1x ypos gate1y
+                xpos gate1x-25 ypos gate1y-25
            
             drag:
                 drag_name "gate slot two"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate2x ypos gate2y
+                xpos gate2x-25 ypos gate2y-25
                 
             drag:
                 drag_name "gate slot three"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate3x ypos gate3y
+                xpos gate3x-25 ypos gate3y-25

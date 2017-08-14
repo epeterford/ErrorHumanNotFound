@@ -552,10 +552,7 @@ label gamefile_lle3:
         show LLE_3_tile59 at Position(xpos = 330, xanchor = 0, ypos = 565, yanchor = 0)
         image LLE_3_tile60 = "G_else.png"
         show LLE_3_tile60 at Position(xpos = 655, xanchor = 0, ypos = 455, yanchor = 0)
-
-        "game"
-        jump balcony_alpha
-
+        jump llEasyWin
     #if slot_name == "null":
     #    $attempts +=1
 
@@ -565,9 +562,7 @@ label gamefile_lle3:
         show LLE_3_tile58 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         show LLE_3_tile59 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
         show LLE_3_tile60 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-
-        "you lose try again"
-        jump balcony_alpha
+        jump llEasyLose
     
     jump gamefile_lle3
 
@@ -623,22 +618,22 @@ screen loopLogic_easy3Scr:
             #location to be dropped
             drag:
                 drag_name "gate slot one"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate1x ypos gate1y
+                xpos gate1x-25 ypos gate1y-25
            
             drag:
                 drag_name "gate slot two"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate2x ypos gate2y
+                xpos gate2x-25 ypos gate2y-25
                 
             drag:
                 drag_name "gate slot three"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate3x ypos gate3y
+                xpos gate3x-25 ypos gate3y-25
 

@@ -416,15 +416,13 @@ label gamefile_lle2:
         image LLE_2_tile53 = "G_else.png"
         show LLE_2_tile53 at Position(xpos = 770, xanchor = 0, ypos = 715, yanchor = 0)
 
-        "game"
-        jump balcony_alpha
+        jump llEasyWin
 
     if attempts == 0:
         show LLE_2_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         show LLE_2_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
         show LLE_2_tile53 at Position(xpos = else1x, xanchor = 0, ypos =else1y, yanchor = 0)
-        "you lose try again"
-        jump balcony_alpha
+        jump llEasyLose
     
     jump gamefile_lle2
 
@@ -480,19 +478,19 @@ screen loopLogic_easy2Scr:
             #location to be dropped
             drag:
                 drag_name "gate slot one"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate1x ypos gate1y
+                xpos gate1x-25 ypos gate1y-25
            
             drag:
                 drag_name "gate slot two"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate2x ypos gate2y
+                xpos gate2x-25 ypos gate2y-25
                 
             drag:
                 drag_name "gate slot three"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate3x ypos gate3y
+                xpos gate3x-25 ypos gate3y-25
 

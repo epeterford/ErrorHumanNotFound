@@ -1,6 +1,67 @@
 label chapterTwo_screens:
     $ gracePoster_look = False
-    
+    screen llEasyLose_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("loopLogicEasyChoose")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610 
+            focus_mask True
+            action Jump("balcony_alpha")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
+    screen llEasyWin_scr:
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 815
+            ypos 610
+            focus_mask True
+            action Jump("llDoneTalk")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"  
+            
+    screen binaryEasyLose_scr:
+        imagebutton:
+            idle "yes.png" 
+            hover "yes_hover.png" 
+            xpos 705
+            ypos 610 
+            focus_mask True
+            action Jump("binaryEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "no.png" 
+            hover "no_hover.png" 
+            xpos 925
+            ypos 610 
+            focus_mask True
+            action Jump("balcony_alpha")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
+    screen binaryEasyWin_scr:
+        imagebutton:
+            idle "finish.png" 
+            hover "finish_hover.png" 
+            xpos 815
+            ypos 610
+            focus_mask True
+            action Jump("binaryDoneTalk")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg" 
+      
     screen tutorial_scrLL_1:
         imagebutton:
             idle "next.png" 
@@ -10,7 +71,7 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_LL_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            
+              
     screen tutorial_scrLL_2:
         imagebutton:
             idle "back.png" 
@@ -109,7 +170,7 @@ label chapterTwo_screens:
             xpos 1650
             ypos 940 
             focus_mask True
-            action Jump("s")
+            action Jump("tutorial_Binary2Bit_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen tutorial_scrBinary2Bit_5:
@@ -786,14 +847,14 @@ label graceStickyNotes_inv:
     
 label talkLynn:
     scene bg balconyClose
-    if (balconyItems == 3) and (moprScene==False):
+    if (alphaBodyItems == 3) and (baconyItems==1) and (moprScene==False):
         if(resume =="E"):
             jump enterthemopr_E
         if(resume == "SbE"):
             jump enterthemopr_SbE
         if(resume == "S"):
             jump enterthemopr_S
-    if(balconyItems==3) and (moprScene==True):
+    if(alphaBodyItems == 3) and (baconyItems==1) and(moprScene==True):
         if(resume =="E"):
             jump lynnfinallyfrickinanswers_E
         if(resume == "SbE"):
@@ -827,8 +888,7 @@ label talkLynn:
         g "Come on."
         lynn "Hi!"
         lynn "You've--"
-        "{i}Grace hangs up."
-        $ balconyItems = 3 #CHANGE THIS. THIS IS JUST WHILE THE OTHER OBJECTS DO NOT EXIST
+        "{i}Grace hangs up." #CHANGE THIS. THIS IS JUST WHILE THE OTHER OBJECTS DO NOT EXIST
     jump balcony_actions
         
 label balcony_inv:
@@ -851,23 +911,23 @@ label loopLogicEasyChoose:
     $gate_name = ""
     $temp_gate = ""
     $temp_slot = ""
+    jump loopLogic_easy3
     $randomNumberEasyLL = renpy.random.randint(0,4)
-    jump loopLogic_easy5
-#    if randomNumberEasyLL==0:
-#        jump loopLogic_easy4
-#    if randomNumberEasyLL==1:
-#        jump loopLogic_easy5
-#    if randomNumberEasyLL==2:
-#        jump loopLogic_easy1
-#    if randomNumberEasyLL==3:
-#        jump looplogic_easy2
-#    if randomNumberEasyLL==4:
-#        jump looplogic_easy3
+    if randomNumberEasyLL==0:
+        jump loopLogic_easy4
+    if randomNumberEasyLL==1:
+        jump loopLogic_easy5
+    if randomNumberEasyLL==2:
+        jump loopLogic_easy1
+    if randomNumberEasyLL==3:
+        jump loopLogic_easy2
+    if randomNumberEasyLL==4:
+        jump loopLogic_easy3
 
 label binaryEasy:
     if (tutorial_binaryEasy == False):
         jump tutorial_Binary2Bit_1
-    call binaryMatchEasy
+    call binaryMatchEasy from _call_binaryMatchEasy
 
 label tutorial_Binary2Bit_1:
     window hide
@@ -896,9 +956,9 @@ label tutorial_Binary2Bit_4:
 label tutorial_Binary2Bit_5:
     window hide
     $ quick_menu = False
+    $ tutorial_binaryEasy = True
     scene bg tutorial_binary2Bit_5
     call screen tutorial_scrBinary2Bit_5
-    $ tutorial_binaryEasy = True
     
 label scratches_label:
     $quick_menu = True
@@ -1134,19 +1194,81 @@ label loopLogic_EasyHints4:
         jump Gamefile_lle4
     jump Gamefile_lle4
     
-#label loopLogic_EasyHints5:
+label loopLogic_EasyHints5:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLEasyHints%3 
+    show LLE599tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)onlayer screens
+    show LLE599tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
+    show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)  onlayer screens
+    show other darken onlayer screens
+    if (remainder==0):
+        $LLEasyHints +=1
+        a "There are two blue lights, and only one blue IF. The IF can stand by itself, remember."
+        hide other darken onlayer screens
+        hide LLE599tile2 onlayer screens
+        hide LLE599tile13 onlayer screens
+        hide LLE599tile17 onlayer screens
+        jump Gamefile_lle5
+    if (remainder==1):
+        $LLEasyHints +=1
+        a "There is one green light and one green IF. I would put the green IF by the green light."
+        hide other darken onlayer screens
+        hide LLE599tile2 onlayer screens
+        hide LLE599tile13 onlayer screens
+        hide LLE599tile17 onlayer screens
+        jump Gamefile_lle5
+    if (remainder==2):
+        $LLEasyHints +=1
+        a "The ELSE has to be paired with an IF, remember, and it will let through whatever color the IF {i}is not{/i}."
+        hide other darken onlayer screens
+        hide LLE599tile2 onlayer screens
+        hide LLE599tile13 onlayer screens
+        hide LLE599tile17 onlayer screens
+        jump Gamefile_lle5
+    jump Gamefile_lle5
     
-#label LL_easyLose:
+label llEasyWin:
+    show other darken
+    image systemStartup= "loopLogicEasyWin.png"
+    show systemStartup at centerScreen2
+    call screen llEasyWin_scr
     
-#label LL_easyWin:
+label llEasyLose:
+    show other darken
+    image systemStartFail ="binaryEasyLose.png"
+    show systemStartFail at centerScreen2
+    call screen llEasyLose_scr
     
-#label tutorial_2Bit:
+label binaryEasyWin:
+    hide screen binaryMatch
+    $ alphaBodyItems +=1 
+    show other darken
+    image discStartup= "binaryEasyWin.png"
+    show discStartup at centerScreen2
+    call screen binaryEasyWin_scr
     
-#label binary_easyHints:
+label binaryEasyLose:
+    hide screen binaryMatch
+    show other darken
+    $ binaryEasy_tries +=1
+    image bootFail ="loopLogicEasyLose.png"
+    show bootFail at centerScreen2
+    call screen binaryEasyLose_scr
     
-#label binary_easyLose:
+label binaryEasyHints:
+    a "Hints will come later."
+    jump binaryMatch_game
     
-#label binary_easyWin:
+label binaryDoneTalk:
+    a "Yay. Finished." #FIX THIS
+    $binaryEasyDone = True
+    jump balcony_alpha
+
+label llDoneTalk:
+    a "Yay. Puzzle done." #FUCKING FIX THIS MORON.
+    $loopLogicEasyDone = True
+    jump balcony_alpha
     
 
 

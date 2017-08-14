@@ -473,12 +473,10 @@ label Gamefile_lle4:
 
         image LLE499tile17 = "G_else.png"
         show LLE499tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
-        "game"
-        jump loopLogic_easy4
+        jump llEasyWin
 
     #$attempts -= 1
     if attempts == 0:
-        "you lose try again"
         image LLE4999tile2 = "G_if.png"
         show LLE4999tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         image LLE4999tile13 = "B_if.png"
@@ -486,7 +484,7 @@ label Gamefile_lle4:
         image LLE4999tile17 = "G_else.png"
         show LLE4999tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
 
-        jump loopLogic_easy4
+        jump llEasyLose
     
     jump Gamefile_lle4
 
@@ -542,18 +540,18 @@ screen LoopLogicE4:
             #location to be dropped
             drag:
                 drag_name "gate slot one"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate1x ypos gate1y
+                xpos gate1x-25 ypos gate1y-25
            
             drag:
                 drag_name "gate slot two"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate2x ypos gate2y
+                xpos gate2x-25 ypos gate2y-25
                 
             drag:
                 drag_name "gate slot three"
-                child "cover.png"
+                child "cover2.png"
                 draggable False
-                xpos gate3x ypos gate3y
+                xpos gate3x-25 ypos gate3y-25

@@ -10,6 +10,23 @@ screen binaryMatch:
                     add "cardBack"                # will show image
                     focus_mask "cardBack"
                 action If ( (card["c_chosen"] or not can_click), None, [SetDict(cards_list[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 300
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 163
+        ypos 295
+    text "Attempts" xpos 170 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 350 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 365 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    
 init:
     python:
         def cards_shuffle(x):
@@ -95,27 +112,15 @@ label binaryMatchEasy:
                 for j in cards_list:
                     if j["c_chosen"] == False:
                         renpy.jump ("binaryMatch_game")
-                renpy.jump ("gameWin")
+                renpy.jump ("binaryEasyWin")
 
         if (attempts ==0):
             $ renpy.pause (1.0, hard = True)
             python: 
                 for j in cards_list:
                     if j["c_chosen"] == False:
-                        renpy.jump ("gameLose")
-                renpy.jump ("gameWin")
+                        renpy.jump ("binaryEasyLose")
+                renpy.jump ("binaryEasyWin")
         jump binaryMatch_game
     
-label gameWin:
-    "You won!"
-    $ binaryEasyDone = True
-    $ alphaBodyItems +=1 
-    hide screen binaryMatch
-    jump balcony_alpha
-    
-label gameLose:
-    "You lose."
-    $ binaryEasy_tries +=1
-    hide screen binaryMatch
-    jump binaryEasy
                 

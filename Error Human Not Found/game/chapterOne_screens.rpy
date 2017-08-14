@@ -424,7 +424,6 @@ label chapterOne_screens:
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen investigateOffice:
-        #text "Items: [hiroseOfficeItems]/3" xpos 1750 ypos 10 color "#dddddd"
         imagebutton:
             idle "button_empty.png"
             xpos 1630
