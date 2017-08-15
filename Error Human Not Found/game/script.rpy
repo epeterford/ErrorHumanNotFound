@@ -177,6 +177,20 @@ define audio.gramTree3 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawi
 define audio.gramTree4 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_04.ogg"
 define audio.gramTree5 = "music/UI/grammarPuzzle/EHNF_UI_GrammarPuzzle_TreeDrawingNoise_05.ogg"
 
+define audio.llLose = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LoseSound.ogg"
+define audio.llCharge = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_BatteryChargeUp.ogg"
+define audio.llLightOff1 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOff_01.ogg"
+define audio.llLightOff2 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOff_02.ogg"
+define audio.llLightOff3 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOff_03.ogg"
+define audio.llLightOn1 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOn_01.ogg"
+define audio.llLightOn2 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOn_02.ogg"
+define audio.llLightOn3 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_LightsOn_03.ogg"
+define audio.llPipe1 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_PipeFlow_01.ogg"
+define audio.llPipe2 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_PipeFlow_02.ogg"
+define audio.llPipe3 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_PipeFlow_03.ogg"
+define audio.llWin = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_WinSound.ogg"
+
+
 #door sounds
 define audio.doorOpen1 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_1.ogg"
 define audio.doorOpen2 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_2.ogg"
@@ -184,6 +198,7 @@ define audio.doorClose1 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_CLOSE_1.ogg"
 define audio.doorClose2 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_CLOSE_2.ogg"
 define audio.doorDenied = "music/Object/Door_Audio/ENHF_Object_Door_AccessDenied.ogg"
 define audio.doorAccess= "music/Object/Door_Audio/ENHF_Object_Door_AccessGranted.ogg"
+define audio.doorScan = "music/Object/Door_Audio/EHNF_OBJECT_Door_Scan.ogg"
 
 #balcony ambience sounds
 define audio.balconyAmb0 = "music/Amb/Balcony/EHNF_BAL_L0.ogg"
@@ -479,6 +494,9 @@ init python:
     renpy.music.register_channel("sound01", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("sound02", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("sound03", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP01", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP02", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP03", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
 
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
@@ -503,6 +521,7 @@ label start:
     $ hiroseRecorder_inv = False
     $ hiroseOfficeItems = 0
     $ hiroseBed_inv = False
+    $ hirosePC = False
     $ hirosePhoto_inv = False
     $ hiroseWindow_inv = False
     $ hirosePersonalItems = 0

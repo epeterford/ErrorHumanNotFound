@@ -19,6 +19,8 @@ label chapterTwo_E:
 label talkAdaLab_E:
     show Ada happy at right
     a "Can I help you with something, Grace?"
+    hide Ada
+    hide Grace
     $ quick_menu = False
     menu:
         "Strike up a conversation.":
@@ -120,6 +122,7 @@ label adaLabLoop1_E:
     g "Ada, it's just me. You don't have to do all that."
     a "..."
     a "Okay, Grace."
+    $quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop2_E:
@@ -129,6 +132,7 @@ label adaLabLoop2_E:
     a "No. I am just concerned about how long this will take."
     g "You have to be thorough with these things, Ada."
     a "You are correct. I will continue to be on standby while you search."
+    $quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop3_E:
@@ -137,9 +141,13 @@ label adaLabLoop3_E:
     g "No, I guess I just thought you might have some insight, or something along those lines."
     a "You must not let yourself become too worried. This is only the start of the investigation, so you should not be disheartened if you do not find anything here."
     g "Thanks, Ada."
+    $quick_menu = False
     jump graceLab_actions
     
 label resumeChapterTwo_E:
+    $quick_menu = True
+    play sound beepMedium
+    queue sound beepMedium
     show Grace happy at left
     g "We're good to go. Ada, do you know where exactly Alpha is located?"
  
@@ -175,9 +183,11 @@ label letherfinish_E:
     g "Let's go, then. I know your processor has exact times and locations, but I know a shortcut. Shaving a couple of minutes would benefit us, don't you think?"
     a "A shortcut? Yes, you are right, saved time would help. Good thinking, Grace."
     #Grace's sprite disappears here.
-    hide Grace
+    hide Grace 
+    play sound01 graceHurry
     a "Fine. Do not answer me. I will just be that poor intrepid adventurer and follow you."
-    a "I am curious to see this 'shortcut'."   
+    a "I am curious to see this 'shortcut'."  
+    play sound02 adaWalk
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -199,11 +209,13 @@ label helpherout_E:
     show Grace snarky at left
     g "Sorry to interrupt. I know how to get there so we can save some time. Follow me."
     #Make Grace's sprite disappear here.
+    play sound01 graceHurry
     hide Grace
     show Ada concerned
     a "But is your route optimal? Grace?"
     a "..."
     a "Wait for me!"
+    play sound02 adaWalk
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -227,9 +239,11 @@ label adapls_E:
     a "I understand. I was plotting the optimal route to Alpha. But if you have a better route, be my guest."
     g "I don't want to skulk through a maintenance shaft. Let's go!"
     #Grace's sprite disappears here.
+    play sound01 graceHurry
     hide Grace
     show Ada frustrated
     a "Hold on!"
+    play sound02 adaWalk
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -242,6 +256,14 @@ label adapls_E:
  
 label gettingin_E:
     $quick_menu = True
+    play channel00 balconyAmb0
+    play channel01 balconyAmb1
+    play channel02 balconyAmb2
+    play channel03 balconyAmb3
+    play channel04 balconyAmb4
+    stop channel05 fadeout 1.0
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     scene bg balconyMain with fade
     #Display the crime scene background. The background comes up before the character sprites do.
     show Grace neutral at left
@@ -251,6 +273,8 @@ label gettingin_E:
     "{i}Ada rushes to the side of the fallen AI."
     window hide
     $ quick_menu = False
+    play sound01 adaWalk
+    play sound02 graceHurry
     scene bg balconyRamp with fade 
     $ renpy.pause(0.5)
     scene bg balconyCorner with fade
@@ -259,6 +283,8 @@ label gettingin_E:
     $ renpy.pause(0.5)
     scene bg balconyClose with fade
     $ quick_menu = True
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     show Grace surprised at left
     g "Ada?"
@@ -357,86 +383,30 @@ label csinoahsphere_E:
     "{i}Grace lifts her foot and reaches down."
     show Grace surprised
     g "A maintenance receipt?"
-    #Need to have closeup of OBJECT here. NEED to add object.
-    "{i}The maintenance receipt is signed by Technician Lynn Yao"
+    hide Grace
+    hide Ada
+    show other darken
+    show image "objects/maintenanceReceipt_closeup.png " at centerScreen
+    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao."
+    hide other darken
+    hide image "objects/maintenanceReceipt_closeup.png" 
+    show Grace surprised at left
     g "Lynn? Of course."
     show Ada concerned at right
     a "Lynn?"
+    show Grace neutral
     g "Yeah, Lynn Yao. She's a technician on the Markov project. Let's stop by Maintenance when we're done here."
     a "I do not think that is possible, Grace."
     show Grace surprised
     g "Oh? Why is that?"
     a "Technician Lynn Yao was placed on administrative leave following Alpha's death. She left the station a few hours ago."
+    show Grace neutral
     g "That's fine, I can just call her."
     $ resume = "E"
     jump balcony_actions 
 
-##if Alpha has been fully explored: jump lynnfinallyfrickinanswers
- 
-##After the players exhaust all of the Alpha interactions; jump letthepuzzlesbegin
-#label letthepuzzlesbegin_E:
-#    #show Grace neutral
-#    g "I think we've got everything we can get from the outside. Let's get a closer look."
-#    "Grace leans over Alpha, and finds the access panel for his head."
-#    g "Do you want to look away, Ada?"
-#    #show Ada concerned
-#    a "Why would I?"
-#    #show Grace neutral.
-#    g "This might not be something you want to see."
-#    a "I already know what is in there. It might be difficult to witness, but I will be fine."
-#    g "Are you sure?"
-#    a "Yes. I should not shy away."
-#    g "Okay, but I'm not going to judge you if you do turn away."
-#    a "Thank you for the consideration."
-#    "Grace removes the panel, revealing Alpha's manual access ports."
-#    g "All right Alpha, let's see what you've got for us."
-##sydcomscidoit
-#     	if (attempts==1):
-##show Grace happy
-#g "Easy as manufactured apple pie." 
-#if (attempts>1 and attempts<4):
-##show Grace neutral
-#g "I've finally got access, but that code was harder to crack than I thought it would be." 
-#if (attempts>3):
-#	#show Grace annoyed
-#	g "That was more strenuous that I thought."
-##show Grace frustrated
-#g "I can't get a lot. It's like his whole system got cooked and wiped at the same time. There's corrupted data all over the place."
-#a "That is unfortunate."
-#g "Hold on, let me see here."
-#"Grace studies the system."
-##show Grace neutral
-#g "There's a basic readout that survived. Functions look normal, but the neural network was using almost double the necessary power."
-#g "No wonder it burned out."
-##show Ada neutral
-#a "Is that all?"
-#g "Looks like it. I was really hoping to get more."
-# #show Ada neutral
-#a "Me as well. That is okay, though."
-#a "Let me take a look. I know Alpha's code intimately."
-##sydcomscidoit
-#if (attempts==1):
-##show Ada neutral
-#a "There we are-- oh."
-#if (attempts>1 and attempts<4):
-##show Ada neutral
-#a "The way this code is fragmented is troubling, but I managed to access his logs."
-#if (attempts>3):
-#	#show Ada frustrated
-#	a "I have never seen code this corrupted. I was barely able to access the logs."
-##show Ada concerned
-#a "This is very troubling."
-#g "What's wrong? Is everything okay?"
-#a "I am not sure yet. I am not sure what happened here. There are several code remnants that are foreign to Alpha's data signatures."
-#a "It almost takes up a majority of his memory space."
-#g "What does the code say?"
-##show Ada frustrated
-#a "There are several places where the codes overlap and are threaded together."
-
-#a "I could not begin to tell you what he was processing."
-#jump enterthemopr
-
 label enterthemopr_E:
+    play sound doorOpen1
     #insert the sound of a sci-fi door sliding open.
     #show Mopr on the left side of the screen. Grace and Ada are on the right.
     $quick_menu = True
@@ -445,6 +415,7 @@ label enterthemopr_E:
     show Ada amused at right
     a "Grace, it is just a cleaning robot."
     show Mopr at center
+    play sound moprInquisitive
     mopr "[[Inquisitive boop.]"
     show Grace happy at left
     g "Oh thank goodness."
@@ -462,12 +433,15 @@ label enterthemopr_E:
     a "Ah. An absence is still an absence."
     g "You've got that right."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
+    play sound moprAlarmed
     mopr "[[Alarmed Beeping!]"
     show Grace happy
     g "Hey, hey... it's okay, little guy!"
     a "This MOPR has quite the vocals."
+#    play sound moprWorried 
     mopr "[[Worried blorp.]"
     g "I know it's tough, little robot pal, finding two strangers and a body during your cleaning cycle."
+#    play sound moprAffirmative
     mopr "[[Affirmative beep.]"
     show Ada surprised
     show Ada amused
@@ -560,7 +534,8 @@ label lilbabymopr:
     "{i}Ada approaches the MOPR unit."
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
-    mopr "[[Affirmative beeping.]"
+    play sound moprHappy
+    mopr "[[Pleased beeping.]"
     show Grace happy
     g "See? He likes you."
     show Ada happy at right
@@ -578,24 +553,33 @@ label lilbabymopr:
 label exitthemopr_E:
     $quick_menu = True
     show Mopr at center
+    play sound moprConfused
     mopr "[[Questioning beep boop.]"
     show Grace happy at left
     g "It's okay, MOPR. We just want to help. You can continue cleaning and just ignore us, okay?"
+    play sound moprSuspicious
     mopr "[[Suspicious beep.]"
     g "C'mon MOPR, don't be that way."
+    play sound moprSuspicious2
     mopr "[[Beep. Boop.]"
     show Ada concerned at right
     a "MOPR unit, we are to investigate what happened to Alpha unit."
     g "Don't you want us to find out so we can make sure a tragedy like this doesn't happen again?"
+    play sound moprInquisitive2
     mopr "[[Inquisitive beep.]"
     a "Personally, I would hope nothing like this happens to me."
+    play sound moprSad
     mopr "[[Sad beeps.]"
+#    queue sound moprAffirmative
     mopr "[[Affirmative beeps.]"
     show Ada happy
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us. Thank you!"
+#    play sound moprAffirmative2
     mopr "[[Confirmative beeps.]"
     "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it."
+    play sound doorClose1
+    hide Mopr
     g "I always enjoyed talking to them. More than with some people, honestly."
     a "You do seem to have a way with machinery."
     g "I'm going to take that as a compliment."
@@ -608,11 +592,13 @@ label exitthemopr_E:
 #If the player calls Lynn at this point
 label lynnfinallyfrickinanswers_E:
     $quick_menu = True
+    play sound answertone
     "{i}The dial tone rings for several seconds."
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
     show Ada neutral at right
     a "That seems like a relatively short time."
     g "Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
+    show Ada neutral at center
     lynn "Hello?"
     show Grace happy at left
     g "Lynn!"
@@ -637,8 +623,9 @@ label lynnfinallyfrickinanswers_E:
     
 label agreewithsubservient_E:
     $quick_menu = True
+    show Grace neutral at left
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
-    show Ada seething at right
+    show Ada seething at center
     a "Grace? Do you honestly see yourself as above Alpha and I?"
     show Grace annoyed at left
     g "Look, I get that it sounds harsh, but can we talk about this later, Ada?"
@@ -659,11 +646,12 @@ label agreewithsubservient_E:
 
 label defendseperatebutequal_E:
     $quick_menu = True
+    show Grace neutral at left
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are the same as us?"
     lynn "Grace, sweetie..."
     g "Well, the word 'same' might not be the best word to use, I mean we are different."
-    show Ada concerned at right
+    show Ada concerned at center
     a "Grace?"
     g "Just because we're different, though, doesn't mean we can't treat each other equally."
     g "We can even enjoy each other's company. Working with Ada has been great for me."
@@ -699,7 +687,7 @@ label weareallequal_E:
     G "AIs have shown they can do plenty of both."
     lynn "Because they're programmed to, dear. It's not free will."
     g "Isn't that basically the same as us? Our brains run on electricity too. Who's to say we aren't 'programmed' biologically?"
-    show Ada happy at right
+    show Ada happy at center
     a "Thank you, Grace. Your viewpoint is truly inspiring."
     show Grace happy
     g "I'm happy you think that, Ada."
@@ -718,7 +706,7 @@ label weareallequal_E:
 
 label resumeLynn_E:
     $quick_menu = True
-    show Ada seething at right
+    show Ada seething at center
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
     lynn "Grace, you really ought to be spending more time with other people your age."
@@ -745,7 +733,7 @@ label resumeLynn_E:
     lynn "Oh, okay. Bye-bye, Grace! I'll tell my son you said hi."
     g "Bye!"
     "The call cuts off."
-    show Ada neutral
+    show Ada neutral at right
     a "Grace?"
     show Grace annoyed
     g "Let's go pay Ivan a visit."

@@ -29,10 +29,17 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("{i}Error: Human Not Found{/i} is an educational game developed by"
-                      "students from Full Sail University, working at CelleC Games.\n\n"
+define gui.about = _("{i}Error: Human Not Found{/i} was developed by the staff of CelleC Games. "
+                      "We design educational games that aim to make learning fun, engaging, and impactful. "
+                      "Lead Designer, Sydney Hughes, found her inspiration for this game from her Computer Science Ethics"
+                      "class in a discussion about the future of Artificial Intelligence and the ethics surrounding them."
+                      "Her goal was to design a game for young women that would spark interest in the computer science field.\n\n"
                       
-                      "To see more of our educational games, visit {a=http://www.cellecgames.com/}cellecgames.com{/a}")
+                      "To see more of our educational games, visit {a=http://www.cellecgames.com/}cellecgames.com.{/a}\n\n"
+                       
+                       "Thanks for playing! We hope you've enjoyed our game."
+                       " Visit our {a=https://www.facebook.com/ErrorHNF/?hc_ref=ARTPlH781yn9-qQLtonRZNXyFDy6PA5ky4CKiD5VnbwBWFweq0jHSDmmeXh03VrYohA&fref=nf} facebook page{/a} or find us on twitter "
+                       "{a=https://twitter.com/CelleC_Error}@CelleC_Error{/a}")
 
 
 ## A short name for the game used for executables and directories in the built

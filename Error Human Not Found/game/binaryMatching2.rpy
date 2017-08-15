@@ -1,4 +1,14 @@
 screen binaryMatch:
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $config.skipping=None
     grid 4 2 spacing 100 at Position(xpos=0.45, xanchor =0.0, ypos =0.4, yanchor = 0.0): 
         for card in cards_list:
             button:
@@ -13,19 +23,23 @@ screen binaryMatch:
     imagebutton:
         idle "hints_idle.png"
         hover "hints_hover.png"
-        xpos 300
-        ypos 220
+        xpos 275
+        ypos 720
         focus_mask True
-        action Jump("loopLogic_EasyHints1")
+        action Jump("binaryEasyHints")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
         idle "button_empty2.png"
-        xpos 163
-        ypos 295
-    text "Attempts" xpos 170 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 350 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
-    text "[attempts]" xpos 365 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
+        xpos 185
+        ypos 795
+    text "Attempts" xpos 190 ypos 815 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 370 ypos 804 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 384 ypos 813 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    imagebutton:
+        idle "binaryEasyInstructions.png"
+        xpos 0
+        ypos 0
     
 init:
     python:
@@ -46,9 +60,10 @@ init:
     image binaryGreen = "LightOn.png"
 
 label binaryMatchEasy:
+    $config.skipping=None
     window hide
     $ quick_menu = False
-    $ attempts = 10
+    $ attempts = 8
     scene bg binary
     $ values_list = ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2"]
     $ values_list = cards_shuffle(values_list)
@@ -59,6 +74,7 @@ label binaryMatchEasy:
             
     show screen binaryMatch
     label binaryMatch_game:
+        $config.skipping=None
         $ can_click = True
         $ turned_cards_numbers = []
         $ turned_cards_values = []
@@ -67,6 +83,13 @@ label binaryMatchEasy:
         label turns_loop:
             if turns_left >0:
                 $ result = ui.interact()
+                $tileFlipSound = renpy.random.randint(0,2)
+                if (tileFlipSound==0):
+                    play soundP01 tileFlip1
+                if (tileFlipSound==1):
+                    play soundP01 tileFlip2
+                if (tileFlipSound==2):
+                    play soundP01 tileFlip3
                 $ turned_cards_numbers.append (cards_list[result]["c_number"])
                 $ turned_cards_values.append (cards_list[result]["c_value"])
                 $ turns_left -= 1
@@ -94,11 +117,13 @@ label binaryMatchEasy:
             $ match = True
         if (match==True): 
             show binaryGreen at Position(xpos = 362, xanchor = 0, ypos = 899, yanchor = 0) 
+            play sound binaryRight
             $renpy.pause (1.0)
             hide binaryGreen
         
         if (match==False):
             show binaryRed at Position(xpos = 97, xanchor = 0, ypos = 899, yanchor = 0)
+            play sound binaryWrong
             $renpy.pause (1.0)
             python:
                 for i in range (0, len(turned_cards_numbers) ):
@@ -112,15 +137,23 @@ label binaryMatchEasy:
                 for j in cards_list:
                     if j["c_chosen"] == False:
                         renpy.jump ("binaryMatch_game")
-                renpy.jump ("binaryEasyWin")
+                renpy.jump ("binaryEasyWin_pre")
 
         if (attempts ==0):
             $ renpy.pause (1.0, hard = True)
             python: 
                 for j in cards_list:
                     if j["c_chosen"] == False:
-                        renpy.jump ("binaryEasyLose")
-                renpy.jump ("binaryEasyWin")
+                        renpy.jump ("binaryEasyLose_pre")
+                renpy.jump ("binaryEasyWin_pre")
         jump binaryMatch_game
     
-                
+label binaryEasyWin_pre:
+    queue sound binaryWin
+    $renpy.pause(1.0)
+    jump binaryEasyWin
+    
+label binaryEasyLose_pre:
+    queue sound binaryLose
+    $renpy.pause(1.5)
+    jump binaryEasyLose

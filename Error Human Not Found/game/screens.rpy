@@ -589,7 +589,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n" xpos 100
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]") xpos 100
+            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} 6.99.\n\n[renpy.license!t]") xpos 100
 
     if (main_menu):
         use navigation_mm

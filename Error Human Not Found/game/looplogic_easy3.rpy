@@ -397,6 +397,14 @@ label gamefile_lle3:
 #*******************************************
 
 #    #if 1 section*******************************************************************************************     
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
+    
     if if2in2 == True:
         image LLE_3_tile34 = "G_vertical_short.png"
         show LLE_3_tile34 at Position(xpos = 330, xanchor = 0, ypos = 516, yanchor = 0)
@@ -404,7 +412,9 @@ label gamefile_lle3:
         show LLE_3_tile35 at Position(xpos = 365, xanchor = 0, ypos = 670, yanchor = 0)
         image LLE_3_tile36 = "G_end_on.png"
         show LLE_3_tile36 at Position(xpos = 332, xanchor = 0, ypos = 745, yanchor = 0)
-
+        if (light2Sound ==0):
+            play soundP02 llLightOn2
+            $light2Sound +=1
         
         if else1in3 == True:
             image LLE_3_tile37 = "B_connect_node.png"
@@ -422,7 +432,9 @@ label gamefile_lle3:
             show LLE_3_tile42 at Position(xpos = 830, xanchor = 0, ypos = 485, yanchor = 0)
             image LLE_3_tile43 = "B_end_on.png"
             show LLE_3_tile43 at Position(xpos = 906, xanchor = 0, ypos = 454, yanchor = 0)
-
+            if (light3Sound ==0):
+                play soundP03 llLightOn3
+                $light3Sound+=1
 
         if else1in3 == False:
             hide LLE_3_tile37
@@ -432,7 +444,10 @@ label gamefile_lle3:
             hide LLE_3_tile41
             hide LLE_3_tile42
             hide LLE_3_tile43
-
+            if (light3Sound ==1):
+                play soundP03 llLightOff3
+                $light3Sound -=1
+                
         if if1in3 == True:
             image LLE_3_tile71 = "B_connect_node.png"
             show LLE_3_tile71 at Position(xpos = 400, xanchor = 0, ypos = 485, yanchor = 0)
@@ -442,13 +457,25 @@ label gamefile_lle3:
             show LLE_3_tile68 at Position(xpos = 505, xanchor = 0, ypos = 485, yanchor = 0)
             image LLE_3_tile69 = "B_horizontal.png"
             show LLE_3_tile69 at Position(xpos = 580, xanchor = 0, ypos = 485, yanchor = 0)
-        
+            image LLE_3_tile41 = "B_horizontal.png"
+            show LLE_3_tile41 at Position(xpos = 755, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile42 = "B_horizontal.png"
+            show LLE_3_tile42 at Position(xpos = 830, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile43 = "B_end_on.png"
+            show LLE_3_tile43 at Position(xpos = 906, xanchor = 0, ypos = 454, yanchor = 0)
+            if (light3Sound ==0):
+                play soundP03 llLightOn3
+                $light3Sound+=1
+                
         if if1in3 == False:
             hide LLE_3_tile71
             hide LLE_3_tile67
             hide LLE_3_tile68
             hide LLE_3_tile69
-   
+            if (light3Sound ==1):
+                play soundP03 llLightOff3
+                $light3Sound -=1
+                
     if if2in2 == False:
         hide LLE_3_tile34
         hide LLE_3_tile35
@@ -464,7 +491,9 @@ label gamefile_lle3:
         hide LLE_3_tile67
         hide LLE_3_tile68
         hide LLE_3_tile69
-
+        if (light2Sound ==1):
+            play soundP02 llLightOff2
+            $light2Sound -=1
 
     if if1in1 == True:
         image LLE_3_tile46 = "B_horizontal.png"
@@ -479,7 +508,10 @@ label gamefile_lle3:
         show LLE_3_tile50 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
         image LLE_3_tile51 = "B_horizontal.png"
         show LLE_3_tile51 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
-        
+        if (light1Sound ==0):
+            play soundP01 llLightOn1
+            $light1Sound +=1
+            
     if if1in1 == False:
         hide LLE_3_tile46
         hide LLE_3_tile47
@@ -500,7 +532,10 @@ label gamefile_lle3:
         hide LLE_3_tile61
         hide LLE_3_tile62
         hide LLE_3_tile63
-
+        if (light1Sound ==1):
+            play soundP01 llLightOff1
+            $light1Sound -=1
+            
     if if1in2 == True:
         image LLE_3_tile70 = "B_vertical_short.png"
         show LLE_3_tile70 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
@@ -552,16 +587,26 @@ label gamefile_lle3:
         show LLE_3_tile59 at Position(xpos = 330, xanchor = 0, ypos = 565, yanchor = 0)
         image LLE_3_tile60 = "G_else.png"
         show LLE_3_tile60 at Position(xpos = 655, xanchor = 0, ypos = 455, yanchor = 0)
+        queue sound llWin
+        $renpy.pause(1.0)
+        hide LLE_3_tile55
+        hide LLE_3_tile56
+        hide LLE_3_tile57
+        hide LLE_3_tile58
+        hide LLE_3_tile59
+        hide LLE_3_tile60
         jump llEasyWin
-    #if slot_name == "null":
-    #    $attempts +=1
-
-        
-    #$ attempts -= 1
+    
     if attempts == 0:
         show LLE_3_tile58 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         show LLE_3_tile59 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
         show LLE_3_tile60 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+        queue sound llLose
+        $renpy.pause(1.5)
+        $loopLogicEasy_tries +=1
+        hide LLE_3_tile58
+        hide LLE_3_tile59
+        hide LLE_3_tile60
         jump llEasyLose
     
     jump gamefile_lle3

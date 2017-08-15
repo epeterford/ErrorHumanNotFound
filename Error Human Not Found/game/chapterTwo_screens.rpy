@@ -458,24 +458,14 @@ label chapterTwo_screens:
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
                 
     screen balcony_alphaScr:
-        if (binaryEasyDone == False) and (loopLogicEasyDone==False):
+        if(alphaBody_look==False):
             imagebutton: 
                 idle "objects/alpha.png"
                 hover "objects/alpha_hover.png"
                 xpos 0
                 ypos 0
                 focus_mask True
-                action Jump("loopLogicEasyChoose")
-                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
-                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
-        elif (binaryEasyDone == False) and (loopLogicEasyDone==True):
-            imagebutton: 
-                idle "objects/alpha.png"
-                hover "objects/alpha_hover.png"
-                xpos 0
-                ypos 0
-                focus_mask True
-                action Jump("binaryEasy")
+                action Jump("alphaBody_inv")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (balconyJumpdrive_look==False):
@@ -847,14 +837,7 @@ label graceStickyNotes_inv:
     
 label talkLynn:
     scene bg balconyClose
-    if (alphaBodyItems == 3) and (balconyItems==1) and (moprScene==False):
-        if(resume =="E"):
-            jump enterthemopr_E
-        if(resume == "SbE"):
-            jump enterthemopr_SbE
-        if(resume == "S"):
-            jump enterthemopr_S
-    if(alphaBodyItems == 3) and (balconyItems==1) and(moprScene==True):
+    if(alphaBodyItems == 3) and (balconyItems==1):
         if(resume =="E"):
             jump lynnfinallyfrickinanswers_E
         if(resume == "SbE"):
@@ -862,9 +845,11 @@ label talkLynn:
         if(resume == "S"):
             jump lynnfinallyfrickinanswers_S
     if callAttempts <1:
+        $quick_menu = True
+        play sound dialtone
         "{i}The dial tone plays for several seconds."
         lynn "Hi!"
-        #show Grace happy
+        show Grace happy at left
         g "Lynn, hello. How are you--"
         lynn "You've reached my voicemail! Leave me a message after the beep."
         "{i}BEEP!"
@@ -873,9 +858,11 @@ label talkLynn:
         $ callAttempts +=1
         jump balcony_actions
     if (callAttempts>0) and (callAttempts<4):
+        $quick_menu = True
+        play sound dialtone
         "{i}The dial tone plays for several seconds."
         lynn "Hi!"
-        #show Grace frustrated
+        show Grace frustrated at left
         g "..."
         lynn "You've reached my--"
         "{i}Grace hangs up."
@@ -883,12 +870,16 @@ label talkLynn:
         $ callAttempts +=1
         jump balcony_actions
     if callAttempts>3:
+        $quick_menu = True
+        play sound dialtone
         "{i}The dial tone plays for several seconds."
-        #show Grace frustrated
+        show Grace frustrated at left
         g "Come on."
         lynn "Hi!"
         lynn "You've--"
-        "{i}Grace hangs up." #CHANGE THIS. THIS IS JUST WHILE THE OTHER OBJECTS DO NOT EXIST
+        "{i}Grace hangs up."
+    hide Grace
+    $quick_menu = False
     jump balcony_actions
         
 label balcony_inv:
@@ -898,12 +889,25 @@ label balcony_inv:
     call screen balcony_invScr
     
 label balcony_alpha:
+    stop music fadeout 1.0
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     window hide
     $ quick_menu = False
     scene bg balconyTop with fade
     call screen balcony_alphaScr
     
 label loopLogicEasyChoose:
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    #Add more stops here if needed when the BGM is added
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $LLEasyHints=0
     if (tutorial_loopLogicEasy == False):
         jump tutorial_LLEasy
@@ -911,8 +915,11 @@ label loopLogicEasyChoose:
     $gate_name = ""
     $temp_gate = ""
     $temp_slot = ""
-    jump loopLogic_easy3
+    $light1Sound =0
+    $light2Sound = 0
+    $light3Sound = 0
     $randomNumberEasyLL = renpy.random.randint(0,4)
+#    jump loopLogic_easy3
     if randomNumberEasyLL==0:
         jump loopLogic_easy4
     if randomNumberEasyLL==1:
@@ -925,8 +932,16 @@ label loopLogicEasyChoose:
         jump loopLogic_easy3
 
 label binaryEasy:
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    #Add more stops here if needed when the BGM is added
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     if (tutorial_binaryEasy == False):
         jump tutorial_Binary2Bit_1
+    $binaryEasyHints = 0
     call binaryMatchEasy from _call_binaryMatchEasy
 
 label tutorial_Binary2Bit_1:
@@ -1002,6 +1017,15 @@ label jumpdrive1_label:
     a "A data drive? Please, let me see it."
     show Grace neutral
     g "Hold on for now, we haven't finished looking around. Let's not get distracted."
+    show Ada frustrated
+    a "I can perform multiple operations simultaneously, Grace."
+    g "Alright, have it."
+    a "This drive is heavily encrypted. Without a decryption key I cannot access it."
+    g "Right. We'll just have to keep an eye out for a decryption key someone left lying in plain sight."
+    show Ada amused
+    a "I am beginning to suspect most of your responses have some level of sarcasm to them."
+    show Grace snarky
+    g "I plead the fifth."
     hide Ada
     hide Grace
     window hide
@@ -1039,6 +1063,76 @@ label balconyView_label:
     $quick_menu = False
     jump balcony_inv
 
+label alphaBody_inv:
+    if (loopLogicEasyDone==False):
+        if (loopLogicEasy_tries==0):
+            $quick_menu=True
+            if(resume =="E"):
+                show Grace neutral at left
+                g "I think we've got everything we can get from the outside. Let's get a closer look."
+                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                g "Do you want to look away, Ada?"
+                show Ada concerned at right
+                a "Why would I?"
+                show Grace neutral
+                g "This might not be something you want to see."
+                a "I already know what is in there. It might be difficult to witness, but I will be fine."
+                g "Are you sure?"
+                a "Yes. I should not shy away."
+                g "Okay, but I'm not going to judge you if you do turn away."
+                a "Thank you for the consideration."
+                "{i}Grace removes the panel, revealing the manual access ports."
+                g "All right Alpha, let's see what you've got for us."
+            if(resume == "SbE"):
+                show Grace neutral at left
+                g "I think we've got everything we can get from the outside. Let's get a closer look."
+                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                g "Do you want to look away, Ada?"
+                show Ada concerned at right
+                a "Why would I?"
+                show Grace snarky
+                g "I don't know. Figured you might be squeamish or something."
+                play sound facePlate
+                "{i}Grace removes the panel off, revealing Alpha's manual access ports."
+                show Grace neutral
+                g "All right Alpha, let's see what you've got for us."
+            if(resume == "S"):
+                show Grace neutral at left
+                g "I think we've got everything we can get from the outside. Let's get a closer look."
+                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                g "Do you want to look away, Ada?"
+                show Ada concerned at right
+                a "Why would I?"
+                show Grace snarky
+                g "I don't know. Figured you might be squeamish or something."
+                show Ada frustrated
+                a "I do not appreciate your tone. And you know that I am not capable of being squeamish."
+                g "Whatever. Suit yourself."
+                "{i}Grace removes the panel, revealing Alpha's manual access ports."
+                show Grace neutral
+                g "All right Alpha, let's see what you've got for us."
+        if (loopLogicEasy_tries>0):
+            show Grace neutral at left
+            g "Okay, I still need to get him started before we can learn anything. Let's try this again."
+        $quick_menu = False
+        hide Grace
+        hide Ada
+        jump loopLogicEasyChoose
+    if (binaryEasyDone==False):
+        $quick_menu = True
+        if (binaryEasy_tries==0):
+            show Ada neutral at right
+            a "I may have more fortune since I am more familiar with his code."
+            show Grace neutral at left
+            g "Anything would be helpful."
+        if (binaryEasy_tries>0):
+            show Ada frustrated at right
+            a "I still need to get into his system."
+        $quick_menu = False
+        hide Grace
+        hide Ada
+        jump binaryEasy
+            
 label tutorial_LLEasy:
     window hide
     $ quick_menu = False
@@ -1257,16 +1351,111 @@ label binaryEasyLose:
     call screen binaryEasyLose_scr
     
 label binaryEasyHints:
-    a "Hints will come later."
-    jump binaryMatch_game
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = binaryEasyHints%3 
+    show other darken onlayer screens
+    if (remainder==0):
+        $binaryEasyHints +=1
+        g "The easy ones are 0 and 1. The look the same in binary, just with three zeros to the left of the first bit."
+        hide other darken onlayer screens
+        window hide
+        jump turns_loop
+    if (remainder==1):
+        $binaryEasyHints +=1
+        g "Since we're only dealing with the first two bits, the highest number is three. That will have two ones, as it's one plus two, so 0011."
+        hide other darken onlayer screens
+        window hide
+        jump turns_loop
+    if (remainder==2):
+        $binaryEasyHints +=1
+        g "Two is easy. It's 2 to the first power, so we want a one in the second bit and the rest of the bits zero."
+        hide other darken onlayer screens
+        window hide
+        jump turns_loop
+    jump turns_loop
     
 label binaryDoneTalk:
-    a "Yay. Finished." #FIX THIS
+    $quick_menu = True
+    scene bg balconyTop with fade
+    stop music fadeout 1.0
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    if (binaryEasy_tries<1):
+        show Ada amused at right
+        a "Base two, base ten, it makes no difference to me. I could probably do base three or tertiary just for fun."
+        show Grace snarky at left
+        g "I think we need to work on your definition of fun. Anyways, what'd you get?"
+    if (binaryEasy_tries>=1) and (binaryEasy_tries<3):
+        show Ada neutral at right
+        a "I seem to have become to accustomed to dealing with base ten since many of you humans dislike base two. I need to practice."
+        show Grace snarky at left
+        g "Hey, don't look at me. I understand binary just fine."
+    if (binaryEasy_tries>=3):
+        show Ada frustrated at left
+        a "I might as well have been trying to convert into hexidecimal for all the success I was having."
+        show Grace neutral at right
+        g "When even the machine has trouble with binary, you know it's a bad day."
+    show Ada frustrated
+    a "I have never seen code this corrupted. I was barely able to access the logs."
+    show Ada concerned
+    a "This is very troubling."
+    show Grace surprised
+    g "What is it?"
+    a "There are several code remnants that are foreign to any of the previously known data signatures of Alpha. It is also taking up a majority of his memory space."
+    show Grace neutral
+    g "What does the code say?"
+    show Ada frustrated
+    a "I could not tell you. There are several places where they overlap and are threaded together. I could not begin to tell you what he was processing."
+    g "Well, not what I was hoping for."
     $binaryEasyDone = True
-    jump balcony_alpha
+    $alphaBody_look = True
+    if(resume =="E"):
+        jump enterthemopr_E
+    if(resume == "SbE"):
+        jump enterthemopr_SbE
+    if(resume == "S"):
+        jump enterthemopr_S
 
 label llDoneTalk:
-    a "Yay. Puzzle done." #FUCKING FIX THIS MORON.
+    $quick_menu = True
+    scene bg balconyTop with fade
+    stop music fadeout 1.0
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    if(loopLogicEasy_tries<1):
+        show Grace happy at left
+        g "Easy as manufactured apple pie. No infinite loops here." 
+    if (loopLogicEasy_tries>=1 and loopLogicEasy_tries<3):
+        show Grace neutral at left
+        g "I've finally got access, but that code was harder to crack than I thought it would be. Might want to brush up on how not to spin in circles with loops." 
+    if (attempts>=3):
+        show Grace annoyed at left
+        g "That was more strenuous that I thought. I mean, seriously, breaking out of a loop should not be that hard. Must not have been accounting for the right information with my IFs."
+    show Grace frustrated
+    play sound alphaStartup
+    g "I'm not getting a lot. I managed get him to startup, but it's like his whole system got cooked and wiped at the same time. There's corrupted data all over the place."
+    show Ada frustrated at right
+    a "That is unfortunate."
+    g "Hold on, let me see here."
+    "{i}Grace studies the system."
+    show Grace neutral
+    g "There's a basic readout that survived. Functions look normal, but the neural network was using almost double the necessary power."
+    g "No wonder it burned out."
+    show Ada neutral
+    a "Is that all?"
+    show Grace sad
+    g "Looks like it. I was really hoping to get more."
+    play sound alphaFailure
+    g "And there it goes. Not going to be starting that up again."
+    a "Let me take a look. I know Alpha's code intimately. I may be able to pull something even without his internal power systems functioning."
+    $quick_menu = False
     $loopLogicEasyDone = True
     jump balcony_alpha
     

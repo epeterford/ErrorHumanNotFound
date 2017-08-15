@@ -20,9 +20,10 @@ label chapterOne:
     show Grace neutral at left
     g "Here we are. Scan my badge and voila. Open."
     #play sound doorScan MISSING
+    play sound doorScan
     "{i}The door doesn't budge."
     "{i}A voice issues from speakers near the door."
-    play sound doorDenied
+    queue sound doorDenied
     tosh "The Director is not here at the moment. Please make an appointment."
     #Tosh's sprite isn't displayed here
     show Grace annoyed
@@ -500,9 +501,31 @@ label adaActualPuzzle1:
         scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
     $ config.rollback_enabled = False
-    window show
-    "{i}Hirose's work computer. Grace and Ada are currently unable to access it."
-    show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
+    if (Logic_A_solved==False) and (lgEasy_tries==0):
+        $quick_menu = True
+        show other darken
+        show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
+        "{i}This computer was provided to Hirose through her work in the Conclave. Countless documents of research notes, policies, and procedures live on this machine."
+        hide other darken
+        hide image "objects/hiroseOfficialComputer_closeup.png"
+        show Grace neutral at left
+        g "Right. So, we just need to hack this and we should be able to get her credentials."
+        show Ada neutral at right
+        a "Am I to assume by the way you are looking at me that you mean {i}I {/i}am to hack it?"
+        show Grace snarky
+        g "Hey, I got the door. Teamwork means equal opportunities."
+        a "Just give me a moment."
+        hide Grace
+        hide Ada
+        $quick_menu=False
+        window hide
+    else:
+        $quick_menu = True
+        show Ada annoyed at right
+        a "I will get this momentarily."
+        hide Ada
+        window hide
+        $quick_menu = False
     $ renpy.pause(0.5)
     $slot_name = ""
     $gate_name = ""
@@ -520,8 +543,6 @@ label adaActualPuzzle1:
         jump easyLGBPuzzle
     if solved_LG_easy == False:
         jump lastEasyLGPuzzle
-    window hide 
-    hide image "objects/hiroseOfficialComputer_closeup.png"
     jump exploreHiroseOffice
         
 label pickNextPuzzleLGEasy:
@@ -658,6 +679,7 @@ label lgEasyDone_talk:
         a "Before we go, you may want to take another look around as well."
     if(talkAdaHiroseOffice_value == 0)and(hiroseOfficeItems==3) and (hiroseTransitionItems==1):
         a "I would like a word with you, please, before we enter the personal quarters of the Director."
+    $ quick_menu = False
     $renpy.block_rollback()
     $ config.rollback_enabled = True
     jump exploreHiroseOffice
@@ -666,6 +688,7 @@ label wegotthedeets:
     $ quick_menu = True
     g "Now let's go nose around my mother's quarters."
     a "If you insist."
+    $ quick_menu = False
     scene bg hirosePersonalArea with fade #at basicfade
     play channel00 hiroseOffice3_00 fadeout 1.0 fadein 1.0
     play channel01 hiroseOffice3_01 fadeout 1.0 fadein 1.0
@@ -684,9 +707,10 @@ label wegotthedeets:
     stop channel14 fadeout 1.0
     stop channel15 fadeout 1.0
     stop channel16 fadeout 1.0
-    show Ada afraid at right
-    a "We cannot hack this one. One incorrect guess and we will be locked out."
-    g "Let's look around. Maybe something here will tell us what to try."
+    show Grace neutral at left
+    $ quick_menu = True
+    $ hiroseComputerUnlock = False
+    a "Here we are. My mother's personal rooms, complete with a view."
     jump hirosePersonalArea_actions
     
 label hirosePersonalArea_actions: 
@@ -709,7 +733,7 @@ label hirosePersonalArea_inv:
  
 label hirosePersonalComputer:
     $ quick_menu = False
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hiroseComputerUnlock==True:
         scene bg hirosePersonalComputer_logged
     else:
         scene bg hirosePersonalComputer with fade #at basicfade
@@ -724,12 +748,20 @@ label gotHirosePassword:
     #INSERT SFX and BGM here
     $ quick_menu = True
     show Grace happy at left
+    show bg hirosePersonalComputer_logged
     g "At least her lack of personal stuff means finding the important data is easy."
+    if(talkAdaHirosePersonal_value>=1):
+        jump leaveHirosesSpace
+    else:
+        show Ada neutral at right
+        a "It was nice to not have a VI hovering over us either."
+        jump talkAdaHirosePersonal
+label leaveHirosesSpace:
     show Grace neutral at left
     g "Let's get back to my lab. We've got some work to do before we can use this."
+    $ quick_menu = False
     $renpy.music.play("music/Character/ADA/EHNF_ADA_Movement_Normal.ogg", channel='sound02', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     $renpy.music.play("music/Character/Grace/EHNF_Grace_Footsteps_Normal.ogg", channel='sound01', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
-    $ quick_menu = False
     window hide
     scene bg hirosePersonalArea_logged with fade #at basicfade
     $ renpy.pause(0.8)
@@ -813,9 +845,12 @@ label sortaroastada:
     g "Well, I guess even machines like pecking downwards every once in awhile."
     a "I am not familiar with that colloquialism."
     g "Just observe my mother for long enough. She does the same thing."
-    $ quick_menu = False
-    window hide
-    jump hirosePersonalArea_actions
+    if(hiroseComputerUnlock==True):
+        jump leaveHirosesSpace
+    else:
+        $ quick_menu = False
+        window hide
+        jump hirosePersonalArea_actions
     
 label actuallyroastada:
     $ points_S +=2
@@ -904,7 +939,42 @@ label hirosePC_label:
     show image "objects/hiroseComputer_closeup.png" at centerScreen
     window show
     $ quick_menu = True
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+    if (hirosePC==False):
+        $hirosePC=True
+        "{i}The personal computer of Roberta Hirose, brought with her from Earth. Despite being several years old, the machine still looks new. This shows Hirose's excellent care of the machine."
+        hide other darken
+        hide image "objects/hiroseComputer_closeup.png"
+        show Ada neutral at right
+        a "I do not recall seeing this computer in the network for this room."
+        show Grace neutral at left
+        g "All the computers on the Noah sphere are tuned and built to take input from AIs."
+        a "I figured as much. All the processors I was able to access from my server were identical, but how does this relate?"
+        g "This is Hirose's personal computer. She brought it from Earth."
+        a "So it lacks the standard Noah Sphere security system, then?"
+        show Grace snarky
+        g "Yeah, it's twice as nasty. I don't even want to touch this thing unless we have a password."
+        if (hirosePhoto_inv == True and hirosePersonalItems_value == 3):
+            g "Luckily for us we already found it."
+            show Ada amused at right
+            a "That does save some time."
+            show Grace neutral at left
+            g "All right, I'll just log in, copy her credentials, and then we can leave."
+            hide Grace
+            hide Ada
+            window hide
+            $quick_menu = False
+            play sound typing
+            show other darken
+            show image "images/objects/hiroseComputerLogged.png" at centerScreen
+            g "Just a second to copy over the files... and we're good!"
+            $hiroseComputerUnlock=True
+            stop sound fadeout 0.5
+            hide other darken
+            hide image "images/objects/hiroseComputerLogged.png"
+            $quick_menu = True
+            jump gotHirosePassword
+    elif hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+        "{i}The computer is still locked for the moment."
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Grace neutral at left
@@ -916,29 +986,32 @@ label hirosePC_label:
         play sound typing
         show other darken
         show image "images/objects/hiroseComputerLogged.png" at centerScreen
-        #play SFX typing
         g "Just a second to copy over the files... and we're good!"
+        $hiroseComputerUnlock=True
+        stop sound fadeout 0.5
         hide other darken
         hide image "images/objects/hiroseComputerLogged.png"
         $quick_menu = True
         jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
+        "{i}The computer is still locked for the moment."
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Ada neutral at right
         a "We have the password. Are you sure you are ready? After we get the credentials we should not linger."
         show Grace neutral at left
         g "I suppose I should take another look around."
+        $ quick_menu = False
         hide Grace
         hide Ada
         window hide
-        $ quick_menu = False
         jump hirosePersonalComputer
     else:
+        "{i}The computer is still locked for the moment."
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Ada neutral at right
-        a "Grace, if we attempt to log on without a concrete idea of the password, we will alert security to a breach."
+        a "Grace, you yourself said trying to hack this would likely trigger a security alert."
         show Grace neutral at left
         g "Right. I suppose I'll take another look around."
         g "Writing down a password kind of ruins the point of having one, though."
@@ -947,8 +1020,9 @@ label hirosePC_label:
         g "Please do tell her that. Make sure I'm there when you do."
         show Grace neutral
         g "Come on, let's keep looking."
+        $ quick_menu = False
         hide Ada
         hide Grace
         window hide
-        $ quick_menu = False
-        jump hirosePersonalComputer
+    window hide
+    jump hirosePersonalComputer

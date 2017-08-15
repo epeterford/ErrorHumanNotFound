@@ -289,7 +289,13 @@ label Gamefile_lle5:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
     if if2in1 == True:
         image LLE52tile1 = "b_horizontal.png"
         show LLE52tile1 at Position(xpos = 285, xanchor = 0, ypos = 468, yanchor = 0)
@@ -306,7 +312,10 @@ label Gamefile_lle5:
         show LLE5tile104 at Position(xpos = 527, xanchor = 0, ypos = 307, yanchor = 0)
         image LLE5tile105 = "b_horizontal.png"
         show LLE5tile105 at Position(xpos = 602, xanchor = 0, ypos = 307, yanchor = 0)
-    
+        if (light1Sound ==0):
+            play soundP01 llLightOn1
+            $light1Sound +=1
+            
     if if2in1 == False:
         hide LLE52tile1
         hide LLE52tile
@@ -315,8 +324,10 @@ label Gamefile_lle5:
         hide LLE5tile103
         hide LLE5tile104
         hide LLE5tile105
-
-
+        if (light1Sound ==1):
+            play soundP01 llLightOff1
+            $light1Sound -=1
+    
     if if1in1 == True:
 
         image LLE5tile106 = "g_vertical_ll.png"
@@ -346,13 +357,19 @@ label Gamefile_lle5:
         show LLE51tile9 at Position(xpos = 677, xanchor = 0, ypos = 420, yanchor = 0)
         image LLE51tile15 = "G_end_on.png"
         show LLE51tile15 at Position(xpos = 852, xanchor = 0, ypos = 537, yanchor = 0)  
+        if (light2Sound ==0):
+            play soundP02 llLightOn2
+            $light2Sound +=1
         
     if if1in2 == False:
         hide LLE51tile0
         hide LLE51tile14
         hide LLE51tile9
         hide LLE51tile15
-        
+        if (light2Sound ==1):
+            play soundP02 llLightOff2
+            $light2Sound -=1
+
     if if2in2 == True:
         image LLE52tile11 = "b_vertical.png"
         show LLE52tile11 at Position(xpos = 744, xanchor = 0, ypos = 462, yanchor = 0)
@@ -404,6 +421,10 @@ label Gamefile_lle5:
             show LLE52tile91 at Position(xpos = 745, xanchor = 0, ypos = 454, yanchor = 0)
             image LLE51tile93 = "b_connect_node.png"
             show LLE51tile93 at Position(xpos = 676, xanchor = 0, ypos = 454, yanchor = 0)
+            if (light3Sound ==1):
+                play soundP03 llLightOn3
+                $light3Sound +=1
+
 
     if if2in3 == False or if1in2 == False:
         hide LLE52tile21
@@ -414,6 +435,9 @@ label Gamefile_lle5:
         hide LLE52tile92
         hide LLE52tile91
         hide LLE51tile93
+        if (light3Sound ==1):
+            play soundP03 llLightOff3
+            $light3Sound -=1    
             
     if if3in3 == True:
         if if1in2 == True:            
@@ -433,7 +457,10 @@ label Gamefile_lle5:
             show LLE53tile91 at Position(xpos = 745, xanchor = 0, ypos = 454, yanchor = 0)
             image LLE53tile93 = "b_connect_node.png"
             show LLE53tile93 at Position(xpos = 676, xanchor = 0, ypos = 454, yanchor = 0)
-        
+            if (light3Sound ==1):
+                play soundP03 llLightOn3
+                $light3Sound +=1
+                
         if if2in2 == True:
             image LLE532tile21 = "g_horizontal_ll.png"
             show LLE532tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
@@ -455,6 +482,10 @@ label Gamefile_lle5:
         hide LLE53tile92
         hide LLE53tile91
         hide LLE53tile93
+        if (light3Sound ==1):
+            play soundP03 llLightOff3
+            $light3Sound -=1 
+
     if if3in3 == False or if2in2 == False:
         hide LLE532tile21
         hide LLE532tile12
@@ -472,12 +503,23 @@ label Gamefile_lle5:
 
         image LLE599tile17 = "G_else.png"
         show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
+        queue sound llWin
+        $renpy.pause(1.0)
+        hide LLE599tile2
+        hide LLE599tile13
+        hide LLE599tile17
         jump llEasyWin
 
     if attempts == 0:
         show LLE599tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         show LLE599tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
         show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
+        queue sound llLose
+        $renpy.pause(1.5)
+        $loopLogicEasy_tries +=1
+        hide LLE599tile2
+        hide LLE599tile13
+        hide LLE599tile17
         jump llEasyLose
     
     jump Gamefile_lle5
