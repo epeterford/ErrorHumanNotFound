@@ -9,7 +9,7 @@ label chapterTwo_E:
     show Grace surprised
     g "You were bluffing? You're capable of that?"
     show Ada amused
-    a "Yes, and yes. Colossuss controls the update schedules for the whole station."
+    a "Yes, and yes. Colossus controls the update schedules for the whole station."
     a "He knows the exact state of everything on board, or so he likes to say."
     a "You designed the neural network. Do you not know that deceit is on the list of behaviors?"
     g "No, I definitely knew, I just didn't think you'd catch on so quickly. I'm impressed."
@@ -613,6 +613,7 @@ label lynnfinallyfrickinanswers_E:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    $quick_menu = False
     menu:
         "Agree with her":
             jump agreewithsubservient_E

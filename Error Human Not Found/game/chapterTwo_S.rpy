@@ -539,7 +539,7 @@ label calmdown_S:
     mopr "[[Pleased beeping.]"
     show Grace happy at left
     g "See? It trusts you."
-    show Ada happy at left
+    show Ada happy at right
     a "It appears that way."
     if(points_S>points_SbE):
         if(points_S>points_E):
