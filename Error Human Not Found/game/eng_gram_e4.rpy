@@ -2002,6 +2002,6 @@ label gamefile_e4:
         hide eaeng_e4_tile88
         hide eaeng_e4_tile89
         $ attemptsLogicGate1 +=1
-        jump easyGramLose 
+        jump gramEasyLose 
     
     jump gamefile_e4
