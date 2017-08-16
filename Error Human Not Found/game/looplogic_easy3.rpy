@@ -64,7 +64,7 @@ label loopLogic_easy3: #loopLogic_easy5
     show LLE_3_tile13 at Position(xpos = 331, xanchor = 0, ypos = 450, yanchor = 0)
     
     image LLE_3_tile14 = "W_vertical_short.png"
-    show LLE_3_tile14 at Position(xpos = 330, xanchor = 0, ypos = 516, yanchor = 0)
+    show LLE_3_tile14 at Position(xpos = 335, xanchor = 0, ypos = 516, yanchor = 0)
     image LLE_3_tile15 = "W_vertical_short.png"
     show LLE_3_tile15 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
     image LLE_3_tile16 = "blank_node.png"
@@ -407,7 +407,7 @@ label gamefile_lle3:
     
     if if2in2 == True:
         image LLE_3_tile34 = "G_vertical_short.png"
-        show LLE_3_tile34 at Position(xpos = 330, xanchor = 0, ypos = 516, yanchor = 0)
+        show LLE_3_tile34 at Position(xpos = 332, xanchor = 0, ypos = 516, yanchor = 0)
         image LLE_3_tile35 = "G_vertical_ll.png"
         show LLE_3_tile35 at Position(xpos = 365, xanchor = 0, ypos = 670, yanchor = 0)
         image LLE_3_tile36 = "G_end_on.png"

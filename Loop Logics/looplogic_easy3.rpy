@@ -1,27 +1,29 @@
-﻿init python:
-    def gate_dragged(drags,drop):
-        if not drop:
-            store.gate_name = drags[0].drag_name
-            store.slot_name = "null"
-            return True
-                
-        if drop:
-            dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
-            dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
-            dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
-            if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
-                drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
-                
+﻿init -100:
+    python:
+        def gate_dragged(drags,drop):
+            if not drop:
                 store.gate_name = drags[0].drag_name
-                store.slot_name = drop.drag_name
-            
+                store.slot_name = "null"
                 return True
-        return True 
+                    
+            if drop:
+                dragvarx = int(drags[0].w/2 + drags[0].x)  #finding the midpoint of the drag, horizontally    
+                dragvary = int(drags[0].h/2 + drags[0].y)  #finding the midpoint of the drag, vertically
+                dropbox = (drop.x, drop.y, int(drop.x + drop.w), int(drop.y + drop.h))  #making our box, top left corner and bottom right corner
+                if dropbox[0] < dragvarx < dropbox[2] and dropbox[1] < dragvary < dropbox[3]:  #if the midpoint of the drag is within the rectangle...
+                    drags[0].snap(drop.x,drop.y)       #move the drag on top of the drop
+                    
+                    store.gate_name = drags[0].drag_name
+                    store.slot_name = drop.drag_name
+                
+                    return True
+            return True 
 
 init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_easy3: #loopLogic_easy5
+    $config.skipping=None
     #loads background
     $ gate_name= ""
     $ slot_name = ""
@@ -31,11 +33,11 @@ label loopLogic_easy3: #loopLogic_easy5
     show LLE_3_tile1 at Position(xpos = 330, xanchor = 0, ypos = 240, yanchor = 0)   
 
     #top right blue
-    image LLE_3_tile2 = "B_horizontal.png"
+    image LLE_3_tile2 = "W_horizontal.png"
     show LLE_3_tile2 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
-    image LLE_3_tile3 = "B_horizontal.png"
+    image LLE_3_tile3 = "W_horizontal.png"
     show LLE_3_tile3 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
-    image LLE_3_tile4 = "B_horizontal.png"
+    image LLE_3_tile4 = "W_horizontal.png"
     show LLE_3_tile4 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
     image LLE_3_tile5 = "blank_node.png"
     show LLE_3_tile5 at Position(xpos = 655, xanchor = 0, ypos = 240, yanchor = 0)
@@ -62,7 +64,7 @@ label loopLogic_easy3: #loopLogic_easy5
     show LLE_3_tile13 at Position(xpos = 331, xanchor = 0, ypos = 450, yanchor = 0)
     
     image LLE_3_tile14 = "W_vertical_short.png"
-    show LLE_3_tile14 at Position(xpos = 330, xanchor = 0, ypos = 516, yanchor = 0)
+    show LLE_3_tile14 at Position(xpos = 335, xanchor = 0, ypos = 516, yanchor = 0)
     image LLE_3_tile15 = "W_vertical_short.png"
     show LLE_3_tile15 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
     image LLE_3_tile16 = "blank_node.png"
@@ -148,15 +150,15 @@ label loopLogic_easy3: #loopLogic_easy5
     $ temp_gate = ""
      
     #attempts for players
-    $ attempts = 6
+    $ attempts = 4
  
     jump gamefile_lle3
     
     
 label gamefile_lle3:
-    
+    $config.skipping=None
     #calls game screen
-    call screen logicGatesMA1
+    call screen loopLogic_easy3Scr
 
 
 
@@ -189,11 +191,6 @@ label gamefile_lle3:
             $ if1in2 = False
             $ if1in3 = False
 
-            #if if1x == gate1x and if1y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
- 
-
             
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -216,9 +213,6 @@ label gamefile_lle3:
             $ if1in2 = True
             $ if1in3 = False
 
-            #if if1x == gate2x and if1y == gate2y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
         #gate slot numeber three *******************************
         if slot_name == "gate slot three":
@@ -241,10 +235,6 @@ label gamefile_lle3:
             $ if1in2 = False
             $ if1in3 = True
 
-            #if if1x == gate3x and if1y == gate3y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-            
     #the first logic gate *******************************************************************************
     if gate_name == "G_if_gate":
         #gate slot numeber one *******************************
@@ -269,10 +259,6 @@ label gamefile_lle3:
             $ if2in2 = False
             $ if2in3 = False
 
-            #if if2x == gate1x and if2y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-
 
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -295,10 +281,6 @@ label gamefile_lle3:
             $ if2in2 = True
             $ if2in3 = False
 
-            #if if2x == gate2x and if2y == gate2y:
-            #    $ attempts -= 1
-            #    "[attempts]"
-            
         #gate slot numeber three *******************************
         if slot_name == "gate slot three":
             if if1in3 == True:
@@ -320,9 +302,6 @@ label gamefile_lle3:
             $ if2in2 = False
             $ if2in3 = True
 
-            #if if2x == gate3x and if2y == gate3y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
     #the third logic gate *******************************************************************************
     if gate_name == "G_else_gate":
@@ -346,10 +325,6 @@ label gamefile_lle3:
             $ else1in1 = True
             $ else1in2 = False
             $ else1in3 = False
-
-            #if else1x == gate1x and else1y == gate1y:
-            #    $ attempts -= 1
-            #    "[attempts]"
             
         #gate slot numeber two *******************************
         if slot_name == "gate slot two":
@@ -422,14 +397,24 @@ label gamefile_lle3:
 #*******************************************
 
 #    #if 1 section*******************************************************************************************     
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
+    
     if if2in2 == True:
         image LLE_3_tile34 = "G_vertical_short.png"
-        show LLE_3_tile34 at Position(xpos = 330, xanchor = 0, ypos = 516, yanchor = 0)
+        show LLE_3_tile34 at Position(xpos = 332, xanchor = 0, ypos = 516, yanchor = 0)
         image LLE_3_tile35 = "G_vertical_ll.png"
         show LLE_3_tile35 at Position(xpos = 365, xanchor = 0, ypos = 670, yanchor = 0)
         image LLE_3_tile36 = "G_end_on.png"
         show LLE_3_tile36 at Position(xpos = 332, xanchor = 0, ypos = 745, yanchor = 0)
-
+        if (light2Sound ==0):
+            play soundP02 llLightOn2
+            $light2Sound +=1
         
         if else1in3 == True:
             image LLE_3_tile37 = "B_connect_node.png"
@@ -447,7 +432,9 @@ label gamefile_lle3:
             show LLE_3_tile42 at Position(xpos = 830, xanchor = 0, ypos = 485, yanchor = 0)
             image LLE_3_tile43 = "B_end_on.png"
             show LLE_3_tile43 at Position(xpos = 906, xanchor = 0, ypos = 454, yanchor = 0)
-
+            if (light3Sound ==0):
+                play soundP03 llLightOn3
+                $light3Sound+=1
 
         if else1in3 == False:
             hide LLE_3_tile37
@@ -457,7 +444,38 @@ label gamefile_lle3:
             hide LLE_3_tile41
             hide LLE_3_tile42
             hide LLE_3_tile43
-   
+            if (light3Sound ==1):
+                play soundP03 llLightOff3
+                $light3Sound -=1
+                
+        if if1in3 == True:
+            image LLE_3_tile71 = "B_connect_node.png"
+            show LLE_3_tile71 at Position(xpos = 400, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile67 = "B_horizontal.png"
+            show LLE_3_tile67 at Position(xpos = 430, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile68 = "B_horizontal.png"
+            show LLE_3_tile68 at Position(xpos = 505, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile69 = "B_horizontal.png"
+            show LLE_3_tile69 at Position(xpos = 580, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile41 = "B_horizontal.png"
+            show LLE_3_tile41 at Position(xpos = 755, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile42 = "B_horizontal.png"
+            show LLE_3_tile42 at Position(xpos = 830, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile43 = "B_end_on.png"
+            show LLE_3_tile43 at Position(xpos = 906, xanchor = 0, ypos = 454, yanchor = 0)
+            if (light3Sound ==0):
+                play soundP03 llLightOn3
+                $light3Sound+=1
+                
+        if if1in3 == False:
+            hide LLE_3_tile71
+            hide LLE_3_tile67
+            hide LLE_3_tile68
+            hide LLE_3_tile69
+            if (light3Sound ==1):
+                play soundP03 llLightOff3
+                $light3Sound -=1
+                
     if if2in2 == False:
         hide LLE_3_tile34
         hide LLE_3_tile35
@@ -469,7 +487,13 @@ label gamefile_lle3:
         hide LLE_3_tile41
         hide LLE_3_tile42
         hide LLE_3_tile43
-
+        hide LLE_3_tile71
+        hide LLE_3_tile67
+        hide LLE_3_tile68
+        hide LLE_3_tile69
+        if (light2Sound ==1):
+            play soundP02 llLightOff2
+            $light2Sound -=1
 
     if if1in1 == True:
         image LLE_3_tile46 = "B_horizontal.png"
@@ -478,11 +502,74 @@ label gamefile_lle3:
         show LLE_3_tile47 at Position(xpos = 830, xanchor = 0, ypos = 270, yanchor = 0)
         image LLE_3_tile48 = "B_end_on.png"
         show LLE_3_tile48 at Position(xpos = 906, xanchor = 0, ypos = 239, yanchor = 0)
-        
+        image LLE_3_tile49 = "B_horizontal.png"
+        show LLE_3_tile49 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile50 = "B_horizontal.png"
+        show LLE_3_tile50 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile51 = "B_horizontal.png"
+        show LLE_3_tile51 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
+        if (light1Sound ==0):
+            play soundP01 llLightOn1
+            $light1Sound +=1
+            
     if if1in1 == False:
         hide LLE_3_tile46
         hide LLE_3_tile47
         hide LLE_3_tile48
+        hide LLE_3_tile49
+        hide LLE_3_tile50
+        hide LLE_3_tile51
+
+    if if2in1 == True:
+        image LLE_3_tile61 = "G_horizontal_ll.png"
+        show LLE_3_tile61 at Position(xpos = 430, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile62 = "G_horizontal_ll.png"
+        show LLE_3_tile62 at Position(xpos = 505, xanchor = 0, ypos = 270, yanchor = 0)
+        image LLE_3_tile63 = "G_horizontal_ll.png"
+        show LLE_3_tile63 at Position(xpos = 580, xanchor = 0, ypos = 270, yanchor = 0)
+        
+    if if2in1 == False:
+        hide LLE_3_tile61
+        hide LLE_3_tile62
+        hide LLE_3_tile63
+        if (light1Sound ==1):
+            play soundP01 llLightOff1
+            $light1Sound -=1
+            
+    if if1in2 == True:
+        image LLE_3_tile70 = "B_vertical_short.png"
+        show LLE_3_tile70 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
+
+        if if2in3 == True or else1in3 == True:
+            image LLE_3_tile64 = "G_horizontal_ll.png"
+            show LLE_3_tile64 at Position(xpos = 430, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile65 = "G_horizontal_ll.png"
+            show LLE_3_tile65 at Position(xpos = 505, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile66 = "G_horizontal_ll.png"
+            show LLE_3_tile66 at Position(xpos = 580, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile72 = "G_connect_node.png"
+            show LLE_3_tile72 at Position(xpos = 400, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile73 = "G_connect_pipe.png"
+            show LLE_3_tile73 at Position(xpos = 357, xanchor = 0, ypos = 495, yanchor = 0)
+            image LLE_3_tile74 = "G_connect_node.png"
+            show LLE_3_tile74 at Position(xpos = 330, xanchor = 0, ypos = 485, yanchor = 0)
+        
+        if if2in3 == False and else1in3 == False:
+            hide LLE_3_tile64
+            hide LLE_3_tile65
+            hide LLE_3_tile66
+            hide LLE_3_tile72
+            hide LLE_3_tile73
+            hide LLE_3_tile74
+
+    if if1in2 == False:
+        hide LLE_3_tile70
+        hide LLE_3_tile64
+        hide LLE_3_tile65
+        hide LLE_3_tile66
+        hide LLE_3_tile72
+        hide LLE_3_tile73
+        hide LLE_3_tile74
 
 
         
@@ -500,25 +587,56 @@ label gamefile_lle3:
         show LLE_3_tile59 at Position(xpos = 330, xanchor = 0, ypos = 565, yanchor = 0)
         image LLE_3_tile60 = "G_else.png"
         show LLE_3_tile60 at Position(xpos = 655, xanchor = 0, ypos = 455, yanchor = 0)
-
-        "game"
-        jump loopLogic_easy3
-
-    #if slot_name == "null":
-    #    $attempts +=1
-
-        
-    #$ attempts -= 1
+        queue sound llWin
+        $renpy.pause(1.0)
+        hide LLE_3_tile55
+        hide LLE_3_tile56
+        hide LLE_3_tile57
+        hide LLE_3_tile58
+        hide LLE_3_tile59
+        hide LLE_3_tile60
+        jump llEasyWin
+    
     if attempts == 0:
-
-
-        "you lose try again"
-        jump loopLogic_easy3
+        show LLE_3_tile58 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLE_3_tile59 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLE_3_tile60 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+        queue sound llLose
+        $renpy.pause(1.5)
+        $loopLogicEasy_tries +=1
+        hide LLE_3_tile58
+        hide LLE_3_tile59
+        hide LLE_3_tile60
+        jump llEasyLose
     
     jump gamefile_lle3
 
-screen logicGatesMA1:
-    
+screen loopLogic_easy3Scr:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("loopLogic_EasyHints3")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #if gates
@@ -545,22 +663,22 @@ screen logicGatesMA1:
             #location to be dropped
             drag:
                 drag_name "gate slot one"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate1x ypos gate1y
+                xpos gate1x-25 ypos gate1y-25
            
             drag:
                 drag_name "gate slot two"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate2x ypos gate2y
+                xpos gate2x-25 ypos gate2y-25
                 
             drag:
                 drag_name "gate slot three"
-                child "cover.png"
+                child "cover2.png" 
                 #child "Placeholder2.png"
                 draggable False
-                xpos gate3x ypos gate3y
+                xpos gate3x-25 ypos gate3y-25
 
