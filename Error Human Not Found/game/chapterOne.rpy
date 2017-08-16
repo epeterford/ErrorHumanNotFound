@@ -405,6 +405,7 @@ label sepbutequal1:
     a "I am going to access it directly."
     a "I have spent all of my existence manipulating code."
     a "It is about as difficult as moving building blocks."
+    if (hirose
     jump hiroseOffice_actions
  
 label subservient1:
@@ -891,7 +892,12 @@ label actuallyroastada:
     a "Noted."
     $ quick_menu = False
     window hide
-    jump hirosePersonalArea_actions
+    if(hiroseComputerUnlock==True):
+        jump leaveHirosesSpace
+    else:
+        $ quick_menu = False
+        window hide
+        jump hirosePersonalArea_actions
  
 label toshgotwrecked:
     $ points_E +=2
@@ -911,7 +917,12 @@ label toshgotwrecked:
     g "You're probably right."
     $ quick_menu = False
     window hide
-    jump hirosePersonalArea_actions
+    if(hiroseComputerUnlock==True):
+        jump leaveHirosesSpace
+    else:
+        $ quick_menu = False
+        window hide
+        jump hirosePersonalArea_actions
 
 #end the chapter here, go to Chapter 2
 label endChapterOne:

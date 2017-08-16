@@ -354,6 +354,9 @@ label gamefileB1:
         image EB1tile200 = "AND_Gate.png"
         image EB1tile201 = "OR_Gate.png"
         
+        image endWin_LGB1 = "light_g_on.png"
+        show endWin_LGB1 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
+        
         show EB1tile201 at Position(xpos = 811, xanchor = 0, ypos = 383, yanchor = 0)   
         show EB1tile200 at Position(xpos = 886, xanchor = 0, ypos = 833, yanchor = 0)   
         show EB1tile161 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)   
