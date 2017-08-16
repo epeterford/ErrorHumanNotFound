@@ -346,6 +346,8 @@ label chapterOne_screens:
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen hiroseOfficeAction:
+        $config.skipping=None
+        $renpy.block_rollback()
         imagebutton:
             idle "adaTalk.png" 
             hover "adaTalk_hover.png" 
@@ -366,6 +368,8 @@ label chapterOne_screens:
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen hiroseOffice1_scr:
+        $config.skipping=None
+        $renpy.block_rollback()
         imagebutton:
             idle "button_empty.png"
             xpos 1630
@@ -404,6 +408,8 @@ label chapterOne_screens:
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen hiroseOffice2_scr:
+        $config.skipping=None
+        $renpy.block_rollback()
         imagebutton:
             idle "arrow.png" 
             hover "arrow_hover.png" 
@@ -424,6 +430,8 @@ label chapterOne_screens:
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
     screen investigateOffice:
+        $config.skipping=None
+        $renpy.block_rollback()
         imagebutton:
             idle "button_empty.png"
             xpos 1630
@@ -583,10 +591,10 @@ label chapterOne_screens:
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         if (hirosePhoto_inv == False):
             imagebutton:
-                idle "hirosePhoto.png" 
-                hover "hirosePhoto_hover.png" 
-                xpos 1512
-                ypos 729 
+                idle "objects/hirosePhoto_idle.png" 
+                hover "objects/hirosePhoto_hover.png" 
+                xpos 0
+                ypos 0
                 focus_mask True
                 action Jump("hirosePhoto_label")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
@@ -594,95 +602,124 @@ label chapterOne_screens:
     jump tutorial_Inv_1
             
 label tutorial_Inv_1:
-    window hide
+    $config.skipping=None
+    $renpy.block_rollback()
     $ quick_menu = False
+    window hide
     scene bg tutorial_inv_1
     call screen tutorial_scrInv_1
     
 label tutorial_Inv_2:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg tutorial_inv_2
     call screen tutorial_scrInv_2
     
 label tutorial_LGEasy_1:
+    $config.skipping=None
+    $renpy.block_rollback()
     play music "music/BGM/Puzzle_BGM.ogg"
-    window hide
     $ quick_menu = False
+    window hide
     scene bg lgEasy1 
     call screen tutorial_scrLGEasy_1
     
 label tutorial_LGEasy_2:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg lgEasy2 
     call screen tutorial_scrLGEasy_2
         
 label tutorial_LGEasy_3:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg lgEasy3 
     call screen tutorial_scrLGEasy_3
     
 label tutorial_LGEasy_4:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg lgEasy4 
     call screen tutorial_scrLGEasy_4
     
 label tutorial_LGEasy_5:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg lgEasy5 
     call screen tutorial_scrLGEasy_5
     
 label tutorial_GramEasy_1:
+    $config.skipping=None
+    $renpy.block_rollback()
     play music "music/BGM/Puzzle_BGM.ogg"
-    window hide
     $ quick_menu = False
+    window hide
     scene bg gramEasy1 
     call screen tutorial_scrGramEasy_1
     
 label tutorial_GramEasy_2:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy2 
     call screen tutorial_scrGramEasy_2
         
 label tutorial_GramEasy_3:
-    play sound ["<silence 3.0>"]
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy3 
     call screen tutorial_scrGramEasy_3
     
 label tutorial_GramEasy_4:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy4 
     call screen tutorial_scrGramEasy_4
     
 label tutorial_GramEasy_5:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy5 
     call screen tutorial_scrGramEasy_5
     
 label tutorial_GramEasy_6:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy6 
     call screen tutorial_scrGramEasy_6
 
 label tutorial_GramEasy_7:
+    $config.skipping=None
+    $renpy.block_rollback()
     window hide
     $ quick_menu = False
     scene bg gramEasy7 
     call screen tutorial_scrGramEasy_7
     
 label hiroseOffice_actions:
-    window hide
+    $config.skipping=None
+    $renpy.block_rollback()
     $ quick_menu = False
+    window hide
     scene bg hiroseOfficeMain 
     if talkAdaHiroseOffice_value>0 and hiroseOfficeItems == 3 and hiroseTransitionItems == 1:
         jump wegotthedeets
@@ -711,8 +748,8 @@ label hiroseTea_label:
     a "When I was young, a technician spilled some coffee onto a section of my servers. I suppose you would liken it to being set on fire."
     show Grace surprised
     g "Oh..."
-    window hide
     $ quick_menu = False
+    window hide
     jump exploreHiroseOffice
 
 label hiroseTree:
@@ -735,8 +772,8 @@ label hiroseTree:
     g "I... well, I suppose. Just because you're technically right doesn't mean you won this one."
     a "I was not aware we were debating. Would you like to?"
     g "This is really not the place, Ada. I don't want to spend anymore time in this amazing office than necessary."
-    window hide
     $ quick_menu = False
+    window hide
     jump exploreOffice
     
 label hiroseBed_label:
@@ -782,8 +819,8 @@ label hiroseRecorder_label:
     a "Perhaps she just prefers to read?"
     g "..."
     g "You've got me there."
-    window hide
     $ quick_menu = False
+    window hide
     jump exploreHiroseOffice
     
 label hiroseWindow_label:
@@ -806,8 +843,8 @@ label hiroseWindow_label:
     a "My memory banks are far from exhaustive, Grace."
     show Grace neutral
     g "Right. Hotel metaphors remain the exclusive domain of humans for the forseeable future."
-    window hide
     $ quick_menu = False
+    window hide
     jump hiroseBed
     
 label LGEasyHintsA1:
@@ -1228,6 +1265,8 @@ screen disable_hide():
     key 'K_RCTRL' action NullAction() #action Skip("")
     key 'K_TAB' action NullAction() #action Hide("")
     key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
     
 label gramEasyHints4:
     show screen disable_hide
@@ -1324,30 +1363,40 @@ label gramEasyHints5:
     jump gamefile_e5
     
 label nextLGEasy:
+    $renpy.block_rollback()
+    $config.skipping=None
     show other darken
     image segmentComplete = "segmentComplete.png"
     show segmentComplete at centerScreen2
     call screen lgEasyWin_scr
         
 label repeatLGEasy:
+    $config.skipping=None
+    $renpy.block_rollback()
     show other darken
     image segmentFailed = "segmentFailed.png"
     show segmentFailed at centerScreen2
     call screen lgEasyLose_scr
 
 label lgEasyDone:
+    $config.skipping=None
+    $renpy.block_rollback()
     show other darken
     image passwordAccepted = "passwordAccepted.png"
     show passwordAccepted at centerScreen2
     call screen lgEasyDone_scr
     
 label gramEasyDone:
+    $config.skipping=None
+    $renpy.block_rollback()
     show other darken
     image passwordAccepted = "passwordAccepted.png"
     show passwordAccepted at centerScreen2
     call screen gramEasyDone_scr
     
 label gramEasyLose:
+    $config.skipping=None
+    $renpy.block_rollback()
     show other darken
     image gramEasyLoseFail = "passwordFail.png"
     show gramEasyLoseFail at centerScreen2

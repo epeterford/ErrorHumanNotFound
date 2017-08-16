@@ -48,6 +48,7 @@ image Ada neutral = "sprites/ada_neutral.png"
 image Ada seething = "sprites/ada_seething.png"
 image Ada concerned = "sprites/ada_afraid.png"
 image Ada nervous = "sprites/ada_afraid.png"
+image Mopr = "sprites/MOPR.png"
 
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"
@@ -209,6 +210,7 @@ define audio.balconyAmb4 = "music/Amb/Balcony/EHNF_BAL_L4.ogg"
 
 #Conclave audio
 define audio.conclaveReceptionAmb = "music/amb/Conclave/Ambiance_Conclave_Reception_Area.ogg"
+define audio.conclaveProperAmb = "music/amb/Conclave/EHNF_CC_Amb.mp3"
 #define audio.conclaveProperAmb = "music/amb/Conclave/Ambiance_Conclave_Proper.ogg"
 
 #Grace lab audio
@@ -394,6 +396,10 @@ define audio.moprSad = "music/Character/MOPR/ENHF_MOPR_Sad.ogg"
 define audio.moprSad2 = "music/Character/MOPR/ENHF_MOPR_Sad2.ogg"
 define audio.moprSuspicious = "music/Character/MOPR/ENHF_MOPR_Suspicous.ogg"
 define audio.moprSuspicious2 = "music/Character/MOPR/ENHF_MOPR_Suspicous2.ogg"
+define audio.moprAffirmative = "music/Character/MOPR/MOPR_Affirmative_1.mp3"
+define audio.moprAffirmative2 = "music/Character/MOPR/MOPR_Affirmative_2.mp3"
+define audio.moprWorried = "music/Character/MOPR/MOPR_Worried_1.mp3"
+define audio.moprWorried2 = "music/Character/MOPR/MOPR_Worried_2.mp3"
 
 #Tosh
 define audio.toshStartup = "music/Character/Tosh/EHNF_CH_Tosh_Startup.ogg"
@@ -419,6 +425,7 @@ define audio.pickup = "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
 define aduio.speakerCrackle = "music/Object/Misc_Audio/EHNF_Speaker_Crackle1.ogg"
 define audio.shortWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_1Sec.ogg"
 define audio.longWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_20Sec.ogg"
+define audio.paperCrumple = "music/Object/Misc_Audio/EHNF_Paper_Crumple_OB.ogg"
 
 
 #Raptor

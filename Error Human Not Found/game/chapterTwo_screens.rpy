@@ -237,7 +237,10 @@ label chapterTwo_screens:
             xpos 0
             ypos 0
             focus_mask True
-            action Jump("graceLab_actions")
+            if (graceLeft1Desk_value == 3 and graceLeft2Desk_value == 3 and graceRightDesk_value==3 and talkAdaGraceLab_times==0):
+                action Jump("talkAdaGraceLab")
+            else:
+                action Jump("graceLab_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             
     screen graceLab_left1Scr:
@@ -520,6 +523,8 @@ label graceLab_actions:
             jump resumeChapterTwo_S
     $ quick_menu = False
     window hide
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen graceLab_actionsScr
     
 label talkAdaGraceLab:
@@ -562,30 +567,40 @@ label graceLab_inv:
     scene bg G_deskArea with fade
     $ quick_menu = False
     window hide
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen graceLab_invScr
     
 label graceLab_left1:
     scene bg G_left1 with fade
     $ quick_menu = False
-    window hide    
+    window hide
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen graceLab_left1Scr
     
 label graceLab_left2:
     scene bg G_left2 with fade
     $ quick_menu = False
     window hide    
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen graceLab_left2Scr
     
 label graceLab_right:
     scene bg G_right with fade
     $ quick_menu = False
     window hide
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen graceLab_right
     
 label balcony_actions:
     scene bg balconyClose
     $ quick_menu = False
     window hide
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen balcony_actionsScr
     
 label gracePoster_inv:
@@ -804,7 +819,7 @@ label graceStickyNotes_inv:
     $ graceRightDesk_value +=1
     show other darken
     show image "objects/graceStickyNotes_closeup0.png" at centerScreen
-    "{i}A sprawl of binders, folders, and post-it notes scattered across the desk.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer."
+    "{i}A sprawl of post-it notes that have been attached to the outside of Grace's personal servers.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer."
     hide image "objects/graceStickyNotes_closeup0.png"
     show image "objects/graceStickyNotes_closeup1.png" at centerScreen
     "{i}One of Grace's notes. The image seems to be related to her feelings of the Conclave stifling her."
@@ -854,6 +869,7 @@ label talkLynn:
         lynn "You've reached my voicemail! Leave me a message after the beep."
         "{i}BEEP!"
         "{i}Grace hangs up."
+        show Grace annoyed
         g "I feel deceived."
         $ callAttempts +=1
         jump balcony_actions
@@ -886,9 +902,13 @@ label balcony_inv:
     window hide
     $ quick_menu = False
     scene bg balconyClose with fade
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen balcony_invScr
     
 label balcony_alpha:
+    $renpy.block_rollback()
+    $config.skipping=None
     stop music fadeout 1.0
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
@@ -898,6 +918,8 @@ label balcony_alpha:
     window hide
     $ quick_menu = False
     scene bg balconyTop with fade
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen balcony_alphaScr
     
 label loopLogicEasyChoose:
@@ -945,27 +967,37 @@ label binaryEasy:
     call binaryMatchEasy from _call_binaryMatchEasy
 
 label tutorial_Binary2Bit_1:
+    $renpy.block_rollback()
+    $config.skipping=None
     window hide
     $ quick_menu = False
     scene bg tutorial_binary2Bit_1
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrBinary2Bit_1
     
 label tutorial_Binary2Bit_2:
     window hide
     $ quick_menu = False
     scene bg tutorial_binary2Bit_2
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrBinary2Bit_2
     
 label tutorial_Binary2Bit_3:
     window hide
     $ quick_menu = False
     scene bg tutorial_binary2Bit_3
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrBinary2Bit_3
     
 label tutorial_Binary2Bit_4:
     window hide
     $ quick_menu = False
     scene bg tutorial_binary2Bit_4
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrBinary2Bit_4
     
 label tutorial_Binary2Bit_5:
@@ -973,8 +1005,10 @@ label tutorial_Binary2Bit_5:
     $ quick_menu = False
     $ tutorial_binaryEasy = True
     scene bg tutorial_binary2Bit_5
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrBinary2Bit_5
-    
+
 label scratches_label:
     $quick_menu = True
     $balconyScratches_look = True
@@ -1137,20 +1171,28 @@ label tutorial_LLEasy:
     window hide
     $ quick_menu = False
     scene bg tutorial_LL1
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen tutorial_scrLL_1
     
 label tutorial_LL_2:
     window hide
     $ quick_menu = False
     scene bg tutorial_LL2
-    call screen tutorial_scrLL_2    
+    $renpy.block_rollback()
+    $config.skipping=None
+    call screen tutorial_scrLL_2  
     
 label tutorial_LL_3:
     window hide
     $ tutorial_loopLogicEasy = True
     $ quick_menu = False
     scene bg tutorial_LL3
-    call screen tutorial_scrLL_3     
+    $renpy.block_rollback()
+    $config.skipping=None
+    call screen tutorial_scrLL_3   
+    $renpy.block_rollback()
+    $config.skipping=None
     
 label loopLogic_EasyHints1:
     show screen disable_hide
@@ -1326,12 +1368,16 @@ label llEasyWin:
     show other darken
     image systemStartup= "loopLogicEasyWin.png"
     show systemStartup at centerScreen2
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen llEasyWin_scr
-    
+
 label llEasyLose:
     show other darken
     image systemStartFail ="binaryEasyLose.png"
     show systemStartFail at centerScreen2
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen llEasyLose_scr
     
 label binaryEasyWin:
@@ -1340,6 +1386,8 @@ label binaryEasyWin:
     show other darken
     image discStartup= "binaryEasyWin.png"
     show discStartup at centerScreen2
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen binaryEasyWin_scr
     
 label binaryEasyLose:
@@ -1348,6 +1396,8 @@ label binaryEasyLose:
     $ binaryEasy_tries +=1
     image bootFail ="loopLogicEasyLose.png"
     show bootFail at centerScreen2
+    $renpy.block_rollback()
+    $config.skipping=None
     call screen binaryEasyLose_scr
     
 label binaryEasyHints:
@@ -1413,6 +1463,7 @@ label binaryDoneTalk:
     g "Well, not what I was hoping for."
     $binaryEasyDone = True
     $alphaBody_look = True
+    scene bg balconyClose with fade
     if(resume =="E"):
         jump enterthemopr_E
     if(resume == "SbE"):

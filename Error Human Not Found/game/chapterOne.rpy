@@ -169,6 +169,8 @@ label chooseEasyGram:
         jump eng_gram_e5
 
 label doorPuzzle:
+    $config.skipping=None
+    $renpy.block_rollback()
     stop music fadeout 1.0
     scene bg hiroseDoor
     show Ada neutral at right
@@ -365,7 +367,7 @@ label adadoxxeshirose:
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     
-    g "It almost hurts to admit it, but I'm incredibly jealous of this office. Don't have the same view from my little lab."
+    g "It almost hurts to admit it, but I'm incredibly jealous of this office. I don't have the same view from my little lab."
     $ talkAdaHiroseOffice_value = 0
     jump chapterOne_screens
     
@@ -441,11 +443,15 @@ label exploreOffice:
     #Once the player clicks on the computer, actual puzzle fires.
     window hide
     $ quick_menu = False
+    $renpy.block_rollback()
+    $config.skipping=None
     scene bg hiroseOfficeMain with fade
     call screen hiroseOffice1_scr
 label hiroseOffice2:
     window hide
     $ quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     scene bg hiroseOfficeTransition with fade #at basicfade
     call screen hiroseOffice2_scr
 #Buttons for the objects
@@ -492,6 +498,8 @@ label exploreHiroseOffice:
     if solved_LG_easy ==True:
         scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     call screen investigateOffice
 
 label adaActualPuzzle1:
@@ -686,9 +694,14 @@ label lgEasyDone_talk:
                    
 label wegotthedeets:
     $ quick_menu = True
+    show Grace neutral at left
     g "Now let's go nose around my mother's quarters."
+    show Ada neutral at right
     a "If you insist."
     $ quick_menu = False
+    hide Ada
+    hide Grace
+    window hide
     scene bg hirosePersonalArea with fade #at basicfade
     play channel00 hiroseOffice3_00 fadeout 1.0 fadein 1.0
     play channel01 hiroseOffice3_01 fadeout 1.0 fadein 1.0
@@ -717,6 +730,8 @@ label hirosePersonalArea_actions:
     #insert exploration here. Must pick up photo before being able to open computer.
     window hide
     $ quick_menu = False
+    $renpy.block_rollback()
+    $config.skipping=None
     if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hirosePC==True:
         scene bg hirosePersonalArea_logged
     else:
@@ -725,7 +740,12 @@ label hirosePersonalArea_actions:
         
 label hirosePersonalArea_inv:
     $ quick_menu = False
-    scene bg hirosePersonalArea with fade #at basicfade
+    $renpy.block_rollback()
+    $config.skipping=None
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hirosePC==True:
+        scene bg hirosePersonalArea_logged
+    else:
+        scene bg hirosePersonalArea
     window hide
     call screen hirosePersonalArea_invScr
     #should get password from photo
@@ -733,6 +753,8 @@ label hirosePersonalArea_inv:
  
 label hirosePersonalComputer:
     $ quick_menu = False
+    $renpy.block_rollback()
+    $config.skipping=None
     if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hiroseComputerUnlock==True:
         scene bg hirosePersonalComputer_logged
     else:
@@ -740,6 +762,8 @@ label hirosePersonalComputer:
     call screen investigateHirosePC
 
 label hiroseBed:
+    $config.skipping=None
+    $renpy.block_rollback()
     $ quick_menu = False
     scene bg hirosePersonalBed with fade #at basicfade
     call screen investigateHiroseBed
@@ -913,23 +937,37 @@ label hirosePhoto_label:
     $ quick_menu = True
     $ hirosePhoto_inv = True
     $ hirosePersonalItems_value += 1
-    show image "hirosePhoto_closeup.png" at centerScreen
+    show other darken
+    show image "objects/hirosePhoto_closeup.png" at centerScreen
     window show
     "{i}A family portrait of Hirose, a young Grace, and Grace's father."
+    hide other darken
+    hide image "objects/hirosePhoto_closeup.png"
+    show Ada neutral at right
     a "Is that your family?"
+    show Grace sad at left
     g "Technically. My mother only half-counts."
     a "You were cute as a kid. What happened?"
+    show Grace snarky
     g "Ha. Funny."
     "{i}Grace starts to put the photo back."
     a "Grace, I would look at the back of the photo."
     g "Why?"
     a "A calculated guess."
-    #show image "hirosePhoto_closeupBack.png" at centerScreen
-    g "The password is on the back of a photo. How original."
+    hide Ada
+    hide Grace
+    show other darken
+    show image "objects/hirosePhoto_back.png" at centerScreen
+    "{i}On the back of the digital photo is a date."
+    hide other darken
+    hide image "objects/hirosePhoto_back.png"
+    show Grace surprised at left
+    g "That's not the date this photo was taken, and she's too meticulous to have made a mistake."
+    show Grace snarky
+    g "It must be her password. I cannot believe she actually had it written down somewhere. Cliche doesn't even begin to cover it."
+    show Ada neutral at right
     a "Those numbers appear to correspond with your birthdate."
     g "At least it's good for something."
-    hide image "hirosePhoto_closeup.png"
-    #hide image "hirosePhoto_closeupBack.png" 
     window hide
     $ quick_menu = False
     jump hiroseBed
@@ -954,6 +992,7 @@ label hirosePC_label:
         show Grace snarky
         g "Yeah, it's twice as nasty. I don't even want to touch this thing unless we have a password."
         if (hirosePhoto_inv == True and hirosePersonalItems_value == 3):
+            $talkAdaHirosePersonal_value +=1
             g "Luckily for us we already found it."
             show Ada amused at right
             a "That does save some time."

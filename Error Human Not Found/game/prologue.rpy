@@ -161,7 +161,7 @@ label prologueResume1:
     h "Colossus is keeping everything quiet for now but it's only a matter of time until something gets out."
     h "Alpha was, after all, the first of them to acquire a physical form. There's the risk of an uproar. How is Blue responding to this?"
     knuth "Blue is concerned, but she's holding her own. No excessive disobedience." 
-    knuth "She seems curious primarily and perhaps a little anguished? It's hard to tell when someone has a screen for a face."
+    knuth "She seems primarily curious and perhaps a little anguished? It's hard to tell when someone has a screen for a face."
     knuth "Blue flashed a sad face and then began exploding with random emoticons."
     h "I expected as much. And Watson?"
     knuth "Well, you know Watson. He's difficult to get in touch with." 
@@ -178,6 +178,7 @@ label prologueResume1:
     stop music fadeout 1.0
     play sound doorOpen2
     queue sound doorClose2
+    play music conclaveProperAmb
     scene bg conclaveOccupied with fade #at basicfade
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:26"
@@ -292,6 +293,7 @@ label prologueResume2:
     scene bg G_main with fade #at basicfade
     window show
     $ quick_menu = True
+    stop music fadeout 1.0
     play channel00 labBGM_0
     play channel01 labBGM_1
     play channel02 labBGM_2
@@ -354,7 +356,9 @@ label together:
     show Ada happy at right
     a "My thoughts exactly. I was not able to be there for him then, but I want to be here for him now."
     g "Who better to look into this than an AI and a researcher that knows this place like the back of her hand?"
+    show Ada surprised
     a "Humans memorize the backs of their hands?"
+    show Ada neutral
     "{i}Ada studies her hand."
     g "No--nevermind."
     a "Shall we get to it then? No point in waiting around to get caught."

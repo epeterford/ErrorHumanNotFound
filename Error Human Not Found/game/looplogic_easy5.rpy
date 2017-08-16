@@ -411,8 +411,8 @@ label Gamefile_lle5:
             show LLE52tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
             image LLE52tile16 = "b_vertical.png"
             show LLE52tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
-            #image LLE52tile18 = "b_vertical.png"
-            #show LLE52tile18 at Position(xpos = 549, xanchor = 0, ypos = 683, yanchor = 0)
+            image LLE52tile18 = "b_vertical.png"
+            show LLE52tile18 at Position(xpos = 549, xanchor = 0, ypos = 683, yanchor = 0)
             image LLE52tile19 = "B_end_on.png"
             show LLE52tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
             image LLE52tile92 = "b_connect_pipe.png"

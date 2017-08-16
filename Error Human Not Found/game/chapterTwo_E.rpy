@@ -114,33 +114,46 @@ label adaLabLoop1_E:
     a "Do you need some assistance, Grace?"
     g "Did you want to help me find some clues?"
     a "I find that action is more inefficient than allowing the lab's owner search for specific items."
+    show Ada happy
     a "However, thank you for asking for my input on the matter."
     g "No problem. I thought it would be better than having you just stand there."
     a "I will keep watch, so take your time."
     g "That's even better. Let me know if someone comes along."
+    show Ada neutral
     a "Command received."
     g "Ada, it's just me. You don't have to do all that."
     a "..."
     a "Okay, Grace."
+    hide Ada
+    hide Grace
     $quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop2_E:
     $quick_menu = True
+    show Ada neutral at right
     a "Grace, has your task been completed?"
+    show Grace surprised at left
     g "Is someone coming this way?"
     a "No. I am just concerned about how long this will take."
+    show Grace neutral
     g "You have to be thorough with these things, Ada."
     a "You are correct. I will continue to be on standby while you search."
+    hide Ada
+    hide Grace
     $quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop3_E:
     $quick_menu = True
+    show Ada neutral at right
     a "Is something bothering you, Grace?"
+    show Grace neutral at left
     g "No, I guess I just thought you might have some insight, or something along those lines."
     a "You must not let yourself become too worried. This is only the start of the investigation, so you should not be disheartened if you do not find anything here."
     g "Thanks, Ada."
+    hide Grace
+    hide Ada
     $quick_menu = False
     jump graceLab_actions
     
@@ -244,6 +257,8 @@ label adapls_E:
     show Ada frustrated
     a "Hold on!"
     play sound02 adaWalk
+    hide Ada
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -378,6 +393,7 @@ label moveitalong:
 label csinoahsphere_E:
     $quick_menu = True
     #insert the sound of paper crumpling
+    play sound paperCrumple
     show Grace neutral at left
     g "Huh?"
     "{i}Grace lifts her foot and reaches down."
@@ -416,7 +432,7 @@ label enterthemopr_E:
     a "Grace, it is just a cleaning robot."
     show Mopr at center
     play sound moprInquisitive
-    mopr "[[Inquisitive boop.]"
+    mopr "//Inquisitive boop.//"
     show Grace happy at left
     g "Oh thank goodness."
     g "And it's a MOPR. I love these guys. They're so cute."
@@ -434,15 +450,15 @@ label enterthemopr_E:
     g "You've got that right."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
     play sound moprAlarmed
-    mopr "[[Alarmed Beeping!]"
+    mopr "//Alarmed Beeping!//"
     show Grace happy
     g "Hey, hey... it's okay, little guy!"
     a "This MOPR has quite the vocals."
-#    play sound moprWorried 
-    mopr "[[Worried blorp.]"
+    play sound moprWorried 
+    mopr "//Worried blorp.//"
     g "I know it's tough, little robot pal, finding two strangers and a body during your cleaning cycle."
-#    play sound moprAffirmative
-    mopr "[[Affirmative beep.]"
+    play sound moprAffirmative
+    mopr "//Affirmative beep.//"
     show Ada surprised
     show Ada amused
     a "Ha. Ha. Ha."
@@ -535,7 +551,7 @@ label lilbabymopr:
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
     play sound moprHappy
-    mopr "[[Pleased beeping.]"
+    mopr "//Pleased beeping.//"
     show Grace happy
     g "See? He likes you."
     show Ada happy at right
@@ -554,29 +570,29 @@ label exitthemopr_E:
     $quick_menu = True
     show Mopr at center
     play sound moprConfused
-    mopr "[[Questioning beep boop.]"
+    mopr "//Questioning beep boop.//"
     show Grace happy at left
     g "It's okay, MOPR. We just want to help. You can continue cleaning and just ignore us, okay?"
     play sound moprSuspicious
-    mopr "[[Suspicious beep.]"
+    mopr "//Suspicious beep.//"
     g "C'mon MOPR, don't be that way."
     play sound moprSuspicious2
-    mopr "[[Beep. Boop.]"
+    mopr "//Beep. Boop.//"
     show Ada concerned at right
     a "MOPR unit, we are to investigate what happened to Alpha unit."
     g "Don't you want us to find out so we can make sure a tragedy like this doesn't happen again?"
     play sound moprInquisitive2
-    mopr "[[Inquisitive beep.]"
+    mopr "//Inquisitive beep.//"
     a "Personally, I would hope nothing like this happens to me."
     play sound moprSad
-    mopr "[[Sad beeps.]"
-#    queue sound moprAffirmative
-    mopr "[[Affirmative beeps.]"
+    mopr "//Sad beeps.//"
+    queue sound moprAffirmative2
+    mopr "//Affirmative beeps.//"
     show Ada happy
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us. Thank you!"
-#    play sound moprAffirmative2
-    mopr "[[Confirmative beeps.]"
+    play sound moprAffirmative
+    mopr "//Confirmative beeps.//"
     "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it."
     play sound doorClose1
     hide Mopr
@@ -584,10 +600,15 @@ label exitthemopr_E:
     a "You do seem to have a way with machinery."
     g "I'm going to take that as a compliment."
     a "It is."
+    show Ada neutral
     if(callAttempts>=1):
         a "Perhaps we should try to contact Technician Yao again?"
+        if not((alphaBodyItems == 3) and (balconyItems==1)):
+            a "I would finish looking around first, however."
     else:
         a "Perhaps we should try to contact Technician Yao."
+        if not((alphaBodyItems == 3) and (balconyItems==1)):
+            a "I would finish looking around first, however."
     $ resume = "E"
     $ moprScene = True
     jump balcony_actions
@@ -688,7 +709,7 @@ label weareallequal_E:
     lynn "You really can't say that a broken machine is the same as the death of a living being."
     show Grace angry
     g "I can't believe what I'm hearing. If something is capable of thinking and feeling, it deserves the same respect as us."
-    G "AIs have shown they can do plenty of both."
+    g "AIs have shown they can do plenty of both."
     lynn "Because they're programmed to, dear. It's not free will."
     g "Isn't that basically the same as us? Our brains run on electricity too. Who's to say we aren't 'programmed' biologically?"
     show Ada happy at center

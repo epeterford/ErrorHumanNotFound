@@ -127,24 +127,35 @@ label adaLabLoop1_S:
     g "No, I meant information that was useful."
     show Ada frustrated
     a "No, Grace."
+    hide Grace
+    hide Ada
     $ quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop2_S:
     $ quick_menu = True
+    show Ada neutral at right
     a "Have you finished looking around?"
+    show Grace annoyed at left
     g "Don't rush me."
+    show Ada annoyed
     a "Fine, do not mind me then. I shall be on standby until you deem me worthy of your conversation."
     g "I hear that."
+    hide Ada
+    hide Grace
     $ quick_menu = False
     jump graceLab_actions
     
 label adaLabLoop3_S:
     $ quick_menu = True
+    show Ada neutral at right
     a "Is something bothering you, Grace?"
+    show Grace neutral at left
     g "I'm starting to doubt why I'm even looking around in my lab. It's my own lab!"
-    a "Have you considered the possibility that whoever's truly responsible might have attempted to frame you?"
+    a "Have you considered the possibility that whoever is truly responsible might have attempted to frame you?"
     a "We do not have any time to waste..."
+    hide Grace
+    hide Ada
     $ quick_menu = False
     jump graceLab_actions
     
@@ -254,7 +265,8 @@ label plsstop:
     show Ada seething
     a "Very well, Grace. Let us take your route. It is not like I can process several hundred times faster and more accurately than you."
     play sound02 adaWalk
-    show bg black with fade
+    hide Ada
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -266,7 +278,7 @@ label plsstop:
     jump gettingin_SbE
 
 label gettingin_S:
-    show bg balconyMain with fade
+    scene bg balconyMain with fade
     #Cahnnel 00 through 05 are Grace's lab
     play channel00 balconyAmb0
     play channel01 balconyAmb1
@@ -284,6 +296,8 @@ label gettingin_S:
     show Ada concerned at right
     a "Alpha!"
     "{i}Ada rushes to the side of the fallen AI."
+    hide Ada
+    hide Grace
     window hide
     $ quick_menu = False
     play sound01 adaWalk
@@ -298,6 +312,7 @@ label gettingin_S:
     $ quick_menu = True
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
+    show Ada neutral at right
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     show Grace surprised at left
     g "Ada?"
@@ -391,6 +406,7 @@ label alphadistraction_S:
 
 label csinoahsphere_S:
     #insert the sound of paper crumpling
+    play sound paperCrumple
     $quick_menu = True
     show Grace neutral at left
     g "Huh?"
@@ -429,7 +445,7 @@ label enterthemopr_S:
     a "Grace, it is just a cleaning robot."
     show Mopr at center
     play sound moprInquisitive
-    mopr "[[Inquisitive boop.]"
+    mopr "//Inquisitive boop.//"
     show Grace happy
     g "Oh thank goodness."
     g "And it's a MOPR. I love these guys. They're so cute."
@@ -437,14 +453,14 @@ label enterthemopr_S:
     g "Yeah. These were the first robots I learned to tinker on with my dad."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
     play sound moprAlarmed2
-    mopr "[[Alarmed Beeping!]"
+    mopr "//Alarmed Beeping!//"
     show Grace happy
     g "Hey, hey, it's okay little guy!"
-#    play sound moprWorried
-    mopr "[[Worried blorp.]"
+    play sound moprWorried
+    mopr "//Worried blorp.//"
     g "I know it's tough, little robot pal, finding two strangers and a body during your cleaning cycle."
-#    play sound moprAffirmative
-    mopr "[[Affirmative beep.]"
+    play sound moprAffirmative
+    mopr "//Affirmative beep.//"
     show Ada seething
     a "Little robot pal? I must admit, it is fascinating how you choose to treat a cleaning device with such appreciation of all things."
     g "Don't be like that, Ada. This is different."
@@ -536,7 +552,7 @@ label calmdown_S:
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
     play sound moprHappy
-    mopr "[[Pleased beeping.]"
+    mopr "//Pleased beeping.//"
     show Grace happy at left
     g "See? It trusts you."
     show Ada happy at right
@@ -554,38 +570,43 @@ label calmdown_S:
 label exitthemopr_S:
     show Mopr at center
     play sound moprConfused
-    mopr "[[Questioning beep boop?]"
+    mopr "//Questioning beep boop?]"
     show Grace happy at left
     g "Don't worry about it. Tell you what, why don't you go finish the rest of your cycle, hmm?"
     play sound moprSuspicious
-    mopr "[[Suspicious beep!]"
+    mopr "//Suspicious beep!//"
     g "C'mon MOPR, don't be that way."
     play sound moprSuspicious2
-    mopr "[[Beep. Boop.]"
+    mopr "//Beep. Boop.//"
     show Ada concerned at right
     a "MOPR unit, we are investigating what happened to Alpha unit."
     play sound moprInquisitive2
-    mopr "[[Inquisitive beep.]"
+    mopr "//Inquisitive beep.//"
     a "We want to know what caused this, so that this tragedy does not happen again."
     play sound moprSad
-    mopr "[[Sad beeps.]"
-#    queue sound moprAffirmative
-    mopr "[[Affirmative beeps!]"
-    show ADa happy
+    mopr "//Sad beeps.//"
+    queue sound moprAffirmative2
+    mopr "//Affirmative beeps!//"
+    show Ada happy at center
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us."
-#    play sound moprAffirmative2
-    mopr "[[Confirmative beeps.]"
+    play sound moprAffirmative
+    mopr "//Confirmative beeps.//"
     "The MOPR unit slowly wheels out of the room, and the door closes behind it."
     play sound doorClose1
     hide Mopr
     g "I always enjoyed talking to them. More than with some people, honestly."
     a "Really? I did not notice."
     $ resume = "S"
+    show Ada neutral
     if(callAttempts>=1):
         a "Perhaps we should try to contact Technician Yao again?"
+        if not((alphaBodyItems == 3) and (balconyItems==1)):
+            a "I would finish looking around first, however."
     else:
         a "Perhaps we should try to contact Technician Yao."
+        if not((alphaBodyItems == 3) and (balconyItems==1)):
+            a "I would finish looking around first, however."
     $ moprScene = True
     jump balcony_actions
     ##After this scene, return to the investigation.
@@ -594,6 +615,7 @@ label lynnfinallyfrickinanswers_S:
     $quick_menu = True
     play sound answertone
     "{i}The dial tone rings for several seconds."
+    show Grace annoyed at left
     g "I hope she picks up quick. Last time I called her I had to wait {i}ten{/i} minutes."
     show Ada neutral at right
     a "That seems like a relatively short time."
