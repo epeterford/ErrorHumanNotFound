@@ -76,51 +76,51 @@ label loopLogic_easy1: #loopLogic_easy5
     $ game_menu = True
    
     image LLE_1_tile1 = "W_horizontal.png"
-    show LLE_1_tile1 at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
+    show LLE_1_tile1 at Position(xpos = 279, xanchor = 0, ypos = 255, yanchor = 0)
     image LLE_1_tile2 = "blank_node.png"
     show LLE_1_tile2 at Position(xpos = 180, xanchor = 0, ypos = 220, yanchor = 0)  
     image LLE_1_tile3 = "W_vertical.png"
-    show LLE_1_tile3 at Position(xpos = 212, xanchor = 0, ypos = 320, yanchor = 0)
+    show LLE_1_tile3 at Position(xpos = 215, xanchor = 0, ypos = 320, yanchor = 0)
     image LLE_1_tile4 = "G_end_off.png"
     show LLE_1_tile4 at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
     image LLE_1_tile5 = "W_vertical.png"
-    show LLE_1_tile5 at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
+    show LLE_1_tile5 at Position(xpos = 375, xanchor = 0, ypos = 303, yanchor = 0)
     image LLE_1_tile6 = "W_vertical.png"
-    show LLE_1_tile6 at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
+    show LLE_1_tile6 at Position(xpos = 375, xanchor = 0, ypos = 378, yanchor = 0)
     image LLE_1_tile7 = "W_corner_LB.png"
     show LLE_1_tile7 at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
 
     image LLE_1_tile8 = "G_horizontal_ll.png"
-    show LLE_1_tile8 at Position(xpos = 431, xanchor = 0, ypos = 512, yanchor = 0)
+    show LLE_1_tile8 at Position(xpos = 431, xanchor = 0, ypos = 515, yanchor = 0)
     image LLE_1_tile9 = "B_horizontal.png"
-    show LLE_1_tile9 at Position(xpos = 446, xanchor = 0, ypos = 450, yanchor = 0)
+    show LLE_1_tile9 at Position(xpos = 446, xanchor = 0, ypos = 454, yanchor = 0)
     image LLE_1_tile10 = "B_horizontal_short.png"
-    show LLE_1_tile10 at Position(xpos = 521, xanchor = 0, ypos = 450, yanchor = 0)
+    show LLE_1_tile10 at Position(xpos = 521, xanchor = 0, ypos = 454, yanchor = 0)
     #image LLE_1_tile2 = "blank_node.png"
-    #show LLE_1_tile2 at Position(xpos = 336, xanchor = 0, ypos = 458, yanchor = 0)  
+    #show LLE_1_tile2 at Position(xpos = 336, xanchor = 0, ypos = 458, yanchor = 0) 
     
 
 
     
-    image LLE_1_tile11 = "G_corner_LB.png"
+    image LLE_1_tile11 = "W_corner_LB.png"
     show LLE_1_tile11 at Position(xpos = 506, xanchor = 0, ypos = 489, yanchor = 0)
-    image LLE_1_tile12 = "B_corner_LB.png"
+    image LLE_1_tile12 = "W_corner_LB.png"
     show LLE_1_tile12 at Position(xpos = 571, xanchor = 0, ypos = 427, yanchor = 0)
     
     image LLE_1_tile13 = "G_vertical_ll.png"
-    show LLE_1_tile13 at Position(xpos = 528, xanchor = 0, ypos = 564, yanchor = 0) 
+    show LLE_1_tile13 at Position(xpos = 525, xanchor = 0, ypos = 564, yanchor = 0) 
     image LLE_1_tile14 = "B_vertical_short.png"
     show LLE_1_tile14 at Position(xpos = 592, xanchor = 0, ypos = 502, yanchor = 0)
     image LLE_1_tile15 = "B_vertical.png"
-    show LLE_1_tile15 at Position(xpos = 593, xanchor = 0, ypos = 552, yanchor = 0)  
+    show LLE_1_tile15 at Position(xpos = 592, xanchor = 0, ypos = 552, yanchor = 0)  
     image LLE_1_tile16 = "W_connect_horizontal.png"
-    show LLE_1_tile16 at Position(xpos = 528, xanchor = 0, ypos = 580, yanchor = 0)
+    show LLE_1_tile16 at Position(xpos = 527, xanchor = 0, ypos = 580, yanchor = 0)
     image LLE_1_tile17 = "start.png"
     show LLE_1_tile17 at Position(xpos = 346, xanchor = 0, ypos = 454, yanchor = 0) 
     image LLE_1_tile18 = "W_vertical_short.png"
-    show LLE_1_tile18 at Position(xpos = 528, xanchor = 0, ypos = 640, yanchor = 0) 
+    show LLE_1_tile18 at Position(xpos = 528, xanchor = 0, ypos = 645, yanchor = 0) 
     image LLE_1_tile19 = "W_vertical_short.png"
-    show LLE_1_tile19 at Position(xpos = 594, xanchor = 0, ypos = 640, yanchor = 0) 
+    show LLE_1_tile19 at Position(xpos = 594, xanchor = 0, ypos = 645, yanchor = 0) 
     image LLE_1_tile20 = "blank_node.png"
     show LLE_1_tile20 at Position(xpos = 530, xanchor = 0, ypos = 680, yanchor = 0)
     image LLE_1_tile21 = "W_horizontal.png"
@@ -132,9 +132,9 @@ label loopLogic_easy1: #loopLogic_easy5
 
 
     image LLE_1_tile24 = "W_horizontal.png"
-    show LLE_1_tile24 at Position(xpos = 628, xanchor = 0, ypos = 615, yanchor = 0)
+    show LLE_1_tile24 at Position(xpos = 628, xanchor = 0, ypos = 619, yanchor = 0)
     image LLE_1_tile25 = "W_horizontal.png"
-    show LLE_1_tile25 at Position(xpos = 703, xanchor = 0, ypos = 615, yanchor = 0)
+    show LLE_1_tile25 at Position(xpos = 703, xanchor = 0, ypos = 619, yanchor = 0)
     image LLE_1_tile26 = "W_corner_LB.png"
     show LLE_1_tile26 at Position(xpos = 778, xanchor = 0, ypos = 592, yanchor = 0)
     image LLE_1_tile27 = "W_vertical_short.png"
@@ -403,7 +403,7 @@ label gamefile_lle1:
         play sound llPipe3
     if if1in2 == True or if2in2 == True:
         image LLE_1_tile34 = "G_vertical_short.png"
-        show LLE_1_tile34 at Position(xpos = 528, xanchor = 0, ypos = 640, yanchor = 0)
+        show LLE_1_tile34 at Position(xpos = 525, xanchor = 0, ypos = 645, yanchor = 0)
         image LLE_1_tile35 = "G_horizontal_ll.png"
         show LLE_1_tile35 at Position(xpos = 455, xanchor = 0, ypos = 715, yanchor = 0)
         image LLE_1_tile36 = "G_horizontal_ll.png"
@@ -419,10 +419,10 @@ label gamefile_lle1:
             show LLE_1_tile38 at Position(xpos = 595, xanchor = 0, ypos = 615, yanchor = 0)
             #show LLE_1_tile38 at Position(xpos = 594, xanchor = 0, ypos = 640, yanchor = 0)
             image LLE_1_tile39 = "B_horizontal.png"
-            show LLE_1_tile39 at Position(xpos = 628, xanchor = 0, ypos = 615, yanchor = 0)
+            show LLE_1_tile39 at Position(xpos = 628, xanchor = 0, ypos = 619, yanchor = 0)
             image LLE_1_tile40 = "B_horizontal.png"
-            show LLE_1_tile40 at Position(xpos = 703, xanchor = 0, ypos = 615, yanchor = 0)
-            image LLE_1_tile41 = "B_corner_LB.png"
+            show LLE_1_tile40 at Position(xpos = 703, xanchor = 0, ypos = 619, yanchor = 0)
+            image LLE_1_tile41 = "W_corner_LB.png"
             show LLE_1_tile41 at Position(xpos = 778, xanchor = 0, ypos = 592, yanchor = 0)
             image LLE_1_tile42 = "B_vertical_short.png"
             show LLE_1_tile42 at Position(xpos = 799, xanchor = 0, ypos = 667, yanchor = 0)
@@ -448,6 +448,39 @@ label gamefile_lle1:
             if (light3Sound ==1):
                 play soundP03 llLightOff3
                 $light3Sound -=1
+
+        if if1in3 == True or if2in3 == True:
+            image LLE_1_tile80A = "G_connect_node.png"
+            show LLE_1_tile80A at Position(xpos = 528, xanchor = 0, ypos = 613, yanchor = 0)
+            image LLE_1_tile81A = "G_connect_pipe.png"
+            show LLE_1_tile81A at Position(xpos = 557, xanchor = 0, ypos = 625, yanchor = 0)
+            image LLE_1_tile82A = "G_connect_node.png"
+            show LLE_1_tile82A at Position(xpos = 595, xanchor = 0, ypos = 615, yanchor = 0)
+            #show LLE_1_tile38 at Position(xpos = 594, xanchor = 0, ypos = 640, yanchor = 0)
+            image LLE_1_tile83A = "G_horizontal_ll.png"
+            show LLE_1_tile83A at Position(xpos = 628, xanchor = 0, ypos = 619, yanchor = 0)
+            image LLE_1_tile84A = "G_horizontal_ll.png"
+            show LLE_1_tile84A at Position(xpos = 703, xanchor = 0, ypos = 619, yanchor = 0)
+            image LLE_1_tile85A = "W_corner_LB.png"
+            show LLE_1_tile85A at Position(xpos = 778, xanchor = 0, ypos = 592, yanchor = 0)
+            image LLE_1_tile86A = "G_vertical_short.png"
+            show LLE_1_tile86A at Position(xpos = 796, xanchor = 0, ypos = 667, yanchor = 0)
+            if (light3Sound ==0):
+                play soundP03 llLightOn3
+                $light3Sound+=1
+
+
+        if if1in3 == False and if2in3 == False:
+            hide LLE_1_tile80A
+            hide LLE_1_tile81A
+            hide LLE_1_tile82A
+            hide LLE_1_tile83A
+            hide LLE_1_tile84A
+            hide LLE_1_tile85A
+            hide LLE_1_tile86A
+            if (light3Sound ==1):
+                play soundP03 llLightOff3
+                $light3Sound -=1
    
     if if1in2 == False and if2in2 == False:
         hide LLE_1_tile34
@@ -462,6 +495,13 @@ label gamefile_lle1:
         hide LLE_1_tile43
         hide LLE_1_tile44
         hide LLE_1_tile45
+        hide LLE_1_tile80A
+        hide LLE_1_tile81A
+        hide LLE_1_tile82A
+        hide LLE_1_tile83A
+        hide LLE_1_tile84A
+        hide LLE_1_tile85A
+        hide LLE_1_tile86A
         if (light2Sound ==1):
             play soundP02 llLightOff2
             $light2Sound -=1
@@ -473,12 +513,12 @@ label gamefile_lle1:
         image LLE_1_tile47A = "G_end_on.png"
         show LLE_1_tile47A at Position(xpos = 180, xanchor = 0, ypos = 397, yanchor = 0)
         image LLE_1_tile48A = "G_horizontal_ll.png"
-        show LLE_1_tile48A at Position(xpos = 279, xanchor = 0, ypos = 251, yanchor = 0)
+        show LLE_1_tile48A at Position(xpos = 279, xanchor = 0, ypos = 255, yanchor = 0)
         image LLE_1_tile49A = "G_vertical_ll.png"
-        show LLE_1_tile49A at Position(xpos = 376, xanchor = 0, ypos = 303, yanchor = 0)
+        show LLE_1_tile49A at Position(xpos = 373, xanchor = 0, ypos = 303, yanchor = 0)
         image LLE_1_tile50A = "G_vertical_ll.png"
-        show LLE_1_tile50A at Position(xpos = 376, xanchor = 0, ypos = 378, yanchor = 0)
-        image LLE_1_tile51A = "G_corner_LB.png"
+        show LLE_1_tile50A at Position(xpos = 373, xanchor = 0, ypos = 378, yanchor = 0)
+        image LLE_1_tile51A = "W_corner_LB.png"
         show LLE_1_tile51A at Position(xpos = 354, xanchor = 0, ypos = 228, yanchor = 0)
         if (light1Sound ==0):
             play soundP01 llLightOn1

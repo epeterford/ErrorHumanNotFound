@@ -13,15 +13,15 @@
     image LLE4tile2 = "blank_node.png"
     show LLE4tile2 at Position(xpos = 360, xanchor = 0, ypos = 435, yanchor = 0)
     image LLE4tile3 = "W_vertical.png"
-    show LLE4tile3 at Position(xpos = 400, xanchor = 0, ypos = 360, yanchor = 0)
+    show LLE4tile3 at Position(xpos = 404, xanchor = 0, ypos = 360, yanchor = 0)
     image LLE4tile4 = "W_corner_RB.png"
     show LLE4tile4 at Position(xpos = 377, xanchor = 0, ypos = 285, yanchor = 0)
     image LLE4tile5 = "W_horizontal.png"
-    show LLE4tile5 at Position(xpos = 452, xanchor = 0, ypos = 307, yanchor = 0)
+    show LLE4tile5 at Position(xpos = 452, xanchor = 0, ypos = 310, yanchor = 0)
     image LLE4tile20 = "W_horizontal.png"
-    show LLE4tile20 at Position(xpos = 527, xanchor = 0, ypos = 307, yanchor = 0)
+    show LLE4tile20 at Position(xpos = 527, xanchor = 0, ypos = 310, yanchor = 0)
     image LLE4tile10 = "W_horizontal.png"
-    show LLE4tile10 at Position(xpos = 602, xanchor = 0, ypos = 307, yanchor = 0)
+    show LLE4tile10 at Position(xpos = 602, xanchor = 0, ypos = 310, yanchor = 0)
     image LLE4tile6 = "start.png"
     show LLE4tile6 at Position(xpos = 677, xanchor = 0, ypos = 285, yanchor = 0)
 
@@ -31,9 +31,9 @@
     show LLE4tile8 at Position(xpos = 745, xanchor = 0, ypos = 387, yanchor = 0)
         
     image LLE4tile0 = "w_vertical.png"
-    show LLE4tile0 at Position(xpos = 676, xanchor = 0, ypos = 462, yanchor = 0)
+    show LLE4tile0 at Position(xpos = 680, xanchor = 0, ypos = 462, yanchor = 0)
     image LLE4tile11 = "w_vertical.png"
-    show LLE4tile11 at Position(xpos = 744, xanchor = 0, ypos = 462, yanchor = 0)
+    show LLE4tile11 at Position(xpos = 745, xanchor = 0, ypos = 462, yanchor = 0)
 
         
     image LLE4tile9 = "W_connect_horizontal.png"
@@ -48,9 +48,9 @@
     image LLE4tile21 = "W_horizontal.png"
     show LLE4tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
     image LLE4tile12 = "W_corner_RB.png"
-    show LLE4tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
+    show LLE4tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
     image LLE4tile16 = "W_vertical.png"
-    show LLE4tile16 at Position(xpos = 549, xanchor = 0, ypos = 508, yanchor = 0)
+    show LLE4tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
     image LLE4tile17 = "blank_node.png"
     show LLE4tile17 at Position(xpos = 516, xanchor = 0, ypos =583, yanchor = 0)
     image LLE4tile18 = "W_vertical.png"
@@ -310,14 +310,14 @@ label Gamefile_lle4:
 
         image LLE4tile101 = "g_vertical_ll.png"
         show LLE4tile101 at Position(xpos = 400, xanchor = 0, ypos = 360, yanchor = 0)
-        image LLE4tile102 = "g_corner_RB.png"
+        image LLE4tile102 = "W_corner_RB.png"
         show LLE4tile102 at Position(xpos = 377, xanchor = 0, ypos = 285, yanchor = 0)
         image LLE4tile103 = "g_horizontal_ll.png"
-        show LLE4tile103 at Position(xpos = 452, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile103 at Position(xpos = 452, xanchor = 0, ypos = 310, yanchor = 0)
         image LLE4tile104 = "g_horizontal_ll.png"
-        show LLE4tile104 at Position(xpos = 527, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile104 at Position(xpos = 527, xanchor = 0, ypos = 310, yanchor = 0)
         image LLE4tile105 = "g_horizontal_ll.png"
-        show LLE4tile105 at Position(xpos = 602, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile105 at Position(xpos = 602, xanchor = 0, ypos = 310, yanchor = 0)
         if (light1Sound ==0):
             play soundP01 llLightOn1
             $light1Sound +=1
@@ -337,15 +337,15 @@ label Gamefile_lle4:
     if if2in1 == True:
 
         image LLE4tile106 = "B_vertical.png"
-        show LLE4tile106 at Position(xpos = 400, xanchor = 0, ypos = 360, yanchor = 0)
-        image LLE4tile107 = "B_corner_RB.png"
+        show LLE4tile106 at Position(xpos = 404, xanchor = 0, ypos = 360, yanchor = 0)
+        image LLE4tile107 = "W_corner_RB.png"
         show LLE4tile107 at Position(xpos = 377, xanchor = 0, ypos = 285, yanchor = 0)
         image LLE4tile108 = "B_horizontal.png"
-        show LLE4tile108 at Position(xpos = 452, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile108 at Position(xpos = 452, xanchor = 0, ypos = 310, yanchor = 0)
         image LLE4tile109 = "B_horizontal.png"
-        show LLE4tile109 at Position(xpos = 527, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile109 at Position(xpos = 527, xanchor = 0, ypos = 310, yanchor = 0)
         image LLE4tile110 = "B_horizontal.png"
-        show LLE4tile110 at Position(xpos = 602, xanchor = 0, ypos = 307, yanchor = 0)
+        show LLE4tile110 at Position(xpos = 602, xanchor = 0, ypos = 310, yanchor = 0)
         
     
     if if2in1 == False:
@@ -394,7 +394,7 @@ label Gamefile_lle4:
         if if2in2 == True:            
             image LLE41tile21 = "g_horizontal_ll.png"
             show LLE41tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE41tile12 = "g_corner_RB.png"
+            image LLE41tile12 = "W_corner_RB.png"
             show LLE41tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
             image LLE41tile16 = "g_vertical_ll.png"
             show LLE41tile16 at Position(xpos = 549, xanchor = 0, ypos = 508, yanchor = 0)
@@ -422,10 +422,10 @@ label Gamefile_lle4:
         if if1in2 == True:            
             image LLE42tile21 = "b_horizontal.png"
             show LLE42tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE42tile12 = "b_corner_RB.png"
+            image LLE42tile12 = "W_corner_RB.png"
             show LLE42tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
             image LLE42tile16 = "b_vertical.png"
-            show LLE42tile16 at Position(xpos = 549, xanchor = 0, ypos = 508, yanchor = 0)
+            show LLE42tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
             #image LLE42tile18 = "b_vertical.png"
             #show LLE42tile18 at Position(xpos = 549, xanchor = 0, ypos = 683, yanchor = 0)
             image LLE42tile92 = "b_connect_pipe.png"
@@ -447,7 +447,7 @@ label Gamefile_lle4:
         if if1in2 == True:            
             image LLE431tile21 = "b_horizontal.png"
             show LLE431tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE431tile12 = "b_corner_RB.png"
+            image LLE431tile12 = "W_corner_RB.png"
             show LLE431tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
             image LLE431tile16 = "b_vertical.png"
             show LLE431tile16 at Position(xpos = 549, xanchor = 0, ypos = 508, yanchor = 0)
@@ -462,7 +462,7 @@ label Gamefile_lle4:
         if if2in2 == True:
             image LLE432tile21 = "g_horizontal_ll.png"
             show LLE432tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE432tile12 = "g_corner_RB.png"
+            image LLE432tile12 = "W_corner_RB.png"
             show LLE432tile12 at Position(xpos = 527, xanchor = 0, ypos = 433, yanchor = 0)
             image LLE432tile16 = "g_vertical_ll.png"
             show LLE432tile16 at Position(xpos = 549, xanchor = 0, ypos = 508, yanchor = 0)
