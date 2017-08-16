@@ -717,7 +717,7 @@ label hirosePersonalArea_actions:
     #insert exploration here. Must pick up photo before being able to open computer.
     window hide
     $ quick_menu = False
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3:
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hirosePC==True:
         scene bg hirosePersonalArea_logged
     else:
         scene bg hirosePersonalArea

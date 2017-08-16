@@ -675,7 +675,7 @@ label graceHardDrive_inv:
     show Ada frustrated
     a "What if something happens to them?"
     show Grace snarky
-    g "Ada, the little baby hard drives will be fine. I'm still storing all my notes from the Markov project, so they need to be like that just a little bit longer." 
+    g "Ada, the little baby hard drives will be fine. I'm still storing all my notes from the Markov Project, so they need to be like that just a little bit longer." 
     $ quick_menu = False
     window hide
     jump graceLab_left1

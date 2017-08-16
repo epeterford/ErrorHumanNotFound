@@ -409,7 +409,7 @@ label csinoahsphere_S:
     g "Lynn? Of course."
     show Ada concerned at right
     a "Lynn?"
-    g "Yeah, Lynn Yao. She's a technician on the Markov project. Let's stop by Maintenance when we're done here."
+    g "Yeah, Lynn Yao. She's a technician on the Markov Project. Let's stop by Maintenance when we're done here."
     a "I do not think that is possible, Grace."
     show Grace surprised
     g "Oh? Why is that?"
@@ -582,7 +582,10 @@ label exitthemopr_S:
     g "I always enjoyed talking to them. More than with some people, honestly."
     a "Really? I did not notice."
     $ resume = "S"
-    a "Perhaps we should try to contact Technician Yao again?"
+    if(callAttempts>=1):
+        a "Perhaps we should try to contact Technician Yao again?"
+    else:
+        a "Perhaps we should try to contact Technician Yao."
     $ moprScene = True
     jump balcony_actions
     ##After this scene, return to the investigation.

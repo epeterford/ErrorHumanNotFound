@@ -386,7 +386,7 @@ label csinoahsphere_E:
     hide Grace
     hide Ada
     show other darken
-    show image "objects/maintenanceReceipt_closeup.png " at centerScreen
+    show image "objects/maintenanceReceipt_closeup.png" at centerScreen
     "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao."
     hide other darken
     hide image "objects/maintenanceReceipt_closeup.png" 
@@ -395,7 +395,7 @@ label csinoahsphere_E:
     show Ada concerned at right
     a "Lynn?"
     show Grace neutral
-    g "Yeah, Lynn Yao. She's a technician on the Markov project. Let's stop by Maintenance when we're done here."
+    g "Yeah, Lynn Yao. She's a technician on the Markov Project. Let's stop by Maintenance when we're done here."
     a "I do not think that is possible, Grace."
     show Grace surprised
     g "Oh? Why is that?"
@@ -584,7 +584,10 @@ label exitthemopr_E:
     a "You do seem to have a way with machinery."
     g "I'm going to take that as a compliment."
     a "It is."
-    a "Perhaps we should try to contact Technician Yao again?"
+    if(callAttempts>=1):
+        a "Perhaps we should try to contact Technician Yao again?"
+    else:
+        a "Perhaps we should try to contact Technician Yao."
     $ resume = "E"
     $ moprScene = True
     jump balcony_actions

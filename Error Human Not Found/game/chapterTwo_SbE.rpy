@@ -403,7 +403,7 @@ label csinoahsphere_SbE:
     show Ada concerned at right
     a "Lynn?"
     show Grace neutral
-    g "Yeah, Lynn Yao. She's a technician on the Markov project. Let's stop by Maintenance when we're done here."
+    g "Yeah, Lynn Yao. She's a technician on the Markov Project. Let's stop by Maintenance when we're done here."
     a "I do not think that is possible, Grace."
     show Grace surprised
     g "Oh? Why is that?"
@@ -575,7 +575,10 @@ label exitthemopr_SbE:
     hide Mopr
     g "I always enjoyed talking to them. More than with some people, honestly."
     a "You do seem to have a way with machinery."
-    a "Perhaps we should try to contact Technician Yao again?"
+    if(callAttempts>=1):
+        a "Perhaps we should try to contact Technician Yao again?"
+    else:
+        a "Perhaps we should try to contact Technician Yao."
     $ moprScene = True
     jump balcony_actions
 
