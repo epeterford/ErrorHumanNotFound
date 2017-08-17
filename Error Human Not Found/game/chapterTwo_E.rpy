@@ -201,6 +201,8 @@ label letherfinish_E:
     a "Fine. Do not answer me. I will just be that poor intrepid adventurer and follow you."
     a "I am curious to see this 'shortcut'."  
     play sound02 adaWalk
+    $quick_menu = False
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -214,6 +216,7 @@ label letherfinish_E:
 label helpherout_E:
     $ quick_menu = True
     $ points_SbE +=2
+    show Grace neutral at left
     g "Ada."
     show Ada frustrated at right
     a "Yes?"
@@ -229,6 +232,8 @@ label helpherout_E:
     a "..."
     a "Wait for me!"
     play sound02 adaWalk
+    $quick_menu = False
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -258,6 +263,7 @@ label adapls_E:
     a "Hold on!"
     play sound02 adaWalk
     hide Ada
+    $quick_menu = False
     scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -300,9 +306,11 @@ label gettingin_E:
     $ quick_menu = True
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
+    show Ada neutral at right
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     show Grace surprised at left
     g "Ada?"
+    hide Ada
     hide Grace
     #choice 2
     $ quick_menu = False
@@ -444,8 +452,9 @@ label enterthemopr_E:
     show Grace sad
     a "I am starting to understand the definition of missing someone in this context. It is equivalent to a burnt wire."
     g "It's not a fun feeling, that's for sure."
-    a "Is your dad dead like Alpha?"
-    g "No, it's not that serious. He's just on Earth right now. His current work requires testing there."
+    a "Are you speaking about your feelings in regards to the continued absence of your father?"
+    a "Does your father not enjoy seeing you?"
+    g "No, I understand that he still loves me. It's just that his work means a lot to him too and he knows how busy I get too."
     a "Ah. An absence is still an absence."
     g "You've got that right."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
@@ -617,13 +626,20 @@ label exitthemopr_E:
 label lynnfinallyfrickinanswers_E:
     $quick_menu = True
     play sound answertone
+    show Lynn empty at center
+    show arrow1 at center, delayed_blink(0.0, 1.0)
+    show arrow2 at center, delayed_blink(0.2, 1.0)
+    show arrow3 at center, delayed_blink(0.4, 1.0)
     "{i}The dial tone rings for several seconds."
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
-    show Ada neutral at center
+    show Ada neutral at right
     a "That seems like a relatively short time."
     g "Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-    show Ada neutral
-    show Lynn at right
+#    show Ada neutral
+    hide arrow1
+    hide arrow2
+    hide arrow3
+    show Lynn at center
     lynn "Hello?"
     show Grace happy at left
     g "Lynn!"
@@ -651,9 +667,9 @@ label lynnfinallyfrickinanswers_E:
 label agreewithsubservient_E:
     $quick_menu = True
     show Grace neutral at left
-    show Lynn at right
+    show Lynn at center
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
-    show Ada seething at center
+    show Ada seething at right
     a "Grace? Do you honestly see yourself as above Alpha and I?"
     show Grace annoyed at left
     g "Look, I get that it sounds harsh, but can we talk about this later, Ada?"
@@ -675,12 +691,13 @@ label agreewithsubservient_E:
 label defendseperatebutequal_E:
     $quick_menu = True
     show Grace neutral at left
-    show Lynn at right
+    show Lynn at center
+    show Ada neutral at right
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are the same as us?"
     lynn "Grace, sweetie..."
     g "Well, the word 'same' might not be the best word to use, I mean we are different."
-    show Ada concerned at center
+    show Ada concerned at right
     a "Grace?"
     g "Just because we're different, though, doesn't mean we can't treat each other equally."
     g "We can even enjoy each other's company. Working with Ada has been great for me."
@@ -705,7 +722,8 @@ label defendseperatebutequal_E:
 label weareallequal_E:
     $quick_menu = True
     show Grace annoyed at left
-    show Lynn at right
+    show Lynn at center
+    show Ada annoyed at right
     g "That's cruel, Lynn."
     g "How could it not be the same?"
     lynn "Oh dear. You sound like Alan."
@@ -717,7 +735,7 @@ label weareallequal_E:
     g "AIs have shown they can do plenty of both."
     lynn "Because they're programmed to, dear. It's not free will."
     g "Isn't that basically the same as us? Our brains run on electricity too. Who's to say we aren't 'programmed' biologically?"
-    show Ada happy at center
+    show Ada happy 
     a "Thank you, Grace. Your viewpoint is truly inspiring."
     show Grace happy
     g "I'm happy you think that, Ada."
@@ -736,15 +754,16 @@ label weareallequal_E:
 
 label resumeLynn_E:
     $quick_menu = True
-    show Ada seething at center
-    show Lynn at right
+    show Ada seething at right
+    show Lynn at center
+    show Grace annoyed at left
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
     lynn "Grace, you really ought to be spending more time with other people your age."
     lynn "It's not healthy to spend all your time with machines. If you'd like, I could give you my son's number. I think the pair of you--"
     g "Thanks for the offer Lynn, but we're on a bit of a tight schedule right now. When you were doing Alpha's maintenance, did you notice anything weird?"
     lynn "Weird? I was working on the first AI in an android body. All of it is a bit strange."
-    show Grace annoyed at left
+    show Grace annoyed 
     g "Like {i}suspicious{/i} weird, Lynn. What else could I mean?"
     lynn "Nothing unusual on my end. I heard that there may have been something prior to his initial boot-up, but Ivan would know more about that."
     g "And this was something he decided to keep to himself?"
@@ -764,6 +783,7 @@ label resumeLynn_E:
     lynn "Oh, okay. Bye-bye, Grace! I'll tell my son you said hi."
     g "Bye!"
     hide Lynn
+    play sound braceletSelect
     "The call cuts off."
     show Ada neutral at right
     a "Grace?"

@@ -49,7 +49,8 @@ image Ada seething = "sprites/ada_seething.png"
 image Ada concerned = "sprites/ada_afraid.png"
 image Ada nervous = "sprites/ada_afraid.png"
 image Mopr = "sprites/MOPR.png"
-image Lynn = "sprites/Lynn_Sprite"
+image Lynn = "sprites/Lynn_Sprite.png"
+image Lynn empty = "phone_0.png"
 
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"

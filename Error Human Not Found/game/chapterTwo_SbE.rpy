@@ -20,6 +20,8 @@ label talkAdaLab_SbE:
     $quick_menu = True
     show Ada neutral at right
     a "Yes, Grace? Your facial expression suggests inquisitiveness."
+    hide Ada
+    hide Grace
     $ quick_menu = False
     menu:
         "Strike up a conversation.":
@@ -200,6 +202,8 @@ label letherfinish_SbE:
     a "Fine. Do not answer me."
     a "I am curious, though. Into this 'shortcut' we go."
     play sound02 adaWalk
+    $quick_menu = False
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -213,6 +217,7 @@ label letherfinish_SbE:
 label helpherout_SbE:
     $ points_SbE +=2
     $ quick_menu = True
+    show Grace neutral at left
     g "Ada."
     show Ada frustrated at right
     a "Yes?"
@@ -228,6 +233,8 @@ label helpherout_SbE:
     a "..."
     a "Slow down!"
     play sound02 adaWalk
+    $quick_menu = False
+    scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -258,7 +265,7 @@ label adapls_SbE:
     a "Very well, Grace. Let us take your route. We will take the slower path to satisfy your preferences. " 
     play sound02 adaWalk
     hide Ada
-    #It is not like I can process several thousand times faster and more accurately than you."
+    $quick_menu = False
     scene bg black with fade
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -307,6 +314,7 @@ label gettingin_SbE:
     "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
     show Grace surprised at left
     g "Ada?"
+    hide Ada
     hide Grace
     $ quick_menu = False
     #choice 2
@@ -606,14 +614,23 @@ label exitthemopr_SbE:
 label lynnfinallyfrickinanswers_SbE: 
     $quick_menu = True
     play sound answertone
+    show Lynn empty at center
+    show arrow1 at center, delayed_blink(0.0, 1.0)
+    show arrow2 at center, delayed_blink(0.2, 1.0)
+    show arrow3 at center, delayed_blink(0.4, 1.0)
     "{i}The dial tone rings for several seconds."
     show Grace neutral at left
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait {i}ten{/i} minutes."
-    show Ada neutral at center
+    show Ada neutral at right
     a "That seems like a relatively short time."
     g "I don't live forever like you. Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-    show Ada neutral
-    show Lynn at right
+#    show Ada neutral
+    hide arrow1
+    hide arrow2
+    hide arrow3
+    show Lynn at center
+#    show Ada neutral at center
+#    show Lynn at right
     lynn "Hello?"
     show Grace happy
     g "Lynn!"
@@ -643,9 +660,9 @@ label agreewithsubservient_SbE:
     $ points_S +=3
     $quick_menu = True
     show Grace neutral at left
-    show Lynn at right
+    show Lynn at center
+    show Ada seething at right
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
-    show Ada seething at center
     a "Grace? Do you honestly see yourself as above Alpha and I?"
     show Grace annoyed 
     g "Can we talk about this later, Ada?"
@@ -667,12 +684,13 @@ label defendseperatebutequal_SbE:
     $ points_SbE +=3
     $quick_menu = True
     show Grace annoyed at left
-    show Lynn at right
+    show Lynn at center
+    show Ada neutral at right
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are just like us?"
     lynn "Grace, sweetie…"
     g "Well, no, not really. I mean, there are so many things about the AIs that are alien to us."
-    show Ada concerned at center
+    show Ada concerned
     a "Grace?"
     g "There are also many things about us that are alien to them."
     g "We're different, but that doesn't mean those differences can't be respected, you know?"
@@ -699,7 +717,8 @@ label weareallequal_SbE:
     $ points_E +=3
     $quick_menu = True
     show Grace snarky at left
-    show Lynn at right
+    show Lynn at center
+    show Ada neutral at right
     g "Care to explain how it's not the same, Lynn?"
     g "A body is a body, human or not."
     lynn "Oh dear. You sound like Alan."
@@ -710,7 +729,7 @@ label weareallequal_SbE:
     g "Why not? The AIs can think just like we can. We can talk to each other and combine our different skills to achieve amazing things."
     g "That sounds an awful lot like working with another human, to me."
     g "Because we're so similar, we should be treated the same."
-    show Ada happy at center
+    show Ada happy 
     a "Thank you, Grace. That was kind of you to defend Alpha like that."
     show Grace happy
     g "Gladly, Ada."
@@ -729,9 +748,10 @@ label weareallequal_SbE:
    
 label resumeLynn_SbE:
     $quick_menu = True
-    show Ada seething at center
-    a "Grace, can we just get what need from this woman and move on?"
+    show Ada seething at right
+    show Lynn at center
     show Grace annoyed at left
+    a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
     lynn "Grace, you really ought to be spending more time with other people your age."
     lynn "It's not healthy to spend all your time with machines. If you'd like, I could give you my son's number. I think the pair of you--"
@@ -756,6 +776,7 @@ label resumeLynn_SbE:
     lynn "Oh, okay. Bye-Bye, Grace! I'll tell my son you said hi."
     g "Bye!"
     hide Lynn
+    play sound braceletSelect
     "{i}The call cuts off."
     show Ada neutral
     a "Grace?"

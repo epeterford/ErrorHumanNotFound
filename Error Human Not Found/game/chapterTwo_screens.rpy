@@ -860,14 +860,31 @@ label talkLynn:
         if(resume == "S"):
             jump lynnfinallyfrickinanswers_S
     if callAttempts <1:
+        show Lynn empty at center
+        image arrow1 = "phone_arrow.png" 
+        image arrow2 = "phone_arrow2.png" 
+        image arrow3 ="phone_arrow3.png" 
+        show arrow1 at center, delayed_blink(0.0, 1.0)
+        show arrow2 at center, delayed_blink(0.2, 1.0)
+        show arrow3 at center, delayed_blink(0.4, 1.0)
         $quick_menu = True
         play sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
         "{i}The dial tone plays for several seconds."
         lynn "Hi!"
         show Grace happy at left
         g "Lynn, hello. How are you--"
         lynn "You've reached my voicemail! Leave me a message after the beep."
+        play sound beepLoud
         "{i}BEEP!"
+        hide Lynn
+        hide arrow1
+        hide arrow2
+        hide arrow3
+        play sound braceletSelect
         "{i}Grace hangs up."
         show Grace annoyed
         g "I feel deceived."
@@ -876,11 +893,24 @@ label talkLynn:
     if (callAttempts>0) and (callAttempts<4):
         $quick_menu = True
         play sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
+        show Lynn empty at center
+        show arrow1 at center, delayed_blink(0.0, 1.0)
+        show arrow2 at center, delayed_blink(0.2, 1.0)
+        show arrow3 at center, delayed_blink(0.4, 1.0)
         "{i}The dial tone plays for several seconds."
         lynn "Hi!"
         show Grace frustrated at left
         g "..."
         lynn "You've reached my--"
+        hide Lynn
+        hide arrow1
+        hide arrow2
+        hide arrow3
+        play sound braceletSelect
         "{i}Grace hangs up."
         g "Typical."
         $ callAttempts +=1
@@ -888,11 +918,24 @@ label talkLynn:
     if callAttempts>3:
         $quick_menu = True
         play sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
+        queue sound "<silence 0.25>"
+        queue sound dialtone
+        show Lynn empty at center
+        show arrow1 at center, delayed_blink(0.0, 1.0)
+        show arrow2 at center, delayed_blink(0.2, 1.0)
+        show arrow3 at center, delayed_blink(0.4, 1.0)
         "{i}The dial tone plays for several seconds."
         show Grace frustrated at left
         g "Come on."
         lynn "Hi!"
         lynn "You've--"
+        hide Lynn
+        hide arrow1
+        hide arrow2
+        hide arrow3
+        play sound braceletSelect
         "{i}Grace hangs up."
     hide Grace
     $quick_menu = False
@@ -1489,7 +1532,7 @@ label llDoneTalk:
     if (attempts>=3):
         show Grace annoyed at left
         g "That was more strenuous that I thought. I mean, seriously, breaking out of a loop should not be that hard. Must not have been accounting for the right information with my IFs."
-    show Grace frustrated
+    show Grace frustrated at left
     play sound alphaStartup
     g "I'm not getting a lot. I managed get him to startup, but it's like his whole system got cooked and wiped at the same time. There's corrupted data all over the place."
     show Ada frustrated at right
