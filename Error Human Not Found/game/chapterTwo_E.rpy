@@ -619,10 +619,11 @@ label lynnfinallyfrickinanswers_E:
     play sound answertone
     "{i}The dial tone rings for several seconds."
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
-    show Ada neutral at right
+    show Ada neutral at center
     a "That seems like a relatively short time."
     g "Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-    show Ada neutral at center
+    show Ada neutral
+    show Lynn at right
     lynn "Hello?"
     show Grace happy at left
     g "Lynn!"
@@ -637,6 +638,7 @@ label lynnfinallyfrickinanswers_E:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    hide Lynn
     $quick_menu = False
     menu:
         "Agree with her":
@@ -649,6 +651,7 @@ label lynnfinallyfrickinanswers_E:
 label agreewithsubservient_E:
     $quick_menu = True
     show Grace neutral at left
+    show Lynn at right
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
     show Ada seething at center
     a "Grace? Do you honestly see yourself as above Alpha and I?"
@@ -672,6 +675,7 @@ label agreewithsubservient_E:
 label defendseperatebutequal_E:
     $quick_menu = True
     show Grace neutral at left
+    show Lynn at right
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are the same as us?"
     lynn "Grace, sweetie..."
@@ -701,6 +705,7 @@ label defendseperatebutequal_E:
 label weareallequal_E:
     $quick_menu = True
     show Grace annoyed at left
+    show Lynn at right
     g "That's cruel, Lynn."
     g "How could it not be the same?"
     lynn "Oh dear. You sound like Alan."
@@ -732,6 +737,7 @@ label weareallequal_E:
 label resumeLynn_E:
     $quick_menu = True
     show Ada seething at center
+    show Lynn at right
     a "Grace, can we just get what need from this woman and move on?"
     g "Working on it."
     lynn "Grace, you really ought to be spending more time with other people your age."
@@ -757,6 +763,7 @@ label resumeLynn_E:
     g "Well, I'll tell you what, Lynn, I'd hate to keep you from your family. It's good to hear from you."
     lynn "Oh, okay. Bye-bye, Grace! I'll tell my son you said hi."
     g "Bye!"
+    hide Lynn
     "The call cuts off."
     show Ada neutral at right
     a "Grace?"

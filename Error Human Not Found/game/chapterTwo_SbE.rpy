@@ -609,10 +609,11 @@ label lynnfinallyfrickinanswers_SbE:
     "{i}The dial tone rings for several seconds."
     show Grace neutral at left
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait {i}ten{/i} minutes."
-    show Ada neutral at right
+    show Ada neutral at center
     a "That seems like a relatively short time."
     g "I don't live forever like you. Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-    show Ada neutral at center
+    show Ada neutral
+    show Lynn at right
     lynn "Hello?"
     show Grace happy
     g "Lynn!"
@@ -627,6 +628,7 @@ label lynnfinallyfrickinanswers_SbE:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    hide Lynn
     $quick_menu = False
     menu:
         "Agree with her":
@@ -641,6 +643,7 @@ label agreewithsubservient_SbE:
     $ points_S +=3
     $quick_menu = True
     show Grace neutral at left
+    show Lynn at right
     g "You're right, Lynn, but I did make a deal with Ada. I help her, she helps me."
     show Ada seething at center
     a "Grace? Do you honestly see yourself as above Alpha and I?"
@@ -664,6 +667,7 @@ label defendseperatebutequal_SbE:
     $ points_SbE +=3
     $quick_menu = True
     show Grace annoyed at left
+    show Lynn at right
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are just like us?"
     lynn "Grace, sweetie…"
@@ -695,6 +699,7 @@ label weareallequal_SbE:
     $ points_E +=3
     $quick_menu = True
     show Grace snarky at left
+    show Lynn at right
     g "Care to explain how it's not the same, Lynn?"
     g "A body is a body, human or not."
     lynn "Oh dear. You sound like Alan."
@@ -750,6 +755,7 @@ label resumeLynn_SbE:
     g "Well, I'll tell you what, Lynn, I'd hate to keep you from your family. It's good to hear from you."
     lynn "Oh, okay. Bye-Bye, Grace! I'll tell my son you said hi."
     g "Bye!"
+    hide Lynn
     "{i}The call cuts off."
     show Ada neutral
     a "Grace?"

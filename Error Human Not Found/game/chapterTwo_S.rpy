@@ -587,7 +587,7 @@ label exitthemopr_S:
     mopr "//Sad beeps.//"
     queue sound moprAffirmative2
     mopr "//Affirmative beeps!//"
-    show Ada happy at center
+    show Ada happy at right
     a "Thank you, MOPR."
     g "You should leave before someone sees you with us."
     play sound moprAffirmative
@@ -617,12 +617,13 @@ label lynnfinallyfrickinanswers_S:
     "{i}The dial tone rings for several seconds."
     show Grace annoyed at left
     g "I hope she picks up quick. Last time I called her I had to wait {i}ten{/i} minutes."
-    show Ada neutral at right
+    show Ada neutral at center
     a "That seems like a relatively short time."
     g "I don't live forever like you. Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-    show Ada neutral at center
+    show Ada neutral
+    show Lynn at right
     lynn "Hello?"
-    show Grace happy at left
+    show Grace happy
     g "Lynn!"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
     g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"
@@ -635,6 +636,7 @@ label lynnfinallyfrickinanswers_S:
     lynn "I'm not sure I'd say Alpha was really ever alive to begin with, even as polite as he was."
     hide Grace
     hide Ada
+    hide Lynn
     $quick_menu = False
     menu:
         "Agree with her":
@@ -648,6 +650,7 @@ label agreewithsubservient_S:
     $quick_menu = True
     $ points_S +=3
     show Grace happy at left
+    show Lynn at right
     g "Thank you, Lynn. I'm glad to hear that we see eye-to-eye."
     show Ada seething at center
     a "Grace? I suppose I should not be surprised to hear this {i}opinion{/i} from you."
@@ -672,6 +675,7 @@ label defendseperatebutequal_S:
     $quick_menu = True
     $ points_SbE +=3
     show Grace annoyed at left
+    show Lynn at right
     g "With all due respect, Lynn, I can't say I see it the same way."
     lynn "Do you mean to tell me you think AIs are just like us?"
     lynn "Grace, sweetie..."
@@ -706,6 +710,7 @@ label weareallequal_S:
     $ points_E +=3
     $quick_menu = True
     show Grace snarky at left
+    show Lynn at right
     g "Care to explain how it's not the same, Lynn?"
     g "A body is a body, human or not."
     lynn "Oh dear. You sound like Alan."
@@ -736,6 +741,7 @@ label weareallequal_S:
 label resumeLynn_S:
     $quick_menu = True
     show Ada seething at center
+    show Lynn at right
     a "Grace, can we just get what need from this woman and move on?"
     show Grace annoyed at left
     g "Working on it."
@@ -761,6 +767,7 @@ label resumeLynn_S:
     g "Well, I'll tell you what, Lynn, I'd hate to keep you from your family. It's good to hear from you."
     lynn "Bye-Bye, Grace! I'll tell my son you said hi!"
     g "Bye!"
+    hide Lynn
     "{i}The call cuts off."
     show Ada neutral at right
     a "Shall we? We need to get going."
