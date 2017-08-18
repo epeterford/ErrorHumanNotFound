@@ -402,8 +402,8 @@ label gamefile_lle2:
             show LLE_2_tile85B at Position(xpos = 855, xanchor = 0, ypos = 745, yanchor = 0)
             image LLE_2_tile86B = "B_horizontal.png"
             show LLE_2_tile86B at Position(xpos = 930, xanchor = 0, ypos = 745, yanchor = 0)
-            image LLE_2_tile87B = "B_end_on.png"
-            show LLE_2_tile87B at Position(xpos = 1005, xanchor = 0, ypos = 715, yanchor = 0)
+            #image LLE_2_tile87B = "B_end_on.png"
+            #show LLE_2_tile87B at Position(xpos = 1005, xanchor = 0, ypos = 715, yanchor = 0)
             if (light3Sound ==0):
                 play soundP03 llLightOn3
                 $light3Sound+=1

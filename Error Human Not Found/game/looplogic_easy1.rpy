@@ -452,21 +452,25 @@ label gamefile_lle1:
                 $light3Sound -=1
 
         if if1in3 == True or if2in3 == True:
-            image LLE_1_tile80 = "G_connect_node.png"
-            show LLE_1_tile80 at Position(xpos = 526, xanchor = 0, ypos = 613, yanchor = 0)
-            image LLE_1_tile81 = "G_connect_pipe.png"
-            show LLE_1_tile81 at Position(xpos = 557, xanchor = 0, ypos = 625, yanchor = 0)
-            image LLE_1_tile82 = "G_connect_node.png"
-            show LLE_1_tile82 at Position(xpos = 593, xanchor = 0, ypos = 613, yanchor = 0)
+            image LLE_1_tile80A = "G_connect_node.png"
+            show LLE_1_tile80A at Position(xpos = 526, xanchor = 0, ypos = 613, yanchor = 0)
+            image LLE_1_tile81A = "G_connect_pipe.png"
+            show LLE_1_tile81A at Position(xpos = 557, xanchor = 0, ypos = 625, yanchor = 0)
+            image LLE_1_tile82A = "G_connect_node.png"
+            show LLE_1_tile82A at Position(xpos = 593, xanchor = 0, ypos = 613, yanchor = 0)
             #show LLE_1_tile38 at Position(xpos = 594, xanchor = 0, ypos = 640, yanchor = 0)
-            image LLE_1_tile83 = "G_horizontal_ll.png"
-            show LLE_1_tile83 at Position(xpos = 625, xanchor = 0, ypos = 617, yanchor = 0)
-            image LLE_1_tile84 = "G_horizontal_ll.png"
-            show LLE_1_tile84 at Position(xpos = 700, xanchor = 0, ypos = 617, yanchor = 0)
-            image LLE_1_tile85 = "W_corner_LB.png"
-            show LLE_1_tile85 at Position(xpos = 768, xanchor = 0, ypos = 590, yanchor = 0)
-            image LLE_1_tile86 = "G_vertical_short.png"
-            show LLE_1_tile86 at Position(xpos = 789, xanchor = 0, ypos = 667, yanchor = 0)
+            image LLE_1_tile83A = "G_horizontal_ll.png"
+            show LLE_1_tile83A at Position(xpos = 625, xanchor = 0, ypos = 617, yanchor = 0)
+            image LLE_1_tile84A = "G_horizontal_ll.png"
+            show LLE_1_tile84A at Position(xpos = 700, xanchor = 0, ypos = 617, yanchor = 0)
+            image LLE_1_tile85A = "W_corner_LB.png"
+            show LLE_1_tile85A at Position(xpos = 768, xanchor = 0, ypos = 590, yanchor = 0)
+            image LLE_1_tile86A = "G_vertical_short.png"
+            show LLE_1_tile86A at Position(xpos = 789, xanchor = 0, ypos = 667, yanchor = 0)
+            image LLE_1_tile87A = "G_horizontal_ll.png"
+            show LLE_1_tile87A at Position(xpos = 855, xanchor = 0, ypos = 745, yanchor = 0)
+            image LLE_1_tile88A = "G_horizontal_ll.png"
+            show LLE_1_tile88A at Position(xpos = 930, xanchor = 0, ypos = 745, yanchor = 0)
             if (light3Sound ==0):
                 play soundP03 llLightOn3
                 $light3Sound+=1
@@ -480,6 +484,8 @@ label gamefile_lle1:
             hide LLE_1_tile84A
             hide LLE_1_tile85A
             hide LLE_1_tile86A
+            hide LLE_1_tile87A
+            hide LLE_1_tile88A
             if (light3Sound ==1):
                 play soundP03 llLightOff3
                 $light3Sound -=1
@@ -504,7 +510,8 @@ label gamefile_lle1:
         hide LLE_1_tile84A
         hide LLE_1_tile85A
         hide LLE_1_tile86A
-        hide LLE_1_tile87
+        hide LLE_1_tile87A
+        hide LLE_1_tile88A
         if (light2Sound ==1):
             play soundP02 llLightOff2
             $light2Sound -=1

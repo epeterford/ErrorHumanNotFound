@@ -346,6 +346,8 @@ label Gamefile_lle4:
         show LLE4tile109 at Position(xpos = 527, xanchor = 0, ypos = 315, yanchor = 0)
         image LLE4tile110 = "B_horizontal.png"
         show LLE4tile110 at Position(xpos = 602, xanchor = 0, ypos = 315, yanchor = 0)
+        image LLE42tile1111 = "B_horizontal.png"
+        show LLE42tile1111 at Position(xpos = 295, xanchor = 0, ypos = 468, yanchor = 0)
         
     
     if if2in1 == False:
@@ -354,6 +356,7 @@ label Gamefile_lle4:
         hide LLE4tile108
         hide LLE4tile109
         hide LLE4tile110
+        hide LLE4tile1111
 
     
     if if2in2 == True:
@@ -381,8 +384,8 @@ label Gamefile_lle4:
     if if1in2 == True:
         image LLE42tile11 = "g_vertical_ll.png"
         show LLE42tile11 at Position(xpos = 676, xanchor = 0, ypos = 462, yanchor = 0)
-        #image LLE42tile14 = "g_horizontal_ll.png"
-        #show LLE42tile14 at Position(xpos = 777, xanchor = 0, ypos = 569, yanchor = 0)
+        image LLE42tile14 = "g_horizontal_ll.png"
+        show LLE42tile14 at Position(xpos = 777, xanchor = 0, ypos = 569, yanchor = 0)
         image LLE42tile9 = "W_connect_horizontal.png"
         show LLE42tile9 at Position(xpos = 677, xanchor = 0, ypos = 420, yanchor = 0)
     if if1in2 == False:
@@ -426,8 +429,8 @@ label Gamefile_lle4:
             show LLE42tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
             image LLE42tile16 = "b_vertical.png"
             show LLE42tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
-            #image LLE42tile18 = "b_vertical.png"
-            #show LLE42tile18 at Position(xpos = 549, xanchor = 0, ypos = 683, yanchor = 0)
+            image LLE42tile18 = "b_vertical.png"
+            show LLE42tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
             image LLE42tile92 = "b_connect_pipe.png"
             show LLE42tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
             image LLE42tile91 = "b_connect_node.png"
@@ -451,8 +454,8 @@ label Gamefile_lle4:
             show LLE431tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
             image LLE431tile16 = "b_vertical.png"
             show LLE431tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
-            #image LLE43tile18 = "b_vertical.png"
-            #show LLE43tile18 at Position(xpos = 549, xanchor = 0, ypos = 683, yanchor = 0)
+            image LLE43tile18 = "b_vertical.png"
+            show LLE43tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
             image LLE43tile92 = "b_connect_pipe.png"
             show LLE43tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
             image LLE43tile91 = "b_connect_node.png"

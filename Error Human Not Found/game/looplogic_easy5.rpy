@@ -340,6 +340,8 @@ label Gamefile_lle5:
         show LLE5tile109 at Position(xpos = 527, xanchor = 0, ypos = 315, yanchor = 0)
         image LLE5tile110 = "g_horizontal_ll.png"
         show LLE5tile110 at Position(xpos = 602, xanchor = 0, ypos = 315, yanchor = 0)
+        image LLE52tile1111 = "G_horizontal_ll.png"
+        show LLE52tile1111 at Position(xpos = 295, xanchor = 0, ypos = 468, yanchor = 0)
 
     if if1in1 == False:
         hide LLE5tile106
@@ -347,6 +349,7 @@ label Gamefile_lle5:
         hide LLE5tile108
         hide LLE5tile109
         hide LLE5tile110
+        hide LLE5tile1111
     
     if if1in2 == True:
         image LLE51tile0 = "g_vertical_ll.png"
@@ -373,8 +376,8 @@ label Gamefile_lle5:
     if if2in2 == True:
         image LLE52tile11 = "b_vertical.png"
         show LLE52tile11 at Position(xpos = 744, xanchor = 0, ypos = 462, yanchor = 0)
-        #image LLE52tile14 = "b_horizontal.png"
-        #show LLE52tile14 at Position(xpos = 777, xanchor = 0, ypos = 569, yanchor = 0)
+        image LLE52tile14 = "b_horizontal.png"
+        show LLE52tile14 at Position(xpos = 777, xanchor = 0, ypos = 569, yanchor = 0)
         image LLE52tile9 = "W_connect_horizontal.png"
         show LLE52tile9 at Position(xpos = 677, xanchor = 0, ypos = 420, yanchor = 0)
         

@@ -457,12 +457,12 @@ label gamefile_lle3:
             show LLE_3_tile68 at Position(xpos = 503, xanchor = 0, ypos = 485, yanchor = 0)
             image LLE_3_tile69 = "B_horizontal.png"
             show LLE_3_tile69 at Position(xpos = 578, xanchor = 0, ypos = 485, yanchor = 0)
-            image LLE_3_tile41 = "B_horizontal.png"
-            show LLE_3_tile41 at Position(xpos = 753, xanchor = 0, ypos = 485, yanchor = 0)
-            image LLE_3_tile42 = "B_horizontal.png"
-            show LLE_3_tile42 at Position(xpos = 828, xanchor = 0, ypos = 485, yanchor = 0)
-            image LLE_3_tile43 = "B_end_on.png"
-            show LLE_3_tile43 at Position(xpos = 903, xanchor = 0, ypos = 454, yanchor = 0)
+            image LLE_3_tile81 = "B_horizontal.png"
+            show LLE_3_tile81 at Position(xpos = 753, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile82 = "B_horizontal.png"
+            show LLE_3_tile82 at Position(xpos = 828, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile83 = "B_end_on.png"
+            show LLE_3_tile83 at Position(xpos = 903, xanchor = 0, ypos = 454, yanchor = 0)
             if (light3Sound ==0):
                 play soundP03 llLightOn3
                 $light3Sound+=1
@@ -472,6 +472,9 @@ label gamefile_lle3:
             hide LLE_3_tile67
             hide LLE_3_tile68
             hide LLE_3_tile69
+            hide LLE_3_tile81
+            hide LLE_3_tile82
+            hide LLE_3_tile83
             if (light3Sound ==1):
                 play soundP03 llLightOff3
                 $light3Sound -=1
@@ -491,6 +494,9 @@ label gamefile_lle3:
         hide LLE_3_tile67
         hide LLE_3_tile68
         hide LLE_3_tile69
+        hide LLE_3_tile81
+        hide LLE_3_tile82
+        hide LLE_3_tile83
         if (light2Sound ==1):
             play soundP02 llLightOff2
             $light2Sound -=1
@@ -527,11 +533,17 @@ label gamefile_lle3:
         show LLE_3_tile62 at Position(xpos = 505, xanchor = 0, ypos = 275, yanchor = 0)
         image LLE_3_tile63 = "G_horizontal_ll.png"
         show LLE_3_tile63 at Position(xpos = 580, xanchor = 0, ypos = 275, yanchor = 0)
+        image LLE_3_tile90 = "G_horizontal_ll.png"
+        show LLE_3_tile90 at Position(xpos = 755, xanchor = 0, ypos = 275, yanchor = 0)
+        image LLE_3_tile91 = "G_horizontal_ll.png"
+        show LLE_3_tile91 at Position(xpos = 830, xanchor = 0, ypos = 275, yanchor = 0)
         
     if if2in1 == False:
         hide LLE_3_tile61
         hide LLE_3_tile62
         hide LLE_3_tile63
+        hide LLE_3_tile90
+        hide LLE_3_tile91
         if (light1Sound ==1):
             play soundP01 llLightOff1
             $light1Sound -=1
@@ -539,6 +551,8 @@ label gamefile_lle3:
     if if1in2 == True:
         image LLE_3_tile70 = "B_vertical_short.png"
         show LLE_3_tile70 at Position(xpos = 397, xanchor = 0, ypos = 516, yanchor = 0)
+        image LLE_3_tile92 = "B_vertical.png"
+        show LLE_3_tile92 at Position(xpos = 365, xanchor = 0, ypos = 670, yanchor = 0)
 
         if if2in3 == True or else1in3 == True:
             image LLE_3_tile64 = "G_horizontal_ll.png"
@@ -553,6 +567,10 @@ label gamefile_lle3:
             show LLE_3_tile73 at Position(xpos = 353, xanchor = 0, ypos = 495, yanchor = 0)
             image LLE_3_tile74 = "G_connect_node.png"
             show LLE_3_tile74 at Position(xpos = 329, xanchor = 0, ypos = 483, yanchor = 0)
+            image LLE_3_tile93 = "G_horizontal_ll.png"
+            show LLE_3_tile93 at Position(xpos = 753, xanchor = 0, ypos = 485, yanchor = 0)
+            image LLE_3_tile94 = "G_horizontal_ll.png"
+            show LLE_3_tile94 at Position(xpos = 828, xanchor = 0, ypos = 485, yanchor = 0)
         
         if if2in3 == False and else1in3 == False:
             hide LLE_3_tile64
@@ -561,6 +579,8 @@ label gamefile_lle3:
             hide LLE_3_tile72
             hide LLE_3_tile73
             hide LLE_3_tile74
+            hide LLE_3_tile93
+            hide LLE_3_tile94
 
     if if1in2 == False:
         hide LLE_3_tile70
@@ -570,6 +590,9 @@ label gamefile_lle3:
         hide LLE_3_tile72
         hide LLE_3_tile73
         hide LLE_3_tile74
+        hide LLE_3_tile92
+        hide LLE_3_tile93
+        hide LLE_3_tile94
 
 
         
