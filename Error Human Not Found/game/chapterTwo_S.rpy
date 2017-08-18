@@ -627,6 +627,7 @@ label lynnfinallyfrickinanswers_S:
     $quick_menu = True
     play sound answertone
     show Lynn empty at center
+    show Grace neutral at left
     show arrow1 at center, delayed_blink(0.0, 1.0)
     show arrow2 at center, delayed_blink(0.2, 1.0)
     show arrow3 at center, delayed_blink(0.4, 1.0)

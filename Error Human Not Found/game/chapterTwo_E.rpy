@@ -628,11 +628,13 @@ label exitthemopr_E:
 label lynnfinallyfrickinanswers_E:
     $quick_menu = True
     play sound answertone
+    show Grace neutral at left
     show Lynn empty at center
     show arrow1 at center, delayed_blink(0.0, 1.0)
     show arrow2 at center, delayed_blink(0.2, 1.0)
     show arrow3 at center, delayed_blink(0.4, 1.0)
     "{i}The dial tone rings for several seconds."
+    show Grace annoyed
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
     show Ada neutral at right
     a "That seems like a relatively short time."
