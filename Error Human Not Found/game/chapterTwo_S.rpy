@@ -293,7 +293,7 @@ label gettingin_S:
     play channel02 balconyAmb2
     play channel03 balconyAmb3
     play channel04 balconyAmb4
-    stop channel05 fadeout 1.0
+    play channel05 balconyBGM
     #Add BGM to channel 05+
     stop sound01 fadeout 1.0
     stop sound02 fadeout 1.0

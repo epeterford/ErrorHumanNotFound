@@ -285,7 +285,7 @@ label gettingin_SbE:
     play channel02 balconyAmb2
     play channel03 balconyAmb3
     play channel04 balconyAmb4
-    stop channel05 fadeout 1.0
+    play channel05 balconyBGM
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     #Display the crime scene background. The background comes up before the character sprites do.

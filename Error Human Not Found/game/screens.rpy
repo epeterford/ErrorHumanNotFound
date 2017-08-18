@@ -251,13 +251,13 @@ screen quick_menu():
     if quick_menu:
         imagebutton: #Journal
             idle "journal_idle.png"
-            hover "journal_hover.png"
+#            hover "journal_hover.png"
             xpos 646
             ypos 989
             focus_mask True
-            action ShowMenu("journal")
-            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
-            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+#            action ShowMenu("journal")
+#            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+#            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Preferences
             idle "prefs_idle.png"
             hover "prefs_hover.png"

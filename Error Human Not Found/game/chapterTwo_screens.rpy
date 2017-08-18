@@ -962,6 +962,7 @@ label balcony_alpha:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     window hide
     $ quick_menu = False
     scene bg balconyTop with fade
@@ -975,6 +976,7 @@ label loopLogicEasyChoose:
     stop channel02 fadeout 1.0
     stop channel03 fadeout 1.0
     stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
     #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $LLEasyHints=0
@@ -1006,6 +1008,7 @@ label binaryEasy:
     stop channel02 fadeout 1.0
     stop channel03 fadeout 1.0
     stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
     #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     if (tutorial_binaryEasy == False):
@@ -1485,6 +1488,7 @@ label binaryDoneTalk:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     if (binaryEasy_tries<1):
         show Ada amused at right
         a "Base two, base ten, it makes no difference to me. I could probably do base three or tertiary just for fun."
@@ -1531,6 +1535,7 @@ label llDoneTalk:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     if(loopLogicEasy_tries<1):
         show Grace happy at left
         g "Easy as manufactured apple pie. No infinite loops here." 

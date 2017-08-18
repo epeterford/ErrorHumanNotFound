@@ -209,6 +209,7 @@ define audio.balconyAmb1 = "music/Amb/Balcony/EHNF_BAL_L1.ogg"
 define audio.balconyAmb2 = "music/Amb/Balcony/EHNF_BAL_L2.ogg"
 define audio.balconyAmb3 = "music/Amb/Balcony/EHNF_BAL_L3.ogg"
 define audio.balconyAmb4 = "music/Amb/Balcony/EHNF_BAL_L4.ogg"
+define audio.balconyBGM = "music/BGM/The_Balcony.mp3"
 
 #Conclave audio
 define audio.conclaveReceptionAmb = "music/amb/Conclave/Ambiance_Conclave_Reception_Area.ogg"
