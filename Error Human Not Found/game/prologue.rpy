@@ -77,6 +77,13 @@ label directChambers:
     jump chambers
 
 label chambers:
+    queue sound graceWalk
+    $quick_menu = False
+    window hide
+    scene bg G_main with fade
+    $renpy.pause(0.8)
+    scene bg hallwayGrace with fade #at basicfade
+    $ renpy.pause(0.8)
     #When the ambience is available, just change to play with fadeout 1.0 fadein 1.0
     stop channel00 fadeout 1.0
     stop channel01 fadeout 1.0
@@ -87,12 +94,13 @@ label chambers:
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:18"
     $ loc_ref = "The Conclave's Reception"
-    $ quick_menu = True
     scene bg conclaveWaitingRoom with fade #at basicfade 
+    $ quick_menu = True
     #Grace arrives at the chambers and is greeted by a secretary VI.
     play sound toshStartup
     play music conclaveReceptionAmb fadeout 1.0 fadein 1.0
     show Tosh pleasant at right
+    $quick_menu = True
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
     $ quick_menu = False
@@ -147,8 +155,10 @@ label shrug:
     jump prologueResume1 
  
 label prologueResume1:
+    $quick_menu = False
     scene bg conclaveDoor with fade #at basicfade
     #off screen dialogue from the Conclave ensues.
+    $quick_menu = True
     "{i}Grace grows more and more impatient."
     show Grace annoyed at left
     g "What is taking so long?"
@@ -179,7 +189,9 @@ label prologueResume1:
     play sound doorOpen2
     queue sound doorClose2
     play music conclaveProperAmb
+    $quick_menu = False
     scene bg conclaveOccupied with fade #at basicfade
+    $quick_menu = True
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:26"
     $ loc_ref = "The Conclave"
@@ -287,8 +299,12 @@ label prologueResume2:
     window hide
     queue sound graceWalk
     $ quick_menu = False
+    scene bg conclaveDoor with fade
+    $renpy.pause(0.8)
+    scene bg conclaveWaitingRoom with fade
+    $renpy.pause(0.8)
     scene bg hallwayGrace with fade #at basicfade
-    $ renpy.pause(0.5)
+    $ renpy.pause(0.8)
     #SFX
     scene bg G_main with fade #at basicfade
     window show

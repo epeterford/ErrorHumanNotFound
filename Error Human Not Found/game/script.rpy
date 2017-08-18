@@ -506,12 +506,14 @@ init python:
     renpy.music.register_channel("soundP01", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP02", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP03", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
-
+    config.rollback_side_size = 0.0
+    rollback_side = None
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
 
 # The game starts here.
 label start:
+    $Preference("rollback side", "disable")
     $ slot_name = ""
     $ gate_name = ""
     $ points_SbE = 0

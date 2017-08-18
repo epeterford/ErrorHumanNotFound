@@ -485,12 +485,15 @@ label enterthemopr_SbE:
 label igothisada_SbE:
     $quick_menu = True
     show Grace neutral at left
+    show Ada neutral at right
     $ points_SbE +=2
     g "Robotics is what I grew up with, Ada. Let me handle this."
     a "Your expertise is with neural networks, not communications with basic maintenance droids."
     g "I could do it as a kid. Some things don't need a doctorate to be able to accomplish."
+    show Ada frustrated
     a "I was not trying to insinuate doubt as to your capabilities, just point out that I am uniquely suited to handle this."
     g "Thanks for the thought, but I have a soft spot for these guys. Won't take long at all."
+    show Ada neutral
     g "As my dad would say, I can get on their level. They respect that. He may just be a maintenance droid, but he's important too."
     a "Very well, Grace."
     if(points_S>points_SbE):
@@ -508,6 +511,7 @@ label shutupada_SbE:
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
+    show Ada neutral at right
     g "Not now, Ada. I know what I'm doing."
     show Ada annoyed at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
@@ -537,6 +541,7 @@ label alilhelphere_SbE:
     $ points_E +=2
     show Grace neutral at left
     show Mopr at center
+    show Ada neutral at right
     g "If you talk it, I'm sure you'd like it."
     show Ada neutral at right
     a "What do you mean?"

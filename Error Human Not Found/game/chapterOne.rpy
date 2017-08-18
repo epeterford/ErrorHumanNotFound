@@ -732,7 +732,7 @@ label hirosePersonalArea_actions:
     $ quick_menu = False
     $renpy.block_rollback()
     $config.skipping=None
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hirosePC==True:
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hiroseComputerUnlock==True:
         scene bg hirosePersonalArea_logged
     else:
         scene bg hirosePersonalArea
@@ -742,7 +742,7 @@ label hirosePersonalArea_inv:
     $ quick_menu = False
     $renpy.block_rollback()
     $config.skipping=None
-    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hirosePC==True:
+    if hirosePhoto_inv == True and hirosePersonalItems_value == 3 and hiroseComputerUnlock==True:
         scene bg hirosePersonalArea_logged
     else:
         scene bg hirosePersonalArea

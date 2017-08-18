@@ -497,6 +497,7 @@ label igotit_S:
     $quick_menu = True
     $ points_SbE += 2
     show Grace neutral at left
+    show Ada neutral at right
     g "I grew up with robotics, Ada."
     g "When I was a kid, I wanted one of these instead of a dog."
     show Ada amused at right
@@ -523,6 +524,7 @@ label leavemealoneada_S:
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
+    show Ada neutral at right
     g "Not now, Ada. I know what I'm doing."
     show Ada annoyed at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
@@ -550,6 +552,7 @@ label calmdown_S:
     $ points_E += 2
     show Mopr at center
     show Grace neutral at left
+    show Ada neutral at right
     g "If you talk it, I'm sure you'd like it."
     show Ada neutral at right
     a "What do you mean?"
@@ -579,7 +582,7 @@ label calmdown_S:
 label exitthemopr_S:
     show Mopr at center
     play sound moprConfused
-    mopr "//Questioning beep boop?]"
+    mopr "//Questioning beep boop.//"
     show Grace happy at left
     g "Don't worry about it. Tell you what, why don't you go finish the rest of your cycle, hmm?"
     play sound moprSuspicious

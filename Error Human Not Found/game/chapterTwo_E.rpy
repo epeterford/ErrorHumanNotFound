@@ -497,6 +497,7 @@ label ackchually:
     $quick_menu = True
     $ points_SbE +=2
     show Grace neutral at left
+    show Ada neutral at right
     g "When I was a kid, I wanted one of these instead of a dog."
     show Ada amused at right
     a "I was not aware that these units could be convinced to alter their programs."
@@ -522,16 +523,16 @@ label byefelicia:
     $ points_S +=2
     show Grace frustrated at left
     show Mopr at center
+    show Ada neutral at right
     g "Not now, Ada. I know what I'm doing."
     show Ada concerned at right
     a "I am aware of that; however, I can communicate with the MOPR unit on a level not possible to achieve as a human."
-    a "I'm aware of your abilities, Ada, but let me give this a try."
+    g "I'm aware of your abilities, Ada, but let me give this a try."
+    show Ada neutral
     g "I know what I'm doing."
     a "I did not mean to insult your capabilities, Grace."
     g "I know, Ada, you're fine."
     a "Proceed."
-    show Ada frustrated at right
-    a "Fine."
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -548,6 +549,7 @@ label lilbabymopr:
     $ points_E +=2
     show Grace neutral at left
     show Mopr at center
+    show Ada neutral at right
     g "Talk to him, Ada. You'll like him."
     show Ada neutral at right
     a "Him?"

@@ -1153,11 +1153,13 @@ label alphaBody_inv:
                 a "Why would I?"
                 show Grace neutral
                 g "This might not be something you want to see."
+                show Ada neutral
                 a "I already know what is in there. It might be difficult to witness, but I will be fine."
                 g "Are you sure?"
                 a "Yes. I should not shy away."
                 g "Okay, but I'm not going to judge you if you do turn away."
                 a "Thank you for the consideration."
+                play sound facePlate
                 "{i}Grace removes the panel, revealing the manual access ports."
                 g "All right Alpha, let's see what you've got for us."
             if(resume == "SbE"):
@@ -1169,6 +1171,7 @@ label alphaBody_inv:
                 a "Why would I?"
                 show Grace snarky
                 g "I don't know. Figured you might be squeamish or something."
+                show Ada neutral
                 play sound facePlate
                 "{i}Grace removes the panel off, revealing Alpha's manual access ports."
                 show Grace neutral
@@ -1185,6 +1188,7 @@ label alphaBody_inv:
                 show Ada frustrated
                 a "I do not appreciate your tone. And you know that I am not capable of being squeamish."
                 g "Whatever. Suit yourself."
+                play sound facePlate
                 "{i}Grace removes the panel, revealing Alpha's manual access ports."
                 show Grace neutral
                 g "All right Alpha, let's see what you've got for us."
