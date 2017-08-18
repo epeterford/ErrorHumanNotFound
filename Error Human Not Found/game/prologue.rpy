@@ -217,7 +217,7 @@ label prologueResume1:
     h "Once you take on a more reasonable tone, we'll discuss what occurred."
     g "My tone is always {i}reasonable{/i}. I want to know what happened to the AI I was working with."
     show Knuth speaking at right
-    knuth "That's not the proper way you speak to the Director. Check your manners. "
+    knuth "That's not the proper way for you to speak to the Director. Check your manners."
     hide Knuth
     g "Mind your own business."
     show Godel speaking at right
@@ -227,7 +227,7 @@ label prologueResume1:
     h "That's enough, both of you."
     g "..."
     "{i}Hirose stares down Grace from her platform."
-    g "Director, please inform me of current events involving Alpha."
+    g "Director, please inform me of the current events involving Alpha."
     h "We are not certain of what transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
     g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
@@ -339,7 +339,7 @@ label prologueResume2:
     show Ada neutral
     a "That is more than adequate time."
     g "Time for what? What are you planning?"
-    a "If you wish to help me understand the circumstances that led to Alpha's death, then we'll find a way around the Conclave's orders. Are you with me?"
+    a "If you wish to help me understand the circumstances that led to the death of Alpha, then we will find a way around the orders of the Conclave. Are you with me?"
     #choice 4 
     $ quick_menu = False
     hide Grace surprised

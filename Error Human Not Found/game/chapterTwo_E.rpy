@@ -437,12 +437,14 @@ label enterthemopr_E:
     show Grace surprised at left
     g "Ah... we were just leaving!"
     show Ada amused at right
+    show Mopr at nearLeft
     a "Grace, it is just a cleaning robot."
-    show Mopr at center
     play sound moprInquisitive
     mopr "//Inquisitive boop.//"
+    show Mopr at nearLeft
     show Grace happy at left
     g "Oh thank goodness."
+    show Mopr at nearLeft
     g "And it's a MOPR. I love these guys. They're so cute."
     a "Cute?"
     g "Yeah. They were one of the first robots my dad showed me how to take apart and fix when I was little."
@@ -459,7 +461,7 @@ label enterthemopr_E:
     g "You've got that right."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
     play sound moprAlarmed
-    mopr "//Alarmed Beeping!//"
+    mopr "//Alarmed beeping!//"
     show Grace happy
     g "Hey, hey... it's okay, little guy!"
     a "This MOPR has quite the vocals."
@@ -522,7 +524,7 @@ label byefelicia:
     $quick_menu = True
     $ points_S +=2
     show Grace frustrated at left
-    show Mopr at center
+    show Mopr at nearLeft
     show Ada neutral at right
     g "Not now, Ada. I know what I'm doing."
     show Ada concerned at right
@@ -548,7 +550,7 @@ label lilbabymopr:
     $quick_menu = True
     $ points_E +=2
     show Grace neutral at left
-    show Mopr at center
+    show Mopr at nearLeft
     show Ada neutral at right
     g "Talk to him, Ada. You'll like him."
     show Ada neutral at right
@@ -558,6 +560,7 @@ label lilbabymopr:
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "This conversation reminds me of the good times my dad and I had."
     a "All right, I will give it a try."
+    show Mopr at nearRight
     "{i}Ada approaches the MOPR unit."
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
@@ -579,7 +582,7 @@ label lilbabymopr:
  
 label exitthemopr_E:
     $quick_menu = True
-    show Mopr at center
+    show Mopr
     play sound moprConfused
     mopr "//Questioning beep boop.//"
     show Grace happy at left

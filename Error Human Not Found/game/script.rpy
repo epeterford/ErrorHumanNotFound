@@ -522,6 +522,8 @@ label start:
     $ quick_menu = False
     $ gate_name = ""
     $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
+    $nearLeft = Position(xpos=0.27, xanchor=0.1, ypos=0.1, yanchor = 0.1)
+    $nearRight = Position(xpos=0.55, xanchor=0.1, ypos=0.1, yanchor = 0.1)
     $ centerScreen2 = Position(xpos=0.5, xanchor =0.5, ypos =0.35, yanchor = 0.2)
     $ near_left = Position(xpos=0.25, ypos = 0.5)
     #hirose variables

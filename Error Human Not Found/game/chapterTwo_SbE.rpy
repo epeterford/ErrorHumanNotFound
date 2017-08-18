@@ -440,9 +440,11 @@ label enterthemopr_SbE:
     $quick_menu = True
     show Grace surprised at left
     g "Ah... we were just leaving!"
+    show Mopr at nearLeft
     show Ada amused at right
     a "Grace, it is just a cleaning robot."
-    show Mopr at center
+#    $nearLeft = Position(xpos=0.3, xanchor=0.1, ypos=0.75, yanchor = 0.1)
+    show Mopr at nearLeft
     play sound moprInquisitive
     mopr "//Inquisitive boop.//"
     show Grace happy
@@ -452,7 +454,7 @@ label enterthemopr_SbE:
     g "Yeah. They were one of the first robots my dad showed me how to take apart and fix when I was little."
     "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
     play sound moprAlarmed
-    mopr "//Alarmed Beeping!//"
+    mopr "//Alarmed beeping!//"
     show Grace happy
     g "Hey, hey... it's okay, buddy!"
     play sound moprWorried
@@ -510,7 +512,7 @@ label shutupada_SbE:
     $quick_menu = True
     $ points_S +=2
     show Grace frustrated at left
-    show Mopr at center
+    show Mopr at nearLeft
     show Ada neutral at right
     g "Not now, Ada. I know what I'm doing."
     show Ada annoyed at right
@@ -540,7 +542,7 @@ label alilhelphere_SbE:
     $quick_menu = True
     $ points_E +=2
     show Grace neutral at left
-    show Mopr at center
+    show Mopr at nearLeft
     show Ada neutral at right
     g "If you talk it, I'm sure you'd like it."
     show Ada neutral at right
@@ -549,6 +551,7 @@ label alilhelphere_SbE:
     a "What did that improve?"
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "This conversation reminds me of the good times my dad and I had."
+    show Mopr at nearRight
     "{i}Ada approaches the MOPR unit."
     "{i}She kneels down and pats it on the head."
     a "Do not worry too much little one. We are here to find out what happened."
@@ -570,7 +573,7 @@ label alilhelphere_SbE:
 
 label exitthemopr_SbE:
     $quick_menu = True
-    show Mopr at center
+    show Mopr 
     play sound moprConfused
     mopr "//Questioning beep boop.//"
     show Grace happy at left

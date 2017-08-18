@@ -787,7 +787,7 @@ label hiroseBed_label:
     hide other darken
     hide image "objects/hiroseBed_closeup.png"
     show Ada amused at right
-    a "This room's layout hardly seems standard."
+    a "The layout of this room hardly seems standard."
     show Grace snarky at left
     g "I wonder what tipped you off."
     show Ada neutral
@@ -1182,7 +1182,7 @@ label gramEasyHints2:
         jump gamefile_e2
     if (remainder==1):
         $ gramEasyHints +=1
-        a "M and Q are terminal and go to string. They have no further substitutions, so I would put them in the final row."
+        a "M and Q are terminal and go to strings. They have no further substitutions, so I would put them in the final row."
         hide other darken onlayer screens
         hide eaeng_e2_tile107 onlayer screens
         hide eaeng_e2_tile111 onlayer screens
@@ -1193,7 +1193,7 @@ label gramEasyHints2:
         jump gamefile_e2
     if (remainder==2):
         $ gramEasyHints +=1
-        a "N can only be substituted as PN, which is a substitution for K. That means K has to be above N."
+        a "N can only replace something as PN, which is a substitution for K. That means K has to be above N."
         hide other darken onlayer screens
         hide eaeng_e2_tile107 onlayer screens
         hide eaeng_e2_tile111 onlayer screens
@@ -1242,7 +1242,7 @@ label gramEasyHints3:
         jump gamefile_e3
     if (remainder==2):
         $ gramEasyHints +=1
-        a "S is also a terminal letter in two cases, so it should be on the bottom twice."
+        a "S is a terminal letter in two cases, so it should be on the bottom twice."
         hide other darken onlayer screens
         hide eaeng_e3_tile202 onlayer screens
         hide eaeng_e3_tile206 onlayer screens
@@ -1280,7 +1280,7 @@ label gramEasyHints4:
     show other darken onlayer screens
     if (remainder == 0):
         $ gramEasyHints +=1
-        a "S can only be substituted by GH. I would try those in the middle row."
+        a "S can only be substituted by GH. I would try G and H in the middle row."
         hide other darken onlayer screens
         hide eaeng_e4_tile202 onlayer screens
         hide eaeng_e4_tile206 onlayer screens

@@ -18,9 +18,9 @@ label chapterOne:
     play channel15 hiroseOffice1_15 fadeout 1.0 fadein 1.0
     scene bg hiroseDoor
     show Grace neutral at left
+    play sound doorScan
     g "Here we are. Scan my badge and voila. Open."
     #play sound doorScan MISSING
-    play sound doorScan
     "{i}The door doesn't budge."
     "{i}A voice issues from speakers near the door."
     queue sound doorDenied
@@ -30,7 +30,7 @@ label chapterOne:
     g "What? I usually have access!"
  
     show Ada nervous at right
-    a "And why do you have access to the Director's office?"
+    a "And why do you have access to the office of the Director?"
  
     show Grace neutral
     g "Because she's my mother."
@@ -326,6 +326,7 @@ label toshgetsroasted:
  
 label adadoxxeshirose:
     g "Now that we've passed the gatekeeper, let's get what we came here for."
+    $quick_menu = False
     $renpy.music.play("music/Character/ADA/EHNF_ADA_Movement_Normal.ogg", channel='sound02', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     $renpy.music.play("music/Character/Grace/EHNF_Grace_Footsteps_Normal.ogg", channel='sound01', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     scene bg hiroseOfficeMain with fade
@@ -346,24 +347,8 @@ label adadoxxeshirose:
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L14.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L15.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L16.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-#    play channel00 hiroseOffice2_00 fadeout 1.0 fadein 1.0
-#    play channel01 hiroseOffice2_01 fadeout 1.0 fadein 1.0
-#    play channel02 hiroseOffice2_02 fadeout 1.0 fadein 1.0
-#    play channel03 hiroseOffice2_03 fadeout 1.0 fadein 1.0
-#    play channel04 hiroseOffice2_04 fadeout 1.0 fadein 1.0
-#    play channel05 hiroseOffice2_05 fadeout 1.0 fadein 1.0
-#    play channel06 hiroseOffice2_06 fadeout 1.0 fadein 1.0
-#    play channel07 hiroseOffice2_07 fadeout 1.0 fadein 1.0
-#    play channel08 hiroseOffice2_08 fadeout 1.0 fadein 1.0
-#    play channel09 hiroseOffice2_09 fadeout 1.0 fadein 1.0
-#    play channel10 hiroseOffice2_10 fadeout 1.0 fadein 1.0
-#    play channel11 hiroseOffice2_11 fadeout 1.0 fadein 1.0
-#    play channel12 hiroseOffice2_12 fadeout 1.0 fadein 1.0
-#    play channel13 hiroseOffice2_13 fadeout 1.0 fadein 1.0
-#    play channel14 hiroseOffice2_14 fadeout 1.0 fadein 1.0
-#    play channel15 hiroseOffice2_15 fadeout 1.0 fadein 1.0
-#    play channel16 hiroseOffice2_16 fadeout 1.0 fadein 1.0
     show Grace neutral at left
+    $quick_menu = True
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     
@@ -400,9 +385,9 @@ label sepbutequal1:
     g "That was good thinking, but let me know the next time you're planning to threaten my mom's secretary VI."
     show Ada neutral at right
     a "Will do, Grace. I did not think there was time to warn you."
-    a "Now, let me see the computer. We do not have time to guess passwords."
-    g "What are you doing?"
-    a "I am going to access it directly."
+    a "I should have little difficulty with any other machines we may encounter."
+    g "Except for doors?"
+    a "Doors are not what I consider machines. Anything that runs on code I can work with."
     a "I have spent all of my existence manipulating code."
     a "It is about as difficult as moving building blocks."
     jump hiroseOffice_actions
@@ -420,7 +405,6 @@ label subservient1:
     g "You could've blown our cover, and I would've lost my career if that happened."
     g "I don't even know what they would've done to you."
     a "Fine, whatever you say."
-    g "It's your turn to pull your weight. You can hack the computer."
     jump hiroseOffice_actions
 
 label equal1:
@@ -433,8 +417,9 @@ label equal1:
     a "Far from the hardest thing I have ever done."
     g "Wasn't exactly the robot battle I've always wanted to see, but I guess it's close enough."
     show Ada neutral
-    a "Grace, I had no intention of engaging Tosh. Besides, I do not think it would have been a very fair fight."
-    a "Now, let us see the computer. This should not take me long."
+    a "Grace, I had no intention of engaging Tosh."
+    show Ada happy
+    a "Besides, I do not think it would have been a very fair fight."
     jump hiroseOffice_actions
     
 label exploreOffice:
@@ -540,6 +525,24 @@ label adaActualPuzzle1:
     $temp_gate = ""
     $temp_slot = ""
     if (tutorial_LGEasy == True):
+        stop channel00 fadeout 1.0
+        stop channel01 fadeout 1.0
+        stop channel02 fadeout 1.0
+        stop channel03 fadeout 1.0
+        stop channel04 fadeout 1.0
+        stop channel05 fadeout 1.0
+        stop channel06 fadeout 1.0
+        stop channel07 fadeout 1.0
+        stop channel08 fadeout 1.0
+        stop channel09 fadeout 1.0
+        stop channel10 fadeout 1.0
+        stop channel11 fadeout 1.0
+        stop channel12 fadeout 1.0
+        stop channel13 fadeout 1.0
+        stop channel14 fadeout 1.0
+        stop channel15 fadeout 1.0
+        stop channel16 fadeout 1.0
+        $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
         $ tutorial_LGEasy = False
         jump tutorial_LGEasy_1
     if (solved_LG_easy == True):
@@ -663,6 +666,23 @@ label lastEasyLGPuzzle:
 label lgEasyDone_talk:
     $renpy.block_rollback()
     stop music
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L8.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L12.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L13.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L14.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L15.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L16.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
     if lgEasy_tries == 0:

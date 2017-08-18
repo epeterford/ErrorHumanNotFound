@@ -547,6 +547,7 @@ label gamefileC1:
         image EC111tile07_08 = "or_Gate.png"
         show EC111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
         play sound lgLose
+        $renpy.pause(1.5)
         $ lgEasy_tries +=1
         jump repeatLGEasy
     

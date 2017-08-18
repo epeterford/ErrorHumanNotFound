@@ -195,7 +195,6 @@ label gamefileA2:
         #jump logicGate_easyA2
 
     if attempts == 0:
-        "you lose try again"
         jump exploreHiroseOffice
     
     jump gamefileA2

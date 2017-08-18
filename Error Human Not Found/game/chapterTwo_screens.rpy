@@ -677,7 +677,7 @@ label graceHardDrive_inv:
     a "Grace!"
     show Grace surprised at left
     g "What, Ada?! What's wrong?"
-    a "Your hard drives, Grace! You can't keep them like this."
+    a "Your hard drives, Grace! You cannot keep them like this."
     "{i}Ada starts to pick up Grace's various hard drives."
     show Grace annoyed
     g "Hey! Stop that!"
@@ -737,6 +737,10 @@ label graceCoffee_inv:
     show Ada concerned
     a "This robot does not possess peripheral sensors, and it doesn't have any fingers. "
     g "Noted."
+    $quick_menu=False
+    hide Ada
+    hide Grace
+    window hide
     jump graceLab_left2
     
 label graceCandD_inv:
@@ -808,7 +812,7 @@ label gracePens_inv:
     show Grace neutral
     g "It's normal, I promise!"
     show Ada neutral 
-    a "Note to self: Humans are territorial about writing implements."
+    a "Note to self: humans are territorial about writing implements."
     $ quick_menu = False
     window hide
     jump graceLab_right
@@ -845,7 +849,7 @@ label graceStickyNotes_inv:
     show Grace snarky
     g "And yet I know what they all mean."
     show Ada neutral
-    a "Note to self: Humans are proud of their ability for abstract data storage."
+    a "Note to self: humans are proud of their ability for abstract data storage."
     $ quick_menu = False
     window hide
     jump graceLab_right
@@ -1538,7 +1542,7 @@ label llDoneTalk:
         g "That was more strenuous that I thought. I mean, seriously, breaking out of a loop should not be that hard. Must not have been accounting for the right information with my IFs."
     show Grace frustrated at left
     play sound alphaStartup
-    g "I'm not getting a lot. I managed get him to startup, but it's like his whole system got cooked and wiped at the same time. There's corrupted data all over the place."
+    g "I'm not getting a lot. I managed to get him to startup, but it's like his whole system got cooked and wiped at the same time. There's corrupted data all over the place."
     show Ada frustrated at right
     a "That is unfortunate."
     g "Hold on, let me see here."
