@@ -1317,7 +1317,7 @@ label gramEasyHints4:
     
 label gramEasyHints5:
     show screen disable_hide
-    $ remainder = gramEasyHint
+    $ remainder = gramEasyHints%3
     show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0) onlayer screens
     show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)onlayer screens
     show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)onlayer screens

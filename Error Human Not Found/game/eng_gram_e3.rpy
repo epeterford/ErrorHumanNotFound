@@ -2075,7 +2075,7 @@ label gamefile_e3:
         hide eaeng_e3_tile75
         hide eaeng_e3_tile76
         hide eaeng_e3_tile77
-        $ attemptsLogicGate1 +=1
+        $attemptsGramEasy +=1
         jump gramEasyLose
     
     jump gamefile_e3

@@ -204,13 +204,13 @@ label hiroseDoorPassed:
     $renpy.block_rollback()
     $ config.rollback_enabled = True
     $quick_menu = True
-    if(attemptsLogicGate1==0):
+    if(attemptsGramEasy==0):
         show Grace happy at left
         g "Yes! First try! Still got it. Nobody can touch these elite skills." 
-    if (attemptsLogicGate1>1 and attempts<4):
+    if (attemptsGramEasy>=1 and attemptsGramEasy<=3):
         show Grace happy at left
         g "Hey, wasn't perfect. But the door is open, and we haven't been caught." 
-    if (attemptsLogicGate1>3):
+    if (attemptsGramEasy>3):
         show Grace annoyed at left
         g "Apparently my hacking skills have become subpar. Too much legitimate coding."
  
@@ -698,7 +698,7 @@ label lgEasyDone_talk:
     a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
     show Grace annoyed at left
     g "Of course not. That would be too easy."
-    "Grace looks around, thinking."
+    "{i}Grace looks around, thinking."
     show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
     if(talkAdaHiroseOffice_value == 0) and((hiroseOfficeItems <3) or (hiroseTransitionItems<1)):

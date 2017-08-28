@@ -2068,6 +2068,7 @@ label gamefile_e2:
         show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0)
         show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0)
         show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0)
+        $attemptsGramEasy +=1
         $ renpy.pause(1.5)
         hide eaeng_e2_tile42
         hide eaeng_e2_tile43
@@ -2125,7 +2126,6 @@ label gamefile_e2:
         hide eaeng_e2_tile99
         hide eaeng_e2_tile100
         hide eaeng_e2_tile101
-        $ attemptsLogicGate1 +=1
         jump gramEasyLose
     
     jump gamefile_e2

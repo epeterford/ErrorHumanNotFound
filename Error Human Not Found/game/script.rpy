@@ -134,6 +134,7 @@ image bg chapterFour = "images/bg/ChapterFourTransition.png"
 image bg chapterFiveS= "images/bg/ChapterFiveSTransition.png"
 image bg chapterFiveSbE = "images/bg/ChapterFiveSbETransition.png"
 image bg chapterFiveE = "images/bg/ChapterFiveETransition.png"
+image bg endDemo = "images/bg/endOfDemo.png"
 
 #Hallway Shots
 image bg Logic_Gate = "LOGIC_GATE_BG.png"
@@ -565,6 +566,7 @@ label start:
     $ LGEasyHints = 0
     $ gramEasyHints = 0
     $ attemptsLogicGate1 = 0
+    $ attemptsGramEasy = 0
     
     #Balcony variables
     $ callAttempts = 0

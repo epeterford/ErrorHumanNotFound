@@ -199,6 +199,7 @@ label letherfinish_E:
     hide Grace 
     play sound01 graceHurry
     a "Fine. Do not answer me. I will just be that poor intrepid adventurer and follow you."
+    stop sound01 
     a "I am curious to see this 'shortcut'."  
     play sound02 adaWalk
     $quick_menu = False
@@ -229,6 +230,7 @@ label helpherout_E:
     hide Grace
     show Ada concerned
     a "But is your route optimal? Grace?"
+    stop sound01 
     a "..."
     a "Wait for me!"
     play sound02 adaWalk
@@ -261,6 +263,7 @@ label adapls_E:
     hide Grace
     show Ada frustrated
     a "Hold on!"
+    stop sound01 
     play sound02 adaWalk
     hide Ada
     $quick_menu = False
@@ -295,7 +298,7 @@ label gettingin_E:
     window hide
     $ quick_menu = False
     play sound01 adaWalk
-    play sound02 graceHurry
+    play sound02 graceWalk
     scene bg balconyRamp with fade 
     $ renpy.pause(0.5)
     scene bg balconyCorner with fade
@@ -796,7 +799,13 @@ label resumeLynn_E:
     a "Grace?"
     show Grace annoyed
     g "Let's go pay Ivan a visit."
-    "{i}Temporary end of Equal."
+    hide Grace
+    hide Ada
+    $quick_menu = False
+    scene bg black with fade
+    scene bg endDemo with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     $ stackDepth =renpy.call_stack_depth()
     while stackDepth>0:
         $renpy.pop_call()

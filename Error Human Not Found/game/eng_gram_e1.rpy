@@ -1929,6 +1929,7 @@ label eng_gram_e1:
         show eaeng_e1_tile235 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0)
         show eaeng_e1_tile236 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0)
         show eaeng_e1_tile237 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0)
+        $attemptsGramEasy +=1
         $renpy.pause(1.5)
         hide eaeng_e1_tile182
         hide eaeng_e1_tile183

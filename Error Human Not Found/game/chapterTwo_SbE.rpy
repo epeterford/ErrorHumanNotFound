@@ -200,6 +200,7 @@ label letherfinish_SbE:
     #Grace's sprite disappears here. 
     hide Grace
     a "Fine. Do not answer me."
+    stop sound01 
     a "I am curious, though. Into this 'shortcut' we go."
     play sound02 adaWalk
     $quick_menu = False
@@ -230,6 +231,7 @@ label helpherout_SbE:
     play sound01 graceHurry
     show Ada concerned
     a "But is your route optimal? Grace?"
+    stop sound01 
     a "..."
     a "Slow down!"
     play sound02 adaWalk
@@ -264,6 +266,7 @@ label adapls_SbE:
     show Ada seething
     a "Very well, Grace. Let us take your route. We will take the slower path to satisfy your preferences. " 
     play sound02 adaWalk
+    stop sound01 
     hide Ada
     $quick_menu = False
     scene bg black with fade
@@ -297,7 +300,7 @@ label gettingin_SbE:
     hide Ada
     hide Grace
     window hide
-    play sound01 graceHurry
+    play sound01 graceWalk
     play sound02 adaWalk
     $ quick_menu = False
     scene bg balconyRamp with fade 
@@ -791,7 +794,13 @@ label resumeLynn_SbE:
     a "Grace?"
     show Grace annoyed
     g "Let's go pay Ivan a visit."
-    "{i}Temporary end of Separate but Equal."
+    hide Grace
+    hide Ada
+    $quick_menu = False
+    scene bg black with fade
+    scene bg endDemo with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     $ stackDepth =renpy.call_stack_depth()
     while stackDepth>0:
         $renpy.pop_call()

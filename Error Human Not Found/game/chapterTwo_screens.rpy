@@ -731,7 +731,7 @@ label graceCoffee_inv:
     g "What's your take on this, Ada?"
     show Ada neutral at right
     a "Hmm..."
-    a "The robot's appearance is compatible with what humans find comfortable; however, the design itself is hardly optimal."
+    a "The appearance of the robot is compatible with what humans find comfortable; however, the design itself is hardly optimal."
     show Grace neutral
     g "How so?"
     show Ada concerned
@@ -1127,7 +1127,7 @@ label balconyView_label:
     hide other darken
     hide image "objects/balconyWindow_closeup.png"
     show Ada happy at right
-    a "To think that the Earth's solar system drifted into a nebula so unexpectedly satisfies my probability calculator."
+    a "To think that our solar system drifted into a nebula so unexpectedly satisfies my probability calculator."
     show Grace snarky at left
     g "I'm sorry, what?"
     a "Improbabilities on a cosmic scale. A scale where even the smallest variable can alter the course of galaxies."
@@ -1512,7 +1512,7 @@ label binaryDoneTalk:
     g "What is it?"
     a "There are several code remnants that are foreign to any of the previously known data signatures of Alpha. It is also taking up a majority of his memory space."
     show Grace neutral
-    g "What does the code say?"
+    g "What is that segment of code doing?"
     show Ada frustrated
     a "I could not tell you. There are several places where they overlap and are threaded together. I could not begin to tell you what he was processing."
     g "Well, not what I was hoping for."

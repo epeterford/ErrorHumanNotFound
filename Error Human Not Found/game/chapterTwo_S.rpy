@@ -205,6 +205,7 @@ label hurryupada:
     play sound01 graceHurry
     hide Grace
     a "Where are you going?"
+    stop sound01 
     a "This is just typical of humans. Why build a machine if they are going to ignore its input?"
     play sound02 adaWalk
     #Ada's sprite disappears
@@ -237,6 +238,7 @@ label doyouneedassistance:
     hide Grace
     show Ada concerned
     a "I doubt your route's optimal, but okay. Why not?"
+    stop sound01 
     a "...Grace?"
     a "Hold on! Are you going to wait for me?"
     play sound02 adaWalk
@@ -271,6 +273,7 @@ label plsstop:
     play sound01 graceHurry
     show Ada seething
     a "Very well, Grace. Let us take your route. It is not like I can process several hundred times faster and more accurately than you."
+    stop sound01 
     play sound02 adaWalk
     hide Ada
     $quick_menu = False
@@ -309,7 +312,7 @@ label gettingin_S:
     window hide
     $ quick_menu = False
     play sound01 adaWalk
-    play sound02 graceHurry
+    play sound02 graceWalk
     scene bg balconyRamp with fade 
     $ renpy.pause(0.5)
     scene bg balconyCorner with fade
@@ -800,7 +803,13 @@ label resumeLynn_S:
     a "Shall we? We need to get going."
     show Grace annoyed
     g "Let's go pay Ivan a visit."
-    "{i}Temporary end of subservient."
+    hide Grace
+    hide Ada
+    $quick_menu = False
+    scene bg black with fade
+    scene bg endDemo with fade
+    $renpy.pause(3.0)
+    show bg black with fade
     $ stackDepth =renpy.call_stack_depth()
     while stackDepth>0:
         $renpy.pop_call()

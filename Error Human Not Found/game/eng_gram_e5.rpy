@@ -1976,7 +1976,7 @@ label gamefile_e5:
         hide eaeng_e5_tile75
         hide eaeng_e5_tile76
         hide eaeng_e5_tile77
-        $ attemptsLogicGate1 +=1
+        $attemptsGramEasy +=1
         jump gramEasyLose
           
     
