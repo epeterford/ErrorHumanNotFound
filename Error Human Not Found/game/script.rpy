@@ -137,6 +137,59 @@ image bg chapterFiveE = "images/bg/ChapterFiveETransition.png"
 image bg endDemo = "images/bg/endOfDemo.png"
 
 #Hallway Shots
+image bg hallwayBalcony = "images/bg/Hallway_Balcony1.png"
+image bg hallwayGrace2 = "images/bg/Hallway_Grace2.png"
+image bg hallwayLab2 = "images/bg/Hallway_Lab2.png"
+image bg hallwayLab2Door = "images/bg/Hallway_Lab2Door.png"
+image bg door2 = "bg/Hirose_Door.png" #MODIFY Hirose's door???
+
+#Lab 2
+image bg lab2Main_locked = "images/bg/Lab2_Overview_Locked.png"
+image bg lab2Main_unlocked = "images/bg/Lab2_Overview_Unlocked.png"
+image bg lab2Main_Ivan = "images/bg/Lab2_Overview_NightshiftLocked.png"
+image bg lab2Main_nightshift = "images/bg/Lab2_Overview_IvanLocked.png"
+image bg lab2WS_locked = "images/bg/Lab2_Workstation_Locked.png"
+image bg lab2WS_unlocked = "images/bg/Lab2_Workstation_Unlocked.png"
+image bg lab2Ivan_locked = "images/bg/Lab2_Ivan_Locked.png"
+image bg lab2Ivan_unlocked = "images/bg/Lab2_Ivan_Unlocked.png"
+image bg lab2Table_locked = "images/bg/Lab2_Main.png"
+image bg lab2Table_unlocked = "images/bg/Lab2_Main_Unlocked.png"
+
+#AI Core
+image bg AICoreDoor = "images/bg/AICore_Door.png"
+image bg AICoreHallway = "images/bg/AICore_Hallway.png"
+image bg AICoreLong = "images/bg/AICore_HallwayLong.png"
+image bg AICoreMain = "images/bg/AICore_Main.png"
+image bg AICoreOverview = "images/bg/AICore_Overview.png"
+image bg AICoreStairs = "images/bg/AICore_Stairs.png"
+
+#Blue's Workspace
+image bg creepyHallwayLong = "images/bg/Blue_CreepyHallwayLong.png"
+image bg creepyHallwayMed = "images/bg/Blue_CreepyHallwayMed.png"
+image bg creepHallwayDoor = "images/bg/Blue_CreepyHallwayDoor.png"
+image bg blueCore = "images/bg/Blue_BlueCore.png"
+image bg blueStairs = "images/bg/Blue_BlueStairs.png"
+image bg blueLeft = "images/bg/Blue_HumanSpaceLeft.png"
+image bg blueRight = "images/bg/Blue_HumanSpaceRight.png"
+image bg blueMain = "images/bg/Blue_HumanSpaceMain.png"
+
+#Watson's Server
+image bg wsDesk = "images/bg/WS_Desk.png"
+image bg wsMain = "images/bg/WS_DeskArea.png"
+image bg wsOverview = "images/bg/WS_Overview.png"
+image bg wsSafe = "images/bg/WS_Safe.png"
+
+#Watson's Workspace
+image bg wwLongCrit = "images/bg/WW_Overview_CRITICAL.png"
+image bg wwLongNom = "images/bg/WW_Overview_NOMINAL.png"
+image bg wwMedCrit = "images/bg/WW_Walkway_CRITICAL.png"
+image bg wwMedNom = "images/bg/WW_Walkway_NOMINAL.png"
+image bg wwStairs = "images/bg/WW_StairsDown.png"
+image bg wwWorkArea = "images/bg/WW_WorkArea.png"
+image bg wwNominal = "images/bg/WW_BigScreen_NOMINAL.png"
+image bg wwCritical = "images/bg/WW_BigScreen_CRITICAL.png"
+
+#Miscellaneous
 image bg Logic_Gate = "LOGIC_GATE_BG.png"
 image bg black = "blackScreen.png"
 image bg binary = "tileBackground.png"
@@ -586,6 +639,25 @@ label start:
     $ tutorial_binaryEasy = False
     $ tutorial_loopLogicEasy = False
     
+    #Variables for chapter three
+    $ talkIvan_count = 0
+    $ burntCord_inv = False
+    $ ivanComp_lock = True
+    $ nightShift_lock = True
+    $ catPhoto_inv = False
+    $ lab2Items = 0
+    $ ivanNotes_inv = False
+    $ llMed_attempts = 0
+    $ lgMed_attempts = 0
+    $ binaryMed_attempts = 0
+    $ gramMed_attempts = 0
+    $ llMed_solved = False
+    $ lgMedA_solved = False
+    $ lgMedB_solved = False
+    $ lgMedC_solved = False
+    $ binaryMed_solved = False
+    $ gramMed_solved = False
+    
     transform crawlScroll:
         yalign 0.0 xalign 0.5
         linear 50.0 yalign 1.0
@@ -596,21 +668,6 @@ label start:
             linear 0.3 alpha 1.0
         on hide:
             linear 0.1 alpha 0.0   
-    #$renpy.music.play("music/EHNF_Main_Theme.ogg", channel='music', loop=True, fadeout=1.0, synchro_start=False, fadein=1.0, tight=True, if_changed=True)
-    #play music "audio/Main_Title_BGM.wav"
-#    play channel00 mt_bellsL fadein 1.0
-#    play channel01 mt_bellsR fadein 1.0
-#    play channel02 mt_piano fadein 1.0
-#    play channel03 mt_ghostBus fadein 1.0
-#    play channel04 mt_ghostL fadein 1.0
-#    play channel05 mt_ghostR fadein 1.0
-#    play channel06 mt_orchestra fadein 1.0
-#    play channel07 mt_sciFi fadein 1.0
-#    play channel08 mt_touchOrchestra fadein 1.0
-#    play channel09 mt_tornado fadein 1.0
-#    play channel10 mt_ultrasweeper fadein 1.0
-#    play channel11 mt_violins fadein 1.0
-#    play channel12 mt_wistful fadein 1.0
 
     window hide
     scene bg openCrawlBG at basicfade
@@ -619,16 +676,13 @@ label start:
     scene bg splashScreen
     #with fade(5.0)
     $ renpy.pause(5.0)
-
-#    stop music
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    menu:
+        "Chapter 3 SbE":
+            jump chapterThree_SbE
+        "Chapter 3 E":
+            jump chapterThree_E
+        "Chapter 3 S":
+            jump chapterThree_S
     show bg black with fade
     scene bg prologue with fade
     $renpy.pause(3.0)
