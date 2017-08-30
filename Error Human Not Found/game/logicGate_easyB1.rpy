@@ -33,7 +33,7 @@ label logicGate_easyB1:
     #row 3 (row has a light)
     image EB1tile47 = "g_vertical.png"
     image EB1tile51 = "y_g.png"
-    image EB1tile52 = "AND_Gate.png"
+    image EB1tile52 = "AND_Gate_blue.png"
     image EB1tile53 = "y_horizontal.png"
     image EB1tile54 = "y_elbow_bl.png"
     image EB1tile55 = "y_elbow_br.png"
@@ -52,7 +52,7 @@ label logicGate_easyB1:
     image EB1tile61 = "g_elbow_tl.png"
     image EB1tile65 = "g_vertical.png"
     image EB1tile67 = "y_y.png"
-    image EB1tile68 = "AND_Gate.png"
+    image EB1tile68 = "AND_Gate_blue.png"
     image EB1tile69 = "y_elbow_tl.png"
     
     show EB1tile60 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
@@ -82,7 +82,7 @@ label logicGate_easyB1:
     #row 6
     image EB1tile87 = "g_vertical.png"
     image EB1tile89 = "g_g.png"
-    image EB1tile90 = "AND_Gate.png"
+    image EB1tile90 = "AND_Gate_blue.png"
     image EB1tile91 = "g_horizontal.png"
     image EB1tile92 = "g_horizontal.png"
     image EB1tile93 = "g_elbow_tl.png"
@@ -200,6 +200,12 @@ label gamefileB1:
             $ and1in2 = True
             $ and1in1 = False
             
+        if slot_name == "and return":
+            $ and1x = 698
+            $ and1y = 88
+            $ and1in1 = False
+            $ and1in2 = False
+            
     if gate_name == "or_gate":
         #gate slot numeber one *******************************
         if slot_name == "gate slot one":
@@ -222,8 +228,14 @@ label gamefileB1:
             $ or1x = 886
             $ or1y = 833
             $ or1in2 = True  
-            $ or1in1 = False        
-
+            $ or1in1 = False  
+            
+        if slot_name == "or return":
+            $ or1x = 848
+            $ or1y = 88
+            $ or1in2 = False
+            $ or1in1 = False  
+            
 #*******************************************
 #************image zone********************* 
 #*******************************************
@@ -407,7 +419,15 @@ label gamefileB1:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
-        
+            if slot_name == "and return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "or_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "and return" and gate_name == "or_gate":
+                $ attempts +=1
+                
     if attempts == 0:
         image EB111tile07_02 = "and_Gate.png"
         show EB111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
@@ -477,3 +497,15 @@ screen logicGatesB1:
                 child "cover.png"
                 draggable False
                 xpos 886 ypos 833
+
+            drag:
+                drag_name "and return"
+                child "cover.png"
+                draggable False
+                xpos 698 ypos 88
+                
+            drag:
+                drag_name "or return"
+                child "cover.png"
+                draggable False
+                xpos 848 ypos 88

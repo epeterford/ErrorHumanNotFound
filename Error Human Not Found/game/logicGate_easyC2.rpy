@@ -23,7 +23,7 @@ label logicGate_easyC2:
     
     #row 2
     image EC2tile02_02 = "r_g.png"
-    image EC2tile02_03 = "OR_Gate.png"
+    image EC2tile02_03 = "OR_Gate_blue.png"
     image EC2tile02_04 = "g_horizontal.png"
     image EC2tile02_05 = "g_elbow_bl.png"
     
@@ -72,7 +72,7 @@ label logicGate_easyC2:
     image EC2tile05_05 = "y_elbow_tl.png"
     image EC2tile05_08 = "y_vertical.png"
     image EC2tile05_10 = "y_elbow_br.png"
-    image EC2tile05_11 = "NOT_Gate.png"
+    image EC2tile05_11 = "NOT_Gate_blue.png"
     image EC2tile05_12 = "y_horizontal.png"
     image EC2tile05_13 = "y_horizontal.png"
     
@@ -89,7 +89,7 @@ label logicGate_easyC2:
     
     #row 6
     image EC2tile06_02 = "g_g.png"
-    image EC2tile06_03 = "AND_Gate.png"
+    image EC2tile06_03 = "AND_Gate_blue.png"
     image EC2tile06_04 = "g_elbow_bl.png"
     image EC2tile06_08 = "y_vertical.png"
     image EC2tile06_10 = "y_vertical.png"
@@ -241,6 +241,13 @@ label gamefileC2:
             $ and1in2 = False
             $ and1in1 = False
             $ and1in3 = True
+        
+        if slot_name == "and return":
+            $ and1x = 698
+            $ and1y = 88
+            $ and1in2 = False
+            $ and1in1 = False
+            $ and1in3 = False
             
      #or gate section **********************************************************************       
     if gate_name == "or_gate":
@@ -297,6 +304,13 @@ label gamefileC2:
             $ or1in1 = False
             $ or1in3 = True
             
+        if slot_name == "or return":
+            $ or1x = 848
+            $ or1y = 88
+            $ or1in2 = False
+            $ or1in1 = False
+            $ or1in3 = False
+            
      #not gate section **********************************************************************       
     if gate_name == "not_gate":
         #gate slot numeber one *******************************
@@ -349,7 +363,13 @@ label gamefileC2:
             $ not1in2 = False
             $ not1in1 = False
             $ not1in3 = True
-
+            
+        if slot_name == "not return":
+            $ not1x = 548
+            $ not1y = 88
+            $ not1in2 = False
+            $ not1in1 = False
+            $ not1in3 = False
 
 #*******************************************
 #************image zone********************* 
@@ -496,7 +516,25 @@ label gamefileC2:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
-        
+            if slot_name == "and return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "or_gate":
+                $ attempts +=1
+            if slot_name == "not return" and gate_name == "not_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "not_gate":
+                $ attempts +=1                
+            if slot_name == "and return" and gate_name == "or_gate":
+                $ attempts +=1
+            if slot_name == "and return" and gate_name == "not_gate":
+                $ attempts +=1
+            if slot_name == "not return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "not return" and gate_name == "or_gate":
+                $ attempts +=1
+                
 #win conditions ********
     if (and1in2 == True and or1in3 == True and not1in1 == True) or (and1in3 == True and or1in2 == True and not1in1 == True): 
         image EC21tile02_09 = "not_Gate.png"
@@ -600,3 +638,21 @@ screen logicGateC2:
                 child "cover.png"
                 draggable False
                 xpos gate3x ypos gate3y
+            
+            drag:
+                drag_name "and return"
+                child "cover.png"
+                draggable False
+                xpos 698 ypos 88
+           
+            drag:
+                drag_name "or return"
+                child "cover.png"
+                draggable False
+                xpos 848 ypos 88
+                
+            drag:
+                drag_name "not return"
+                child "cover.png"
+                draggable False
+                xpos 548 ypos 88

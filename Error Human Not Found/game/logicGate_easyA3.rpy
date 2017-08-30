@@ -24,7 +24,7 @@ label logicGate_easyA3:  #logicGate_easyA3
 
     #row 2
     image ea1tile6 = "r_g.png"
-    image ea1tile7 = "OR_Gate.png"
+    image ea1tile7 = "OR_Gate_blue.png"
     image ea1tile8 = "g_horizontal.png"
     image ea1tile9 = "g_horizontal.png"
     image ea1tile10 = "g_elbow_bl.png"
@@ -80,7 +80,7 @@ label logicGate_easyA3:  #logicGate_easyA3
     
     #row6
     image ea1tile23 = "g_r.png"
-    image ea1tile24 = "AND_Gate.png"
+    image ea1tile24 = "AND_Gate_blue.png"
     image ea1tile25 = "r_horizontal.png"
     image ea1tile26 = "r_horizontal.png"
     image ea1tile27 = "r_elbow_tl.png"

@@ -24,7 +24,7 @@ label logicGate_easyA1:
 
     #row 2
     image eatile6 = "r_g.png"
-    image eatile7 = "OR_Gate.png"
+    image eatile7 = "OR_Gate_blue.png"
     image eatile8 = "g_horizontal.png"
     image eatile9 = "g_horizontal.png"
     image eatile10 = "g_elbow_bl.png"
@@ -81,7 +81,7 @@ label logicGate_easyA1:
     
     #row6
     image eatile23 = "g_r.png"
-    image eatile24 = "OR_Gate.png"
+    image eatile24 = "OR_Gate_blue.png"
     image eatile25 = "g_horizontal.png"
     image eatile26 = "g_horizontal.png"
     image eatile27 = "g_elbow_tl.png"
@@ -112,8 +112,8 @@ label logicGate_easyA1:
     show logicGate_easyA12 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
     image logicGate_easyA13 = "light_r_on.png"
     show logicGate_easyA13 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
-    image end = "light_g_off.png"
-    show end at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
+    image lga1end = "light_g_off.png"
+    show lga1end at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
     
     #initial value assignment for dragables
     $ and1x = 698

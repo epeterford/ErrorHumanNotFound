@@ -1017,12 +1017,11 @@ label ch3resume5_E:
     $quick_menu = False
     scene bg black with fade
     $renpy.pause(0.5)
-    scene bg lab2Ivan_locked with fade
+    $resume = "E"
+    jump lab2_inv
     #Investigation portion.
 
 label talkIvanLab2_E:
-    #insert conditionals
-    #First time
     show Grace neutral at left
     #show Ivan dour at center
     g "Hey, Ivan..."
@@ -1045,40 +1044,6 @@ label talkIvanLab2_E:
             jump adaisfrustratingme_E
         "Ask Ivan's thoughts about AIs.":
             jump becivilwithivan_E
-    #starting looping dialogue.
-    #if attempts is <1
-#    #show Grace neutral
-#    g "Hey, Ivan, about what we talked about..."
-#    #show Ivan dour
-#    ivan "Not again, Fortran. There's only so much of you I can take."
-#    g "I was just going to say--"
-#    ivan "What part of 'there's only so much of you I can take' do you not understand?"
-#    Ivan "Stop harassing me."
-#    #show Grace annoyed
-#    g "Fine. So grumpy..."
-
-#    #if attempts is >1 and <3
-#    #show Grace neutral
-#    g "Ivan, there was another thing I wanted to talk about."
-#    #show Ivan disgusted
-#    ivan "Enough, Fortran! You are wasting my time."
-#    ivan "Every passing second is insufferable with you here."
-#    ivan "Why don't you spend less time making me miserable and more time completing your little fool's errand so you can leave me in peace?"
-#    #show Grace snarky
-#    g "..."
-#    g "So you {i}don't{/i} want to talk?"
-#    #show Ivan dour
-#    ivan "{i}No{/i}."
-
-#    #if attempts is >2
-#    #show Grace snarky
-#    g "Hey, Ivan?"
-#    #show Ivan dour
-#    ivan "..."
-#    g "You're not gonna talk?"
-#    ivan "..."
-#    #show Grace neutral
-#    g "I think he's ignoring me."
 
 label adaisbetterthanyou_E:
     $quick_menu = True
@@ -1191,6 +1156,7 @@ label ch3convoresume1_E:
     "{i}Ivan enters a password, and a flood of data crosses over the screen."
     #Insert SFX
     show bg lab2Ivan_unlocked
+    $ivanComp_lock = False
     "{i}Ivan looks at Grace and smiles"
     show Grace surprised
     g "Have you ever heard of a sort function?"
@@ -1210,72 +1176,52 @@ label ch3convoresume1_E:
     g "All I'm looking for is some discrepancy in the logs."
     #insert Grace's puzzle
     #after Grace's puzzle
+    "Temporary placeholder for Grace's first puzzle."
+    $resume = "E"
+    #jump tutorial
+    jump finishGPuzzle1_E #CHANGE LATER
 
-#    #sydcomscidoit
-#    if (attempts==1):
-#    #show Grace happy
-#    g "Really, it couldn't have killed him to sort this."
-#    if (attempts>1 and attempts<4):
-#    #show Grace neutral
-#    g "It wasn't pleasant, but I think I've got something."
-#    if (attempts>3):
-#    #show Grace annoyed
-#    g "If I never see Ivan's documents ever again, I can die happy."
-
-#    "Ivan hovers over Grace."
-#    #show Ivan dour
-#    #show Grace annoyed
-#    g "Nothing? This cannot be another dead end."
-#    g "Someone had to at least fudge their hours, use old equipment-- something!"
-#    ivan "Like I said a thousand times, it was nothing on my or my team's end."
-#    g "Ugh. Can you stop breathing down my neck? That doesn't help."
-#    "Grace walks around the room."
-#    #show Ivan defensive
-#    ivan "What are you doing?"
-#    g "There's gotta be something around here."
-#    g "There just has to be some sort of proof."
-#    g "I'm running out of time, and this-- I know it wasn't my work that caused Alpha's demise."
-#    ivan "I assured you before, Fortran."
-#    ivan "We're thorough. Nothing would have gotten past us."
-#    ivan "I have nothing more for you to put your grubby paws on."
-#    "He shuffles some papers off a desk."
-#    ivan "Really, if the night shift followed my protocols, this lab would be far better off."
-#    "Grace's eye catches on something behind the papers."
-#    "She pulls out the desk and retrieves a burnt power cord."
-#    #show Grace happy
-#    g "Thorough, eh, Babbage?"
-#    ivan "What the--? There's no way that came from my team!"
-#    ivan "It was probably Ellen and her team of chumps. They're an incompetent lot."
-#    g "Yeah, everyone is incompetent besides you and your little researchers, huh?"
-#    ivan "Yes, you included."
-
-#    #show Grace angry
-#    g "What exactly is your problem with me?"
-#    ivan "Other than the fact that you receive special treatment for being the daughter of the Director, nothing."
-#    g "You know that I don't receive special treatment."
-#    g "I worked just as hard as you to be where I am today."
-#    ivan "That's debatable. I'm not sure anyone works as hard as I do."
-#    g "Oh please."
-#    g "If that's what helps you sleep at night, by all means, believe yourself."
-#    ivan "I sleep just fine at night, and I will continue to do so, thank you."
-#    "Grace rolls her eyes."
-#    g "When is Ellen's shift?"
-#    ivan "Precisely after mine."
-#    "Grace gets back onto the computer to hack into Ellen's computer."
-#    #insert Grace's second puzzle
-
-#    #sydcomscidoit
-#    if (attempts == 1)
-#    g "Seriously, who uses their name as their password? This was almost too easy."
-#    if (attempts >1) and (attempts<4)
-#    g "Not a bad password, but nothing I can't crack."
-#    if (attempts>3)
-#    g "Ivan, this would have been easier without you looking over my shoulder."
-#    ivan "Right. {i}That's{/i} why you had trouble."
-#    g "I didn't see you trying to help, and I'm in. So there."
-
-    #after Grace's second puzzle
-#    g "It's probably a good thing these computers don't lock after a certain number of failed attempts."
+label finishGPuzzle1_E:
+    "{i}Ivan hovers over Grace."
+    #show Ivan dour at right
+    show Grace annoyed at left
+    g "Nothing? This cannot be another dead end."
+    g "Someone had to at least fudge their hours, use old equipment-- something!"
+    ivan "Like I said a thousand times, it was nothing on my or my team's end."
+    g "Ugh. Can you stop breathing down my neck? That doesn't help."
+    if(lab2Items<2):
+        ivan "Finish your snooping and then you can go bother someone else."
+        g "Fine. I will."
+        ivan "Talk to me when you are finished. I don't trust that you'll leave without disturbing more of my lab when you're done."
+        show Grace annoyed
+        g "Jeez, paranoid much?"
+        ivan "My lab, my rules."
+        jump lab2_inv
+    else:
+        jump finishLab2Inv_E
+        
+label finishLab2Inv_E:
+    $resume = "E"
+    show Grace annoyed at left
+    g "There's gotta be something around here."
+    g "There just has to be some sort of proof."
+    show Grace neutral
+    "{i}Grace walks around the room."
+    #play SFX here
+    show bg lab2Table_locked
+    #show Ivan defensive
+    ivan "What are you doing?"
+    show Grace annoyed
+    g "I'm running out of time, and this-- I know it wasn't my work that caused Alpha's demise."
+    ivan "I assured you before, Fortran. We're thorough. Nothing would have gotten past us."
+    ivan "I have nothing more for you to put your grubby paws on."
+    "{i}He shuffles some papers off a desk."
+    ivan "Really, if the night shift followed my protocols, this lab would be far better off."
+    show Grace surprised
+    "{i}Grace's eye catches on something behind the papers."
+    jump lab2Table
+        
+label endCh3_E:
     "{i}Grace's bracelet flashes."
     #Insert SFX
     "{i}DING. DING."

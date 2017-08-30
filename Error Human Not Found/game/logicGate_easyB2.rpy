@@ -42,7 +42,7 @@ label logicGate_easyB2: #logicGate_easyB2
     
     #row 2
     image EB2tile02_02 = "r_g.png"
-    image EB2tile02_03 = "OR_Gate.png"
+    image EB2tile02_03 = "OR_Gate_blue.png"
     image EB2tile02_04 = "g_horizontal.png"
     image EB2tile02_05 = "g_elbow_tl.png"
     image EB2tile02_06 = "y_vertical.png"
@@ -79,7 +79,7 @@ label logicGate_easyB2: #logicGate_easyB2
     image EB2tile04_05 = "y_t_down.png"
     image EB2tile04_06 = "y_elbow_tl.png"
     image EB2tile04_10 = "y_y.png"
-    image EB2tile04_11 = "OR_Gate.png"
+    image EB2tile04_11 = "OR_Gate_blue.png"
     image EB2tile04_12 = "y_horizontal.png"
     image EB2tile04_13 = "y_elbow_tl.png"
     
@@ -124,7 +124,7 @@ label logicGate_easyB2: #logicGate_easyB2
     #row 7 (row has a light)
     image EB2tile07_01 = "r_vertical.png"
     image EB2tile07_07 = "y_r.png"
-    image EB2tile07_08 = "AND_Gate.png"
+    image EB2tile07_08 = "AND_Gate_blue.png"
     image EB2tile07_09 = "y_horizontal.png"
     image EB2tile07_10 = "y_elbow_tl.png"
     
@@ -154,16 +154,16 @@ label logicGate_easyB2: #logicGate_easyB2
     #row 9
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_g_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_r_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image lgb2start1 = "light_r_on.png"
+    show lgb2start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image lgb2start2 = "light_g_on.png"
+    show lgb2start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image lgb2start3 = "light_r_on.png"
+    show lgb2start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
     
     #end points (only use one of these
-    image end1 = "light_g_off.png"
-    show end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
+    image lgb2end1 = "light_g_off.png"
+    show lgb2end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
     
     
     
@@ -220,6 +220,12 @@ label gamefileB2:
             $ and1in2 = True
             $ and1in1 = False
             
+        if slot_name == "and return":
+            $ and1x = 698
+            $ and1y = 88
+            $ and1in1 = False            
+            $ and1in2 = False  
+            
     # the or logic gate************************************************************************
     if gate_name == "or_gate":
         #gate slot numeber one *******************************
@@ -243,8 +249,13 @@ label gamefileB2:
             $ or1x = 961
             $ or1y = 308
             $ or1in2 = True  
-            $ or1in1 = False        
-
+            $ or1in1 = False   
+            
+        if slot_name == "or return":
+            $ or1x = 848
+            $ or1y = 88
+            $ or1in2 = False
+            $ or1in1 = False
 
 
 #*******************************************
@@ -427,6 +438,14 @@ label gamefileB2:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
+            if slot_name == "and return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "or_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "and return" and gate_name == "or_gate":
+                $ attempts +=1
         
 #win conditions ********
     if and1in2 == True and or1in1 == True: 
@@ -524,3 +543,14 @@ screen logicGatesB2:
                 child "cover.png"
                 draggable False
                 xpos 961 ypos 308
+            drag:
+                drag_name "and return"
+                child "cover.png"
+                draggable False
+                xpos 698 ypos 88
+                
+            drag:
+                drag_name "or return"
+                child "cover.png"
+                draggable False
+                xpos 848 ypos 88

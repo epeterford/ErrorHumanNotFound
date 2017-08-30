@@ -25,7 +25,7 @@ label logicGate_easyA2:  #logicGate_easyA2
 
     #row 2
     image ea1tile6 = "g_g.png"
-    image ea1tile7 = "AND_Gate.png"
+    image ea1tile7 = "AND_Gate_blue.png"
     image ea1tile8 = "g_horizontal.png"
     image ea1tile9 = "g_horizontal.png"
     image ea1tile10 = "g_elbow_bl.png"
@@ -82,7 +82,7 @@ label logicGate_easyA2:  #logicGate_easyA2
     
     #row6
     image ea1tile23 = "g_r.png"
-    image ea1tile24 = "AND_Gate.png"
+    image ea1tile24 = "AND_Gate_blue.png"
     image ea1tile25 = "r_horizontal.png"
     image ea1tile26 = "r_horizontal.png"
     image ea1tile27 = "r_elbow_tl.png"
@@ -107,7 +107,7 @@ label logicGate_easyA2:  #logicGate_easyA2
     show ea1tile38 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
     
     #logicGate_easyA1 and end points
-    image logicGate_easyA21 = "light_g_on.png"
+    image logicGate_easyA21 = "light_r_on.png"
     show logicGate_easyA21 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
     image logicGate_easyA22 = "light_g_on.png"
     show logicGate_easyA22 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)

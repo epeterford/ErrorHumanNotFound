@@ -26,7 +26,7 @@ label logicGate_easyB3: #logicGate_easyB3
     #row 1 (row has a light)
     image EB3tile01_00 = "r_elbow_tl.png"
     image EB3tile01_03 = "r_r.png"
-    image EB3tile01_04 = "and_gate.png"
+    image EB3tile01_04 = "and_gate_blue.png"
     image EB3tile01_05 = "r_horizontal.png"
     image EB3tile01_06 = "r_elbow_bl.png"
     
@@ -54,7 +54,7 @@ label logicGate_easyB3: #logicGate_easyB3
     #row 3 (row has a light)
     image EB3tile03_03 = "r_vertical.png"
     image EB3tile03_10 = "r_y.png"
-    image EB3tile03_11 = "and_gate"
+    image EB3tile03_11 = "and_gate_blue.png"
     image EB3tile03_12 = "y_elbow_bl.png"
     
     show EB3tile03_03 at Position(xpos = 661, xanchor = 0, ypos = 458, yanchor = 0)
@@ -145,7 +145,7 @@ label logicGate_easyB3: #logicGate_easyB3
     #row 8
     image EB3tile08_01 = "g_vertical.png"
     image EB3tile08_02 = "r_g.png"
-    image EB3tile08_03 = "or_gate.png"
+    image EB3tile08_03 = "or_gate_blue.png"
     image EB3tile08_04 = "g_horizontal.png"
     image EB3tile08_05 = "g_horizontal.png"
     image EB3tile08_06 = "g_elbow_tl.png"
@@ -181,12 +181,12 @@ label logicGate_easyB3: #logicGate_easyB3
     show EB3tile09_10 at Position(xpos = 1186, xanchor = 0, ypos = 908, yanchor = 0)
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start3 = "light_r_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_g_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image lgB3start1 = "light_r_on.png"
+    show lgB3start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image lgB3start3 = "light_r_on.png"
+    show lgB3start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image lgB3start4 = "light_g_on.png"
+    show lgB3start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
     image end4 = "light_g_off.png"
@@ -247,6 +247,12 @@ label gamefileB3:
             $ and1y = 833
             $ and1in2 = True
             $ and1in1 = False
+        
+        if slot_name == "and return":
+            $ and1x = 698
+            $ and1y = 88
+            $ and1in1 = False   
+            $ and1in2 = False
             
     if gate_name == "or_gate":
         #gate slot numeber one *******************************
@@ -271,6 +277,12 @@ label gamefileB3:
             $ or1x = 1261
             $ or1y = 833
             $ or1in2 = True
+            $ or1in1 = False
+        
+        if slot_name == "or return":
+            $ or1x = 848
+            $ or1y = 88
+            $ or1in2 = False
             $ or1in1 = False
             
 #*******************************************
@@ -449,7 +461,15 @@ label gamefileB3:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
-        
+            if slot_name == "and return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "or_gate":
+                $ attempts +=1
+            if slot_name == "or return" and gate_name == "and_gate":
+                $ attempts +=1
+            if slot_name == "and return" and gate_name == "or_gate":
+                $ attempts +=1
+                
 #win conditions ********
     if and1in1 == True and or1in2 == True: 
         image EB3tile200 = "and_Gate.png"
@@ -533,3 +553,14 @@ screen logicGatesB3:
                 child "cover.png"
                 draggable False
                 xpos 1261 ypos 833
+            drag:
+                drag_name "and return"
+                child "cover.png"
+                draggable False
+                xpos 698 ypos 88
+           
+            drag:
+                drag_name "or return"
+                child "cover.png"
+                draggable False
+                xpos 848 ypos 88
