@@ -163,6 +163,13 @@ label Gamefile_lle4:
             $ if1in2 = False
             $ if1in3 = True
 
+        if slot_name == "G_if_gate_return":
+            $ if1x = 1525
+            $ if1y = 645
+            $ if1in1 = False
+            $ if1in2 = False
+            $ if1in3 = False
+
             
     #the first logic gate *******************************************************************************
     if gate_name == "B_if_gate":
@@ -219,6 +226,13 @@ label Gamefile_lle4:
             $ if2in1 = False
             $ if2in2 = False
             $ if2in3 = True
+
+        if slot_name == "B_if_gate_return":
+            $ if2x = 1395
+            $ if2y = 645
+            $ if2in1 = False
+            $ if2in2 = False
+            $ if2in3 = False
 
             
     #the third logic gate *******************************************************************************
@@ -277,6 +291,13 @@ label Gamefile_lle4:
             $ if3in2 = False
             $ if3in3 = True
 
+        if slot_name == "G_else_gate_return":
+            $ if3x = 1655
+            $ if3y = 645
+            $ if3in1 = False
+            $ if3in2 = False
+            $ if3in3 = False
+
             
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
         $ temp_slot = slot_name
@@ -290,6 +311,13 @@ label Gamefile_lle4:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
+
+            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
+            if slot_name == "G_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
+            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
 
 
 #*******************************************
@@ -603,3 +631,21 @@ screen LoopLogicE4:
                 child "cover2.png"
                 draggable False
                 xpos gate3x-25 ypos gate3y-25
+
+            drag:
+                drag_name "G_if_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1515 ypos 634
+          
+            drag:
+                drag_name "B_if_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1385 ypos 634
+
+            drag:
+                drag_name "G_else_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1645 ypos 634
