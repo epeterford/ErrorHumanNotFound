@@ -195,6 +195,13 @@ label gamefile_lle2:
             $ if1in1 = False
             $ if1in2 = False
             $ if1in3 = True
+
+        if slot_name == "B_if_gate1_return":
+            $ if1x = 1445
+            $ if1y = 645
+            $ if1in1 = False
+            $ if1in2 = False
+            $ if1in3 = False
             
     #the first logic gate *******************************************************************************
     if gate_name == "B_if_gate2":
@@ -248,6 +255,13 @@ label gamefile_lle2:
             $ if2in1 = False
             $ if2in2 = False
             $ if2in3 = True
+
+        if slot_name == "B_if_gate1_return":
+            $ if2x = 1445
+            $ if2y = 645
+            $ if2in1 = False
+            $ if2in2 = False
+            $ if2in3 = False
             
     #the third logic gate *******************************************************************************
     if gate_name == "G_else_gate":
@@ -303,6 +317,13 @@ label gamefile_lle2:
             $ else1in2 = False
             $ else1in3 = True
 
+        if slot_name == "G_else_gate_return":
+            $ else1x = 1625
+            $ else1y = 645
+            $ else1in1 = False
+            $ else1in2 = False
+            $ else1in3 = False
+
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
@@ -315,6 +336,11 @@ label gamefile_lle2:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
+
+            if slot_name == "B_if_gate1_return" and (gate_name == "B_if_gate1" or gate_name == "B_if_gate2" or gate_name == "G_else_gate"):
+                $ attempts +=1
+            if slot_name == "G_else_gate_return" and (gate_name == "G_else_gate" or gate_name == "B_if_gate2" or gate_name == "B_if_gate1"):
+                $ attempts +=1
 
 
 
@@ -586,4 +612,16 @@ screen loopLogic_easy2Scr:
                 child "cover2.png"
                 draggable False
                 xpos gate3x-25 ypos gate3y-25
+
+            drag:
+                drag_name "B_if_gate1_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1435 ypos 634
+
+            drag:
+                drag_name "G_else_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1615 ypos 634
 

@@ -235,6 +235,13 @@ label gamefile_lle3:
             $ if1in2 = False
             $ if1in3 = True
 
+        if slot_name == "B_if_gate_return":
+            $ if1x = 1395
+            $ if1y = 645
+            $ if1in1 = False
+            $ if1in2 = False
+            $ if1in3 = False
+
     #the first logic gate *******************************************************************************
     if gate_name == "G_if_gate":
         #gate slot numeber one *******************************
@@ -301,6 +308,13 @@ label gamefile_lle3:
             $ if2in1 = False
             $ if2in2 = False
             $ if2in3 = True
+
+        if slot_name == "G_if_gate_return":
+            $ if2x = 1525
+            $ if2y = 645
+            $ if2in1 = False
+            $ if2in2 = False
+            $ if2in3 = False
 
             
     #the third logic gate *******************************************************************************
@@ -372,9 +386,12 @@ label gamefile_lle3:
             $ else1in2 = False
             $ else1in3 = True
 
-            #if else1x == gate3x and else1y == gate3y:
-            #    $ attempts -= 1
-            #    "[attempts]"
+        if slot_name == "G_else_gate_return":
+            $ else1x = 1655
+            $ else1y = 645
+            $ else1in1 = False
+            $ else1in2 = False
+            $ else1in3 = False
 
 
 
@@ -390,6 +407,13 @@ label gamefile_lle3:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
+
+            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
+            if slot_name == "G_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
+            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                $ attempts +=1
 
 
 #*******************************************
@@ -704,4 +728,22 @@ screen loopLogic_easy3Scr:
                 #child "Placeholder2.png"
                 draggable False
                 xpos gate3x-25 ypos gate3y-25
+
+            drag:
+                drag_name "B_if_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1385 ypos 634
+          
+            drag:
+                drag_name "G_if_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1515 ypos 634
+
+            drag:
+                drag_name "G_else_gate_return"
+                child "placeholder3.png"
+                draggable False
+                xpos 1645 ypos 634
 
