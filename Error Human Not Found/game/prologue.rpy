@@ -13,29 +13,26 @@ label prologue:
     play channel03 labBGM_3 fadeout 1.0 fadein 1.0
     play channel04 labBGM_4 fadeout 1.0 fadein 1.0
     play channel05 labBGM_5 fadeout 1.0 fadein 1.0
-
     window show
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:03"
     $ loc_ref = "Grace's Lab"
     #Grace types away at her computer
     play sound typing 
-    show Grace neutral at basicfade#left at basicfade #with fade
+    show Grace neutral at center
     #Insert SFX Typing here
     "{i}Grace types away at her computer.{/i}"
     "{i}Grace's bracelet beeps and flashes.{/i}"
     play sound beepSoft
     queue sound beepSoft
     #Insert SFX here
-    "{i}DING. DING."
- 
-    hide Grace neutral at basicfade
-    show Grace annoyed at basicfade #at left with fade
+    "{i}DING. DING.{/i}"
+    show Grace annoyed
     g "Hold on, I'm busy."
     #Insert SFX here
     play sound beepMedium
     queue sound beepMedium
-    "{i}DING! DING!"
+    "{i}DING! DING!{/i}"
     
     g "Just a second!"
     play sound beepLoud
@@ -63,7 +60,7 @@ label answer:
  
     show Grace annoyed at left
     g "Really? A summons? I have so much work to do. Would it have killed her to just stop by my lab instead of having her secretary call on me? I am not her servant."
-    "{i}Grace marches out of the room."
+    "{i}Grace marches out of the room.{/i}"
     play sound graceWalk
     jump chambers
  
@@ -72,7 +69,7 @@ label directChambers:
     show Grace annoyed at left
     g "There's only one person who would call me at work after hours." 
     g "I suppose I should see what she wants."
-    "{i}Grace shuts down her computer and exits the lab."
+    "{i}Grace shuts down her computer and exits the lab.{/i}"
     play sound graceWalk
     jump chambers
 
@@ -116,15 +113,15 @@ label thanks:
     show Tosh pleasant at right
     show Grace neutral at left
     g "Good evening to you, too."
-    "{i}The secretary VI perks up and smiles at Grace."
+    "{i}The secretary VI perks up and smiles at Grace.{/i}"
     secretary "You are most welcome. Help yourself to some complimentary oolong tea."
     show other darken
     show image "objects/tea_closeup.png" at centerScreen
-    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden.{/i}"
     hide other darken
     hide image "objects/tea_closeup.png"
     play sound graceTea
-    "{i}Grace takes a sip."
+    "{i}Grace takes a sip.{/i}"
     show Grace happy
     g "Ah, freshly made tea."
     secretary "The oxygen garden workers reported that this was their best harvest to date."
@@ -144,7 +141,7 @@ label shrug:
     g "As long as it means you will stop talking to me."
     show other darken
     show image "objects/tea_closeup.png" at centerScreen
-    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden."
+    "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden.{/i}"
     hide other darken
     hide image "objects/tea_closeup.png"
     show Grace happy
@@ -159,12 +156,12 @@ label prologueResume1:
     scene bg conclaveDoor with fade #at basicfade
     #off screen dialogue from the Conclave ensues.
     $quick_menu = True
-    "{i}Grace grows more and more impatient."
+    "{i}Grace grows more and more impatient.{/i}"
     show Grace annoyed at left
     g "What is taking so long?"
     play sound pickup
-    "{i}Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet."
-    "{i}Voices can be heard from a crack in the door. Grace leans in to listen."
+    "{i}Grace sets down her cup of tea and approaches the heavy door where the Conclave members meet.{/i}"
+    "{i}Voices can be heard from a crack in the door. Grace leans in to listen.{/i}"
     hide Grace annoyed
     
     h "...with Alpha deceased, Ada is growing agitated and pushing for answers. We need to reign her in and keep an eye on the elder AIs."
@@ -195,7 +192,7 @@ label prologueResume1:
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:26"
     $ loc_ref = "The Conclave"
-    "{i}The doors slide open. Grace stumbles into the room to be greeted by Director Roberta Hirose and the four Chiefs of the different divisions on the Noah Sphere."
+    "{i}The doors slide open. Grace stumbles into the room to be greeted by Director Roberta Hirose and the four Chiefs of the different divisions on the Noah Sphere.{/i}"
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
     show Nevalinna speaking at right
@@ -226,7 +223,7 @@ label prologueResume1:
     hide Godel
     h "That's enough, both of you."
     g "..."
-    "{i}Hirose stares down Grace from her platform."
+    "{i}Hirose stares down Grace from her platform.{/i}"
     g "Director, please inform me of the current events involving Alpha."
     h "We are not certain of what transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
@@ -286,10 +283,10 @@ label sassy:
     g "This is ridiculous. You're not doing enough!"
     #show Hirose irritated
     h "You are not to be involved, and that's final."
-    "{i}A stare down between Grace and Hirose chills the room."
+    "{i}A stare down between Grace and Hirose chills the room.{/i}"
     g "Fine."
     show Grace snarky
-    "{i}Grace turns to walk out of the room and speaks to herself."
+    "{i}Grace turns to walk out of the room and speaks to herself.{/i}"
     g "We'll see about that."
     play sound doorOpen2
     queue sound doorClose2
@@ -316,7 +313,7 @@ label prologueResume2:
     play channel03 labBGM_3
     play channel04 labBGM_4
     play channel05 labBGM_5
-    "{i}Grace enters her lab to be greeted with the sight of an android."
+    "{i}Grace enters her lab to be greeted with the sight of an android.{/i}"
     stop sound fadeout 0.5
     show Grace surprised at left
      
@@ -375,7 +372,7 @@ label together:
     show Ada surprised
     a "Humans memorize the backs of their hands?"
     show Ada neutral
-    "{i}Ada studies her hand."
+    "{i}Ada studies her hand.{/i}"
     g "No--nevermind."
     a "Shall we get to it then? No point in waiting around to get caught."
     g "Absolutely."
@@ -402,9 +399,9 @@ label prologueResume3:
     show Grace neutral at left
     g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 
     g "We need to acquire her credentials to access the crime scene."
-    "{i}The two start to leave." 
+    "{i}The two start to leave.{/i}" 
     play sound adaClumsy
-    "{i}Ada stumbles."
+    "{i}Ada stumbles.{/i}"
     stop sound fadeout 0.5
     g "Err... are you going to be all right?"
     show Ada amused at right

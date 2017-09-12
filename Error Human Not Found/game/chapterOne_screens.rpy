@@ -732,7 +732,7 @@ label hiroseTea_label:
     show other darken
     show image "objects/hiroseTea_closeup.png" at centerScreen
     window show
-    "{i}A lukewarm cup of herbal tea. The lids on these reusable cups have a tendency to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist."
+    "{i}A lukewarm cup of herbal tea. The lids on these reusable cups have a tendency to be slightly too big, and thus pop open without warning. This is truly the worst nightmare of any late-working scientist.{/i}"
     hide image "objects/hiroseTea_closeup.png"
     hide other darken
     show Ada neutral at right
@@ -759,7 +759,7 @@ label hiroseTree:
     show other darken
     show image "objects/hiroseTree_closeup.png" at centerScreen
     window show
-    "{i}A collection of exotic trees with seeds imported from Earth. It's rare to see this much plant-life in the office of a space station. "
+    "{i}A collection of exotic trees with seeds imported from Earth. It's rare to see this much plant-life in the office of a space station.{/i}"
     hide image "objects/hiroseTree_closeup.png"
     hide other darken
     show Grace frustrated at left
@@ -783,7 +783,7 @@ label hiroseBed_label:
     show other darken
     show image "objects/hiroseBed_closeup.png" at centerScreen
     window show
-    "{i}A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs."
+    "{i}A sizeable bed in Hirose's office. A control panel by the edge of the bed platform allows a user to inflate a memory foam mattress out of the center of the bed and customize it to their needs.{/i}"
     hide other darken
     hide image "objects/hiroseBed_closeup.png"
     show Ada amused at right
@@ -806,7 +806,7 @@ label hiroseRecorder_label:
     show other darken
     show image "objects/hiroseRecorder_closeup.png" at centerScreen
     window show
-    "{i}This desk is made for Hirose's stenographer. This old-fashion style of recording events is rarely seen anymore, but dedicated practitioners in the art of writing shorthand have kept the profession alive."
+    "{i}This desk is made for Hirose's stenographer. This old-fashion style of recording events is rarely seen anymore, but dedicated practitioners in the art of writing shorthand have kept the profession alive.{/i}"
     hide other darken
     hide image "objects/hiroseRecorder_closeup.png"
     show Grace frustrated at left
@@ -815,7 +815,7 @@ label hiroseRecorder_label:
     a "It does not seem that odd to me. The Director must always work at peak efficiency."
     show Grace neutral
     g "What does efficiency have to do with it?"
-    "{i}Ada shrugs, although the motion is stiff."
+    "{i}Ada shrugs, although the motion is stiff.{/i}"
     a "Perhaps she just prefers to read?"
     g "..."
     g "You've got me there."
@@ -829,7 +829,7 @@ label hiroseWindow_label:
     $ hirosePersonalItems_value += 1
     show other darken
     show image "objects/hiroseWindow_closeup.png" at centerScreen
-    "{i}An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy."
+    "{i}An expansive view of the vibrant nebula. Only some of the offices on the Noah Sphere have windows facing out into the galaxy.{/i}"
     hide image "objects/hiroseWindow_closeup.png"
     hide other darken
     show Grace happy at left

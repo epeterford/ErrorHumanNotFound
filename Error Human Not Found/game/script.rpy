@@ -19,9 +19,9 @@ define alan = Character("Alan", color="#005aaf")
 define tosh = Character("Tosh", color="#383838")
 define mopr = Character("M.O.P.R", color="#ad0000")
 #Investigators
-#define  = Character("", color="#000000")
-#define = Character("", color="#000000")
-#define = Character("", color="#000000")
+define investigator1 = Character("Detective", color="#000000")
+define investigator2 = Character("Officer 1", color="#000000")
+define investigator3= Character("Officer 2", color="#000000")
 
 #Sprites for the Conclave
 image Nevalinna speaking = "sprites/Nevalinna.png"
@@ -51,6 +51,14 @@ image Ada nervous = "sprites/ada_afraid.png"
 image Mopr = "sprites/MOPR.png"
 image Lynn = "sprites/Lynn_Sprite.png"
 image Lynn empty = "phone_0.png"
+image Blue happy = "sprites/blueHappy.png"
+image Blue smug = "sprites/blueSmug.png"
+image Blue threaten = "sprites/blueThreaten.png"
+image Blue pout = "sprites/bluePout.png"
+image Blue flirty = "sprites/blueFlirty.png"
+image Blue confused = "sprites/blueConfused.png"
+image Blue neutral = "sprites/blueNormal.png"
+image Blue angry = "sprites/blueAngry.png"
 
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"
@@ -141,16 +149,17 @@ image bg hallwayBalcony = "images/bg/Hallway_Balcony1.png"
 image bg hallwayGrace2 = "images/bg/Hallway_Grace2.png"
 image bg hallwayLab2 = "images/bg/Hallway_Lab2.png"
 image bg hallwayLab2Door = "images/bg/Hallway_Lab2Door.png"
-image bg door2 = "bg/Hirose_Door.png" #MODIFY Hirose's door???
+image bg door2 = "bg/WW_Door.png"
 
 #Lab 2
 image bg lab2Main_locked = "images/bg/Lab2_Overview_Locked.png"
 image bg lab2Main_unlocked = "images/bg/Lab2_Overview_Unlocked.png"
 image bg lab2Main_Ivan = "images/bg/Lab2_Overview_NightshiftLocked.png"
-image bg lab2Main_nightshift = "images/bg/Lab2_Overview_IvanLocked.png"
 image bg lab2WS_locked = "images/bg/Lab2_Workstation_Locked.png"
 image bg lab2WS_unlocked = "images/bg/Lab2_Workstation_Unlocked.png"
 image bg lab2Ivan_locked = "images/bg/Lab2_Ivan_Locked.png"
+image bg lab2_cord = "images/bg/Lab2_Main_Locked_Cable.png"
+image bg lab2_noCord = "images/bg/Lab2_Main_Locked_Table.png"
 image bg lab2Ivan_unlocked = "images/bg/Lab2_Ivan_Unlocked.png"
 image bg lab2Table_locked = "images/bg/Lab2_Main.png"
 image bg lab2Table_unlocked = "images/bg/Lab2_Main_Unlocked.png"
@@ -166,7 +175,7 @@ image bg AICoreStairs = "images/bg/AICore_Stairs.png"
 #Blue's Workspace
 image bg creepyHallwayLong = "images/bg/Blue_CreepyHallwayLong.png"
 image bg creepyHallwayMed = "images/bg/Blue_CreepyHallwayMed.png"
-image bg creepHallwayDoor = "images/bg/Blue_CreepyHallwayDoor.png"
+image bg creepyHallwayDoor = "images/bg/Blue_CreepyHallwayDoor.png"
 image bg blueCore = "images/bg/Blue_BlueCore.png"
 image bg blueStairs = "images/bg/Blue_BlueStairs.png"
 image bg blueLeft = "images/bg/Blue_HumanSpaceLeft.png"
@@ -178,6 +187,8 @@ image bg wsDesk = "images/bg/WS_Desk.png"
 image bg wsMain = "images/bg/WS_DeskArea.png"
 image bg wsOverview = "images/bg/WS_Overview.png"
 image bg wsSafe = "images/bg/WS_Safe.png"
+image bg wsDesk_drive = "images/bg/WS_Desk_Drive.png"
+image bg wsMain_drive = "images/bg/WS_DeskArea_Drive.png"
 
 #Watson's Workspace
 image bg wwLongCrit = "images/bg/WW_Overview_CRITICAL.png"
@@ -189,6 +200,12 @@ image bg wwWorkArea = "images/bg/WW_WorkArea.png"
 image bg wwNominal = "images/bg/WW_BigScreen_NOMINAL.png"
 image bg wwCritical = "images/bg/WW_BigScreen_CRITICAL.png"
 
+#Oxygen Garden
+image bg ogOverview = "images/bg/OG_Overview.png"
+image bg ogStairs = "images/bg/OG_Stairs.png"
+image bg ogLong = "images/bg/OG_LongView.png"
+image bg ogClose = "images/bg/OG_CloseView.png"
+
 #Miscellaneous
 image bg Logic_Gate = "LOGIC_GATE_BG.png"
 image bg black = "blackScreen.png"
@@ -197,7 +214,7 @@ image bg binary = "tileBackground.png"
 
 define dissolve = Dissolve (1.0)
 
-image Tosh neutral = "Tosh_Happy1.png"
+image Tosh neutral = "sprites/Tosh_Happy.png"
 
 #Audio names
 #main theme
@@ -247,7 +264,6 @@ define audio.llPipe2 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_PipeFlo
 define audio.llPipe3 = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_PipeFlow_03.ogg"
 define audio.llWin = "music/UI/loopLogicPuzzle/EHNF_UI_LoopLogicPuzzle_WinSound.ogg"
 
-
 #door sounds
 define audio.doorOpen1 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_1.ogg"
 define audio.doorOpen2 = "music/Object/Door_Audio/EHNF_OBJECT_DOOR_OPEN_2.ogg"
@@ -264,6 +280,15 @@ define audio.balconyAmb2 = "music/Amb/Balcony/EHNF_BAL_L2.ogg"
 define audio.balconyAmb3 = "music/Amb/Balcony/EHNF_BAL_L3.ogg"
 define audio.balconyAmb4 = "music/Amb/Balcony/EHNF_BAL_L4.ogg"
 define audio.balconyBGM = "music/BGM/The_Balcony.mp3"
+
+#Watson's Workspace Ambience
+define audio.wwAmb0 = "music/Amb/watsonWorkspace/EHNF_WW_L0.ogg"
+define audio.wwAmb1 = "music/Amb/watsonWorkspace/EHNF_WW_L1.ogg"
+define audio.wwAmb2 = "music/Amb/watsonWorkspace/EHNF_WW_L2.ogg"
+define audio.wwAmb3 = "music/Amb/watsonWorkspace/EHNF_WW_L3.ogg"
+define audio.wwAmb4 = "music/Amb/watsonWorkspace/EHNF_WW_L4.ogg"
+define audio.wwAmb5 = "music/Amb/watsonWorkspace/EHNF_WW_L5.ogg"
+define audio.wwAmb6 = "music/Amb/watsonWorkspace/EHNF_WW_L6.ogg"
 
 #Conclave audio
 define audio.conclaveReceptionAmb = "music/amb/Conclave/Ambiance_Conclave_Reception_Area.ogg"
@@ -657,6 +682,62 @@ label start:
     $ lgMedC_solved = False
     $ binaryMed_solved = False
     $ gramMed_solved = False
+    $ lab2Items_table = 0
+    
+    #Variables for chapter four
+    #Blues
+    $ blueItems_main = 0
+    $ blueItems_left = 0
+    $ blueItems_right = 0
+    $ soilSamples_inv = False
+    $ scanner_inv = False
+    $ atmosphereReading_inv = False
+    $ bluesCore_inv = False
+    $ foodPrinter_inv = False
+    $ medKit_inv = False
+    $ bluesDemands_inv = False
+    $ convenienceTable_inv = False
+    $ bluesFloor_inv = False
+    $ talkBlue_count = False
+    $ transitionBlue = False
+    #Puzzle
+    $ llHard_solved = False
+    $ llHard_attempts = 0
+    $ lgHardA_solved = False
+    $ lgHardB_solved = False
+    $ lgHardC_solved = False
+    $ lgHard_attempts = 0
+    $ binaryHard_solved = False
+    $ binaryHard_attempts = 0
+    $ gramHard_solved = False
+    $ gramHard_attempts = 0
+    
+    #Watson's Server
+    $ drive2_inv = False
+    $ safe_inv = False
+    $ watsonDesk_inv = False
+    $ watsonScreens_inv = False
+    $ watsonItems_left = 0
+    $ watsonItems_right = 0
+    $ watsonItems_main = 0 
+    $ llHard_attempts = 0
+    $ lgHard_attempts = 0
+    $ binaryHard_attempts = 0
+    $ gramHard_attempts = 0
+    $ llHard_solved = False
+    $ lgHardA_solved = False
+    $ lgHardB_solved = False
+    $ lgHardC_solved = False
+    $ binaryHard_solved = False
+    $ gramHard_solved = False
+    $ talkAdaWatson_count = 0
+    
+    #Oxygen Garden
+    $raptor_inv = False
+    $fern_inv = False
+    $camcorder_inv = False
+    $ogItems = 0
+    $talkAlan_count = 0
     
     transform crawlScroll:
         yalign 0.0 xalign 0.5
@@ -683,6 +764,10 @@ label start:
             jump chapterThree_E
         "Chapter 3 S":
             jump chapterThree_S
+        "Chapter 4 S.":
+            jump chapterFour_S
+        "Chapter 4 E.":
+            jump chapterFour_E
     show bg black with fade
     scene bg prologue with fade
     $renpy.pause(3.0)

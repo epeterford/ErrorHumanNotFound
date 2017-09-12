@@ -610,7 +610,7 @@ label gracePoster_inv:
     show other darken
     show image "objects/gracePoster_closeup.png" at centerScreen
     window show
-    "{i}An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon."
+    "{i}An official Noah Sphere poster designed for employee motivation. The image is based on the old Earth  'Rosie the Riveter'  cultural icon.{/i}"
     hide image "objects/gracePoster_closeup.png"
     hide other darken
     show Grace neutral at left
@@ -636,16 +636,16 @@ label graceNeuralNetwork_inv:
     $ graceLeft1Desk_value +=1
     show other darken
     show image "objects/graceNeuralNetwork_closeup1.png" at centerScreen
-    "{i}This diagram shows some of the connections in the human brain, mapped organically."
+    "{i}This diagram shows some of the connections in the human brain, mapped organically.{/i}"
     hide image "objects/graceNeuralNetwork_closeup1.png"
     show image "objects/graceNeuralNetwork_closeup2.png" at centerScreen
-    "{i}This diagram represents a map of the human brain in terms of visible inputs that undergo processing--the hidden portion--and the visible outputs from those inputs."
+    "{i}This diagram represents a map of the human brain in terms of visible inputs that undergo processing--the hidden portion--and the visible outputs from those inputs.{/i}"
     hide image "objects/graceNeuralNetwork_closeup2.png"
     show image "objects/graceNeuralNetwork_closeup3.png" at centerScreen
-    "{i}This diagram shows the neurons in the human brain, the inspiration for the neural networks Grace programmed."
+    "{i}This diagram shows the neurons in the human brain, the inspiration for the neural networks Grace programmed.{/i}"
     hide image "objects/graceNeuralNetwork_closeup3.png"
     show image "objects/graceNeuralNetwork_closeup4.png" at centerScreen
-    "{i}Some lines of Grace's code, written in an integrated development environment."
+    "{i}Some lines of Grace's code, written in an integrated development environment.{/i}"
     hide image "objects/graceNeuralNetwork_closeup4.png"
     hide other darken
     show Ada neutral at right
@@ -670,7 +670,7 @@ label graceHardDrive_inv:
     $ graceLeft1Desk_value +=1
     show other darken
     show image "objects/graceHarddrive_closeup.png" at centerScreen
-    "{i}A semi-haphazardly stacked collection of external hard drives."
+    "{i}A semi-haphazardly stacked collection of external hard drives.{/i}"
     hide other darken
     hide image "objects/graceHarddrive_closeup.png"
     show Ada concerned at right
@@ -678,10 +678,10 @@ label graceHardDrive_inv:
     show Grace surprised at left
     g "What, Ada?! What's wrong?"
     a "Your hard drives, Grace! You cannot keep them like this."
-    "{i}Ada starts to pick up Grace's various hard drives."
+    "{i}Ada starts to pick up Grace's various hard drives.{/i}"
     show Grace annoyed
     g "Hey! Stop that!"
-    "{i}Grace stops Ada."
+    "{i}Grace stops Ada.{/i}"
     g "What are you doing?"
     show Ada neutral
     a "These hard drives are just out here, instead of being in storage. These are very sub-optimal conditions."
@@ -701,7 +701,7 @@ label graceBust_inv:
     $ graceLeft2Desk_value +=1
     show other darken
     show image "objects/graceBust_closeup.png" at centerScreen
-    "{i}This prototype for an AI chassis' head is missing its outer plating, giving it a skull-like appearance. Alan Asimov went through several designs for the AI androids before settling on the ones used for Alpha and Ada."
+    "{i}This prototype for an AI chassis' head is missing its outer plating, giving it a skull-like appearance. Alan Asimov went through several designs for the AI androids before settling on the ones used for Alpha and Ada.{/i}"
     hide other darken
     hide image "objects/graceBust_closeup.png"
     show Grace snarky at left
@@ -724,7 +724,7 @@ label graceCoffee_inv:
     $ graceLeft2Desk_value +=1
     show other darken
     show image "objects/graceCoffee_closeup.png" at centerScreen
-    "{i}A red mug with a cartoon robot on the side, the mascot of the popular brand, Starbots Coffee. On Earth, cafés for Starbots can be found in countires all over."
+    "{i}A red mug with a cartoon robot on the side, the mascot of the popular brand, Starbots Coffee. On Earth, cafés for Starbots can be found in countires all over.{/i}"
     hide other darken
     hide image "objects/graceCoffee_closeup.png"
     show Grace snarky at left
@@ -749,7 +749,7 @@ label graceCandD_inv:
     $ graceLeft2Desk_value +=1
     show other darken
     show image "objects/graceC&D_closeup.png" at centerScreen
-    "{i}The Conclave locked down any of Grace's computers attached to the central server, trying to ensure that she would stop working."
+    "{i}The Conclave locked down any of Grace's computers attached to the central server, trying to ensure that she would stop working.{/i}"
     hide other darken
     hide image "objects/graceC&D_closeup.png"
     show Ada neutral at right
@@ -774,7 +774,7 @@ label gracePhoto_inv:
     show other darken
     show image "objects/gracePhoto_closeup.png" at centerScreen
     window show
-    "{i}A framed picture of Grace and her father during the family's most recent vacation."
+    "{i}A framed picture of Grace and her father during the family's most recent vacation.{/i}"
     hide image "objects/gracePhoto_closeup.png"
     hide other darken
     show Ada neutral at right
@@ -798,7 +798,7 @@ label gracePens_inv:
     show other darken
     show image "objects/gracePens_closeup.png" at centerScreen
     window show
-    "{i}A ceramic cup containing several pens. With communication between humans and AI being so important on the Noah Sphere, not many scientists keep pens around. Most rely entirely on typed text that can easily be delivered and processed by AI."
+    "{i}A ceramic cup containing several pens. With communication between humans and AI being so important on the Noah Sphere, not many scientists keep pens around. Most rely entirely on typed text that can easily be delivered and processed by AI.{/i}"
     hide image "objects/gracePens_closeup.png"
     hide other darken
     show Ada surprised at right
@@ -823,22 +823,22 @@ label graceStickyNotes_inv:
     $ graceRightDesk_value +=1
     show other darken
     show image "objects/graceStickyNotes_closeup0.png" at centerScreen
-    "{i}A sprawl of post-it notes that have been attached to the outside of Grace's personal servers.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer."
+    "{i}A sprawl of post-it notes that have been attached to the outside of Grace's personal servers.  Grace stands out among her colleagues as one of the few who still rely on pen and paper notes. Some would say that the disorganized nature of her desk works just as effectively as a password on a computer.{/i}"
     hide image "objects/graceStickyNotes_closeup0.png"
     show image "objects/graceStickyNotes_closeup1.png" at centerScreen
-    "{i}One of Grace's notes. The image seems to be related to her feelings of the Conclave stifling her."
+    "{i}One of Grace's notes. The image seems to be related to her feelings of the Conclave stifling her.{/i}"
     hide image "objects/graceStickyNotes_closeup1.png"
     show image "objects/graceStickyNotes_closeup2.png" at centerScreen
-    "{i}A quick state machine for something Grace was working on. The doodle in the corner seems to indicate it did not go as planned."
+    "{i}A quick state machine for something Grace was working on. The doodle in the corner seems to indicate it did not go as planned.{/i}"
     hide image "objects/graceStickyNotes_closeup2.png"
     show image "objects/graceStickyNotes_closeup3.png" at centerScreen
-    "{i}A diagram of an Arithmetic Logic Unit. This particular one can perform 16 functions."
+    "{i}A diagram of an Arithmetic Logic Unit. This particular one can perform 16 functions.{/i}"
     hide image "objects/graceStickyNotes_closeup3.png"
     show image "objects/graceStickyNotes_closeup4.png" at centerScreen
-    "{i}Part of the notes for Grace's work on Ada's neural network. Adding pain receptors prevents actions that would damage the chassis."
+    "{i}Part of the notes for Grace's work on Ada's neural network. Adding pain receptors prevents actions that would damage the chassis.{/i}"
     hide image "objects/graceStickyNotes_closeup4.png"
     show image "objects/graceStickyNotes_closeup5.png" at centerScreen
-    "{i}This sketch seems somewhat like the mascot of the coffee shop on station. It was likely inspired by a late-night caffeine binge."
+    "{i}This sketch seems somewhat like the mascot of the coffee shop on station. It was likely inspired by a late-night caffeine binge.{/i}"
     hide image "objects/graceStickyNotes_closeup5.png"
     hide other darken
     show Ada concerned at right
@@ -877,19 +877,19 @@ label talkLynn:
         queue sound dialtone
         queue sound "<silence 0.25>"
         queue sound dialtone
-        "{i}The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds.{/i}"
         lynn "Hi!"
         show Grace happy at left
         g "Lynn, hello. How are you--"
         lynn "You've reached my voicemail! Leave me a message after the beep."
         play sound beepLoud
-        "{i}BEEP!"
+        "{i}BEEP!{/i}"
         hide Lynn
         hide arrow1
         hide arrow2
         hide arrow3
         play sound braceletSelect
-        "{i}Grace hangs up."
+        "{i}Grace hangs up.{/i}"
         show Grace annoyed
         g "I feel deceived."
         $ callAttempts +=1
@@ -905,7 +905,7 @@ label talkLynn:
         show arrow1 at center, delayed_blink(0.0, 1.0)
         show arrow2 at center, delayed_blink(0.2, 1.0)
         show arrow3 at center, delayed_blink(0.4, 1.0)
-        "{i}The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds.{/i}"
         lynn "Hi!"
         show Grace frustrated at left
         g "..."
@@ -915,7 +915,7 @@ label talkLynn:
         hide arrow2
         hide arrow3
         play sound braceletSelect
-        "{i}Grace hangs up."
+        "{i}Grace hangs up.{/i}"
         g "Typical."
         $ callAttempts +=1
         jump balcony_actions
@@ -930,7 +930,7 @@ label talkLynn:
         show arrow1 at center, delayed_blink(0.0, 1.0)
         show arrow2 at center, delayed_blink(0.2, 1.0)
         show arrow3 at center, delayed_blink(0.4, 1.0)
-        "{i}The dial tone plays for several seconds."
+        "{i}The dial tone plays for several seconds.{/i}"
         show Grace frustrated at left
         g "Come on."
         lynn "Hi!"
@@ -940,7 +940,7 @@ label talkLynn:
         hide arrow2
         hide arrow3
         play sound braceletSelect
-        "{i}Grace hangs up."
+        "{i}Grace hangs up.{/i}"
     hide Grace
     $quick_menu = False
     jump balcony_actions
@@ -1065,7 +1065,7 @@ label scratches_label:
     $alphaBodyItems +=1
     show other darken
     show image "objects/scratches_closeup.png" at centerScreen
-    "{i}A damaged railing. The depressions resemble a hand. The gouges look similar to the marks on the floor as well."
+    "{i}A damaged railing. The depressions resemble a hand. The gouges look similar to the marks on the floor as well.{/i}"
     hide other darken
     hide image "objects/scratches_closeup.png"
     show Grace surprised at left
@@ -1092,7 +1092,7 @@ label jumpdrive1_label:
     $alphaBodyItems +=1
     show other darken
     show image "objects/jumpdrive_closeup.png" at centerScreen
-    "{i}A small pendrive found by Alpha's hand. Besides the strangeness of where it was found, it is otherwise unremarkable."
+    "{i}A small pendrive found by Alpha's hand. Besides the strangeness of where it was found, it is otherwise unremarkable.{/i}"
     hide other darken
     hide image "objects/jumpdrive_closeup.png"
     show Grace happy at left
@@ -1103,7 +1103,7 @@ label jumpdrive1_label:
     g "Hold on for now, we haven't finished looking around. Let's not get distracted."
     show Ada frustrated
     a "I can perform multiple operations simultaneously, Grace."
-    g "Alright, have it."
+    g "All right, have at it."
     a "This drive is heavily encrypted. Without a decryption key I cannot access it."
     g "Right. We'll just have to keep an eye out for a decryption key someone left lying in plain sight."
     show Ada amused
@@ -1122,8 +1122,8 @@ label balconyView_label:
     $ balconyItems +=1
     show other darken
     show image "objects/balconyWindow_closeup.png" at centerScreen
-    "{i}Another window view of the nebula, this time around one of the many gardens on the Noah Sphere. It was in the past century that the solar system drifted into the depths of the nebula. 
-     {i}On Earth, the night sky lights up with the colorful glow of the space clouds."
+    "{i}Another window view of the nebula, this time around one of the many gardens on the Noah Sphere. It was in the past century that the solar system drifted into the depths of the nebula{/i}. 
+     {i}On Earth, the night sky lights up with the colorful glow of the space clouds.{/i}"
     hide other darken
     hide image "objects/balconyWindow_closeup.png"
     show Ada happy at right
@@ -1154,7 +1154,7 @@ label alphaBody_inv:
             if(resume =="E"):
                 show Grace neutral at left
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
-                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
                 show Ada concerned at right
                 a "Why would I?"
@@ -1167,12 +1167,12 @@ label alphaBody_inv:
                 g "Okay, but I'm not going to judge you if you do turn away."
                 a "Thank you for the consideration."
                 play sound facePlate
-                "{i}Grace removes the panel, revealing the manual access ports."
+                "{i}Grace removes the panel, revealing the manual access ports.{/i}"
                 g "All right Alpha, let's see what you've got for us."
             if(resume == "SbE"):
                 show Grace neutral at left
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
-                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
                 show Ada concerned at right
                 a "Why would I?"
@@ -1180,13 +1180,13 @@ label alphaBody_inv:
                 g "I don't know. Figured you might be squeamish or something."
                 show Ada neutral
                 play sound facePlate
-                "{i}Grace removes the panel off, revealing Alpha's manual access ports."
+                "{i}Grace removes the panel off, revealing Alpha's manual access ports.{/i}"
                 show Grace neutral
                 g "All right Alpha, let's see what you've got for us."
             if(resume == "S"):
                 show Grace neutral at left
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
-                "{i}Grace leans over Alpha, and finds the access panel for his head."
+                "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
                 show Ada concerned at right
                 a "Why would I?"
@@ -1196,7 +1196,7 @@ label alphaBody_inv:
                 a "I do not appreciate your tone. And you know that I am not capable of being squeamish."
                 g "Whatever. Suit yourself."
                 play sound facePlate
-                "{i}Grace removes the panel, revealing Alpha's manual access ports."
+                "{i}Grace removes the panel, revealing Alpha's manual access ports.{/i}"
                 show Grace neutral
                 g "All right Alpha, let's see what you've got for us."
         if (loopLogicEasy_tries>0):
@@ -1500,9 +1500,9 @@ label binaryDoneTalk:
         show Grace snarky at left
         g "Hey, don't look at me. I understand binary just fine."
     if (binaryEasy_tries>=3):
-        show Ada frustrated at left
+        show Ada frustrated at right
         a "I might as well have been trying to convert into hexidecimal for all the success I was having."
-        show Grace neutral at right
+        show Grace neutral at left
         g "When even the machine has trouble with binary, you know it's a bad day."
     show Ada frustrated
     a "I have never seen code this corrupted. I was barely able to access the logs."
@@ -1551,7 +1551,7 @@ label llDoneTalk:
     show Ada frustrated at right
     a "That is unfortunate."
     g "Hold on, let me see here."
-    "{i}Grace studies the system."
+    "{i}Grace studies the system.{/i}"
     show Grace neutral
     g "There's a basic readout that survived. Functions look normal, but the neural network was using almost double the necessary power."
     g "No wonder it burned out."

@@ -356,7 +356,7 @@ label Gamefile_lle4:
         hide LLE4tile108
         hide LLE4tile109
         hide LLE4tile110
-        hide LLE4tile1111
+        hide LLE42tile1111
 
     
     if if2in2 == True:

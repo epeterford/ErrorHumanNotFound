@@ -21,8 +21,8 @@ label chapterOne:
     play sound doorScan
     g "Here we are. Scan my badge and voila. Open."
     #play sound doorScan MISSING
-    "{i}The door doesn't budge."
-    "{i}A voice issues from speakers near the door."
+    "{i}The door doesn't budge.{/i}"
+    "{i}A voice issues from speakers near the door.{/i}"
     queue sound doorDenied
     tosh "The Director is not here at the moment. Please make an appointment."
     #Tosh's sprite isn't displayed here
@@ -45,7 +45,7 @@ label chapterOne:
     a "Let me get the door."
     show Ada neutral
     a "..."
-    "{i}An awkward silence hangs."
+    "{i}An awkward silence hangs.{/i}"
     show Grace neutral
     g "And this is supposed to...?"
 
@@ -498,7 +498,7 @@ label adaActualPuzzle1:
         $quick_menu = True
         show other darken
         show image "objects/hiroseOfficialComputer_closeup.png" at centerScreen
-        "{i}This computer was provided to Hirose through her work in the Conclave. Countless documents of research notes, policies, and procedures live on this machine."
+        "{i}This computer was provided to Hirose through her work in the Conclave. Countless documents of research notes, policies, and procedures live on this machine.{/i}"
         hide other darken
         hide image "objects/hiroseOfficialComputer_closeup.png"
         show Grace neutral at left
@@ -698,7 +698,7 @@ label lgEasyDone_talk:
     a "Grace, your mother does not appear to keep any personal or secure information on this terminal."
     show Grace annoyed at left
     g "Of course not. That would be too easy."
-    "{i}Grace looks around, thinking."
+    "{i}Grace looks around, thinking.{/i}"
     show Grace neutral at left
     g "She's got a personal computer. I'd wager it's probably there."
     if(talkAdaHiroseOffice_value == 0) and((hiroseOfficeItems <3) or (hiroseTransitionItems<1)):
@@ -840,7 +840,7 @@ label leaveHirosesSpace:
     #Transition to Grace's Lab here
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
-    "{i}Grace inserts her keycard into her terminal. It boots up, and she runs an update program."
+    "{i}Grace inserts her keycard into her terminal. It boots up, and she runs an update program.{/i}"
     show Grace happy at left
     g "There. My keycard is now copying Hirose's access protocols."
     jump endChapterOne
@@ -882,7 +882,7 @@ label sortaroastada:
     a "Hm?"
     show Grace snarky
     g "Talking down to Tosh like that. I can't help but notice the giant grin on your face."
-    "{i}Ada pauses, and she reaches up to touch her face."
+    "{i}Ada pauses, and she reaches up to touch her face.{/i}"
     show Ada concerned
     a "I did not realize. I was not trying to be cruel, Grace."
     g "I didn't say you were cruel."
@@ -904,7 +904,7 @@ label actuallyroastada:
     g "I could've done that by myself, if I'd been so inclined."
     show Ada frustrated at right
     a "I beg to differ. I do not have to help you, Grace. Some gratitude would be welcome."
-    "{i}Grace sighs."
+    "{i}Grace sighs.{/i}"
     show Grace neutral
     g "If you don't like me, you can just walk right out. It's not like you're going to get to Alpha's wreck without me."
     show Ada seething
@@ -970,7 +970,7 @@ label hirosePhoto_label:
     show other darken
     show image "objects/hirosePhoto_closeup.png" at centerScreen
     window show
-    "{i}A family portrait of Hirose, a young Grace, and Grace's father."
+    "{i}A family portrait of Hirose, a young Grace, and Grace's father.{/i}"
     hide other darken
     hide image "objects/hirosePhoto_closeup.png"
     show Ada neutral at right
@@ -980,7 +980,7 @@ label hirosePhoto_label:
     a "You were cute as a kid. What happened?"
     show Grace snarky
     g "Ha. Funny."
-    "{i}Grace starts to put the photo back."
+    "{i}Grace starts to put the photo back.{/i}"
     a "Grace, I would look at the back of the photo."
     g "Why?"
     a "A calculated guess."
@@ -988,7 +988,7 @@ label hirosePhoto_label:
     hide Grace
     show other darken
     show image "objects/hirosePhoto_back.png" at centerScreen
-    "{i}On the back of the digital photo is a date."
+    "{i}On the back of the digital photo is a date.{/i}"
     hide other darken
     hide image "objects/hirosePhoto_back.png"
     show Grace surprised at left
@@ -1009,7 +1009,7 @@ label hirosePC_label:
     $ quick_menu = True
     if (hirosePC==False):
         $hirosePC=True
-        "{i}The personal computer of Roberta Hirose, brought with her from Earth. Despite being several years old, the machine still looks new. This shows Hirose's excellent care of the machine."
+        "{i}The personal computer of Roberta Hirose, brought with her from Earth. Despite being several years old, the machine still looks new. This shows Hirose's excellent care of the machine.{/i}"
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Ada neutral at right
@@ -1043,7 +1043,7 @@ label hirosePC_label:
             $quick_menu = True
             jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value == 3:
-        "{i}The computer is still locked for the moment."
+        "{i}The computer is still locked for the moment.{/i}"
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Grace neutral at left
@@ -1063,7 +1063,7 @@ label hirosePC_label:
         $quick_menu = True
         jump gotHirosePassword
     elif hirosePhoto_inv == True and hirosePersonalItems_value < 3:
-        "{i}The computer is still locked for the moment."
+        "{i}The computer is still locked for the moment.{/i}"
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Ada neutral at right
@@ -1076,7 +1076,7 @@ label hirosePC_label:
         window hide
         jump hirosePersonalComputer
     else:
-        "{i}The computer is still locked for the moment."
+        "{i}The computer is still locked for the moment.{/i}"
         hide other darken
         hide image "objects/hiroseComputer_closeup.png"
         show Ada neutral at right

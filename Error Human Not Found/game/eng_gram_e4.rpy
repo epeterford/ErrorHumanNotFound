@@ -1915,7 +1915,6 @@ label gamefile_e4:
         hide eaeng_e4_tile53
         hide eaeng_e4_tile54
         hide eaeng_e4_tile55
-        hide eaeng_e4_tile56
         hide eaeng_e4_tile61
         hide eaeng_e4_tile62
         hide eaeng_e4_tile63
@@ -1971,7 +1970,6 @@ label gamefile_e4:
         hide eaeng_e4_tile53
         hide eaeng_e4_tile54
         hide eaeng_e4_tile55
-        hide eaeng_e4_tile56
         hide eaeng_e4_tile61
         hide eaeng_e4_tile62
         hide eaeng_e4_tile63

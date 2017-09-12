@@ -349,7 +349,7 @@ label Gamefile_lle5:
         hide LLE5tile108
         hide LLE5tile109
         hide LLE5tile110
-        hide LLE5tile1111
+        hide LLE52tile1111
     
     if if1in2 == True:
         image LLE51tile0 = "g_vertical_ll.png"

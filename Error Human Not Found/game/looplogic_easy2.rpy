@@ -417,7 +417,7 @@ label gamefile_lle2:
             hide LLE_2_tile84B
             hide LLE_2_tile85B
             hide LLE_2_tile86B
-            hide LLE_2_tile87B
+            #hide LLE_2_tile87B
             hide LLE_2_tile88B
             hide LLE_2_tile89B
             if (light3Sound ==1):
@@ -444,7 +444,7 @@ label gamefile_lle2:
         hide LLE_2_tile84B
         hide LLE_2_tile85B
         hide LLE_2_tile86B
-        hide LLE_2_tile87B
+        #hide LLE_2_tile87B
         hide LLE_2_tile88B
         hide LLE_2_tile89B
         hide LLE_2_tile97

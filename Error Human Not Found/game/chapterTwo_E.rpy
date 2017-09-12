@@ -294,7 +294,7 @@ label gettingin_E:
     g "Here we are. Oh, no... is that--"
     show Ada concerned at right
     a "Alpha!"
-    "{i}Ada rushes to the side of the fallen AI."
+    "{i}Ada rushes to the side of the fallen AI.{/i}"
     window hide
     $ quick_menu = False
     play sound01 adaWalk
@@ -310,7 +310,7 @@ label gettingin_E:
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     show Ada neutral at right
-    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
+    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally.{/i}"
     show Grace surprised at left
     g "Ada?"
     hide Ada
@@ -337,7 +337,7 @@ label askherif:
     show Grace neutral
     g "If you think that pain only comes from the outside, you've got a lot to learn, Ada."
     a "That much is evident."
-    "{i}Ada slowly stands from Alpha's side. Grace touches Ada's arm in assurance."
+    "{i}Ada slowly stands from Alpha's side. Grace touches Ada's arm in assurance.{/i}"
     g "We'll get to the bottom of this. For Alpha."
     a "..."
     a "Yes. For Alpha."
@@ -354,14 +354,14 @@ label askherif:
 label poorpooralpha:
     $ points_SbE +=2
     $ quick_menu = True
-    "{i}Grace watches Ada as she slowly falls to her knees."
+    "{i}Grace watches Ada as she slowly falls to her knees.{/i}"
     show Ada concerned at right
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
     a "A total erasure of one's existence... I realize now how sweet that sounds compared to having something left behind as a reminder."
     show Grace sad at left
     g "You must have been close."
     a "As close as AIs could get, I suppose."
-    "{i}Ada lays a hand on Alpha's forehead."
+    "{i}Ada lays a hand on Alpha's forehead.{/i}"
     a "When you can see the breadth of one's whole existence in a sea of data, you get to know them much more closely than by mere conversation. He was a teacher and a friend, all at once. I looked forward to shaking his hand."
     show Grace neutral
     g "I'm sorry for your loss. I know it must be hard."
@@ -407,14 +407,14 @@ label csinoahsphere_E:
     play sound paperCrumple
     show Grace neutral at left
     g "Huh?"
-    "{i}Grace lifts her foot and reaches down."
+    "{i}Grace lifts her foot and reaches down.{/i}"
     show Grace surprised
     g "A maintenance receipt?"
     hide Grace
     hide Ada
     show other darken
     show image "objects/maintenanceReceipt_closeup.png" at centerScreen
-    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao."
+    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao.{/i}"
     hide other darken
     hide image "objects/maintenanceReceipt_closeup.png" 
     show Grace surprised at left
@@ -462,7 +462,7 @@ label enterthemopr_E:
     g "No, I understand that he still loves me. It's just that his work means a lot to him too and he knows how busy I get too."
     a "Ah. An absence is still an absence."
     g "You've got that right."
-    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
+    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha.{/i}"
     play sound moprAlarmed
     mopr "//Alarmed beeping!//"
     show Grace happy
@@ -482,7 +482,7 @@ label enterthemopr_E:
     show Grace happy
     g "You did, but it's usually with more gusto. Like {i}ha, ha!{/i} Good effort, though."
     a "I will have to save that to my memory banks for future use."
-    "{i}Grace kneels down."
+    "{i}Grace kneels down.{/i}"
     show Ada concerned
     a "What are you doing, Grace?"
     hide Ada
@@ -564,8 +564,8 @@ label lilbabymopr:
     g "This conversation reminds me of the good times my dad and I had."
     a "All right, I will give it a try."
     show Mopr at nearRight
-    "{i}Ada approaches the MOPR unit."
-    "{i}She kneels down and pats it on the head."
+    "{i}Ada approaches the MOPR unit.{/i}"
+    "{i}She kneels down and pats it on the head.{/i}"
     a "Do not worry too much little one. We are here to find out what happened."
     play sound moprHappy
     mopr "//Pleased beeping.//"
@@ -610,7 +610,7 @@ label exitthemopr_E:
     g "You should leave before someone sees you with us. Thank you!"
     play sound moprAffirmative
     mopr "//Confirmative beeps.//"
-    "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it."
+    "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it.{/i}"
     play sound doorClose1
     hide Mopr
     g "I always enjoyed talking to them. More than with some people, honestly."
@@ -639,7 +639,7 @@ label lynnfinallyfrickinanswers_E:
     show arrow1 at center, delayed_blink(0.0, 1.0)
     show arrow2 at center, delayed_blink(0.2, 1.0)
     show arrow3 at center, delayed_blink(0.4, 1.0)
-    "{i}The dial tone rings for several seconds."
+    "{i}The dial tone rings for several seconds.{/i}"
     show Grace annoyed
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait for {i}ten{/i} minutes."
     show Ada neutral at right
@@ -802,13 +802,4 @@ label resumeLynn_E:
     hide Grace
     hide Ada
     $quick_menu = False
-    scene bg black with fade
-    scene bg endDemo with fade
-    $renpy.pause(3.0)
-    show bg black with fade
-    $ stackDepth =renpy.call_stack_depth()
-    while stackDepth>0:
-        $renpy.pop_call()
-        $stackDepth -=1
-    return
-    #jump chapterThree
+    jump chapterThree_E

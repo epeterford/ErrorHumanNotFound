@@ -111,37 +111,6 @@ label chapterThree_screens:
 #            hover_sound "audio/ENHF_UI_Button_v2.ogg"
 #            activate_sound "audio/ENHF_UI_Button_v1.ogg"
 
-#    screen binaryMedLose_scr:
-#        imagebutton:
-#            idle "yes.png" 
-#            hover "yes_hover.png" 
-#            xpos 705
-#            ypos 610 
-#            focus_mask True
-#            action Jump("binaryEasy") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#        imagebutton:
-#            idle "no.png" 
-#            hover "no_hover.png" 
-#            xpos 925
-#            ypos 610 
-#            focus_mask True
-#            action Jump("balcony_alpha") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-#    screen binaryMedWin_scr:
-#        imagebutton:
-#            idle "finish.png" 
-#            hover "finish_hover.png" 
-#            xpos 815
-#            ypos 610
-#            focus_mask True
-#            action Jump("binaryDoneTalk")#CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg" 
-
 ###INSERT TUTORIAL SCREENS HERE!!!!
 
 #OBJECT SCREENS
@@ -187,8 +156,8 @@ label chapterThree_screens:
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         imagebutton:
-            idle "objects/wire_idle.png"
-            hover "objects/wire_hover.png"
+            idle "objects/cable_idle.png"
+            hover "objects/cable_hover.png"
             xpos 0
             ypos 0 
             focus_mask True
@@ -246,26 +215,6 @@ label chapterThree_screens:
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         
-#label investigateCord:
-#    $burntCord_inv = True
-#    $lab2Items +=1
-#    show other darken
-#    show "objects/cord_closeup.png" at centerscreen
-#    "{i}A small section of burnt-out cord. It looks similar to the cords used in the body of the androids for Alpha and Ada.{/i}"
-#    hide other darken
-#    hide "objects/cord_closeup.png"
-#    show Grace surprised at left
-#    #show Ivan dour at right
-#    g "Aha!"
-#    g "What do we have here?"
-#    #show Ivan dour
-#    ivan "A defective power cord. Do I really have to remind you what that is?"
-#    show Grace snarky
-#    g "But why was it tucked away behind a desk like this?"
-#    #show Ivan defensive
-#    ivan "It must have fallen out of the disposal bin. MOPRs are efficient, but they're clumsy sometimes."
-#    jump ???
-
 label lab2_inv:
     $quick_menu = False
     if(ivanComp_lock==True):
@@ -288,13 +237,13 @@ label investigateIvanNotes:
     show other darken
     show image "objects/ivanNotes_closeup.png" at centerScreen
     $quick_menu = True
-    "{i}A stack of tablets with Ivan's research notes about the Markov Project. There is a stark contrast between the neatly stacked tablets which Ivan keeps his notes on and the sprawl of post-it notes and papers on Grace's desk."
+    "{i}A stack of tablets with Ivan's research notes about the Markov Project. There is a stark contrast between the neatly stacked tablets which Ivan keeps his notes on and the sprawl of post-it notes and papers on Grace's desk.{/i}"
     hide other darken
     hide image "objects/ivanNotes_closeup.png"
     show Grace snarky at left
     #show Ivan dour at right
     g "Well, what do we have--"
-    "{i}Ivan snatches his notes away."
+    "{i}Ivan snatches his notes away.{/i}"
     #show Ivan defensive
     ivan "And just what are you doing?"
     show Grace annoyed
@@ -312,7 +261,7 @@ label investigateCatPhoto:
     show other darken
     show image "objects/catPhoto_closeup.png" at centerScreen
     $quick_menu = True
-    "{i}A framed picture of Ivan's overweight black cat, Mr. Frillywhiskers.  A large, yellow bowtie lies around his neck, and his expression shows that he is not amused."
+    "{i}A framed picture of Ivan's overweight black cat, Mr. Frillywhiskers.  A large, yellow bowtie lies around his neck, and his expression shows that he is not amused.{/i}"
     hide other darken
     hide image "objects/catPhoto_closeup.png"
     show Grace happy at left
@@ -340,11 +289,11 @@ label talkIvan:
         if(resume=="SbE"):
             jump talkIvanLab2_SbE
     if(lab2Items==2 and talkIvan_count>0):
-        if(resume="S"):
+        if(resume=="S"):
             jump finishLab2Inv_S
-        if(resume="E"):
+        if(resume=="E"):
             jump finishLab2Inv_E
-        if(resume="SbE"):
+        if(resume=="SbE"):
             jump finishLab2Inv_SbE
         #PLAY SFX here
             
@@ -357,7 +306,7 @@ label talkIvan:
         ivan "Not again, Fortran. There's only so much of you I can take."
         g "I was just going to say--"
         ivan "What part of 'there's only so much of you I can take' do you not understand?"
-        Ivan "Stop harassing me."
+        ivan "Stop harassing me."
         show Grace annoyed
         g "Fine. So grumpy..."
         $quick_menu = False
@@ -393,6 +342,64 @@ label talkIvan:
         g "I think he's ignoring me."
         $quick_menu = False
         jump lab2_inv
+            
+label lab2Table:
+    show bg lab2_cord
+    hide Grace
+    #hide Ivan
+    $quick_menu = False
+    window hide
+    call screen lab2Table_scr
+    
+label lab2Table_resume:
+    show bg lab2_noCord
+    $quick_menu = True
+    show Grace neutral at left
+    #show Ivan dour at right
+    "{i}She pulls out the desk and retrieves a burnt power cord.{/i}"
+    hide Grace
+    #hide Ivan
+    show other darken
+    show image "objects/cord_closeup.png" at centerScreen
+    "{i}A small section of burnt-out cord. It looks similar to the cords used in the body of the androids for Alpha and Ada.{/i}"
+    hide other darken
+    hide image "objects/cord_closeup.png"
+    show Grace surprised at left
+    #show Ivan dour at right
+    g "Aha!"
+    show Grace happy
+    g "What do we have here?"
+    #show Ivan dour
+    ivan "A defective power cord. Do I really have to remind you what that is?"
+    g "But why was it tucked away behind a desk like this?"
+    #show Ivan defensive
+#    ivan "It must have fallen out of the disposal bin. MOPRS are efficient, but they're clumsy sometimes."
+#    show Grace snarky
+#    g "Thorough, eh, Babbage?"
+    ivan "What the--? There's no way that came from my team!"
+    ivan "It was probably Ellen and her team of chumps. They're an incompetent lot."
+    show Grace snarky
+    g "Yeah, everyone is incompetent besides you and your little researchers, huh?"
+    ivan "Yes, you included."
+    show Grace angry
+    g "What exactly is your problem with me?"
+    ivan "Other than the fact that you receive special treatment for being the daughter of the Director, nothing."
+    g "You know that I don't receive special treatment."
+    show Grace neutral
+    g "I worked just as hard as you to be where I am today."
+    ivan "That's debatable. I'm not sure anyone works as hard as I do."
+    show Grace annoyed
+    g "Oh please."
+    show Grace snarky
+    g "If that's what helps you sleep at night, by all means, believe yourself."
+    ivan "I sleep just fine at night, and I will continue to do so, thank you."
+    "{i}Grace rolls her eyes.{/i}"
+    show Grace neutral
+    g "When is Ellen's shift?"
+    ivan "Precisely after mine."
+    ivan "This way to her computer. And don't touch anything else!"
+    #play SFX
+    jump nightShift_comp
     
 label nightShift_comp:
     $quick_menu = False
@@ -410,27 +417,12 @@ label nightShift_comp:
             jump endCh3_SbE
         if(resume=="S"):
             jump endCh3_S
-            
-label lab2Table:
-    hide Grace
-    #hide Ivan
-    $quick_menu = False
-    window hide
-    call screen lab2Table_scr
-    
-label lab2Table_resume:
-    if(resume = "S"):
-        jump postCord_S
-    if(resume="E"):
-        jump postCord_E
-    if(resume="SbE"):
-        jump postCord_SbE
     
 label investigateNightShift:
     if(llMed_attempts==0):
         show other darken
         show image "objects/nightShift_closeup.png" at centerScreen
-        "{i}The main computer used by the night crew. Ivan has a habit of leaving aggressive notes on here when disatisfied with the state that the lab is left in."
+        "{i}The main computer used by the night crew. Ivan has a habit of leaving aggressive notes on here when disatisfied with the state that the lab is left in.{/i}"
         hide other darken
         hide image "objects/nightShift_closeup.png"
         #dialogue displayed before the puzzle starts

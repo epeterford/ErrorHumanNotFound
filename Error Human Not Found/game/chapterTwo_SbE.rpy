@@ -296,7 +296,7 @@ label gettingin_SbE:
     g "Here we are. That must be--"
     show Ada concerned at right
     a "Alpha!"
-    "{i}Ada rushes to the side of the fallen AI."
+    "{i}Ada rushes to the side of the fallen AI.{/i}"
     hide Ada
     hide Grace
     window hide
@@ -314,7 +314,7 @@ label gettingin_SbE:
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     show Ada neutral at right
-    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
+    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally.{/i}"
     show Grace surprised at left
     g "Ada?"
     hide Ada
@@ -341,7 +341,7 @@ label askherifshesalright:
     a "Why does it hurt? I do not register any stimuli from my chassis. I think there may be a short in the sensors."
     show Grace neutral
     g "If you think that pain only comes from the outside, you've got a lot to learn, Ada."
-    "{i}Ada slowly stands from Alpha's side."
+    "{i}Ada slowly stands from Alpha's side.{/i}"
     a "That much is evident."
     g "I'm sorry, Ada. We'll get to the bottom of this."
     a "..."
@@ -359,14 +359,14 @@ label askherifshesalright:
 label lethermourn:
     $ quick_menu = True
     $ points_SbE +=2
-    "{i}Grace crosses her arms and watches as Ada slowly falls to her knees."
+    "{i}Grace crosses her arms and watches as Ada slowly falls to her knees.{/i}"
     show Ada concerned at right
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
     a "A total erasure of one's existence... I realize now how sweet that sounds  compared to having something left behind as a reminder."
     show Grace sad at left
     g "Were you close?"
     a "As close as AIs could get, I suppose."
-    "{i}Ada lays a hand on Alpha's forehead."
+    "{i}Ada lays a hand on Alpha's forehead.{/i}"
     a "When you can see the breadth of one's whole existence in a sea of data, you get to know them much more closely than by mere conversation. He was a teacher and a friend, all at once. I looked forward to shaking his hand."
     show Grace neutral
     g "I'm sorry for your loss."
@@ -411,14 +411,14 @@ label csinoahsphere_SbE:
     $quick_menu = True
     show Grace neutral at left
     g "Huh?"
-    "{i}Grace lifts her foot and reaches down."
+    "{i}Grace lifts her foot and reaches down.{/i}"
     show Grace surprised
     g "A maintenance receipt?"
     hide Grace
     hide Ada
     show other darken
     show image "objects/maintenanceReceipt_closeup.png" at centerScreen
-    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao."
+    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao.{/i}"
     hide other darken
     hide image "objects/maintenanceReceipt_closeup.png"
     show Grace surprised at left
@@ -455,7 +455,7 @@ label enterthemopr_SbE:
     g "And it's a MOPR. I love these guys. They're so cute."
     a "Cute?"
     g "Yeah. They were one of the first robots my dad showed me how to take apart and fix when I was little."
-    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
+    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha.{/i}"
     play sound moprAlarmed
     mopr "//Alarmed beeping!//"
     show Grace happy
@@ -471,7 +471,7 @@ label enterthemopr_SbE:
     a "Nostalgic? According to my database, nostalgia is a phenomenon where one experiences joy from memories of the past."
     g "That's right. Certain things can remind us humans of memories we're fond of."
     a "I see."
-    "{i}Grace kneels down."
+    "{i}Grace kneels down.{/i}"
     show Ada concerned
     a "What are you doing, Grace?"
     hide Ada
@@ -555,8 +555,8 @@ label alilhelphere_SbE:
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "This conversation reminds me of the good times my dad and I had."
     show Mopr at nearRight
-    "{i}Ada approaches the MOPR unit."
-    "{i}She kneels down and pats it on the head."
+    "{i}Ada approaches the MOPR unit.{/i}"
+    "{i}She kneels down and pats it on the head.{/i}"
     a "Do not worry too much little one. We are here to find out what happened."
     play sound moprHappy
     mopr "//Pleased beeping.//"
@@ -601,7 +601,7 @@ label exitthemopr_SbE:
     g "You should leave before someone sees you with us."
     play sound moprAffirmative
     mopr "//Confirmative beeps.//"
-    "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it."
+    "{i}The MOPR unit slowly wheels out of the room, and the door closes behind it.{/i}"
     play sound doorClose1
     hide Mopr
     g "I always enjoyed talking to them. More than with some people, honestly."
@@ -630,7 +630,7 @@ label lynnfinallyfrickinanswers_SbE:
     show arrow2 at center, delayed_blink(0.2, 1.0)
     show arrow3 at center, delayed_blink(0.4, 1.0)
     show Grace neutral at left
-    "{i}The dial tone rings for several seconds."
+    "{i}The dial tone rings for several seconds.{/i}"
     show Grace annoyed
     g "I hope she picks up quick. Last time I had to call her for work, I had to wait {i}ten{/i} minutes."
     show Ada neutral at right
@@ -789,7 +789,7 @@ label resumeLynn_SbE:
     g "Bye!"
     hide Lynn
     play sound braceletSelect
-    "{i}The call cuts off."
+    "{i}The call cuts off.{/i}"
     show Ada neutral
     a "Grace?"
     show Grace annoyed
@@ -797,13 +797,4 @@ label resumeLynn_SbE:
     hide Grace
     hide Ada
     $quick_menu = False
-    scene bg black with fade
-    scene bg endDemo with fade
-    $renpy.pause(3.0)
-    show bg black with fade
-    $ stackDepth =renpy.call_stack_depth()
-    while stackDepth>0:
-        $renpy.pop_call()
-        $ stackDepth -=1
-    return
-    #jump chapterThree
+    jump chapterThree_SbE

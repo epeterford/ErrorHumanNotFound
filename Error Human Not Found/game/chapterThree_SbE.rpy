@@ -102,7 +102,7 @@ label subject_SbE:
 label ch3resume_SbE:
     #Insert footsteps here
     scene bg hallwayBalcony
-    "{i}Grace and Ada turn a corner and run into Ivan outside of his lab. He glowers at Grace, and then does a double takes at Ada."
+    "{i}Grace and Ada turn a corner and run into Ivan outside of his lab. He glowers at Grace, and then does a double takes at Ada.{/i}"
     #show Ivan dour at center
     show Grace neutral at left
     show Ada neutral at right
@@ -127,10 +127,10 @@ label ch3resume_SbE:
     #show Ivan defensive
     ivan "Aren't there external investigators on the case?"
     g "Yes, but we want to get a head start. We have some questions for you."
-    "{i}Ivan crosses his arms."
+    "{i}Ivan crosses his arms.{/i}"
     ivan "I'll consider answering them."
     g "First of all, what are you doing here? The labs are supposed to be closed off to everybody. That includes you."
-    "{i}Ivan stays silent."
+    "{i}Ivan stays silent.{/i}"
     show Grace annoyed
     g "Spit it out."
     ivan "I'm hesitant about leaving my lab alone for such a long amount of time. I don't trust anyone to not break in and contaminate my research."
@@ -141,7 +141,7 @@ label ch3resume_SbE:
     g "Do you want to take this road with me, Ivan? Because last time I checked, {i}you{/i} were--"
     show Ada annoyed
     a "Let us move on now. I think that would be for the best."
-    "{i}Grace takes a deep breath."
+    "{i}Grace takes a deep breath.{/i}"
     show Grace neutral
     g "Okay. First of all, where exactly were you when Alpha died?"
     #show Ivan defensive
@@ -182,7 +182,7 @@ label disagree_SbE:
     show Ada concerned
     a "I do not think she means--"
     g "Yes, I do. Don't speak for me."
-    "{i}Ada turns to Grace."
+    "{i}Ada turns to Grace.{/i}"
     show Ada neutral
     a "Grace, this is not the way to get answers. Being harsh will not do any good in this situation."
     g "Harsh? Try not harsh enough. He has an inflated sense of self-importance."
@@ -219,7 +219,7 @@ label agree_SbE:
     show Ada happy
     a "Please?"
     ivan "Uh uh. From {i}Doctor{/i} Fortran here."
-    "{i}Grace looks to Ada. Ada nods her on. Grace grits her teeth."
+    "{i}Grace looks to Ada. Ada nods her on. Grace grits her teeth.{/i}"
     show Grace annoyed
     g "Please?"
     #show Ivan phony smile
@@ -240,14 +240,14 @@ label nothing_SbE:
     show Grace neutral at left
     show Ada neutral at right
     #show Ivan dour at center
-    "{i}Ivan inhales sharply."
+    "{i}Ivan inhales sharply.{/i}"
     ivan "Your detective work should have no relation to me."
     show Ada amused
     a "I disagree. You are a valuable resource of information here. Anything you can tell us would be an immense help."
     ivan "Is this one going to chime in with her snippiness?"
     show Grace annoyed
     show Ada neutral
-    "{i}Ivan nods at Grace."
+    "{i}Ivan nods at Grace.{/i}"
     g "'This one' has a name, you know?"
     #show Ivan someotherexpression here
     ivan "There you go again with that attitude."
@@ -270,17 +270,17 @@ label ch3resume2_SbE:
     #show Ivan dour
     show Grace happy
     show Ada amused
-    "{i}Ivan stares at them before answering."
+    "{i}Ivan stares at them before answering.{/i}"
     ivan "Fine. I'll answer your questions. But I have the right to refuse to answer any question I deem unnecessary."
-    "{i}Grace speaks under her breath."
+    "{i}Grace speaks under her breath.{/i}"
     show Grace annoyed
     g "So any questions at all then?"
-    "{i}Ada hisses quietly at Grace."
+    "{i}Ada hisses quietly at Grace.{/i}"
     show Ada happy
     a "Grace, play nice!"
     ivan "If you must know, I was on a date during the time period the upload took place."
     show Ada neutral
-    "{i}Grace rolls her eyes."
+    "{i}Grace rolls her eyes.{/i}"
     show Grace snarky
     g "What a lucky woman."
     ivan "Who says it was a woman?"
@@ -311,12 +311,12 @@ label ch3resume2_SbE:
     show Grace neutral
     g "I'm not clearing him yet."
     show Ada neutral
-    "{i}Ada ignores Grace."
+    "{i}Ada ignores Grace.{/i}"
     a "Maybe there was someone lurking around the lab that day other than Lynn?"
     a "Or maybe there was a minor bug that someone thought would have no expression?" 
     ivan "Absolutely not. My lab and research is immaculate."
     ivan "There are no glitches or spaghetti code coming from my people. I run a tight lab."
-    "{i}Grace mutters under her breath."
+    "{i}Grace mutters under her breath.{/i}"
     show Grace snarky
     g "Not tight enough."
     ivan "Excuse me?"
@@ -422,7 +422,7 @@ label dontbabysittheai_SbE:
     ivan "You and your yappy little human friend over there are {i}not{/i} that investigation team."
     show Grace angry
     g "What do you mean 'yappy little human friend?' {i}Please{/i}, enlighten me."
-    "{i}Ivan ignores Grace."
+    "{i}Ivan ignores Grace.{/i}"
     ivan "You haven't worked with that girl in the lab. You don't understand the kind of ineptitude that is Grace Fortran."
     ivan "She's a girl that wastes everyone else's time."
     show Grace annoyed
@@ -474,7 +474,7 @@ label ch3resume3_SbE:
     ivan "Now you know how I've felt throughout this entire conversation."
     g "Just show us what you have, Babbage."
     g "And then we'll get out of that mop you call your hair."
-    "{i}Ivan guides Grace and Ada inside of his lab."
+    "{i}Ivan guides Grace and Ada inside of his lab.{/i}"
     window hide
     $quick_menu=False
     scene bg hallwayLab2 with fade
@@ -491,13 +491,13 @@ label ch3resume3_SbE:
     show Ada neutral at right
     show Grace neutral at left
     #show Ivan dour at center
-    "{i}Ivan accesses a tablet and locates the video surveillance from the day Alpha died." 
+    "{i}Ivan accesses a tablet and locates the video surveillance from the day Alpha died.{/i}" 
     #insert typing SFX
-    "{i}There is a clear picture of Alpha in the lab but then..."
+    "{i}There is a clear picture of Alpha in the lab but then...{/i}"
     #insert: STATIC sound effect
     ivan "Just as I suspected."
     show Grace annoyed
-    "{i}Ada moves toward the computer."
+    "{i}Ada moves toward the computer.{/i}"
     a "Do you mind if I take a look?"
     #choice 4
     window hide
@@ -548,7 +548,7 @@ label suggest_SbE:
     #show Ivan at center
     show Grace neutral at left
     show Ada neutral at right
-    "{i}Grace waits and looks around the lab for more clues."
+    "{i}Grace waits and looks around the lab for more clues.{/i}"
     a "I believe that I may be able to produce some reconstructed footage if I spend some time trying."
     show Grace surprised  
     g "Really? That would be a big help."
@@ -575,7 +575,7 @@ label encourage_SbE:
     g "Ada, let's use that amazing android power of yours and see if we can recover something useful from this video."
     show Ada amused
     a "That was my plan, Grace."
-    show Ada neuteal
+    show Ada neutral
     a "I cannot guarantee a full reconstruction, but with enough effort and processing power I can at least recover pieces of it."
     show Grace happy
     g "That would be fantastic."
@@ -594,19 +594,19 @@ label encourage_SbE:
 
 label ch3resume4_SbE:
     #show Ivan some expression
-    "{i}Ivan backs away from the computer."
+    "{i}Ivan backs away from the computer.{/i}"
     ivan "Be my guest."
     show Ada amused
     a "Careful Ivan. It almost sounds like you know how to be civil."
     #insert SFX here
-    "{i}Grace's bracelet flashes."
+    "{i}Grace's bracelet flashes.{/i}"
     #insert animation/visual here?
-    "{i}DING. DING."
+    "{i}DING. DING.{/i}"
     show Grace surprised
     g "Oh, this can't be good." 
     show Grace neutral
-    "{i}Grace checks the bracelet as Ada takes over the computer." 
-    "{i}Ivan keeps an eye on Ada."
+    "{i}Grace checks the bracelet as Ada takes over the computer.{/i}" 
+    "{i}Ivan keeps an eye on Ada.{/i}"
     show Grace surprised
     g "Uh, Ada?"
     show Ada surprised
@@ -655,7 +655,7 @@ label ch3resume4_SbE:
             jump brush_SbE
         "Assure her that you will.":
             jump assure_SbE
-        "Inform her that you're fine without her.":
+        "Inform her that you're fine solo.":
             jump inform_SbE
 
 label brush_SbE:
@@ -673,7 +673,7 @@ label brush_SbE:
     g "As long as you'll do the same."
     a "Of course."
     show Grace neutral
-    g "Alright then. Try to keep the situation with Colossus alleviated. We just need a little more time."
+    g "All right then. Try to keep the situation with Colossus alleviated. We just need a little more time."
     a "Understood."
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -697,7 +697,7 @@ label assure_SbE:
     show Grace snarky
     g "What sarcasm?"
     show Grace neutral
-    "{i}Grace turns back to Ada."
+    "{i}Grace turns back to Ada.{/i}"
     g "But yeah, I've got this covered. Don't worry."
     g "Go ahead, see Colossus, and get in touch with me when you're done."
     g "I'm curious to hear what he has to say."
@@ -735,7 +735,7 @@ label inform_SbE:
     show Ada neutral
     a "I do not see a cupcake."
     show Grace snarky
-    "{i}Grace throws her hands up in exasperation."
+    "{i}Grace throws her hands up in exasperation.{/i}"
     show Grace neutral
     g "Nevermind."
     if(points_S>points_SbE):
@@ -753,10 +753,10 @@ label ch3resume5_SbE:
     show Grace neutral
     a "Okay. We shall reconvene when my meeting is over."
     a "I am going to take the footage with me and work on it while I walk."
-    "{i}Ada downloads the footage to her neural network."
+    "{i}Ada downloads the footage to her neural network.{/i}"
     show Grace happy
     g "Good luck."
-    "{i}Ada leaves."
+    "{i}Ada leaves.{/i}"
     #insert SFX here
     window hide
     $quick_menu=False
@@ -779,7 +779,7 @@ label ch3resume5_SbE:
     show Ada surprised
     a "Am I talking to myself now? Maybe I should take some processing away from working on the video footage, it could be--"
     #insert speaker crackle
-    "{i}A calm, almost monotone voice issues from speakers in the ceiling."
+    "{i}A calm, almost monotone voice issues from speakers in the ceiling.{/i}"
     #show Colossus ???
     show Ada neutral
     c "Ada. My cameras indicate you are nearing Watson's sector."
@@ -801,24 +801,32 @@ label ch3resume5_SbE:
     a "When that Watson surfaces, we will be having a conversation about this."
     window hide
     $quick_menu = False
-    scene bg black
+    scene bg black with fade
     $renpy.pause(1.0)
-    scene bg door2
+    scene bg door2 with fade
     #start the scene in front of a door.
     show Ada neutral at right 
     $quick_menu = True
+    stop music fadeout 1.0
+#    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
+    play channel01 wwAmb1 fadeout 1.0 fadein 1.0
+    play channel02 wwAmb2 fadeout 1.0 fadein 1.0
+    play channel03 wwAmb3 fadeout 1.0 fadein 1.0
+    play channel04 wwAmb4 fadeout 1.0 fadein 1.0
+    play channel05 wwAmb5 fadeout 1.0 fadein 1.0
+    play channel06 wwAmb6 fadeout 1.0 fadein 1.0
     a "Here we are."
     a "I hope I can take care of this bef--"
     #Insert SFX here
     show Ada surprised with hpunch
     show bg door2 with hpunch
-    "{i}Ada walks straight into the door, and recoils from the impact."
+    "{i}Ada walks straight into the door, and recoils from the impact.{/i}"
     #can we put in some screen shake here?
     a "Wh-how? What?"
     a "Is the scanner broken?"
     show Ada neutral
     #Insert SFX
-    "{i}Ada looks at the door's sensor, which seems to be in perfect working condition."
+    "{i}Ada looks at the door's sensor, which seems to be in perfect working condition.{/i}"
     a "Maybe it does not recognize me."
     a "Well, it's nothing a 'manual override' cannot solve."
     show Ada amused
@@ -835,14 +843,14 @@ label ch3resume5_SbE:
     #    #show Ada frustrated
     a "Grace made this look so much easier."
     #Insert SFX
-    "{i}The door's sensor powers down and then comes back online."
-    "{i}Ada steps in front of it, and the door slides open."
+    "{i}The door's sensor powers down and then comes back online.{/i}"
+    "{i}Ada steps in front of it, and the door slides open.{/i}"
     play sound doorOpen2
     queue sound doorClose2
     scene bg wwLongCrit with fade
     #transition to the Habitat Control room place where the habitats are controlled from a single place that has controls within a room. I need coffee. Nvm I got coffee.
     show Ada neutral at right
-    a "Alright Colossus, I am in Habitat Control."
+    a "All right Colossus, I am in Habitat Control."
     a "What did you need me to do exactly?"
     #show Colossus ???
     c "As you know, the habitats require a delicate balance of environmental conditions."
@@ -857,40 +865,31 @@ label ch3resume5_SbE:
     $renpy.pause(1.0)
     scene bg wwWorkArea with fade
     $renpy.pause(1.0)
-    scene bg wwCritical
+    scene bg wwCritical with fade
     show Ada neutral at right
     $quick_menu=True
     a "Now, let us see... wow."
     show Ada surprised at right
     a "It is true. Nothing has been done."
-    show Ada seething
+    show Ada annoyed 
     a "It could take me hours to do all this, unless..."
-    #Jump and hide quick_menu here
-    #Add interactive button here to click to launch puzzle
-#    #sydmakecomscireference
-#    if (attempts==1):
-#    #show Ada neutral
-#    a "It makes me a little mad knowing that Watson skipped out on a job that turned out to be easy."
-#    if (attempts>1 and attempts<4):
-#    #show Ada neutral
-#    a "It took me a bit of work, but still, there is no excuse for just not doing this."
-#    if (attempts>3):
-#    #show Ada frustrated
-#    a "It is still inexcusable that he did not do this, but Watson might have a bit of a point."
-    "Puzzle solved (Temporary placeholder)."
-    scene bg wwNominal
-    $quick_menu = True
+    $quick_menu = False
+    $resume = "SbE"
+    jump binaryMed
+    
+label postBinaryMed_SbE:
     show Ada neutral at right
     a "There we go. All balanced and ready to go."
     show Ada amused
     a "Top that, Watson."
-    "{i}Ada turns to leave."
+    "{i}Ada turns to leave.{/i}"
     window hide
     $quick_menu = False
     scene bg wwWorkArea with fade
     $renpy.pause(1.0)
     scene bg wwMedNom with fade
     show Ada surprised at right
+    $quick_menu = True
     #insert SFX
     #show Hirose pleased
     h "Hello, Ada."
@@ -914,7 +913,7 @@ label ch3resume5_SbE:
     h "Multiple cameras place you both near the robot maintenance bay and in the scene itself."
     show Ada surprised
     a "Director Hirose, we--"
-    "{i}Hirose holds a hand up, silencing Ada."
+    "{i}Hirose holds a hand up, silencing Ada.{/i}"
     h "Please, spare me your flimsy excuses."
     show Ada neutral
     h "Normally, I wouldn't care. I know my daughter. She was going to investigate anyway."
@@ -934,7 +933,7 @@ label ch3resume5_SbE:
     a "What?"
     show Ada seething
     a "Are you asking me to delete video evidence that might exonerate Grace?"
-    "{i}Hirose sighs."
+    "{i}Hirose sighs.{/i}"
     #show Hirose irritated
     h "Oh, the data on that video might very well clear Grace's name."
     h "However, I suspect the data on that drive will prove to be more {i}harmful{/i} than anticipated, and we're better off not even knowing what's on there."
@@ -970,12 +969,11 @@ label ch3resume5_SbE:
 #Lab area item #1: A burnt out cord hidden behind a table. The player finds later on in the game. Subject to change?
 
 label talkIvanLab2_SbE:
-    #insert conditionals
-    #First time.
+    $talkIvan_count +=1
     show Grace neutral at left
     #show Ivan dour at right
     g "Hey, Ivan..."
-    #show ivan dour
+    #show Ivan dour
     ivan "What is it that you could possibly gain from wanting to talk to me?"
     ivan "More importantly, why should I even care?"
     show Grace angry
@@ -999,7 +997,7 @@ label adaisbetterthanyou_SbE:
     $quick_menu = True
     $points_E +=5
     show Grace sad at left
-    #show Ivan at center
+    #show Ivan at right
     g "All I can think about now is how horrible this would be if {i}you{/i} were the one helping me instead of Ada."
     #show Ivan defensive
     ivan "You wish you had my expertise backing your childish and impromptu escapade."
@@ -1028,7 +1026,7 @@ label adaisfrustratingme_SbE:
     $quick_menu = True
     $points_S +=5
     show Grace neutral at left
-    #show Ivan dour at center
+    #show Ivan dour at right
     g "I'm just craving some human interaction."
     show Grace sad
     g "Dealing with Ada is a constant chore. It's like having to teach a kindergarten class while investigating."
@@ -1052,7 +1050,7 @@ label becivilwithivan_SbE:
     $quick_menu = True
     $points_SbE +=5
     show Grace neutral at left
-    #show Ivan dour at center
+    #show Ivan dour at right
     g "How do you feel about the AI?"
     #show Ivan phony smile
     ivan "What's this? No snappy comments? Are you sure you're Grace Fortran?"
@@ -1079,11 +1077,11 @@ label ch3convoresume1_SbE:
     g "So, Ivan... what other resources are you willing to make available to me?" 
     #show Ivan phony smile
     ivan "Well, I suppose I could give you access to our entire research database. That's really all I can think of."
-    "{i}Ivan enters a password, and a flood of data crosses over the screen."
+    "{i}Ivan enters a password, and a flood of data crosses over the screen.{/i}"
     #Insert SFX
     show bg lab2Ivan_unlocked
     #show Ivan something
-    "{i}Ivan looks at Grace and smiles."
+    "{i}Ivan looks at Grace and smiles.{/i}"
     show Grace annoyed
     g "Have you ever heard of a sort function?"
     g "It'll take me weeks to just get through all this data!"
@@ -1095,7 +1093,7 @@ label ch3convoresume1_SbE:
     #show Ivan defensive
     ivan "Just do what you need to do and get out."
     ivan "Your presence is not good for my health."
-    g "Alright, alright."
+    g "All right, all right."
     show Grace neutral
     g "I'll just write a quick algorithm so, for both of our sakes, I'm out of here sooner rather than later."
     g "All I'm looking for is some discrepancy in the logs."
@@ -1105,7 +1103,7 @@ label ch3convoresume1_SbE:
     jump finishGPuzzle1_SbE
 
 label finishGPuzzle1_SbE:
-    "{i}Ivan hovers over Grace."
+    "{i}Ivan hovers over Grace.{/i}"
     #show Ivan dour at right
     show Grace annoyed at left
     g "Nothing? This cannot be another dead end."
@@ -1130,7 +1128,7 @@ label finishLab2Inv_SbE:
     g "There's gotta be something around here."
     g "There just has to be some sort of proof."
     show Grace neutral
-    "{i}Grace walks around the room."
+    "{i}Grace walks around the room.{/i}"
     #play SFX here
     show bg lab2Table_locked
     #show Ivan defensive
@@ -1139,10 +1137,12 @@ label finishLab2Inv_SbE:
     g "I'm running out of time, and this-- I know it wasn't my work that caused Alpha's demise."
     ivan "I assured you before, Fortran. We're thorough. Nothing would have gotten past us."
     ivan "I have nothing more for you to put your grubby paws on."
-    "{i}He shuffles some papers off a desk."
+    "{i}He shuffles some tablets off a desk.{/i}"
+    #Insert SFX
+    show bg lab2_cord
     ivan "Really, if the night shift followed my protocols, this lab would be far better off."
     show Grace surprised
-    "{i}Grace's eye catches on something behind the papers."
+    "{i}Grace's eye catches on something behind the papers.{/i}"
     jump lab2Table
     
     ##Grace gets back onto the computer to hack into Ellen's computer
@@ -1158,9 +1158,8 @@ label finishLab2Inv_SbE:
     #ivan "Right. {i}That's{/i} why you had trouble."
     #g "I didn't see you trying to help, and I'm in. So there."
 label endCh3_SbE:
-    "{i}Grace's bracelet flashes."
+    "{i}Grace's bracelet flashes.{/i}"
     #Insert SFXs
-    "{i}DING. DING."
-    "{i}'Meet me at the AI core immediately.'- Ada" #Visual for this message on the bracelet???
-    return
-    #jump chapterFour_SbE
+    "{i}DING. DING.{/i}"
+    "{i}'Meet me at the AI core immediately.'- Ada{/i}" #Visual for this message on the bracelet???
+    jump chapterFour_SbE

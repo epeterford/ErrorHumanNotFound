@@ -174,7 +174,7 @@ label resumeChapterTwo_S:
     show Grace neutral
     g "And he was found...?"
 
-    "{i}Ada gives Grace a long look before answering."
+    "{i}Ada gives Grace a long look before answering.{/i}"
 
     a "Viewport 275, which intersects with corridor 5-673-A. If we take maintenance shaft 79-DG we should--"
     hide Ada
@@ -306,7 +306,7 @@ label gettingin_S:
     g "Here we are. That must be--"
     show Ada concerned at right
     a "Alpha!"
-    "{i}Ada rushes to the side of the fallen AI."
+    "{i}Ada rushes to the side of the fallen AI.{/i}"
     hide Ada
     hide Grace
     window hide
@@ -324,7 +324,7 @@ label gettingin_S:
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     show Ada neutral at right
-    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally."
+    "{i}Ada speaks. Her distress is clear, but her face is emotionless. The expression of grief does not come naturally.{/i}"
     show Grace surprised at left
     g "Ada?"
     hide Ada
@@ -352,7 +352,7 @@ label uokada_S:
     a "..."
     show Grace neutral
     g "If you think that painful feeling only comes from the outside, you've got a lot to learn, Ada."
-    "{i}Ada slowly stands from Alpha's side."
+    "{i}Ada slowly stands from Alpha's side.{/i}"
     a "That much is evident. I don't need a lesson from a human."
     if(points_S>points_SbE):
         if(points_S>points_E):
@@ -367,13 +367,13 @@ label uokada_S:
 label mourn_S:
     $ quick_menu = True
     $ points_SbE +=2
-    "{i}Grace crosses her arms, watching Ada as she slowly falls to her knees."
+    "{i}Grace crosses her arms, watching Ada as she slowly falls to her knees.{/i}"
     show Ada concerned at right
     a "When I was young, still coming to terms with existence in a server bank, I thought that deletion was one of the scariest concepts."
     a "A total erasure of one's existence. I realize now how sweet sounds compared to having something left behind as a reminder."
     show Grace sad at left
     g "Were you close?"
-    "{i}Ada lays a hand on Alpha's forehead."
+    "{i}Ada lays a hand on Alpha's forehead.{/i}"
     a "When you can see the breadth of one's whole existence in a sea of data, you get to know them much more closely than by mere conversation." 
     a "He was a teacher and a friend, all at once. I looked forward to shaking his hand."
     show Grace neutral
@@ -422,7 +422,7 @@ label csinoahsphere_S:
     $quick_menu = True
     show Grace neutral at left
     g "Huh?"
-    "{i}Grace lifts her foot and reaches down."
+    "{i}Grace lifts her foot and reaches down.{/i}"
     show Grace surprised
     g "A maintenance receipt?"
     hide Grace
@@ -430,7 +430,7 @@ label csinoahsphere_S:
     show other darken
     show image "objects/maintenanceReceipt_closeup.png"  at centerScreen
     #Insert image of the maintenance receipt here. NEED TO ADD THAT OBJECT. 
-    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao."
+    "{i}A reciept that tracks the repairs done on Alpha's android. It details the parts replaced in the process, the expense of the parts, and the time spent working. The maintenance receipt is signed by Technician Lynn Yao.{/i}"
     hide other darken
     hide image "objects/maintenanceReceipt_closeup.png" 
     show Grace surprised at left
@@ -465,7 +465,7 @@ label enterthemopr_S:
     g "And it's a MOPR. I love these guys. They're so cute."
     a "Cute? Really?"
     g "Yeah. These were the first robots I learned to tinker on with my dad."
-    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha."
+    "{i}The robot's camera pans across Ada and Grace, and then settles on Alpha.{/i}"
     play sound moprAlarmed2
     mopr "//Alarmed beeping!//"
     show Grace happy
@@ -482,7 +482,7 @@ label enterthemopr_S:
     show Grace frustrated
     g "Of all the things here on the Noah Sphere, these are the only things besides my father's picture that remind me of him. Nevermind, just forget it. You wouldn't understand."
     a "Fine, let us just move on."
-    "{i}Grace kneels down."
+    "{i}Grace kneels down.{/i}"
     show Ada concerned
     a "What are you doing, Grace?"
     hide Ada
@@ -566,8 +566,8 @@ label calmdown_S:
     g "Just overall performance from the MOPR units that came into the space. They enjoyed it when we conversed with them."
     g "They don't really know anything other than cleaning, but they're sweet."
     show Mopr at nearRight
-    "{i}Ada approaches the MOPR unit."
-    "{i}She kneels down and pats it on the head."
+    "{i}Ada approaches the MOPR unit.{/i}"
+    "{i}She kneels down and pats it on the head.{/i}"
     a "Do not worry too much little one. We are here to find out what happened."
     play sound moprHappy
     mopr "//Pleased beeping.//"
@@ -637,7 +637,7 @@ label lynnfinallyfrickinanswers_S:
     show arrow1 at center, delayed_blink(0.0, 1.0)
     show arrow2 at center, delayed_blink(0.2, 1.0)
     show arrow3 at center, delayed_blink(0.4, 1.0)
-    "{i}The dial tone rings for several seconds."
+    "{i}The dial tone rings for several seconds.{/i}"
     show Grace annoyed at left
     g "I hope she picks up quick. Last time I called her I had to wait {i}ten{/i} minutes."
     show Ada neutral at right
@@ -798,7 +798,7 @@ label resumeLynn_S:
     g "Bye!"
     hide Lynn
     play sound braceletSelect
-    "{i}The call cuts off."
+    "{i}The call cuts off.{/i}"
     show Ada neutral at right
     a "Shall we? We need to get going."
     show Grace annoyed
@@ -806,13 +806,4 @@ label resumeLynn_S:
     hide Grace
     hide Ada
     $quick_menu = False
-    scene bg black with fade
-    scene bg endDemo with fade
-    $renpy.pause(3.0)
-    show bg black with fade
-    $ stackDepth =renpy.call_stack_depth()
-    while stackDepth>0:
-        $renpy.pop_call()
-        $stackDepth -=1
-    return
-    #jump chapterThree
+    jump chapterThree_S
