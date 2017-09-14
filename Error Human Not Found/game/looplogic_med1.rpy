@@ -113,13 +113,13 @@ label loopLogic_med1: #start
     #show LLM_1_tile32 at Position(xpos = 429, xanchor = 0, ypos = 662, yanchor = 0)
     image LLM_1_tile33 = "W_horizontal_short.png"
     show LLM_1_tile33 at Position(xpos = 513, xanchor = 0, ypos = 662, yanchor = 0)
-    image LLM_1_tile34 = "W_horizontal_short.png"
+    image LLM_1_tile34 = "y_horizontal_short_off.png"
     show LLM_1_tile34 at Position(xpos = 360, xanchor = 0, ypos = 663, yanchor = 0)
-    image LLM_1_tile35 = "W_horizontal.png"
-    show LLM_1_tile35 at Position(xpos = 285, xanchor = 0, ypos = 663, yanchor = 0)
+    image LLM_1_tile35 = "y_horizontal_short_off.png"
+    show LLM_1_tile35 at Position(xpos = 290, xanchor = 0, ypos = 663, yanchor = 0)
 
     # left bottom
-    image LLM_1_tile36 = "W_connect_node.png"
+    image LLM_1_tile36 = "b_while_off.png"
     show LLM_1_tile36 at Position(xpos = 275, xanchor = 0, ypos = 662, yanchor = 0)
     image LLM_1_tile37 = "W_vertical.png"
     show LLM_1_tile37 at Position(xpos = 277, xanchor = 0, ypos = 694, yanchor = 0)
@@ -882,11 +882,11 @@ label gamefile_llm1:
         show LLM_1_tile52 at Position(xpos = 585, xanchor = 0, ypos = 565, yanchor = 0)   
         image LLM_1_tile54 = "B_horizontal_short.png"
         show LLM_1_tile54 at Position(xpos = 513, xanchor = 0, ypos = 662, yanchor = 0)
-        image LLM_1_tile55 = "B_horizontal_short.png"
+        image LLM_1_tile55 = "y_horizontal_short_on.png"
         show LLM_1_tile55 at Position(xpos = 360, xanchor = 0, ypos = 663, yanchor = 0)
-        image LLM_1_tile53 = "B_horizontal.png"
-        show LLM_1_tile53 at Position(xpos = 285, xanchor = 0, ypos = 663, yanchor = 0)
-        image LLM_1_tile74 = "B_connect_node.png"
+        image LLM_1_tile53 = "y_horizontal_short_on.png"
+        show LLM_1_tile53 at Position(xpos = 290, xanchor = 0, ypos = 663, yanchor = 0)
+        image LLM_1_tile74 = "b_while_on.png"
         show LLM_1_tile74 at Position(xpos = 275, xanchor = 0, ypos = 662, yanchor = 0)
         image LLM_1_tile75 = "G_vertical_ll.png"
         show LLM_1_tile75 at Position(xpos = 277, xanchor = 0, ypos = 694, yanchor = 0)
