@@ -72,7 +72,6 @@ image bg G_left2 = "bg/GraceDesk_Left2.png"
 image bg G_right = "bg/GraceDesk_Right.png"
 image bg hallwayGrace = "bg/Hallway_Grace.png"
 
-
 #tutorial backgrounds
 image bg lgEasy1 = "dragNDrop_instructions.png"
 image bg lgEasy2 = "LG_instructions.png"
@@ -583,9 +582,18 @@ init python:
     renpy.music.register_channel("sound01", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("sound02", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("sound03", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("sound04", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("sound05", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("sound06", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+
     renpy.music.register_channel("soundP01", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP02", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP03", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP04", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP05", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP06", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+
+
     config.rollback_side_size = 0.0
     rollback_side = None
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
@@ -757,6 +765,7 @@ label start:
     scene bg splashScreen
     #with fade(5.0)
     $ renpy.pause(5.0)
+    stop music fadeout 1.0
     menu:
         "Chapter 3 SbE":
             jump chapterThree_SbE

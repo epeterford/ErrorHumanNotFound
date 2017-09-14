@@ -579,9 +579,9 @@ screen LoopLogicE5:
         idle "button_empty2.png"
         xpos 1463
         ypos 295
-    text "Attempts" xpos 1470 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 1650 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
-    text "[attempts]" xpos 1665 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text "Moves" xpos 1480 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1605 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1640 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
             #if gates
             drag:

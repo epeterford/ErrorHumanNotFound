@@ -1,117 +1,4 @@
 label chapterThree_screens:
-# screen llMedLose_scr:
-#     imagebutton:
-#            idle "yes.png" 
-#            hover "yes_hover.png" 
-#            xpos 705
-#            ypos 610 
-#            focus_mask True
-#            action Jump("loopLogicEasyChoose") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#        imagebutton:
-#            idle "no.png" 
-#            hover "no_hover.png" 
-#            xpos 925
-#            ypos 610 
-#            focus_mask True
-#            action Jump("balcony_alpha") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#    screen llMedWin_scr:
-#        imagebutton:
-#            idle "finish.png" 
-#            hover "finish_hover.png" 
-#            xpos 815
-#            ypos 610
-#            focus_mask True
-#            action Jump("llDoneTalk") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"  
-
-#    screen lgMedWin_scr:
-#        imagebutton:
-#            idle "yes.png" 
-#            hover "yes_hover.png" 
-#            xpos 705
-#            ypos 610 
-#            focus_mask True
-#            action Jump("pickNextPuzzleLGEasy") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#        imagebutton:
-#            idle "no.png" 
-#            hover "no_hover.png" 
-#            xpos 925
-#            ypos 610
-#            focus_mask True
-#            action Jump("exploreHiroseOffice") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-#    screen lgMedLose_scr:
-#        imagebutton:
-#            idle "yes.png" 
-#            hover "yes_hover.png" 
-#            xpos 705
-#            ypos 610 
-#            focus_mask True
-#            action Jump("pickNextPuzzleLGEasy") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#        imagebutton:
-#            idle "no.png" 
-#            hover "no_hover.png" 
-#            xpos 925
-#            ypos 610 
-#            focus_mask True
-#            action Jump("exploreHiroseOffice") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-#    screen lgMedDone_scr:
-#        imagebutton:
-#            idle "finish.png" 
-#            hover "finish_hover.png" 
-#            xpos 815
-#            ypos 610
-#            focus_mask True
-#            action Jump("lgEasyDone_talk") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-#    screen gramMedLose_scr:
-#        imagebutton:
-#            idle "yes.png" 
-#            hover "yes_hover.png" 
-#            xpos 705
-#            ypos 610 
-#            focus_mask True
-#            action Jump("chooseEasyGram") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-#        imagebutton:
-#            idle "no.png" 
-#            hover "no_hover.png" 
-#            xpos 925
-#            ypos 610 
-#            focus_mask True
-#            action Jump("doorPuzzle") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-#    screen gramMedDone_scr:
-#        imagebutton:
-#            idle "finish.png" 
-#            hover "finish_hover.png" 
-#            xpos 815
-#            ypos 610
-#            focus_mask True
-#            action Jump("hiroseDoorPassed") #CHANGE
-#            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-#            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
-###INSERT TUTORIAL SCREENS HERE!!!!
 
 #OBJECT SCREENS
     screen nightShift_scr:
@@ -166,6 +53,16 @@ label chapterThree_screens:
             activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
             
     screen ivanComp_scr:
+        if(talkIvan_count>0) and (llMed_solved==False):
+            imagebutton:
+                idle "objects/ivanComp_idle.png"
+                hover "objects/ivanComp_hover.png"
+                xpos 0
+                ypos 0
+                focus_mask True
+                action Jump("choose_llMed")
+                hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         imagebutton:
             idle "back.png"
             hover "back_hover.png"
@@ -193,7 +90,7 @@ label chapterThree_screens:
         text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[lab2Items]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
-        text "2" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         if(catPhoto_inv==False):
             imagebutton:
                 idle "objects/catPhoto_idle.png"
@@ -216,6 +113,19 @@ label chapterThree_screens:
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
         
 label lab2_inv:
+    stop music fadeout 1.0
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L8.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $quick_menu = False
     if(ivanComp_lock==True):
         scene bg lab2Ivan_locked with fade

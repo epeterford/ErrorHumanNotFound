@@ -33,8 +33,8 @@ screen binaryMatch_hard:
         idle "button_empty2.png"
         xpos 185
         ypos 795
-    text "Moves" xpos 210 ypos 815 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 330 ypos 804 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "Pairs" xpos 220 ypos 815 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 320 ypos 804 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 350 ypos 813 color "#0060db" font "United Kingdom DEMO.otf" size 27
     imagebutton:
         idle "binaryHardInstructions.png"

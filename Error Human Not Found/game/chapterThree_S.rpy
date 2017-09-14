@@ -6,6 +6,13 @@ label chapterThree_S:
     $renpy.pause(3.0)
     scene bg hallwayGrace with fade 
     $quick_menu = True
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    $renpy.music.play("music/Amb/Hallway/EHNF_Amb_Scene_Hallway_Norm.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     "{i}Grace and Ada wander into the hall.{/i}"
     show Grace neutral at left
     show Ada neutral at right
@@ -498,6 +505,20 @@ label ch3resume3_S:
     scene bg lab2Ivan_locked with fade
     show Ada neutral at right
     show Grace neutral at left
+    #show Ivan dour at center
+    stop channel00 fadeout 1.0
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L8.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     "{i}Ivan accesses a tablet and locates the video surveillance from the day Alpha died.{/i}" 
     "{i}There is a clear picture of Alpha in the lab but then...{/i}"
     #insert: STATIC sound effect
@@ -747,7 +768,19 @@ label ch3resume5_S:
     scene bg hallwayLab2 with fade
     #Insert Ada's path here
     #Fade into a hallway scene
-
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
+    stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
+    $renpy.music.play("music/Amb/Hallway/EHNF_Amb_Scene_Hallway_Norm.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     show Ada neutral at right
     $quick_menu = True
     a "Colossus will understand. Alpha was his friend too."
@@ -788,8 +821,7 @@ label ch3resume5_S:
     #start the scene in front of a door.
     show Ada neutral at right 
     $quick_menu = True
-    stop music fadeout 1.0
-#    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
+    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
     play channel01 wwAmb1 fadeout 1.0 fadein 1.0
     play channel02 wwAmb2 fadeout 1.0 fadein 1.0
     play channel03 wwAmb3 fadeout 1.0 fadein 1.0
@@ -936,6 +968,13 @@ label postBinaryMed_S:
     scene bg black with fade
     $renpy.pause(0.5)
     $resume = "S"
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
     jump lab2_inv
     #Investigation portion.
     
@@ -1074,9 +1113,8 @@ label ch3convoresume1_S:
     show Grace neutral
     g "I'll just write a quick algorithm so for both of our sakes I'm out of here sooner rather than later."
     g "All I'm looking for is some discrepancy in the logs."
-    #jump tutorial
     $resume = "S"
-    jump finishGPuzzle1_S
+    jump choose_llMed
 
 label finishGPuzzle1_S:
     "{i}Ivan hovers over Grace.{/i}"

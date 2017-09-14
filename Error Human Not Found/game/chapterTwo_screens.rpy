@@ -1536,7 +1536,7 @@ label llDoneTalk:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    if(loopLogicEasy_tries<1):
+    if(loopLogicEasy_tries==0):
         show Grace happy at left
         g "Easy as manufactured apple pie. No infinite loops here." 
     if (loopLogicEasy_tries>=1 and loopLogicEasy_tries<3):
