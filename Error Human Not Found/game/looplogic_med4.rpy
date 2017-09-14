@@ -741,11 +741,11 @@ label gamefile_llm4:
             $ temp_slot = slot_name
             $ temp_gate = gate_name
 
-            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
+            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "While_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
                 $ attempts +=1
-            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
+            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "While_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
                 $ attempts +=1
-            if slot_name == "While_gate_green_return" and (gate_name == "B_if_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
+            if slot_name == "While_gate_green_return" and (gate_name == "B_if_gate" or gate_name == "While_gate" or gate_name == "While_gate1" or gate_name == "G_else_gate"):
                 $ attempts +=1
 
 
