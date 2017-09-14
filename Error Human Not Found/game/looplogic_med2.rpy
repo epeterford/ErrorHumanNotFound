@@ -22,6 +22,9 @@ init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_med2: #start
+    $config.skipping=None
+    $quick_menu = False
+    $game_menu = True
     #loads background
     $ gate_name= ""
     $ slot_name = ""
@@ -130,17 +133,6 @@ label loopLogic_med2: #start
     image LLM_2_tile40 = "G_end_off.png"
     show LLM_2_tile40 at Position(xpos = 176, xanchor = 0, ypos = 370, yanchor = 0)
 
-
-    
-
-
-
-
-
-
-
-
-        
     
     
 #    ****************************************************
@@ -764,6 +756,13 @@ label gamefile_llm2:
 #*******************************************
 
 #    #if 1 section*******************************************************************************************     
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
     if if1in3 == True:
         #image LLM_2_tile70 = "B_connect_node.png"
         #show LLM_2_tile70 at Position(xpos = 570, xanchor = 0, ypos = 405, yanchor = 0)
@@ -775,6 +774,9 @@ label gamefile_llm2:
         show LLM_2_tile74 at Position(xpos = 675, xanchor = 0, ypos = 287, yanchor = 0)
         image LLM_2_tile72 = "B_end_on.png"
         show LLM_2_tile72 at Position(xpos = 750, xanchor = 0, ypos = 253, yanchor = 0)
+        if(light3Sound==0):
+            play soundP03 llLightOn3
+            $light3Sound +=1
         
         if else1in4 == True or if2in4 == True:
             image LLM_2_tile43 = "G_connect_node.png"
@@ -785,13 +787,18 @@ label gamefile_llm2:
             show LLM_2_tile45 at Position(xpos = 275, xanchor = 0, ypos = 405, yanchor = 0)
             image LLM_2_tile46 = "G_end_on.png"
             show LLM_2_tile46 at Position(xpos = 175, xanchor = 0, ypos = 373, yanchor = 0)
-
+            if(light4Sound==0):
+                play soundP04 llLightOn2
+                $light4Sound +=1
 
         if else1in4 == False and if2in4 == False:
             hide LLM_2_tile43
             hide LLM_2_tile44
             hide LLM_2_tile45
             hide LLM_2_tile46
+            if(light4Sound==1):
+                play soundP04 llLightOff2
+                $light4Sound -=1
    
     if if1in3 == False:
         hide LLM_2_tile71
@@ -802,7 +809,12 @@ label gamefile_llm2:
         hide LLM_2_tile44
         hide LLM_2_tile45
         hide LLM_2_tile46
-
+        if(light3Sound==1):
+            play soundP03 llLightOff3
+            $light3Sound -=1
+        if(light4Sound==1):
+            play soundP04 llLightOff2
+            $light4Sound -=1
 
     if if2in3 == True:
         #image LLM_2_tile70 = "B_connect_node.png"
@@ -877,13 +889,18 @@ label gamefile_llm2:
         show LLM_2_tile88 at Position(xpos = 926, xanchor = 0, ypos = 517, yanchor = 0)
         image LLM_2_tile89 = "B_vertical_short.png"
         show LLM_2_tile89 at Position(xpos = 947, xanchor = 0, ypos = 592, yanchor = 0)
-        
+        if(while1in2==True):
+            image LLM_2_tileS55 = "B_vertical_short.png"
+            show LLM_2_tileS55 at Position(xpos = 947, xanchor = 0, ypos = 675, yanchor = 0)
+        if(while1in2==False):
+            hide LLM_2_tileS55
     if if1in1 == False:
         hide LLM_2_tile85
         hide LLM_2_tile86
         hide LLM_2_tile87
         hide LLM_2_tile88
         hide LLM_2_tile89
+        hide LLM_2_tileS55
 
     if while1in2 == True and if2in1 == True:
         image LLM_2_tile54 = "g_while_on.png"
@@ -892,12 +909,23 @@ label gamefile_llm2:
         show LLM_2_tile55 at Position(xpos = 947, xanchor = 0, ypos = 675, yanchor = 0)
         image LLM_2_tile56 = "G_end_on.png"
         show LLM_2_tile56 at Position(xpos = 915, xanchor = 0, ypos = 727, yanchor = 0)
-
+        if (light2Sound==0):
+            play soundP02 llLightOn2
+            $light2Sound +=1
+        if(light1Sound==0):
+            play soundP01 llLightOn1
+            $light1Sound +=1
 
     if while1in2 == False or if2in1 == False:
         hide LLM_2_tile54
         hide LLM_2_tile55
         hide LLM_2_tile56
+        if(light2Sound==1):
+            play soundP02 llLightOff2
+            $light2Sound -=1
+        if(light1Sound==1):
+            play soundP01 llLightOff1
+            $light1Sound -=1
 
     if while1in2 == True:
         image LLM_2_tile90 = "g_while_on.png"
@@ -916,7 +944,10 @@ label gamefile_llm2:
         show LLM_2_tile101 at Position(xpos = 351, xanchor = 0, ypos = 785, yanchor = 0)
         image LLM_2_tile102 = "G_horizontal_ll.png"
         show LLM_2_tile102 at Position(xpos = 426, xanchor = 0, ypos = 785, yanchor = 0)
-
+        if (light2Sound==0):
+            play soundP02 llLightOn2
+            $light2Sound +=1
+            
         image LLM_2_tile104 = "y_horizontal_short_on.png"
         show LLM_2_tile104 at Position(xpos = 897, xanchor = 0, ypos = 643, yanchor = 0)
         image LLM_2_tile105 = "y_horizontal_short_on.png"
@@ -951,7 +982,9 @@ label gamefile_llm2:
         hide LLM_2_tile100
         hide LLM_2_tile101
         hide LLM_2_tile102
-
+        if(light2Sound==1):
+            play soundP02 llLightOff2
+            $light2Sound -=1
         hide LLM_2_tile104
         hide LLM_2_tile105
         hide LLM_2_tile106
@@ -1035,47 +1068,80 @@ label gamefile_llm2:
         show LLM_2_tile66 at Position(xpos = 350, xanchor = 0, ypos = 373, yanchor = 0) 
         image LLM_2_tile67 = "G_while.png"
         show LLM_2_tile67 at Position(xpos = 500, xanchor = 0, ypos = 750, yanchor = 0)
+        queue sound llWin
+        $renpy.pause(1.0)
+        hide LLM_2_tile60
+        hide LLM_2_tile61
+        hide LLM_2_tile62
+        hide LLM_2_tile63
+        hide LLM_2_tile64
+        hide LLM_2_tile65
+        hide LLM_2_tile66
+        hide LLM_2_tile67
+        jump llMedWin
 
-        #hide LLM_2_tile60
-        #hide LLM_2_tile61
-        #hide LLM_2_tile62
-        #hide LLM_2_tile63
-        #hide LLM_2_tile64
-        #hide LLM_2_tile65
-        #hide LLM_2_tile66
-        #hide LLM_2_tile67
-
-        "game"
-        jump loopLogic_med2
-
-    #if slot_name == "null":
-    #    $attempts +=1
-
-        
-    #$ attempts -= 1
     if attempts == 0:
-        show LLM_2_tile64 at Position(xpos = 500, xanchor = 0, ypos = 253, yanchor = 0)
-        show LLM_2_tile65 at Position(xpos = 750, xanchor = 0, ypos = 510, yanchor = 0)
-        show LLM_2_tile66 at Position(xpos = 350, xanchor = 0, ypos = 373, yanchor = 0) 
-        show LLM_2_tile67 at Position(xpos = 500, xanchor = 0, ypos = 750, yanchor = 0)
-
-        #hide LLM_2_tile60
-        #hide LLM_2_tile61
-        #hide LLM_2_tile62
-        #hide LLM_2_tile63
-        #hide LLM_2_tile64
-        #hide LLM_2_tile65
-        #hide LLM_2_tile66
-        #hide LLM_2_tile67
-
-
-        "you lose try again"
-        jump loopLogic_med2
+        show LLM_2_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+        show LLM_2_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+        show LLM_2_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0) 
+        show LLM_2_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+        queue sound llLose
+        $renpy.pause(1.5)
+        $llMed_attempts+=1
+        hide LLM_2_tile60
+        hide LLM_2_tile61
+        hide LLM_2_tile62
+        hide LLM_2_tile63
+        hide LLM_2_tile64
+        hide LLM_2_tile65
+        hide LLM_2_tile66
+        hide LLM_2_tile67
+        jump llMedLose
     
     jump gamefile_llm2
 
 screen loopLogicMed_2Scr:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("hints_llMed_2")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    imagebutton:
+        idle "G_if_idle.png"
+        xpos 1445
+        ypos 685
+    imagebutton:
+        idle "B_if_idle.png"
+        xpos 1445
+        ypos 545
+    imagebutton: 
+        idle "G_Else_idle.png"
+        xpos 1625
+        ypos 545
+    imagebutton:
+        idle "G_while_idle.png"
+        xpos 1625
+        ypos 685
+    text "Moves" xpos 1480 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1605 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1640 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #if gates

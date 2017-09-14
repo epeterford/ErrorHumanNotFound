@@ -571,6 +571,18 @@ screen loopLogic_easy2Scr:
     text "Moves" xpos 1480 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
     text ": " xpos 1605 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 1640 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    imagebutton:
+        idle "B_if_idle.png"
+        xpos 1445
+        ypos 645s
+#    imagebutton:
+#        idle "B_while_idle.png"
+#        xpos 1445
+#        ypos 645
+    imagebutton: 
+        idle "G_Else_idle.png"
+        xpos 1625
+        ypos 645
     #drags and drop location
     draggroup:
             #if gates
