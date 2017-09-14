@@ -913,11 +913,11 @@ label gamefile_llm1:
         show LLM_1_tile77 at Position(xpos = 585, xanchor = 0, ypos = 565, yanchor = 0)   
         image LLM_1_tile78 = "G_horizontal_short.png"
         show LLM_1_tile78 at Position(xpos = 513, xanchor = 0, ypos = 662, yanchor = 0)
-        image LLM_1_tile79 = "G_horizontal_short.png"
+        image LLM_1_tile79 = "y_horizontal_short_off.png"
         show LLM_1_tile79 at Position(xpos = 360, xanchor = 0, ypos = 663, yanchor = 0)
-        image LLM_1_tile80 = "G_horizontal_ll.png"
-        show LLM_1_tile80 at Position(xpos = 285, xanchor = 0, ypos = 663, yanchor = 0)
-        image LLM_1_tile81 = "W_connect_node.png"
+        image LLM_1_tile80 = "y_horizontal_short_off.png"
+        show LLM_1_tile80 at Position(xpos = 290, xanchor = 0, ypos = 663, yanchor = 0)
+        image LLM_1_tile81 = "b_while_off.png"
         show LLM_1_tile81 at Position(xpos = 275, xanchor = 0, ypos = 662, yanchor = 0)
 
     if if2in4 == False:
