@@ -574,7 +574,7 @@ screen loopLogic_easy2Scr:
     imagebutton:
         idle "B_if_idle.png"
         xpos 1445
-        ypos 645s
+        ypos 645
 #    imagebutton:
 #        idle "B_while_idle.png"
 #        xpos 1445

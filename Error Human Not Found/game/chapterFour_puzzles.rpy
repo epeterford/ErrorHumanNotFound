@@ -130,7 +130,7 @@ label binaryHard:
 #    if (binaryHard_attempts==0): Uncomment when have tutorial
 #        jump tutorial_Binary4Bit_1
     $binaryHardHints = 0
-    call binaryMatchHard
+    call binaryMatchHard from _call_binaryMatchHard
     
 label tutorial_Binary4Bit_1:
     $renpy.block_rollback()
@@ -207,14 +207,14 @@ label binaryHardDoneTalk:
     scene bg wsMain with fade
     $quick_menu = True
     stop music fadeout 1.0
-#    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
-#    play channel01 wwAmb1 fadeout 1.0 fadein 1.0
-#    play channel02 wwAmb2 fadeout 1.0 fadein 1.0
-#    play channel03 wwAmb3 fadeout 1.0 fadein 1.0
-#    play channel04 wwAmb4 fadeout 1.0 fadein 1.0
-#    play channel05 wwAmb5 fadeout 1.0 fadein 1.0
-#    play channel06 wwAmb6 fadeout 1.0 fadein 1.0
-#    play channel07 wsAmb7 fadeout 1.0 fadein 1.0
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     if(binaryHard_attempts==0):
         show Grace neutral at left
         show Ada amused at right

@@ -736,6 +736,7 @@ label hiroseTea_label:
     hide image "objects/hiroseTea_closeup.png"
     hide other darken
     show Ada neutral at right
+    show Grace neutral at left
     a "It makes me nervous, seeing that drink sitting by her computer."
     show Grace snarky at left
     g "Wow. The AI hasn't even been physical for a day and she recognizes that the lids here are suspicious at best."
@@ -763,6 +764,7 @@ label hiroseTree:
     hide image "objects/hiroseTree_closeup.png"
     hide other darken
     show Grace frustrated at left
+    show Ada neutral at right
     g "I never understood how it's fine that Hirose can have a small forest to herself in her office when I can barely get the clearance to have some potted plants."
     show Ada neutral at right
     a "Is it not natural for humans to allocate more resources to their leaders?"
@@ -787,6 +789,7 @@ label hiroseBed_label:
     hide other darken
     hide image "objects/hiroseBed_closeup.png"
     show Ada amused at right
+    show Grace neutral at left
     a "The layout of this room hardly seems standard."
     show Grace snarky at left
     g "I wonder what tipped you off."
@@ -810,12 +813,14 @@ label hiroseRecorder_label:
     hide other darken
     hide image "objects/hiroseRecorder_closeup.png"
     show Grace frustrated at left
+    show Ada neutral at right
     g "Why Hirose insists on having an actual person transcribe her meetings instead of just getting an audio recorder is beyond me."
     show Ada neutral at right
     a "It does not seem that odd to me. The Director must always work at peak efficiency."
     show Grace neutral
     g "What does efficiency have to do with it?"
     "{i}Ada shrugs, although the motion is stiff.{/i}"
+    show Ada amused
     a "Perhaps she just prefers to read?"
     g "..."
     g "You've got me there."
@@ -833,6 +838,7 @@ label hiroseWindow_label:
     hide image "objects/hiroseWindow_closeup.png"
     hide other darken
     show Grace happy at left
+    show Ada neutral at right
     g "The view from up here never gets old."
     g "If it's got a bed in it, I suppose even an office can be a room with a view."
     show Ada amused at right

@@ -1,8 +1,39 @@
 label chapterFour_E:
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
+    stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
     window hide
     $quick_menu = False
     scene bg black with fade
     scene bg chapterFour with fade
+#    $renpy.music.play("music/BGM/AI_Core/EHNF_L0_BGM_AI_Ref.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L1_BGM_AI_Piano.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L2_BGM_AI_Bass.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L3_BGM_AI_String.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L4_BGM_AI_Synth.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L5_BGM_AI_Synth_Key.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L6_BGM_AI_String2.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L7_BGM_AI_Arp_Synth.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L8_BGM_AI_Elec_Guit.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L9_BGM_Thunder.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L10_BGM_AI_String_Bus.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L11_BGM_AI_Kick.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_L13_BGM_AI_Snare.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L0.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L1.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L2.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L3.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L4.ogg", channel='channel17', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L5.ogg", channel='channel18', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.pause(3.0)
     scene bg AICoreDoor with fade 
     $quick_menu = True
@@ -293,7 +324,32 @@ label ch4resume_E:
     #Transition to Blue's creepy hallway
     scene bg creepyHallwayLong with fade
     $quick_menu = True
-    
+    $renpy.music.play("music/BGM/Blue/EHNF_L0_BGM_Blue_Kick.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L1_BGM_Blue_Ghost_Kick.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L2_BGM_Blue_3p_Horn_Bus.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L3_BGM_Blue_Snare.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L4_BGM_Blue_Percussion.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L5_BGM_Blue_Cymbals_Large.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L6_BGM_Blue_Cymbals_Small.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L7_BGM_Blue_Cymbals_Swells.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L8_BGM_Blue_Glass_Mallet.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L9_BGM_Blue_Liquid_Mallet.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L10_BGM_Blue_Reflective_Mallet.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L11_BGM_Blue_Grime_Bass.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L12_BGM_Blue_Sub_Bass.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L13_BGM_Blue_Sparkling_Water_Drops.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L14_BGM_Blue_Ambient_Room_Pad.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L15_BGM_Blue_Strings_Legatto.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L16_BGM_Blue_Strings_Staccato.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L17_BGM_Blue_Strings_Tremelo.ogg", channel='channel17', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L18_BGM_Blue_Wire_Pluck.ogg", channel='channel18', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L19_BGM_Blue_Flutes_Disonant.ogg", channel='channel19', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L20_BGM_Blue_French_Horn_Legatto.ogg", channel='channel20', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L21_BGM_Blue_French_Horn_Staccato.ogg", channel='channel21', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L0.ogg", channel='channel22', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L1.ogg", channel='channel23', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L2.ogg", channel='channel24', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L3.ogg", channel='channel25', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     #START BLUE SECTION
     "{i}Grace and Ada walk down the hallway leading to Blue's workspace.{/i}"
     show Ada neutral at right
@@ -1068,6 +1124,34 @@ label ch4convoresume1_E:
     scene bg creepyHallwayLong with fade
     $renpy.pause(0.8)
     scene bg black with fade
+    
+    #Watson's SERVER
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0
+    stop channel14 fadeout 1.0
+    stop channel15 fadeout 1.0
+    stop channel16 fadeout 1.0
+    stop channel17 fadeout 1.0
+    stop channel18 fadeout 1.0
+    stop channel19 fadeout 1.0
+    stop channel20 fadeout 1.0
+    stop channel21 fadeout 1.0
+    stop channel22 fadeout 1.0
+    stop channel23 fadeout 1.0
+    stop channel24 fadeout 1.0
+    stop channel25 fadeout 1.0
     $renpy.pause(0.8)
     scene bg wsOverview with fade
     $quick_menu = True
@@ -1295,6 +1379,23 @@ label oxygenGarden_E:
     scene bg wsOverview with fade
     $renpy.pause(0.8)
     scene bg black with fade
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+#    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L0_BGM_Oxy_Piano_Harm_Mid.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L1_BGM_Oxy_Piano_Harm_Low.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L2_BGM_Oxy_Double_Bass.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L3_BGM_Oxy_Pad.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L4_BGM_Oxy_Bells.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L5_BGM_Oxy_BG_CounterMelody_Synth.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L6_BGM_Oxy_BG_CounterMelody_Verb.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L7_BGM_Oxy_Piano_Melody.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L8_BGM_Oxy_Room_Short_Verb.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.pause(0.8)
     scene bg ogOverview with fade
     $quick_menu = True

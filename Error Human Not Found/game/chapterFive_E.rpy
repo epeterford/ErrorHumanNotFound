@@ -1,4 +1,22 @@
 label chapterFive_E:
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
+    stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0
+    stop channel14 fadeout 1.0
+    stop channel15 fadeout 1.0
+    stop channel16 fadeout 1.0
+    play music ch5BGM
     $wj_read = False
     scene bg chapterFiveE with fade
     $renpy.pause(3.0)

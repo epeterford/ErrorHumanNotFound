@@ -614,11 +614,12 @@ label gracePoster_inv:
     hide image "objects/gracePoster_closeup.png"
     hide other darken
     show Grace neutral at left
-    g "This poster is so cheesy."
     show Ada neutral at right
+    g "This poster is so cheesy."
     a "I detect no traces of curd."
     show Grace annoyed
     g "No, Ada, what I meant was that I don't like how, er... to the point this poster is."
+    show Ada surprised
     a "Is that not the point? To clearly indicate the purpose of the poster while imparting the significance upon the viewer?"
     show Grace snarky
     g "I want to keep defending my point, but that was solid."
@@ -649,6 +650,7 @@ label graceNeuralNetwork_inv:
     hide image "objects/graceNeuralNetwork_closeup4.png"
     hide other darken
     show Ada neutral at right
+    show Grace neutral at left
     a "So, this is what is inside my head."
     show Grace snarky at left
     g "It's mounted in your chest, actually."
@@ -674,16 +676,19 @@ label graceHardDrive_inv:
     hide other darken
     hide image "objects/graceHarddrive_closeup.png"
     show Ada concerned at right
+    show Grace neutral at left
     a "Grace!"
     show Grace surprised at left
     g "What, Ada?! What's wrong?"
     a "Your hard drives, Grace! You cannot keep them like this."
+    show Ada neutral
     "{i}Ada starts to pick up Grace's various hard drives.{/i}"
     show Grace annoyed
     g "Hey! Stop that!"
     "{i}Grace stops Ada.{/i}"
+    show Grace neutral
     g "What are you doing?"
-    show Ada neutral
+    show Ada seething
     a "These hard drives are just out here, instead of being in storage. These are very sub-optimal conditions."
     show Grace neutral
     g "And {i}what{/i} exacty is sub-optimal about keeping them where their information is needed?"
@@ -705,15 +710,19 @@ label graceBust_inv:
     hide other darken
     hide image "objects/graceBust_closeup.png"
     show Grace snarky at left
-    g "I remember when we finished this prototype. Alan couldn't stop talking about this old film movie."
     show Ada neutral at right
+    g "I remember when we finished this prototype. Alan couldn't stop talking about this old film movie."
+    show Ada surprised
     a "A film?"
-    show Grace neutral
+    show Grace snarky
     g "Yeah. Back before the second milennium, people used to record movies on physical film."
+    show Ada amused
     a "May I enquire what this 'film' was called?"
+    show Grace neutral
     g "I don't remember. I'd have to ask Alan. I think it was {i}Exterminator{/i} or something like that. He told me it was about an AI, of all things."
     show Ada concerned
     a "A rogue AI?"
+    show Grace snarky
     g "I guess it was just science fiction back then, but nowadays, something like that would mean something completely different."
     $quick_menu = False
     jump graceLab_left2
@@ -728,14 +737,17 @@ label graceCoffee_inv:
     hide other darken
     hide image "objects/graceCoffee_closeup.png"
     show Grace snarky at left
+    show Ada neutral at right
     g "What's your take on this, Ada?"
     show Ada neutral at right
     a "Hmm..."
+    show Ada amused
     a "The appearance of the robot is compatible with what humans find comfortable; however, the design itself is hardly optimal."
     show Grace neutral
     g "How so?"
     show Ada concerned
     a "This robot does not possess peripheral sensors, and it doesn't have any fingers. "
+    show Grace snarky
     g "Noted."
     $quick_menu=False
     hide Ada
@@ -753,15 +765,21 @@ label graceCandD_inv:
     hide other darken
     hide image "objects/graceC&D_closeup.png"
     show Ada neutral at right
+    show Grace neutral at left
     a "It appears that you have been restricted from continuing your work. Is this because of Alpha?"
-    show Grace frustrated at left
+    show Grace annoyed at left
     g "That's exactly what this says."
+    show Grace angry
     g "Roberta and the Conclave think they're so great with their higher-than-thou mentalities."
+    show Ada surprised
     a "They are effectively your superiors, though. Is that not correct?"
+    show Ada neutral
     a "Will this impact your ability to assist me in uncovering the origin the destruction of Alpha?"
+    show Grace snarky
     g "Of course not. This is my career on the line, not theirs. If they don't like it, they can go debug my compiler."
     show Ada surprised
     a "Grace, are you sure that is an acceptable perspective to have?"
+    show Grace annoyed
     g "I'll send them an apology when I decide to care."
     $ quick_menu = False
     window hide
@@ -778,6 +796,7 @@ label gracePhoto_inv:
     hide image "objects/gracePhoto_closeup.png"
     hide other darken
     show Ada neutral at right
+    show Grace neutral at left
     a "This is your father again, correct?"
     show Grace happy at left 
     g "It is! This was from our vacation to the Hawaii Preserve."
@@ -802,8 +821,9 @@ label gracePens_inv:
     hide image "objects/gracePens_closeup.png"
     hide other darken
     show Ada surprised at right
-    a "Are these pens? Why do you use such archaic tools?"
     show Grace neutral at left
+    a "Are these pens? Why do you use such archaic tools?"
+    show Grace happy
     g "Hey, sometimes just writing something down is better than putting it on a computer."
     show Ada surprised
     a "Is collecting pens a human habit? This is the first I have heard of it."
@@ -842,6 +862,7 @@ label graceStickyNotes_inv:
     hide image "objects/graceStickyNotes_closeup5.png"
     hide other darken
     show Ada concerned at right
+    show Grace neutral at left
     a "What {i}is{/i} all this?"
     show Grace happy at left
     g "These are all of my research notes for the Markov Project, and the occasional doodle."
@@ -856,6 +877,9 @@ label graceStickyNotes_inv:
     
 label talkLynn:
     scene bg balconyClose
+    $quick_menu = True
+    show Ada neutral at right
+    show Grace neutral at left
     if(alphaBodyItems == 3) and (balconyItems==1):
         if(resume =="E"):
             jump lynnfinallyfrickinanswers_E
@@ -878,6 +902,7 @@ label talkLynn:
         queue sound "<silence 0.25>"
         queue sound dialtone
         "{i}The dial tone plays for several seconds.{/i}"
+        show Lynn at center
         lynn "Hi!"
         show Grace happy at left
         g "Lynn, hello. How are you--"
@@ -891,8 +916,20 @@ label talkLynn:
         play sound braceletSelect
         "{i}Grace hangs up.{/i}"
         show Grace annoyed
-        g "I feel deceived."
+        g "I feel deceived. I forgot Lynn only uses that image for everything."
+        show Ada surprised
+        a "Everything? Why not do it live?"
+        show Grace snarky
+        g "Because her hair and everything was just perfect this day, so she wants everyone to see that."
+        show Ada neutral
+        a "I have to say, humans are strange at times."
+        show Grace neutral
+        g "No argument here."
         $ callAttempts +=1
+        $quick_menu = False
+        hide Grace
+        hide Ada
+        window hide
         jump balcony_actions
     if (callAttempts>0) and (callAttempts<4):
         $quick_menu = True
@@ -906,6 +943,7 @@ label talkLynn:
         show arrow2 at center, delayed_blink(0.2, 1.0)
         show arrow3 at center, delayed_blink(0.4, 1.0)
         "{i}The dial tone plays for several seconds.{/i}"
+        show Lynn at center
         lynn "Hi!"
         show Grace frustrated at left
         g "..."
@@ -918,6 +956,10 @@ label talkLynn:
         "{i}Grace hangs up.{/i}"
         g "Typical."
         $ callAttempts +=1
+        $quick_menu = False
+        hide Grace
+        hide Ada
+        window hide
         jump balcony_actions
     if callAttempts>3:
         $quick_menu = True
@@ -933,6 +975,7 @@ label talkLynn:
         "{i}The dial tone plays for several seconds.{/i}"
         show Grace frustrated at left
         g "Come on."
+        show Lynn at center
         lynn "Hi!"
         lynn "You've--"
         hide Lynn
@@ -941,6 +984,11 @@ label talkLynn:
         hide arrow3
         play sound braceletSelect
         "{i}Grace hangs up.{/i}"
+        $quick_menu = False
+        hide Grace
+        hide Ada
+        window hide
+        jump balcony_actions
     hide Grace
     $quick_menu = False
     jump balcony_actions
@@ -1069,6 +1117,7 @@ label scratches_label:
     hide other darken
     hide image "objects/scratches_closeup.png"
     show Grace surprised at left
+    show Ada neutral at right
     g "Wow, he must've been in some real pain if he scratched the railing like this."
     show Ada seething at right
     a "Shorted wires is one of the worst sensations a machine can feel."
@@ -1079,6 +1128,7 @@ label scratches_label:
     g "Jeez, I wouldn't even wish that on Ivan."
     show Ada neutral
     a "Ivan?"
+    show Grace neutral
     g "Don't worry about it."
     hide Ada
     hide Grace
@@ -1096,6 +1146,7 @@ label jumpdrive1_label:
     hide other darken
     hide image "objects/jumpdrive_closeup.png"
     show Grace happy at left
+    show Ada neutral at right
     g "A standard issue Noah Sphere thumbdrive, eh? Now we've got something."
     show Ada neutral at right
     a "A data drive? Please, let me see it."
@@ -1103,8 +1154,11 @@ label jumpdrive1_label:
     g "Hold on for now, we haven't finished looking around. Let's not get distracted."
     show Ada frustrated
     a "I can perform multiple operations simultaneously, Grace."
+    show Grace snarky
     g "All right, have at it."
+    show Ada seething
     a "This drive is heavily encrypted. Without a decryption key I cannot access it."
+    show Grace neutral
     g "Right. We'll just have to keep an eye out for a decryption key someone left lying in plain sight."
     show Ada amused
     a "I am beginning to suspect most of your responses have some level of sarcasm to them."
@@ -1127,17 +1181,23 @@ label balconyView_label:
     hide other darken
     hide image "objects/balconyWindow_closeup.png"
     show Ada happy at right
+    show Grace neutral at left
     a "To think that our solar system drifted into a nebula so unexpectedly satisfies my probability calculator."
-    show Grace snarky at left
+    show Grace surprised at left
     g "I'm sorry, what?"
+    show Ada amused
     a "Improbabilities on a cosmic scale. A scale where even the smallest variable can alter the course of galaxies."
+    show Grace snarky
     g "Oh. You really like space, don't you?"
+    show Ada happy
     a "Why would I not? It is the closest thing to existing within a server bank."
     show Grace surprised
     g "Is that what the inside of a computer looks like? Empty space with points of interest?"
     show Ada neutral
     a "No, it is so much more than that. So much more than what can possibly be explained with words."
+    show Grace snarky
     g "Remind me to ask you again when we have time."
+    show Ada happy
     a "It is small comfort, but at least Alpha was able to experience this before he died."
     show Grace sad
     g "Small comforts are still something."
@@ -1153,6 +1213,7 @@ label alphaBody_inv:
             $quick_menu=True
             if(resume =="E"):
                 show Grace neutral at left
+                show Ada neutral at right
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
                 "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
@@ -1171,6 +1232,7 @@ label alphaBody_inv:
                 g "All right Alpha, let's see what you've got for us."
             if(resume == "SbE"):
                 show Grace neutral at left
+                show Ada neutral at right
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
                 "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
@@ -1185,6 +1247,7 @@ label alphaBody_inv:
                 g "All right Alpha, let's see what you've got for us."
             if(resume == "S"):
                 show Grace neutral at left
+                show Ada neutral at right
                 g "I think we've got everything we can get from the outside. Let's get a closer look."
                 "{i}Grace leans over Alpha, and finds the access panel for his head.{/i}"
                 g "Do you want to look away, Ada?"
@@ -1201,6 +1264,7 @@ label alphaBody_inv:
                 g "All right Alpha, let's see what you've got for us."
         if (loopLogicEasy_tries>0):
             show Grace neutral at left
+            show Ada neutral at right
             g "Okay, I still need to get him started before we can learn anything. Let's try this again."
         $quick_menu = False
         hide Grace
@@ -1210,12 +1274,18 @@ label alphaBody_inv:
         $quick_menu = True
         if (binaryEasy_tries==0):
             show Ada neutral at right
+            show Grace neutral at left
             a "I may have more fortune since I am more familiar with his code."
             show Grace neutral at left
             g "Anything would be helpful."
         if (binaryEasy_tries>0):
             show Ada frustrated at right
+            show Grace neutral at left
             a "I still need to get into his system."
+            g "Don't look at me."
+            a "I am not. I am attempting to look at this fried system."
+            show Grace snarky
+            g "Yeah, that wasn't what--you know, nevermind."
         $quick_menu = False
         hide Grace
         hide Ada
@@ -1489,6 +1559,7 @@ label binaryDoneTalk:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    show Grace neutral at left
     if (binaryEasy_tries<1):
         show Ada amused at right
         a "Base two, base ten, it makes no difference to me. I could probably do base three or tertiary just for fun."
@@ -1536,6 +1607,7 @@ label llDoneTalk:
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    show Ada neutral at right
     if(loopLogicEasy_tries==0):
         show Grace happy at left
         g "Easy as manufactured apple pie. No infinite loops here." 
@@ -1566,16 +1638,3 @@ label llDoneTalk:
     $loopLogicEasyDone = True
     jump balcony_alpha
     
-
-
-##Window Interactible 1: The View: A view of Earth with the Moon peeking over the Earth // Reaction Item
-#	In Response: #show Grace neutral // g "At least he died looking at a beautiful view." // #show Ada neutral // a "I do not recall being able to see this from the security cameras."
-##Window Interactible 2: Scratch Marks: The balcony railing has a few scratch marks on it. //Reaction item
-#	In Response: #show Grace surprised // g "It looks like he hit the railing here!" // #show Ada concerned // a "He must have been in immense pain. Why did this happen?"
-##Alpha Interactible 1: Alpha's Head: Alpha's head is slightly scorched by the overload. // Reaction Item
-#In Response: #show Ada concerned // a "Alpha…" // #show Grace neutral // g "It looks like the only thing that malfunctioned was his neural network. Seems like it might have been an overload."
-##Alpha Interactible 2: Alpha's Body: Alpha's body. Unlike his head, the only marks on him are the scuffs he picked up when he fell. //Database Item
-#Grace's note: "Alan's probably already pissed about this. He was particularly happy with his design for Alpha's chassis."
-##Alpha interactible 3: The data drive: A small, rectangular data drive clutched in Alpha's left hand. // Reaction item
-#	In Response: #show Grace surprised // g "A data drive?" // #show Ada neutral // a "It appears so. Allow me, Grace." // "Ada picks up the drive, and inserts it into her wrist." // a "Curious. This data is heavily encrypted."
-#	#Player acquires the DATA DRIVE *airhorns*

@@ -289,6 +289,16 @@ define audio.wwAmb4 = "music/Amb/watsonWorkspace/EHNF_WW_L4.ogg"
 define audio.wwAmb5 = "music/Amb/watsonWorkspace/EHNF_WW_L5.ogg"
 define audio.wwAmb6 = "music/Amb/watsonWorkspace/EHNF_WW_L6.ogg"
 
+#Watson Server Ambiance
+define audio.wsAmb0 = "music/Amb/WS/EHNF_WS_L0.ogg"
+define audio.wsAmb1 = "music/Amb/WS/EHNF_WS_L1.ogg"
+define audio.wsAmb2 = "music/Amb/WS/EHNF_WS_L2.ogg"
+define audio.wsAmb3 = "music/Amb/WS/EHNF_WS_L3.ogg"
+define audio.wsAmb4 = "music/Amb/WS/EHNF_WS_L4.ogg"
+define audio.wsAmb5 = "music/Amb/WS/EHNF_WS_L5.ogg"
+define audio.wsAmb6 = "music/Amb/WS/EHNF_WS_L6.ogg"
+define audio.wsAmb7 = "music/Amb/WS/EHNF_WS_L7.ogg"
+
 #Conclave audio
 define audio.conclaveReceptionAmb = "music/amb/Conclave/Ambiance_Conclave_Reception_Area.ogg"
 define audio.conclaveProperAmb = "music/amb/Conclave/EHNF_CC_Amb.mp3"
@@ -305,6 +315,8 @@ define audio.hallwayAmb = "music/Amb/Hallway/EHNF_Amb_Scene_Hallway_Norm.ogg"
 
 #hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 #                activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+
+define audio.ch5BGM = "music/EHNF_CH5.mp3"
 #Hirose audio 1
 define audio.hiroseOffice1_00 = "music/Amb/Hirose_Office/L1/EHNF_Hirose1_AMB_L0.ogg"
 define audio.hiroseOffice1_01 = "music/Amb/Hirose_Office/L1/EHNF_Hirose1_AMB_L1.ogg"
@@ -396,6 +408,12 @@ define audio.AICoreMusic_10 = "music/BGM/AI_Core/EHNF_L10_BGM_AI_String_Bus.ogg"
 define audio.AICoreMusic_11 = "music/BGM/AI_Core/EHNF_L11_BGM_AI_Kick.ogg"
 #define audio.AICoreMusic_12 = "music/BGM/AI_Core/EHNF_L12_BGM_AI_Ref.ogg"
 define audio.AICoreMusic_13 = "music/BGM/AI_Core/EHNF_L13_BGM_AI_Snare.ogg"
+define audio.AIAmb_00 = "music/Amb/AI_Core/EHNF_AC_L0.ogg"
+define audio.AIAmb_01 = "music/Amb/AI_Core/EHNF_AC_L1.ogg"
+define audio.AIAmb_02 = "music/Amb/AI_Core/EHNF_AC_L2.ogg"
+define audio.AIAmb_03 = "music/Amb/AI_Core/EHNF_AC_L3.ogg"
+define audio.AIAmb_04 = "music/Amb/AI_Core/EHNF_AC_L4.ogg"
+define audio.AIAmb_05 = "music/Amb/AI_Core/EHNF_AC_L5.ogg"
 
 #Blue
 define audio.BlueBGM_0 = "music/BGM/Blue/EHNF_L0_BGM_Blue_Kick.ogg"
@@ -420,6 +438,10 @@ define audio.BlueBGM_18 = "music/BGM/Blue/EHNF_L18_BGM_Blue_Wire_Pluck.ogg"
 define audio.BlueBGM_19 = "music/BGM/Blue/EHNF_L19_BGM_Blue_Flutes_Disonant.ogg"
 define audio.BlueBGM_20 = "music/BGM/Blue/EHNF_L20_BGM_Blue_French_Horn_Legatto.ogg"
 define audio.BlueBGM_21 = "music/BGM/Blue/EHNF_L21_BGM_Blue_French_Horn_Staccato.ogg"
+define audio.BlueAmb_00 = "music/Amb/Blue/EHNF_BW_L0.ogg"
+define audio.BlueAmb_01 = "music/Amb/Blue/EHNF_BW_L1.ogg"
+define audio.BlueAmb_02 = "music/Amb/Blue/EHNF_BW_L2.ogg"
+define audio.BlueAmb_03 = "music/Amb/Blue/EHNF_BW_L3.ogg"
 
 #Lab 2/Grace Lab music?
 define audio.labBGM_0 = "music/BGM/Lab2/EHNF_L0_BGM_Lab2_Pad.ogg"
@@ -577,6 +599,12 @@ init python:
     renpy.music.register_channel("channel19", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel20", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("channel21", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel22", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel23", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel24", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel25", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel26", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("channel27", mixer="music", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     
     
     renpy.music.register_channel("sound01", mixer="sfx", loop=True, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
@@ -766,17 +794,19 @@ label start:
     #with fade(5.0)
     $ renpy.pause(5.0)
     stop music fadeout 1.0
-    menu:
-        "Chapter 3 SbE":
-            jump chapterThree_SbE
-        "Chapter 3 E":
-            jump chapterThree_E
-        "Chapter 3 S":
-            jump chapterThree_S
-        "Chapter 4 S.":
-            jump chapterFour_S
-        "Chapter 4 E.":
-            jump chapterFour_E
+#    menu:
+#        "Chapter 3 SbE":
+#            jump chapterThree_SbE
+#        "Chapter 3 E":
+#            jump chapterThree_E
+#        "Chapter 3 S":
+#            jump chapterThree_S
+#        "Chapter 4 S.":
+#            jump chapterFour_S
+#        "Chapter 4 E.":
+#            jump chapterFour_E
+#        "Test MOPR slide.":
+#            jump enterthemopr_E
     show bg black with fade
     scene bg prologue with fade
     $renpy.pause(3.0)

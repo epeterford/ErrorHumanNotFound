@@ -111,18 +111,29 @@ label llMedDone:
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    
+    $renpy.music.play("music/Creep_Wav.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Digi_Sprites.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/robotScanner.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/srafTexture.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/stabTapeEcho.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     if(llMed_attempts ==0):
         #show Ivan dour at right
         show Grace happy at left
+        g "Look Ivan! A sort algorithm saves time and sanity. Oh, wait, you don't have any sanity to begin with."
+        ivan "It's a pity you have to demean others in an attempt to make yourself feel worthwile. Doesn't make a difference, however."
+        show Grace annoyed
+        g "You know, let's just see what it turned up."
     if(llMed_attempts ==1):
         #show Ivan dour at right
         show Grace neutral at left
+        g "Okay, you really need to trim the fat on your data here. Ever heard of defragging either? I swear, if your files are stored anything like this data, your poor computer..."
+        ivan "Blaming me for your inability to cleanly write a sort algorithm is very transparent, Fortran. Now, do you see what you want? Because I want you gone."
     if(llMed_attempts>1):
         show Grace annoyed at left
         #show Ivan dour at right
-    hide Grace
-    #hide Ivan
-    $quick_menu = False
+        g "Bubble sort, priority queues... I need a real refresher on all on this. I mean, I could have constructed an entire binary search tree in the time--"
+        ivan "Fortran, no one cares about your innane babbling. Please, do get on with it. Some of use have lives we would like to return to."
     if(resume=="SbE"):
         jump finishGPuzzle1_SbE
     if(resume=="E"):
@@ -144,6 +155,11 @@ label choose_llMed:
     stop channel09 fadeout 1.0
     stop channel10 fadeout 1.0
     stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0
+    stop channel14 fadeout 1.0
+    stop channel15 fadeout 1.0
+    stop channel16 fadeout 1.0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $LLMedHints=0
 #    if (llMed_attempts == 0):
@@ -431,7 +447,7 @@ label binaryMed:
 #    if (binaryMed_attempts==0): Uncomment when have tutorial
 #        jump tutorial_Binary3Bit_1
     $binaryMedHints = 0
-    call binaryMatchMed
+    call binaryMatchMed from _call_binaryMatchMed
     
 label tutorial_Binary3Bit_1:
     $renpy.block_rollback()

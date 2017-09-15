@@ -2,7 +2,7 @@ label chapterThree_screens:
 
 #OBJECT SCREENS
     screen nightShift_scr:
-        if(llMed_solved==False):
+        if(gramMed_solved==False):
             imagebutton:
                 idle "objects/nightShift_idle.png"
                 hover "objects/nightShift_hover.png"
@@ -126,6 +126,12 @@ label lab2_inv:
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    
+    $renpy.music.play("music/Creep_Wav.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Digi_Sprites.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/robotScanner.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/srafTexture.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/stabTapeEcho.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $quick_menu = False
     if(ivanComp_lock==True):
         scene bg lab2Ivan_locked with fade
@@ -198,7 +204,7 @@ label talkIvan:
             jump talkIvanLab2_E
         if(resume=="SbE"):
             jump talkIvanLab2_SbE
-    if(lab2Items==2 and talkIvan_count>0):
+    if(lab2Items==3 and talkIvan_count>0):
         if(resume=="S"):
             jump finishLab2Inv_S
         if(resume=="E"):
