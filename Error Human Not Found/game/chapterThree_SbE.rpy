@@ -1200,4 +1200,7 @@ label endCh3_SbE:
     #Insert SFXs
     "{i}DING. DING.{/i}"
     "{i}'Meet me at the AI core immediately.'- Ada{/i}" #Visual for this message on the bracelet???
+    "{i}Grace's journal has updated.{/i}"
+    $journal4="SbE"
+    $pageUnlocked_journal+=2
     jump chapterFour_SbE

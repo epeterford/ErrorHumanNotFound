@@ -1175,4 +1175,7 @@ label endCh3_S:
     #Insert SFX
     "{i}DING. DING.{/i}"
     "{i}'Meet me at the AI core stat.'- Ada{/i}"
+    "{i}Grace's journal has updated.{/i}"
+    $journal4="S"
+    $pageUnlocked_journal+=2
     jump chapterFour_S

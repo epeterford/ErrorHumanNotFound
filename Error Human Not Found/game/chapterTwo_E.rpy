@@ -922,7 +922,10 @@ label resumeLynn_E:
     hide Lynn
     play sound braceletSelect
     show Grace neutral
-    "The call cuts off."
+    "{i}The call cuts off.{/i}"
+    "{i}Grace's journal has updated.{/i}"
+    $journal3="E"
+    $pageUnlocked_journal+=2
     show Ada neutral at right
     a "Grace?"
     show Grace annoyed

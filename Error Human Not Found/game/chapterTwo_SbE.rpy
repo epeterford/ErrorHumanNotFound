@@ -906,6 +906,9 @@ label resumeLynn_SbE:
     hide Lynn
     play sound braceletSelect
     "{i}The call cuts off.{/i}"
+    "{i}Grace's journal has updated.{/i}"
+    $journal3="SbE"
+    $pageUnlocked_journal+=2
     show Ada neutral
     a "Grace?"
     show Grace annoyed

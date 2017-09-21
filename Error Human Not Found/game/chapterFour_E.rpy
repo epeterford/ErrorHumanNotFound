@@ -1803,6 +1803,9 @@ label ch4resume4_E:
     show Ada neutral
     a "If you do not mind, I am going to go see about these strange little plants over here. Please excuse me."
     "{i}Ada walks out of earshot and pokes curiously at some flowers.{/i}"
+    "{i}Grace's journal has updated.{/i}"
+    $journal5="E"
+    $pageUnlocked_journal+=2
     hide Ada
     #hide Alan
     $quick_menu = False

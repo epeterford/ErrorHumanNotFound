@@ -361,6 +361,19 @@ define gui.history_text_ypos = 8
 define gui.history_text_width = 1110
 define gui.history_text_xalign = 0.0
 
+## The position, width, and alignment of the label giving the name of the
+## speaking character.
+define gui.journal_name_xpos = 200
+define gui.journal_name_ypos = 0
+define gui.journal_name_width = 225
+define gui.journal_name_xalign = 1.0
+
+## The position, width, and alignment of the dialogue text.
+define gui.journal_text_xpos = 150
+define gui.journal_text_ypos = 0
+define gui.journal_text_width = 1150
+define gui.journal_text_xalign = 0.0
+
 
 ## NVL-Mode ####################################################################
 ##

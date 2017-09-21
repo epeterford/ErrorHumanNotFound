@@ -529,4 +529,7 @@ label ch5_SbE_resume:
     while stackDepth>0:
         $renpy.pop_call()
         $stackDepth -=1
-    return
+    "{i}Grace's journal has updated.{/i}"
+    $journal6="SbE"
+    $pageUnlocked_journal+=2
+    jump credits

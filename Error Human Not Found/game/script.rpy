@@ -22,6 +22,7 @@ define mopr = Character("M.O.P.R", color="#ad0000")
 define investigator1 = Character("Detective", color="#000000")
 define investigator2 = Character("Officer 1", color="#000000")
 define investigator3= Character("Officer 2", color="#000000")
+define unknown=Character("???", color="#000000")
 
 #Sprites for the Conclave
 image Nevalinna speaking = "sprites/Nevalinna.png"
@@ -626,7 +627,19 @@ init python:
     rollback_side = None
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
-
+init python:
+    currentPage_journal = 0
+    currentPage_notes = 0
+    pageUnlocked_journal=6
+    pageUnlocked_notes = 0
+#    pageTotal_journal = 16
+#    pageTotal_notes = 12
+    journal1 = False
+    journal2 = ""
+    journal3 = ""
+    journal4 = ""
+    journal5 = ""
+    journal6 = ""
 # The game starts here.
 label start:
     $Preference("rollback side", "disable")

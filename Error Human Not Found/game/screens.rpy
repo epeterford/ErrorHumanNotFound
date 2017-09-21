@@ -251,13 +251,13 @@ screen quick_menu():
     if quick_menu:
         imagebutton: #Journal
             idle "journal_idle.png"
-#            hover "journal_hover.png"
+            hover "journal_hover.png"
             xpos 646
             ypos 989
             focus_mask True
-#            action ShowMenu("journal")
-#            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
-#            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            action ShowMenu("journal")
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg"
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Preferences
             idle "prefs_idle.png"
             hover "prefs_hover.png"
@@ -349,15 +349,15 @@ screen navigation():
         hover "gui/overlay/side_menu_hover.png"
         selected_idle "gui/overlay/side_menu_selected.png"
         selected_hover "gui/overlay/side_menu_selected.png" 
-                
-        hotspot (27, 193, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#History
-        hotspot (27, 280, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Save
-        hotspot (27, 363, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Load
-        hotspot (27, 448, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Settings
-        hotspot (27, 533, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Main Menu
-        hotspot (27, 624, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#About
-        hotspot (27, 711, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Help
-        hotspot (27, 796, 290, 85) action Quit(confirm=not main_menu):
+        hotspot (27, 180, 290, 72) action ShowMenu ("journal") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+        hotspot (27, 243, 290, 85) action ShowMenu("history") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#History
+        hotspot (27, 330, 290, 83) action ShowMenu("save") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Save
+        hotspot (27, 413, 290, 85) action ShowMenu("load") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Load
+        hotspot (27, 498, 290, 85) action ShowMenu("preferences") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Settings
+        hotspot (27, 583, 290, 85) action MainMenu() activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Main Menu
+        hotspot (27, 674, 290, 85) action ShowMenu("about") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#About
+        hotspot (27, 761, 290, 85) action ShowMenu("help") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Help
+        hotspot (27, 846, 290, 85) action Quit(confirm=not main_menu):
             if(not main_menu):
                 activate_sound"music/UI/ENHF_UI_Button_v2.ogg" 
             if(main_menu):
@@ -416,7 +416,7 @@ screen main_menu:
         hotspot (12, 407, 315, 95) action Help() activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 #        hotspot (12, 538, 315, 95) action ShowMenu("database") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         hotspot (12, 669, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
-#        hotspot (12, 797, 315, 95) action ShowMenu ("credits")
+        hotspot (12, 797, 315, 95) action ShowMenu ("mmCredits_start")
         hotspot (12, 896, 315, 95) action Quit(confirm=False) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         
 
@@ -551,16 +551,6 @@ style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
-#imagemap:
-#    ground "gui/overlay/game_menu.png"
-#    idle "gui/overlay/game_menu.png"
-#    hover "gui/overlay/game_menu_hover.png"
-            
-#    hotspot (12, 83, 315, 95) action Start()
-#    hotspot (12, 186, 315, 95) action ShowMenu("load")
-#    hotspot (12, 314, 315, 95) action ShowMenu("preferences")
-#    hotspot (12, 438, 315, 95) action ShowMenu("about")
-#    hotspot (12, 569, 315, 95) action Help()
     
 
 
@@ -1223,8 +1213,8 @@ screen preferences():
         hotspot (1276, 200, 71, 83) action (Preference("sound volume", soundVolumeVal-0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         hotspot (1704, 200, 71, 83) action (Preference("sound volume", soundVolumeVal+0.1), Play("sound", config.sample_sound)) hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
-        bar pos (1700, 131) value Preference("music volume") style "pref_slider"  
-        bar pos (1700, 210) value Preference("sound volume") style "pref_slider" #action Play("sound", config.sample_sound)
+        bar pos (1350, 131) value Preference("music volume") style "pref_slider"  
+        bar pos (1350, 210) value Preference("sound volume") style "pref_slider" #action Play("sound", config.sample_sound)
         hotspot (1460, 274, 128, 90) action Preference("all mute", "toggle") activate_sound"music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
 
         #Skip Options
@@ -1249,9 +1239,9 @@ screen preferences():
 #            if (autoForwardVal==40) or (autoForwardVal>40):
 #                hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)
             
-        bar pos (1700, 416) value Preference("text speed") style "pref_slider"
+        bar pos (1350, 416) value Preference("text speed") style "pref_slider"
         
-        bar pos (1700, 492) value Preference("auto-forward time") style "pref_slider"
+        bar pos (1350, 492) value Preference("auto-forward time") style "pref_slider"
 #        hotspot (1276, 446, 71, 83) action Preference("auto-forward time", 0)
 #        hotspot (1704, 446, 71, 83) action Preference("auto-forward time", 40)#autoForwardVal+10)
 

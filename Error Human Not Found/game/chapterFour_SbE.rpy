@@ -1615,7 +1615,9 @@ label ch4resume4_SbE:
     a "You only had to make it functional, but you chose to make it rather beautiful."
     show Ada neutral
     a "If you do not mind, I am going to go see about these strange little plants over here. Please excuse me."
-    "{i}Ada walks out of earshot and pokes curiously at some flowers.{/i}"
+    "{i}Ada walks out of earshot and pokes curiously at some flowers.{/i}""{i}Grace's journal has updated.{/i}"
+    $journal5="SbE"
+    $pageUnlocked_journal+=2
     hide Ada
     #hide Alan
     $quick_menu = False

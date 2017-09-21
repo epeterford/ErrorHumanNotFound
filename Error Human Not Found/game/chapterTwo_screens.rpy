@@ -902,6 +902,9 @@ label talkLynn:
         queue sound "<silence 0.25>"
         queue sound dialtone
         "{i}The dial tone plays for several seconds.{/i}"
+        hide arrow1
+        hide arrow2
+        hide arrow3
         show Lynn at center
         lynn "Hi!"
         show Grace happy at left
@@ -943,6 +946,9 @@ label talkLynn:
         show arrow2 at center, delayed_blink(0.2, 1.0)
         show arrow3 at center, delayed_blink(0.4, 1.0)
         "{i}The dial tone plays for several seconds.{/i}"
+        hide arrow1
+        hide arrow2
+        hide arrow3
         show Lynn at center
         lynn "Hi!"
         show Grace frustrated at left
@@ -973,6 +979,9 @@ label talkLynn:
         show arrow2 at center, delayed_blink(0.2, 1.0)
         show arrow3 at center, delayed_blink(0.4, 1.0)
         "{i}The dial tone plays for several seconds.{/i}"
+        hide arrow1
+        hide arrow2
+        hide arrow3
         show Grace frustrated at left
         g "Come on."
         show Lynn at center

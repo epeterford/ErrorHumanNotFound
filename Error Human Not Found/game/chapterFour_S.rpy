@@ -1637,6 +1637,9 @@ label ch4resume4_S: #CHANGE LABEL IN ALL SCRIPTS
     show Ada neutral
     a "If you do not mind, I am going to go see about these strange little plants over here."
     "{i}Ada walks out of earshot and pokes curiously at some flowers.{/i}"
+    "{i}Grace's journal has updated.{/i}"
+    $journal5="S"
+    $pageUnlocked_journal+=2
     hide Ada
     #hide Alan
     $quick_menu = False

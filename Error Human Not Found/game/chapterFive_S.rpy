@@ -543,7 +543,7 @@ label ch5_S_resume:
     g "Sure, why not."
     #insert jump to credits
     $ stackDepth =renpy.call_stack_depth()
-    while stackDepth>0:
-        $renpy.pop_call()
-        $stackDepth -=1
-    return
+    "{i}Grace's journal has updated.{/i}"
+    $journal6="S"
+    $pageUnlocked_journal+=2
+    jump credits

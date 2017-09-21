@@ -445,6 +445,9 @@ label reluctant:
  
 label prologueResume3:
     show Grace neutral at left
+    "{i}Grace's journal has been updated.{/i}"
+    $journal1 = True
+    $pageUnlocked_journal +=2
     g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 
     g "We need to acquire her credentials to access the crime scene."
     "{i}The two start to leave.{/i}" 

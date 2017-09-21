@@ -335,7 +335,7 @@ label nightShift_comp:
             jump endCh3_S
     
 label investigateNightShift:
-    if(llMed_attempts==0):
+    if(gramMed_attempts==0):
         show other darken
         show image "objects/nightShift_closeup.png" at centerScreen
         "{i}The main computer used by the night crew. Ivan has a habit of leaving aggressive notes on here when disatisfied with the state that the lab is left in.{/i}"
@@ -348,7 +348,7 @@ label investigateNightShift:
         ivan "Of course, Doctor Fortran. Do you have any other obvious questions."
         show Grace annoyed
         g "Right. Because asking something about a lab I don't work in is an obvious question." 
-        $llMed_solved = True #REMOVE THIS, PUT IN PUZZLE
+        $gramMed_solved = True #REMOVE THIS, PUT IN PUZZLE
         show bg lab2WS_unlocked with fade
         "Temporary placeholder for end of Puzzle 2."
         if (resume=="E"):

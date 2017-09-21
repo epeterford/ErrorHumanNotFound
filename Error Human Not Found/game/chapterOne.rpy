@@ -1037,6 +1037,16 @@ label toshgotwrecked:
 
 #end the chapter here, go to Chapter 2
 label endChapterOne:
+    "{i}Grace's journal has updated.{/i}"
+    if(points_S>points_SbE):
+        if(points_S>points_E):
+            $journal2="S"
+    elif(points_E>points_SbE):
+        if(points_E>points_S):
+            $journal2="E"
+    else:
+        $journal2="SbE"
+    $pageUnlocked_journal+=1
     #Chapter transition here
     hide Ada
     hide Grace
