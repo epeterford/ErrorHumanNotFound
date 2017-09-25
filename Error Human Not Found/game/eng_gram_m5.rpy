@@ -18,7 +18,7 @@ init python:
                 return True
         return True 
 
-screen logicGates:
+screen logicGatesm5:
 
     draggroup:
         #and gates
