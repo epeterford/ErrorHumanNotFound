@@ -193,7 +193,7 @@ label resumeChapterTwo_E:
     play sound beepMedium
     queue sound beepMedium
     show Grace happy at left
-    show Ada neutral at left
+    show Ada neutral at right
     g "We're good to go. Ada, do you know where exactly Alpha is located?"
     show Ada neutral seething
     a "Before I transferred to a physical body, I learned that they have not moved him from where his neural network failed."
@@ -373,7 +373,7 @@ label askherif:
     $ points_E +=2
     $ quick_menu = True
     show Grace sad at left
-    show Ada neutral at left
+    show Ada neutral at right
     g "Ada, are you all right?"
     show Ada frustrated at right
     a "I do not quite know, Grace. I am sad, but I am angry as well. I have never felt this before."

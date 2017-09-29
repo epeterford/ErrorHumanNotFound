@@ -18,7 +18,7 @@ init python:
                 return True
         return True 
 
-screen logicGates:
+screen logicGates_med3:
 
     draggroup:
         #and gates
@@ -304,7 +304,7 @@ label gamefile_m3:
     #image moon = "images/blankgram_m3_tile.png"
     #show blink
     #calls jigsaw game with the images selected
-    call screen logicGates
+    call screen logicGates_med3
 
     if gate_name == "letterL2":
             #call and_gate_pos_1

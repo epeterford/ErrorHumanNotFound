@@ -214,9 +214,9 @@ screen logicGatesEasyA1:
         idle "button_empty.png"
         xpos 1515
         ypos 890
-    text "Attempts" xpos 1530 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
-    text ": " xpos 1720 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
-    text "[attempts]" xpos 1735 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1670 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates

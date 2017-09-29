@@ -156,18 +156,18 @@ label logicGate_easyC3:
     show EC3tile07_04 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
     
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_r_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_r_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_g_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image lgEC3start1 = "light_r_on.png"
+    show lgEC3start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image lgEC3start2 = "light_r_on.png"
+    show lgEC3start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image lgEC3start3 = "light_r_on.png"
+    show lgEC3start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image lgEC3start4 = "light_g_on.png"
+    show lgEC3start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
-    image end1 = "light_g_off.png"
-    show end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
+    image lgEC3end1 = "light_g_off.png"
+    show lgEC3end1 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
 
     
     
@@ -637,9 +637,9 @@ screen logicGatesC3:
         idle "button_empty.png"
         xpos 1515
         ypos 890
-    text "Attempts" xpos 1530 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
-    text ": " xpos 1720 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
-    text "[attempts]" xpos 1735 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1670 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 42
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates

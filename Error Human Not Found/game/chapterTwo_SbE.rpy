@@ -371,6 +371,7 @@ label askherifshesalright:
     $ points_E +=2
     $ quick_menu = True
     show Grace sad at left
+    show Ada neutral at right
     g "Ada, are you all right?"
     show Ada frustrated at right
     a "I do not quite know, Grace. I am sad, but I detect levels of anger as well. I have never felt this before."
@@ -392,7 +393,7 @@ label askherifshesalright:
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
-            jump csinoahsphere_S
+            jump csinoahsphere_SR
     if(points_E>points_SbE):
         if(points_E>points_S):
             jump csinoahsphere_E

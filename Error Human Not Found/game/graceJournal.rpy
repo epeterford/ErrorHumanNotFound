@@ -54,7 +54,7 @@ screen journal():
                 action ShowMenu("personalLog_15")
             if(currentPage_journal==17):
                 action ShowMenu("personalLog_16")
-            activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+            activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
             hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
             selected_hover_sound "<silence 0.5>" 
             selected_activate_sound "<silence 0.5>"
@@ -109,12 +109,12 @@ screen notes_screen():
                 action ShowMenu("personalLog_15")
             if(currentPage_journal==17):
                 action ShowMenu("personalLog_16")
-            activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+            activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
             hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
             selected_hover_sound "<silence 0.5>" 
             selected_activate_sound "<silence 0.5>"
         if(currentPage_notes<pageUnlocked_notes):
-            hotspot (1811, 791, 83, 133) action Jump("nextPage_notes") activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action Jump("nextPage_notes") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_notes>0):
             hotspot (1811, 924, 83, 131) action Jump("previousPage_notes") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu

@@ -856,6 +856,12 @@ label ch3resume5_S:
     show Ada seething
     a "I imagine Grace would be amused now."
     a "She seems to take joy in my discomfort."
+    hide Ada
+    window hide
+    $quick_menu = False
+    $resume = "S"
+    jump choose_lgMed
+    
     ##INSERT PUZZLE HERE *explosions and airhorns*
     ##syddoyourcomscithing
     #if (attempts==1):
@@ -868,6 +874,8 @@ label ch3resume5_S:
     ##show Ada frustrated
     #a "Grace made this look so much easier."
     #Insert SFX
+
+label resume_lgMed_S:
     "{i}The door's sensor powers down and then comes back online.{/i}"
     "{i}Ada steps in front of it, and the door slides open.{/i}"
     play sound doorOpen2

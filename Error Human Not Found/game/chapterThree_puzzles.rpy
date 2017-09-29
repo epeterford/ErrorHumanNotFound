@@ -1,3 +1,373 @@
+#LOGIC GATE PUZZLE
+screen lgMedLose_scr:
+    imagebutton:
+        idle "yes.png" 
+        hover "yes_hover.png" 
+        xpos 705
+        ypos 610 
+        focus_mask True
+        action Jump("choose_lgMed")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "no.png" 
+        hover "no_hover.png" 
+        xpos 925
+        ypos 610 
+        focus_mask True
+        action Jump("wwDoor")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        
+screen lgMedDone_scr:
+    imagebutton:
+        idle "finish.png" 
+        hover "finish_hover.png" 
+        xpos 815
+        ypos 610
+        focus_mask True
+        action Jump("lgMed_doneTalk")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        
+screen lgMedWin_scr:
+    imagebutton:
+        idle "yes.png" 
+        hover "yes_hover.png" 
+        xpos 705
+        ypos 610 
+        focus_mask True
+        action Jump("choose_lgMed")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "no.png" 
+        hover "no_hover.png" 
+        xpos 925
+        ypos 610
+        focus_mask True
+        action Jump("wwDoor")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        
+screen wwDoor_scr:
+    imagebutton:
+        idle "objects/wwDoor_idle.png"
+        hover "objects/wwDoor_hover.png"
+        xpos 0
+        ypos 0
+        focus_mask True
+        action Jump("choose_lgMed")
+        hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
+        activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        
+label choose_lgMed:
+    $LGMedHints =0
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    $slot_name=""
+    $gate_name = ""
+    $temp_gate = ""
+    $ temp_slot = ""
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    window hide
+    hide Ada
+    $quick_menu = False
+    $randomLGMed = renpy.random.randint(0,2)
+    #if(lgMedA_solved==False)and(lgMed_attempts==0):
+        #jump tutorial_lgMed_1
+    if(lgMedA_solved==False):
+        if(randomLGMed==0):
+            jump logicGate_mediumA1
+        if(randomLGMed==1):
+            jump logicGate_mediumA2
+        if(randomLGMed==2):
+            jump logicGate_mediumA3
+    if(lgMedB_solved==False):
+        if(randomLGMed==0):
+            jump logicGate_mediumB1
+        if(randomLGMed==1):
+            jump logicGate_mediumB2
+        if(randomLGMed==2):
+            jump logicGate_mediumB3
+    if(lgMedC_solved==False):
+        if(randomLGMed==0):
+            jump logicGate_mediumC1
+        if(randomLGMed==1):
+            jump logicGate_mediumC2
+        if(randomLGMed==2):
+            jump logicGate_mediumC3
+
+label wwDoor:
+    $quick_menu = True
+    $config.skipping = None
+    $renpy.block_rollback()
+    stop music fadeout 1.0
+    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
+    play channel01 wwAmb1 fadeout 1.0 fadein 1.0
+    play channel02 wwAmb2 fadeout 1.0 fadein 1.0
+    play channel03 wwAmb3 fadeout 1.0 fadein 1.0
+    play channel04 wwAmb4 fadeout 1.0 fadein 1.0
+    play channel05 wwAmb5 fadeout 1.0 fadein 1.0
+    play channel06 wwAmb6 fadeout 1.0 fadein 1.0
+    scene bg door2 with fade
+    show Ada seething at right
+    a "Alright Ada. If Grace could do it, then you can too. It just might take a little more practice."
+    hide Ada
+    $quick_menu = False
+    window hide
+    call screen wwDoor_scr
+    
+label lgMed_lose:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image segmentFailed = "segmentFailed.png"
+    show segmentFailed at centerScreen2
+    call screen lgMedLose_scr
+    
+label lgMed_done:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image passwordAccepted = "passwordAccepted.png" #CHANGE ME
+    show passwordAccepted at centerScreen2
+    call screen lgMedDone_scr
+    
+label lgMed_win:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image segmentComplete = "segmentComplete.png"
+    show segmentComplete at centerScreen2
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
+    call screen lgMedWin_scr
+    
+label lgMed_doneTalk:
+    $quick_menu = True
+    $config.skipping = None
+    $renpy.block_rollback()
+    stop music fadeout 1.0
+    play channel00 wwAmb0 fadeout 1.0 fadein 1.0
+    play channel01 wwAmb1 fadeout 1.0 fadein 1.0
+    play channel02 wwAmb2 fadeout 1.0 fadein 1.0
+    play channel03 wwAmb3 fadeout 1.0 fadein 1.0
+    play channel04 wwAmb4 fadeout 1.0 fadein 1.0
+    play channel05 wwAmb5 fadeout 1.0 fadein 1.0
+    play channel06 wwAmb6 fadeout 1.0 fadein 1.0
+    scene bg door2 with fade
+    if(lgMed_attempts==0):
+        show Ada happy at right
+        a "Ah! It seems Grace is not the only capable of a simple manual override. I think I like interfacing with hardware."
+    if(lgMed_attempts==1):
+        show Ada neutral at right
+        a "It was not perfect, but the margin of error was small enough that with the data I gathered, I shall be even more proficient the next time. Machine learning is, after all, based on some trial and error."
+    if(lgMed_attempts==2):
+        show Ada annoyed at right
+        a "Grace made this look so easy! Her processing speeds are no where near mine, and yet she seemed to grasp the concept far quicker. I shall have to run some simulations in my downtime."
+    if(lgMed_attempts==3):
+        show Ada seething at right
+        a "Manual overrides are inefficient. If everything were interfaced, it would be much simpler to get this silly door open. At least no was witness to my inability to manipulate hardware."
+    show Ada neutral
+    if(resume=="S"):
+        jump resume_lgMed_S
+    if(resume=="SbE"):
+        jump resume_lgMed_SbE
+    if(resume=="E"):
+        jump resume_lgMed_E
+        
+label hints_lgMedA1:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MA111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show MA111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The half-moon AND gate will only turn green if both inputs are green. That cannot happen here, so it will always output red."
+    if (remainder==1):
+        a "The crescent-moon with the circle is the NOR gate, which reverses the outputs of an OR gate. That means it only outputs green when both inputs are red."
+    if (remainder==2):
+        a "If I get stuck, I can access notes from the journal."
+    hide other darken onlayer screens
+    hide MA111tile07_02 
+    hide MA111tile07_08
+    jump gamefileMA1
+    
+label hints_lgMedA2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MA297tile07_02 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show MA296tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The crescent-moon OR gate is true as long as one input is, so as long as one input is green, it will output green."
+    if (remainder==1):
+        a "The crescent-moon with the circle is the NOR gate, which reverses the outputs of an OR gate. That means it only outputs green with both inputs are red.."
+    if (remainder==2):
+        a "If I get stuck, I can access notes from the journal."
+    hide other darken onlayer screens
+    hide MA297tile07_02 
+    hide MA296tile07_08
+    jump gamefileMA2
+    
+label hints_lgMedA3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MA36tile07_02 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show MA36tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The crescent-moon OR gate is true as long as one input is, so as long as one input is green, it will output green."
+    if (remainder==1):
+        a "The half-moon with the circle at the right is the NAND gate. It reverses the output of the AND gate, so it will output true, or green, unless both inputs are green."
+    if (remainder==2):
+        a "If I get stuck, I can access notes from the journal."
+    hide other darken onlayer screens
+    hide MA36tile07_02 
+    hide MA36tile07_08
+    jump gamefileMA3
+    
+label hints_lgMedB1:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MB12tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show MB12tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show MB12tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "Since the last gate is the NAND gate, I need to ensure both the inputs going into it are true, or green, so the output will be false, or red."
+    if (remainder==1):
+        a "The NAND gate will output green more often than the NOR gate--the opposite of the AND and OR gate."
+    if (remainder==2):
+        a "I might want to try the NOR gate in the bottom middle slot. It will output red with both input green, but then I could use the NAND gate."
+    hide other darken onlayer screens
+    hide MB12tile02_09
+    hide MB12tile07_02
+    hide MB12tile07_08
+    jump gamefileMB1
+    
+label hints_lgMedB2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show lLGMB2tile02_09 at Position(xpos = not1x, xanchor = 0, ypos = not1y, yanchor = 0)
+    show lLGMB2tile07_02 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show lLGMB2tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The NOT gate is always an easy one. Since it is the only unary operation, or an operation that functions on one input, I just need to place it where there is only one pipe."
+    if (remainder==1):
+        a "The final gate is an OR gate, and since I want the output to be false, or red, I need both inputs to be false, or red."
+    if (remainder==2):
+        a "Since the NAND gate, or the half-moon with the circle on the right, reverses the output of the AND gate, it will output true, or green, as long as both inputs are {i}not{/i} true, or green."
+    hide other darken onlayer screens
+    hide lLGMB2tile02_09
+    hide lLGMB2tile07_02
+    hide lLGMB2tile07_08
+    jump gamefileMB2
+    
+label hints_lgMedB3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show fLGMB3tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show fLGMB3tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show fLGMB3tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The NOR gate will output red, or false, as long as one input is green, or true."
+    if (remainder==1):
+        a "The final gate is an AND gate, and since I want the output to be false, or red, I just need one input to be false, or red."
+    if (remainder==2):
+        a "Since the NAND gate, or the half-moon with the circle on the right, reverses the output of the AND gate, it will output true, or green, as long as both inputs are {i}not{/i} true, or green."
+    hide other darken onlayer screens
+    hide fLGMB3tile02_09
+    hide fLGMB3tile07_02
+    hide fLGMB3tile07_08
+    jump gamefileMB3
+    
+label hints_lgMedC1:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MC111tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show MC111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show MC111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The NOR gate will output red, or false, as long as one input is green, or true."
+    if (remainder==1):
+        a "The final gate is an AND gate, and since I want the output to be true, or green, I need both inputs to be true, or green."
+    if (remainder==2):
+        a "Since the NAND gate, or the half-moon with the circle on the right, reverses the output of the AND gate, it will output true, or green, as long as both inputs are {i}not{/i} true, or green."
+    hide other darken onlayer screens
+    hide MC111tile02_09
+    hide MC111tile07_02 
+    hide MC111tile07_08
+    jump gamefileMC1
+    
+label hints_lgMedC2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MC2111tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show MC2111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+    show MC2111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "Both the NAND and NOR gate will output true, or green, when both inputs are false, or red, like in the bottom left slot. I should consider which one has to be used elsewhere then."
+    if (remainder==1):
+        a "The final gate is a NAND gate, and since I want the output to be false, or red, I need both inputs to be true, or green."
+    if (remainder==2):
+        a "The NOR will output green if and only if both inputs are red. NAND will output green as long as one input is false, or red."
+    hide other darken onlayer screens
+    hide MC2111tile02_09
+    hide MC2111tile07_02
+    hide MC2111tile07_08
+    jump gamefileMC2
+    
+label hints_lgMedC3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LGMedHints%3 
+    $LGMedHints +=1
+    show MC3111tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
+    show MC3111tile07_02 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+    show MC3111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        a "The OR can potentially go in two places for a winning solution, since as long as one input is true, or green, the output will be green."
+    if (remainder==1):
+        a "The final gate is an AND gate, and since I want the output to be true, or green, I need both inputs to be true, or green. The top slot needs to produce green since the penultimate gate on the top is an AND gate as well."
+    if (remainder==2):
+        a "Either the NAND or the NOR gate will output green, or true, when both inputs are red, or false."
+    hide other darken onlayer screens
+    hide MC3111tile02_09
+    hide MC3111tile07_02
+    hide MC3111tile07_08
+    jump gamefileMC3
+    
+##############################################################################
 #LOOP LOGIC PUZZLE
 screen llMedLose_scr:
     imagebutton:
@@ -227,10 +597,10 @@ label hints_llMed_1:
     if (remainder==2):
         g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
     hide other darken onlayer screens
-    hide LLM_1_tile64 onlayer screens
-    hide LLM_1_tile65 onlayer screens
-    hide LLE_1_tile66 onlayer screens
-    hide LLE_1_tile67 onlayer screens
+    hide LLM_1_tile64 
+    hide LLM_1_tile65 
+    hide LLE_1_tile66 
+    hide LLE_1_tile67
     jump gamefile_llm1
     
 label hints_llMed_2:
@@ -250,10 +620,10 @@ label hints_llMed_2:
     if (remainder==2):
         g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
     hide other darken onlayer screens
-    hide LLM_2_tile64 onlayer screens
-    hide LLM_2_tile65 onlayer screens
-    hide LLE_2_tile66 onlayer screens
-    hide LLE_2_tile67 onlayer screens
+    hide LLM_2_tile64 
+    hide LLM_2_tile65 
+    hide LLE_2_tile66 
+    hide LLE_2_tile67 
     jump gamefile_llm2
     
 label hints_llMed_3:
@@ -273,10 +643,10 @@ label hints_llMed_3:
     if (remainder==2):
         g "One green IF, on green light. I think that one is pretty straightforward."
     hide other darken onlayer screens
-    hide LLM_3_tile64 onlayer screens
-    hide LLM_3_tile65 onlayer screens
-    hide LLE_3_tile66 onlayer screens
-    hide LLE_3_tile67 onlayer screens
+    hide LLM_3_tile64 
+    hide LLM_3_tile65 
+    hide LLE_3_tile66 
+    hide LLE_3_tile67 
     jump gamefile_llm3
     
 label hints_llMed_4:
@@ -296,10 +666,10 @@ label hints_llMed_4:
     if (remainder==2):
         g "The ELSE has to go with the one IF."
     hide other darken onlayer screens
-    hide LLM_4_tile64 onlayer screens
-    hide LLM_4_tile65 onlayer screens
-    hide LLE_4_tile66 onlayer screens
-    hide LLE_4_tile67 onlayer screens
+    hide LLM_4_tile64
+    hide LLM_4_tile65 
+    hide LLE_4_tile66
+    hide LLE_4_tile67 
     jump gamefile_llm4
     
 label hints_llMed_5:
@@ -319,10 +689,10 @@ label hints_llMed_5:
     if (remainder==2):
         g "The ELSE has to go to the blue light. Now where else would make sense."
     hide other darken onlayer screens
-    hide LLM_5_tile74 onlayer screens
-    hide LLM_5_tile75 onlayer screens
-    hide LLE_5_tile76 onlayer screens
-    hide LLE_5_tile77 onlayer screens
+    hide LLM_5_tile74
+    hide LLM_5_tile75
+    hide LLE_5_tile76
+    hide LLE_5_tile77 
     jump gamefile_llm5
 #BINARY PUZZLE
 #ADD SCREENS FOR TUTORIAL AND LABELS TO CALL

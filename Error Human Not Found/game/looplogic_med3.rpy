@@ -121,8 +121,6 @@ label loopLogic_med3: #start
     image LLM_3_tile35 = "blank_node.png"
     show LLM_3_tile35 at Position(xpos = 300, xanchor = 0, ypos = 715, yanchor = 0)
 
-
-        
     
     
 #    ****************************************************

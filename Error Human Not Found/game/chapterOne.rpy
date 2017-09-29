@@ -174,6 +174,7 @@ label chooseEasyGram:
         jump eng_gram_e5
 
 label doorPuzzle:
+    $quick_menu = True
     $config.skipping=None
     $renpy.block_rollback()
     stop music fadeout 1.0
@@ -182,6 +183,8 @@ label doorPuzzle:
     play sound doorDenied
     a "We cannot investigate anything until we get through the door, Grace."
     hide Ada
+    $quick_menu = False
+    window hide
     call screen doorPuzzle_scr
 
 label hiroseDoorPassed:
@@ -364,6 +367,7 @@ label talkAdaHiroseOffice:
         #choice 3
         $ quick_menu = False
         hide Grace neutral
+        hide Ada
         menu:
             "Approve, but keep it orderly.":
                 jump sepbutequal1

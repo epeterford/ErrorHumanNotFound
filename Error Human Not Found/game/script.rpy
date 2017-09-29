@@ -632,8 +632,6 @@ init python:
     currentPage_notes = 0
     pageUnlocked_journal=6
     pageUnlocked_notes = 0
-#    pageTotal_journal = 16
-#    pageTotal_notes = 12
     journal1 = False
     journal2 = ""
     journal3 = ""

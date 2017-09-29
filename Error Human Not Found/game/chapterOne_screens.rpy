@@ -1,24 +1,4 @@
 label chapterOne_screens:
-    screen lgEasyWin_scr:
-        imagebutton:
-            idle "yes.png" 
-            hover "yes_hover.png" 
-            xpos 705
-            ypos 610 
-            focus_mask True
-            action Jump("pickNextPuzzleLGEasy")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-        imagebutton:
-            idle "no.png" 
-            hover "no_hover.png" 
-            xpos 925
-            ypos 610
-            focus_mask True
-            action Jump("exploreHiroseOffice")
-            hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            activate_sound "audio/ENHF_UI_Button_v1.ogg"
-            
     screen lgEasyLose_scr:
         imagebutton:
             idle "yes.png" 

@@ -873,6 +873,11 @@ label ch3resume5_SbE:
     a "Well, it's nothing a 'manual override' cannot solve."
     show Ada amused
     a "I imagine Grace would be amused now."
+    $resume = "SbE"
+    hide Ada
+    window hide
+    $quick_menu = False
+    jump choose_lgMed
     #Insert puzzle one for Ada here: Logic Gate Medium
     #    #sydmakecomscireference
     #    if (attempts==1):
@@ -885,6 +890,7 @@ label ch3resume5_SbE:
     #    #show Ada frustrated
     a "Grace made this look so much easier."
     #Insert SFX
+label resume_lgMed_SbE:
     "{i}The door's sensor powers down and then comes back online.{/i}"
     "{i}Ada steps in front of it, and the door slides open.{/i}"
     play sound doorOpen2

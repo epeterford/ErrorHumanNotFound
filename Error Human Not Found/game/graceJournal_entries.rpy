@@ -5,10 +5,10 @@ screen personalLog_0():
         hover "graceJournal_journal_hover.png"
         
         
-#        hotspot (462, 225, 98, 397) action ShowMenu("personalLogs_screen") activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+#        hotspot (462, 225, 98, 397) action ShowMenu("personalLogs_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_1"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_1"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu
     imagebutton: 
         idle "preGame_entry0.png"
@@ -24,7 +24,12 @@ screen personalLog_1():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_2"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133):
+                action (ShowMenu("personalLog_2"), SetVariable("currentPage_journal",currentPage_journal + 1)) 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                selected_hover_sound "<silence 0.5>" 
+                selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_0"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -42,7 +47,12 @@ screen personalLog_2():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_3"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133): 
+                action (ShowMenu("personalLog_3"), SetVariable("currentPage_journal",currentPage_journal + 1)) 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                selected_hover_sound "<silence 0.5>" 
+                selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_1"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -60,7 +70,12 @@ screen personalLog_3():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_4"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133):
+                action (ShowMenu("personalLog_4"), SetVariable("currentPage_journal",currentPage_journal + 1)) 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                selected_hover_sound "<silence 0.5>" 
+                selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_2"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -78,7 +93,7 @@ screen personalLog_4():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_5"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_5"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_3"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -96,7 +111,7 @@ screen personalLog_5():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_6"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_6"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_4"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -114,7 +129,7 @@ screen personalLog_6():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal) and (journal1==True):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_7a"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_7a"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_5"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -133,7 +148,7 @@ screen personalLog_7a():
         
         hotspot (462, 622, 98, 398) action ShowMenu("notes_screen") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal<pageUnlocked_journal):
-            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_7b"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+            hotspot (1811, 791, 83, 133) action (ShowMenu("personalLog_7b"), SetVariable("currentPage_journal",currentPage_journal + 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
             hotspot (1811, 924, 83, 131) action (ShowMenu("personalLog_6"), SetVariable("currentPage_journal",currentPage_journal - 1)) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
     tag menu 
@@ -153,7 +168,7 @@ screen personalLog_7b():
         if(currentPage_journal<pageUnlocked_journal) and (journal2!=""):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_8"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
@@ -181,7 +196,7 @@ screen personalLog_8():
         if(currentPage_journal<pageUnlocked_journal) and (journal3!=""):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_9"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
@@ -223,8 +238,8 @@ screen personalLog_9():
                     action (ShowMenu("personalLog_10"), SetVariable("currentPage_journal",currentPage_journal + 1))
                 elif ((journal3=="SbE") or (journal3=="E"))and (journal4!=""):
                     action (ShowMenu("personalLog_11"), SetVariable("currentPage_journal",currentPage_journal + 2))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"  
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
@@ -262,8 +277,8 @@ screen personalLog_10():
         if(currentPage_journal<pageUnlocked_journal) and (journal4!=""):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_11"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"  
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
@@ -289,7 +304,7 @@ screen personalLog_11():
         if(currentPage_journal<pageUnlocked_journal):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_12"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
@@ -331,7 +346,7 @@ screen personalLog_12():
         if(currentPage_journal<pageUnlocked_journal):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_13"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
@@ -370,8 +385,8 @@ screen personalLog_13():
         if(currentPage_journal<pageUnlocked_journal):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_14"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
-                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
+                hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"  
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
         if(currentPage_journal>0):
@@ -409,7 +424,7 @@ screen personalLog_14():
         if(currentPage_journal<pageUnlocked_journal):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_15"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
@@ -448,7 +463,7 @@ screen personalLog_15():
         if(currentPage_journal<pageUnlocked_journal):
             hotspot (1811, 791, 83, 133):
                 action (ShowMenu("personalLog_16"), SetVariable("currentPage_journal",currentPage_journal + 1))
-                activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" 
+                activate_sound "music/UI/ENHF_UI_Button_v2.ogg" 
                 hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
                 selected_hover_sound "<silence 0.5>" 
                 selected_activate_sound "<silence 0.5>"
