@@ -129,12 +129,17 @@ screen logicGates_med1:
 init:
     image bg Eng_gram_m1_tile = "eng_tile_bg.png"
 
+<<<<<<< HEAD
+label gram_m1: #start:
+
+=======
 label gram_m1:
     $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
     $ quick_menu = False
     $ game_menu = True
+>>>>>>> 436351a011be9347feffac38add90907369680d5
     scene bg Eng_gram_m1_tile
 
     #row1 1-4

@@ -118,7 +118,7 @@ screen logicGates_med3:
 init:
     image bg Eng_gram_m3_tile = "eng_tile_bg.png"
 
-label gram_m3#start:
+label gram_m3: #start:
 
     scene bg Eng_gram_m3_tile
 
