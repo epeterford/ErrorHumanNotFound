@@ -79,16 +79,16 @@
                 xpos gate3x-25 ypos gate3y-25
 
             drag:
-                drag_name "G_if_gate1_return"
+                drag_name "else_gate_return"
                 child "placeholder3.png"
                 draggable False
-                xpos 1435 ypos 634
+                xpos 1615 ypos 635
 
             drag:
-                drag_name "G_else_gate_return"
+                drag_name "if_G_gate_return"
                 child "placeholder3.png"
                 draggable False
-                xpos 1615 ypos 634
+                xpos 1435 ypos 635
                 
 label loopLogic_easy1: #loopLogic_easy5
     $config.skipping=None
@@ -198,6 +198,11 @@ label loopLogic_easy1: #loopLogic_easy5
     $ gate2y = 680
     $ gate3x = 755
     $ gate3y = 715
+
+    image LLE_1_ifGT = "G_T_if.png"
+    image LLE_1_elseT = "G_T_else.png"
+    show LLE_1_ifGT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLE_1_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False
@@ -290,12 +295,6 @@ label gamefile_lle1:
             $ if1in2 = False
             $ if1in3 = True
 
-        if slot_name == "G_if_gate1_return":
-            $ if1x = 1445
-            $ if1y = 645
-            $ if1in1 = False
-            $ if1in2 = False
-            $ if1in3 = False
             
     #the first logic gate *******************************************************************************
     if gate_name == "G_if_gate2":
@@ -350,12 +349,6 @@ label gamefile_lle1:
             $ if2in2 = False
             $ if2in3 = True
 
-        if slot_name == "G_if_gate1_return":
-            $ if2x = 1445
-            $ if2y = 645
-            $ if2in1 = False
-            $ if2in2 = False
-            $ if2in3 = False
             
     #the third logic gate *******************************************************************************
     if gate_name == "G_else_gate":
@@ -411,15 +404,9 @@ label gamefile_lle1:
             $ else1in2 = False
             $ else1in3 = True
 
-        if slot_name == "G_else_gate_return":
-            $ else1x = 1625
-            $ else1y = 645
-            $ else1in1 = False
-            $ else1in2 = False
-            $ else1in3 = False
 
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "if_G_gate_return" or slot_name == "else_gate_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -427,15 +414,33 @@ label gamefile_lle1:
             
       
     else:
-        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+        if slot_name != "null" and (temp_slot != slot_name or gate_name != temp_gate):
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
 
-            if slot_name == "G_if_gate1_return" and (gate_name == "G_if_gate1" or gate_name == "G_if_gate2" or gate_name == "G_else_gate"):
+            if slot_name == "if_G_gate_return":
                 $ attempts +=1
-            if slot_name == "G_else_gate_return" and (gate_name == "G_else_gate" or gate_name == "G_if_gate2" or gate_name == "G_if_gate1"):
+                if gate_name == "if_G_gate1":
+                    $ ifGx = 1445
+                    $ ifGy = 645
+                    $ ifGin1 = False
+                    $ ifGin2 = False
+                    $ ifGin3 = False
+                if gate_name == "if_G_gate2":
+                    $ ifGx = 1445
+                    $ ifGy = 645
+                    $ ifGin1 = False
+                    $ ifGin2 = False
+                    $ ifGin3 = False
+            if slot_name == "else_gate_return":
                 $ attempts +=1
+                if gate_name == "else_gate":
+                    $ else1x = 1625
+                    $ else1y = 645
+                    $ else1in1 = False
+                    $ else1in2 = False
+                    $ else1in3 = False
 
 
 
