@@ -915,3 +915,151 @@ label binaryMedDoneTalk:
         jump postBinaryMed_SbE
     if (resume=="E"):
         jump postBinaryMed_E
+
+####GRAMMAR PUZZLE
+screen gramEasyLose_scr:
+    imagebutton:
+        idle "yes.png" 
+        hover "yes_hover.png" 
+        xpos 705
+        ypos 610 
+        focus_mask True
+        action Jump("chooseEasyGram")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "no.png" 
+        hover "no_hover.png" 
+        xpos 925
+        ypos 610 
+        focus_mask True
+        action Jump("doorPuzzle")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+            
+            
+screen gramEasyDone_scr:
+    imagebutton:
+        idle "finish.png" 
+        hover "finish_hover.png" 
+        xpos 815
+        ypos 610
+        focus_mask True
+        action Jump("hiroseDoorPassed")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        
+label hints_llMed_1:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLMedHints%3 
+    show LLM_1_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_1_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_1_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_1_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show other darken onlayer screens
+    $LLMedHints +=1
+    if (remainder==0):
+        g "I've got one node that needs power, which a WHILE will provide. It's a blue bolt, so it needs a blue WHILE."
+    if (remainder==1):
+        g "I've got one green IF and only one green light that takes a tile. I should probably put that there."
+    if (remainder==2):
+        g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
+    hide other darken onlayer screens
+    hide LLM_1_tile64 
+    hide LLM_1_tile65 
+    hide LLE_1_tile66 
+    hide LLE_1_tile67
+    jump gamefile_llm1
+    
+label hints_llMed_2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLMedHints%3 
+    $LLMedHints +=1
+    show LLM_2_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_2_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_2_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_2_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        g "Okay, I've got a green charge node, which means I need a green WHILE to power it."
+    if (remainder==1):
+        g "I've got one green IF and only one green light that takes a tile. I should probably put that there."
+    if (remainder==2):
+        g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
+    hide other darken onlayer screens
+    hide LLM_2_tile64 
+    hide LLM_2_tile65 
+    hide LLE_2_tile66 
+    hide LLE_2_tile67 
+    jump gamefile_llm2
+    
+label hints_llMed_3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLMedHints%3 
+    $LLMedHints +=1
+    show LLM_3_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_3_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_3_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_3_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        g "Okay, I've got a blue charge node, which means I need a blue WHILE."
+    if (remainder==1):
+        g "The WHILE will only fire when blue is being fed to it, which means I probably need the blue IF before the WHILE."
+    if (remainder==2):
+        g "One green IF, on green light. I think that one is pretty straightforward."
+    hide other darken onlayer screens
+    hide LLM_3_tile64 
+    hide LLM_3_tile65 
+    hide LLE_3_tile66 
+    hide LLE_3_tile67 
+    jump gamefile_llm3
+    
+label hints_llMed_4:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLMedHints%3 
+    $LLMedHints +=1
+    show LLM_4_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_4_tile65 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show LLM_4_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_4_tile67 at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        g "Two powered nodes and two green WHILEs. Seems self-explanatory"
+    if (remainder==1):
+        g "Only one blue light, and one blue IF. I should probably try the IF in that slot."
+    if (remainder==2):
+        g "The ELSE has to go with the one IF."
+    hide other darken onlayer screens
+    hide LLM_4_tile64
+    hide LLM_4_tile65 
+    hide LLE_4_tile66
+    hide LLE_4_tile67 
+    jump gamefile_llm4
+    
+label hints_llMed_5:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = LLMedHints%3 
+    $LLMedHints +=1
+    show LLM_5_tile74 at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
+    show LLM_5_tile75 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_5_tile76 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_5_tile77 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show other darken onlayer screens
+    if (remainder==0):
+        g "Okay, I've got two WHILEs. Color goes with the charge light, not the color of the pipe."
+    if (remainder==1):
+        g "There's only one green light, and one green IF, so the IF probably goes there. Won't be able to tell unless the charge node is lit up first, though."
+    if (remainder==2):
+        g "The ELSE has to go to the blue light. Now where else would make sense."
+    hide other darken onlayer screens
+    hide LLM_5_tile74
+    hide LLM_5_tile75
+    hide LLE_5_tile76
+    hide LLE_5_tile77 
+    jump gamefile_llm

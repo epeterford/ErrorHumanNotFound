@@ -348,6 +348,9 @@ label investigateNightShift:
         ivan "Of course, Doctor Fortran. Do you have any other obvious questions."
         show Grace annoyed
         g "Right. Because asking something about a lab I don't work in is an obvious question." 
+        jump choose_gramMed
+    else:
+        jump choose_gramMed
         $gramMed_solved = True #REMOVE THIS, PUT IN PUZZLE
         show bg lab2WS_unlocked with fade
         "Temporary placeholder for end of Puzzle 2."
@@ -357,7 +360,3 @@ label investigateNightShift:
             jump endCh3_SbE
         if(resume=="S"):
             jump endCh3_S
-        #jump nightShift_comp
-#        jump tutorial_gramMed1
-    else:
-        jump choose_gramMed
