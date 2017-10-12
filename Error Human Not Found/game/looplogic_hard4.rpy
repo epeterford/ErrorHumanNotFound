@@ -226,13 +226,13 @@ label loopLogic_hard4: #start
     $ gate8x = 850
     $ gate8y = 655
     
-    image LLH_4_ifRT = "R_T_if.png"
-    image LLH_4_ifGT = "G_T_if.png"
-    image LLH_4_ifBT = "B_T_if.png"
-    image LLH_4_ifGRT = "RG_T_if.png"
-    image LLH_4_ifBGT = "BG_T_if.png"
-    image LLH_4_elseT = "G_T_else.png"
-    image LLH_4_whileGT = "G_T_while.png"
+    image LLH_4_ifRT = "R_if_idle.png"
+    image LLH_4_ifGT = "G_if_idle.png"
+    image LLH_4_ifBT = "B_if_idle.png"
+    image LLH_4_ifGRT = "RG_if_idle.png"
+    image LLH_4_ifBGT = "BG_if_idle.png"
+    image LLH_4_elseT = "G_else_idle.png"
+    image LLH_4_whileGT = "G_while_idle.png"
     show LLH_4_ifRT at Position(xpos = ifRx, xanchor = 0, ypos = ifRy, yanchor = 0)
     show LLH_4_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
     show LLH_4_ifBT at Position(xpos = ifB1x, xanchor = 0, ypos = ifB1y, yanchor = 0)

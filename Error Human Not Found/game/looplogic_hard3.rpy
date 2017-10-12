@@ -307,12 +307,12 @@ label loopLogic_hard3: #start
     $ gate7x = 315
     $ gate7y = 310
     
-    image LLH_3_ifRT = "R_T_if.png"
-    image LLH_3_ifGT = "G_T_if.png"
-    image LLH_3_ifRBT = "RB_T_if.png"
-    image LLH_3_ifBGT = "BG_T_if.png"
-    image LLH_3_whileRGT = "RG_T_while.png"
-    image LLH_3_whileBGT = "BG_T_while.png"
+    image LLH_3_ifRT = "R_if_idle.png"
+    image LLH_3_ifGT = "G_if_idle.png"
+    image LLH_3_ifRBT = "RB_if_idle.png"
+    image LLH_3_ifBGT = "BG_if_idle.png"
+    image LLH_3_whileRGT = "RG_while_idle.png"
+    image LLH_3_whileBGT = "BG_while_idle.png"
     show LLH_3_ifRT at Position(xpos = ifRx, xanchor = 0, ypos = ifRy, yanchor = 0)
     show LLH_3_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
     show LLH_3_ifRBT at Position(xpos = ifRBx, xanchor = 0, ypos = ifRBy, yanchor = 0)

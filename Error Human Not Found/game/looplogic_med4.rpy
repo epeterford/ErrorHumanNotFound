@@ -133,6 +133,16 @@ label loopLogic_med4: #start
     image LLM_4_tile40 = "G_end_off.png"
     show LLM_4_tile40 at Position(xpos = 415, xanchor = 0, ypos = 189, yanchor = 0)
 
+    #**************************************************************************************************************
+    #ADDED REDRAW OF GATE BORDERS TO DISPLAY ON WIN/LOSE
+    #**************************************************************************************************************
+    image LLM_4_ifBBorder = "placeholder3.png"
+    show LLM_4_ifBBorder at Position(xpos = 1435, xanchor = 0, ypos = 535, yanchor = 0)
+    image LLM_4_elseBorder = "placeholder3.png"
+    show LLM_4_elseBorder at Position(xpos = 1615, xanchor = 0, ypos = 535, yanchor = 0)
+    image LLM_4_whileGBorder = "placeholder3.png"
+    show LLM_4_whileGBorder at Position(xpos = 1520, xanchor = 0, ypos = 675, yanchor = 0)
+
         
     
     
@@ -167,6 +177,16 @@ label loopLogic_med4: #start
 
     $ gate4x = 415
     $ gate4y = 339
+
+    #**************************************************************************************************************
+    #ADDED TRANSPARENT GATES
+    #**************************************************************************************************************
+    image LLM_4_ifBT = "G_if_idle.png"
+    image LLM_4_elseT = "G_else_idle.png"
+    image LLM_4_whileGT = "G_while_idle.png"
+    show LLM_4_ifBT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
+    show LLM_4_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
+    show LLM_4_whileGT at Position(xpos = whileG1x, xanchor = 0, ypos = whileG1y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False

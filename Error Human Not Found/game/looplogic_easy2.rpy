@@ -106,8 +106,8 @@
     $ gate3x = 755
     $ gate3y = 715
 
-    image LLE_2_ifBT = "B_T_if.png"
-    image LLE_2_elseT = "G_T_else.png"
+    image LLE_2_ifBT = "B_if_idle.png"
+    image LLE_2_elseT = "G_else_idle.png"
     show LLE_2_ifBT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
     show LLE_2_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
    

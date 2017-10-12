@@ -84,9 +84,9 @@ label loopLogic_easy5: #loopLogic_easy5
     $ gate3x = 516
     $ gate3y = 583
 
-    image LLE_5_ifBT = "B_T_if.png"
-    image LLE_5_ifGT = "G_T_if.png"
-    image LLE_5_elseT = "G_T_else.png"
+    image LLE_5_ifBT = "B_if_idle.png"
+    image LLE_5_ifGT = "G_if_idle.png"
+    image LLE_5_elseT = "G_else_idle.png"
     show LLE_5_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
     show LLE_5_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
     show LLE_5_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)

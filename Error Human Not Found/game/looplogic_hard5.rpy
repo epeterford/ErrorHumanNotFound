@@ -256,22 +256,24 @@ label loopLogic_hard5: #start
     show LLH_5_connector8 at Position(xpos = 720, xanchor = 0, ypos = 407, yanchor = 0)
     image LLH_5_connector9 = "W_connect_node.png"
     show LLH_5_connector9 at Position(xpos = 720, xanchor = 0, ypos = 447, yanchor = 0)
-    image LLH_5_Transparent1 = "B_T_if.png"
+
+    image LLH_5_Transparent1 = "B_if_idle.png"
     show LLH_5_Transparent1 at Position(xpos = 1525, xanchor = 0, ypos = 510, yanchor = 0)
-    image LLH_5_Transparent2 = "R_T_if.png"
+    image LLH_5_Transparent2 = "R_if_idle.png"
     show LLH_5_Transparent2 at Position(xpos = 1385, xanchor = 0, ypos = 510, yanchor = 0)
-    image LLH_5_Transparent3 = "G_T_if.png"
+    image LLH_5_Transparent3 = "G_if_idle.png"
     show LLH_5_Transparent3 at Position(xpos = 1665, xanchor = 0, ypos = 510, yanchor = 0)
-    image LLH_5_Transparent4 = "RB_T_if.png"
+    image LLH_5_Transparent4 = "RB_if_idle.png"
     show LLH_5_Transparent4 at Position(xpos = 1435, xanchor = 0, ypos = 635, yanchor = 0)
-    image LLH_5_Transparent5 = "BR_T_While.png"
+    image LLH_5_Transparent5 = "BR_while_idle.png"
     show LLH_5_Transparent5 at Position(xpos = 1665, xanchor = 0, ypos = 760, yanchor = 0)
-    image LLH_5_Transparent6 = "GR_T_While.png"
+    image LLH_5_Transparent6 = "GR_while_idle.png"
     show LLH_5_Transparent6 at Position(xpos = 1525, xanchor = 0, ypos = 760, yanchor = 0)
-    image LLH_5_Transparent7 = "BG_T_While.png"
+    image LLH_5_Transparent7 = "BG_while_idle.png"
     show LLH_5_Transparent7 at Position(xpos = 1385, xanchor = 0, ypos = 760, yanchor = 0)
-    image LLH_5_Transparent8 = "G_T_Else.png"
+    image LLH_5_Transparent8 = "G_else_idle.png"
     show LLH_5_Transparent8 at Position(xpos = 1610, xanchor = 0, ypos = 635, yanchor = 0)
+
     image LLH_5_Border1 = "Placeholder3.png"
     show LLH_5_Border1 at Position(xpos = 1515, xanchor = 0, ypos = 500, yanchor = 0)
     image LLH_5_Border2 = "Placeholder3.png"
