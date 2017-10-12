@@ -83,6 +83,13 @@ label loopLogic_easy5: #loopLogic_easy5
     $ gate2y = 537
     $ gate3x = 516
     $ gate3y = 583
+
+    image LLE_5_ifBT = "B_if_idle.png"
+    image LLE_5_ifGT = "G_if_idle.png"
+    image LLE_5_elseT = "G_else_idle.png"
+    show LLE_5_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
+    show LLE_5_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
+    show LLE_5_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False
@@ -164,13 +171,6 @@ label Gamefile_lle5:
             $ if1in1 = False
             $ if1in2 = False
             $ if1in3 = True
-
-        if slot_name == "G_if_gate_return":
-            $ if1x = 1525
-            $ if1y = 645
-            $ if1in1 = False
-            $ if1in2 = False
-            $ if1in3 = False
             
     #the first logic gate *******************************************************************************
     if gate_name == "B_if_gate":
@@ -224,13 +224,6 @@ label Gamefile_lle5:
             $ if2in1 = False
             $ if2in2 = False
             $ if2in3 = True
-
-        if slot_name == "B_if_gate_return":
-            $ if2x = 1395
-            $ if2y = 645
-            $ if2in1 = False
-            $ if2in2 = False
-            $ if2in3 = False
             
     #the third logic gate *******************************************************************************
     if gate_name == "G_else_gate":
@@ -286,32 +279,42 @@ label Gamefile_lle5:
             $ if3in2 = False
             $ if3in3 = True
 
-        if slot_name == "G_else_gate_return":
-            $ if3x = 1655
-            $ if3y = 645
-            $ if3in1 = False
-            $ if3in2 = False
-            $ if3in3 = False
-
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "if_G_gate_return" or slot_name == "if_B_gate_return" or slot_name == "else_gate_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
             $ attempts -=1
-            
       
     else:
-        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+        if slot_name != "null" and (temp_slot != slot_name or gate_name != temp_gate):
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
 
-            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+            if slot_name == "if_B_gate_return":
                 $ attempts +=1
-            if slot_name == "G_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                if gate_name == "B_if_gate":
+                    $ ifBx = 1395
+                    $ ifBy = 645
+                    $ ifBin1 = False
+                    $ ifBin2 = False
+                    $ ifBin3 = False
+            if slot_name == "if_G_gate_return":
                 $ attempts +=1
-            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate"):
+                if gate_name == "G_if_gate":
+                    $ ifGx = 1525
+                    $ ifGy = 645
+                    $ ifGin1 = False
+                    $ ifGin2 = False
+                    $ ifGin3 = False
+            if slot_name == "else_gate_return":
                 $ attempts +=1
+                if gate_name == "G_else_gate":
+                    $ elsex = 1655
+                    $ elsey = 645
+                    $ elsein1 = False
+                    $ elsein2 = False
+                    $ elsein3 = False
 
 
 #*******************************************

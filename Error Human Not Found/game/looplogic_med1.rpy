@@ -125,6 +125,18 @@ label loopLogic_med1: #start
     show LLM_1_tile37 at Position(xpos = 277, xanchor = 0, ypos = 694, yanchor = 0)
     image LLM_1_tile38 = "G_end_off.png"
     show LLM_1_tile38 at Position(xpos = 243, xanchor = 0, ypos = 770, yanchor = 0)  
+
+    #**************************************************************************************************************
+    #ADDED REDRAW OF GATE BORDERS TO DISPLAY ON WIN/LOSE
+    #**************************************************************************************************************
+    image LLM_1_ifGBorder = "placeholder3.png"
+    show LLM_1_ifGBorder at Position(xpos = 1435, xanchor = 0, ypos = 675, yanchor = 0)
+    image LLM_1_ifBBorder = "placeholder3.png"
+    show LLM_1_ifBBorder at Position(xpos = 1435, xanchor = 0, ypos = 535, yanchor = 0)
+    image LLM_1_elseBorder = "placeholder3.png"
+    show LLM_1_elseBorder at Position(xpos = 1615, xanchor = 0, ypos = 535, yanchor = 0)
+    image LLM_1_whileBBorder = "placeholder3.png"
+    show LLM_1_whileBBorder at Position(xpos = 1615, xanchor = 0, ypos = 675, yanchor = 0)
     
 
     
@@ -159,6 +171,18 @@ label loopLogic_med1: #start
 
     $ gate4x = 411
     $ gate4y = 630
+
+    #**************************************************************************************************************
+    #ADDED TRANSPARENT GATES
+    #**************************************************************************************************************
+    image LLM_1_ifGT = "G_if_idle.png"
+    image LLM_1_ifBT = "B_if_idle.png"
+    image LLM_1_elseT = "G_else_idle.png"
+    image LLM_1_whileBT = "B_while_idle.png"
+    show LLM_1_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
+    show LLM_1_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
+    show LLM_1_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
+    show LLM_1_whileBT at Position(xpos = whileBx, xanchor = 0, ypos = whileBy, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False

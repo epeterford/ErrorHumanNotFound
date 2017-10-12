@@ -126,20 +126,38 @@ screen logicGates_med1:
                 child "images/border.png"
                 xpos 1260 ypos 282
 
+        #letter dragback
+        
+        drag:
+                drag_name "LetterT_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 562
+        drag:
+                drag_name "LetterR_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 562
+        drag:
+                drag_name "LetterB_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 330 ypos 648
+
 init:
     image bg Eng_gram_m1_tile = "eng_tile_bg.png"
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 label gram_m1: #start:
 
-=======
-label gram_m1:
+#=======
+#label gram_m1:
     $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
     $ quick_menu = False
     $ game_menu = True
->>>>>>> 436351a011be9347feffac38add90907369680d5
+#>>>>>>> 436351a011be9347feffac38add90907369680d5
     scene bg Eng_gram_m1_tile
 
     #row1 1-4
@@ -206,6 +224,13 @@ label gram_m1:
     #show gram_m1_tile34 at Position(xpos = 262, xanchor = 0, ypos = 738, yanchor = 0)
     #show gram_m1_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     #show gram_m1_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
+
+    image eaeng_m1_tile300 = "letterT_grey.png"
+    image eaeng_m1_tile301 = "letterR_grey.png"
+    image eaeng_m1_tile302 = "letterB_grey.png"
+    show eaeng_m1_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m1_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m1_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
 
 
     # gates
@@ -2403,17 +2428,98 @@ label gamefile_m1:
             $ letterT7in7 = True
 
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
-       $ temp_slot = slot_name
-       $ temp_gate = gate_name
-       if temp_slot != "" and temp_gate != "":
-           $ attempts -=1
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
     else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
 
-
+            if slot_name == "LetterT_return":
+                $ attempts +=1
+                if gate_name == "letterT1":
+                    $ letterT1x = 275
+                    $ letterT1y = 575
+                    $ letterT1in1 = False
+                    $ letterT1in2 = False
+                    $ letterT1in3 = False
+                    $ letterT1in4 = False
+                    $ letterT1in5 = False
+                    $ letterT1in6 = False
+                    $ letterT1in7 = False
+                
+                elif gate_name == "letterT2":
+                    $ letterT5x = 275
+                    $ letterT5y = 575
+                    $ letterT5in1 = False
+                    $ letterT5in2 = False
+                    $ letterT5in3 = False
+                    $ letterT5in4 = False
+                    $ letterT5in5 = False
+                    $ letterT5in6 = False
+                    $ letterT5in7 = False
+                    
+                elif gate_name == "letterT3":
+                    $ letterT7x = 275
+                    $ letterT7y = 575
+                    $ letterT7in1 = False
+                    $ letterT7in2 = False
+                    $ letterT7in3 = False
+                    $ letterT7in4 = False
+                    $ letterT7in5 = False
+                    $ letterT7in6 = False
+                    $ letterT7in7 = False
+   
+            if slot_name == "LetterR_return":
+                $ attempts +=1
+                if gate_name == "letterR2":
+                    $ letterR2x = 410
+                    $ letterR2y = 575
+                    $ letterR2in1 = False
+                    $ letterR2in2 = False
+                    $ letterR2in3 = False
+                    $ letterR2in4 = False
+                    $ letterR2in5 = False
+                    $ letterR2in6 = False
+                    $ letterR2in7 = False
+                
+                elif gate_name == "letterR1":
+                    $ letterR6x = 410
+                    $ letterR6y = 575
+                    $ letterR6in1 = False
+                    $ letterR6in2 = False
+                    $ letterR6in3 = False
+                    $ letterR6in4 = False
+                    $ letterR6in5 = False
+                    $ letterR6in6 = False
+                    $ letterR6in7 = False
+                    
+            if slot_name == "LetterB_return":
+                $ attempts +=1
+                if gate_name == "letterB1":
+                    $ letterB3x = 342
+                    $ letterB3y = 660
+                    $ letterB3in1 = False
+                    $ letterB3in2 = False
+                    $ letterB3in3 = False
+                    $ letterB3in4 = False
+                    $ letterB3in5 = False
+                    $ letterB3in6 = False
+                    $ letterB3in7 = False
+                
+                elif gate_name == "letterB2":
+                    $ letterB4x = 342
+                    $ letterB4y = 660
+                    $ letterB4in1 = False
+                    $ letterB4in2 = False
+                    $ letterB4in3 = False
+                    $ letterB4in4 = False
+                    $ letterB4in5 = False
+                    $ letterB4in6 = False
+                    $ letterB4in7 = False
     
     if (letterT1in7 == True or letterT5in7 == True or letterT7in7 == True):
         image gram_m1_tile36 = "treeGreen.png"

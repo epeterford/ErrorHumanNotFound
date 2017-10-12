@@ -127,6 +127,39 @@ screen logicGatese2:
                 child "images/border.png"
                 xpos 1490 ypos 510
 
+        #dragback
+        
+        drag:
+                drag_name "LetterK_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 562
+        drag:
+                drag_name "LetterN_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 562
+        drag:
+                drag_name "LetterM_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 330 ypos 648
+        drag:
+                drag_name "LetterP_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 738
+        drag:
+                drag_name "LetterS_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 738
+        drag:
+                drag_name "LetterQ_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 330 ypos 817
+
 
 
 
@@ -208,6 +241,20 @@ label eng_gram_e2:
     show eaeng_e2_tile34 at Position(xpos = 262, xanchor = 0, ypos = 738, yanchor = 0)
     show eaeng_e2_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     show eaeng_e2_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
+
+   #Transparent Letters for Dragbacks
+    image eaeng_e2_tile300 = "letterK_grey.png"
+    image eaeng_e2_tile301 = "letterN_grey.png"
+    image eaeng_e2_tile302 = "letterM_grey.png"
+    image eaeng_e2_tile303 = "letterP_grey.png"
+    image eaeng_e2_tile304 = "letterS_grey.png"
+    image eaeng_e2_tile305 = "letterQ_grey.png"
+    show eaeng_e2_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e2_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e2_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_e2_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e2_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e2_tile305 at Position(xpos = 342, xanchor = 0, ypos = 832, yanchor = 0)
 
 
     # gates
@@ -1653,16 +1700,97 @@ label gamefile_e2:
             $ and6in5 = False
             $ and6in6 = True
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
-       $ temp_slot = slot_name
-       $ temp_gate = gate_name
-       if temp_slot != "" and temp_gate != "":
-           $ attempts -=1
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
     else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
+
+            if slot_name == "LetterK_return":
+                $ attempts +=1
+                if gate_name == "letterK":
+                    $ eae2and1x = 275
+                    $ eae2and1y = 575
+                    $ and1in1 = False
+                    $ and1in2 = False
+                    $ and1in3 = False
+                    $ and1in4 = False
+                    $ and1in5 = False
+                    $ and1in6 = False
+                    $ and1in7 = False
+   
+            if slot_name == "LetterN_return":
+                $ attempts +=1
+                if gate_name == "letterN":
+                    $ eae2and2x = 410
+                    $ eae2and2y = 575
+                    $ and2in1 = False
+                    $ and2in2 = False
+                    $ and2in3 = False
+                    $ and2in4 = False
+                    $ and2in5 = False
+                    $ and2in6 = False
+                    $ and2in7 = False
+                    
+            if slot_name == "LetterM_return":
+                $ attempts +=1
+                if gate_name == "letterM":
+                    $ eae2and3x = 342
+                    $ eae2and3y = 660
+                    $ and3in1 = False
+                    $ and3in2 = False
+                    $ and3in3 = False
+                    $ and3in4 = False
+                    $ and3in5 = False
+                    $ and3in6 = False
+                    $ and3in7 = False
+
+            if slot_name == "LetterP_return":
+                $ attempts +=1
+                if gate_name == "letterP":
+                    $ eae2and4x = 275
+                    $ eae2and4y = 750
+                    $ and4in1 = False
+                    $ and4in2 = False
+                    $ and4in3 = False
+                    $ and4in4 = False
+                    $ and4in5 = False
+                    $ and4in6 = False
+                    $ and4in7 = False
+
+            if slot_name == "LetterS_return":
+                $ attempts +=1
+                if gate_name == "letterS":
+                    $ eae2and5x = 410
+                    $ eae2and5y = 750
+                    $ and5in1 = False
+                    $ and5in2 = False
+                    $ and5in3 = False
+                    $ and5in4 = False
+                    $ and5in5 = False
+                    $ and5in6 = False
+                    $ and5in7 = False
+
+            if slot_name == "LetterQ_return":
+                $ attempts +=1
+                if gate_name == "letterQ":
+                    $ eae2and6x = 342
+                    $ eae2and6y = 832
+                    $ and6in1 = False
+                    $ and6in2 = False
+                    $ and6in3 = False
+                    $ and6in4 = False
+                    $ and6in5 = False
+                    $ and6in6 = False
+                    $ and6in7 = False
+
     play sound gramTree2
+
+
     if and5in1 == True and and1in2 == True:
         image eaeng_e2_tile42 = "leftTreegreenlong.png"
         image eaeng_e2_tile43 = "1_1_green.png"

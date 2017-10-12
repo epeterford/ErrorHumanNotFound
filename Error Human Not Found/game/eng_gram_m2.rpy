@@ -102,6 +102,34 @@ screen logicGates_med2:
                 child "images/border.png"
                 xpos 860 ypos 660
 
+       #letter dragback
+        
+        drag:
+                drag_name "LetterM_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 562
+        drag:
+                drag_name "LetterK_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 562
+        drag:
+                drag_name "LetterJ_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 330 ypos 648
+        drag:
+                drag_name "LetterT_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 738
+        drag:
+                drag_name "LetterR_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 738
+
 init:
     image bg Eng_gram_m2_tile = "eng_tile_bg.png"
 
@@ -178,6 +206,17 @@ label gram_m2: #start:
     show gram_m2_tile34 at Position(xpos = 262, xanchor = 0, ypos = 738, yanchor = 0)
     show gram_m2_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     #show gram_m2_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
+
+    image eaeng_m2_tile300 = "letterM_grey.png"
+    image eaeng_m2_tile301 = "letterK_grey.png"
+    image eaeng_m2_tile302 = "letterJ_grey.png"
+    image eaeng_m2_tile303 = "letterT_grey.png"
+    image eaeng_m2_tile304 = "letterR_grey.png"
+    show eaeng_m2_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m2_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m2_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_m2_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_m2_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
 
 
     # gates
@@ -2373,15 +2412,101 @@ label gamefile_m2:
 
 
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
-       $ temp_slot = slot_name
-       $ temp_gate = gate_name
-       if temp_slot != "" and temp_gate != "":
-           $ attempts -=1
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
     else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
+
+            if slot_name == "LetterM_return":
+                $ attempts +=1
+                if gate_name == "letterM":
+                    $ letterM1x = 275
+                    $ letterM1y = 575
+                    $ letterM1in1 = False
+                    $ letterM1in2 = False
+                    $ letterM1in3 = False
+                    $ letterM1in4 = False
+                    $ letterM1in5 = False
+                    $ letterM1in6 = False
+                    $ letterM1in7 = False
+   
+            if slot_name == "LetterK_return":
+                $ attempts +=1
+                if gate_name == "letterK":
+                    $ letterK2x = 410
+                    $ letterK2y = 575
+                    $ letterK2in1 = False
+                    $ letterK2in2 = False
+                    $ letterK2in3 = False
+                    $ letterK2in4 = False
+                    $ letterK2in5 = False
+                    $ letterK2in6 = False
+                    $ letterK2in7 = False
+            
+            if slot_name == "LetterR_return":
+                $ attempts +=1
+                if gate_name == "letterR":
+                    $ letterR3x = 410
+                    $ letterR3y = 750
+                    $ letterR3in1 = False
+                    $ letterR3in2 = False
+                    $ letterR3in3 = False
+                    $ letterR3in4 = False
+                    $ letterR3in5 = False
+                    $ letterR3in6 = False
+                    $ letterR3in7 = False
+                    
+            if slot_name == "LetterJ_return":
+                $ attempts +=1
+                if gate_name == "letterJ1":
+                    $ letterJ6x = 342
+                    $ letterJ6y = 660
+                    $ letterJ6in1 = False
+                    $ letterJ6in2 = False
+                    $ letterJ6in3 = False
+                    $ letterJ6in4 = False
+                    $ letterJ6in5 = False
+                    $ letterJ6in6 = False
+                    $ letterJ6in7 = False
+                
+                elif gate_name == "letterJ2":
+                    $ letterJ4x = 342
+                    $ letterJ4y = 660
+                    $ letterJ4in1 = False
+                    $ letterJ4in2 = False
+                    $ letterJ4in3 = False
+                    $ letterJ4in4 = False
+                    $ letterJ4in5 = False
+                    $ letterJ4in6 = False
+                    $ letterJ4in7 = False
+                elif gate_name == "letterJ3":
+                    $ letterJ7x = 342
+                    $ letterJ7y = 660
+                    $ letterJ7in1 = False
+                    $ letterJ7in2 = False
+                    $ letterJ7in3 = False
+                    $ letterJ7in4 = False
+                    $ letterJ7in5 = False
+                    $ letterJ7in6 = False
+                    $ letterJ7in7 = False
+            
+            if slot_name == "LetterT_return":
+                $ attempts +=1
+                if gate_name == "letterT":
+                    $ letterT5x = 275
+                    $ letterT5y = 750
+                    $ letterT5in1 = False
+                    $ letterT5in2 = False
+                    $ letterT5in3 = False
+                    $ letterT5in4 = False
+                    $ letterT5in5 = False
+                    $ letterT5in6 = False
+                    $ letterT5in7 = False
 
 
 
