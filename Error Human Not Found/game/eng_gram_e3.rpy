@@ -220,6 +220,16 @@ label eng_gram_e3:
     show eaeng_e3_tile33 at Position(xpos = 330, xanchor = 0, ypos = 648, yanchor = 0)
     show eaeng_e3_tile34 at Position(xpos = 330, xanchor = 0, ypos = 758, yanchor = 0)
 
+    #Transparent Letters for Dragbacks
+    image eaeng_e3_tile300 = "letterS_grey.png"
+    image eaeng_e3_tile301 = "letterJ_grey.png"
+    image eaeng_e3_tile302 = "letterM_grey.png"
+    image eaeng_e3_tile303 = "letterK_grey.png"
+    show eaeng_e3_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e3_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e3_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_e3_tile303 at Position(xpos = 342, xanchor = 0, ypos = 770, yanchor = 0)
+
 
     # gates
     $ eae3and1x = 275 

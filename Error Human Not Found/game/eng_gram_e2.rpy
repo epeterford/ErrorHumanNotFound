@@ -242,6 +242,20 @@ label eng_gram_e2:
     show eaeng_e2_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     show eaeng_e2_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+   #Transparent Letters for Dragbacks
+    image eaeng_e2_tile300 = "letterK_grey.png"
+    image eaeng_e2_tile301 = "letterN_grey.png"
+    image eaeng_e2_tile302 = "letterM_grey.png"
+    image eaeng_e2_tile303 = "letterP_grey.png"
+    image eaeng_e2_tile304 = "letterS_grey.png"
+    image eaeng_e2_tile305 = "letterQ_grey.png"
+    show eaeng_e2_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e2_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e2_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_e2_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e2_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e2_tile305 at Position(xpos = 342, xanchor = 0, ypos = 832, yanchor = 0)
+
 
     # gates
     $ eae2and1x = 275 

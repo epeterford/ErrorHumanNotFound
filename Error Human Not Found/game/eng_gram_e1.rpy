@@ -234,6 +234,20 @@ label eng_gram_e1:
     show eaeng_e1_tile180 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     show eaeng_e1_tile181 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+   #Transparent Letters for Dragbacks
+    image eaeng_e1_tile300 = "letterJ_grey.png"
+    image eaeng_e1_tile301 = "letterK_grey.png"
+    image eaeng_e1_tile302 = "letterM_grey.png"
+    image eaeng_e1_tile303 = "letterN_grey.png"
+    image eaeng_e1_tile304 = "letterP_grey.png"
+    image eaeng_e1_tile305 = "letterL_grey.png"
+    show eaeng_e1_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e1_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e1_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_e1_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e1_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e1_tile305 at Position(xpos = 342, xanchor = 0, ypos = 832, yanchor = 0)
+
 
     # gates
     $ eae1and1x = 275 
@@ -1680,12 +1694,14 @@ label eng_gram_e1:
             $ and6in6 = True
 
 
+#Dragbacks
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+   if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterJ_return" or slot_name == "LetterK_return" or slot_name == "LetterM_return" or slot_name == "LetterP_return" or slot_name == "LetterN_return" or slot_name == "LetterL_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
             $ attempts -=1
+      
     else:
         if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
             $ attempts -=1

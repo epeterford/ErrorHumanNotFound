@@ -235,6 +235,20 @@ label eng_gram_e4:
     show eaeng_e4_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     show eaeng_e4_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+    #Transparent Letters for Dragbacks
+    image eaeng_e4_tile300 = "letterH_grey.png"
+    image eaeng_e4_tile301 = "letterB_grey.png"
+    image eaeng_e4_tile302 = "letterP_grey.png"
+    image eaeng_e4_tile303 = "letterR_grey.png"
+    image eaeng_e4_tile304 = "letterG_grey.png"
+    image eaeng_e4_tile305 = "letterK_grey.png"
+    show eaeng_e4_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e4_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_e4_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_e4_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e4_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_e4_tile305 at Position(xpos = 342, xanchor = 0, ypos = 832, yanchor = 0)
+
 
     # gates
     $ eae4and1x = 275 
