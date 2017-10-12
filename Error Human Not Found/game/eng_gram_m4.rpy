@@ -222,6 +222,16 @@ label gram_m4:#start:
     show gram_m4_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     #show gram_m4_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+    #transparent letters for dragbacks
+    image eaeng_m4_tile300 = "letterT_grey.png"
+    image eaeng_m4_tile301 = "letterM_grey.png"
+    image eaeng_m4_tile303 = "letterA_grey.png"
+    image eaeng_m4_tile304 = "letterS_grey.png"
+    show eaeng_m4_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m4_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m4_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_m4_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+
 
     # gates
     $ letterT1x = 275 

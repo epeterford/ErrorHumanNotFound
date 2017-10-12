@@ -225,6 +225,13 @@ label gram_m1: #start:
     #show gram_m1_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     #show gram_m1_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+    image eaeng_m1_tile300 = "letterT_grey.png"
+    image eaeng_m1_tile301 = "letterR_grey.png"
+    image eaeng_m1_tile302 = "letterB_grey.png"
+    show eaeng_m1_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m1_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m1_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+
 
     # gates
     $ letterT1x = 275 

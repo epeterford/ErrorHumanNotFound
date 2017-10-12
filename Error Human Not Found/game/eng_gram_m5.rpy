@@ -260,6 +260,18 @@ label gram_m5:#start:
     show gram_m5_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
     #show eaenggram_m5_tile36 at Position(xpos = 330, xanchor = 0, ypos = 817, yanchor = 0)
 
+    #Transparent Letters for Dragbacks
+    image eaeng_m5_tile300 = "letterK_grey.png"
+    image eaeng_m5_tile301 = "letterM_grey.png"
+    image eaeng_m5_tile302 = "letterJ_grey.png"
+    image eaeng_m5_tile303 = "letterR_grey.png"
+    image eaeng_m5_tile304 = "letterT_grey.png"
+    show eaeng_m5_tile300 at Position(xpos = 275, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m5_tile301 at Position(xpos = 410, xanchor = 0, ypos = 575, yanchor = 0)
+    show eaeng_m5_tile302 at Position(xpos = 342, xanchor = 0, ypos = 660, yanchor = 0)
+    show eaeng_m5_tile303 at Position(xpos = 275, xanchor = 0, ypos = 750, yanchor = 0)
+    show eaeng_m5_tile304 at Position(xpos = 410, xanchor = 0, ypos = 750, yanchor = 0)
+
 
     # gates
     $ letterT1x = 410 
