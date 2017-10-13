@@ -195,10 +195,10 @@ label loopLogic_med5: #start
     image LLM_5_elseT = "G_else_idle.png"
     image LLM_5_whileGT = "G_while_idle.png"
     image LLM_5_whileBT = "B_while_idle.png"
-    show LLM_5_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
-    show LLM_5_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
-    show LLM_5_whileGT at Position(xpos = whileGx, xanchor = 0, ypos = whileGy, yanchor = 0)
-    show LLM_5_whileBT at Position(xpos = whileBx, xanchor = 0, ypos = whileBy, yanchor = 0)
+    show LLM_5_ifGT at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_5_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_5_whileGT at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    show LLM_5_whileBT at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
    
     # check conditons for locations
     $ while2in1 = False

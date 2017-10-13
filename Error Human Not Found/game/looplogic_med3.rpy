@@ -174,10 +174,10 @@ label loopLogic_med3: #start
     image LLM_3_ifBT = "B_if_idle.png"
     image LLM_3_elseT = "G_else_idle.png"
     image LLM_3_whileBT = "B_while_idle.png"
-    show LLM_3_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
-    show LLM_3_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
-    show LLM_3_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
-    show LLM_3_whileBT at Position(xpos = whileBx, xanchor = 0, ypos = whileBy, yanchor = 0)
+    show LLM_3_ifGT at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_3_ifBT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_3_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_3_whileBT at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False
