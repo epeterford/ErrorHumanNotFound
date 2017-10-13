@@ -186,10 +186,10 @@ label loopLogic_med2: #start
     image LLM_2_ifBT = "B_if_idle.png"
     image LLM_2_elseT = "G_else_idle.png"
     image LLM_2_whileGT = "G_while_idle.png"
-    show LLM_2_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
-    show LLM_2_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
-    show LLM_2_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
-    show LLM_2_whileGT at Position(xpos = whileGx, xanchor = 0, ypos = whileGy, yanchor = 0)
+    show LLM_2_ifGT at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLM_2_ifBT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_2_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_2_whileGT at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False

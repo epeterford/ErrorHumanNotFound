@@ -181,12 +181,12 @@ label loopLogic_med4: #start
     #**************************************************************************************************************
     #ADDED TRANSPARENT GATES
     #**************************************************************************************************************
-    image LLM_4_ifBT = "G_if_idle.png"
+    image LLM_4_ifBT = "B_if_idle.png"
     image LLM_4_elseT = "G_else_idle.png"
     image LLM_4_whileGT = "G_while_idle.png"
-    show LLM_4_ifBT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
-    show LLM_4_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
-    show LLM_4_whileGT at Position(xpos = whileG1x, xanchor = 0, ypos = whileG1y, yanchor = 0)
+    show LLM_4_ifBT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLM_4_elseT at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+    show LLM_4_whileGT at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False
