@@ -321,18 +321,9 @@ label nightShift_comp:
     $quick_menu = False
     hide Grace
     #hide Ivan
-    if(gramMed_solved==False):
-        show bg lab2WS_locked with fade
-        call screen nightShift_scr
-    else:
-        show bg lab2WS_unlocked with fade
-        "Temporary placeholder for end of Puzzle 2."
-        if (resume=="E"):
-            jump endCh3_E
-        if (resume=="SbE"):
-            jump endCh3_SbE
-        if(resume=="S"):
-            jump endCh3_S
+#    if(gramMed_solved==False):
+    show bg lab2WS_locked with fade
+    call screen nightShift_scr
     
 label investigateNightShift:
     if(gramMed_attempts==0):
@@ -351,12 +342,3 @@ label investigateNightShift:
         jump choose_gramMed
     else:
         jump choose_gramMed
-        $gramMed_solved = True #REMOVE THIS, PUT IN PUZZLE
-        show bg lab2WS_unlocked with fade
-        "Temporary placeholder for end of Puzzle 2."
-        if (resume=="E"):
-            jump endCh3_E
-        if (resume=="SbE"):
-            jump endCh3_SbE
-        if(resume=="S"):
-            jump endCh3_S

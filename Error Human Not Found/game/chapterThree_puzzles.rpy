@@ -694,6 +694,8 @@ label hints_llMed_5:
     hide LLE_5_tile76
     hide LLE_5_tile77 
     jump gamefile_llm5
+    
+##########################################################################################
 #BINARY PUZZLE
 #ADD SCREENS FOR TUTORIAL AND LABELS TO CALL
 
@@ -915,16 +917,19 @@ label binaryMedDoneTalk:
         jump postBinaryMed_SbE
     if (resume=="E"):
         jump postBinaryMed_E
-
+        
+####################################################################################
 ####GRAMMAR PUZZLE
-screen gramEasyLose_scr:
+########Screens
+
+screen gramMed_lose_scr:
     imagebutton:
         idle "yes.png" 
         hover "yes_hover.png" 
         xpos 705
         ypos 610 
         focus_mask True
-        action Jump("chooseEasyGram")
+        action Jump("choose_gramMed")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
@@ -933,133 +938,261 @@ screen gramEasyLose_scr:
         xpos 925
         ypos 610 
         focus_mask True
-        action Jump("doorPuzzle")
+        action Jump("doorPuzzle") #CHANGE ME
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
-            
-screen gramEasyDone_scr:
+screen gramMed_win_scr:
     imagebutton:
         idle "finish.png" 
         hover "finish_hover.png" 
         xpos 815
         ypos 610
         focus_mask True
-        action Jump("hiroseDoorPassed")
+        action Jump("gramMed_done")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
         
-label hints_llMed_1:
-    show screen disable_hide
+#######LABELS##############
+
+label tutorial_gramMed_1:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_gramMed_1
+    $renpy.block_rollback()
     $config.skipping=None
-    $remainder = LLMedHints%3 
-    show LLM_1_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
-    show LLM_1_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
-    show LLM_1_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-    show LLM_1_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
-    show other darken onlayer screens
-    $LLMedHints +=1
-    if (remainder==0):
-        g "I've got one node that needs power, which a WHILE will provide. It's a blue bolt, so it needs a blue WHILE."
-    if (remainder==1):
-        g "I've got one green IF and only one green light that takes a tile. I should probably put that there."
-    if (remainder==2):
-        g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
-    hide other darken onlayer screens
-    hide LLM_1_tile64 
-    hide LLM_1_tile65 
-    hide LLE_1_tile66 
-    hide LLE_1_tile67
-    jump gamefile_llm1
+    call screen tutorial_gramMed_1_scr
     
-label hints_llMed_2:
-    show screen disable_hide
+label gramMed_lose:
     $config.skipping=None
-    $remainder = LLMedHints%3 
-    $LLMedHints +=1
-    show LLM_2_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
-    show LLM_2_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
-    show LLM_2_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-    show LLM_2_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
-    show other darken onlayer screens
-    if (remainder==0):
-        g "Okay, I've got a green charge node, which means I need a green WHILE to power it."
-    if (remainder==1):
-        g "I've got one green IF and only one green light that takes a tile. I should probably put that there."
-    if (remainder==2):
-        g "The blue light by itself needs a blue tile. The blue IF looks like it would be perfect there."
-    hide other darken onlayer screens
-    hide LLM_2_tile64 
-    hide LLM_2_tile65 
-    hide LLE_2_tile66 
-    hide LLE_2_tile67 
-    jump gamefile_llm2
+    $renpy.block_rollback()
+    show other darken
+    image gramEasyLoseFail = "passwordFail.png" #CHANGE THIS
+    show gramEasyLoseFail at centerScreen2
+    call screen gramMed_lose_scr
     
-label hints_llMed_3:
-    show screen disable_hide
+label gramMed_win:
     $config.skipping=None
-    $remainder = LLMedHints%3 
-    $LLMedHints +=1
-    show LLM_3_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
-    show LLM_3_tile65 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
-    show LLM_3_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-    show LLM_3_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
-    show other darken onlayer screens
-    if (remainder==0):
-        g "Okay, I've got a blue charge node, which means I need a blue WHILE."
-    if (remainder==1):
-        g "The WHILE will only fire when blue is being fed to it, which means I probably need the blue IF before the WHILE."
-    if (remainder==2):
-        g "One green IF, on green light. I think that one is pretty straightforward."
-    hide other darken onlayer screens
-    hide LLM_3_tile64 
-    hide LLM_3_tile65 
-    hide LLE_3_tile66 
-    hide LLE_3_tile67 
-    jump gamefile_llm3
+    $renpy.block_rollback()
+    show other darken
+    image passwordAccepted = "passwordAccepted.png" #CHANGE THIS
+    show passwordAccepted at centerScreen2
+    call screen gramMed_win_scr
     
-label hints_llMed_4:
-    show screen disable_hide
-    $config.skipping=None
-    $remainder = LLMedHints%3 
-    $LLMedHints +=1
-    show LLM_4_tile64 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
-    show LLM_4_tile65 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
-    show LLM_4_tile66 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-    show LLM_4_tile67 at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
-    show other darken onlayer screens
-    if (remainder==0):
-        g "Two powered nodes and two green WHILEs. Seems self-explanatory"
-    if (remainder==1):
-        g "Only one blue light, and one blue IF. I should probably try the IF in that slot."
-    if (remainder==2):
-        g "The ELSE has to go with the one IF."
-    hide other darken onlayer screens
-    hide LLM_4_tile64
-    hide LLM_4_tile65 
-    hide LLE_4_tile66
-    hide LLE_4_tile67 
-    jump gamefile_llm4
+label gramMed_done:
+    $quick_menu = True
+    scene bg lab2WS_unlocked with fade
+    stop music fadeout 1.0
+    #INSERT NEW LAB 2 MUSIC HERE
+    if(gramMed_attempts ==0):
+        #show Ivan dour at right
+        show Grace happy at left
+        "Response for zero attempts."
+    if(gramMed_attempts ==1):
+        #show Ivan dour at right
+        show Grace neutral at left
+        "Response for one attempt."
+    if(gramMed_attempts>1):
+        show Grace annoyed at left
+        "Response for over one attempts."
+    if (resume=="E"):
+        jump endCh3_E
+    if (resume=="SbE"):
+        jump endCh3_SbE
+    if(resume=="S"):
+        jump endCh3_S
+        
+label choose_gramMed:
+    $quick_menu=False
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
+    stop channel08 fadeout 1.0
+    $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
+    $gramMedHints=0
+#    if (gramMed_attempts == 0): #UNCOMMENT ME WHEN TUTORIAL IS IN
+#        jump tutorial_gramMed_1
+    $slot_name = ""
+    $gate_name = ""
+    $temp_gate = ""
+    $temp_slot = ""
+    $gramRow1_L_sound =0
+    $gramRow1_R_sound = 0
+    $gramRow1_C_sound = 0
+    $gramRow2_L_sound = 0
+    $gramRow2_R_sound = 0
+    jump gram_m1 #REMOVE THIS AFTER TESTING
+    $randomNumberMedGram = renpy.random.randint(0,4)
+    if randomNumberMedGram==0:
+        jump gram_m1
+    if randomNumberMedGram==1:
+        jump gram_m2
+    if randomNumberMedGram==2:
+        jump gram_m3
+    if randomNumberMedGram==3:
+        jump gram_m4
+    if randomNumberMedGram==4:
+        jump gram_m5
+    "If you see this, an error has occured. Please contact Blue or some other capable individual to resolve."
+
     
-label hints_llMed_5:
+#####HINTS
+label hints_gramMed_1:
     show screen disable_hide
     $config.skipping=None
-    $remainder = LLMedHints%3 
-    $LLMedHints +=1
-    show LLM_5_tile74 at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
-    show LLM_5_tile75 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
-    show LLM_5_tile76 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
-    show LLM_5_tile77 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
+    $remainder = gramMedHints%3 
+    show gram_m1_tile202 at Position(xpos = letterT1x, xanchor = 0, ypos = letterT1y, yanchor = 0)
+    show gram_m1_tile206 at Position(xpos = letterR2x, xanchor = 0, ypos = letterR2y, yanchor = 0)
+    show gram_m1_tile203 at Position(xpos = letterB3x, xanchor = 0, ypos = letterB3y, yanchor = 0)
+    show gram_m1_tile205 at Position(xpos = letterB4x, xanchor = 0, ypos = letterB4y, yanchor = 0)
+    show gram_m1_tile201 at Position(xpos = letterT5x, xanchor = 0, ypos = letterT5y, yanchor = 0)
+    show gram_m1_tile204 at Position(xpos = letterR6x, xanchor = 0, ypos = letterR6y, yanchor = 0)
+    show gram_m1_tile207 at Position(xpos = letterT7x, xanchor = 0, ypos = letterT7y, yanchor = 0)
     show other darken onlayer screens
+    $gramMedHints +=1
     if (remainder==0):
-        g "Okay, I've got two WHILEs. Color goes with the charge light, not the color of the pipe."
+        g "Hint 1 for med 1."
     if (remainder==1):
-        g "There's only one green light, and one green IF, so the IF probably goes there. Won't be able to tell unless the charge node is lit up first, though."
+        g "Hint 2 for med 2."
     if (remainder==2):
-        g "The ELSE has to go to the blue light. Now where else would make sense."
+        g "Hint 3 for med 3."
     hide other darken onlayer screens
-    hide LLM_5_tile74
-    hide LLM_5_tile75
-    hide LLE_5_tile76
-    hide LLE_5_tile77 
-    jump gamefile_llm
+    hide gram_m1_tile202
+    hide gram_m1_tile206 
+    hide gram_m1_tile203
+    hide gram_m1_tile205
+    hide gram_m1_tile201
+    hide gram_m1_tile204
+    hide gram_m1_tile207
+    jump gamefile_m1
+    
+label hints_gramMed_2:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = gramMedHints%3 
+    show gram_m2_tile202 at Position(xpos = letterM1x, xanchor = 0, ypos = letterM1y, yanchor = 0)
+    show gram_m2_tile206 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+    show gram_m2_tile203 at Position(xpos = letterR3x, xanchor = 0, ypos = letterR3y, yanchor = 0)
+    show gram_m2_tile205 at Position(xpos = letterJ4x, xanchor = 0, ypos = letterJ4y, yanchor = 0)
+    show gram_m2_tile201 at Position(xpos = letterT5x, xanchor = 0, ypos = letterT5y, yanchor = 0)
+    show gram_m2_tile204 at Position(xpos = letterJ6x, xanchor = 0, ypos = letterJ6y, yanchor = 0)
+    show gram_m2_tile208 at Position(xpos = letterJ7x, xanchor = 0, ypos = letterJ7y, yanchor = 0)
+    show other darken onlayer screens
+    $gramMedHints +=1
+    if (remainder==0):
+        g "Hint 1 for med 1."
+    if (remainder==1):
+        g "Hint 2 for med 2."
+    if (remainder==2):
+        g "Hint 3 for med 3."
+    hide other darken onlayer screens
+    hide gram_m2_tile202
+    hide gram_m2_tile206 
+    hide gram_m2_tile203
+    hide gram_m2_tile205
+    hide gram_m2_tile201
+    hide gram_m2_tile204
+    hide gram_m2_tile208
+    jump gamefile_m2
+    
+label hints_gramMed_3:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = gramMedHints%3 
+    show gram_m3_tile202 at Position(xpos = letterL1x, xanchor = 0, ypos = letterL1y, yanchor = 0)
+    show gram_m3_tile206 at Position(xpos = letterN2x, xanchor = 0, ypos = letterN2y, yanchor = 0)
+    show gram_m3_tile203 at Position(xpos = letterK3x, xanchor = 0, ypos = letterK3y, yanchor = 0)
+    show gram_m3_tile205 at Position(xpos = letterM4x, xanchor = 0, ypos = letterM4y, yanchor = 0)
+    show gram_m3_tile201 at Position(xpos = letterL5x, xanchor = 0, ypos = letterL5y, yanchor = 0)
+    show gram_m3_tile204 at Position(xpos = letterK6x, xanchor = 0, ypos = letterK6y, yanchor = 0)
+    show gram_m3_tile208 at Position(xpos = letterK7x, xanchor = 0, ypos = letterK7y, yanchor = 0)
+    show gram_m3_tile250 at Position(xpos = letterN8x, xanchor = 0, ypos = letterN8y, yanchor = 0)
+    show other darken onlayer screens
+    $gramMedHints +=1
+    if (remainder==0):
+        g "Hint 1 for med 3."
+    if (remainder==1):
+        g "Hint 2 for med 3."
+    if (remainder==2):
+        g "Hint 3 for med 3."
+    hide other darken onlayer screens
+    hide gram_m3_tile202
+    hide gram_m3_tile206 
+    hide gram_m3_tile203
+    hide gram_m3_tile205
+    hide gram_m3_tile201
+    hide gram_m3_tile204
+    hide gram_m3_tile208
+    hide gram_m3_tile250
+    jump gamefile_m3
+    
+label hints_gramMed_4:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = gramMedHints%3 
+    show gram_m4_tile202 at Position(xpos = letterT1x, xanchor = 0, ypos = letterT1y, yanchor = 0)
+    show gram_m4_tile206 at Position(xpos = letterM2x, xanchor = 0, ypos = letterM2y, yanchor = 0)
+    show gram_m4_tile203 at Position(xpos = letterS3x, xanchor = 0, ypos = letterS3y, yanchor = 0)
+    show gram_m4_tile205 at Position(xpos = letterT4x, xanchor = 0, ypos = letterT4y, yanchor = 0)
+    show gram_m4_tile201 at Position(xpos = letterS5x, xanchor = 0, ypos = letterS5y, yanchor = 0)
+    show gram_m4_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
+    show gram_m4_tile208 at Position(xpos = letterA7x, xanchor = 0, ypos = letterA7y, yanchor = 0)
+    show gram_m4_tile250 at Position(xpos = letterM8x, xanchor = 0, ypos = letterM8y, yanchor = 0)
+    show other darken onlayer screens
+    $gramMedHints +=1
+    if (remainder==0):
+        g "Hint 1 for med 4."
+    if (remainder==1):
+        g "Hint 2 for med 4."
+    if (remainder==2):
+        g "Hint 3 for med 4."
+    hide other darken onlayer screens
+    hide gram_m4_tile202
+    hide gram_m4_tile206 
+    hide gram_m4_tile203
+    hide gram_m4_tile205
+    hide gram_m4_tile201
+    hide gram_m4_tile204
+    hide gram_m4_tile208
+    hide gram_m4_tile250
+    jump gamefile_m4
+    
+label hints_gramMed_5:
+    show screen disable_hide
+    $config.skipping=None
+    $remainder = gramMedHints%3 
+    show gram_m5_tile202 at Position(xpos = letterT1x, xanchor = 0, ypos = letterT1y, yanchor = 0)
+    show gram_m5_tile206 at Position(xpos = letterM2x, xanchor = 0, ypos = letterM2y, yanchor = 0)
+    show gram_m5_tile203 at Position(xpos = letterR3x, xanchor = 0, ypos = letterR3y, yanchor = 0)
+    show gram_m5_tile205 at Position(xpos = letterK4x, xanchor = 0, ypos = letterK4y, yanchor = 0)
+    show gram_m5_tile201 at Position(xpos = letterT5x, xanchor = 0, ypos = letterT5y, yanchor = 0)
+    show gram_m5_tile204 at Position(xpos = letterR6x, xanchor = 0, ypos = letterR6y, yanchor = 0)
+    show gram_m5_tile208 at Position(xpos = letterJ7x, xanchor = 0, ypos = letterJ7y, yanchor = 0)
+    show gram_m5_tile408 at Position(xpos = letterJ8x, xanchor = 0, ypos = letterJ8y, yanchor = 0)
+    show gram_m5_tile409 at Position(xpos = letterM9x, xanchor = 0, ypos = letterM9y, yanchor = 0)
+    show gram_m5_tile410 at Position(xpos = letterR10x, xanchor = 0, ypos = letterR10y, yanchor = 0)
+    show other darken onlayer screens
+    $gramMedHints +=1
+    if (remainder==0):
+        g "Hint 1 for med 5."
+    if (remainder==1):
+        g "Hint 2 for med 5."
+    if (remainder==2):
+        g "Hint 3 for med 5."
+    hide other darken onlayer screens
+    hide gram_m5_tile202
+    hide gram_m5_tile206 
+    hide gram_m5_tile203
+    hide gram_m5_tile205
+    hide gram_m5_tile201
+    hide gram_m5_tile204
+    hide gram_m5_tile208
+    hide gram_m5_tile408
+    hide gram_m5_tile409
+    hide gram_m5_tile410
+    jump gamefile_m5

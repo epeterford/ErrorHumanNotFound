@@ -23,24 +23,24 @@ screen logicGatese3:
         xpos 178
         ypos 285
     text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 365 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
-    imagebutton:
-        idle "letterS_grey.png"
-        xpos 275
-        ypos 575
-    imagebutton:
-        idle "letterJ_grey.png"
-        xpos 410
-        ypos 575
-    imagebutton:
-        idle "letterM_grey.png"
-        xpos 342
-        ypos 660
-    imagebutton: 
-        idle "letterK_grey.png"
-        xpos 342
-        ypos 770
+#    imagebutton:
+#        idle "letterS_grey.png"
+#        xpos 275
+#        ypos 575
+#    imagebutton:
+#        idle "letterJ_grey.png"
+#        xpos 410
+#        ypos 575
+#    imagebutton:
+#        idle "letterM_grey.png"
+#        xpos 342
+#        ypos 660
+#    imagebutton: 
+#        idle "letterK_grey.png"
+#        xpos 342
+#        ypos 770
     draggroup:
         #and gates
         drag:

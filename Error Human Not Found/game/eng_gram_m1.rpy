@@ -34,7 +34,7 @@ screen logicGates_med1:
         xpos 260
         ypos 200
         focus_mask True
-        action Jump("hints_gramMed1")
+        action Jump("hints_gramMed_1")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
@@ -44,6 +44,18 @@ screen logicGates_med1:
     text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
     text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
+#    imagebutton:
+#        idle "letterT_grey.png"
+#        xpos 275
+#        ypos 575
+#    imagebutton:
+#        idle "letterB_grey.png"
+#        xpos 342
+#        ypos 660
+#    imagebutton:
+#        idle "letterR_grey.png"
+#        xpos 410
+#        ypos 575
     draggroup:
         #and gates
         drag:
@@ -147,17 +159,12 @@ screen logicGates_med1:
 init:
     image bg Eng_gram_m1_tile = "eng_tile_bg.png"
 
-#<<<<<<< HEAD
-label gram_m1: #start:
-
-#=======
-#label gram_m1:
+label gram_m1:
     $config.skipping=None
     $ gate_name= ""
     $ slot_name = ""
     $ quick_menu = False
     $ game_menu = True
-#>>>>>>> 436351a011be9347feffac38add90907369680d5
     scene bg Eng_gram_m1_tile
 
     #row1 1-4
@@ -201,7 +208,6 @@ label gram_m1: #start:
 
 
     #row5 21-27
-
     image gram_m1_tile21 = "1_1_grey.png"
     image gram_m1_tile22 = "1_1_grey.png"
     image gram_m1_tile23 = "1_1_grey.png"
@@ -319,12 +325,7 @@ label gram_m1: #start:
     
     call gamefile_m1
 
-
-
 label gamefile_m1:
-    #image moon = "images/blankgram_m1_tile.png"
-    #show blink
-    #calls jigsaw game with the images selected
     call screen logicGates_med1
 
     if gate_name == "letterT1":
@@ -338,7 +339,7 @@ label gamefile_m1:
                $ letterT1in1 = False
             if letterR2in1 == True:
                $ letterR2x = 410
-               $ letterR2y = 575
+               $  letterR2y = 575
                $ letterR2in1 = False
             if letterB3in1 == True:
                $ letterB3x = 342
@@ -2520,7 +2521,9 @@ label gamefile_m1:
                     $ letterB4in5 = False
                     $ letterB4in6 = False
                     $ letterB4in7 = False
-    
+                    
+    play sound gramTree2
+    #START OTHER SOUNDS HERE
     if (letterT1in7 == True or letterT5in7 == True or letterT7in7 == True):
         image gram_m1_tile36 = "treeGreen.png"
         image gram_m1_tile37 = "1_1_green.png"
@@ -2824,10 +2827,8 @@ label gamefile_m1:
         show gram_m1_tile201 at Position(xpos = letterT5x, xanchor = 0, ypos = letterT5y, yanchor = 0)
         show gram_m1_tile204 at Position(xpos = letterR6x, xanchor = 0, ypos = letterR6y, yanchor = 0)
         show gram_m1_tile207 at Position(xpos = letterT7x, xanchor = 0, ypos = letterT7y, yanchor = 0)
-
-        "Access Gained"
-
-        jump gram_m1 #start
+        $gramMed_solved = True
+        jump gramMed_win
 
     if attempts ==0:
         hide gram_m1_tile42
@@ -2874,10 +2875,8 @@ label gamefile_m1:
         hide gram_m1_tile87
         hide gram_m1_tile88
         hide gram_m1_tile89
-
-        "You Lose Try Again"
-
-        jump gram_m1 #start
+        $gramMed_attempts +=1
+        jump gramMed_lose
       
     
     jump gamefile_m1

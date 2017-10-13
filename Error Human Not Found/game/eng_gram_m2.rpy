@@ -19,7 +19,51 @@ init python:
         return True 
 
 screen logicGates_med2:
-
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 260
+        ypos 200
+        focus_mask True
+        action Jump("hints_gramMed_2")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 178
+        ypos 285
+    text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
+#    imagebutton:
+#        idle "letterM_grey.png"
+#        xpos 275
+#        ypos 575
+#    imagebutton:
+#        idle "letterK_grey.png"
+#        xpos 410
+#        ypos 575
+#    imagebutton:
+#        idle "letterR_grey.png"
+#        xpos 410
+#        ypos 750
+#    imagebutton:
+#        idle "letterJ_grey.png"
+#        xpos 342
+#        ypos 660
+#    imagebutton:
+#        idle "letterT_grey.png"
+#        xpos 275
+#        ypos 750
     draggroup:
         #and gates
         drag:
@@ -134,7 +178,11 @@ init:
     image bg Eng_gram_m2_tile = "eng_tile_bg.png"
 
 label gram_m2: #start:
-
+    $config.skipping=None
+    $ gate_name= ""
+    $ slot_name = ""
+    $ quick_menu = False
+    $ game_menu = True
     scene bg Eng_gram_m2_tile
 
     #row1 1-4
@@ -2769,10 +2817,7 @@ label gamefile_m2:
         show gram_m2_tile201 at Position(xpos = letterT5x, xanchor = 0, ypos = letterT5y, yanchor = 0)
         show gram_m2_tile204 at Position(xpos = letterJ6x, xanchor = 0, ypos = letterJ6y, yanchor = 0)
         show gram_m2_tile208 at Position(xpos = letterJ7x, xanchor = 0, ypos = letterJ7y, yanchor = 0)
-
-        "Access Gained"
-
-        jump gram_m2 #start
+        jump gramMed_win
 
     if attempts ==0:
         hide gram_m2_tile42

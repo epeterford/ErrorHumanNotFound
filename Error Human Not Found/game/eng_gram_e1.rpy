@@ -25,30 +25,30 @@ screen logicGatese1:
     text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
     text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
-    imagebutton:
-        idle "letterP_grey.png"
-        xpos 410
-        ypos 750
-    imagebutton:
-        idle "letterJ_grey.png"
-        xpos 275
-        ypos 575
-    imagebutton:
-        idle "letterM_grey.png"
-        xpos 342
-        ypos 660
-    imagebutton: 
-        idle "letterL_grey.png"
-        xpos 342
-        ypos 832
-    imagebutton:
-        idle "letterN_grey.png"
-        xpos 275
-        ypos 750
-    imagebutton:
-        idle "letterK_grey.png"
-        xpos 410
-        ypos 575
+#    imagebutton:
+#        idle "letterP_grey.png"
+#        xpos 410
+#        ypos 750
+#    imagebutton:
+#        idle "letterJ_grey.png"
+#        xpos 275
+#        ypos 575
+#    imagebutton:
+#        idle "letterM_grey.png"
+#        xpos 342
+#        ypos 660
+#    imagebutton: 
+#        idle "letterL_grey.png"
+#        xpos 342
+#        ypos 832
+#    imagebutton:
+#        idle "letterN_grey.png"
+#        xpos 275
+#        ypos 750
+#    imagebutton:
+#        idle "letterK_grey.png"
+#        xpos 410
+#        ypos 575
     draggroup:
         #and gates
         drag:
@@ -320,7 +320,7 @@ label eng_gram_e1:
     
     jump gamefile_e1
 
-    label gamefile_e1:
+label gamefile_e1:
     call screen logicGatese1
 
     if gate_name == "letterJ":
@@ -1693,10 +1693,8 @@ label eng_gram_e1:
             $ and6in5 = False
             $ and6in6 = True
 
-
-#Dragbacks
-
-   if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterJ_return" or slot_name == "LetterK_return" or slot_name == "LetterM_return" or slot_name == "LetterP_return" or slot_name == "LetterN_return" or slot_name == "LetterL_return")):
+    #Dragbacks
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterJ_return" or slot_name == "LetterK_return" or slot_name == "LetterM_return" or slot_name == "LetterP_return" or slot_name == "LetterN_return" or slot_name == "LetterL_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":

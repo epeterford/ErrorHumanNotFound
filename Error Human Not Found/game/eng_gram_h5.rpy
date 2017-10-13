@@ -115,12 +115,12 @@ label eng_gram_h5:
     show gram_h5_border5 at Position(xpos = 262, xanchor = 0, ypos = 758, yanchor = 0)
     show gram_h5_border6 at Position(xpos = 397, xanchor = 0, ypos = 758, yanchor = 0)
     
-    image gram_h5_transparent1 = "letterK_gray.png"
-    image gram_h5_transparent2 = "letterR_gray.png"
-    image gram_h5_transparent3 = "letterA_gray.png"
-    image gram_h5_transparent4 = "letterM_gray.png"
-    image gram_h5_transparent5 = "letterJ_gray.png"
-    image gram_h5_transparent6 = "letterT_gray.png"
+    image gram_h5_transparent1 = "letterK_grey.png"
+    image gram_h5_transparent2 = "letterR_grey.png"
+    image gram_h5_transparent3 = "letterA_grey.png"
+    image gram_h5_transparent4 = "letterM_grey.png"
+    image gram_h5_transparent5 = "letterJ_grey.png"
+    image gram_h5_transparent6 = "letterT_grey.png"
     
     show gram_h5 transparent1 at Position(xpos = 275, xanchor = 0, ypos = 595, yanchor = 0)
     show gram_h5_transparent2 at Position(xpos = 410, xanchor = 0, ypos = 595, yanchor = 0)

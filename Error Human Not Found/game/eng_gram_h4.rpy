@@ -461,10 +461,10 @@ label eng_gram_h4:
     #attempts for players
     $ attempts = 15
     
-    call gamefile_m5
+    call gamefile_h4
 
-label gamefile_m5:
-    #image moon = "images/blankgram_m5_tile.png"
+label gamefile_h4:
+    #image moon = "images/blankgram_h4_tile.png"
     #show blink
     #calls jigsaw game with the images selected
     call screen logicGatesh4
@@ -473,7 +473,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -1157,7 +1157,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -1841,7 +1841,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -2526,7 +2526,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -3212,7 +3212,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -3896,7 +3896,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -4580,7 +4580,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -5265,7 +5265,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -5951,7 +5951,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -6635,7 +6635,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -7321,7 +7321,7 @@ label gamefile_m5:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            #check to make sure no other gram_m5_tile here
+            #check to make sure no other gram_h4_tile here
             if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
@@ -8005,17 +8005,17 @@ label gamefile_m5:
 
 
     if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterK_gate_return" or slot_name == "LetterM_gate_return" or slot_name == "LetterA_gate_return" or slot_name == "LetterT_gate_return" or slot_name == "LetterH_gate_return")):
-       $ temp_slot = slot_name
-       $ temp_gate = gate_name
-       if temp_slot != "" and temp_gate != "":
-           $ attempts -=1
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
     else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
            
-    #Dragbacks *******************************************************************************************
+            #Dragbacks *******************************************************************************************
             if slot_name == "letterK_gate_return":
                 $ attempts +=1
                 if gate_name == "letterK1":
@@ -8182,368 +8182,368 @@ label gamefile_m5:
                     $ letterT11in11 = False
  
            
-    hide gram_m5_tile42
-    hide gram_m5_tile43
-    hide gram_m5_tile44
-    hide gram_m5_tile45
-    hide gram_m5_tile46
-    hide gram_m5_tile47
-    hide gram_m5_tile48
-    hide gram_m5_tile49
-    hide gram_m5_tile50
-    hide gram_m5_tile51
-    hide gram_m5_tile52
-    hide gram_m5_tile53
-    hide gram_m5_tile54
-    hide gram_m5_tile55
-    hide gram_m5_tile56
-    hide gram_m5_tile57
-    hide gram_m5_tile58
-    hide gram_m5_tile59
-    hide gram_m5_tile60
-    hide gram_m5_tile61
-    hide gram_m5_tile62
-    hide gram_m5_tile63
-    hide gram_m5_tile64
-    hide gram_m5_tile65
-    hide gram_m5_tile66
-    hide gram_m5_tile67
-    hide gram_m5_tile68
-    hide gram_m5_tile69
-    hide gram_m5_tile70
-    hide gram_m5_tile71
-    hide gram_m5_tile72
-    hide gram_m5_tile73
-    hide gram_m5_tile74
-    hide gram_m5_tile75
-    hide gram_m5_tile76
-    hide gram_m5_tile77
-    hide gram_m5_tile78
-    hide gram_m5_tile79
-    hide gram_m5_tile80
-    hide gram_m5_tile81
-    hide gram_m5_tile82
-    hide gram_m5_tile83
-    hide gram_m5_tile84
-    hide gram_m5_tile85
-    hide gram_m5_tile86
-    hide gram_m5_tile87
-    hide gram_m5_tile88
-    hide gram_m5_tile89
-    hide gram_m5_tile90
-    hide gram_m5_tile91
-    hide gram_m5_tile92
-    hide gram_m5_tile93
-    hide gram_m5_tile94
-    hide gram_m5_tile95
-    hide gram_m5_tile96
-    hide gram_m5_tile97
-    hide gram_m5_tile98
-    hide gram_m5_tile99
-    hide gram_m5_tile100
-    hide gram_m5_tile101
-    hide gram_m5_tile102
-    hide gram_m5_tile103
-    hide gram_m5_tile104
-    hide gram_m5_tile105
-    hide gram_m5_tile106
-    hide gram_m5_tile107
-    hide gram_m5_tile108
-    hide gram_m5_tile109
-    hide gram_m5_tile110
-    hide gram_m5_tile111
-    hide gram_m5_tile112
-    hide gram_m5_tile113
-    hide gram_m5_tile114
-    hide gram_m5_tile115
-    hide gram_m5_tile116
-    hide gram_m5_tile117
-    hide gram_m5_tile118
-    hide gram_m5_tile119
-    hide gram_m5_tile120
-    hide gram_m5_tile121
-    hide gram_m5_tile122
-    hide gram_m5_tile123
-    hide gram_m5_tile124
-    hide gram_m5_tile125
-    hide gram_m5_tile126
-    hide gram_m5_tile127
-    hide gram_m5_tile128
-    hide gram_m5_tile129
-    hide gram_m5_tile130
-    hide gram_m5_tile131
-    hide gram_m5_tile132
-    hide gram_m5_tile133
-    hide gram_m5_tile134
-    hide gram_m5_tile135
-    hide gram_m5_tile136
-    hide gram_m5_tile137
-    hide gram_m5_tile138
-    hide gram_m5_tile139
-    hide gram_m5_tile140
-    hide gram_m5_tile141
-    hide gram_m5_tile142
-    hide gram_m5_tile143
-    hide gram_m5_tile144
-    hide gram_m5_tile145
+    hide gram_h4_tile42
+    hide gram_h4_tile43
+    hide gram_h4_tile44
+    hide gram_h4_tile45
+    hide gram_h4_tile46
+    hide gram_h4_tile47
+    hide gram_h4_tile48
+    hide gram_h4_tile49
+    hide gram_h4_tile50
+    hide gram_h4_tile51
+    hide gram_h4_tile52
+    hide gram_h4_tile53
+    hide gram_h4_tile54
+    hide gram_h4_tile55
+    hide gram_h4_tile56
+    hide gram_h4_tile57
+    hide gram_h4_tile58
+    hide gram_h4_tile59
+    hide gram_h4_tile60
+    hide gram_h4_tile61
+    hide gram_h4_tile62
+    hide gram_h4_tile63
+    hide gram_h4_tile64
+    hide gram_h4_tile65
+    hide gram_h4_tile66
+    hide gram_h4_tile67
+    hide gram_h4_tile68
+    hide gram_h4_tile69
+    hide gram_h4_tile70
+    hide gram_h4_tile71
+    hide gram_h4_tile72
+    hide gram_h4_tile73
+    hide gram_h4_tile74
+    hide gram_h4_tile75
+    hide gram_h4_tile76
+    hide gram_h4_tile77
+    hide gram_h4_tile78
+    hide gram_h4_tile79
+    hide gram_h4_tile80
+    hide gram_h4_tile81
+    hide gram_h4_tile82
+    hide gram_h4_tile83
+    hide gram_h4_tile84
+    hide gram_h4_tile85
+    hide gram_h4_tile86
+    hide gram_h4_tile87
+    hide gram_h4_tile88
+    hide gram_h4_tile89
+    hide gram_h4_tile90
+    hide gram_h4_tile91
+    hide gram_h4_tile92
+    hide gram_h4_tile93
+    hide gram_h4_tile94
+    hide gram_h4_tile95
+    hide gram_h4_tile96
+    hide gram_h4_tile97
+    hide gram_h4_tile98
+    hide gram_h4_tile99
+    hide gram_h4_tile100
+    hide gram_h4_tile101
+    hide gram_h4_tile102
+    hide gram_h4_tile103
+    hide gram_h4_tile104
+    hide gram_h4_tile105
+    hide gram_h4_tile106
+    hide gram_h4_tile107
+    hide gram_h4_tile108
+    hide gram_h4_tile109
+    hide gram_h4_tile110
+    hide gram_h4_tile111
+    hide gram_h4_tile112
+    hide gram_h4_tile113
+    hide gram_h4_tile114
+    hide gram_h4_tile115
+    hide gram_h4_tile116
+    hide gram_h4_tile117
+    hide gram_h4_tile118
+    hide gram_h4_tile119
+    hide gram_h4_tile120
+    hide gram_h4_tile121
+    hide gram_h4_tile122
+    hide gram_h4_tile123
+    hide gram_h4_tile124
+    hide gram_h4_tile125
+    hide gram_h4_tile126
+    hide gram_h4_tile127
+    hide gram_h4_tile128
+    hide gram_h4_tile129
+    hide gram_h4_tile130
+    hide gram_h4_tile131
+    hide gram_h4_tile132
+    hide gram_h4_tile133
+    hide gram_h4_tile134
+    hide gram_h4_tile135
+    hide gram_h4_tile136
+    hide gram_h4_tile137
+    hide gram_h4_tile138
+    hide gram_h4_tile139
+    hide gram_h4_tile140
+    hide gram_h4_tile141
+    hide gram_h4_tile142
+    hide gram_h4_tile143
+    hide gram_h4_tile144
+    hide gram_h4_tile145
         
     if (letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True):
-        image gram_m5_tile42 = "leftTreegreenlong2.png"
-        image gram_m5_tile43 = "1_1_green.png"
-        show gram_m5_tile42 at Position(xpos = 885, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile43 at Position(xpos = 850, xanchor = 0, ypos = 325, yanchor = 0)
-        image gram_m5_tile44 = "treeGreen.png"
-        image gram_m5_tile45 = "1_1_green.png"
-        show gram_m5_tile44 at Position(xpos = 1250, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile45 at Position(xpos = 1250, xanchor = 0, ypos = 325, yanchor = 0)
-        image gram_m5_tile46 = "rightTreegreenlong2.png"
-        image gram_m5_tile47 = "1_1_green.png"
-        show gram_m5_tile46 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile47 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile42 = "leftTreegreenlong2.png"
+        image gram_h4_tile43 = "1_1_green.png"
+        show gram_h4_tile42 at Position(xpos = 885, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile43 at Position(xpos = 850, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile44 = "treeGreen.png"
+        image gram_h4_tile45 = "1_1_green.png"
+        show gram_h4_tile44 at Position(xpos = 1250, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile45 at Position(xpos = 1250, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile46 = "rightTreegreenlong2.png"
+        image gram_h4_tile47 = "1_1_green.png"
+        show gram_h4_tile46 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile47 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
 
         if (letterM3in4 == True):
-            image gram_m5_tile48 = "treeGreen.png"
-            image gram_m5_tile49 = "1_1_green.png"
-            show gram_m5_tile48 at Position(xpos = 850, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile49 at Position(xpos = 850, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile50 = "solutionLine.png"
-            image gram_m5_tile51 = "solutionLine.png"
-            show gram_m5_tile50 at Position(xpos = 830, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile51 at Position(xpos = 830, xanchor = 0, ypos = 692, yanchor = 0)           
-            image gram_m5_tile52 = "solutionLine.png"
-            show gram_m5_tile52 at Position(xpos = 830, xanchor = 0, ypos = 785, yanchor = 0)
-            image gram_m5_tile53 = "foolish.png"
-            show gram_m5_tile53 at Position(xpos = 750, xanchor = 0, ypos = 800, yanchor = 0)
+            image gram_h4_tile48 = "treeGreen.png"
+            image gram_h4_tile49 = "1_1_green.png"
+            show gram_h4_tile48 at Position(xpos = 850, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile49 at Position(xpos = 850, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile50 = "solutionLine.png"
+            image gram_h4_tile51 = "solutionLine.png"
+            show gram_h4_tile50 at Position(xpos = 830, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile51 at Position(xpos = 830, xanchor = 0, ypos = 692, yanchor = 0)           
+            image gram_h4_tile52 = "solutionLine.png"
+            show gram_h4_tile52 at Position(xpos = 830, xanchor = 0, ypos = 785, yanchor = 0)
+            image gram_h4_tile53 = "foolish.png"
+            show gram_h4_tile53 at Position(xpos = 750, xanchor = 0, ypos = 800, yanchor = 0)
         elif (letterK1in4 or letterK2in4 or letterA4in4 or letterT5in4 or letterA6in4 or letterH7in4 or letterA8in4 or letterT9in4 or letterA10in4 or letterT11in4):
-            image gram_m5_tile54 = "treeRed.png"
-            image gram_m5_tile55 = "1_1_red.png"
-            show gram_m5_tile54 at Position(xpos = 850, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile55 at Position(xpos = 850, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile54 = "treeRed.png"
+            image gram_h4_tile55 = "1_1_red.png"
+            show gram_h4_tile54 at Position(xpos = 850, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile55 at Position(xpos = 850, xanchor = 0, ypos = 500, yanchor = 0)
 
         if (letterH7in8 == True):
-            image gram_m5_tile56 = "treeGreen.png"
-            image gram_m5_tile57 = "1_1_green.png"
-            show gram_m5_tile56 at Position(xpos = 1650, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile57 at Position(xpos = 1650, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile58 = "solutionLine.png"
-            image gram_m5_tile59 = "solutionLine.png"
-            show gram_m5_tile58 at Position(xpos = 1650, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile59 at Position(xpos = 1650, xanchor = 0, ypos = 692, yanchor = 0)
-            image gram_m5_tile60 = "solutionLine.png"
-            image gram_m5_tile61 = "suit.png"
-            show gram_m5_tile60 at Position(xpos = 1650, xanchor = 0, ypos = 785, yanchor = 0)
-            show gram_m5_tile61 at Position(xpos = 1650, xanchor = 0, ypos = 800, yanchor = 0)
+            image gram_h4_tile56 = "treeGreen.png"
+            image gram_h4_tile57 = "1_1_green.png"
+            show gram_h4_tile56 at Position(xpos = 1650, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile57 at Position(xpos = 1650, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile58 = "solutionLine.png"
+            image gram_h4_tile59 = "solutionLine.png"
+            show gram_h4_tile58 at Position(xpos = 1650, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile59 at Position(xpos = 1650, xanchor = 0, ypos = 692, yanchor = 0)
+            image gram_h4_tile60 = "solutionLine.png"
+            image gram_h4_tile61 = "suit.png"
+            show gram_h4_tile60 at Position(xpos = 1650, xanchor = 0, ypos = 785, yanchor = 0)
+            show gram_h4_tile61 at Position(xpos = 1650, xanchor = 0, ypos = 800, yanchor = 0)
         elif (letterK1in8 or letterK2in8 or letterM3in8 or letterA4in8 or letterT5in8 or letterA6in8 or letterA8in8 or letterT9in8 or letterA10in8 or letterT11in8):
-            image gram_m5_tile114 = "treeRed.png"
-            image gram_m5_tile115 = "1_1_red.png"
-            show gram_m5_tile114 at Position(xpos = 1650, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile115 at Position(xpos = 1650, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile114 = "treeRed.png"
+            image gram_h4_tile115 = "1_1_red.png"
+            show gram_h4_tile114 at Position(xpos = 1650, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile115 at Position(xpos = 1650, xanchor = 0, ypos = 500, yanchor = 0)
         
         if (letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and ((letterK2in7 == True or letterK1in7 == True)):
-            image gram_m5_tile62 = "leftTreegreenlong1.png"
-            image gram_m5_tile63 = "1_1_green.png"
-            show gram_m5_tile62 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile63 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile64 = "solutionLine.png"
-            image gram_m5_tile65 = "solutionLine.png"
-            show gram_m5_tile64 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile65 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
-            image gram_m5_tile66 = "solutionLine.png"
-            image gram_m5_tile67 = "epsilon.png"
-            show gram_m5_tile66 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
-            show gram_m5_tile67 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
+            image gram_h4_tile62 = "leftTreegreenlong1.png"
+            image gram_h4_tile63 = "1_1_green.png"
+            show gram_h4_tile62 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile63 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile64 = "solutionLine.png"
+            image gram_h4_tile65 = "solutionLine.png"
+            show gram_h4_tile64 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile65 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
+            image gram_h4_tile66 = "solutionLine.png"
+            image gram_h4_tile67 = "epsilon.png"
+            show gram_h4_tile66 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
+            show gram_h4_tile67 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
 
-            image gram_m5_tile68 = "treeGreen.png"
-            image gram_m5_tile69 = "1_1_green.png"
-            show gram_m5_tile68 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile69 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile68 = "treeGreen.png"
+            image gram_h4_tile69 = "1_1_green.png"
+            show gram_h4_tile68 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile69 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
 
-            image gram_m5_tile70 = "rightTreegreenlong1.png"
-            image gram_m5_tile71 = "1_1_green.png"
+            image gram_h4_tile70 = "rightTreegreenlong1.png"
+            image gram_h4_tile71 = "1_1_green.png"
 
-            show gram_m5_tile70 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile71 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)
+            show gram_h4_tile70 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile71 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)
 
-            image gram_m5_tile72 = "solutionLine.png"
-            image gram_m5_tile73 = "solutionLine.png"
-            image gram_m5_tile74 = "solutionLine.png"
-            image gram_m5_tile75 = "meat.png"
+            image gram_h4_tile72 = "solutionLine.png"
+            image gram_h4_tile73 = "solutionLine.png"
+            image gram_h4_tile74 = "solutionLine.png"
+            image gram_h4_tile75 = "meat.png"
 
-            show gram_m5_tile72 at Position(xpos = 1500, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile73 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
-            show gram_m5_tile74 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
-            show gram_m5_tile75 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
+            show gram_h4_tile72 at Position(xpos = 1500, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile73 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
+            show gram_h4_tile74 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
+            show gram_h4_tile75 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
 
 
             if (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and ((letterA4in11 == True or letterA6in11 == True or letterA8in11 == True or letterA10in11 == True)):
-               image gram_m5_tile76 = "leftTreegreenlong.png"
-               image gram_m5_tile77 = "1_1_green.png"
-               image gram_m5_tile78 = "solutionLine.png"
-               image gram_m5_tile79 = "epsilon.png"
-               show gram_m5_tile76 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile77 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
-               show gram_m5_tile78 at Position(xpos = 1100, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile79 at Position(xpos = 1050, xanchor = 0, ypos = 800, yanchor = 0)
-               image gram_m5_tile80 = "treeGreen.png"
-               image gram_m5_tile81 = "1_1_green.png"
-               show gram_m5_tile80 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile81 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile82 = "solutionLine.png"
-               image gram_m5_tile83 = "organic.png"
-               show gram_m5_tile82 at Position(xpos = 1250, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile83 at Position(xpos = 1202, xanchor = 0, ypos = 800, yanchor = 0)
-               image gram_m5_tile84 = "rightTreegreenlong.png"
-               image gram_m5_tile85 = "1_1_green.png"
-               show gram_m5_tile84 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile85 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile86 = "solutionLine.png"
-               image gram_m5_tile87 = "epsilon.png"
-               show gram_m5_tile86 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile87 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
+               image gram_h4_tile76 = "leftTreegreenlong.png"
+               image gram_h4_tile77 = "1_1_green.png"
+               image gram_h4_tile78 = "solutionLine.png"
+               image gram_h4_tile79 = "epsilon.png"
+               show gram_h4_tile76 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile77 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
+               show gram_h4_tile78 at Position(xpos = 1100, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile79 at Position(xpos = 1050, xanchor = 0, ypos = 800, yanchor = 0)
+               image gram_h4_tile80 = "treeGreen.png"
+               image gram_h4_tile81 = "1_1_green.png"
+               show gram_h4_tile80 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile81 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile82 = "solutionLine.png"
+               image gram_h4_tile83 = "organic.png"
+               show gram_h4_tile82 at Position(xpos = 1250, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile83 at Position(xpos = 1202, xanchor = 0, ypos = 800, yanchor = 0)
+               image gram_h4_tile84 = "rightTreegreenlong.png"
+               image gram_h4_tile85 = "1_1_green.png"
+               show gram_h4_tile84 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile85 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile86 = "solutionLine.png"
+               image gram_h4_tile87 = "epsilon.png"
+               show gram_h4_tile86 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile87 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
             elif ((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
                     (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
                     (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11)):
-               image gram_m5_tile134 = "leftTreeredlong.png"
-               image gram_m5_tile135 = "1_1_red.png"
-               show gram_m5_tile134 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile135 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile136 = "treeRed.png"
-               image gram_m5_tile137 = "1_1_red.png"
-               show gram_m5_tile136 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile137 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile138 = "rightTreeredlong.png"
-               image gram_m5_tile139 = "1_1_red.png"
-               show gram_m5_tile138 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile139 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile134 = "leftTreeredlong.png"
+               image gram_h4_tile135 = "1_1_red.png"
+               show gram_h4_tile134 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile135 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile136 = "treeRed.png"
+               image gram_h4_tile137 = "1_1_red.png"
+               show gram_h4_tile136 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile137 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile138 = "rightTreeredlong.png"
+               image gram_h4_tile139 = "1_1_red.png"
+               show gram_h4_tile138 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile139 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
 
         elif ((letterK1in5 or letterK2in5 or letterM3in5 or letterA4in5 or letterT5in5 or letterA6in5 or letterH7in5 or letterA8in5 or letterT9in5 or letterA10in5 or letterT11in5) and
                 (letterK1in6 or letterK2in6 or letterM3in6 or letterA4in6 or letterT5in6 or letterA6in6 or letterH7in6 or letterA8in6 or letterT9in6 or letterA10in6 or letterT11in6) and
                 (letterK1in7 or letterK2in7 or letterM3in7 or letterA4in7 or letterT5in7 or letterA6in7 or letterH7in7 or letterA8in7 or letterT9in7 or letterA10in7 or letterT11in7)):
-            image gram_m5_tile122 = "leftTreeredlong1.png"
-            image gram_m5_tile123 = "1_1_red.png"
-            show gram_m5_tile122 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile123 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile124 = "treeRed.png"
-            image gram_m5_tile125 = "1_1_red.png"
-            show gram_m5_tile124 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile125 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile126 = "rightTreeredlong1.png"
-            image gram_m5_tile127 = "1_1_red.png"
-            show gram_m5_tile126 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile127 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)        
+            image gram_h4_tile122 = "leftTreeredlong1.png"
+            image gram_h4_tile123 = "1_1_red.png"
+            show gram_h4_tile122 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile123 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile124 = "treeRed.png"
+            image gram_h4_tile125 = "1_1_red.png"
+            show gram_h4_tile124 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile125 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile126 = "rightTreeredlong1.png"
+            image gram_h4_tile127 = "1_1_red.png"
+            show gram_h4_tile126 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile127 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)        
             
             
         if (letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and (letterA4in7 == True or letterA6in7 == True or letterA8in7 == True or letterA10in7 == True):
-            image gram_m5_tile100 = "leftTreegreenlong1.png"
-            image gram_m5_tile101 = "1_1_green.png"
-            show gram_m5_tile100 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile101 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile102 = "solutionLine.png"
-            image gram_m5_tile103 = "solutionLine.png"
-            show gram_m5_tile102 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile103 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
-            image gram_m5_tile104 = "solutionLine.png"
-            image gram_m5_tile105 = "epsilon.png"
-            show gram_m5_tile104 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
-            show gram_m5_tile105 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
+            image gram_h4_tile100 = "leftTreegreenlong1.png"
+            image gram_h4_tile101 = "1_1_green.png"
+            show gram_h4_tile100 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile101 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile102 = "solutionLine.png"
+            image gram_h4_tile103 = "solutionLine.png"
+            show gram_h4_tile102 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile103 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
+            image gram_h4_tile104 = "solutionLine.png"
+            image gram_h4_tile105 = "epsilon.png"
+            show gram_h4_tile104 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
+            show gram_h4_tile105 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
 
-            image gram_m5_tile106 = "treeGreen.png"
-            image gram_m5_tile107 = "1_1_green.png"
-            show gram_m5_tile106 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile107 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile106 = "treeGreen.png"
+            image gram_h4_tile107 = "1_1_green.png"
+            show gram_h4_tile106 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile107 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
 
-            image gram_m5_tile108 = "rightTreegreenlong1.png"
-            image gram_m5_tile109 = "1_1_green.png"
+            image gram_h4_tile108 = "rightTreegreenlong1.png"
+            image gram_h4_tile109 = "1_1_green.png"
 
-            show gram_m5_tile108 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile109 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)
+            show gram_h4_tile108 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile109 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)
 
-            image gram_m5_tile110 = "solutionLine.png"
-            image gram_m5_tile111 = "solutionLine.png"
-            image gram_m5_tile112 = "solutionLine.png"
-            image gram_m5_tile113 = "epsilon.png"
+            image gram_h4_tile110 = "solutionLine.png"
+            image gram_h4_tile111 = "solutionLine.png"
+            image gram_h4_tile112 = "solutionLine.png"
+            image gram_h4_tile113 = "epsilon.png"
 
-            show gram_m5_tile110 at Position(xpos = 1500, xanchor = 0, ypos = 600, yanchor = 0)
-            show gram_m5_tile111 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
-            show gram_m5_tile112 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
-            show gram_m5_tile113 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
+            show gram_h4_tile110 at Position(xpos = 1500, xanchor = 0, ypos = 600, yanchor = 0)
+            show gram_h4_tile111 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
+            show gram_h4_tile112 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
+            show gram_h4_tile113 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
 
             if (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and ((letterK2in11 == True or letterK1in11 == True)):
-               #image gram_m5_tile50 = "leftTreegreen.png"
-               image gram_m5_tile88 = "leftTreegreenlong.png"
-               image gram_m5_tile89 = "1_1_green.png"
-               image gram_m5_tile90 = "solutionLine.png"
-               image gram_m5_tile91 = "epsilon.png"
-               #show gram_m5_tile50 at Position(xpos = 960, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m5_tile88 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile89 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
-               show gram_m5_tile90 at Position(xpos = 1100, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile91 at Position(xpos = 1050, xanchor = 0, ypos = 800, yanchor = 0)
+               #image gram_h4_tile50 = "leftTreegreen.png"
+               image gram_h4_tile88 = "leftTreegreenlong.png"
+               image gram_h4_tile89 = "1_1_green.png"
+               image gram_h4_tile90 = "solutionLine.png"
+               image gram_h4_tile91 = "epsilon.png"
+               #show gram_h4_tile50 at Position(xpos = 960, xanchor = 0, ypos = 575, yanchor = 0)
+               show gram_h4_tile88 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile89 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
+               show gram_h4_tile90 at Position(xpos = 1100, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile91 at Position(xpos = 1050, xanchor = 0, ypos = 800, yanchor = 0)
 
-               image gram_m5_tile92 = "treeGreen.png"
-               image gram_m5_tile93 = "1_1_green.png"
-               show gram_m5_tile92 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile93 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile94 = "solutionLine.png"
-               image gram_m5_tile95 = "organic.png"
-               show gram_m5_tile94 at Position(xpos = 1250, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile95 at Position(xpos = 1202, xanchor = 0, ypos = 800, yanchor = 0)
+               image gram_h4_tile92 = "treeGreen.png"
+               image gram_h4_tile93 = "1_1_green.png"
+               show gram_h4_tile92 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile93 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile94 = "solutionLine.png"
+               image gram_h4_tile95 = "organic.png"
+               show gram_h4_tile94 at Position(xpos = 1250, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile95 at Position(xpos = 1202, xanchor = 0, ypos = 800, yanchor = 0)
 
-               image gram_m5_tile96 = "rightTreegreenlong.png"
-               image gram_m5_tile97 = "1_1_green.png"
-               show gram_m5_tile96 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile97 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile98 = "solutionLine.png"
-               image gram_m5_tile99 = "meat.png"
-               show gram_m5_tile98 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_m5_tile99 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
+               image gram_h4_tile96 = "rightTreegreenlong.png"
+               image gram_h4_tile97 = "1_1_green.png"
+               show gram_h4_tile96 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile97 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile98 = "solutionLine.png"
+               image gram_h4_tile99 = "meat.png"
+               show gram_h4_tile98 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
+               show gram_h4_tile99 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
             elif ((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
                     (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
                     (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11)):
-               image gram_m5_tile140 = "leftTreeredlong.png"
-               image gram_m5_tile141 = "1_1_red.png"
-               show gram_m5_tile140 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile141 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile142 = "treeRed.png"
-               image gram_m5_tile143 = "1_1_red.png"
-               show gram_m5_tile142 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile143 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_m5_tile144 = "rightTreeredlong.png"
-               image gram_m5_tile145 = "1_1_red.png"
-               show gram_m5_tile144 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_m5_tile145 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile140 = "leftTreeredlong.png"
+               image gram_h4_tile141 = "1_1_red.png"
+               show gram_h4_tile140 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile141 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile142 = "treeRed.png"
+               image gram_h4_tile143 = "1_1_red.png"
+               show gram_h4_tile142 at Position(xpos = 1250, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile143 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
+               image gram_h4_tile144 = "rightTreeredlong.png"
+               image gram_h4_tile145 = "1_1_red.png"
+               show gram_h4_tile144 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
+               show gram_h4_tile145 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
                
         elif ((letterK1in5 or letterK2in5 or letterM3in5 or letterA4in5 or letterT5in5 or letterA6in5 or letterH7in5 or letterA8in5 or letterT9in5 or letterA10in5 or letterT11in5) and
                 (letterK1in6 or letterK2in6 or letterM3in6 or letterA4in6 or letterT5in6 or letterA6in6 or letterH7in6 or letterA8in6 or letterT9in6 or letterA10in6 or letterT11in6) and
                 (letterK1in7 or letterK2in7 or letterM3in7 or letterA4in7 or letterT5in7 or letterA6in7 or letterH7in7 or letterA8in7 or letterT9in7 or letterA10in7 or letterT11in7)):
-            image gram_m5_tile128 = "leftTreeredlong1.png"
-            image gram_m5_tile129 = "1_1_red.png"
-            show gram_m5_tile128 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile129 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile130 = "treeRed.png"
-            image gram_m5_tile131 = "1_1_red.png"
-            show gram_m5_tile130 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile131 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_m5_tile132 = "rightTreeredlong1.png"
-            image gram_m5_tile133 = "1_1_red.png"
-            show gram_m5_tile132 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_m5_tile133 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)   
+            image gram_h4_tile128 = "leftTreeredlong1.png"
+            image gram_h4_tile129 = "1_1_red.png"
+            show gram_h4_tile128 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile129 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile130 = "treeRed.png"
+            image gram_h4_tile131 = "1_1_red.png"
+            show gram_h4_tile130 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile131 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
+            image gram_h4_tile132 = "rightTreeredlong1.png"
+            image gram_h4_tile133 = "1_1_red.png"
+            show gram_h4_tile132 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
+            show gram_h4_tile133 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)   
             
     elif ((letterK1in1 or letterK2in1 or letterM3in1 or letterA4in1 or letterT5in1 or letterA6in1 or letterH7in1 or letterA8in1 or letterT9in1 or letterA10in1 or letterT11in1) and
             (letterK1in2 or letterK2in2 or letterM3in2 or letterA4in2 or letterT5in2 or letterA6in2 or letterH7in2 or letterA8in2 or letterT9in2 or letterA10in2 or letterT11in2) and
             (letterK1in3 or letterK2in3 or letterM3in3 or letterA4in3 or letterT5in3 or letterA6in3 or letterH7in3 or letterA8in3 or letterT9in3 or letterA10in3 or letterT11in3)):
-        image gram_m5_tile116 = "leftTreeredlong2.png"
-        image gram_m5_tile117 = "1_1_red.png"
-        show gram_m5_tile116 at Position(xpos = 885, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile117 at Position(xpos = 850, xanchor = 0, ypos = 325, yanchor = 0)
-        image gram_m5_tile118 = "treeRed.png"
-        image gram_m5_tile119 = "1_1_red.png"
-        show gram_m5_tile118 at Position(xpos = 1250, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile119 at Position(xpos = 1250, xanchor = 0, ypos = 325, yanchor = 0)
-        image gram_m5_tile120 = "rightTreeredlong2.png"
-        image gram_m5_tile121 = "1_1_red.png"
-        show gram_m5_tile120 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_m5_tile121 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile116 = "leftTreeredlong2.png"
+        image gram_h4_tile117 = "1_1_red.png"
+        show gram_h4_tile116 at Position(xpos = 885, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile117 at Position(xpos = 850, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile118 = "treeRed.png"
+        image gram_h4_tile119 = "1_1_red.png"
+        show gram_h4_tile118 at Position(xpos = 1250, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile119 at Position(xpos = 1250, xanchor = 0, ypos = 325, yanchor = 0)
+        image gram_h4_tile120 = "rightTreeredlong2.png"
+        image gram_h4_tile121 = "1_1_red.png"
+        show gram_h4_tile120 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
+        show gram_h4_tile121 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
         
     #win conditions
     if (((letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and 
@@ -8562,163 +8562,163 @@ label gamefile_m5:
         (letterA4in11 == True or letterA6in11 == True or letterA8in11 == True or letterA10in11 == True)))):
 
 
-        image gram_m5_tile202 = "letterK.png"
-        image gram_m5_tile206 = "letterK.png"
-        image gram_m5_tile203 = "letterM.png"
-        image gram_m5_tile205 = "letterA.png"
-        image gram_m5_tile201 = "letterT.png"
-        image gram_m5_tile204 = "letterA.png"
-        image gram_m5_tile208 = "letterH.png"
-        image gram_m5_tile408 = "letterA.png"
-        image gram_m5_tile409 = "letterT.png"
-        image gram_m5_tile410 = "letterA.png"
-        image gram_m5_tile411 = "letterT.png"
+        image gram_h4_tile202 = "letterK.png"
+        image gram_h4_tile206 = "letterK.png"
+        image gram_h4_tile203 = "letterM.png"
+        image gram_h4_tile205 = "letterA.png"
+        image gram_h4_tile201 = "letterT.png"
+        image gram_h4_tile204 = "letterA.png"
+        image gram_h4_tile208 = "letterH.png"
+        image gram_h4_tile408 = "letterA.png"
+        image gram_h4_tile409 = "letterT.png"
+        image gram_h4_tile410 = "letterA.png"
+        image gram_h4_tile411 = "letterT.png"
         
-        show gram_m5_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_m5_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_m5_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
 
         "Access Gained"
 
-        jump eng_gram_h4#gram_m5#start
+        jump eng_gram_h4#gram_h4#start
 
     if attempts ==0:
            
-        hide gram_m5_tile42
-        hide gram_m5_tile43
-        hide gram_m5_tile44
-        hide gram_m5_tile45
-        hide gram_m5_tile46
-        hide gram_m5_tile47
-        hide gram_m5_tile48
-        hide gram_m5_tile49
-        hide gram_m5_tile50
-        hide gram_m5_tile51
-        hide gram_m5_tile52
-        hide gram_m5_tile53
-        hide gram_m5_tile54
-        hide gram_m5_tile55
-        hide gram_m5_tile56
-        hide gram_m5_tile57
-        hide gram_m5_tile58
-        hide gram_m5_tile59
-        hide gram_m5_tile60
-        hide gram_m5_tile61
-        hide gram_m5_tile62
-        hide gram_m5_tile63
-        hide gram_m5_tile64
-        hide gram_m5_tile65
-        hide gram_m5_tile66
-        hide gram_m5_tile67
-        hide gram_m5_tile68
-        hide gram_m5_tile69
-        hide gram_m5_tile70
-        hide gram_m5_tile71
-        hide gram_m5_tile72
-        hide gram_m5_tile73
-        hide gram_m5_tile74
-        hide gram_m5_tile75
-        hide gram_m5_tile76
-        hide gram_m5_tile77
-        hide gram_m5_tile78
-        hide gram_m5_tile79
-        hide gram_m5_tile80
-        hide gram_m5_tile81
-        hide gram_m5_tile82
-        hide gram_m5_tile83
-        hide gram_m5_tile84
-        hide gram_m5_tile85
-        hide gram_m5_tile86
-        hide gram_m5_tile87
-        hide gram_m5_tile88
-        hide gram_m5_tile89
-        hide gram_m5_tile90
-        hide gram_m5_tile91
-        hide gram_m5_tile92
-        hide gram_m5_tile93
-        hide gram_m5_tile94
-        hide gram_m5_tile95
-        hide gram_m5_tile96
-        hide gram_m5_tile97
-        hide gram_m5_tile98
-        hide gram_m5_tile99
-        hide gram_m5_tile100
-        hide gram_m5_tile101
-        hide gram_m5_tile102
-        hide gram_m5_tile103
-        hide gram_m5_tile104
-        hide gram_m5_tile105
-        hide gram_m5_tile106
-        hide gram_m5_tile107
-        hide gram_m5_tile108
-        hide gram_m5_tile109
-        hide gram_m5_tile110
-        hide gram_m5_tile111
-        hide gram_m5_tile112
-        hide gram_m5_tile113
-        hide gram_m5_tile114
-        hide gram_m5_tile115
-        hide gram_m5_tile116
-        hide gram_m5_tile117
-        hide gram_m5_tile118
-        hide gram_m5_tile119
-        hide gram_m5_tile120
-        hide gram_m5_tile121
-        hide gram_m5_tile122
-        hide gram_m5_tile123
-        hide gram_m5_tile124
-        hide gram_m5_tile125
-        hide gram_m5_tile126
-        hide gram_m5_tile127
-        hide gram_m5_tile128
-        hide gram_m5_tile129
-        hide gram_m5_tile130
-        hide gram_m5_tile131
-        hide gram_m5_tile132
-        hide gram_m5_tile133
-        hide gram_m5_tile134
-        hide gram_m5_tile135
-        hide gram_m5_tile136
-        hide gram_m5_tile137
-        hide gram_m5_tile138
-        hide gram_m5_tile139
-        hide gram_m5_tile140
-        hide gram_m5_tile141
-        hide gram_m5_tile142
-        hide gram_m5_tile143
-        hide gram_m5_tile144
-        hide gram_m5_tile145
+        hide gram_h4_tile42
+        hide gram_h4_tile43
+        hide gram_h4_tile44
+        hide gram_h4_tile45
+        hide gram_h4_tile46
+        hide gram_h4_tile47
+        hide gram_h4_tile48
+        hide gram_h4_tile49
+        hide gram_h4_tile50
+        hide gram_h4_tile51
+        hide gram_h4_tile52
+        hide gram_h4_tile53
+        hide gram_h4_tile54
+        hide gram_h4_tile55
+        hide gram_h4_tile56
+        hide gram_h4_tile57
+        hide gram_h4_tile58
+        hide gram_h4_tile59
+        hide gram_h4_tile60
+        hide gram_h4_tile61
+        hide gram_h4_tile62
+        hide gram_h4_tile63
+        hide gram_h4_tile64
+        hide gram_h4_tile65
+        hide gram_h4_tile66
+        hide gram_h4_tile67
+        hide gram_h4_tile68
+        hide gram_h4_tile69
+        hide gram_h4_tile70
+        hide gram_h4_tile71
+        hide gram_h4_tile72
+        hide gram_h4_tile73
+        hide gram_h4_tile74
+        hide gram_h4_tile75
+        hide gram_h4_tile76
+        hide gram_h4_tile77
+        hide gram_h4_tile78
+        hide gram_h4_tile79
+        hide gram_h4_tile80
+        hide gram_h4_tile81
+        hide gram_h4_tile82
+        hide gram_h4_tile83
+        hide gram_h4_tile84
+        hide gram_h4_tile85
+        hide gram_h4_tile86
+        hide gram_h4_tile87
+        hide gram_h4_tile88
+        hide gram_h4_tile89
+        hide gram_h4_tile90
+        hide gram_h4_tile91
+        hide gram_h4_tile92
+        hide gram_h4_tile93
+        hide gram_h4_tile94
+        hide gram_h4_tile95
+        hide gram_h4_tile96
+        hide gram_h4_tile97
+        hide gram_h4_tile98
+        hide gram_h4_tile99
+        hide gram_h4_tile100
+        hide gram_h4_tile101
+        hide gram_h4_tile102
+        hide gram_h4_tile103
+        hide gram_h4_tile104
+        hide gram_h4_tile105
+        hide gram_h4_tile106
+        hide gram_h4_tile107
+        hide gram_h4_tile108
+        hide gram_h4_tile109
+        hide gram_h4_tile110
+        hide gram_h4_tile111
+        hide gram_h4_tile112
+        hide gram_h4_tile113
+        hide gram_h4_tile114
+        hide gram_h4_tile115
+        hide gram_h4_tile116
+        hide gram_h4_tile117
+        hide gram_h4_tile118
+        hide gram_h4_tile119
+        hide gram_h4_tile120
+        hide gram_h4_tile121
+        hide gram_h4_tile122
+        hide gram_h4_tile123
+        hide gram_h4_tile124
+        hide gram_h4_tile125
+        hide gram_h4_tile126
+        hide gram_h4_tile127
+        hide gram_h4_tile128
+        hide gram_h4_tile129
+        hide gram_h4_tile130
+        hide gram_h4_tile131
+        hide gram_h4_tile132
+        hide gram_h4_tile133
+        hide gram_h4_tile134
+        hide gram_h4_tile135
+        hide gram_h4_tile136
+        hide gram_h4_tile137
+        hide gram_h4_tile138
+        hide gram_h4_tile139
+        hide gram_h4_tile140
+        hide gram_h4_tile141
+        hide gram_h4_tile142
+        hide gram_h4_tile143
+        hide gram_h4_tile144
+        hide gram_h4_tile145
 
-        show gram_m5_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_m5_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_m5_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_m5_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_m5_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
+        show gram_h4_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
+        show gram_h4_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
+        show gram_h4_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
         
         "You Lose Try Again"
 
-        jump eng_gram_h4#gram_m5#start
+        jump eng_gram_h4#gram_h4#start
     
 
 #    if letterK1in1 == True or letterK2in1 ==True or letterM3in1 ==True or letterA4in1 ==True:
-#        image gram_m5_tile109 = "leftTreegreen.png"
-#        #shows gram_m5_tiles
-#        show gram_m5_tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
+#        image gram_h4_tile109 = "leftTreegreen.png"
+#        #shows gram_h4_tiles
+#        show gram_h4_tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
 #    if letterK1in1 == False and letterK2in1 == False and letterM3in1 == False and letterA4in1 ==False:
-#        hide gram_m5_tile109      
+#        hide gram_h4_tile109      
     
-    jump gamefile_m5
+    jump gamefile_h4
