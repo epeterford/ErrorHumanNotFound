@@ -87,9 +87,9 @@ label loopLogic_easy5: #loopLogic_easy5
     image LLE_5_ifBT = "B_if_idle.png"
     image LLE_5_ifGT = "G_if_idle.png"
     image LLE_5_elseT = "G_else_idle.png"
-    show LLE_5_ifGT at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
-    show LLE_5_ifBT at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
-    show LLE_5_elseT at Position(xpos = elsex, xanchor = 0, ypos = elsey, yanchor = 0)
+    show LLE_5_ifGT at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLE_5_ifBT at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLE_5_elseT at Position(xpos = if3x, xanchor = 0, ypos = if3y, yanchor = 0)
    
     # check conditons for locations
     $ if1in1 = False
@@ -294,27 +294,27 @@ label Gamefile_lle5:
             if slot_name == "if_B_gate_return":
                 $ attempts +=1
                 if gate_name == "B_if_gate":
-                    $ ifBx = 1395
-                    $ ifBy = 645
-                    $ ifBin1 = False
-                    $ ifBin2 = False
-                    $ ifBin3 = False
+                    $ if2x = 1395
+                    $ if2y = 645
+                    $ if2in1 = False
+                    $ if2in2 = False
+                    $ if2in3 = False
             if slot_name == "if_G_gate_return":
                 $ attempts +=1
                 if gate_name == "G_if_gate":
-                    $ ifGx = 1525
-                    $ ifGy = 645
-                    $ ifGin1 = False
-                    $ ifGin2 = False
-                    $ ifGin3 = False
+                    $ if1x = 1525
+                    $ if1y = 645
+                    $ if1in1 = False
+                    $ if1in2 = False
+                    $ if1in3 = False
             if slot_name == "else_gate_return":
                 $ attempts +=1
                 if gate_name == "G_else_gate":
-                    $ elsex = 1655
-                    $ elsey = 645
-                    $ elsein1 = False
-                    $ elsein2 = False
-                    $ elsein3 = False
+                    $ if3x = 1655
+                    $ if3y = 645
+                    $ if3in1 = False
+                    $ if3in2 = False
+                    $ if3in3 = False
 
 
 #*******************************************
