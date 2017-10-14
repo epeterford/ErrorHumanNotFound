@@ -1696,7 +1696,7 @@ label eng_gram_e1:
 
 #Dragbacks
 
-   if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterJ_return" or slot_name == "LetterK_return" or slot_name == "LetterM_return" or slot_name == "LetterP_return" or slot_name == "LetterN_return" or slot_name == "LetterL_return")):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterJ_return" or slot_name == "LetterK_return" or slot_name == "LetterM_return" or slot_name == "LetterP_return" or slot_name == "LetterN_return" or slot_name == "LetterL_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":

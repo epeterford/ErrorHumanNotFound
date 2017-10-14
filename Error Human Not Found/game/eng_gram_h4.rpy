@@ -461,9 +461,9 @@ label eng_gram_h4:
     #attempts for players
     $ attempts = 15
     
-    call gamefile_m5
+    call gamefile_h4
 
-label gamefile_m5:
+label gamefile_h4:
     #image moon = "images/blankgram_m5_tile.png"
     #show blink
     #calls jigsaw game with the images selected
@@ -8005,15 +8005,15 @@ label gamefile_m5:
 
 
     if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterK_gate_return" or slot_name == "LetterM_gate_return" or slot_name == "LetterA_gate_return" or slot_name == "LetterT_gate_return" or slot_name == "LetterH_gate_return")):
-       $ temp_slot = slot_name
-       $ temp_gate = gate_name
-       if temp_slot != "" and temp_gate != "":
-           $ attempts -=1
+        $ temp_slot = slot_name
+        $ temp_gate = gate_name
+        if temp_slot != "" and temp_gate != "":
+            $ attempts -=1
     else:
-       if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
-           $ attempts -=1
-           $ temp_slot = slot_name
-           $ temp_gate = gate_name
+        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+            $ attempts -=1
+            $ temp_slot = slot_name
+            $ temp_gate = gate_name
            
     #Dragbacks *******************************************************************************************
             if slot_name == "letterK_gate_return":
