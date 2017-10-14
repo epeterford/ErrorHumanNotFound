@@ -422,17 +422,17 @@ label gamefile_lle1:
             if slot_name == "if_G_gate_return":
                 $ attempts +=1
                 if gate_name == "if_G_gate1":
-                    $ ifGx = 1445
-                    $ ifGy = 645
-                    $ ifGin1 = False
-                    $ ifGin2 = False
-                    $ ifGin3 = False
+                    $ if1x = 1445
+                    $ if1y = 645
+                    $ if1in1 = False
+                    $ if1in2 = False
+                    $ if1in3 = False
                 if gate_name == "if_G_gate2":
-                    $ ifGx = 1445
-                    $ ifGy = 645
-                    $ ifGin1 = False
-                    $ ifGin2 = False
-                    $ ifGin3 = False
+                    $ if2x = 1445
+                    $ if2y = 645
+                    $ if2in1 = False
+                    $ if2in2 = False
+                    $ if2in3 = False
             if slot_name == "else_gate_return":
                 $ attempts +=1
                 if gate_name == "else_gate":
