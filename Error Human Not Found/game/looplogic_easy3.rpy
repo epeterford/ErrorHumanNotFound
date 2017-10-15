@@ -687,18 +687,6 @@ screen loopLogic_easy3Scr:
     text ": " xpos 1605 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 1640 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
-    imagebutton:
-        idle "G_if_idle.png"
-        xpos 1525
-        ypos 645
-    imagebutton:
-        idle "B_if_idle.png"
-        xpos 1395
-        ypos 645
-    imagebutton: 
-        idle "G_Else_idle.png"
-        xpos 1655
-        ypos 645
     draggroup:
             #if gates
             drag:
