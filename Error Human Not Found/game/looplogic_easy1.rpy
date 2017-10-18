@@ -446,6 +446,8 @@ label gamefile_lle1:
     if (llNormal==2):
         play sound llPipe3
     if if1in2 == True or if2in2 == True:
+        image LLE_1_tile54 = "W_connect_horizontal.png"
+        show LLE_1_tile54 at Position(xpos = 525, xanchor = 0, ypos = 580, yanchor = 0)
         image LLE_1_tile34 = "G_vertical_short.png"
         show LLE_1_tile34 at Position(xpos = 525, xanchor = 0, ypos = 632, yanchor = 0)
         image LLE_1_tile87 = "W_connect_horizontal.png"
@@ -535,6 +537,7 @@ label gamefile_lle1:
                 $light3Sound -=1
    
     if if1in2 == False and if2in2 == False:
+        hide LLE_1_tile54
         hide LLE_1_tile34
         hide LLE_1_tile35
         hide LLE_1_tile36

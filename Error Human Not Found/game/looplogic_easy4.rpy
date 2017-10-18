@@ -306,7 +306,7 @@ label Gamefile_lle4:
             $ if3in3 = False
 
             
-    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "if_G_gate_return" or slot_name == "if_B_gate_return" or slot_name == "else_gate_return")):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "G_if_gate_return" or slot_name == "B_if_gate_return" or slot_name == "G_else_gate_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -318,7 +318,7 @@ label Gamefile_lle4:
             $ temp_slot = slot_name
             $ temp_gate = gate_name
 
-            if slot_name == "if_B_gate_return":
+            if slot_name == "B_if_gate_return":
                 $ attempts +=1
                 if gate_name == "B_if_gate":
                     $ if2x = 1395
@@ -326,7 +326,7 @@ label Gamefile_lle4:
                     $ if2in1 = False
                     $ if2in2 = False
                     $ if2in3 = False
-            if slot_name == "if_G_gate_return":
+            if slot_name == "G_if_gate_return":
                 $ attempts +=1
                 if gate_name == "G_if_gate":
                     $ if1x = 1525
@@ -334,7 +334,7 @@ label Gamefile_lle4:
                     $ if1in1 = False
                     $ if1in2 = False
                     $ if1in3 = False
-            if slot_name == "else_gate_return":
+            if slot_name == "G_else_gate_return":
                 $ attempts +=1
                 if gate_name == "G_else_gate":
                     $ if3x = 1655
