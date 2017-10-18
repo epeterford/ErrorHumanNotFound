@@ -256,7 +256,7 @@ label logicGate_mediumC3:
 label gamefileMC3:
     
     #calls game screen
-    call screen logicGatesMA1
+    call screen logicGatesMC3
     
     #the first logic gate *******************************************************************************
     if gate_name == "or_gate":
@@ -859,7 +859,7 @@ label gamefileMC3:
     
     jump gamefileMC3
 
-screen logicGatesMA1:
+screen logicGatesMC3:
     key 'h'action NullAction()# action Hide("")
     key 'K_PAGEUP' action NullAction()# action Hide("")
     key 'repeat_K_PAGEUP' action NullAction()# action Hide("")

@@ -142,7 +142,7 @@ label logicGate_mediumA2:
     image MA2tile07_00 = "r_horizontal.png"
     image MA2tile07_01 = "r_elbow_tl.png"
     image MA2tile07_11 = "y_elbow_tr.png"
-    image MA2tile07_12 = "NOT_Gate.png"
+    image MA2tile07_12 = "NOT_Gate_Blue.png"
     image MA2tile07_13 = "y_horizontal.png"
     show MA2tile07_00 at Position(xpos = 436, xanchor = 0, ypos = 758, yanchor = 0)
     show MA2tile07_01 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
@@ -151,18 +151,18 @@ label logicGate_mediumA2:
     show MA2tile07_13 at Position(xpos = 1411, xanchor = 0, ypos = 758, yanchor = 0)
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_r_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_g_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_r_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image MA2start1 = "light_r_on.png"
+    show MA2start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image MA2start2 = "light_r_on.png"
+    show MA2start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image MA2start3 = "light_g_on.png"
+    show MA2start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image MA2start4 = "light_r_on.png"
+    show MA2start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
-    image end4 = "light_g_off.png"
-    show end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
+    image MA2end4 = "light_g_off.png"
+    show MA2end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
     
 #    ****************************************************
 #    **********template makers stop here*****************

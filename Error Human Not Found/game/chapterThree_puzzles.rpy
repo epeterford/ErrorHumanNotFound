@@ -1013,6 +1013,14 @@ label choose_gramMed:
     stop channel06 fadeout 1.0
     stop channel07 fadeout 1.0
     stop channel08 fadeout 1.0
+    stop channel09 fadeout 1.0
+    stop channel10 fadeout 1.0
+    stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0
+    stop channel14 fadeout 1.0
+    stop channel15 fadeout 1.0
+    stop channel16 fadeout 1.0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $gramMedHints=0
 #    if (gramMed_attempts == 0): #UNCOMMENT ME WHEN TUTORIAL IS IN
@@ -1026,6 +1034,13 @@ label choose_gramMed:
     $gramRow1_C_sound = 0
     $gramRow2_L_sound = 0
     $gramRow2_R_sound = 0
+    $gramRow2_C_sound = 0
+    $gramRow2_R2_sound = 0
+    $gramRow3_L_sound = 0
+    $gramRow3_R_sound = 0
+    $gramRow3_L2_sound = 0
+    $gramRow3_R2_sound = 0
+    
     jump gram_m1 #REMOVE THIS AFTER TESTING
     $randomNumberMedGram = renpy.random.randint(0,4)
     if randomNumberMedGram==0:
@@ -1056,11 +1071,11 @@ label hints_gramMed_1:
     show other darken onlayer screens
     $gramMedHints +=1
     if (remainder==0):
-        g "Hint 1 for med 1."
+        g "There may be extra rules not used in this particular solution. For example, there are two one-to-one substitutions, but only one spot in the tree for a one-to-one substitution."
     if (remainder==1):
-        g "Hint 2 for med 2."
+        g "The only intermediary substitutions involve T, ."
     if (remainder==2):
-        g "Hint 3 for med 3."
+        g "The terminal letters are B and R, so the bottom row of the tree should contain all B's and R's."
     hide other darken onlayer screens
     hide gram_m1_tile202
     hide gram_m1_tile206 

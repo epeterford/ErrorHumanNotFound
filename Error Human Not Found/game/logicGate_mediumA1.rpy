@@ -156,19 +156,19 @@ label logicGate_mediumA1:
     show tile09_11 at Position(xpos = 1261, xanchor = 0, ypos = 908, yanchor = 0)
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_r_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_g_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_g_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image MA1start1 = "light_r_on.png"
+    show MA1start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image MA1start2 = "light_r_on.png"
+    show MA1start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image MA1start3 = "light_g_on.png"
+    show MA1start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image MA1start4 = "light_g_on.png"
+    show MA1start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
 
-    image end4 = "light_g_off.png"
-    show end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
+    image MA1end4 = "light_g_off.png"
+    show MA1end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
 
     
     

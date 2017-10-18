@@ -3275,7 +3275,7 @@ label gamefile_llh2:
             show LLH_2_colorTile3 at Position(xpos = 200, xanchor = 0, ypos = 275, yanchor = 0)
             image LLH_2_colorTile4 = "R_vertical_ll.png"
             show LLH_2_colorTile4 at Position(xpos = 200, xanchor = 0, ypos = 400, yanchor = 0)
-            image LLH_2_colorTile5 = "G_T_left.png"
+            image LLH_2_colorTile5 = "G_T_leftLL.png"
             show LLH_2_colorTile5 at Position(xpos = 130, xanchor = 0, ypos = 508, yanchor = 0)
         else:
             hide LLH_2_colorTile3
@@ -3288,7 +3288,7 @@ label gamefile_llh2:
             show LLH_2_colorTile6 at Position(xpos = 197, xanchor = 0, ypos = 275, yanchor = 0)
             image LLH_2_colorTile7 = "G_vertical_ll.png"
             show LLH_2_colorTile7 at Position(xpos = 197, xanchor = 0, ypos = 400, yanchor = 0)
-            image LLH_2_colorTile8 = "R_T_left.png"
+            image LLH_2_colorTile8 = "R_T_leftLL.png"
             show LLH_2_colorTile8 at Position(xpos = 130, xanchor = 0, ypos = 508, yanchor = 0)
         else:
             hide LLH_2_colorTile6
@@ -3328,7 +3328,7 @@ label gamefile_llh2:
             show LLH_2_colorTile14 at Position(xpos = 200, xanchor = 0, ypos = 275, yanchor = 0)
             image LLH_2_colorTile15 = "B_vertical.png"
             show LLH_2_colorTile15 at Position(xpos = 200, xanchor = 0, ypos = 400, yanchor = 0)
-            image LLH_2_colorTile16 = "R_T_left.png"
+            image LLH_2_colorTile16 = "R_T_leftLL.png"
             show LLH_2_colorTile16 at Position(xpos = 130, xanchor = 0, ypos = 508, yanchor = 0)
         else:
             hide LLH_2_colorTile14
