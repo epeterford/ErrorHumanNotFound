@@ -2459,11 +2459,12 @@ label gamefile_m2:
             $ letterJ7in7 = True
 
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+#Dragbacks
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterM_return" or slot_name == "LetterK_return" or slot_name == "LetterR_return" or slot_name == "LetterJ_return" or slot_name == "LetterT_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
-            $ attempts -=1
+           $ attempts -=1
     else:
         if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
             $ attempts -=1

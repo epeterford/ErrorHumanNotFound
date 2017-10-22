@@ -3394,11 +3394,14 @@ label gamefile_m4:
             $ letterM8in7 = False
             $ letterM8in8 = True
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+ #Dragbacks
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterT_return" or slot_name == "LetterM_return" or slot_name == "LetterS_return" or slot_name == "LetterA_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
             $ attempts -=1
+            
+      
     else:
         if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
             $ attempts -=1
