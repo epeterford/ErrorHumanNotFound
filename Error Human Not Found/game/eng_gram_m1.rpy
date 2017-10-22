@@ -2428,7 +2428,8 @@ label gamefile_m1:
             $ letterT7in6 = False
             $ letterT7in7 = True
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+#Dragbacks
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterT_return" or slot_name == "LetterR_return" or slot_name == "LetterB_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
