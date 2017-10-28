@@ -6175,7 +6175,8 @@ label gamefile_m5:
 
 
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+#Dragbacks
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterM_return" or slot_name == "LetterK_return" or slot_name == "LetterJ_return" or slot_name == "LetterR_return" or slot_name == "LetterT_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":

@@ -752,27 +752,17 @@ label gamefile_llm2:
 
 
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not
+        (slot_name == "G_if_gate_return" or slot_name == "B_if_gate_return" or slot_name == "G_else_gate_return" or slot_name == "While_gate_green_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
             $ attempts -=1
-            
-      
     else:
-        if slot_name != "null" and ((temp_slot != slot_name and gate_name == temp_gate) or (temp_slot == slot_name and gate_name != temp_gate) or (temp_slot != slot_name and gate_name != temp_gate)):
+        if slot_name != "null" and (temp_slot != slot_name or gate_name != temp_gate):
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
-
-            if slot_name == "B_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate" or gate_name == "While_gate"):
-                $ attempts +=1
-            if slot_name == "G_if_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate" or gate_name == "While_gate"):
-                $ attempts +=1
-            if slot_name == "G_else_gate_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate" or gate_name == "While_gate"):
-                $ attempts +=1
-            if slot_name == "While_gate_green_return" and (gate_name == "B_if_gate" or gate_name == "G_if_gate" or gate_name == "G_else_gate" or gate_name == "While_gate"):
-                $ attempts +=1
 
 
 #*******************************************
