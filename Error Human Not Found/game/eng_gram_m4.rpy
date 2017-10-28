@@ -34,16 +34,16 @@ screen logicGates_med4:
         xpos 260
         ypos 200
         focus_mask True
-        action Jump("hints_gramMed_3")
+        action Jump("hints_gramMed_4")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
     imagebutton:
         idle "button_empty2.png"
         xpos 178
         ypos 285
-    text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
-    text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
         drag:
@@ -357,7 +357,7 @@ label gram_m4:#start:
     $ temp_gate = ""
 
     #attempts for players
-    $ attempts = 15
+    $ attempts = 11
     
     call gamefile_m4
 
@@ -3509,7 +3509,14 @@ label gamefile_m4:
                     $ letterA7in8 = False
 
 
-
+    #START SOUNDS HERE
+    $gramNormal = renpy.random.randint(0,2)
+    if (gramNormal==0):
+        play sound gramTree2
+    if (gramNormal==1):
+        play sound gramTree3
+    if (gramNormal==2):
+        play sound gramTree4
     if (letterS5in1 == True or letterS3in1 == True) and (letterT1in2 == True or letterT4in2 == True):
         image gram_m4_tile42 = "leftTreegreenlong1.png"
         image gram_m4_tile43 = "1_1_green.png"
@@ -3520,10 +3527,11 @@ label gamefile_m4:
         image gram_m4_tile63 = "1_1_green.png"
         show gram_m4_tile62 at Position(xpos = 1310, xanchor = 0, ypos = 230, yanchor = 0)
         show gram_m4_tile63 at Position(xpos = 1490, xanchor = 0, ypos = 300, yanchor = 0)
-        
+        if gramRow1_C_sound_right1==0:
+            $gramRow1_C_sound_right1 +=1
+            play sound gramTree1
         if (letterS3in3 == True or letterS5in3 == True) and (letterT1in4 == True or letterT4in4 == True):
             image gram_m4_tile44 = "leftTreegreenlong.png"
-            #image gram_m4_tile44 = "leftTreegreenlong.png"
             image gram_m4_tile45 = "1_1_green.png"
             image gram_m4_tile46 = "solutionLine_grey.png"
             image gram_m4_tile47 = "solutionLine_grey.png"
@@ -3532,7 +3540,6 @@ label gamefile_m4:
             image gram_m4_tile49 = "epsilon.png"
 
             show gram_m4_tile44 at Position(xpos = 900, xanchor = 0, ypos = 400, yanchor = 0)
-            #show gram_m4_tile44 at Position(xpos = 1000, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile45 at Position(xpos = 860, xanchor = 0, ypos = 475, yanchor = 0)
             show gram_m4_tile46 at Position(xpos = 860, xanchor = 0, ypos = 572, yanchor = 0)
             show gram_m4_tile47 at Position(xpos = 860, xanchor = 0, ypos = 646, yanchor = 0)
@@ -3542,39 +3549,36 @@ label gamefile_m4:
 
             image gram_m4_tile56 = "rightTreegreenlong.png"
             image gram_m4_tile57 = "1_1_green.png"
-            #image gram_m4_tile58 = "solutionLine.png"
-            #image gram_m4_tile209 = "solutionLine.png"
-            #image gram_m4_tile210 = "solutionLine.png"
-            #image gram_m4_tile59 = "a.png"
             show gram_m4_tile56 at Position(xpos = 1070, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile57 at Position(xpos = 1160, xanchor = 0, ypos = 475, yanchor = 0)
-            #show gram_m4_tile58 at Position(xpos = 1185, xanchor = 0, ypos = 570, yanchor = 0)
-            #show gram_m4_tile209 at Position(xpos = 1185, xanchor = 0, ypos = 662, yanchor = 0)
-            #show gram_m4_tile210 at Position(xpos = 1185, xanchor = 0, ypos = 755, yanchor = 0)
-            #show gram_m4_tile59 at Position(xpos = 1150, xanchor = 0, ypos = 800, yanchor = 0)
-
+            if gramRow2_L_sound_right1 == 0:
+                play sound gramTree1
+                queue sound gramText3
+                $gramRow2_L_sound_right1 +=1
             if (letterA6in7 == True or letterA7in7 == True) and (letterM2in8 == True or letterM8in8 == True):
-               #image gram_m4_tile50 = "leftTreegreen.png"
-               image gram_m4_tile50 = "leftTreegreen.png"
-               image gram_m4_tile51 = "1_1_green.png"
-               image gram_m4_tile52 = "solutionLine.png"
-               image gram_m4_tile53 = "a.png"
-               #show gram_m4_tile50 at Position(xpos = 960, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile50 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile51 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
-               show gram_m4_tile52 at Position(xpos = 1070, xanchor = 0, ypos = 750, yanchor = 0)
-               show gram_m4_tile53 at Position(xpos = 1030, xanchor = 0, ypos = 800, yanchor = 0)
+                #image gram_m4_tile50 = "leftTreegreen.png"
+                image gram_m4_tile50 = "leftTreegreen.png"
+                image gram_m4_tile51 = "1_1_green.png"
+                image gram_m4_tile52 = "solutionLine.png"
+                image gram_m4_tile53 = "a.png"
+                #show gram_m4_tile50 at Position(xpos = 960, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile50 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile51 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
+                show gram_m4_tile52 at Position(xpos = 1070, xanchor = 0, ypos = 750, yanchor = 0)
+                show gram_m4_tile53 at Position(xpos = 1030, xanchor = 0, ypos = 800, yanchor = 0)
 
-               image gram_m4_tile215 = "rightTreegreen.png"
-               image gram_m4_tile216 = "1_1_green.png"
-               show gram_m4_tile215 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile216 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
-               image gram_m4_tile210 = "solutionLine.png"
-               image gram_m4_tile59 = "b.png"
-               show gram_m4_tile210 at Position(xpos = 1230, xanchor = 0, ypos = 750, yanchor = 0)
-               show gram_m4_tile59 at Position(xpos = 1185, xanchor = 0, ypos = 800, yanchor = 0)
-
-
+                image gram_m4_tile215 = "rightTreegreen.png"
+                image gram_m4_tile216 = "1_1_green.png"
+                show gram_m4_tile215 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile216 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
+                image gram_m4_tile210 = "solutionLine.png"
+                image gram_m4_tile59 = "b.png"
+                show gram_m4_tile210 at Position(xpos = 1230, xanchor = 0, ypos = 750, yanchor = 0)
+                show gram_m4_tile59 at Position(xpos = 1185, xanchor = 0, ypos = 800, yanchor = 0)
+                if gramRow3_C_sound_right1 ==0:
+                    $gramRow3_C_sound_right1 +=1
+                    play sound gramTree1
+                    queue sound gramText1
 
             if (letterA6in7 == False and letterA7in7 == False) or (letterM2in8 == False and letterM8in8 == False):
                hide gram_m4_tile50
@@ -3586,39 +3590,47 @@ label gamefile_m4:
                hide gram_m4_tile216
                hide gram_m4_tile210
                hide gram_m4_tile59
+               if gramRow3_C_sound_right1 == 1:
+                   $gramRow3_C_sound_right1 -=1
 
-            if (letterT1in7 == True or letterM2in7 == True or letterS3in7 == True or letterT4in7 == True or letterS5in7 == True or letterA6in7 == True or letterA7in7 == True or letterM8in7 == True) and (letterT1in8 == True or letterS3in8 == True or letterT4in8 == True or letterS5in8 == True or letterA6in8 == True or letterA7in8 == True ):
-               image gram_m4_tile260 = "leftTreered.png"
-               image gram_m4_tile261 = "1_1_red.png"
-               show gram_m4_tile260 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile261 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
-               image gram_m4_tile262 = "rightTreered.png"
-               image gram_m4_tile263 = "1_1_red.png"
-               show gram_m4_tile262 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile263 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
-
-            if (letterT1in7 == False and letterM2in7 == False and letterS3in7 == False and letterT4in7 == False and letterS5in7 == False and letterA6in7 == False and letterA7in7 == False and letterM8in7 == False) or (letterT1in8 == False and letterS3in8 == False and letterT4in8 == False and letterS5in8 == False and letterA6in8 == False and letterA7in8 == False):
-               hide gram_m4_tile260
-               hide gram_m4_tile261
-               hide gram_m4_tile262
-               hide gram_m4_tile263
-
-            if (letterT1in7 == True or letterM2in7 == True or letterS3in7 == True or letterT4in7 == True or letterS5in7 == True or letterM8in7 == True) and (letterT1in8 == True or letterM2in8 == True or letterS3in8 == True or letterT4in8 == True or letterS5in8 == True or letterA6in8 == True or letterA7in8 == True or letterM8in8 == True):
-               image gram_m4_tile264 = "leftTreered.png"
-               image gram_m4_tile265 = "1_1_red.png"
-               show gram_m4_tile264 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile265 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
-               image gram_m4_tile266 = "rightTreered.png"
-               image gram_m4_tile267 = "1_1_red.png"
-               show gram_m4_tile266 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
-               show gram_m4_tile267 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
-
-            if (letterT1in7 == False and letterM2in7 == False and letterS3in7 == False and letterT4in7 == False and letterS5in7 == False and letterM8in7 == False) or (letterT1in8 == False and letterM2in8 == False and letterS3in8 == False and letterT4in8 == False and letterS5in8 == False and letterA6in8 == False and letterA7in8 == False and letterM8in8 == False):
-               hide gram_m4_tile264
-               hide gram_m4_tile265
-               hide gram_m4_tile266
-               hide gram_m4_tile267
-
+            if (letterM2in7 == True or letterA6in7 == True or letterA7in7 == True or letterM8in7 == True) and (letterA6in8 == True or letterA7in8 == True ):
+                image gram_m4_tile260 = "leftTreered.png"
+                image gram_m4_tile261 = "1_1_red.png"
+                show gram_m4_tile260 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile261 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
+                image gram_m4_tile262 = "rightTreered.png"
+                image gram_m4_tile263 = "1_1_red.png"
+                show gram_m4_tile262 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile263 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
+                if gramRow3_C_sound_wrong1==0:
+                    $gramRow3_C_sound_wrong1 +=1
+                    play sound gramTree5
+            if (letterM2in7 == False and letterA6in7 == False and letterA7in7 == False and letterM8in7 == False) or (letterA6in8 == False and letterA7in8 == False):
+                hide gram_m4_tile260
+                hide gram_m4_tile261
+                hide gram_m4_tile262
+                hide gram_m4_tile263
+                if gramRow3_C_sound_wrong1 ==1:
+                    $gramRow3_C_sound_wrong1 -=1
+            if (letterM2in7 == True or letterM8in7 == True) and (letterM2in8 == True or letterM8in8 == True):
+                image gram_m4_tile264 = "leftTreered.png"
+                image gram_m4_tile265 = "1_1_red.png"
+                show gram_m4_tile264 at Position(xpos = 1120, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile265 at Position(xpos = 1080, xanchor = 0, ypos = 650, yanchor = 0)
+                image gram_m4_tile266 = "rightTreered.png"
+                image gram_m4_tile267 = "1_1_red.png"
+                show gram_m4_tile266 at Position(xpos = 1220, xanchor = 0, ypos = 575, yanchor = 0)
+                show gram_m4_tile267 at Position(xpos = 1235, xanchor = 0, ypos = 650, yanchor = 0)
+                if gramRow3_C_sound_wrong2 ==0:
+                    $gramRow3_C_sound_wrong2 +=1
+                    play sound gramTree5
+            if (letterM2in7 == False and letterM8in7 == False) or (letterM2in8 == False and letterM8in8 == False):
+                hide gram_m4_tile264
+                hide gram_m4_tile265
+                hide gram_m4_tile266
+                hide gram_m4_tile267
+                if gramRow3_C_sound_wrong2 ==1:
+                    $gramRow3_C_sound_wrong2 -=1
         if (letterS3in3 == False and letterS5in3 == False) or (letterT1in4 == False and letterT4in4 == False):
             hide gram_m4_tile44
             hide gram_m4_tile45
@@ -3639,8 +3651,6 @@ label gamefile_m4:
 
             hide gram_m4_tile56
             hide gram_m4_tile57
-            hide gram_m4_tile58
-            hide gram_m4_tile209
             hide gram_m4_tile210
             hide gram_m4_tile59
 
@@ -3653,7 +3663,9 @@ label gamefile_m4:
             hide gram_m4_tile265
             hide gram_m4_tile266
             hide gram_m4_tile267
-     
+            if gramRow2_L_sound_right1 == 1:
+                $gramRow2_L_sound_right1 -=1
+        
         if (letterT1in3 == True or letterM2in3 == True or letterS3in3 == True or letterT4in3 == True or letterS5in3 == True or letterA6in3 == True or letterA7in3 == True or letterM8in3 == True) and (letterM2in4 == True or letterS3in4 == True or letterS5in4 == True or letterA6in4 == True or letterA7in4 == True or letterM8in4 == True):
             image gram_m4_tile54 = "leftTreeredlong.png"
             image gram_m4_tile55 = "1_1_red.png"
@@ -3664,14 +3676,19 @@ label gamefile_m4:
             image gram_m4_tile61 = "1_1_red.png"
             show gram_m4_tile60 at Position(xpos = 1070, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile61 at Position(xpos = 1160, xanchor = 0, ypos = 475, yanchor = 0)
+            if gramRow2_L_sound_wrong1 ==0:
+                $gramRow2_L_sound_wrong1 +=1
+                play sound gramTree5
         if (letterT1in3 == False and letterM2in3 == False and letterS3in3 == False and letterT4in3 == False and letterS5in3 == False and letterA6in3 == False and letterA7in3 == False and letterM8in3 == False) or (letterM2in4 == False and letterS3in4 == False and letterS5in4 == False and letterA6in4 == False and letterA7in4 == False and letterM8in4 == False):
             hide gram_m4_tile54
             hide gram_m4_tile55
 
             hide gram_m4_tile60
             hide gram_m4_tile61
-
-        if (letterT1in3 == True or letterM2in3 == True or letterT4in3 == True or letterA6in3 == True or letterA7in3 == True or letterM8in3 == True) and (letterT1in4 == True or letterM2in4 == True or letterS3in4 == True or letterT4in4 == True or letterS5in4 == True or letterA6in4 == True or letterA7in4 == True or letterM8in4 == True):
+            if gramRow2_L_sound_wrong1==1:
+                $gramRow2_L_sound_wrong1 -=1
+                
+        if (letterT1in3 == True or letterM2in3 == True or letterT4in3 == True or letterA6in3 == True or letterA7in3 == True or letterM8in3 == True) and (letterT1in4 == True or letterT4in4 == True):
             image gram_m4_tile254 = "leftTreeredlong.png"
             image gram_m4_tile255 = "1_1_red.png"
             show gram_m4_tile254 at Position(xpos = 900, xanchor = 0, ypos = 400, yanchor = 0)
@@ -3681,14 +3698,19 @@ label gamefile_m4:
             image gram_m4_tile261 = "1_1_red.png"
             show gram_m4_tile260 at Position(xpos = 1070, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile261 at Position(xpos = 1160, xanchor = 0, ypos = 475, yanchor = 0)
-        if (letterT1in3 == False and letterM2in3 == False and letterT4in3 == False and letterA6in3 == False and letterA7in3 == False and letterM8in3 == False) or (letterT1in4 == False and letterM2in4 == False and letterS3in4 == False and letterT4in4 == False and letterS5in4 == False and letterA6in4 == False and letterA7in4 == False and letterM8in4 == False):
+            if gramRow2_L_sound_wrong2==0:
+                $gramRow2_L_sound_wrong2 +=1
+                play sound gramTree5
+        if (letterT1in3 == False and letterM2in3 == False and letterT4in3 == False and letterA6in3 == False and letterA7in3 == False and letterM8in3 == False) or (letterT1in4 == False and letterT4in4 == False):
             hide gram_m4_tile254
             hide gram_m4_tile255
 
             hide gram_m4_tile260
             hide gram_m4_tile261
+            if gramRow2_L_sound_wrong2 == 1:
+                $gramRow2_L_sound_wrong2 -=1
 
-        if (letterT4in5 == True or letterA6in5 == True or letterA7in5 == True) and (letterM2in6 == True or letterM8in6 == True):
+        if (letterA6in5 == True or letterA7in5 == True) and (letterM2in6 == True or letterM8in6 == True):
             image gram_m4_tile64 = "leftTreegreenlong.png"
             image gram_m4_tile65 = "1_1_green.png"
             image gram_m4_tile66 = "solutionLine.png"
@@ -3714,9 +3736,11 @@ label gamefile_m4:
             show gram_m4_tile213 at Position(xpos = 1640, xanchor = 0, ypos = 662, yanchor = 0)
             show gram_m4_tile214 at Position(xpos = 1640, xanchor = 0, ypos = 755, yanchor = 0)
             show gram_m4_tile73 at Position(xpos = 1620, xanchor = 0, ypos = 800, yanchor = 0)
-
-
-        if (letterT4in5 == False and letterA6in5 == False and letterA7in5 == False) or (letterM2in6 == False and letterM8in6 == False):
+            if gramRow2_R_sound_right1==0:
+                $gramRow2_R_sound_right1 +=1
+                play sound gramTree1
+                queue sound gramText2
+        if (letterA6in5 == False and letterA7in5 == False) or (letterM2in6 == False and letterM8in6 == False):
             hide gram_m4_tile64
             hide gram_m4_tile65
             hide gram_m4_tile66
@@ -3730,6 +3754,8 @@ label gamefile_m4:
             hide gram_m4_tile213
             hide gram_m4_tile214
             hide gram_m4_tile73
+            if gramRow2_R_sound_right1==1:
+                $gramRow2_R_sound_right-=1
 
         if (letterT1in5 == True or letterM2in5 == True or letterS3in5 == True or letterT4in5 == True or letterS5in5 == True or letterA6in5 == True or letterA7in5 == True or letterM8in5 == True) and (letterT1in6 == True or letterS3in6 == True or letterT4in6 == True or letterS5in6 == True or letterA6in6 == True or letterA7in6 == True):
             image gram_m4_tile68 = "leftTreeredlong.png"
@@ -3741,15 +3767,19 @@ label gamefile_m4:
             image gram_m4_tile75 = "1_1_red.png"
             show gram_m4_tile74 at Position(xpos = 1550, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile75 at Position(xpos = 1640, xanchor = 0, ypos = 475, yanchor = 0)
-
+            if gramRow2_R_sound_wrong1 ==0:
+                $gramRow2_R_sound_wrong1 +=1
+                play sound gramTree5
         if (letterT1in5 == False and letterM2in5 == False and letterS3in5 == False and letterT4in5 == False and letterS5in5 == False and letterA6in5 == False and letterA7in5 == False and letterM8in5 == False) or (letterT1in6 == False and letterS3in6 == False and letterT4in6 == False and letterS5in6 == False and letterA6in6 == False and letterA7in6 == False):
             hide gram_m4_tile68
             hide gram_m4_tile69
 
             hide gram_m4_tile74
             hide gram_m4_tile75
-
-        if (letterT1in5 == True or letterM2in5 == True or letterS3in5 == True or letterT4in5 == True or letterS5in5 == True or letterM8in5 == True) and (letterT1in6 == True or letterM2in6 == True or letterS3in6 == True or letterT4in6 == True or letterS5in6 == True or letterA6in6 == True or letterA7in6 == True or letterM8in6 == True):
+            if gramRow2_R_sound_wrong1 ==1:
+                $gramRow2_R_sound_wrong1 -=1
+                
+        if (letterT1in5 == True or letterM2in5 == True or letterS3in5 == True or letterT4in5 == True or letterS5in5 == True or letterM8in5 == True) and (letterM2in6 == True or letterM8in6 == True):
             image gram_m4_tile76 = "leftTreeredlong.png"
             image gram_m4_tile77 = "1_1_red.png"
             show gram_m4_tile76 at Position(xpos = 1380, xanchor = 0, ypos = 400, yanchor = 0)
@@ -3759,15 +3789,20 @@ label gamefile_m4:
             image gram_m4_tile79 = "1_1_red.png"
             show gram_m4_tile78 at Position(xpos = 1550, xanchor = 0, ypos = 400, yanchor = 0)
             show gram_m4_tile79 at Position(xpos = 1640, xanchor = 0, ypos = 475, yanchor = 0)
-
-        if (letterT1in5 == False and letterM2in5 == False and letterS3in5 == False and letterT4in5 == False and letterS5in5 == False and letterM8in5 == False) or (letterT1in6 == False and letterM2in6 == False and letterS3in6 == False and letterT4in6 == False and letterS5in6 == False and letterA6in6 == False and letterA7in6 == False and letterM8in6 == False):
+            if gramRow2_R_sound_wrong2 ==0:
+                $gramRow2_R_sound_wrong2 +=1
+                play sound gramTree5
+        if (letterT1in5 == False and letterM2in5 == False and letterS3in5 == False and letterT4in5 == False and letterS5in5 == False and letterM8in5 == False) or (letterM2in6 == False and letterM8in6 == False):
             hide gram_m4_tile76
             hide gram_m4_tile77
 
             hide gram_m4_tile78
             hide gram_m4_tile79
-
+            if gramRow2_R_sound_wrong2 ==1:
+                $gramRow2_R_sound_wrong2 -=1
     if (letterS5in1 == False and letterS3in1 == False) or (letterT1in2 == False and letterT4in2 == False):
+        if gramRow1_C_sound_right1==1:
+            $gramRow1_C_sound_right1 -=1
         hide gram_m4_tile42
         hide gram_m4_tile43
         hide gram_m4_tile44
@@ -3799,8 +3834,6 @@ label gamefile_m4:
 
         hide gram_m4_tile56
         hide gram_m4_tile57
-        hide gram_m4_tile58
-        hide gram_m4_tile209
         hide gram_m4_tile210
         hide gram_m4_tile59
         hide gram_m4_tile60
@@ -3827,44 +3860,49 @@ label gamefile_m4:
         hide gram_m4_tile74
         hide gram_m4_tile75
 
-
     if (letterT1in1 == True or letterM2in1 == True or letterS3in1 == True or letterT4in1 == True or letterS5in1 == True or letterA6in1 == True or letterA7in1 == True or letterM8in1 == True) and (letterM2in2 == True or letterS3in2 == True or letterS5in2 == True or letterA6in2 == True or letterA7in2 == True or letterM8in2 == True):
-         image gram_m4_tile90 = "leftTreeredlong1.png"
-         image gram_m4_tile91 = "1_1_red.png"
-         show gram_m4_tile90 at Position(xpos = 1040, xanchor = 0, ypos = 230, yanchor = 0)
-         show gram_m4_tile91 at Position(xpos = 1010, xanchor = 0, ypos = 300, yanchor = 0)
+        image gram_m4_tile90 = "leftTreeredlong1.png"
+        image gram_m4_tile91 = "1_1_red.png"
+        show gram_m4_tile90 at Position(xpos = 1040, xanchor = 0, ypos = 230, yanchor = 0)
+        show gram_m4_tile91 at Position(xpos = 1010, xanchor = 0, ypos = 300, yanchor = 0)
 
-         image gram_m4_tile92 = "rightTreeredlong1.png"
-         image gram_m4_tile93 = "1_1_red.png"
-         show gram_m4_tile92 at Position(xpos = 1310, xanchor = 0, ypos = 230, yanchor = 0)
-         show gram_m4_tile93 at Position(xpos = 1490, xanchor = 0, ypos = 300, yanchor = 0)
+        image gram_m4_tile92 = "rightTreeredlong1.png"
+        image gram_m4_tile93 = "1_1_red.png"
+        show gram_m4_tile92 at Position(xpos = 1310, xanchor = 0, ypos = 230, yanchor = 0)
+        show gram_m4_tile93 at Position(xpos = 1490, xanchor = 0, ypos = 300, yanchor = 0)
+        if gramRow1_C_sound_wrong1 == 0:
+            $gramRow1_C_sound_wrong1 +=1
+            play sound gramTree5
+    if (letterT1in1 == False and letterM2in1 == False and letterS3in1 == False and letterT4in1 == False and letterS5in1 == False and letterA6in1 == False and letterA7in1 == False and letterM8in1 == False) or (letterM2in2 == False and letterS3in2 == False and letterS5in2 == False and letterA6in2 == False and letterA7in2 == False and letterM8in2 == False):
+        hide gram_m4_tile90
+        hide gram_m4_tile91
 
-    elif (letterT1in1 == False and letterM2in1 == False and letterS3in1 == False and letterT4in1 == False and letterS5in1 == False and letterA6in1 == False and letterA7in1 == False and letterM8in1 == False) or (letterM2in2 == False and letterS3in2 == False and letterS5in2 == False and letterA6in2 == False and letterA7in2 == False and letterM8in2 == False):
-         hide gram_m4_tile90
-         hide gram_m4_tile91
+        hide gram_m4_tile92
+        hide gram_m4_tile93
+        if gramRow1_C_sound_wrong1==1:
+            $gramRow1_C_sound_wrong1 -=1
+            
+    if (letterT1in1 == True or letterM2in1 == True or letterT4in1 == True or letterA6in1 == True or letterA7in1 == True or letterM8in1 == True) and (letterT1in2 == True or letterT4in2 == True ):
+        image gram_m4_tile94 = "leftTreeredlong1.png"
+        image gram_m4_tile95 = "1_1_red.png"
+        show gram_m4_tile94 at Position(xpos = 1040, xanchor = 0, ypos = 230, yanchor = 0)
+        show gram_m4_tile95 at Position(xpos = 1010, xanchor = 0, ypos = 300, yanchor = 0)
 
-         hide gram_m4_tile92
-         hide gram_m4_tile93
-
-    if (letterT1in1 == True or letterM2in1 == True or letterT4in1 == True or letterA6in1 == True or letterA7in1 == True or letterM8in1 == True) and (letterT1in2 == True or letterM2in2 == True or letterS3in2 == True or letterT4in2 == True or letterS5in2 == True or letterA6in2 == True or letterA7in2 == True or letterM8in2 == True):
-         image gram_m4_tile94 = "leftTreeredlong1.png"
-         image gram_m4_tile95 = "1_1_red.png"
-         show gram_m4_tile94 at Position(xpos = 1040, xanchor = 0, ypos = 230, yanchor = 0)
-         show gram_m4_tile95 at Position(xpos = 1010, xanchor = 0, ypos = 300, yanchor = 0)
-
-         image gram_m4_tile96 = "rightTreeredlong1.png"
-         image gram_m4_tile97 = "1_1_red.png"
-         show gram_m4_tile96 at Position(xpos = 1310, xanchor = 0, ypos = 230, yanchor = 0)
-         show gram_m4_tile97 at Position(xpos = 1490, xanchor = 0, ypos = 300, yanchor = 0)
-
-    elif (letterT1in1 == False and letterM2in1 == False and letterT4in1 == False and letterA6in1 == False and letterA7in1 == False and letterM8in1 == False) or (letterT1in2 == False and letterM2in2 == False and letterS3in2 == False and letterT4in2 == False and letterS5in2 == False and letterA6in2 == False and letterA7in2 == False and letterM8in2 == False):
+        image gram_m4_tile96 = "rightTreeredlong1.png"
+        image gram_m4_tile97 = "1_1_red.png"
+        show gram_m4_tile96 at Position(xpos = 1310, xanchor = 0, ypos = 230, yanchor = 0)
+        show gram_m4_tile97 at Position(xpos = 1490, xanchor = 0, ypos = 300, yanchor = 0)
+        if gramRow1_C_sound_wrong2==0:
+            $gramRow1_C_sound_wrong2 +=1
+            play sound gramTree5
+    if (letterT1in1 == False and letterM2in1 == False and letterT4in1 == False and letterA6in1 == False and letterA7in1 == False and letterM8in1 == False) or (letterT1in2 == False and letterT4in2 == False):
          hide gram_m4_tile94
          hide gram_m4_tile95
 
          hide gram_m4_tile96
          hide gram_m4_tile97
-
-
+         if gramRow1_C_sound_wrong2==1:
+             $gramRow1_C_sound_wrong2 -=1
 
     #win conditions
     if  (letterS5in1 == True or letterS3in1 == True) and (letterT1in2 == True or letterT4in2 == True) and (letterS3in3 == True or letterS5in3 == True) and (letterT1in4 == True or letterT4in4 == True) and (letterA6in7 == True or letterA7in7 == True) and (letterM2in8 == True or letterM8in8 == True) and (letterT4in5 == True or letterA6in5 == True or letterA7in5 == True) and (letterM2in6 == True or letterM8in6 == True):
@@ -3876,7 +3914,8 @@ label gamefile_m4:
         image gram_m4_tile204 = "letterA.png"
         image gram_m4_tile208 = "letterA.png"
         image gram_m4_tile250 = "letterM.png"
-        
+        queue sound gramWin
+        $renpy.pause(0.7)
         show gram_m4_tile202 at Position(xpos = letterT1x, xanchor = 0, ypos = letterT1y, yanchor = 0)
         show gram_m4_tile206 at Position(xpos = letterM2x, xanchor = 0, ypos = letterM2y, yanchor = 0)
         show gram_m4_tile203 at Position(xpos = letterS3x, xanchor = 0, ypos = letterS3y, yanchor = 0)
@@ -3889,6 +3928,16 @@ label gamefile_m4:
         jump gramMed_win
 
     if attempts ==0:
+        show gram_m4_tile202 at Position(xpos = letterT1x, xanchor = 0, ypos = letterT1y, yanchor = 0)
+        show gram_m4_tile206 at Position(xpos = letterM2x, xanchor = 0, ypos = letterM2y, yanchor = 0)
+        show gram_m4_tile203 at Position(xpos = letterS3x, xanchor = 0, ypos = letterS3y, yanchor = 0)
+        show gram_m4_tile205 at Position(xpos = letterT4x, xanchor = 0, ypos = letterT4y, yanchor = 0)
+        show gram_m4_tile201 at Position(xpos = letterS5x, xanchor = 0, ypos = letterS5y, yanchor = 0)
+        show gram_m4_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
+        show gram_m4_tile208 at Position(xpos = letterA7x, xanchor = 0, ypos = letterA7y, yanchor = 0)
+        show gram_m4_tile250 at Position(xpos = letterM8x, xanchor = 0, ypos = letterM8y, yanchor = 0)
+        queue sound gramLose
+        $renpy.pause(0.8)
         hide gram_m4_tile42
         hide gram_m4_tile43
         hide gram_m4_tile44
@@ -3919,17 +3968,7 @@ label gamefile_m4:
         hide gram_m4_tile73
         hide gram_m4_tile74
         hide gram_m4_tile75
-
-        "You Lose Try Again"
-
-        jump gram_m4#start
-    
-
-#    if letterT1in1 == True or letterM2in1 ==True or letterS3in1 ==True or letterT4in1 ==True:
-#        image gram_m4_tile109 = "leftTreegreen.png"
-#        #shows gram_m4_tiles
-#        show gram_m4_tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
-#    if letterT1in1 == False and letterM2in1 == False and letterS3in1 == False and letterT4in1 ==False:
-#        hide gram_m4_tile109      
+        $gramMed_attempts +=1
+        jump gramMed_lose #start
     
     jump gamefile_m4

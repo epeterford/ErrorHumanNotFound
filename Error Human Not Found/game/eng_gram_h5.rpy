@@ -21,8 +21,177 @@ init python:
 init:
     image bg Eng_Tile = "eng_tile_bg.png"
 
-label eng_gram_h5:
+screen grammar_hard5:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 260
+        ypos 200
+        focus_mask True
+        action Jump("hints_gramHard_5")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 178
+        ypos 285
+    text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    draggroup:
+        drag:
+                drag_name "letterK1"
+                child "letterK.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterK1x ypos letterK1y
+        drag:
+                drag_name "letterK2"
+                child "letterK.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterK2x ypos letterK2y
+        drag:
+                drag_name "letterK3"
+                child "letterK.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterK3x ypos letterK3y
+        drag:
+                drag_name "letterK4"
+                child "letterK.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterK4x ypos letterK4y
+        drag:
+                drag_name "letterR"
+                child "letterR.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterRx ypos letterRy
+        drag:
+                drag_name "letterA"
+                child "letterA.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterAx ypos letterAy
+        drag:
+                drag_name "letterM"
+                child "letterM.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterMx ypos letterMy
+        drag:
+                drag_name "letterJ"
+                child "letterJ.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterJx ypos letterJy
+        drag:
+                drag_name "letterT"
+                child "letterT.png"
+                droppable False
+                dragged gate_dragged
+                xpos letterTx ypos letterTy
+        
+        #location to be dropped
+        drag:
+                drag_name "gate slot one"                
+                draggable False
+                child "images/border.png"
+                xpos gate1x ypos gate1y
+        drag:
+                drag_name "gate slot two"
+                draggable False
+                child "images/border.png"
+                xpos gate2x ypos gate2y
+        drag:
+                drag_name "gate slot three"
+                draggable False
+                child "images/border.png"
+                xpos gate3x ypos gate3y
+        drag:
+                drag_name "gate slot four"
+                draggable False
+                child "images/border.png"
+                xpos gate4x ypos gate4y
+        drag:
+                drag_name "gate slot five"
+                draggable False
+                child "images/border.png"
+                xpos gate5x ypos gate5y
+        drag:
+                drag_name "gate slot six"
+                draggable False
+                child "images/border.png"
+                xpos gate6x ypos gate6y
+        drag:
+                drag_name "gate slot seven"
+                draggable False
+                child "images/border.png"
+                xpos gate7x ypos gate7y
+        drag:
+                drag_name "gate slot eight"
+                draggable False
+                child "images/border.png"
+                xpos gate8x ypos gate8y
+        drag:
+                drag_name "gate slot nine"
+                draggable False
+                child "images/border.png"
+                xpos gate9x ypos gate9y
 
+        #Gate Slots ******************************************************************************
+        drag:
+                drag_name "letterK_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 582
+
+        drag:
+                drag_name "letterR_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 582
+                
+        drag:
+                drag_name "letterA_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 200 ypos 668
+
+        drag:
+                drag_name "letterM_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 460 ypos 668
+
+        drag:
+                drag_name "letterJ_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 262 ypos 758
+        drag:
+                drag_name "letterT_gate_return"
+                child "letterBorder.png"
+                draggable False
+                xpos 397 ypos 758
+                
+label eng_gram_h5:
+    $config.skipping=None
+    $ gate_name= ""
+    $ slot_name = ""
+    $ quick_menu = False
+    $ game_menu = True
     scene bg Eng_Tile
 
     #all sections are broken down into their rows
@@ -122,7 +291,7 @@ label eng_gram_h5:
     image gram_h5_transparent5 = "letterJ_grey.png"
     image gram_h5_transparent6 = "letterT_grey.png"
     
-    show gram_h5 transparent1 at Position(xpos = 275, xanchor = 0, ypos = 595, yanchor = 0)
+    show gram_h5_transparent1 at Position(xpos = 275, xanchor = 0, ypos = 595, yanchor = 0)
     show gram_h5_transparent2 at Position(xpos = 410, xanchor = 0, ypos = 595, yanchor = 0)
     show gram_h5_transparent3 at Position(xpos = 213, xanchor = 0, ypos = 680, yanchor = 0)
     show gram_h5_transparent4 at Position(xpos = 473, xanchor = 0, ypos = 680, yanchor = 0)
@@ -277,14 +446,14 @@ label eng_gram_h5:
     $ temp_gate = ""
 
     #attempts for players
-    $ attempts = 20
+    $ attempts = 12
     
     call gamefile_h5
 
 
 
 label gamefile_h5:
-    call screen logicGates_hard5
+    call screen grammar_hard5
 
     #First Letter *******************************************************************************************
     if gate_name == "letterK1":
@@ -4035,7 +4204,7 @@ label gamefile_h5:
             $letterJin9 = True
     
     #Attempts behavior ***************************************************************************************
-    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "letterK_gate_return" or slot_name == "letterT_gate_return" or slot_name == "letterJ_gate_return" or slot_name == "letterM_gate_return" or slot_name == "letterR_gate_return" or slot_name == "letterA_gate_return")):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name == "letterK_gate_return" or slot_name == "letterT_gate_return" or slot_name == "letterJ_gate_return" or slot_name == "letterM_gate_return" or slot_name == "letterR_gate_return" or slot_name == "letterA_gate_return")):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -4227,6 +4396,13 @@ label gamefile_h5:
     hide gram_h5_colorTile54
     hide gram_h5_colorTile55
     hide gram_h5_colorTile56
+    $gramNormal = renpy.random.randint(0,2)
+    if (gramNormal==0):
+        play sound gramTree2
+    if (gramNormal==1):
+        play sound gramTree3
+    if (gramNormal==2):
+        play sound gramTree4
     
     if (letterK1in1 or letterK2in1 or letterK3in1 or letterK4in1) and (letterK1in2 or letterK2in2 or letterK3in2 or letterK4in2):
         image gram_h5_colorTile1 = "leftTreegreenlong.png"
@@ -4237,7 +4413,9 @@ label gamefile_h5:
         show gram_h5_colorTile3 at Position(xpos = 1090, xanchor = 0, ypos = 325, yanchor = 0)
         image gram_h5_colorTile4 = "1_1_green.png"
         show gram_h5_colorTile4 at Position(xpos = 1410, xanchor = 0, ypos = 325, yanchor = 0)
-        
+        if gramRow1_C_sound_right1 == 0:
+            play sound gramTree1
+            $gramRow1_C_sound_right1 +=1
         if letterRin3 and letterAin4:
             image gram_h5_colorTile9 = "leftTreegreenlong.png"
             show gram_h5_colorTile9 at Position(xpos = 970, xanchor = 0, ypos = 425, yanchor = 0)
@@ -4255,6 +4433,10 @@ label gamefile_h5:
             show gram_h5_colorTile12 at Position(xpos = 1110, xanchor = 0, ypos = 500, yanchor = 0)
             image gram_h5_colorTile20 = "down.png"
             show gram_h5_colorTile20 at Position(xpos = 1090, xanchor = 0, ypos = 820, yanchor = 0)
+            if gramRow2_L_sound_right1 ==0:
+                play sound gramTree1
+                queue sound gramText3
+                $gramRow2_L_sound_right1 +=1
             if letterTin8 and (letterK1in9 or letterK2in9 or letterK3in9 or letterK4in9):
                 image gram_h5_colorTile21 = "leftTreegreen.png"
                 show gram_h5_colorTile21 at Position(xpos = 890, xanchor = 0, ypos = 600, yanchor = 0)
@@ -4272,6 +4454,10 @@ label gamefile_h5:
                 show gram_h5_colorTile27 at Position(xpos = 770, xanchor = 0, ypos = 820, yanchor = 0)
                 image gram_h5_colorTile28 = "epsilon.png"
                 show gram_h5_colorTile28 at Position(xpos = 930, xanchor = 0, ypos = 820, yanchor = 0)
+                if gramRow3_L_sound_right1 ==0:
+                    $gramRow3_L_sound_right1 +=1
+                    play sound gramTree1
+                    queue sound gramText1
             elif ((letterK1in8 or letterK2in8 or letterK3in8 or letterK4in8 or letterRin8 or letterAin8 or letterMin8 or letterJin8 or letterTin8) and
                     (letterK1in9 or letterK2in9 or letterK3in9 or letterK4in9 or letterRin9 or letterAin9 or letterMin9 or letterJin9 or letterTin9)):
                 image gram_h5_colorTile29 = "leftTreered.png"
@@ -4282,7 +4468,16 @@ label gamefile_h5:
                 show gram_h5_colorTile31 at Position(xpos = 850, xanchor = 0, ypos = 675, yanchor = 0)
                 image gram_h5_colorTile32 = "1_1_red.png"
                 show gram_h5_colorTile32 at Position(xpos = 1015, xanchor = 0, ypos = 675, yanchor = 0)
-                
+                if gramRow3_L_sound_wrong1 ==0:
+                    $gramRow3_L_sound_wrong1 +=1
+                    play sound gramTree5
+            if (not(letterTin8 and (letterK1in9 or letterK2in9 or letterK3in9 or letterK4in9))):
+                if gramRow3_L_sound_right1 ==1:
+                    $gramRow3_L_sound_right1 -=1
+            if (not((letterK1in8 or letterK2in8 or letterK3in8 or letterK4in8 or letterRin8 or letterAin8 or letterMin8 or letterJin8 or letterTin8) and
+                    (letterK1in9 or letterK2in9 or letterK3in9 or letterK4in9 or letterRin9 or letterAin9 or letterMin9 or letterJin9 or letterTin9))):
+                if gramRow3_L_sound_wrong1 ==1:
+                    $gramRow3_L_sound_wrong1 -=1
         elif ((letterK1in3 or letterK2in3 or letterK3in3 or letterK4in3 or letterRin3 or letterAin3 or letterMin3 or letterJin3 or letterTin3) and
             (letterK1in4 or letterK2in4 or letterK3in4 or letterK4in4 or letterRin4 or letterAin4 or letterMin4 or letterJin4 or letterTin4)):
             image gram_h5_colorTile13 = "leftTreeredlong.png"
@@ -4293,7 +4488,16 @@ label gamefile_h5:
             show gram_h5_colorTile15 at Position(xpos = 930, xanchor = 0, ypos = 500, yanchor = 0)
             image gram_h5_colorTile16 = "1_1_red.png"
             show gram_h5_colorTile16 at Position(xpos = 1110, xanchor = 0, ypos = 500, yanchor = 0)
-            
+            if gramRow2_L_sound_wrong1 ==0:
+                $gramRow2_L_sound_wrong1 +=1
+                play sound gramTree5
+        if (not((letterK1in3 or letterK2in3 or letterK3in3 or letterK4in3 or letterRin3 or letterAin3 or letterMin3 or letterJin3 or letterTin3) and
+            (letterK1in4 or letterK2in4 or letterK3in4 or letterK4in4 or letterRin4 or letterAin4 or letterMin4 or letterJin4 or letterTin4))):
+            if gramRow2_L_sound_wrong1 ==1:
+                $gramRow2_L_sound_wrong1 -=1
+        if (not(letterRin3 and letterAin4)):
+            if gramRow2_L_sound_right1 ==1:
+                $gramRow2_L_sound_right1 -=1
         if (letterK1in5 or letterK2in5 or letterK3in5 or letterK4in5) and letterMin6 and letterJin7:
             image gram_h5_colorTile33 = "leftTreegreenlong.png"
             show gram_h5_colorTile33 at Position(xpos = 1285, xanchor = 0, ypos = 425, yanchor = 0)
@@ -4331,6 +4535,10 @@ label gamefile_h5:
             show gram_h5_colorTile49 at Position(xpos = 1410, xanchor = 0, ypos = 820, yanchor = 0)
             image gram_h5_colorTile50 = "blue.png"
             show gram_h5_colorTile50 at Position(xpos = 1570, xanchor = 0, ypos = 820, yanchor = 0)
+            if gramRow2_R_sound_right1 ==0:
+                $gramRow2_R_sound_right1 +=1
+                play sound gramTree1
+                queue sound gramText2
         elif ((letterK1in5 or letterK2in5 or letterK3in5 or letterK4in5 or letterRin5 or letterAin5 or letterMin5 or letterJin5 or letterTin5) and
                 (letterK1in6 or letterK2in6 or letterK3in6 or letterK4in6 or letterRin6 or letterAin6 or letterMin6 or letterJin6 or letterTin6) and
                 (letterK1in7 or letterK2in7 or letterK3in7 or letterK4in7 or letterRin7 or letterAin7 or letterMin7 or letterJin7 or letterTin7)):
@@ -4346,7 +4554,17 @@ label gamefile_h5:
             show gram_h5_colorTile55 at Position(xpos = 1410, xanchor = 0, ypos = 500, yanchor = 0)
             image gram_h5_colorTile56 = "1_1_red.png"
             show gram_h5_colorTile56 at Position(xpos = 1575, xanchor = 0, ypos = 500, yanchor = 0)
-            
+            if gramRow2_R_sound_wrong1 ==0:
+                $gramRow2_R_sound_wrong1 +=1
+                play sound gramTree5
+        if (not((letterK1in5 or letterK2in5 or letterK3in5 or letterK4in5) and letterMin6 and letterJin7)):
+            if gramRow2_R_sound_wrong1==1:
+                $gramRow2_R_sound_wrong1 -=1
+        if (not((letterK1in5 or letterK2in5 or letterK3in5 or letterK4in5 or letterRin5 or letterAin5 or letterMin5 or letterJin5 or letterTin5) and
+                (letterK1in6 or letterK2in6 or letterK3in6 or letterK4in6 or letterRin6 or letterAin6 or letterMin6 or letterJin6 or letterTin6) and
+                (letterK1in7 or letterK2in7 or letterK3in7 or letterK4in7 or letterRin7 or letterAin7 or letterMin7 or letterJin7 or letterTin7))):
+            if gramRow2_R_sound_right1 ==1:
+                $gramRow2_R_sound_right1 -=1
     elif ((letterK1in1 or letterK2in1 or letterK3in1 or letterK4in1 or letterRin1 or letterAin1 or letterMin1 or letterJin1 or letterTin1) and
             (letterK1in2 or letterK2in2 or letterK3in2 or letterK4in2 or letterRin2 or letterAin2 or letterMin2 or letterJin2 or letterTin2)):
         image gram_h5_colorTile5 = "leftTreeredlong.png"
@@ -4357,37 +4575,58 @@ label gamefile_h5:
         show gram_h5_colorTile7 at Position(xpos = 1090, xanchor = 0, ypos = 325, yanchor = 0)
         image gram_h5_colorTile8 = "1_1_red.png"
         show gram_h5_colorTile8 at Position(xpos = 1410, xanchor = 0, ypos = 325, yanchor = 0)     
-        
+        if gramRow1_C_sound_wrong1 ==0:
+            play sound gramTree5
+            $gramRow1_C_sound_wrong1 +=1
+    if (not((letterK1in1 or letterK2in1 or letterK3in1 or letterK4in1 or letterRin1 or letterAin1 or letterMin1 or letterJin1 or letterTin1) and
+            (letterK1in2 or letterK2in2 or letterK3in2 or letterK4in2 or letterRin2 or letterAin2 or letterMin2 or letterJin2 or letterTin2))):
+        if gramRow1_C_sound_wrong1 ==1:
+            $gramRow1_C_sound_wrong1 -=1
+    if (not((letterK1in1 or letterK2in1 or letterK3in1 or letterK4in1) and (letterK1in2 or letterK2in2 or letterK3in2 or letterK4in2))):
+        if gramRow1_C_sound_right1 ==1:
+            $gramRow1_C_sound_right1 -=1
         
     #Win Condition ************************************************************************************
     if ((letterK1in1 or letterK2in1 or letterK3in1 or letterK4in1) and (letterK1in2 or letterK2in2 or letterK3in2 or letterK4in2) and letterRin3 and
             letterAin4 and (letterK1in5 or letterK2in5 or letterK3in5 or letterK4in5) and letterMin6 and letterJin7 and letterTin8 and
             (letterK1in9 or letterK2in9 or letterK3in9 or letterK4in9)):
-        image gram_h3_letterK1 = "letterK.png"
-        show gram_h3_letterK1 at Position(xpos = gate1x, xanchor = 0, ypos = gate1y, yanchor = 0)
-        image gram_h3_letterK2 = "letterK.png"
-        show gram_h3_letterK2 at Position(xpos = gate2x, xanchor = 0, ypos = gate2y, yanchor = 0)
-        image gram_h3_letterK3 = "letterK.png"
-        show gram_h3_letterK3 at Position(xpos = gate5x, xanchor = 0, ypos = gate5y, yanchor = 0)
-        image gram_h3_letterK4 = "letterK.png"
-        show gram_h3_letterK4 at Position(xpos = gate9x, xanchor = 0, ypos = gate9y, yanchor = 0)
-        image gram_h3_letterR = "letterR.png"
-        show gram_h3_letterR at Position(xpos = gate3x, xanchor = 0, ypos = gate3y, yanchor = 0)
-        image gram_h3_letterA = "letterA.png"
-        show gram_h3_letterA at Position(xpos = gate4x, xanchor = 0, ypos = gate4y, yanchor = 0)
-        image gram_h3_letterM = "letterM.png"
-        show gram_h3_letterM at Position(xpos = gate6x, xanchor = 0, ypos = gate6y, yanchor = 0)
-        image gram_h3_letterJ = "letterJ.png"
-        show gram_h3_letterJ at Position(xpos = gate7x, xanchor = 0, ypos = gate7y, yanchor = 0)
-        image gram_h3_letterT = "letterT.png"
-        show gram_h3_letterT at Position(xpos = gate8x, xanchor = 0, ypos = gate8y, yanchor = 0)
+        image gram_h5_letterK1 = "letterK.png"
+        image gram_h5_letterK2 = "letterK.png"
+        image gram_h5_letterK3 = "letterK.png"
+        image gram_h5_letterK4 = "letterK.png"
+        image gram_h5_letterR = "letterR.png"
+        image gram_h5_letterA = "letterA.png"
+        image gram_h5_letterM = "letterM.png"
+        image gram_h5_letterJ = "letterJ.png"
+        image gram_h5_letterT = "letterT.png"
         
-        "Access Gained"
-        
-        jump eng_gram_h5 #enggram_h5
+        show gram_h5_letterK1 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
+        show gram_h5_letterK2 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+        show gram_h5_letterK3 at Position(xpos = letterK3x, xanchor = 0, ypos = letterK3y, yanchor = 0)
+        show gram_h5_letterK4 at Position(xpos = letterK4x, xanchor = 0, ypos = letterK4y, yanchor = 0)
+        show gram_h5_letterR at Position(xpos = letterRx, xanchor = 0, ypos = letterRy, yanchor = 0)
+        show gram_h5_letterA at Position(xpos = letterAx, xanchor = 0, ypos = letterAy, yanchor = 0)
+        show gram_h5_letterM at Position(xpos = letterMx, xanchor = 0, ypos = letterMy, yanchor = 0)
+        show gram_h5_letterJ at Position(xpos = letterJx, xanchor = 0, ypos = letterJy, yanchor = 0)
+        show gram_h5_letterT at Position(xpos = letterTx, xanchor = 0, ypos = letterTy, yanchor = 0)
+        queue sound gramWin
+        $renpy.pause(0.7)
+        $gramHard_solved = True
+        jump gramHard_win
         
     #Lose Condition ***********************************************************************************
     if attempts == 0:
+        show gram_h5_letterK1 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
+        show gram_h5_letterK2 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+        show gram_h5_letterK3 at Position(xpos = letterK3x, xanchor = 0, ypos = letterK3y, yanchor = 0)
+        show gram_h5_letterK4 at Position(xpos = letterK4x, xanchor = 0, ypos = letterK4y, yanchor = 0)
+        show gram_h5_letterR at Position(xpos = letterRx, xanchor = 0, ypos = letterRy, yanchor = 0)
+        show gram_h5_letterA at Position(xpos = letterAx, xanchor = 0, ypos = letterAy, yanchor = 0)
+        show gram_h5_letterM at Position(xpos = letterMx, xanchor = 0, ypos = letterMy, yanchor = 0)
+        show gram_h5_letterJ at Position(xpos = letterJx, xanchor = 0, ypos = letterJy, yanchor = 0)
+        show gram_h5_letterT at Position(xpos = letterTx, xanchor = 0, ypos = letterTy, yanchor = 0)
+        queue sound gramLose
+        $renpy.pause(0.8)
         hide gram_h5_colorTile1
         hide gram_h5_colorTile2
         hide gram_h5_colorTile3
@@ -4445,159 +4684,7 @@ label gamefile_h5:
         hide gram_h5_colorTile55
         hide gram_h5_colorTile56
     
-        show gram_h3_letterK1 at Position(xpos = gate1x, xanchor = 0, ypos = gate1y, yanchor = 0)
-        show gram_h3_letterK2 at Position(xpos = gate2x, xanchor = 0, ypos = gate2y, yanchor = 0)
-        show gram_h3_letterK3 at Position(xpos = gate5x, xanchor = 0, ypos = gate5y, yanchor = 0)
-        show gram_h3_letterK4 at Position(xpos = gate9x, xanchor = 0, ypos = gate9y, yanchor = 0)
-        show gram_h3_letterR at Position(xpos = gate3x, xanchor = 0, ypos = gate3y, yanchor = 0)
-        show gram_h3_letterA at Position(xpos = gate4x, xanchor = 0, ypos = gate4y, yanchor = 0)
-        show gram_h3_letterM at Position(xpos = gate6x, xanchor = 0, ypos = gate6y, yanchor = 0)
-        show gram_h3_letterJ at Position(xpos = gate7x, xanchor = 0, ypos = gate7y, yanchor = 0)
-        show gram_h3_letterT at Position(xpos = gate8x, xanchor = 0, ypos = gate8y, yanchor = 0)
-        
-        "You Lose. Try Again."
-        
-        jump eng_gram_h5
+        $gramHard_attempts +=1
+        jump gramHard_lose 
         
     jump gamefile_h5
-
-
-screen logicGates_hard5:
-    draggroup:
-        drag:
-                drag_name "letterK1"
-                child "letterK.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterK1x ypos letterK1y
-        drag:
-                drag_name "letterK2"
-                child "letterK.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterK2x ypos letterK2y
-        drag:
-                drag_name "letterK3"
-                child "letterK.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterK3x ypos letterK3y
-        drag:
-                drag_name "letterK4"
-                child "letterK.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterK4x ypos letterK4y
-        drag:
-                drag_name "letterR"
-                child "letterR.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterRx ypos letterRy
-        drag:
-                drag_name "letterA"
-                child "letterA.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterAx ypos letterAy
-        drag:
-                drag_name "letterM"
-                child "letterM.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterMx ypos letterMy
-        drag:
-                drag_name "letterJ"
-                child "letterJ.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterJx ypos letterJy
-        drag:
-                drag_name "letterT"
-                child "letterT.png"
-                droppable False
-                dragged gate_dragged
-                xpos letterTx ypos letterTy
-        
-        #location to be dropped
-        drag:
-                drag_name "gate slot one"                
-                draggable False
-                child "images/border.png"
-                xpos gate1x ypos gate1y
-        drag:
-                drag_name "gate slot two"
-                draggable False
-                child "images/border.png"
-                xpos gate2x ypos gate2y
-        drag:
-                drag_name "gate slot three"
-                draggable False
-                child "images/border.png"
-                xpos gate3x ypos gate3y
-        drag:
-                drag_name "gate slot four"
-                draggable False
-                child "images/border.png"
-                xpos gate4x ypos gate4y
-        drag:
-                drag_name "gate slot five"
-                draggable False
-                child "images/border.png"
-                xpos gate5x ypos gate5y
-        drag:
-                drag_name "gate slot six"
-                draggable False
-                child "images/border.png"
-                xpos gate6x ypos gate6y
-        drag:
-                drag_name "gate slot seven"
-                draggable False
-                child "images/border.png"
-                xpos gate7x ypos gate7y
-        drag:
-                drag_name "gate slot eight"
-                draggable False
-                child "images/border.png"
-                xpos gate8x ypos gate8y
-        drag:
-                drag_name "gate slot nine"
-                draggable False
-                child "images/border.png"
-                xpos gate9x ypos gate9y
-
-        #Gate Slots ******************************************************************************
-        drag:
-                drag_name "letterK_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 262 ypos 582
-
-        drag:
-                drag_name "letterR_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 397 ypos 582
-                
-        drag:
-                drag_name "letterA_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 200 ypos 668
-
-        drag:
-                drag_name "letterM_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 460 ypos 668
-
-        drag:
-                drag_name "letterJ_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 262 ypos 758
-        drag:
-                drag_name "letterT_gate_return"
-                child "letterBorder.png"
-                draggable False
-                xpos 397 ypos 758

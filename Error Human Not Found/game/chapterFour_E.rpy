@@ -724,8 +724,7 @@ label ch4resume3_E:
     show Ada concerned
     g "All right. I'm ready."
     $resume = "E"
-    "TEMPORARY PLACEHOLDER FOR GRACE HARD PUZZLE 1."
-    jump ch4postPuzzle1_E
+    jump choose_gramHard
 
 label ch4postPuzzle1_E:
     $quick_menu = True

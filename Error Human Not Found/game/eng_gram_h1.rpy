@@ -19,8 +19,32 @@ init python:
         return True 
 
 
-screen logicGatesh1:
-
+screen grammar_h1:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 260
+        ypos 200
+        focus_mask True
+        action Jump("hints_gramHard_1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 178
+        ypos 285
+    text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
         drag:
@@ -30,11 +54,11 @@ screen logicGatesh1:
                 dragged gate_dragged
                 xpos letterK1x ypos letterK1y
         drag:
-                drag_name "letterT2"
-                child "letterT.png"
+                drag_name "letterK2"
+                child "letterK.png"
                 droppable False
                 dragged gate_dragged
-                xpos letterT2X ypos letterT2y
+                xpos letterK2x ypos letterK2y
         drag:
                 drag_name "letterT3"
                 child "letterT.png"
@@ -129,10 +153,12 @@ init:
     image bg Eng_Tile = "eng_tile_bg.png"
 
 label eng_gram_h1:
-
-    scene bg Eng_Tile
+    $config.skipping=None
+    $ gate_name= ""
+    $ slot_name = ""
     $ quick_menu = False
     $ game_menu = True
+    scene bg Eng_Tile
 
     #all sections are broken down into their rows
     #the first set of values declares images for the show call
@@ -204,10 +230,8 @@ label eng_gram_h1:
 
     image eaeng_h1_tile31 = "letterBorder.png"
     image eaeng_h1_tile32 = "letterBorder.png"
-#    image eaeng_h1_tile33 = "letterBorder.png"
     image eaeng_h1_tile34 = "letterBorder.png"
     image eaeng_h1_tile35 = "letterBorder.png"
-#    image eaeng_h1_tile36 = "letterBorder.png"
     show eaeng_h1_tile31 at Position(xpos = 262, xanchor = 0, ypos = 562, yanchor = 0)
     show eaeng_h1_tile32 at Position(xpos = 397, xanchor = 0, ypos = 562, yanchor = 0)
 #    show eaeng_h1_tile33 at Position(xpos = 330, xanchor = 0, ypos = 648, yanchor = 0)
@@ -229,8 +253,8 @@ label eng_gram_h1:
     # gates
     $ letterK1x = 275
     $ letterK1y = 575
-    $ letterT2X = 410
-    $ letterT2y = 750
+    $ letterK2x = 275
+    $ letterK2y = 575
     $ letterT3x = 410 
     $ letterT3y = 750
     $ letterA4x = 275
@@ -243,21 +267,21 @@ label eng_gram_h1:
     $ letterF7y = 575
 
     # check conditons for locations
-    $ and1in1 = False
-    $ and1in2 = False
-    $ and1in3 = False
-    $ and1in4 = False
-    $ and1in5 = False
-    $ and1in6 = False
-    $ and1in7 = False
+    $ letterK1in1 = False
+    $ letterK1in2 = False
+    $ letterK1in3 = False
+    $ letterK1in4 = False
+    $ letterK1in5 = False
+    $ letterK1in6 = False
+    $ letterK1in7 = False
 
-    $ letterT2in1 = False
-    $ letterT2in2 = False
-    $ letterT2in3 = False
-    $ letterT2in4 = False
-    $ letterT2in5 = False
-    $ letterT2in6 = False
-    $ letterT2in7 = False
+    $ letterK2in1 = False
+    $ letterK2in2 = False
+    $ letterK2in3 = False
+    $ letterK2in4 = False
+    $ letterK2in5 = False
+    $ letterK2in6 = False
+    $ letterK2in7 = False
 
     $ letterT3in1 = False
     $ letterT3in2 = False
@@ -304,32 +328,28 @@ label eng_gram_h1:
     $ temp_gate = ""
 
     #attempts for players
-    $ attempts = 15
+    $ attempts = 11
     
     call gamefile_h1
 
 
 
 label gamefile_h1:
-    #image moon = "images/blankeaeng_h1_tile.png"
-    #show blink
-    #calls jigsaw game with the images selected
-    call screen logicGatesh1
-
+    call screen grammar_h1
 
     if gate_name == "letterK1":
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -354,25 +374,25 @@ label gamefile_h1:
             #sets values for checks
             $ letterK1x = 1035
             $ letterK1y = 340
-            $ and1in1 = True
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
-            $ and1in7 = False
+            $ letterK1in1 = True
+            $ letterK1in2 = False
+            $ letterK1in3 = False
+            $ letterK1in4 = False
+            $ letterK1in5 = False
+            $ letterK1in6 = False
+            $ letterK1in7 = False
 
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -397,25 +417,25 @@ label gamefile_h1:
             #sets check values
             $ letterK1x = 1495
             $ letterK1y = 340
-            $ and1in1 = False
-            $ and1in2 = True
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
-            $ and1in7 = False
+            $ letterK1in1 = False
+            $ letterK1in2 = True
+            $ letterK1in3 = False
+            $ letterK1in4 = False
+            $ letterK1in5 = False
+            $ letterK1in6 = False
+            $ letterK1in7 = False
 
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -440,24 +460,24 @@ label gamefile_h1:
             #sets values for the checks
             $ letterK1x = 1035
             $ letterK1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = True
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
-            $ and1in7 = False
+            $ letterK1in1 = False
+            $ letterK1in2 = False
+            $ letterK1in3 = True
+            $ letterK1in4 = False
+            $ letterK1in5 = False
+            $ letterK1in6 = False
+            $ letterK1in7 = False
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -482,24 +502,24 @@ label gamefile_h1:
             #sets values for the checks
             $ letterK1x = 1335
             $ letterK1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = True
-            $ and1in5 = False
-            $ and1in6 = False
-            $ and1in7 = False
+            $ letterK1in1 = False
+            $ letterK1in2 = False
+            $ letterK1in3 = False
+            $ letterK1in4 = True
+            $ letterK1in5 = False
+            $ letterK1in6 = False
+            $ letterK1in7 = False
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -524,24 +544,24 @@ label gamefile_h1:
             #sets values for the checks
             $ letterK1x = 1495
             $ letterK1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = True
-            $ and1in6 = False
-            $ and1in7 = False
+            $ letterK1in1 = False
+            $ letterK1in2 = False
+            $ letterK1in3 = False
+            $ letterK1in4 = False
+            $ letterK1in5 = True
+            $ letterK1in6 = False
+            $ letterK1in7 = False
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -566,24 +586,24 @@ label gamefile_h1:
             #sets values for the checks
             $ letterK1x = 1655
             $ letterK1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = True
-            $ and1in7 = False
+            $ letterK1in1 = False
+            $ letterK1in2 = False
+            $ letterK1in3 = False
+            $ letterK1in4 = False
+            $ letterK1in5 = False
+            $ letterK1in6 = True
+            $ letterK1in7 = False
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -608,27 +628,27 @@ label gamefile_h1:
             #sets values for the checks
             $ letterK1x = 1495
             $ letterK1y = 690
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
-            $ and1in7 = True
+            $ letterK1in1 = False
+            $ letterK1in2 = False
+            $ letterK1in3 = False
+            $ letterK1in4 = False
+            $ letterK1in5 = False
+            $ letterK1in6 = False
+            $ letterK1in7 = True
 
-    if gate_name == "letterT2":
+    if gate_name == "letterK2":
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -651,26 +671,26 @@ label gamefile_h1:
                $ letterF7in1 = False
 
             #sets values for checks
-            $ letterT2X = 1035
-            $ letterT2y = 340
-            $ letterT2in1 = True
-            $ letterT2in2 = False
-            $ letterT2in3 = False
-            $ letterT2in4 = False
-            $ letterT2in5 = False
-            $ letterT2in6 = False
-            $ letterT2in7 = False
+            $ letterK2x = 1035
+            $ letterK2y = 340
+            $ letterK2in1 = True
+            $ letterK2in2 = False
+            $ letterK2in3 = False
+            $ letterK2in4 = False
+            $ letterK2in5 = False
+            $ letterK2in6 = False
+            $ letterK2in7 = False
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -693,26 +713,26 @@ label gamefile_h1:
                $ letterF7in2 = False
 
             #sets check values
-            $ letterT2X = 1495
-            $ letterT2y = 340
-            $ letterT2in1 = False
-            $ letterT2in2 = True
-            $ letterT2in3 = False
-            $ letterT2in4 = False
-            $ letterT2in5 = False
-            $ letterT2in6 = False
-            $ letterT2in7 = False
+            $ letterK2x = 1495
+            $ letterK2y = 340
+            $ letterK2in1 = False
+            $ letterK2in2 = True
+            $ letterK2in3 = False
+            $ letterK2in4 = False
+            $ letterK2in5 = False
+            $ letterK2in6 = False
+            $ letterK2in7 = False
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -735,26 +755,26 @@ label gamefile_h1:
                $ letterF7in3 = False
 
             #sets values for the checks
-            $ letterT2X = 1035
-            $ letterT2y = 515
-            $ letterT2in1 = False
-            $ letterT2in2 = False
-            $ letterT2in3 = True
-            $ letterT2in4 = False
-            $ letterT2in5 = False
-            $ letterT2in6 = False
-            $ letterT2in7 = False
+            $ letterK2x = 1035
+            $ letterK2y = 515
+            $ letterK2in1 = False
+            $ letterK2in2 = False
+            $ letterK2in3 = True
+            $ letterK2in4 = False
+            $ letterK2in5 = False
+            $ letterK2in6 = False
+            $ letterK2in7 = False
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -777,26 +797,26 @@ label gamefile_h1:
                $ letterF7in4 = False
 
             #sets values for the checks
-            $ letterT2X = 1335
-            $ letterT2y = 515
-            $ letterT2in1 = False
-            $ letterT2in2 = False
-            $ letterT2in3 = False
-            $ letterT2in4 = True
-            $ letterT2in5 = False
-            $ letterT2in6 = False
-            $ letterT2in7 = False
+            $ letterK2x = 1335
+            $ letterK2y = 515
+            $ letterK2in1 = False
+            $ letterK2in2 = False
+            $ letterK2in3 = False
+            $ letterK2in4 = True
+            $ letterK2in5 = False
+            $ letterK2in6 = False
+            $ letterK2in7 = False
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -819,26 +839,26 @@ label gamefile_h1:
                $ letterF7in5 = False
 
             #sets values for the checks
-            $ letterT2X = 1495
-            $ letterT2y = 515
-            $ letterT2in1 = False
-            $ letterT2in2 = False
-            $ letterT2in3 = False
-            $ letterT2in4 = False
-            $ letterT2in5 = True
-            $ letterT2in6 = False
-            $ letterT2in7 = False
+            $ letterK2x = 1495
+            $ letterK2y = 515
+            $ letterK2in1 = False
+            $ letterK2in2 = False
+            $ letterK2in3 = False
+            $ letterK2in4 = False
+            $ letterK2in5 = True
+            $ letterK2in6 = False
+            $ letterK2in7 = False
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -861,26 +881,26 @@ label gamefile_h1:
                $ letterF7in6 = False
 
             #sets values for the checks
-            $ letterT2X = 1655
-            $ letterT2y = 515
-            $ letterT2in1 = False
-            $ letterT2in2 = False
-            $ letterT2in3 = False
-            $ letterT2in4 = False
-            $ letterT2in5 = False
-            $ letterT2in6 = True
-            $ letterT2in7 = False
+            $ letterK2x = 1655
+            $ letterK2y = 515
+            $ letterK2in1 = False
+            $ letterK2in2 = False
+            $ letterK2in3 = False
+            $ letterK2in4 = False
+            $ letterK2in5 = False
+            $ letterK2in6 = True
+            $ letterK2in7 = False
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -903,29 +923,29 @@ label gamefile_h1:
                $ letterF7in7 = False
 
             #sets values for the checks
-            $ letterT2X = 1495
-            $ letterT2y = 690
-            $ letterT2in1 = False
-            $ letterT2in2 = False
-            $ letterT2in3 = False
-            $ letterT2in4 = False
-            $ letterT2in5 = False
-            $ letterT2in6 = False
-            $ letterT2in7 = True
+            $ letterK2x = 1495
+            $ letterK2y = 690
+            $ letterK2in1 = False
+            $ letterK2in2 = False
+            $ letterK2in3 = False
+            $ letterK2in4 = False
+            $ letterK2in5 = False
+            $ letterK2in6 = False
+            $ letterK2in7 = True
 
     if gate_name == "letterT3":
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -959,14 +979,14 @@ label gamefile_h1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1001,14 +1021,14 @@ label gamefile_h1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1043,14 +1063,14 @@ label gamefile_h1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1085,14 +1105,14 @@ label gamefile_h1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1127,14 +1147,14 @@ label gamefile_h1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1169,14 +1189,14 @@ label gamefile_h1:
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1214,14 +1234,14 @@ label gamefile_h1:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1255,14 +1275,14 @@ label gamefile_h1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1297,14 +1317,14 @@ label gamefile_h1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1339,14 +1359,14 @@ label gamefile_h1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1381,14 +1401,14 @@ label gamefile_h1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1423,14 +1443,14 @@ label gamefile_h1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1465,14 +1485,14 @@ label gamefile_h1:
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1511,14 +1531,14 @@ label gamefile_h1:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1553,14 +1573,14 @@ label gamefile_h1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1595,14 +1615,14 @@ label gamefile_h1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1637,14 +1657,14 @@ label gamefile_h1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1679,14 +1699,14 @@ label gamefile_h1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1721,14 +1741,14 @@ label gamefile_h1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1763,14 +1783,14 @@ label gamefile_h1:
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1808,14 +1828,14 @@ label gamefile_h1:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1849,14 +1869,14 @@ label gamefile_h1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1891,14 +1911,14 @@ label gamefile_h1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1933,14 +1953,14 @@ label gamefile_h1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -1975,14 +1995,14 @@ label gamefile_h1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2017,14 +2037,14 @@ label gamefile_h1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2059,14 +2079,14 @@ label gamefile_h1:
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2105,14 +2125,14 @@ label gamefile_h1:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other gram_h1_tile here
-            if and1in1 == True:
+            if letterK1in1 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in1 = False
-            if letterT2in1 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in1 = False
+               $ letterK1in1 = False
+            if letterK2in1 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in1 = False
             if letterT3in1 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2147,14 +2167,14 @@ label gamefile_h1:
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
+            if letterK1in2 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in2 = False
-            if letterT2in2 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in2 = False
+               $ letterK1in2 = False
+            if letterK2in2 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in2 = False
             if letterT3in2 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2189,14 +2209,14 @@ label gamefile_h1:
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
+            if letterK1in3 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in3 = False
-            if letterT2in3 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in3 = False
+               $ letterK1in3 = False
+            if letterK2in3 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in3 = False
             if letterT3in3 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2231,14 +2251,14 @@ label gamefile_h1:
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
+            if letterK1in4 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in4 = False
-            if letterT2in4 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in4 = False
+               $ letterK1in4 = False
+            if letterK2in4 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in4 = False
             if letterT3in4 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2273,14 +2293,14 @@ label gamefile_h1:
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
+            if letterK1in5 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in5 = False
-            if letterT2in5 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in5 = False
+               $ letterK1in5 = False
+            if letterK2in5 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in5 = False
             if letterT3in5 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2315,14 +2335,14 @@ label gamefile_h1:
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
+            if letterK1in6 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in6 = False
-            if letterT2in6 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in6 = False
+               $ letterK1in6 = False
+            if letterK2in6 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in6 = False
             if letterT3in6 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2357,14 +2377,14 @@ label gamefile_h1:
 
                 #gate slot number 7******************************
         if slot_name == "gate slot seven":
-            if and1in7 == True:
+            if letterK1in7 == True:
                $ letterK1x = 275
                $ letterK1y = 575
-               $ and1in7 = False
-            if letterT2in7 == True:
-               $ letterT2X = 410
-               $ letterT2y = 750
-               $ letterT2in7 = False
+               $ letterK1in7 = False
+            if letterK2in7 == True:
+               $ letterK2x = 275
+               $ letterK2y = 575
+               $ letterK2in7 = False
             if letterT3in7 == True:
                $ letterT3x = 410
                $ letterT3y = 750
@@ -2417,13 +2437,23 @@ label gamefile_h1:
                 if gate_name == "letterK1":
                     $ letterK1x = 275
                     $ letterK1y = 575
-                    $ and1in1 = False
-                    $ and1in2 = False
-                    $ and1in3 = False
-                    $ and1in4 = False
-                    $ and1in5 = False
-                    $ and1in6 = False
-                    $ and1in7 = False
+                    $ letterK1in1 = False
+                    $ letterK1in2 = False
+                    $ letterK1in3 = False
+                    $ letterK1in4 = False
+                    $ letterK1in5 = False
+                    $ letterK1in6 = False
+                    $ letterK1in7 = False
+                if gate_name == "letterK2":
+                    $ letterK2x = 275
+                    $ letterK2y = 575
+                    $ letterK2in1 = False
+                    $ letterK2in2 = False
+                    $ letterK2in3 = False
+                    $ letterK2in4 = False
+                    $ letterK2in5 = False
+                    $ letterK2in6 = False
+                    $ letterK2in7 = False
    
             if slot_name == "LetterF_return":
                 $ attempts +=1
@@ -2475,17 +2505,6 @@ label gamefile_h1:
                     $ letterT5in6 = False
                     $ letterT5in7 = False
                 
-                if gate_name == "letterT2":
-                    $ letterT2X = 410
-                    $ letterT2y = 750
-                    $ letterT2in1 = False
-                    $ letterT2in2 = False
-                    $ letterT2in3 = False
-                    $ letterT2in4 = False
-                    $ letterT2in5 = False
-                    $ letterT2in6 = False
-                    $ letterT2in7 = False
-                
                 if gate_name == "letterT3":
                     $ letterT3x = 410
                     $ letterT3y = 750
@@ -2498,7 +2517,62 @@ label gamefile_h1:
                     $ letterT3in7 = False
                     
 
-    if (letterT2in1 == True or letterT3in1 == True or letterT5in1 == True) and (letterT2in2 == True or letterT3in2 == True or letterT5in2 == True):
+    hide gram_h1_tile46
+    hide gram_h1_tile47
+    hide gram_h1_tile48
+    hide gram_h1_tile49
+    hide gram_h1_tile50
+    hide gram_h1_tile51
+    hide gram_h1_tile78
+    hide gram_h1_tile79
+    hide gram_h1_tile66
+    hide gram_h1_tile67
+    hide gram_h1_tile68
+    hide gram_h1_tile69
+    hide gram_h1_tile70
+    hide gram_h1_tile71
+    hide gram_h1_tile52
+    hide gram_h1_tile53
+    hide gram_h1_tile54
+    hide gram_h1_tile55
+    hide gram_h1_tile56
+    hide gram_h1_tile57
+    hide gram_h1_tile58
+    hide gram_h1_tile59
+    hide gram_h1_tile60
+    hide gram_h1_tile61
+    hide gram_h1_tile62
+    hide gram_h1_tile63
+    hide gram_h1_tile64
+    hide gram_h1_tile65
+    hide gram_h1_tile66
+    hide gram_h1_tile67
+    hide gram_h1_tile68
+    hide gram_h1_tile69
+    hide gram_h1_tile70
+    hide gram_h1_tile71
+    hide gram_h1_tile88
+    hide gram_h1_tile89
+    hide gram_h1_tile90
+    hide gram_h1_tile91
+    hide gram_h1_tile92
+    hide gram_h1_tile93
+    hide gram_h1_tile80
+    hide gram_h1_tile81
+    hide gram_h1_tile82
+    hide gram_h1_tile83
+    hide gram_h1_tile42
+    hide gram_h1_tile43
+    hide gram_h1_tile44
+    hide gram_h1_tile45
+    $gramNormal = renpy.random.randint(0,2)
+    if (gramNormal==0):
+        play sound gramTree2
+    if (gramNormal==1):
+        play sound gramTree3
+    if (gramNormal==2):
+        play sound gramTree4
+    if ((letterT3in1 or letterT5in1) and (letterT3in2 or letterT5in2)):
         image gram_h1_tile42 = "leftTreegreenlong1.png"
         image gram_h1_tile43 = "1_1_green.png"
         show gram_h1_tile42 at Position(xpos = 1050, xanchor = 0, ypos = 250, yanchor = 0)
@@ -2508,8 +2582,10 @@ label gamefile_h1:
         image gram_h1_tile45 = "1_1_green.png"
         show gram_h1_tile44 at Position(xpos = 1300, xanchor = 0, ypos = 250, yanchor = 0)
         show gram_h1_tile45 at Position(xpos = 1480, xanchor = 0, ypos = 325, yanchor = 0)
-
-        if (and1in3 == True):
+        if gramRow1_C_sound_right1 ==0:
+            $gramRow1_C_sound_right1 +=1
+            play sound gramTree1
+        if(letterK1in3 or letterK2in3):
             image gram_h1_tile46 = "treeGreen.png"
             image gram_h1_tile47 = "1_1_green.png"
             show gram_h1_tile46 at Position(xpos = 1020, xanchor = 0, ypos = 425, yanchor = 0)
@@ -2522,26 +2598,25 @@ label gamefile_h1:
             show gram_h1_tile50 at Position(xpos = 1020, xanchor = 0, ypos = 785, yanchor = 0)
             image gram_h1_tile51 = "squishy.png"
             show gram_h1_tile51 at Position(xpos = 1000, xanchor = 0, ypos = 800, yanchor = 0)
-
-        if (and1in3 == False):
-            hide gram_h1_tile46
-            hide gram_h1_tile47
-            hide gram_h1_tile48
-            hide gram_h1_tile49
-            hide gram_h1_tile50
-            hide gram_h1_tile51
-
-        if (letterT2in3 == True or letterT3in3 == True or letterT5in3 == True or letterF7in3 == True or letterA4in3 == True or letterA6in3 == True):
+            if gramRow2_L_sound_right1 ==0:
+                $gramRow2_L_sound_right1 +=1
+                play sound gramTree1
+                queue sound gramText1
+        elif(letterA4in3 or letterA6in3 or letterF7in3):
             image gram_h1_tile78 = "treeRed.png"
             image gram_h1_tile79 = "1_1_Red.png"
             show gram_h1_tile78 at Position(xpos = 1020, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h1_tile79 at Position(xpos = 1020, xanchor = 0, ypos = 500, yanchor = 0)
-
-        if (letterT2in3 == False and letterT3in3 == False and letterT5in3 == False and letterF7in3 == False and letterA4in3 == False and letterA6in3 == False):
-            hide gram_h1_tile78
-            hide gram_h1_tile79
-        
-        if (letterA4in4 == True or letterA6in4 == True) and (letterT2in5 == True or letterT3in5 == True or letterT5in5 == True) and (letterA4in6 == True or letterA6in6 == True):
+            if gramRow2_L_sound_wrong1 ==0:
+                $gramRow2_L_sound_wrong1 +=1
+                play sound gramTree5
+        if(not(letterK1in3 or letterK2in3)):
+            if gramRow2_L_sound_right1==1:
+                $gramRow2_L_sound_right1 -=1
+        if(not(letterA4in3 or letterA6in3 or letterF7in3)):
+            if gramRow2_L_sound_wrong1==1:
+                $gramRow2_L_sound_wrong1 -=1
+        if((letterA4in4 or letterA6in4) and (letterK1in5 or letterK2in5) and (letterA4in6 or letterA6in6)):
             image gram_h1_tile52 = "leftTreegreenlong.png"
             image gram_h1_tile53 = "1_1_green.png"
             show gram_h1_tile52 at Position(xpos = 1365, xanchor = 0, ypos = 425, yanchor = 0)
@@ -2572,90 +2647,38 @@ label gamefile_h1:
             show gram_h1_tile63 at Position(xpos = 1640, xanchor = 0, ypos = 692, yanchor = 0)
             show gram_h1_tile64 at Position(xpos = 1640, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h1_tile65 at Position(xpos = 1640, xanchor = 0, ypos = 800, yanchor = 0)
-
-            if (letterF7in7 == True):
-               image gram_h1_tile66 = "treeGreen.png"
-               image gram_h1_tile67 = "1_1_green.png"
-               show gram_h1_tile66 at Position(xpos = 1480, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_h1_tile67 at Position(xpos = 1480, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_h1_tile68 = "solutionLine.png"
-               image gram_h1_tile69 = "nose.png"
-               show gram_h1_tile68 at Position(xpos = 1485, xanchor = 0, ypos = 770, yanchor = 0)
-               show gram_h1_tile69 at Position(xpos = 1460, xanchor = 0, ypos = 800, yanchor = 0)
-
-            if (letterF7in7 == False):
-               hide gram_h1_tile66
-               hide gram_h1_tile67
-               hide gram_h1_tile68
-               hide gram_h1_tile69
-
-            if (and1in7 == True or letterT2in7 == True or letterT3in7 == True or letterT5in7 == True or letterA4in7 == True or letterA6in7 == True):
-               image gram_h1_tile70 = "treeRed.png"
-               image gram_h1_tile71 = "1_1_Red.png"
-               show gram_h1_tile70 at Position(xpos = 1480, xanchor = 0, ypos = 600, yanchor = 0)
-               show gram_h1_tile71 at Position(xpos = 1480, xanchor = 0, ypos = 675, yanchor = 0)
-
-            if (and1in7 == False and letterT2in7 == False and letterT3in7 == False and letterT5in7 == False and letterA4in7 == False and letterA6in7 == False):
-               hide gram_h1_tile70
-               hide gram_h1_tile71
-
-
-        elif (letterA4in4 == False and letterA6in4 == False) or (letterT2in5 == False and letterT3in5 == False and letterT5in5 == False) or (letterA4in6 == False and letterA6in6 == False):
-
-            hide gram_h1_tile52
-            hide gram_h1_tile53
-            hide gram_h1_tile54
-            hide gram_h1_tile55
-            hide gram_h1_tile56
-            hide gram_h1_tile57
-            hide gram_h1_tile58
-            hide gram_h1_tile59
-            hide gram_h1_tile60
-            hide gram_h1_tile61
-            hide gram_h1_tile62
-            hide gram_h1_tile63
-            hide gram_h1_tile64
-            hide gram_h1_tile65
-            hide gram_h1_tile66
-            hide gram_h1_tile67
-            hide gram_h1_tile68
-            hide gram_h1_tile69
-            hide gram_h1_tile70
-            hide gram_h1_tile71
-
-
-        if ((and1in4 == True or letterT2in4 == True or letterT3in4 == True or letterT5in4 == True or letterF7in4 == True) and 
-        (and1in5 == True or letterA4in5 == True or letterA6in5 == True or letterF7in5 == True or letterT2in5 == True or letterT3in5 == True or letterT5in5 == True) and 
-        (and1in6 == True or letterA4in6 == True or letterA6in6 == True or letterT2in6 == True or letterT3in6 == True or letterT5in6 == True or letterF7in6 == True)):
-            image gram_h1_tile72 = "leftTreeredlong.png"
-            image gram_h1_tile73 = "1_1_red.png"
-            show gram_h1_tile72 at Position(xpos = 1365, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h1_tile73 at Position(xpos = 1320, xanchor = 0, ypos = 500, yanchor = 0)
-
-            image gram_h1_tile74 = "treeRed.png"
-            image gram_h1_tile75 = "1_1_red.png"
-            show gram_h1_tile74 at Position(xpos = 1480, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h1_tile75 at Position(xpos = 1480, xanchor = 0, ypos = 500, yanchor = 0)
-
-            image gram_h1_tile76 = "rightTreeredlong.png"
-            image gram_h1_tile77 = "1_1_red.png"
-            show gram_h1_tile76 at Position(xpos = 1550, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h1_tile77 at Position(xpos = 1640, xanchor = 0, ypos = 500, yanchor = 0)
-
-        elif ((and1in4 == False and letterT2in4 == False and letterT3in4 == False and letterT5in4 == False and letterF7in4 == False) or 
-        (and1in5 == False and letterA4in5 == False and letterA6in5 == False and letterF7in5 == False and letterT2in5 == False and letterT3in5 == False and letterT5in5 == False) or 
-        (and1in6 == False and letterA4in6 == False and letterA6in6 == False and letterT2in6 == False and letterT3in6 == False and letterT5in6 == False and letterF7in6 == False)):
-
-            hide gram_h1_tile72
-            hide gram_h1_tile73
-            hide gram_h1_tile74
-            hide gram_h1_tile75
-            hide gram_h1_tile76
-            hide gram_h1_tile77
-
-        if ((and1in4 == True  or letterA4in4 == True or letterA6in4 == True or letterT2in4 == True or letterT3in4 == True or letterT5in4 == True or letterF7in4 == True) and 
-        (and1in5 == True or letterA4in5 == True or letterA6in5 == True or letterF7in5 == True) and 
-        (and1in6 == True or letterA4in6 == True or letterA6in6 == True or letterT2in6 == True or letterT3in6 == True or letterT5in6 == True or letterF7in6 == True)):
+            if gramRow2_R_sound_right1 ==0:
+                $gramRow2_R_sound_right1 +=1
+                play sound gramTree1
+                queue sound gramText2
+            if(letterF7in7):
+                image gram_h1_tile66 = "treeGreen.png"
+                image gram_h1_tile67 = "1_1_green.png"
+                show gram_h1_tile66 at Position(xpos = 1480, xanchor = 0, ypos = 600, yanchor = 0)
+                show gram_h1_tile67 at Position(xpos = 1480, xanchor = 0, ypos = 675, yanchor = 0)
+                image gram_h1_tile68 = "solutionLine.png"
+                image gram_h1_tile69 = "nose.png"
+                show gram_h1_tile68 at Position(xpos = 1485, xanchor = 0, ypos = 770, yanchor = 0)
+                show gram_h1_tile69 at Position(xpos = 1460, xanchor = 0, ypos = 800, yanchor = 0)
+                if gramRow3_R_sound_right1 ==0:
+                    $gramRow3_R_sound_right1 +=1
+                    play sound gramTree1
+                    queue sound gramText3
+            elif(letterK1in7 or letterK2in7):
+                image gram_h1_tile70 = "treeRed.png"
+                image gram_h1_tile71 = "1_1_Red.png"
+                show gram_h1_tile70 at Position(xpos = 1480, xanchor = 0, ypos = 600, yanchor = 0)
+                show gram_h1_tile71 at Position(xpos = 1480, xanchor = 0, ypos = 675, yanchor = 0)
+                if gramRow3_R_sound_wrong1 ==0:
+                    $gramRow3_R_sound_wrong1 +=1
+                    play sound gramTree5
+            if(not(letterF7in7)):
+                if gramRow3_R_sound_right1 ==1:
+                    $gramRow3_R_sound_right1 -=1
+            if(not(letterK1in7 or letterK2in7)):
+                if gramRow3_R_sound_wrong1 ==1:
+                    $gramRow3_R_sound_wrong1 -=1
+        elif((letterA4in4 or letterA6in4 or letterK1in4 or letterK2in4 or letterF7in4) and (letterA4in5 or letterA6in5 or letterK1in5 or letterK2in5 or letterF7in5) and (letterA4in6 or letterA6in6 or letterK1in6 or letterK2in6 or letterF7in6)):
             image gram_h1_tile88 = "leftTreeredlong.png"
             image gram_h1_tile89 = "1_1_red.png"
             show gram_h1_tile88 at Position(xpos = 1365, xanchor = 0, ypos = 425, yanchor = 0)
@@ -2670,61 +2693,17 @@ label gamefile_h1:
             image gram_h1_tile93 = "1_1_red.png"
             show gram_h1_tile92 at Position(xpos = 1550, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h1_tile93 at Position(xpos = 1640, xanchor = 0, ypos = 500, yanchor = 0)
+            if gramRow2_R_sound_wrong1 ==0:
+                $gramRow2_R_sound_wrong1 +=1
+                play sound gramTree5
+        if(not((letterA4in4 or letterA6in4) and (letterK1in5 or letterK2in5) and (letterA4in6 or letterA6in6))):
+            if gramRow2_R_sound_right1 ==1:
+                $gramRow2_R_sound_right1 -=1
+        if(not((letterA4in4 or letterA6in4 or letterK1in4 or letterK2in4 or letterF7in4) and (letterA4in5 or letterA6in5 or letterK1in5 or letterK2in5 or letterF7in5) and (letterA4in6 or letterA6in6 or letterK1in6 or letterK2in6 or letterF7in6))):
+            if gramRow2_R_sound_wrong1 ==1:
+                $gramRow2_R_sound_wrong1 -=1
 
-        elif ((and1in4 == False and letterA4in4 == False and letterA6in4 == False and letterT2in4 == False and letterT3in4 == False and letterT5in4 == False and letterF7in4 == False) or 
-        (and1in5 == False and letterA4in5 == False and letterA6in5 == False and letterF7in5 == False) or 
-        (and1in6 == False and letterA4in6 == False and letterA6in6 == False and letterT2in6 == False and letterT3in6 == False and letterT5in6 == False and letterF7in6 == False)):
-
-            hide gram_h1_tile88
-            hide gram_h1_tile89
-            hide gram_h1_tile90
-            hide gram_h1_tile91
-            hide gram_h1_tile92
-            hide gram_h1_tile93
-
-    if (letterT2in1 == False and letterT3in1 == False and letterT5in1 == False) or (letterT2in2 == False and letterT3in2 == False and letterT5in2 == False):
-        hide gram_h1_tile42
-        hide gram_h1_tile43
-        hide gram_h1_tile44
-        hide gram_h1_tile45
-        hide gram_h1_tile46
-        hide gram_h1_tile47
-        hide gram_h1_tile48
-        hide gram_h1_tile49
-        hide gram_h1_tile50
-        hide gram_h1_tile51
-        hide gram_h1_tile52
-        hide gram_h1_tile53
-        hide gram_h1_tile54
-        hide gram_h1_tile55
-        hide gram_h1_tile56
-        hide gram_h1_tile57
-        hide gram_h1_tile58
-        hide gram_h1_tile59
-        hide gram_h1_tile60
-        hide gram_h1_tile61
-        hide gram_h1_tile62
-        hide gram_h1_tile63
-        hide gram_h1_tile64
-        hide gram_h1_tile65
-        hide gram_h1_tile66
-        hide gram_h1_tile67
-        hide gram_h1_tile68
-        hide gram_h1_tile69
-        hide gram_h1_tile70
-        hide gram_h1_tile71
-        hide gram_h1_tile72
-        hide gram_h1_tile73
-        hide gram_h1_tile74
-        hide gram_h1_tile75
-        hide gram_h1_tile76
-        hide gram_h1_tile77
-        hide gram_h1_tile78
-        hide gram_h1_tile79
-
-
-    if ((and1in1 == True or letterA4in1 == True or letterA6in1 == True or letterF7in1 == True) and 
-    (and1in2 == True or letterA4in2 == True or letterA6in2 == True or letterF7in2 == True or letterT2in2 == True or letterT3in2 == True or letterT5in2 == True)):
+    elif((letterK2in1 or letterK1in1 or letterT3in1 or letterT5in1 or letterA4in1 or letterA6in1 or letterF7in1) and (letterK2in2 or letterK1in2 or letterT3in2 or letterT5in2 or letterA4in2 or letterA6in2 or letterF7in2)):
         image gram_h1_tile80 = "leftTreeredlong1.png"
         image gram_h1_tile81 = "1_1_Red.png"
         show gram_h1_tile80 at Position(xpos = 1050, xanchor = 0, ypos = 250, yanchor = 0)
@@ -2734,40 +2713,21 @@ label gamefile_h1:
         image gram_h1_tile83 = "1_1_Red.png"
         show gram_h1_tile82 at Position(xpos = 1300, xanchor = 0, ypos = 250, yanchor = 0)
         show gram_h1_tile83 at Position(xpos = 1480, xanchor = 0, ypos = 325, yanchor = 0)
-
-    if ((and1in1 == False and letterA4in1 == False and letterA6in1 == False and letterF7in1 == False) or 
-        (and1in2 == False and letterA4in2 == False and letterA6in2 == False and letterF7in2 == False and letterT2in2 == False and letterT3in2 == False and letterT5in2 == False)):
-        hide gram_h1_tile80
-        hide gram_h1_tile81
-        hide gram_h1_tile82
-        hide gram_h1_tile83
-
-    if ((and1in1 == True or letterA4in1 == True or letterA6in1 == True or letterF7in1 == True or letterT2in1 == True or letterT3in1 == True or letterT5in1 == True) and 
-    (and1in2 == True or letterA4in2 == True or letterA6in2 == True or letterF7in2 == True)):
-        image gram_h1_tile84 = "leftTreeredlong1.png"
-        image gram_h1_tile85 = "1_1_Red.png"
-        show gram_h1_tile84 at Position(xpos = 1050, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_h1_tile85 at Position(xpos = 1020, xanchor = 0, ypos = 325, yanchor = 0)
-
-        image gram_h1_tile86 = "rightTreeredlong1.png"
-        image gram_h1_tile87 = "1_1_Red.png"
-        show gram_h1_tile86 at Position(xpos = 1300, xanchor = 0, ypos = 250, yanchor = 0)
-        show gram_h1_tile87 at Position(xpos = 1480, xanchor = 0, ypos = 325, yanchor = 0)
-
-    if ((and1in1 == False and letterA4in1 == False and letterA6in1 == False and letterF7in1 == False and letterT2in1 == False and letterT3in1 == False and letterT5in1 == False) or 
-        (and1in2 == False and letterA4in2 == False and letterA6in2 == False and letterF7in2 == False)):
-        hide gram_h1_tile84
-        hide gram_h1_tile85
-        hide gram_h1_tile86
-        hide gram_h1_tile87
-
-    #win conditions
-    if ((letterT2in1 == True or letterT3in1 == True or letterT5in1 == True) and (letterT2in2 == True or letterT3in2 == True or letterT5in2 == True) and 
-        (and1in3 == True) and (letterA4in4 == True or letterA6in4 == True) and (letterT2in5 == True or letterT3in5 == True or letterT5in5 == True) and 
-        (letterA4in6 == True or letterA6in6 == True) and (letterF7in7 == True)):
+        if gramRow1_C_sound_wrong1 ==0:
+            $gramRow1_C_sound_wrong1 +=1
+            play sound gramTree5
+    if(not((letterT3in1 or letterT5in1) and (letterT3in2 or letterT5in2))):
+        if gramRow1_C_sound_right1 ==1:
+            $gramRow1_C_sound_right1 -=1
+    if(not((letterK2in1 or letterK1in1 or letterT3in1 or letterT5in1 or letterA4in1 or letterA6in1 or letterF7in1) and (letterK2in2 or letterK1in2 or letterT3in2 or letterT5in2 or letterA4in2 or letterA6in2 or letterF7in2))):
+        if gramRow1_C_sound_wrong1 ==1:
+            $gramRow1_C_sound_wrong1 -=1
+    if ((letterT3in1 or letterT5in1) and (letterT3in2 or letterT5in2) and 
+        (letterK1in3 or letterK2in3) and (letterA4in4 or letterA6in4) and (letterK2in5 or letterK1in5) and 
+        (letterA4in6 or letterA6in6) and (letterF7in7)):
 
         image gram_h1_tile202 = "letterK.png"
-        image gram_h1_tile206 = "letterT.png"
+        image gram_h1_tile206 = "letterK.png"
         image gram_h1_tile203 = "letterT.png"
         image gram_h1_tile205 = "letterA.png"
         image gram_h1_tile201 = "letterT.png"
@@ -2775,92 +2735,29 @@ label gamefile_h1:
         image gram_h1_tile208 = "letterF.png"
         
         show gram_h1_tile202 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
-        show gram_h1_tile206 at Position(xpos = letterT2X, xanchor = 0, ypos = letterT2y, yanchor = 0)
+        show gram_h1_tile206 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
         show gram_h1_tile203 at Position(xpos = letterT3x, xanchor = 0, ypos = letterT3y, yanchor = 0)
         show gram_h1_tile205 at Position(xpos = letterA4x, xanchor = 0, ypos = letterA4y, yanchor = 0)
         show gram_h1_tile201 at Position(xpos = lettertT5x, xanchor = 0, ypos = lettertT5y, yanchor = 0)
         show gram_h1_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
         show gram_h1_tile208 at Position(xpos = letterF7x, xanchor = 0, ypos = letterF7y, yanchor = 0)
-
-
-        "Access Gained"
-
-        jump eng_gram_h1#gram_m5#start
+        queue sound gramWin
+        $renpy.pause(0.7)
+        $gramHard_solved = True
+        jump gramHard_win
 
     if attempts ==0:
 
-        show gram_h1_tile202 at Position(xpos = 1035, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h1_tile206 at Position(xpos = 1495, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h1_tile203 at Position(xpos = 1035, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h1_tile205 at Position(xpos = 1335, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h1_tile201 at Position(xpos = 1495, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h1_tile204 at Position(xpos = 1655, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h1_tile208 at Position(xpos = 1495, xanchor = 0, ypos = 685, yanchor = 0)
-
-        hide gram_h1_tile42
-        hide gram_h1_tile43
-        hide gram_h1_tile44
-        hide gram_h1_tile45
-        hide gram_h1_tile46
-        hide gram_h1_tile47
-        hide gram_h1_tile48
-        hide gram_h1_tile49
-        hide gram_h1_tile50
-        hide gram_h1_tile51
-        hide gram_h1_tile52
-        hide gram_h1_tile53
-        hide gram_h1_tile54
-        hide gram_h1_tile55
-        hide gram_h1_tile56
-        hide gram_h1_tile57
-        hide gram_h1_tile58
-        hide gram_h1_tile59
-        hide gram_h1_tile60
-        hide gram_h1_tile61
-        hide gram_h1_tile62
-        hide gram_h1_tile63
-        hide gram_h1_tile64
-        hide gram_h1_tile65
-        hide gram_h1_tile66
-        hide gram_h1_tile67
-        hide gram_h1_tile68
-        hide gram_h1_tile69
-        hide gram_h1_tile70
-        hide gram_h1_tile71
-        hide gram_h1_tile72
-        hide gram_h1_tile73
-        hide gram_h1_tile74
-        hide gram_h1_tile75
-        hide gram_h1_tile76
-        hide gram_h1_tile77
-        hide gram_h1_tile78
-        hide gram_h1_tile79
-        hide gram_h1_tile80
-        hide gram_h1_tile81
-        hide gram_h1_tile82
-        hide gram_h1_tile83
-        hide gram_h1_tile84
-        hide gram_h1_tile85
-        hide gram_h1_tile86
-        hide gram_h1_tile87
-        hide gram_h1_tile88
-        hide gram_h1_tile89
-        hide gram_h1_tile90
-        hide gram_h1_tile91
-        hide gram_h1_tile92
-        hide gram_h1_tile93
-
-        "You Lose Try Again"
-
-        jump eng_gram_h1#gram_m5#start
+        show gram_h1_tile202 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
+        show gram_h1_tile206 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+        show gram_h1_tile203 at Position(xpos = letterT3x, xanchor = 0, ypos = letterT3y, yanchor = 0)
+        show gram_h1_tile205 at Position(xpos = letterA4x, xanchor = 0, ypos = letterA4y, yanchor = 0)
+        show gram_h1_tile201 at Position(xpos = lettertT5x, xanchor = 0, ypos = lettertT5y, yanchor = 0)
+        show gram_h1_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
+        show gram_h1_tile208 at Position(xpos = letterF7x, xanchor = 0, ypos = letterF7y, yanchor = 0)
+        queue sound gramLose
+        $renpy.pause(0.8)
+        $gramHard_attempts +=1
+        jump gramHard_lose
     
-
-#    if and1in1 == True or letterT2in1 ==True or letterT3in1 ==True or letterA4in1 ==True:
-#        image gram_h1_tile109 = "leftTreegreen.png"
-#        #shows gram_h1_tiles
-#        show gram_h1_tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
-#    if and1in1 == False and letterT2in1 == False and letterT3in1 == False and letterA4in1 ==False:
-#        hide gram_h1_tile109      
-
-          
     jump gamefile_h1

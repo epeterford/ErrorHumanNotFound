@@ -1179,11 +1179,14 @@ label finishLab2Inv_S:
     jump lab2Table
 
 label endCh3_S:
-    "{i}Grace's bracelet flashes.{/i}"
     #Insert SFX
     "{i}DING. DING.{/i}"
+    "{i}Grace's bracelet flashes.{/i}"
+    show Grace neutral
     "{i}'Meet me at the AI core stat.'- Ada{/i}"
     "{i}Grace's journal has updated.{/i}"
+    show Grace snarky
+    g "What a shame. I have to go. Later, Ivan."
     $journal4="S"
     $pageUnlocked_journal+=2
     jump chapterFour_S

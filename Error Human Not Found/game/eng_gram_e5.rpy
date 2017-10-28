@@ -22,9 +22,9 @@ screen logicGatese5:
         idle "button_empty2.png"
         xpos 178
         ypos 285
-    text "Moves" xpos 185 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
-    text ": " xpos 325 ypos 294 color "#0060db" font "Bitter-Bold.otf" size 38
-    text "[attempts]" xpos 380 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
 #    imagebutton:
 #        idle "letterK_grey.png"
 #        xpos 275

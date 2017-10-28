@@ -318,11 +318,18 @@ label lab2Table_resume:
     jump nightShift_comp
     
 label nightShift_comp:
+    if (gramMed_attempts>0):
+        $quick_menu = True
+        show Grace neutral at left
+        g "Ivan, normal people either make sure they have access to all the information they might need, or they ensure that they know the passwords to get it."
+        #show Ivan something at right
+        ivan "I have everything {i}I{/i} need."
+        g "Right. I'm going to get it in a minute anyways."
     $quick_menu = False
     hide Grace
     #hide Ivan
 #    if(gramMed_solved==False):
-    show bg lab2WS_locked with fade
+    scene bg lab2WS_locked with fade
     call screen nightShift_scr
     
 label investigateNightShift:

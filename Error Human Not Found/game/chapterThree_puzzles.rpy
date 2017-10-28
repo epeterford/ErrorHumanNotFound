@@ -173,9 +173,9 @@ label lgMed_doneTalk:
     if(lgMed_attempts==2):
         show Ada annoyed at right
         a "Grace made this look so easy! Her processing speeds are no where near mine, and yet she seemed to grasp the concept far quicker. I shall have to run some simulations in my downtime."
-    if(lgMed_attempts==3):
+    if(lgMed_attempts>2):
         show Ada seething at right
-        a "Manual overrides are inefficient. If everything were interfaced, it would be much simpler to get this silly door open. At least no was witness to my inability to manipulate hardware."
+        a "Manual overrides are inefficient. If everything were interfaced, it would be much simpler to get this silly door open. At least no one was witness to my inability to manipulate hardware."
     show Ada neutral
     if(resume=="S"):
         jump resume_lgMed_S
@@ -599,8 +599,8 @@ label hints_llMed_1:
     hide other darken onlayer screens
     hide LLM_1_tile64 
     hide LLM_1_tile65 
-    hide LLE_1_tile66 
-    hide LLE_1_tile67
+    hide LLM_1_tile66 
+    hide LLM_1_tile67
     jump gamefile_llm1
     
 label hints_llMed_2:
@@ -622,8 +622,8 @@ label hints_llMed_2:
     hide other darken onlayer screens
     hide LLM_2_tile64 
     hide LLM_2_tile65 
-    hide LLE_2_tile66 
-    hide LLE_2_tile67 
+    hide LLM_2_tile66 
+    hide LLM_2_tile67 
     jump gamefile_llm2
     
 label hints_llMed_3:
@@ -645,8 +645,8 @@ label hints_llMed_3:
     hide other darken onlayer screens
     hide LLM_3_tile64 
     hide LLM_3_tile65 
-    hide LLE_3_tile66 
-    hide LLE_3_tile67 
+    hide LLM_3_tile66 
+    hide LLM_3_tile67 
     jump gamefile_llm3
     
 label hints_llMed_4:
@@ -668,8 +668,8 @@ label hints_llMed_4:
     hide other darken onlayer screens
     hide LLM_4_tile64
     hide LLM_4_tile65 
-    hide LLE_4_tile66
-    hide LLE_4_tile67 
+    hide LLM_4_tile66
+    hide LLM_4_tile67 
     jump gamefile_llm4
     
 label hints_llMed_5:
@@ -691,8 +691,8 @@ label hints_llMed_5:
     hide other darken onlayer screens
     hide LLM_5_tile74
     hide LLM_5_tile75
-    hide LLE_5_tile76
-    hide LLE_5_tile77 
+    hide LLM_5_tile76
+    hide LLM_5_tile77 
     jump gamefile_llm5
     
 ##########################################################################################
@@ -938,7 +938,7 @@ screen gramMed_lose_scr:
         xpos 925
         ypos 610 
         focus_mask True
-        action Jump("doorPuzzle") #CHANGE ME
+        action Jump("nightShift_comp") #CHANGE ME
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
             
@@ -987,14 +987,34 @@ label gramMed_done:
     if(gramMed_attempts ==0):
         #show Ivan dour at right
         show Grace happy at left
-        "Response for zero attempts."
+        g "Still got it. Really Ivan, you should teach your people to make more secure passwords."
+        ivan "Ellen is {i}not{/i} one of my people. My people know how to make passwords that take more than five minutes of fumbling to crack."
+        g "Sure they do."
     if(gramMed_attempts ==1):
         #show Ivan dour at right
         show Grace neutral at left
-        "Response for one attempt."
+        g "Okay, it might have been easier if Ellen used password hints. Or left a stickynote lying around with a reminder of sorts."
+        ivan "Having difficulties Fortran?"
+        show Grace snarky
+        g "It's unlocked, isn't it?"
     if(gramMed_attempts>1):
         show Grace annoyed at left
-        "Response for over one attempts."
+        #show Ivan dour at right
+        g "Seriously? If I knew it was going to be this much of an issue I would have had Ada do the brute force attack. Kind of what supercomputers are for."
+        #show Ivan phonysmile (or something) 
+        ivan "Elegant solutions as always, Fortran."
+        g "Like you could hack it any faster, Ivan."
+    show Grace neutral
+    g "Now I just need to check her logs..."
+    show Grace surprised at left
+    g "Well, that's not what I was hoping for."
+    #show Ivan something at right
+    ivan "What Fortran?"
+    show Grace annoyed
+    g "The wire was faulty. But it was replaced with a new one. The faulty one should have been disposed of entirely, but looks like cleaning up after herself isn't one of Ellen's strengths."
+    ivan "So there's nothing, like I said there would be."
+    show Grace angry
+    g "You know--"
     if (resume=="E"):
         jump endCh3_E
     if (resume=="SbE"):
@@ -1031,17 +1051,49 @@ label choose_gramMed:
     $temp_slot = ""
     $gramRow1_L_sound =0
     $gramRow1_R_sound = 0
-    $gramRow1_C_sound = 0
-    $gramRow2_L_sound = 0
-    $gramRow2_R_sound = 0
-    $gramRow2_C_sound = 0
-    $gramRow2_R2_sound = 0
-    $gramRow3_L_sound = 0
-    $gramRow3_R_sound = 0
-    $gramRow3_L2_sound = 0
-    $gramRow3_R2_sound = 0
     
-    jump gram_m1 #REMOVE THIS AFTER TESTING
+    $gramRow1_C_sound = 0
+    $gramRow1_C_sound_wrong1 = 0
+    $gramRow1_C_sound_wrong2 = 0
+    $gramRow1_C_sound_right1 = 0
+    $gramRow1_C_sound_right2 = 0
+    
+    $gramRow2_L_sound = 0
+    $gramRow2_L_sound_wrong1 = 0
+    $gramRow2_L_sound_right1 = 0
+    $gramRow2_L_sound_wrong2 = 0
+    $gramRow2_L_sound_right2 = 0
+    
+    $gramRow2_R_sound = 0
+    $gramRow2_R_sound_right1 = 0
+    $gramRow2_R_sound_right2 = 0
+    $gramRow2_R_sound_wrong1 = 0
+    $gramRow2_R_sound_wrong2 = 0
+    
+    $gramRow2_C_sound = 0
+    $gramRow2_C_sound_wrong1 = 0
+    $gramRow2_C_sound_right1 = 0
+    $gramRow2_C_sound_wrong2 = 0
+    $gramRow2_C_sound_right2 = 0
+    
+    $gramRow3_L_sound = 0
+    $gramRow3_L_sound_wrong1 = 0
+    $gramRow3_L_sound_wrong2 = 0
+    $gramRow3_L_sound_right1 = 0
+    $gramRow3_L_sound_right2 = 0
+    
+    $gramRow3_R_sound = 0
+    $gramRow3_R_sound_right1 = 0
+    $gramRow3_R_sound_wrong1 = 0
+    $gramRow3_R_sound_right2 = 0
+    $gramRow3_R_sound_wrong2 = 0
+    
+    $gramRow3_C_sound = 0
+    $gramRow3_C_sound_right1 = 0
+    $gramRow3_C_sound_wrong1 = 0
+    $gramRow3_C_sound_right2 = 0
+    $gramRow3_C_sound_wrong2 = 0
+
     $randomNumberMedGram = renpy.random.randint(0,4)
     if randomNumberMedGram==0:
         jump gram_m1
@@ -1073,7 +1125,7 @@ label hints_gramMed_1:
     if (remainder==0):
         g "There may be extra rules not used in this particular solution. For example, there are two one-to-one substitutions, but only one spot in the tree for a one-to-one substitution."
     if (remainder==1):
-        g "The only intermediary substitutions involve T, ."
+        g "The only intermediary substitution involves T, so T should go in non-terminal slots."
     if (remainder==2):
         g "The terminal letters are B and R, so the bottom row of the tree should contain all B's and R's."
     hide other darken onlayer screens
@@ -1100,11 +1152,11 @@ label hints_gramMed_2:
     show other darken onlayer screens
     $gramMedHints +=1
     if (remainder==0):
-        g "Hint 1 for med 1."
+        g "There's only one substitution for S, so T and M are pretty straightforward."
     if (remainder==1):
-        g "Hint 2 for med 2."
+        g "R goes to J is the same thing as R goes to J followed by epsilon. Therefore R can only be substituted by one J."
     if (remainder==2):
-        g "Hint 3 for med 3."
+        g "J is one of the only two terminal substitutions, so it will be primarily on the bottom of the tree."
     hide other darken onlayer screens
     hide gram_m2_tile202
     hide gram_m2_tile206 
@@ -1130,11 +1182,11 @@ label hints_gramMed_3:
     show other darken onlayer screens
     $gramMedHints +=1
     if (remainder==0):
-        g "Hint 1 for med 3."
+        g "Alright, starting at the top is easy enough. There's only one substitution possible for S, and then I have to look at what those L's can be replaced with."
     if (remainder==1):
-        g "Hint 2 for med 3."
+        g "Both of the middle rows require K, since L has to have K on the left side of whateer is substituted for it."
     if (remainder==2):
-        g "Hint 3 for med 3."
+        g "M and N are the trickiest parts of this one. However, M is not terminal, and N is, so I should only use M where there is another slot below it."
     hide other darken onlayer screens
     hide gram_m3_tile202
     hide gram_m3_tile206 
@@ -1161,11 +1213,11 @@ label hints_gramMed_4:
     show other darken onlayer screens
     $gramMedHints +=1
     if (remainder==0):
-        g "Hint 1 for med 4."
+        g "S is recursive here, as it can produce itself or an empty string. So I need to have an S as part of the substitution for an S."
     if (remainder==1):
-        g "Hint 2 for med 4."
+        g "The terminal letters can only be substituted for T, and they won't make all the terminal slots because they have to go together."
     if (remainder==2):
-        g "Hint 3 for med 4."
+        g "The deepest part of the tree has to have the most recursion, as T only has one valid substitution, and those letters are terminal, so the left half of the tree will have the S's."
     hide other darken onlayer screens
     hide gram_m4_tile202
     hide gram_m4_tile206 
@@ -1194,11 +1246,11 @@ label hints_gramMed_5:
     show other darken onlayer screens
     $gramMedHints +=1
     if (remainder==0):
-        g "Hint 1 for med 5."
+        g "Both R and T have a one-to-one substitution and a one-to-two substitution. The shape of the tree will tell me which one I should use to get the correct final string."
     if (remainder==1):
-        g "Hint 2 for med 5."
+        g "The terminal letters are J, R, and M which means those are the only letters I should have in the bottom row."
     if (remainder==2):
-        g "Hint 3 for med 5."
+        g "K has only one substitution, so it's probably one of the simplest parts of this puzzle. Just a pair of J's as its children in its tree."
     hide other darken onlayer screens
     hide gram_m5_tile202
     hide gram_m5_tile206 

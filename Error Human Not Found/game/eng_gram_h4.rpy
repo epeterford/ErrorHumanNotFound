@@ -18,8 +18,32 @@ init python:
                 return True
         return True 
 
-screen logicGatesh4:
-
+screen grammar_h4:
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 260
+        ypos 200
+        focus_mask True
+        action Jump("hints_gramHard_4")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 178
+        ypos 285
+    text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
     draggroup:
         #and gates
         drag:
@@ -33,7 +57,7 @@ screen logicGatesh4:
                 child "letterK.png"
                 droppable False
                 dragged gate_dragged
-                xpos letterK2X ypos letterK2y
+                xpos letterK2x ypos letterK2y
         drag:
                 drag_name "letterM1"
                 child "letterM.png"
@@ -161,34 +185,36 @@ screen logicGatesh4:
                 drag_name "letterM_gate_return"
                 child "letterBorder.png"
                 draggable False
-                xpos 397 ypos 562
+                xpos 330 ypos 648 #xpos 397 ypos 562
                 
         drag:
                 drag_name "letterA_gate_return"
                 child "letterBorder.png"
                 draggable False
-                xpos 330 ypos 648
+                xpos 262 ypos 738 #xpos 330 ypos 648
 
         drag:
                 drag_name "letterT_gate_return"
                 child "letterBorder.png"
                 draggable False
-                xpos 262 ypos 738
+                xpos 397 ypos 738
 
         drag:
                 drag_name "letterH_gate_return"
                 child "letterBorder.png"
                 draggable False
-                xpos 397 ypos 738
+                xpos 397 ypos 562 #xpos 397 ypos 738
 
 init:
     image bg Eng_Tile = "eng_tile_bg.png"
 
 label eng_gram_h4:
-
-    scene bg Eng_Tile
+    $config.skipping=None
+    $ gate_name= ""
+    $ slot_name = ""
     $ quick_menu = False
     $ game_menu = True
+    scene bg Eng_Tile
 
     #all sections are broken down into their rows
     #the first set of values declares images for the show call
@@ -274,16 +300,16 @@ label eng_gram_h4:
     show slot10 at Position(xpos = 1250, xanchor = 0, ypos = 675, yanchor = 0)
     show slot11 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
 
-    image eaeng_m4_tile31 = "letterBorder.png"
-    image eaeng_m4_tile32 = "letterBorder.png"
-    image eaeng_m4_tile33 = "letterBorder.png"
-    image eaeng_m4_tile34 = "letterBorder.png"
-    image eaeng_m4_tile35 = "letterBorder.png"
-    show eaeng_m4_tile31 at Position(xpos = 262, xanchor = 0, ypos = 562, yanchor = 0)
-    show eaeng_m4_tile32 at Position(xpos = 397, xanchor = 0, ypos = 562, yanchor = 0)
-    show eaeng_m4_tile33 at Position(xpos = 330, xanchor = 0, ypos = 648, yanchor = 0)
-    show eaeng_m4_tile34 at Position(xpos = 262, xanchor = 0, ypos = 738, yanchor = 0)
-    show eaeng_m4_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
+    image eaeng_h4_tile31 = "letterBorder.png"
+    image eaeng_h4_tile32 = "letterBorder.png"
+    image eaeng_h4_tile33 = "letterBorder.png"
+    image eaeng_h4_tile34 = "letterBorder.png"
+    image eaeng_h4_tile35 = "letterBorder.png"
+    show eaeng_h4_tile31 at Position(xpos = 262, xanchor = 0, ypos = 562, yanchor = 0)
+    show eaeng_h4_tile32 at Position(xpos = 397, xanchor = 0, ypos = 562, yanchor = 0)
+    show eaeng_h4_tile33 at Position(xpos = 330, xanchor = 0, ypos = 648, yanchor = 0)
+    show eaeng_h4_tile34 at Position(xpos = 262, xanchor = 0, ypos = 738, yanchor = 0)
+    show eaeng_h4_tile35 at Position(xpos = 397, xanchor = 0, ypos = 738, yanchor = 0)
 
     image eng_gram_h4_grayK = "letterK_grey.png"
     image eng_gram_h4_grayH = "letterH_grey.png"
@@ -300,7 +326,7 @@ label eng_gram_h4:
     # gates
     $ letterK1x = 275
     $ letterK1y = 575
-    $ letterK2X = 275 
+    $ letterK2x = 275 
     $ letterK2y = 575
     $ letterM3x = 342 
     $ letterM3y = 660
@@ -467,7 +493,7 @@ label gamefile_h4:
     #image moon = "images/blankgram_h4_tile.png"
     #show blink
     #calls jigsaw game with the images selected
-    call screen logicGatesh4
+    call screen grammar_h4
 
     if gate_name == "letterK1":
             #call and_gate_pos_1
@@ -479,7 +505,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -540,7 +566,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -602,7 +628,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -664,7 +690,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -726,7 +752,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -788,7 +814,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -850,7 +876,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -912,7 +938,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -974,7 +1000,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -1036,7 +1062,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -1098,7 +1124,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -1163,7 +1189,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -1203,7 +1229,7 @@ label gamefile_h4:
                $ letterT11y = 750
                $ letterT11in1 = False
             #sets values for checks
-            $ letterK2X = 865
+            $ letterK2x = 865
             $ letterK2y = 340
             $ letterK2in1 = True
             $ letterK2in2 = False
@@ -1224,7 +1250,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -1265,7 +1291,7 @@ label gamefile_h4:
                $ letterT11in2 = False
 
             #sets check values
-            $ letterK2X = 1265
+            $ letterK2x = 1265
             $ letterK2y = 340
             $ letterK2in1 = False
             $ letterK2in2 = True
@@ -1286,7 +1312,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -1327,7 +1353,7 @@ label gamefile_h4:
                $ letterT11in3 = False
 
             #sets values for the checks
-            $ letterK2X = 1665
+            $ letterK2x = 1665
             $ letterK2y = 340
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1348,7 +1374,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -1389,7 +1415,7 @@ label gamefile_h4:
                $ letterT11in4 = False
 
             #sets values for the checks
-            $ letterK2X = 865
+            $ letterK2x = 865
             $ letterK2y = 515
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1410,7 +1436,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -1426,8 +1452,8 @@ label gamefile_h4:
                $ lettertT5y = 750
                $ letterT5in5 = False
             if letterA6in5 == True:
-               $ letterA6x = 275
                $ letterA6y = 750
+               $ letterA6x = 275
                $ letterA6in5 = False
             if letterH7in5 == True:
                $ letterH7x = 410
@@ -1451,7 +1477,7 @@ label gamefile_h4:
                $ letterT11in5 = False
 
             #sets values for the checks
-            $ letterK2X = 1015
+            $ letterK2x = 1015
             $ letterK2y = 515
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1472,7 +1498,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -1513,7 +1539,7 @@ label gamefile_h4:
                $ letterT11in6 = False
 
             #sets values for the checks
-            $ letterK2X = 1265
+            $ letterK2x = 1265
             $ letterK2y = 515
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1534,7 +1560,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -1575,7 +1601,7 @@ label gamefile_h4:
                $ letterT11in7 = False
 
             #sets values for the checks
-            $ letterK2X = 1515
+            $ letterK2x = 1515
             $ letterK2y = 515
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1596,7 +1622,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -1637,7 +1663,7 @@ label gamefile_h4:
                $ letterT11in8 = False
 
             #sets values for the checks
-            $ letterK2X = 1665
+            $ letterK2x = 1665
             $ letterK2y = 515
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1658,7 +1684,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -1699,7 +1725,7 @@ label gamefile_h4:
                $ letterT11in9 = False
 
             #sets values for the checks
-            $ letterK2X = 1115
+            $ letterK2x = 1115
             $ letterK2y = 690
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1720,7 +1746,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -1761,7 +1787,7 @@ label gamefile_h4:
                $ letterT11in10 = False
 
             #sets values for the checks
-            $ letterK2X = 1265
+            $ letterK2x = 1265
             $ letterK2y = 690
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1782,7 +1808,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -1823,7 +1849,7 @@ label gamefile_h4:
                $ letterT11in11 = False
 
             #sets values for the checks
-            $ letterK2X = 1415
+            $ letterK2x = 1415
             $ letterK2y = 690
             $ letterK2in1 = False
             $ letterK2in2 = False
@@ -1847,7 +1873,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -1908,7 +1934,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -1970,7 +1996,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -2032,7 +2058,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -2094,7 +2120,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -2156,7 +2182,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -2218,7 +2244,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -2280,7 +2306,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -2342,7 +2368,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -2404,7 +2430,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -2466,7 +2492,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -2532,7 +2558,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -2593,7 +2619,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -2655,7 +2681,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -2717,7 +2743,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -2779,7 +2805,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -2841,7 +2867,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -2903,7 +2929,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -2965,7 +2991,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -3027,7 +3053,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -3089,7 +3115,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -3152,7 +3178,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -3218,7 +3244,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -3279,7 +3305,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -3341,7 +3367,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -3403,7 +3429,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -3465,7 +3491,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -3527,7 +3553,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -3589,7 +3615,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -3651,7 +3677,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -3713,7 +3739,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -3775,7 +3801,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -3837,7 +3863,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -3902,7 +3928,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -3963,7 +3989,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -4025,7 +4051,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -4087,7 +4113,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -4149,7 +4175,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -4211,7 +4237,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -4273,7 +4299,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -4335,7 +4361,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -4397,7 +4423,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -4459,7 +4485,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -4521,7 +4547,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -4586,7 +4612,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -4647,7 +4673,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -4709,7 +4735,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -4771,7 +4797,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -4833,7 +4859,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -4895,7 +4921,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -4957,7 +4983,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -5019,7 +5045,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -5081,7 +5107,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -5143,7 +5169,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -5205,7 +5231,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -5271,7 +5297,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -5332,7 +5358,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -5394,7 +5420,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -5456,7 +5482,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -5518,7 +5544,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -5580,7 +5606,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -5642,7 +5668,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -5704,7 +5730,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -5766,7 +5792,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -5829,7 +5855,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -5891,7 +5917,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -5957,7 +5983,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -6018,7 +6044,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -6080,7 +6106,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -6142,7 +6168,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -6204,7 +6230,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -6266,7 +6292,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -6328,7 +6354,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -6390,7 +6416,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -6452,7 +6478,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -6514,7 +6540,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -6576,7 +6602,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -6641,7 +6667,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -6702,7 +6728,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -6764,7 +6790,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -6826,7 +6852,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -6888,7 +6914,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -6950,7 +6976,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -7012,7 +7038,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -7074,7 +7100,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -7136,7 +7162,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -7198,7 +7224,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -7260,7 +7286,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -7327,7 +7353,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in1 = False
             if letterK2in1 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in1 = False
             if letterM3in1 == True:
@@ -7388,7 +7414,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in2 = False
             if letterK2in2 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in2 = False
             if letterM3in2 == True:
@@ -7451,7 +7477,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in3 = False
             if letterK2in3 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in3 = False
             if letterM3in3 == True:
@@ -7513,7 +7539,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in4 = False
             if letterK2in4 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in4 = False
             if letterM3in4 == True:
@@ -7575,7 +7601,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in5 = False
             if letterK2in5 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in5 = False
             if letterM3in5 == True:
@@ -7637,7 +7663,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in6 = False
             if letterK2in6 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in6 = False
             if letterM3in6 == True:
@@ -7699,7 +7725,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in7 = False
             if letterK2in7 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in7 = False
             if letterM3in7 == True:
@@ -7761,7 +7787,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in8 = False
             if letterK2in8 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in8 = False
             if letterM3in8 == True:
@@ -7823,7 +7849,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in9 = False
             if letterK2in9 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in9 = False
             if letterM3in9 == True:
@@ -7885,7 +7911,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in10 = False
             if letterK2in10 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in10 = False
             if letterM3in10 == True:
@@ -7947,7 +7973,7 @@ label gamefile_h4:
                $ letterK1y = 575
                $ letterK1in11 = False
             if letterK2in11 == True:
-               $ letterK2X = 275
+               $ letterK2x = 275
                $ letterK2y = 575
                $ letterK2in11 = False
             if letterM3in11 == True:
@@ -8004,7 +8030,7 @@ label gamefile_h4:
 
 
 
-    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not (slot_name == "LetterK_gate_return" or slot_name == "LetterM_gate_return" or slot_name == "LetterA_gate_return" or slot_name == "LetterT_gate_return" or slot_name == "LetterH_gate_return")):
+    if ((temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name == "letterK_gate_return" or slot_name == "letterM_gate_return" or slot_name == "letterA_gate_return" or slot_name == "letterT_gate_return" or slot_name == "letterH_gate_return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -8139,8 +8165,8 @@ label gamefile_h4:
             if slot_name == "letterT_gate_return":
                 $ attempts +=1
                 if gate_name == "letterT1":
-                    $ letterT5x = 410
-                    $ letterT5y = 750
+                    $ lettertT5x = 410
+                    $ lettertT5y = 750
                     $ letterT5in1 = False
                     $ letterT5in2 = False
                     $ letterT5in3 = False
@@ -8262,12 +8288,6 @@ label gamefile_h4:
     hide gram_h4_tile119
     hide gram_h4_tile120
     hide gram_h4_tile121
-    hide gram_h4_tile122
-    hide gram_h4_tile123
-    hide gram_h4_tile124
-    hide gram_h4_tile125
-    hide gram_h4_tile126
-    hide gram_h4_tile127
     hide gram_h4_tile128
     hide gram_h4_tile129
     hide gram_h4_tile130
@@ -8286,8 +8306,15 @@ label gamefile_h4:
     hide gram_h4_tile143
     hide gram_h4_tile144
     hide gram_h4_tile145
+    $gramNormal = renpy.random.randint(0,2)
+    if (gramNormal==0):
+        play sound gramTree2
+    if (gramNormal==1):
+        play sound gramTree3
+    if (gramNormal==2):
+        play sound gramTree4
         
-    if (letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True):
+    if ((letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True)):
         image gram_h4_tile42 = "leftTreegreenlong2.png"
         image gram_h4_tile43 = "1_1_green.png"
         show gram_h4_tile42 at Position(xpos = 885, xanchor = 0, ypos = 250, yanchor = 0)
@@ -8300,7 +8327,9 @@ label gamefile_h4:
         image gram_h4_tile47 = "1_1_green.png"
         show gram_h4_tile46 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
         show gram_h4_tile47 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
-
+        if gramRow1_C_sound_right1 ==0:
+            play sound gramTree1
+            $gramRow1_C_sound_right1 +=1
         if (letterM3in4 == True):
             image gram_h4_tile48 = "treeGreen.png"
             image gram_h4_tile49 = "1_1_green.png"
@@ -8314,12 +8343,24 @@ label gamefile_h4:
             show gram_h4_tile52 at Position(xpos = 830, xanchor = 0, ypos = 785, yanchor = 0)
             image gram_h4_tile53 = "foolish.png"
             show gram_h4_tile53 at Position(xpos = 750, xanchor = 0, ypos = 800, yanchor = 0)
+            if gramRow2_L_sound_right1 ==0:
+                play sound gramTree1
+                queue sound gramText1
+                $gramRow2_L_sound_right1 +=1
         elif (letterK1in4 or letterK2in4 or letterA4in4 or letterT5in4 or letterA6in4 or letterH7in4 or letterA8in4 or letterT9in4 or letterA10in4 or letterT11in4):
             image gram_h4_tile54 = "treeRed.png"
             image gram_h4_tile55 = "1_1_red.png"
             show gram_h4_tile54 at Position(xpos = 850, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile55 at Position(xpos = 850, xanchor = 0, ypos = 500, yanchor = 0)
-
+            if gramRow2_L_sound_wrong1 ==0:
+                $gramRow2_L_sound_wrong1 +=1
+                play sound gramTree5
+        if not(letterM3in4 == True):
+            if gramRow2_L_sound_right1 ==1:
+                $gramRow2_L_sound_right1 -=1
+        if not(letterK1in4 or letterK2in4 or letterA4in4 or letterT5in4 or letterA6in4 or letterH7in4 or letterA8in4 or letterT9in4 or letterA10in4 or letterT11in4):
+            if gramRow2_L_sound_wrong1 ==1:
+                $gramRow2_L_sound_wrong1 -=1
         if (letterH7in8 == True):
             image gram_h4_tile56 = "treeGreen.png"
             image gram_h4_tile57 = "1_1_green.png"
@@ -8333,13 +8374,25 @@ label gamefile_h4:
             image gram_h4_tile61 = "suit.png"
             show gram_h4_tile60 at Position(xpos = 1650, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h4_tile61 at Position(xpos = 1650, xanchor = 0, ypos = 800, yanchor = 0)
+            if gramRow2_R_sound_right1 ==0:
+                play sound gramTree1
+                queue sound gramText1
+                $gramRow2_R_sound_right1 +=1
         elif (letterK1in8 or letterK2in8 or letterM3in8 or letterA4in8 or letterT5in8 or letterA6in8 or letterA8in8 or letterT9in8 or letterA10in8 or letterT11in8):
             image gram_h4_tile114 = "treeRed.png"
             image gram_h4_tile115 = "1_1_red.png"
             show gram_h4_tile114 at Position(xpos = 1650, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile115 at Position(xpos = 1650, xanchor = 0, ypos = 500, yanchor = 0)
-        
-        if (letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and ((letterK2in7 == True or letterK1in7 == True)):
+            if gramRow2_R_sound_wrong1 ==0:
+                play sound gramTree5
+                $gramRow2_R_sound_wrong1 +=1
+        if (not(letterH7in8)):
+            if gramRow2_R_sound_right1 ==1:
+                $gramRow2_R_sound_right1 -=1
+        if (not(letterK1in8 or letterK2in8 or letterM3in8 or letterA4in8 or letterT5in8 or letterA6in8 or letterA8in8 or letterT9in8 or letterA10in8 or letterT11in8)):
+            if gramRow2_R_sound_wrong1 ==1:
+                $gramRow2_R_sound_wrong1 -=1
+        if ((letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and (letterK2in7 == True or letterK1in7 == True)):
             image gram_h4_tile62 = "leftTreegreenlong1.png"
             image gram_h4_tile63 = "1_1_green.png"
             show gram_h4_tile62 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
@@ -8373,9 +8426,12 @@ label gamefile_h4:
             show gram_h4_tile73 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
             show gram_h4_tile74 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h4_tile75 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
+            if gramRow2_C_sound_right1==0:
+                play sound gramTree1
+                queue sound gramText2
+                $gramRow2_C_sound_right1 +=1
 
-
-            if (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and ((letterA4in11 == True or letterA6in11 == True or letterA8in11 == True or letterA10in11 == True)):
+            if (letterA4in9 or letterA6in9 or letterA8in9 or letterA10in9) and (letterT5in10 or letterT9in10 or letterT11in10) and ((letterA4in11 or letterA6in11 or letterA8in11 or letterA10in11)):
                image gram_h4_tile76 = "leftTreegreenlong.png"
                image gram_h4_tile77 = "1_1_green.png"
                image gram_h4_tile78 = "solutionLine.png"
@@ -8400,6 +8456,10 @@ label gamefile_h4:
                image gram_h4_tile87 = "epsilon.png"
                show gram_h4_tile86 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
                show gram_h4_tile87 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
+               if gramRow3_C_sound_right1 ==0:
+                   $gramRow3_C_sound_right1 +=1
+                   play sound gramTree1
+                   queue sound gramText3
             elif ((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
                     (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
                     (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11)):
@@ -8415,25 +8475,18 @@ label gamefile_h4:
                image gram_h4_tile139 = "1_1_red.png"
                show gram_h4_tile138 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
                show gram_h4_tile139 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
-
-        elif ((letterK1in5 or letterK2in5 or letterM3in5 or letterA4in5 or letterT5in5 or letterA6in5 or letterH7in5 or letterA8in5 or letterT9in5 or letterA10in5 or letterT11in5) and
-                (letterK1in6 or letterK2in6 or letterM3in6 or letterA4in6 or letterT5in6 or letterA6in6 or letterH7in6 or letterA8in6 or letterT9in6 or letterA10in6 or letterT11in6) and
-                (letterK1in7 or letterK2in7 or letterM3in7 or letterA4in7 or letterT5in7 or letterA6in7 or letterH7in7 or letterA8in7 or letterT9in7 or letterA10in7 or letterT11in7)):
-            image gram_h4_tile122 = "leftTreeredlong1.png"
-            image gram_h4_tile123 = "1_1_red.png"
-            show gram_h4_tile122 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h4_tile123 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_h4_tile124 = "treeRed.png"
-            image gram_h4_tile125 = "1_1_red.png"
-            show gram_h4_tile124 at Position(xpos = 1250, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h4_tile125 at Position(xpos = 1250, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_h4_tile126 = "rightTreeredlong1.png"
-            image gram_h4_tile127 = "1_1_red.png"
-            show gram_h4_tile126 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
-            show gram_h4_tile127 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)        
-            
-            
-        if (letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and (letterA4in7 == True or letterA6in7 == True or letterA8in7 == True or letterA10in7 == True):
+               if gramRow3_C_sound_wrong1 ==0:
+                   play sound gramTree5
+                   $gramRow3_C_sound_wrong1 +=1
+            if (not((letterA4in9 or letterA6in9 or letterA8in9 or letterA10in9) and (letterT5in10 or letterT9in10 or letterT11in10) and ((letterA4in11 or letterA6in11 or letterA8in11 or letterA10in11)))):
+                if gramRow3_C_sound_right1 ==1:
+                    $gramRow3_C_sound_right1 -=1
+            if (not((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
+                    (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
+                    (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11))):
+                if gramRow3_C_sound_wrong1 ==1:
+                    $gramRow3_C_sound_wrong1 -=1
+        elif (letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and (letterA4in7 == True or letterA6in7 == True or letterA8in7 == True or letterA10in7 == True):
             image gram_h4_tile100 = "leftTreegreenlong1.png"
             image gram_h4_tile101 = "1_1_green.png"
             show gram_h4_tile100 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
@@ -8467,7 +8520,11 @@ label gamefile_h4:
             show gram_h4_tile111 at Position(xpos = 1500, xanchor = 0, ypos = 692, yanchor = 0)
             show gram_h4_tile112 at Position(xpos = 1500, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h4_tile113 at Position(xpos = 1500, xanchor = 0, ypos = 800, yanchor = 0)
-
+            if gramRow2_C_sound_right2==0:
+                play sound gramTree1
+                queue sound gramText2
+                $gramRow2_C_sound_right2 +=1
+                
             if (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and ((letterK2in11 == True or letterK1in11 == True)):
                #image gram_h4_tile50 = "leftTreegreen.png"
                image gram_h4_tile88 = "leftTreegreenlong.png"
@@ -8497,6 +8554,10 @@ label gamefile_h4:
                image gram_h4_tile99 = "meat.png"
                show gram_h4_tile98 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
                show gram_h4_tile99 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
+               if gramRow3_C_sound_right2 ==0:
+                   $gramRow3_C_sound_right2 +=1
+                   play sound gramTree1
+                   queue sound gramText3
             elif ((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
                     (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
                     (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11)):
@@ -8512,7 +8573,17 @@ label gamefile_h4:
                image gram_h4_tile145 = "1_1_red.png"
                show gram_h4_tile144 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
                show gram_h4_tile145 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
-               
+               if gramRow3_C_sound_wrong2 ==0:
+                   play sound gramTree5
+                   $gramRow3_C_sound_wrong2 +=1
+            if(not((letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and ((letterK2in11 == True or letterK1in11 == True)))):
+                if gramRow3_C_sound_right2 ==1:
+                    $gramRow3_C_sound_right2 -=1
+            if(not((letterK1in9 or letterK2in9 or letterM3in9 or letterA4in9 or letterT5in9 or letterA6in9 or letterH7in9 or letterA8in9 or letterT9in9 or letterA10in9 or letterT11in9) and
+                    (letterK1in10 or letterK2in10 or letterM3in10 or letterA4in10 or letterT5in10 or letterA6in10 or letterH7in10 or letterA8in10 or letterT9in10 or letterA10in10 or letterT11in10) and
+                    (letterK1in11 or letterK2in11 or letterM3in11 or letterA4in11 or letterT5in11 or letterA6in11 or letterH7in11 or letterA8in11 or letterT9in11 or letterA10in11 or letterT11in11))):
+                if gramRow3_C_sound_wrong2 ==1:
+                    $gramRow3_C_sound_wrong2 -=1
         elif ((letterK1in5 or letterK2in5 or letterM3in5 or letterA4in5 or letterT5in5 or letterA6in5 or letterH7in5 or letterA8in5 or letterT9in5 or letterA10in5 or letterT11in5) and
                 (letterK1in6 or letterK2in6 or letterM3in6 or letterA4in6 or letterT5in6 or letterA6in6 or letterH7in6 or letterA8in6 or letterT9in6 or letterA10in6 or letterT11in6) and
                 (letterK1in7 or letterK2in7 or letterM3in7 or letterA4in7 or letterT5in7 or letterA6in7 or letterH7in7 or letterA8in7 or letterT9in7 or letterA10in7 or letterT11in7)):
@@ -8528,7 +8599,20 @@ label gamefile_h4:
             image gram_h4_tile133 = "1_1_red.png"
             show gram_h4_tile132 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile133 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)   
-            
+            if gramRow2_C_sound_wrong1 ==0:
+                play sound gramTree5
+                $gramRow2_C_sound_wrong1 +=1
+        if (not((letterA4in5 or letterA6in5 or letterA8in5 or letterA10in5) and (letterT5in6 or letterT9in6 or letterT11in6) and ((letterA4in7 or letterA6in7 or letterA8in7 or letterA10in7)))):
+            if gramRow2_C_sound_right2 ==1:
+                $gramRow2_C_sound_right2 -=1
+        if (not((letterA4in5 or letterA6in5 or letterA8in5 or letterA10in5 ) and (letterT5in6 or letterT9in6 or letterT11in6 ) and (letterK2in7 or letterK1in7))):
+            if gramRow2_C_sound_right1 ==1:
+                $gramRow2_C_sound_right1 -=1
+        if (not((letterK1in5 or letterK2in5 or letterM3in5 or letterA4in5 or letterT5in5 or letterA6in5 or letterH7in5 or letterA8in5 or letterT9in5 or letterA10in5 or letterT11in5) and
+                (letterK1in6 or letterK2in6 or letterM3in6 or letterA4in6 or letterT5in6 or letterA6in6 or letterH7in6 or letterA8in6 or letterT9in6 or letterA10in6 or letterT11in6) and
+                (letterK1in7 or letterK2in7 or letterM3in7 or letterA4in7 or letterT5in7 or letterA6in7 or letterH7in7 or letterA8in7 or letterT9in7 or letterA10in7 or letterT11in7))):
+            if gramRow2_C_sound_wrong1 ==1:
+                $gramRow2_C_sound_wrong1 -=1
     elif ((letterK1in1 or letterK2in1 or letterM3in1 or letterA4in1 or letterT5in1 or letterA6in1 or letterH7in1 or letterA8in1 or letterT9in1 or letterA10in1 or letterT11in1) and
             (letterK1in2 or letterK2in2 or letterM3in2 or letterA4in2 or letterT5in2 or letterA6in2 or letterH7in2 or letterA8in2 or letterT9in2 or letterA10in2 or letterT11in2) and
             (letterK1in3 or letterK2in3 or letterM3in3 or letterA4in3 or letterT5in3 or letterA6in3 or letterH7in3 or letterA8in3 or letterT9in3 or letterA10in3 or letterT11in3)):
@@ -8544,22 +8628,32 @@ label gamefile_h4:
         image gram_h4_tile121 = "1_1_red.png"
         show gram_h4_tile120 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
         show gram_h4_tile121 at Position(xpos = 1650, xanchor = 0, ypos = 325, yanchor = 0)
-        
+        if gramRow1_C_sound_wrong1 ==0:
+            play sound gramTree5
+            $gramRow1_C_sound_wrong1 +=1
+    if (not((letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True))):
+        if gramRow1_C_sound_right1 ==1:
+            $gramRow1_C_sound_right1 -=1
+    if (not((letterK1in1 or letterK2in1 or letterM3in1 or letterA4in1 or letterT5in1 or letterA6in1 or letterH7in1 or letterA8in1 or letterT9in1 or letterA10in1 or letterT11in1) and
+            (letterK1in2 or letterK2in2 or letterM3in2 or letterA4in2 or letterT5in2 or letterA6in2 or letterH7in2 or letterA8in2 or letterT9in2 or letterA10in2 or letterT11in2) and
+            (letterK1in3 or letterK2in3 or letterM3in3 or letterA4in3 or letterT5in3 or letterA6in3 or letterH7in3 or letterA8in3 or letterT9in3 or letterA10in3 or letterT11in3))):
+        if gramRow1_C_sound_wrong1 ==1:
+            $gramRow1_C_sound_wrong1 -=1
     #win conditions
-    if (((letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and 
-        (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True) and
-        (letterM3in4 == True) and (letterH7in8 == True) and
-        ((letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and 
-        (letterA4in7 == True or letterA6in7 == True or letterA8in7 == True or letterA10in7 == True) and (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and 
-        (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and (letterK2in11 == True or letterK1in11 == True))) or
+    if (((letterK2in1 or letterK1in1) and (letterA4in3 or letterA6in3 or letterA8in3 or letterA10in3) and 
+        (letterT5in2 or letterT9in2 or letterT11in2 ) and
+        (letterM3in4 ) and (letterH7in8) and
+        ((letterA4in5 or letterA6in5 or letterA8in5 or letterA10in5) and (letterT5in6 or letterT9in6 or letterT11in6) and 
+        (letterA4in7 or letterA6in7 or letterA8in7 or letterA10in7) and (letterA4in9 or letterA6in9 or letterA8in9 or letterA10in9) and 
+        (letterT5in10 or letterT9in10 or letterT11in10) and (letterK2in11 or letterK1in11))) or
 
-        ((letterK2in1 == True or letterK1in1 == True) and (letterA4in3 == True or letterA6in3 == True or letterA8in3 == True or letterA10in3 == True) and 
-        (letterT5in2 == True or letterT9in2 == True or letterT11in2 == True) and
-        (letterM3in4 == True) and (letterH7in8 == True) and
-        ((letterA4in5 == True or letterA6in5 == True or letterA8in5 == True or letterA10in5 == True) and (letterT5in6 == True or letterT9in6 == True or letterT11in6 == True) and 
-        (letterK2in7 == True or letterK1in7 == True) and
-        (letterA4in9 == True or letterA6in9 == True or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 == True or letterT9in10 == True or letterT11in10 == True) and 
-        (letterA4in11 == True or letterA6in11 == True or letterA8in11 == True or letterA10in11 == True)))):
+        ((letterK2in1 or letterK1in1) and (letterA4in3 or letterA6in3 or letterA8in3 or letterA10in3) and 
+        (letterT5in2 or letterT9in2 or letterT11in2) and
+        (letterM3in4) and (letterH7in8) and
+        ((letterA4in5 or letterA6in5 or letterA8in5 or letterA10in5) and (letterT5in6 or letterT9in6 or letterT11in6) and 
+        (letterK2in7 or letterK1in7) and
+        (letterA4in9 or letterA6in9 or letterA8in9 == True or letterA10in9 == True) and (letterT5in10 or letterT9in10 or letterT11in10) and 
+        (letterA4in11 or letterA6in11 or letterA8in11 or letterA10in11)))):
 
 
         image gram_h4_tile202 = "letterK.png"
@@ -8574,24 +8668,36 @@ label gamefile_h4:
         image gram_h4_tile410 = "letterA.png"
         image gram_h4_tile411 = "letterT.png"
         
-        show gram_h4_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_h4_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_h4_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
-
-        "Access Gained"
-
-        jump eng_gram_h4#gram_h4#start
+        show gram_h4_tile202 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
+        show gram_h4_tile206 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+        show gram_h4_tile203 at Position(xpos = letterM3x, xanchor = 0, ypos = letterM3y, yanchor = 0)
+        show gram_h4_tile205 at Position(xpos = letterA4x, xanchor = 0, ypos = letterA4y, yanchor = 0)
+        show gram_h4_tile201 at Position(xpos = lettertT5x, xanchor = 0, ypos = lettertT5y, yanchor = 0)
+        show gram_h4_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
+        show gram_h4_tile208 at Position(xpos = letterH7x, xanchor = 0, ypos = letterH7y, yanchor = 0)
+        show gram_h4_tile408 at Position(xpos = letterA8x, xanchor = 0, ypos = letterA8y, yanchor = 0)
+        show gram_h4_tile409 at Position(xpos = letterT9x, xanchor = 0, ypos = letterT9y, yanchor = 0)
+        show gram_h4_tile410 at Position(xpos = letterA10x, xanchor = 0, ypos = letterA10y, yanchor = 0)
+        show gram_h4_tile411 at Position(xpos = letterT11x, xanchor = 0, ypos = letterT11y, yanchor = 0)
+        queue sound gramWin
+        $renpy.pause(0.7)
+        $gramHard_solved = True
+        jump gramHard_win
 
     if attempts ==0:
-           
+        show gram_h4_tile202 at Position(xpos = letterK1x, xanchor = 0, ypos = letterK1y, yanchor = 0)
+        show gram_h4_tile206 at Position(xpos = letterK2x, xanchor = 0, ypos = letterK2y, yanchor = 0)
+        show gram_h4_tile203 at Position(xpos = letterM3x, xanchor = 0, ypos = letterM3y, yanchor = 0)
+        show gram_h4_tile205 at Position(xpos = letterA4x, xanchor = 0, ypos = letterA4y, yanchor = 0)
+        show gram_h4_tile201 at Position(xpos = lettertT5x, xanchor = 0, ypos = lettertT5y, yanchor = 0)
+        show gram_h4_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
+        show gram_h4_tile208 at Position(xpos = letterH7x, xanchor = 0, ypos = letterH7y, yanchor = 0)
+        show gram_h4_tile408 at Position(xpos = letterA8x, xanchor = 0, ypos = letterA8y, yanchor = 0)
+        show gram_h4_tile409 at Position(xpos = letterT9x, xanchor = 0, ypos = letterT9y, yanchor = 0)
+        show gram_h4_tile410 at Position(xpos = letterA10x, xanchor = 0, ypos = letterA10y, yanchor = 0)
+        show gram_h4_tile411 at Position(xpos = letterT11x, xanchor = 0, ypos = letterT11y, yanchor = 0)
+        queue sound gramLose
+        $renpy.pause(0.8)
         hide gram_h4_tile42
         hide gram_h4_tile43
         hide gram_h4_tile44
@@ -8672,12 +8778,6 @@ label gamefile_h4:
         hide gram_h4_tile119
         hide gram_h4_tile120
         hide gram_h4_tile121
-        hide gram_h4_tile122
-        hide gram_h4_tile123
-        hide gram_h4_tile124
-        hide gram_h4_tile125
-        hide gram_h4_tile126
-        hide gram_h4_tile127
         hide gram_h4_tile128
         hide gram_h4_tile129
         hide gram_h4_tile130
@@ -8696,29 +8796,7 @@ label gamefile_h4:
         hide gram_h4_tile143
         hide gram_h4_tile144
         hide gram_h4_tile145
-
-        show gram_h4_tile202 at Position(xpos = 865, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile206 at Position(xpos = 1415, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_h4_tile203 at Position(xpos = 865, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile205 at Position(xpos = 1665, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile201 at Position(xpos = 1265, xanchor = 0, ypos = 340, yanchor = 0)
-        show gram_h4_tile204 at Position(xpos = 1015, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile208 at Position(xpos = 1665, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile408 at Position(xpos = 1515, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile409 at Position(xpos = 1265, xanchor = 0, ypos = 515, yanchor = 0)
-        show gram_h4_tile410 at Position(xpos = 1115, xanchor = 0, ypos = 690, yanchor = 0)
-        show gram_h4_tile411 at Position(xpos = 1265, xanchor = 0, ypos = 690, yanchor = 0)
-        
-        "You Lose Try Again"
-
-        jump eng_gram_h4#gram_h4#start
-    
-
-#    if letterK1in1 == True or letterK2in1 ==True or letterM3in1 ==True or letterA4in1 ==True:
-#        image gram_h4_tile109 = "leftTreegreen.png"
-#        #shows gram_h4_tiles
-#        show gram_h4_tile109 at Position(xpos = 825, xanchor = 0, ypos = 225, yanchor = 0)
-#    if letterK1in1 == False and letterK2in1 == False and letterM3in1 == False and letterA4in1 ==False:
-#        hide gram_h4_tile109      
+        $gramHard_attempts +=1
+        jump gramHard_lose   
     
     jump gamefile_h4

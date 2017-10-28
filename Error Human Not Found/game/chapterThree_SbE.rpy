@@ -1202,11 +1202,14 @@ label finishLab2Inv_SbE:
     #ivan "Right. {i}That's{/i} why you had trouble."
     #g "I didn't see you trying to help, and I'm in. So there."
 label endCh3_SbE:
-    "{i}Grace's bracelet flashes.{/i}"
     #Insert SFXs
     "{i}DING. DING.{/i}"
+    "{i}Grace's bracelet flashes.{/i}"
+    show Grace neutral
     "{i}'Meet me at the AI core immediately.'- Ada{/i}" #Visual for this message on the bracelet???
     "{i}Grace's journal has updated.{/i}"
+    show Grace snarky
+    g "What a shame. I have to go. Later, Ivan."
     $journal4="SbE"
     $pageUnlocked_journal+=2
     jump chapterFour_SbE

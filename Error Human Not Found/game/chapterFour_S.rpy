@@ -657,21 +657,7 @@ label ch4resume3_S:
     show Ada concerned
     g "All right. I'm ready."
     $resume = "S"
-    "TEMPORARY PLACEHOLDER FOR GRACE HARD PUZZLE 1."
-    jump ch4postPuzzle1_S #CHANGE THIS TO PUZZLE
-    ##INSERT GRACE'S PUZZLE
-    ##syddoyourcomscithing
-    ##Attempt comments
-    #if (attempts == 1)
-    #g "Ha, ha, Blue! Got it on the first try."
-    #b "Meh."  
-    #if (attempts >1) and (attempts<4)
-    #g "It's okay, I've got this."
-    #b "Keep telling yourself that."
-    #if (attempts>3)
-    #g "That was harder than I anticipated, but I still got it."
-    #b "Who would have thought?"
-    #g "Hey, I still figured it out. After a while..."
+    jump choose_gramHard
     
 label ch4postPuzzle1_S: #HAVE END OF PUZZLE JUMP HERE using resume as check
     $quick_menu = True

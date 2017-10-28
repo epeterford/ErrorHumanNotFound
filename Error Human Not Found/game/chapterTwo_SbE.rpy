@@ -393,7 +393,7 @@ label askherifshesalright:
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
-            jump csinoahsphere_SR
+            jump csinoahsphere_S
     if(points_E>points_SbE):
         if(points_E>points_S):
             jump csinoahsphere_E

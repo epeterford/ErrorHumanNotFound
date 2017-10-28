@@ -92,7 +92,7 @@ label listenhereyoulittle_E:
     show Grace neutral at left
     show Ada neutral at right
     g "Ada."
-    show Ada neutral at surprised
+    show Ada neutral
     a "Grace?"
     show Grace annoyed
     g "I was hoping I wouldn't have to be like this with you, but you really do need to refer to me before you do things."

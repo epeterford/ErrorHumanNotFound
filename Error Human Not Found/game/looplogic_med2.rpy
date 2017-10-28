@@ -994,16 +994,11 @@ label gamefile_llm2:
 
     if while1in2 == False:
         hide LLM_2_tile90
-        hide LLM_2_tile91
-        hide LLM_2_tile92
         hide LLM_2_tile93
         hide LLM_2_tile94
-        hide LLM_2_tile95
         hide LLM_2_tile96
         hide LLM_2_tile97
         hide LLM_2_tile98
-        hide LLM_2_tile99
-        hide LLM_2_tile100
         hide LLM_2_tile101
         hide LLM_2_tile102
         if(light2Sound==1):

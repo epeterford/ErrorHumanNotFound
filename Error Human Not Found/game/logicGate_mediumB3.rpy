@@ -504,7 +504,6 @@ label gamefileMB3:
             
     if and1in2 == False or (nand1in1 == False and nor1in1 == False):
         hide aLGMB3tile02_08
-        hide aLGMB3tile02_09
         hide aLGMB3tile02_10
         hide aLGMB3tile03_10
         
