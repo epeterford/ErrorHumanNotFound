@@ -9,10 +9,6 @@ label prologue:
     stop music fadeout 1.0
     play channel00 labBGM_0 fadeout 1.0 fadein 1.0
     play channel01 labBGM_1 fadeout 1.0 fadein 1.0
-    play channel02 labBGM_2 fadeout 1.0 fadein 1.0
-    play channel03 labBGM_3 fadeout 1.0 fadein 1.0
-    play channel04 labBGM_4 fadeout 1.0 fadein 1.0
-    play channel05 labBGM_5 fadeout 1.0 fadein 1.0
     window show
     $ date_ref = "November 17th, 2167"
     $ time_ref = "17:03"
@@ -20,6 +16,11 @@ label prologue:
     #Grace types away at her computer
     play sound typing 
     show Grace neutral at center
+    $renpy.block_rollback()
+    if persistent.unlockGrace ==None:
+        $persistent.unlockGrace = True
+        "{i}When you encounter a new character for the first time, a database will unlock. You can access the database from the main menu.{/i}"
+        "{i}{b}Database Entry Unlocked: Grace.{/b}{/i}"
     #Insert SFX Typing here
     "{i}Grace types away at her computer.{/i}"
     "{i}Grace's bracelet beeps and flashes.{/i}"
@@ -55,6 +56,7 @@ label prologue:
 label answer:
     $ quick_menu = True
     show Tosh pleasant at right
+    show Grace neutral at left
     secretary "GRACE FORTRAN is hereby summoned to appear before the Conclave effective immediately. The recipient is to suspend all further research until after said appearance."
     secretary "Further instructions will be provided by Director Hirose."
  
@@ -97,11 +99,13 @@ label chambers:
     play sound toshStartup
     play music conclaveReceptionAmb fadeout 1.0 fadein 1.0
     show Tosh pleasant at right
+    show Grace neutral at left
     $quick_menu = True
     secretary "Good evening, GRACE FORTRAN. Please wait here until the council is ready to assist you." 
     #choice 2 
     $ quick_menu = False
     hide Tosh pleasant
+    hide Grace
     menu:
         "Thank her.":
             jump thanks
@@ -111,7 +115,7 @@ label chambers:
 label thanks:
     $ quick_menu = True
     show Tosh pleasant at right
-    show Grace neutral at left
+    show Grace happy at left
     g "Good evening to you, too."
     "{i}The secretary VI perks up and smiles at Grace.{/i}"
     secretary "You are most welcome. Help yourself to some complimentary oolong tea."
@@ -120,12 +124,14 @@ label thanks:
     "{i}A cup of warm oolong tea appears on a platter raised from the desk. This tea was brewed with leaves grown inside the Noah Sphere's oxygen garden.{/i}"
     hide other darken
     hide image "objects/tea_closeup.png"
-    show Grace happy at left
+    show Grace neutral at left
     show Tosh pleasant at right
     play sound graceTea
     "{i}Grace takes a sip.{/i}"
+    show Grace happy
     g "Ah, freshly made tea."
     secretary "The oxygen garden workers reported that this was their best harvest to date."
+    show Grace snarky
     g "I can taste it!"
     jump prologueResume1
  
@@ -152,6 +158,7 @@ label shrug:
     "{i}Grace takes a sip.{/i}"
     play sound graceTea
     secretary "The oxygen garden workers reported that this was their best harvest to date."
+    show Grace snarky
     g "I can taste it!"
     jump prologueResume1 
  
@@ -198,17 +205,31 @@ label prologueResume1:
     $ time_ref = "17:26"
     $ loc_ref = "The Conclave"
     "{i}The doors slide open. Grace stumbles into the room to be greeted by Director Roberta Hirose and the four Chiefs of the different divisions on the Noah Sphere.{/i}"
+    show Grace surprised at left
+    show Hirose angry at center behind Grace
+    if persistent.unlockHirose ==None:
+        $persistent.unlockHirose = True
+        "{i}{b}Database Entry Unlocked: Hirose.{/b}{/i}"
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
     show Nevalinna speaking at right
+    if persistent.unlockNevalinna ==None:
+        $persistent.unlockNevalinna = True
+        "{i}{b}Database Entry Unlocked: Nevanlinna.{/b}{/i}"
     neva "What is the meaning of this, Doctor Fortran?"
     hide Nevalinna
     show Godel speaking at right
+    if persistent.unlockGodel ==None:
+        $persistent.unlockGodel = True
+        "{i}{b}Database Entry Unlocked: Godel.{/b}{/i}"
     godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
     hide Godel
     show Cray speaking at right
+    if persistent.unlockCray ==None:
+        $persistent.unlockCray = True
+        "{i}{b}Database Entry Unlocked: Cray.{/b}{/i}"
     cray "Director, are you just going to allow--"
-    hide Cray
+    show Hirose annoyed
     h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
     show Grace snarky
     g "I couldn't help overhearing. Cray talks awfully loud for a conversation that is supposedly hush-hush."
@@ -216,35 +237,42 @@ label prologueResume1:
     cray "Excuse me, but--"
     show Grace neutral
     g "What's going on? What happened to Alpha?"
-    hide Cray at right
-    #show director neutral
+    show Hirose neutral
     h "Once you take on a more reasonable tone, we'll discuss what occurred."
     show Grace annoyed
     g "My tone is always {i}reasonable{/i}. I want to know what happened to the AI I was working with."
+    hide Cray
     show Knuth speaking at right
+    if persistent.unlockKnuth ==None:
+        $persistent.unlockKnuth = True
+        "{i}{b}Database Entry Unlocked: Knuth.{/b}{/i}"
     knuth "That's not the proper way for you to speak to the Director. Check your manners."
-    hide Knuth
     show Grace snarky
     g "Mind your own business."
+    hide Knuth
     show Godel speaking at right
     godel "Well, I've never!"
     show Grace snarky
     g "Whatever, Godel."  
-    hide Godel
+    show Hirose angry
     h "That's enough, both of you."
     show Grace neutral
     g "..."
+    show Hirose neutral
     "{i}Hirose stares down Grace from her platform.{/i}"
     g "Director, please inform me of the current events involving Alpha."
+    show Hirose concerned
     h "We are not certain of what transpired at this time, but unfortunately Alpha is no longer with us."
     show Grace surprised
     g "But how? I tracked his transition. He was completely processed, and everything was working perfectly."
+    hide Godel
     show Cray speaking at right
     cray "That's what we don't understand, Alpha was--"
-    hide Cray
+    show Hirose annoyed
     h "As I said, the root cause is yet to be determined. We ordered a team of external investigators to inspect the situation."
     show Grace annoyed
     g "What? Why external investigators? We couldn't keep this among our own crew?"
+    show Hirose thoughtful
     h "Almost everyone on the station worked with Alpha." 
     h "We need an unbiased examination of the crime scene. We also need to interrogate all those involved to truly determine what, or {i}who{/i}, was at fault."
     show Grace neutral
@@ -254,14 +282,14 @@ label prologueResume1:
     g "All glitches were worked out with the prototype. This cannot be random chance."
     show Cray speaking at right
     cray "We can't believe it either, we--"
-    hide Cray
+    show Hirose annoyed
     h "Grace, you were summoned today because of your involvement with Alpha's process."
     h "Your research shall be suspended until we have a clear idea of what happened."
-    
+    hide Cray
+    hide Hirose
     #choice 3 
     $ quick_menu = False
-    hide Grace angry
-    #hide Hirose
+    hide Grace
     menu:
         "Continue asking questions.":
             jump lessobvious
@@ -271,19 +299,24 @@ label prologueResume1:
 label lessobvious:
     $ quick_menu = True
     show Grace angry at left
-    #show Hirose something at right
+    show Hirose neutral at right
     g "So nobody has run any sort of diagnostics on his system or even a preliminary examination of the machine body?"
+    show Hirose annoyed
     h "No. While this is an urgent matter, we need unbiased eyes. Any work done by station crew would contaminate possible evidence."
     show Grace annoyed
     g "What? We have some of the highest trained professionals in any scientific field and you're waiting on a random team of investigators?"
+    show Hirose angry
     h "This isn't up for debate, Doctor Fortran. The lab is off limits. Remain in your living quarters until the investigation is over." 
+    show Hirose neutral
     h "Until then you will have restricted access to the Conclave and labs."
     show Grace snarky
     g "But did you check his charts? Did you search through his databanks at least?" 
     show Grace neutral
     g "Did you look for anything that might suggest what could've occurred?"
+    show Hirose annoyed
     h "We're leaving that up to the investigators. As for you, please do as I instruct." 
-    h " As difficult as it may be for you to believe, there {i}are{/i} other people who are capable of figuring out what happened to Alpha."
+    show Hirose neutral
+    h "As difficult as it may be for you to believe, there {i}are{/i} other people who are capable of figuring out what happened to Alpha."
     show Grace annoyed
     g "All right, fine. Keep me informed. I want to know what happened."
     play sound doorOpen2
@@ -293,30 +326,35 @@ label lessobvious:
 label sassy:
     $ quick_menu = True
     show Grace angry at left
-    #show Hirose something at right
+    show Hirose neutral at right
     g "You've got to be kidding me. My research could help discover what happened to him."
+    show Hirose annoyed
     h "You're a suspect, Doctor Fortran. I don't think you understand the severity of the position you are in." 
+    show Hirose concerned
     h "Grace, you do not get to stand here and pontificate. Your work can wait until the investigation is over."
     show Grace annoyed
     g "I want to know what happened to Alpha. I have a right as one of the researchers who worked with him." 
     show Grace snarky
     g "Waiting for so long is a waste of time."
+    show Hirose angry
     h "You'll stay out of this and let the investigators do their job."
     show Grace angry
     g "This is ridiculous. You're not doing enough!"
-    #show Hirose irritated
+    show Hirose annoyed
     h "You are not to be involved, and that's final."
+    show Hirose neutral
     "{i}A stare down between Grace and Hirose chills the room.{/i}"
     show Grace neutral
     g "Fine."
-    show Grace snarky
     "{i}Grace turns to walk out of the room and speaks to herself.{/i}"
+    show Grace snarky
     g "We'll see about that."
     play sound doorOpen2
     queue sound doorClose2
     jump prologueResume2
  
 label prologueResume2:
+    hide Hirose
     window hide
     queue sound graceWalk
     $ quick_menu = False
@@ -333,14 +371,13 @@ label prologueResume2:
     stop music fadeout 1.0
     play channel00 labBGM_0
     play channel01 labBGM_1
-    play channel02 labBGM_2
-    play channel03 labBGM_3
-    play channel04 labBGM_4
-    play channel05 labBGM_5
     "{i}Grace enters her lab to be greeted with the sight of an android.{/i}"
     stop sound fadeout 0.5
     show Grace surprised at left
-     
+    show Ada neutral at right
+    if persistent.unlockAda ==None:
+        $persistent.unlockAda = True
+        "{i}{b}Database Entry Unlocked: Knuth.{/b}{/i}"
     g "What the... Who are you? And what do you think you're doing in my lab?"
     show Ada neutral at right
     a "Grace, it is I, Ada." 
@@ -380,6 +417,7 @@ label prologueResume2:
             jump reluctant
  
 label boss:
+    $ points_S +=1
     $ quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
@@ -397,6 +435,7 @@ label boss:
     jump prologueResume3
  
 label together:
+    $ points_E +=1
     $ quick_menu = True
     show Grace neutral at left
     show Ada neutral at right
@@ -422,6 +461,7 @@ label together:
     jump prologueResume3
  
 label reluctant:
+    $ points_SbE +=1
     $ quick_menu = True
     show Grace neutral at left
     show Ada neutral at right
@@ -445,7 +485,7 @@ label reluctant:
  
 label prologueResume3:
     show Grace neutral at left
-    "{i}Grace's journal has been updated.{/i}"
+    "{i}{b}Grace's journal has been updated.{/b}{/i}"
     $journal1 = True
     $pageUnlocked_journal +=2
     g "First things first, we need credentials. I think that the best place to start would be the Director's residence." 

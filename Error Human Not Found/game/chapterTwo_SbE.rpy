@@ -319,12 +319,14 @@ label adapls_SbE:
 label gettingin_SbE:
     scene bg balconyMain with fade
     $quick_menu = True
-    play channel00 balconyAmb0
-    play channel01 balconyAmb1
-    play channel02 balconyAmb2
-    play channel03 balconyAmb3
-    play channel04 balconyAmb4
-    play channel05 balconyBGM
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    play channel00 balconyAmb
+    play channel01 balconyBGM
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     #Display the crime scene background. The background comes up before the character sprites do.
@@ -457,6 +459,10 @@ label wegotstufftodo:
     jump csinoahsphere_SbE
 
 label csinoahsphere_SbE:
+    $quick_menu = True
+    if persistent.unlockAlpha ==None:
+        $persistent.unlockAlpha = True
+        "{i}{b}Database Entry Unlocked: Alpha.{/b}{/i}"
     #insert the sound of paper crumpling
     play sound paperCrumple
     $quick_menu = True
@@ -500,10 +506,13 @@ label enterthemopr_SbE:
     show Mopr:
         xpos -0.25 ypos 0.1 xanchor 0.1 yanchor 0.1
         linear 2.0 xpos 0.27 ypos 0.1 
-    show Ada amused at right
+    show Ada neutral at right behind Mopr
     g "Ah... we were just leaving!"
+    show Ada amused
     a "Grace, it is just a cleaning robot."
-#    $nearLeft = Position(xpos=0.3, xanchor=0.1, ypos=0.75, yanchor = 0.1)
+    if persistent.unlockMopr ==None:
+        $persistent.unlockMopr = True
+        "{i}{b}Database Entry Unlocked: M.O.P.R.{/b}{/i}"
     show Mopr at nearLeft
     play sound moprInquisitive
     mopr "//Inquisitive boop.//"
@@ -736,16 +745,16 @@ label lynnfinallyfrickinanswers_SbE:
     show Ada neutral at right
     a "That seems like a relatively short time."
     g "I don't live forever like you. Every minute I spend waiting for {i}this woman{/i} to pick up the phone is ano--"
-#    show Ada neutral
     hide arrow1
     hide arrow2
     hide arrow3
     show Lynn at center
-#    show Ada neutral at center
-#    show Lynn at right
     lynn "Hello?"
     show Grace happy
     g "Lynn!"
+    if persistent.unlockLynn ==None:
+        $persistent.unlockLynn = True
+        "{i}{b}Database Entry Unlocked: Lynn Yao.{/b}{/i}"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
     show Grace neutral
     g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"

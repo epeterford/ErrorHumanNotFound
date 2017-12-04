@@ -98,6 +98,7 @@ label binaryMatchHard:
         
         label turns_loopHard:
             if turns_leftHard >0:
+                $ can_clickHard = True
                 $ result = ui.interact()
                 $tileFlipSound = renpy.random.randint(0,2)
                 if (tileFlipSound==0):
@@ -214,9 +215,13 @@ label binaryMatchHard:
 label binaryHardWin_pre:
     queue sound binaryWin
     $renpy.pause(1.0)
+    if(puzzleGallery):
+        jump pg_binaryHardWin
     jump binaryHardWin
     
 label binaryHardLose_pre:
     queue sound binaryLose
     $renpy.pause(1.5)
+    if(puzzleGallery):
+        jump pg_binaryHardLose
     jump binaryHardLose

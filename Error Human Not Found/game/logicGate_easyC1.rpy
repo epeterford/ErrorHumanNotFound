@@ -381,9 +381,14 @@ label gamefileC1:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-
-    if not1in1 == True:
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
         play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+    if not1in1 == True:
         image EC12tile02_10 = "g_elbow_bl.png"
         image EC12tile03_10 = "g_vertical.png"
         image EC12tile04_10 = "g_y.png"
@@ -393,13 +398,11 @@ label gamefileC1:
         show EC12tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
         
     if not1in1 == False:
-        #play sound pipeFlowN
         hide EC12tile04_10
         hide EC12tile03_10
         hide EC12tile02_10
     
     if and1in2 == True:
-        play sound pipeFlowG
         image EC13tile07_03 = "g_horizontal.png"
         image EC13tile07_04 = "g_elbow_bl.png"
         image EC13tile07_07 = "r_g.png"
@@ -417,7 +420,6 @@ label gamefileC1:
         show EC13tile08_07 at Position(xpos = 961, xanchor = 0, ypos = 833, yanchor = 0)
    
     if and1in2 == False:
-        #play sound pipeFlowN
         hide EC13tile07_03
         hide EC13tile07_04
         hide EC13tile07_07
@@ -427,7 +429,6 @@ label gamefileC1:
         hide EC13tile08_07
 
     if or1in2 == True:
-        play sound pipeFlowG
         image EC14tile07_03 = "g_horizontal.png"
         image EC14tile07_04 = "g_elbow_bl.png"
         image EC14tile07_07 = "r_g.png"
@@ -445,7 +446,6 @@ label gamefileC1:
         show EC14tile08_07 at Position(xpos = 961, xanchor = 0, ypos = 833, yanchor = 0)
    
     if or1in2 == False:
-        #play sound pipeFlowN
         hide EC14tile07_03
         hide EC14tile07_04
         hide EC14tile07_07
@@ -456,7 +456,6 @@ label gamefileC1:
 
     if and1in3 == True:
         if or1in2 == True:
-            play sound pipeFlowR
             image EC15tile07_09 = "r_horizontal.png"
             image EC15tile07_10 = "r_elbow_tl.png"
             image EC15tile04_10 = "y_r.png"
@@ -470,7 +469,6 @@ label gamefileC1:
             show EC15tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0) 
     
     if and1in3 == False or or1in2 == False:
-       # play sound pipeFlowN
         hide EC15tile04_10
         hide EC15tile06_10
         hide EC15tile07_09
@@ -480,7 +478,6 @@ label gamefileC1:
 
     if or1in3 == True:
         if and1in2 == True:
-            play sound pipeFlowG
             image EC16tile07_09 = "g_horizontal.png"
             image EC16tile07_10 = "g_elbow_tl.png"
             image EC16tile04_10 = "y_g.png"
@@ -494,7 +491,6 @@ label gamefileC1:
             show EC16tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
     
     if or1in3 == False or and1in2 == False:
-        #play sound pipeFlowN
         hide EC16tile06_10
         hide EC16tile07_09
         hide EC16tile05_10
@@ -502,7 +498,6 @@ label gamefileC1:
         hide EC16tile04_10
 
     if and1in3 == True and or1in2 == True and not1in1 == True:
-        play sound pipeFlowR
         image EC16tile03_13 = "r_elbow_br.png"
         image EC16tile04_12 = "r_horizontal.png"
         image EC16tile04_13 = "r_elbow_tl.png"
@@ -514,13 +509,12 @@ label gamefileC1:
         show EC16tile03_13 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
         
     if and1in3 == False or or1in2 == False or not1in1 == False:
-        #play sound pipeFlowN
         hide EC17tile04_10
         hide EC16tile04_12
         hide EC16tile04_13
         hide EC16tile03_13
         
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name =="and return" or slot_name=="or return" or slot_name =="not return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -570,8 +564,10 @@ label gamefileC1:
         show EC11tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
         image EC18end2 = "light_g_on.png"
         show EC18end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
-        play sound lgWin
+        queue sound lgWin
         $ renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgEasyCWin
         $ solved_LG_easy = True
         $ hiroseOfficeComputer = True
         $ hiroseOfficeItems += 1
@@ -586,8 +582,11 @@ label gamefileC1:
         show EC111tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
         image EC111tile07_08 = "or_Gate.png"
         show EC111tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-        play sound lgLose
+        queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_lgEasyCLose
         $ lgEasy_tries +=1
         jump repeatLGEasy
     

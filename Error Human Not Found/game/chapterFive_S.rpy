@@ -24,15 +24,18 @@ label chapterFive_S:
     $quick_menu = True
     show Grace neutral at left
     show Ada neutral at right
-    #show Investigator1 neutral
-    #show Investigator2
-    #show Investigator3
-    #show Ada neutral
-    #show Grace annoyed
+    show inv1
+    show inv2
+    show Detective
     #Grace and Ada are on the left, Investigators on the right.
     investigator1 "Stay here. We will brief the Conclave."
     "{i}The investigators walk through the metal doors leading the Conclave Chamber.{/i}"
     #investigators leave.
+    hide inv1
+    hide inv2
+    hide Detective
+    play sound doorOpen2
+    queue sound doorClose2
     g "I can't help but get a bad feeling about this."
     show Ada concerned
     a "How so, Grace? Our investigation has been nothing short of exhaustive."
@@ -118,16 +121,18 @@ label iguessillacknowledgeyou_S:
     jump intothebooth_S
 
 label intothebooth_S:
-    #play SFX
+    play sound doorOpen2
+    queue sound doorClose2
     show Grace neutral
     show Ada neutral
     "{i}The doors to the conclave chamber slide open to reveal Director Hirose.{/i}"
-    #show Hirose neutral
+    show Hirose neutral at center
     h "They're ready for you, Grace. Oh, and one more thing..."
-    #show Hirose concerned
+    show Hirose annoyed
     h "{i}Please{/i} don't get snappy with them. They're already suspicious of you, so you don't need to make things harder for yourself."
+    show Hirose concerned
     h "I'll be watching from outside with the rest of the Conclave. I'll be delivering their decision on the matter."
-    #hide Hirose
+    hide Hirose
     show Ada neutral
     a "This is it, Grace. Remember, I just need a little more time."
     show Grace snarky
@@ -138,33 +143,45 @@ label intothebooth_S:
     hide Grace
     hide Ada
     $quick_menu = False
+    play sound01 adaWalk
+    play sound02 graceWalk
     window hide
     scene bg conclaveDoor with fade
     $renpy.pause(0.8)
-    #play sound
-    #queue sound
+    play sound doorOpen2
+    queue sound doorClose2
     scene bg conclave with fade    
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     #Transition to the conclave. 
 
     #The lead investigator will stand in the center of the screen. 
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Ada neutral at right
     show Grace neutral at left
-    #show Detective neutral at center
     investigator1 "Director, Chiefs of the Conclave, and all others present, we meet today to formally begin our investigation of this incident."
     investigator1 "We are aware of the undue termination of an AI due to a malfunction in its physical body."
     show Ada frustrated
     a "It?"
     investigator1 "The success or failure of the Markov Project is something that is of very keen interest to mankind's future, and as such, we will take our investigation extremely seriously."
     a "I'm not going to stand for a fellow AI being treated like an obj--"
+    show Detective behind inv1
+    show inv2 behind inv1
     investigator2 "Ada unit, I will ask you to refrain from interrupting this questioning session. You and Doctor Fortran have disrupted our investigation enough."
     show Ada seething
     a "Very well."
+    show Detective behind inv2
+    show inv1 behind inv2
     investigator3 "Now, Doctor Fortran, do you stand ready to undergo questioning? Do you swear that any information you provide us is truthful and accurate?"
     #choice 2
     hide Grace
     hide Ada
-    #hide whatever investigator is currently up
+    hide Detective
+    hide inv1
+    hide inv2
     $quick_menu = False
     menu: 
         "Swear.":
@@ -176,24 +193,30 @@ label intothebooth_S:
 
 label goodgraces_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace neutral at left
     show Ada neutral at right
-    #show Detective neutral at center
     g "I swear, everything I tell you is the truth."
     investigator1 "Excellent. Maybe we'll be done with this before the day's out."
     show Grace snarky
     g "Well, that all depends on how easy you make this for me."
+    show Detective behind inv2
     investigator3 "Your contentiousness has been noted."
     show Ada seething
     a "Grace, did I not ask that--"
+    show inv2 behind Detective
     investigator1 "Ada unit, I will not say this again. Do not interrupt me."
     jump paranoiatime_S
 
 label leavemealoneinvestigator_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace annoyed at left
     show Ada neutral at right
-    #show Detective neutral at center
     g "We just needed a little bit more time! Ada and I were so close to figuring this out."
     show Ada annoyed
     a "I do not see how interrupting us for questioning is efficient."
@@ -213,26 +236,34 @@ label leavemealoneinvestigator_S:
 
 label thatsmyrobotyouretalkinto_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace angry at left
     show Ada surprised at right
-    #show Detective neutral at center
     g "Hey, don't talk to Ada like that! She was a big help, and I wouldn't have gotten as far as I did without her."
     investigator1 "My apologies. Perhaps I should treat your accomplice with more respect."
     show Grace annoyed
     g "She just wants to find out why her friend died, all right? Leave her out of it."
     show Ada happy
     a "Grace? I did not expect something like that. Thank you."
+    show Detective behind inv1
+    show inv2 behind inv1
     investigator2 "We're not here to make friends or to avoid offending machines, Doctor Fortran. I'm here on {i}serious{/i} business. Now, answer my previous question."
     show Ada neutral
     a "Go ahead, Grace. I would rather not waste processing power arguing."
     show Grace neutral
     g "All right then. I swear that what I'll tell you is the truth."
+    show inv1 behind inv2
+    show Detective behind inv2
     investigator3 "Thank you."
     jump paranoiatime_S
 
 label paranoiatime_S:
     show Grace neutral
     show Ada neutral
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Now, onto the pressing issue."
     investigator1 "It's to my understanding you carried out your own investigation on this manner."
     g "I did."
@@ -240,7 +271,9 @@ label paranoiatime_S:
     #choice 3
     hide Grace
     hide Ada
-    #hide Detective
+    hide Detective
+    hide inv1
+    hide inv2
     $quick_menu = False
     window hide
     menu:
@@ -252,9 +285,11 @@ label paranoiatime_S:
             jump bathroomstall_S
 
 label sassygracestrikesback_S:
+    show inv1
+    show inv2
+    show Detective
     show Grace snarky at left
     show Ada neutral at right
-    #show Detective neutral at center
     $quick_menu = True
     g "Oh, I didn't know anything about that. I was just trying to save my career. Nothing too big there."
     investigator1 "You're not the only one with a career, Doctor Fortran. But since you seem to care so much about your own, I'd much rather advise you not to give me anymore lip."
@@ -270,6 +305,9 @@ label sassygracestrikesback_S:
     jump butwaitthetapetho_S
 
 label goodlittlegrace_S:
+    show inv1
+    show inv2
+    show Detective
     show Grace neutral at left
     show Ada neutral at right
     #show Detective neutral at center
@@ -286,22 +324,33 @@ label goodlittlegrace_S:
     jump butwaitthetapetho_S
 
 label bathroomstall_S:
+    show inv1
+    show inv2
+    show Detective
     show Grace happy at left
     show Ada neutral at right
     #show Detective at center
     $quick_menu = True
     g "Actually, no. Could you kindly fill me in?"
+    show Detective behind inv2
+    show inv1 behind inv2
     investigator3 "Fingerprints all over the incident scene... Tampering with vital evidence... The list goes on."
     show Grace snarky
     g "But such a diligent team of investigators can just ignore my prints, right? Can't you tell how old they are? I mean, this isn't the twenty-first century."
     show Ada concerned
     a "Grace, please... These allegations are serious. Your attitude will not help the situation."
+    show inv2 behind Detective
+    show inv1 behind Detective
     investigator1 "Thank you for your concensus, Ada unit. I don't know how long you've set us back for, Doctor Fortran, but you {i}have{/i} set us back."
     g "I'm terribly sorry to hear that."
+    show inv2 behind inv1
+    show Detective behind inv1
     investigator2 "Yeah, I can tell."
     jump butwaitthetapetho_S
 
 label butwaitthetapetho_S:
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Well, that concludes the initial questioning, now comes the actually important ones."
     show Grace surprised
     g "What?"
@@ -309,7 +358,9 @@ label butwaitthetapetho_S:
     #choice 4
     hide Grace
     hide Ada
-    #hide Detective
+    hide Detective
+    hide inv1
+    hide inv2
     $quick_menu = False
     window hide
     menu :
@@ -322,34 +373,46 @@ label butwaitthetapetho_S:
 
 label yougotmecopper_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace neutral at left
     show Ada neutral at right
-    #show Detective neutral at center
     g "I'm going to be honest, there wasn't exactly a lot that me and Ada could find out in around eighteen hours."
     investigator1 "I figured as much."
     show Grace annoyed
     g "Wait a second."
     show Grace snarky
     g "We were able to find out a few things about Alpha's death."
+    show inv2 behind inv1
+    show Detective behind inv1
     investigator2 "And these details of the Alpha unit's {i}termination{/i} are...?"
     show Grace neutral
     g "He shorted out. Something caused his neural network to draw almost double the requisite power. It must've happened during his maintenance."
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Was there anything unusual about its maintenance cycle?"
     show Ada seething
     a "No. As far as we know, {i}his{/i} maintenance was optimal."
+    show inv1 behind inv2
+    show Detective behind inv2
     investigator3 "Interesting. Was there anything else?"
     show Grace snarky
     g "We also found a data drive on Alpha's android. It should be finished decoding, right, Ada?"
     show Ada neutral
     a "I finished it just a few seconds ago, yes."
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Then there isn't any time to waste. Give us this drive immediately."
     jump thetape_S
 
 label graceinthetoilet_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace snarky at left
     show Ada neutral at right
-    #show Detective neutral at center
     g "Define 'useful.'"
     investigator1 "Evidence, Doctor Fortran. I don't care about who {i}looks{/i} suspicious or who {i}said{/i} anything. If it's not in a picture or on tape, it didn't happen."
     show Grace annoyed
@@ -357,14 +420,22 @@ label graceinthetoilet_S:
     investigator1 "Why wouldn't I?"
     show Grace surprised
     g "Excuse me? Are you going to start treating {i}me{/i} like a machine now?"
+    show inv2 behind inv1
+    show Detective behind inv1
     investigator2 "You're a young scientist with no investigative experience conducting an amateurish parody of detective work, as well as possessing a strong motive for seeing anyone but yourself found at fault." 
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "You're also stalling, so I'm going to cut to the chase."
     investigator1 "Audiovisual surveillance places you inside the crime scene conducting your own detective work. no doubt destroying any credible evidence while you were at it."
     show Grace annoyed
     g "And? You already know what I did, why are you repeating it to me?"
+    show inv1 behind inv2
+    show Detective behind inv2
     investigator3 "Because you took something from that place."
     show Grace surprised
     g "I--"
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Don't say anything else. Yes or no, did you or did you not take that drive? If you lie to me, I will have you crunching spreadsheets for a hydrogen mine on the moon."
     investigator1 "Just some food for thought."
     show Grace angry
@@ -374,33 +445,45 @@ label graceinthetoilet_S:
 
 label waitjustaminute_S:
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace annoyed at left
     show Ada neutral at right
-    #show Detective neutral at center
     g "It's barely anything. No leads, no suspects... Just a shorted out neural network."
     investigator1 "Do you know what caused it to short?"
     show Ada seething
     a "A power usage irregularity. The only thing we know is that it was almost double."
+    show inv2 behind inv1
+    show Detective behind inv1
     investigator2 "So far, it sounds like a design issue, unless you've got something else?"
     show Grace snarky
     g "No, there's nothing else."
     investigator3 "Absolutely nothing else?"
     show Grace neutral
     g "No, sir."
+    show inv1 behind inv2
+    show Detective behind inv2
     investigator3 "So if I showed you security footage of you picking a data drive off of the Alpha unit's chassis, you'd give me the same answer?"
     show Grace surprised
     g "I, erm..."
     show Grace annoyed
     g "No."
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Hand it over, then. Your attempt to conceal this information has been noted."
     jump thetape_S
 
 label thetape_S:
     "{i}Grace hands the lead investigator Alpha's thumbdrive.{/i}"
+    show inv1 behind Detective
+    show inv2 behind Detective
     investigator1 "Let's see here..."
     $resume = "S"
     hide Grace
-    #hide Detective 
+    hide Detective 
+    hide inv1
+    hide inv2
     hide Ada
     $quick_menu = False
     window hide
@@ -410,9 +493,11 @@ label thetape_S:
 label ch5_S_resume:
     hide other darken
     $quick_menu = True
+    show inv1
+    show inv2
+    show Detective
     show Grace surprised at left
     show Ada seething at right
-    #show Detective neutral at center
     a "Watson? It was Watson the entire time?"
     show Grace annoyed
     g "It explains a lot. Like why he was absent."
@@ -420,35 +505,48 @@ label ch5_S_resume:
     show Ada annoyed
     a "But why would he do this? Yes, he said he wanted a body, but he {i}knew{/i} he would be getting one once his turn came up."
     investigator1 "Is this the first sign of his deviation?"
-    #play SFX doorOpen1
-    #play SFX doorClose1
+    play sound doorOpen2
+    queue sound doorClose2
+    show inv1 at invLeft
+    show inv2 at invRight
+    show Hirose thoughtful at nearLeft
+    show Ada at right
+    show Detective at invLeft
     h "I will answer that."
-    #show Hirose pensive
-
     investigator1 "Director Hirose? You were instructed to wait outside--"
+    show Hirose angry
     h "You are on {i}my{/i} space station, as a courtesy, Detective. You do not give {i}me{/i} instructions. Besides, we have made our judgement."
+    show Hirose neutral
     h "The Watson unit has a history of putting his responsibilities in second place to his curiosities."
     h "This isn't the first time he's gone missing, but he always performs his tasks on time."
     investigator1 "Director, this is troubling news for us."
+    show Hirose thoughtful
     h "Yes, I suppose it would be." 
+    show Hirose neutral
     h "Regardless, we discussed this decision at length. While I cannot say that I am proud of it, we rule by consensus."
     show Grace surprised
     g "Oh no."
-    #show Hirose pensive
+    show Hirose angry
     h "Recent events have caused a rift among the members of the Conclave. Seeing that AIs have potential to murder others, accidental or otherwise, has given us pause."
     h "Until we're reassured, AIs will be relegated to roles strictly in support of humans."
     show Grace sad
     g "And the Markov Project?"
     "{i}Hirose sighs.{/i}"
+    show Hirose annoyed
     h "The Markov Project as we know it will change. We appreciate Alan's work beautifying the bodies, but the Conclave has decided such measures will be unnecessary."
+    show Hirose neutral
     h "The bodies will be utilitarian, specialized for their purpose."
     show Ada surprised
     a "Wait, what about me? What are AIs going to be doing?"
+    show Hirose thoughtful
     h "Terraforming, for a start. Preparing planets for human habitation."
+    show Hirose concerned
     h "As for you, Ada, I feel it'd be rather improper to tear you out of that body and put you in a different one."
     show Ada seething
+    show Hirose neutral
     h "You will remain aboard the Noah Sphere and maintain your assistant position, albeit under heavy supervision." 
     a "Where are you sending my friends?"
+    show Hirose thoughtful
     h "Europa comes to mind. Small body with a harsh environment. It'll make a good test for future terraforming missions."
     investigator1 "Very well."
     investigator1 "Doctor Fortran, Ada unit, you're dismissed. It seems this investigation's solved itself."
@@ -460,20 +558,23 @@ label ch5_S_resume:
     g "But--"
     investigator1 "Be thankful. We will continue to conduct interviews in case something else comes up, but for the most part, this investigation is over."
     h "Thank you, Detective, Officers. Grace, Ada, outside the Conclave. Now."
-    #Hirose disappears. Ada goes with her.
+    hide inv1
+    hide inv2
     hide Ada
-    #hide Hirose
+    hide Hirose
     investigator1 "Heh. Sounds like she's going to give you a worse reaming than I did."
     show Grace snarky
     g "You don't know the half of it."
     
     $quick_menu = False
-    #insert SFX door
-    #queue SFX door
+    play sound01 graceWalk
+    play sound doorOpen2
+    queue sound doorClose2
     scene bg conclaveDoor with fade
     $renpy.pause(0.8)
     scene bg conclaveWaitingRoom with fade 
-    #show Hirose angry at center
+    stop sound01
+    show Hirose angry at center
     show Grace neutral at left
     show Ada seething at right
     #Ada and Grace are on the same side
@@ -481,17 +582,20 @@ label ch5_S_resume:
     h "Grace, I gave you very specific instructions!"
     show Grace snarky
     g "Did you honestly think I was going to just sit in my lab and do nothing?"
+    show Hirose annoyed
     h "No, but to mess with the scene... Grace, do you know how much trouble you could've been in?"
     show Grace neutral
     g "I thought it was worth the risk."
     "{i}Hirose sighs.{/i}"
-    #show Hirose pensive
+    show Hirose thoughtful
     h "Okay. Okay. I'm just glad this is over, Grace. I was worried. I really was."
     show Ada annoyed
     a "I am so happy that your worries have been banished. It is not like I have any problems."
-    #show Hirose angry
+    show Hirose angry
     h "What did you want me to do, Ada? Just pretend that there wasn't any harm done?"
+    show Hirose annoyed
     h "That a sentient being wasn't destroyed by the apparent {i}impatience{/i} of what we thought was a rational AI?"
+    show Hirose angry
     h "Just be fortunate that the program wasn't completely shut down. To think we thought we'd be beyond the point of rogue AIs..."
     "{i}Ada scoffs.{/i}"
     show Ada seething
@@ -499,9 +603,10 @@ label ch5_S_resume:
     show Ada annoyed
     a "I need to go tell Colossus. Although, he is probably going to be Eastern Goddess by the time he gets around to talking to you, {i}Grace.{/i}"
     hide Ada
-    #insert SFX
+    play sound01 adaWalk
     "{i}Ada storms off. It takes awhile for the metallic stomping of her feet to finally get out of earshot.{/i}"
-    #show Hirose disappointed
+    stop sound01
+    show Hirose annoyed
     h "I really wish that she took that better. This was already going to be a pain to handle without Ada rallying against me."
     show Grace sad
     g "In her defense, the day she's had has been, well, {i}pretty bad{/i} to say the least."
@@ -512,30 +617,35 @@ label ch5_S_resume:
     "{i}Hirose chuckles, ever so slightly.{/i}"
     show Grace surprised
     g "No way! Did you just have an emotion?"
-    #show Hirose pleased
+    show Hirose pleased
     h "To be honest, Grace, I needed some form of levity, even if it's your snark."
+    show Hirose concerned
     h "I've had nothing but puffed up Chiefs, livid calls from corporate, and {i}Ivan{/i} of all people pouring their words right into my ears."
     show Grace snarky
     g "Ivan, huh? What was he calling about?"
+    show Hirose pleased
     h "Why, to make a ton of recommendations in your favor, of course!"
-    #show Hirose neutral
+    show Hirose neutral
     h "You know why he called."
     show Grace neutral
     g "Am I in trouble?"
+    show Hirose pleased
     h "If murdering fragile egos was a crime, then yes."
     #show Hirose amused?
     show Grace surprised
+    show Hirose thoughtful
     h "I, unfortunately, am not in a position to ensure that those egos stay dead, but I can ensure that there are no consequences."
     show Grace neutral
+    show Hirose neutral
     h "For now, Grace, you are free to return to your lab. Take a day off, if you want to. You're going to need the down time."
     h "We're going to be crunching in order to implement the most recent changes to the Markov Project's plan."
     show Grace happy
     g "Thanks. I think I'm going to go pass out in my room now."
-    #show Hirose pleased
+    show Hirose pleased
     h "Oh, to be young and have time for naps."
-    #Hirose leaves now.
+    hide Hirose
     show Grace neutral at center
-    #play SFX
+    play sound beepLoud
     "{i}DING!{/i}"
     g "A message?"
     "{i}'Hey, are you still on the hotseat? If you're not, I know the mess hall's serving rice and beans today. Care to catch some with me?'-Alan{/i}"
@@ -543,6 +653,9 @@ label ch5_S_resume:
     g "Sure, why not."
     #insert jump to credits
     $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
     "{i}Grace's journal has updated.{/i}"
     $journal6="S"
     $pageUnlocked_journal+=2

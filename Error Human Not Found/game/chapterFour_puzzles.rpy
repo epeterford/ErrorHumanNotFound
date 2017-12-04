@@ -1,33 +1,3 @@
-label llHard_done:
-    ##INSERT GRACE'S PUZZLE
-    ##syddoyourcomscithing
-    #if (attempts == 1)
-    #g "Wow, that was {i}surprisingly{/i} easy."
-    #if (attempts >1) and (attempts<4)
-    #g "Okay, Watson, you little trickster. You almost got me, but I succeeded!"
-    #if (attempts>3)
-    #g "Hmmm. This is trickier than I thought. What was Watson thinking?"
-    ##show Ada neutral
-    #show other darken
-    #show image "objects/jumpdrive_closeup.png" at centerScreen
-    #"{i}Description of the encryption key here."
-    #hide other darken
-    #hide image "objects/jumpdrive_closeup.png" at centerScreen
-    #show Grace happy at left
-    #show Ada neutral at right
-    #a "This is the decryption key for all the data drives we have found. All four are rather large and complex in their encryption, so even with the key this will take some time." 
-    #a "Unfortunately, my neural network is not quite as capable as a quantum computer."
-    #g "As long as it decodes soon, I'm okay with that."
-    #a "Assuming there are no surprises, it will be soon."
-    #g "Great. In the meantime, I'm going to get ahold of my friend Alan. I need a break from today."
-    #a "Go on, take your break."
-    "Grace cracks the safe here."
-    jump watsonRight
-    
-label lgHard_done:
-    "Ada cannot find Watson here (Watson's computer)."
-    jump watsonRight
-
 
 #BINARY PUZZLE
 #ADD SCREENS FOR TUTORIAL AND LABELS TO CALL
@@ -48,9 +18,20 @@ screen binaryHardLose_scr:
         xpos 925
         ypos 610 
         focus_mask True
-        action Jump("watsonActions")
+        action Jump("watsonLeft")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
             
 screen binaryHardWin_scr:
     imagebutton:
@@ -62,9 +43,18 @@ screen binaryHardWin_scr:
         action Jump("binaryHardDoneTalk") 
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
-        
-
-#TUTORIAL FOR HARD ARE NOT DONE. SCREENS ARE PLACEHOLDERS ONLY.        
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
+              
 screen tutorial_scrBinary4Bit_1:
     imagebutton:
         idle "next.png" 
@@ -74,6 +64,17 @@ screen tutorial_scrBinary4Bit_1:
         focus_mask True
         action Jump("tutorial_Binary4Bit_2")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 screen tutorial_scrBinary4Bit_2:
     imagebutton:
@@ -85,24 +86,6 @@ screen tutorial_scrBinary4Bit_2:
         action Jump("tutorial_Binary4Bit_1")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
     imagebutton:
-        idle "next.png" 
-        hover "next_hover.png" 
-        xpos 1650
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary4Bit_3")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            
-screen tutorial_scrBinary4Bit_5:
-    imagebutton:
-        idle "back.png" 
-        hover "back_hover.png" 
-        xpos 0
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary4Bit_4")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    imagebutton:
         idle "finish.png" 
         hover "finish_hover.png" 
         xpos 1650
@@ -111,20 +94,29 @@ screen tutorial_scrBinary4Bit_5:
         action Jump("binaryHard")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
 
 label binaryHard:
     stop channel00 fadeout 1.0
-    stop channel01 fadeout 1.0
-    stop channel02 fadeout 1.0
-    stop channel03 fadeout 1.0
-    stop channel04 fadeout 1.0
-    stop channel05 fadeout 1.0
-    stop channel06 fadeout 1.0
-    stop channel07 fadeout 1.0
-    #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
-#    if (binaryHard_attempts==0): Uncomment when have tutorial
-#        jump tutorial_Binary4Bit_1
+    if (tutorial_binaryHard):
+        $tutorial_binaryHard = False
+        $pageUnlocked_notes +=3
+        if (notes_hard2 =="LG") or (notes_hard2 =="LL"):
+            $notes_hard3 = "B"
+        else:
+            $notes_hard2 = "B"
+        jump tutorial_Binary4Bit_1
     $binaryHardHints = 0
     call binaryMatchHard from _call_binaryMatchHard
     
@@ -133,7 +125,7 @@ label tutorial_Binary4Bit_1:
     $config.skipping=None
     window hide
     $ quick_menu = False
-    scene bg tutorial_binary4Bit_1
+    scene bg tutorial_binaryHard_1
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_scrBinary4Bit_1
@@ -141,23 +133,16 @@ label tutorial_Binary4Bit_1:
 label tutorial_Binary4Bit_2:
     window hide
     $ quick_menu = False
-    scene bg tutorial_binary4Bit_2
+    scene bg tutorial_binaryHard_2
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_scrBinary4Bit_2
-    
-label tutorial_Binary4Bit_5:
-    window hide
-    $ quick_menu = False
-    scene bg tutorial_binary4Bit_5
-    $renpy.block_rollback()
-    $config.skipping=None
-    call screen tutorial_scrBinary4Bit_5
         
 label binaryHardHints:
     show screen disable_hide
     $config.skipping=None
     $remainder = binaryHardHints%3 
+    $can_clickHard = False
     show other darken onlayer screens
     if (remainder==0):
         $binaryHardHints +=1
@@ -167,7 +152,7 @@ label binaryHardHints:
         jump turns_loopHard
     if (remainder==1):
         $binaryHardHints +=1
-        g "The highest bit is 1111, which is fifteen. 1000 is just 8, then we had 0100 which is 4, and 0010, which is 2, and 0001, which is just one."
+        g "The highest bit is 1111, which is fifteen. 1000 is just 8, then we have 0100 which is 4, and 0010, which is 2, and 0001, which is just one."
         hide other darken onlayer screens
         window hide
         jump turns_loopHard
@@ -183,8 +168,8 @@ label binaryHardWin:
     hide screen binaryMatch_hard
     show other darken
     $binaryHard_solved = True
-    image discStartup= "binaryEasyWin.png" #CHANGE ME
-    show discStartup at centerScreen2
+    image binaryHard_winImage = "binaryHard_win.png" #CHANGE ME
+    show binaryHard_winImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen binaryHardWin_scr
@@ -193,24 +178,28 @@ label binaryHardLose:
     hide screen binaryMatch_hard
     show other darken
     $ binaryHard_attempts +=1
-    image bootFail ="loopLogicEasyLose.png" #CHANGE ME
-    show bootFail at centerScreen2
+    image binaryHard_loseImage ="binaryHard_lose.png" #CHANGE ME
+    show binaryHard_loseImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen binaryHardLose_scr
     
 label binaryHardDoneTalk:
-    scene bg wsMain with fade
+    scene bg wsDesk with fade
     $quick_menu = True
     stop music fadeout 1.0
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $watsonItems_left +=1
+    $renpy.music.play("music/Amb/WS/EHNF_WS_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $binaryHard_solved = True
+    $renpy.block_rollback()
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
+    hide screen disable_hide
     if(binaryHard_attempts==0):
         show Grace neutral at left
         show Ada amused at right
@@ -219,6 +208,9 @@ label binaryHardDoneTalk:
         show Ada seething at right
         show Grace neutral at left
         a "Trust Watson to have additional security measures in place. The encryption key certainly helped, but I still had to bypass several other surprises he left behind."
+        g "So what did we get?"
+        show Ada neutral
+        a "It will still take some time to decrypt all of the data. I will let you know when the process is complete."
     if (binaryHard_attempts>=3):
         show Ada annoyed at right
         show Grace snarky at left
@@ -226,11 +218,15 @@ label binaryHardDoneTalk:
         a "If you are going to be that way, next time you can try to crack it."
         show Grace surprised
         g "Oh, no, please. I wouldn't want to take that from you."
+        show Grace neutral
+        g "So what did we get?"
+        show Ada neutral
+        a "It will still take some time to decrypt all of the data. I will let you know when the process is complete."
     $quick_menu=False
     window hide
     hide Grace
     hide Ada
-    jump watsonActions
+    jump watsonLeft
     
 ###########################################GRAMMAR PUZZLE HERE#####################################
 screen gramHard_lose_scr:
@@ -275,12 +271,32 @@ screen gramHard_puzzleItem_scr:
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
         
+screen tutorial_gramHard_1_scr:
+    imagebutton:
+        idle "finish.png" 
+        hover "finish_hover.png" 
+        xpos 1650
+        ypos 940 
+        focus_mask True
+        action Jump("choose_gramHard")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
 #######LABELS##############
 
 label tutorial_gramHard_1:
     window hide
     $ quick_menu = False
-    scene bg tutorial_gramHard_1
+    scene bg tutorial_gramHard
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_gramHard_1_scr
@@ -289,25 +305,58 @@ label gramHard_lose:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image gramEasyLoseFail = "passwordFail.png" #CHANGE THIS
-    show gramEasyLoseFail at centerScreen2 #CHANGE
+    image gramHard_loseImage = "gramHard_lose.png" #CHANGE THIS
+    show gramHard_loseImage at centerScreen2 #CHANGE
     call screen gramHard_lose_scr
     
 label gramHard_win:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image passwordAccepted = "passwordAccepted.png" #CHANGE THIS
-    show passwordAccepted at centerScreen2 #CHANGE
+    image gramHard_winImage = "gramHard_win.png" #CHANGE THIS
+    show gramHard_winImage at centerScreen2 #CHANGE
     call screen gramHard_win_scr
     
 label gramHard_done:
     $quick_menu = True
-    #CHANGE ALL THIS
     scene bg blueMain with fade
     stop music fadeout 1.0
-    #INSERT NEW BLUE MUSIC here?
+    $renpy.music.play("music/BGM/Blue/EHNF_L0_BGM_Blue_Kick.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L1_BGM_Blue_Ghost_Kick.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L2_BGM_Blue_3p_Horn_Bus.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L3_BGM_Blue_Snare.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L4_BGM_Blue_Percussion.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L5_BGM_Blue_Cymbals_Large.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L6_BGM_Blue_Cymbals_Small.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L7_BGM_Blue_Cymbals_Swells.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L8_BGM_Blue_Glass_Mallet.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L9_BGM_Blue_Liquid_Mallet.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L10_BGM_Blue_Reflective_Mallet.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L11_BGM_Blue_Grime_Bass.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L12_BGM_Blue_Sub_Bass.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L13_BGM_Blue_Sparkling_Water_Drops.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L14_BGM_Blue_Ambient_Room_Pad.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L15_BGM_Blue_Strings_Legatto.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L16_BGM_Blue_Strings_Staccato.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L17_BGM_Blue_Strings_Tremelo.ogg", channel='channel17', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L18_BGM_Blue_Wire_Pluck.ogg", channel='channel18', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L19_BGM_Blue_Flutes_Disonant.ogg", channel='channel19', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L20_BGM_Blue_French_Horn_Legatto.ogg", channel='channel20', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L21_BGM_Blue_French_Horn_Staccato.ogg", channel='channel21', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L0.ogg", channel='channel22', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L1.ogg", channel='channel23', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L2.ogg", channel='channel24', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L3.ogg", channel='channel25', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+
     ##Attempt comments
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen disable_hide
+    hide screen grammar_h4
+    hide screen grammar_hard3
+    hide screen grammar_h2
+    hide screen grammar_hard5
+    hide screen grammar_h1
     if (gramHard_attempts == 0):
         show Ada amused at right
         show Blue neutral at center
@@ -342,7 +391,6 @@ label gramHard_done:
         
 label choose_gramHard:
     $quick_menu=False
-    #Modify these with new music????
     stop channel00 fadeout 1.0
     stop channel01 fadeout 1.0
     stop channel02 fadeout 1.0
@@ -360,10 +408,22 @@ label choose_gramHard:
     stop channel14 fadeout 1.0
     stop channel15 fadeout 1.0
     stop channel16 fadeout 1.0
+    stop channel17 fadeout 1.0
+    stop channel18 fadeout 1.0
+    stop channel19 fadeout 1.0
+    stop channel20 fadeout 1.0
+    stop channel21 fadeout 1.0
+    stop channel22 fadeout 1.0
+    stop channel23 fadeout 1.0
+    stop channel24 fadeout 1.0
+    stop channel25 fadeout 1.0
+    
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $gramHardHints=0
-#    if (gramMed_attempts == 0): #UNCOMMENT ME WHEN TUTORIAL IS IN
-#        jump tutorial_gramMed_1
+    if (tutorial_gramHard): #UNCOMMENT ME WHEN TUTORIAL IS IN
+        $pageUnlocked_notes +=1
+        $tutorial_gramHard = False
+        jump tutorial_gramHard_1
     $slot_name = ""
     $gate_name = ""
     $temp_gate = ""
@@ -427,10 +487,44 @@ label choose_gramHard:
     "If you see this, an error has occured. Please contact Blue or some other capable individual to resolve."
 
 label blueSpace_puzzle:
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen disable_hide
+    hide screen grammar_h4
+    hide screen grammar_hard3
+    hide screen grammar_h2
+    hide screen grammar_hard5
+    hide screen grammar_h1
     $quick_menu = True
     scene bg blueMain with fade
     stop music fadeout 1.0
-    #MUSIC CHANGE HERE
+    $renpy.music.play("music/BGM/Blue/EHNF_L0_BGM_Blue_Kick.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L1_BGM_Blue_Ghost_Kick.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L2_BGM_Blue_3p_Horn_Bus.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L3_BGM_Blue_Snare.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L4_BGM_Blue_Percussion.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L5_BGM_Blue_Cymbals_Large.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L6_BGM_Blue_Cymbals_Small.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L7_BGM_Blue_Cymbals_Swells.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L8_BGM_Blue_Glass_Mallet.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L9_BGM_Blue_Liquid_Mallet.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L10_BGM_Blue_Reflective_Mallet.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L11_BGM_Blue_Grime_Bass.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L12_BGM_Blue_Sub_Bass.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L13_BGM_Blue_Sparkling_Water_Drops.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L14_BGM_Blue_Ambient_Room_Pad.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L15_BGM_Blue_Strings_Legatto.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L16_BGM_Blue_Strings_Staccato.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L17_BGM_Blue_Strings_Tremelo.ogg", channel='channel17', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L18_BGM_Blue_Wire_Pluck.ogg", channel='channel18', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L19_BGM_Blue_Flutes_Disonant.ogg", channel='channel19', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L20_BGM_Blue_French_Horn_Legatto.ogg", channel='channel20', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Blue/EHNF_L21_BGM_Blue_French_Horn_Staccato.ogg", channel='channel21', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L0.ogg", channel='channel22', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L1.ogg", channel='channel23', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L2.ogg", channel='channel24', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Blue/EHNF_BW_L3.ogg", channel='channel25', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+
     show Ada neutral at right
     show Grace neutral at left
     show Blue neutral at center

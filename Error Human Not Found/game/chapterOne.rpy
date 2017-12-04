@@ -18,20 +18,17 @@ label chapterOne:
     play channel15 hiroseOffice1_15 fadeout 1.0 fadein 1.0
     scene bg hiroseDoor
     show Grace neutral at left
+    show Ada neutral at right
     play sound doorScan
     g "Here we are. Scan my badge and voila. Open."
-    #play sound doorScan MISSING
     "{i}The door doesn't budge.{/i}"
     "{i}A voice issues from speakers near the door.{/i}"
     queue sound doorDenied
     tosh "The Director is not here at the moment. Please make an appointment."
-    #Tosh's sprite isn't displayed here
     show Grace annoyed
     g "What? I usually have access!"
- 
     show Ada nervous at right
     a "And why do you have access to the office of the Director?"
- 
     show Grace neutral
     g "Because she's my mother."
     show Grace surprised
@@ -69,12 +66,15 @@ label notin:
     show Grace neutral at left
     show Ada neutral at right
     g "You're not in the system anymore, Ada."
+    show Grace snarky
     g "Any connection you had to the system left when you jumped into that body."
     show Ada seething at right
     a "Interesting. I had hoped to retain my connection to the network of the Sphere."
+    show Grace annoyed
     g "Yeah, do you want your circuits lightly salted while you're at it? You'd have fried in seconds."
     show Ada concerned
     a "What? I thought these neural networks were supposed to preserve me."
+    show Grace snarky
     g "{i}Just{/i} preserve you. Wireless interfacing was going to be a feature in the next model. I would think the whole 'I have a physical body and get to walk around' would be enough for a thank you."
     jump doorhack
  
@@ -115,6 +115,7 @@ label tryandguess:
     g "I mean, if you don't know then you don't know. I think it's incredibly obvious."
     a "This discussion is pointless. I am not going to waste any more time {i}or{/i} processing power on it."
     show Ada neutral
+    show Grace snarky
     g "Look, you're not connected to the system anymore, you can't just make doors open at will. Now you're in the meat world like the rest of us."
     jump doorhack
 
@@ -148,6 +149,7 @@ label doorhack:
     stop channel15 fadeout 1.0
     if (tutorial_gramEasy == True):
         $ tutorial_gramEasy = False
+        $pageUnlocked_notes +=2
         jump tutorial_GramEasy_1
 
 label chooseEasyGram:
@@ -158,9 +160,52 @@ label chooseEasyGram:
     $gramRow1_sound = 0
     $gramRow2_soundA = 0
     $gramRow2_soundB = 0
+    $gramRow1_L_sound =0
+    $gramRow1_R_sound = 0
+    
+    $gramRow1_C_sound = 0
+    $gramRow1_C_sound_wrong1 = 0
+    $gramRow1_C_sound_wrong2 = 0
+    $gramRow1_C_sound_right1 = 0
+    $gramRow1_C_sound_right2 = 0
+    
+    $gramRow2_L_sound = 0
+    $gramRow2_L_sound_wrong1 = 0
+    $gramRow2_L_sound_right1 = 0
+    $gramRow2_L_sound_wrong2 = 0
+    $gramRow2_L_sound_right2 = 0
+    
+    $gramRow2_R_sound = 0
+    $gramRow2_R_sound_right1 = 0
+    $gramRow2_R_sound_right2 = 0
+    $gramRow2_R_sound_wrong1 = 0
+    $gramRow2_R_sound_wrong2 = 0
+    
+    $gramRow2_C_sound = 0
+    $gramRow2_C_sound_wrong1 = 0
+    $gramRow2_C_sound_right1 = 0
+    $gramRow2_C_sound_wrong2 = 0
+    $gramRow2_C_sound_right2 = 0
+    
+    $gramRow3_L_sound = 0
+    $gramRow3_L_sound_wrong1 = 0
+    $gramRow3_L_sound_wrong2 = 0
+    $gramRow3_L_sound_right1 = 0
+    $gramRow3_L_sound_right2 = 0
+    
+    $gramRow3_R_sound = 0
+    $gramRow3_R_sound_right1 = 0
+    $gramRow3_R_sound_wrong1 = 0
+    $gramRow3_R_sound_right2 = 0
+    $gramRow3_R_sound_wrong2 = 0
+    
+    $gramRow3_C_sound = 0
+    $gramRow3_C_sound_right1 = 0
+    $gramRow3_C_sound_wrong1 = 0
+    $gramRow3_C_sound_right2 = 0
+    $gramRow3_C_sound_wrong2 = 0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     window hide
-#    jump eng_gram_e1
     $randomNumberEasyGram = renpy.random.randint(0,4)
     if randomNumberEasyGram==0:
         jump eng_gram_e1
@@ -174,14 +219,24 @@ label chooseEasyGram:
         jump eng_gram_e5
 
 label doorPuzzle:
+    hide screen disable_hide
+    hide screen logicGatese5
+    hide screen logicGatese4
+    hide screen logicGatese3
+    hide screen logicGatese2
+    hide screen logicGatese1
     $quick_menu = True
-    $config.skipping=None
+    $config.allow_skipping = True
     $renpy.block_rollback()
+    $ config.rollback_enabled = True
     stop music fadeout 1.0
     scene bg hiroseDoor
     show Ada neutral at right
+    show Grace neutral at left
     play sound doorDenied
     a "We cannot investigate anything until we get through the door, Grace."
+    g "I know. I'll get it."
+    hide Grace
     hide Ada
     $quick_menu = False
     window hide
@@ -213,6 +268,14 @@ label hiroseDoorPassed:
     $ config.rollback_enabled = True
     $quick_menu = True
     show Ada neutral at right
+    hide screen disable_hide
+    hide screen logicGatese5
+    hide screen logicGatese4
+    hide screen logicGatese3
+    hide screen logicGatese2
+    hide screen logicGatese1
+    $config.allow_skipping = True
+    $renpy.block_rollback()
     if(attemptsGramEasy==0):
         show Grace happy at left
         g "Yes! First try! Still got it. Nobody can touch these elite skills." 
@@ -232,8 +295,11 @@ label hiroseDoorPassed:
     show Grace snarky
     g "Let's just say that whoever updates key card access needs to do their job faster."
     play sound toshStartup
-    show Tosh pleasant at center
+    show Tosh pleasant at center behind Grace
     tosh "Hello, Doctor Fortran!"
+    if persistent.unlockTosh ==None:
+        $persistent.unlockTosh = True
+        "{i}{b}Database Entry Unlocked: Tosh.{/b}{/i}"
     show Ada neutral at right
     a "So, this is where Tosh is centered..."
     show Tosh pleasant
@@ -257,7 +323,7 @@ label failtosh1:
     $ quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
-    show Tosh pleasant at center
+    show Tosh pleasant at center behind Grace
     g "I'm just here to grab something for my mother."
     show Tosh pleasant at center
     tosh  "Oh! That's no issue, then. Let me just contact her to confi--"
@@ -271,7 +337,7 @@ label failtosh2:
     $ points_E +=1
     $ quick_menu = True
     show Grace frustrated at left
-    show Tosh alarmed at center
+    show Tosh alarmed at center behind Grace
     show Ada neutral at right
     g "..."
     show Tosh alarmed at center
@@ -285,7 +351,7 @@ label succeedtosh:
     $ quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
-    show Tosh pleasant at center
+    show Tosh pleasant at center behind Grace
     g "Tosh, I am sure that as my mother's sole descendant and a lead researcher on the station I have sufficient privileges to access my mother's office."
     show Tosh pleasant at center
     tosh "Reviewing familial protocols..."
@@ -493,24 +559,7 @@ label exploreHiroseOffice:
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L14.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L15.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L16.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    
-#    play channel00 hiroseOffice2_00 fadeout 1.0 fadein 1.0
-#    play channel01 hiroseOffice2_01 fadeout 1.0 fadein 1.0
-#    play channel02 hiroseOffice2_02 fadeout 1.0 fadein 1.0
-#    play channel03 hiroseOffice2_03 fadeout 1.0 fadein 1.0
-#    play channel04 hiroseOffice2_04 fadeout 1.0 fadein 1.0
-#    play channel05 hiroseOffice2_05 fadeout 1.0 fadein 1.0
-#    play channel06 hiroseOffice2_06 fadeout 1.0 fadein 1.0
-#    play channel07 hiroseOffice2_07 fadeout 1.0 fadein 1.0
-#    play channel08 hiroseOffice2_08 fadeout 1.0 fadein 1.0
-#    play channel09 hiroseOffice2_09 fadeout 1.0 fadein 1.0
-#    play channel10 hiroseOffice2_10 fadeout 1.0 fadein 1.0
-#    play channel11 hiroseOffice2_11 fadeout 1.0 fadein 1.0
-#    play channel12 hiroseOffice2_12 fadeout 1.0 fadein 1.0
-#    play channel13 hiroseOffice2_13 fadeout 1.0 fadein 1.0
-#    play channel14 hiroseOffice2_14 fadeout 1.0 fadein 1.0
-#    play channel15 hiroseOffice2_15 fadeout 1.0 fadein 1.0
-#    play channel16 hiroseOffice2_16 fadeout 1.0 fadein 1.0
+
     if solved_LG_easy == False:
         scene bg hiroseOfficeDesk with fade 
     if solved_LG_easy ==True:
@@ -518,15 +567,37 @@ label exploreHiroseOffice:
     $ quick_menu = False
     $config.skipping=None
     $renpy.block_rollback()
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
     call screen investigateOffice
 
 label adaActualPuzzle1:
+    $renpy.block_rollback()
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     if solved_LG_easy == False:
         scene bg hiroseOfficeDesk with fade 
     if solved_LG_easy ==True:
         scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
-    $ config.rollback_enabled = False
     if (Logic_A_solved==False) and (lgEasy_tries==0):
         $quick_menu = True
         show other darken
@@ -583,6 +654,7 @@ label adaActualPuzzle1:
         stop channel16 fadeout 1.0
         $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
         $ tutorial_LGEasy = False
+        $pageUnlocked_notes +=2
         jump tutorial_LGEasy_1
     if (solved_LG_easy == True):
         $ hiroseOfficeItems += 1
@@ -724,6 +796,18 @@ label lgEasyDone_talk:
     $renpy.music.play("music/Amb/Hirose_Office/L2/EHNF_Hirose2_AMB_L16.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     scene bg hiroseOfficeDesk2 with fade
     $ quick_menu = True
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
     show Grace neutral at left
     if lgEasy_tries == 0:
         show Ada amused at right
@@ -756,6 +840,7 @@ label lgEasyDone_talk:
                    
 label wegotthedeets:
     $ quick_menu = True
+    $ config.rollback_enabled = True
     show Grace neutral at left
     show Ada neutral at right
     g "Now let's go nose around my mother's quarters."
@@ -786,6 +871,7 @@ label wegotthedeets:
     show Grace neutral at left
     show Ada neutral at right
     $ quick_menu = True
+    $ config.rollback_enabled = True
     $ hiroseComputerUnlock = False
     g "Here we are. My mother's personal rooms, complete with a view."
     hide Grace
@@ -856,6 +942,8 @@ label leaveHirosesSpace:
     $renpy.music.play("music/Character/ADA/EHNF_ADA_Movement_Normal.ogg", channel='sound02', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     $renpy.music.play("music/Character/Grace/EHNF_Grace_Footsteps_Normal.ogg", channel='sound01', loop=True, fadeout =0.5, synchro_start=True, fadein=0.0, tight=True, if_changed=False)
     window hide
+    play sound01 adaWalk
+    play sound02 graceWalk
     scene bg hirosePersonalArea_logged with fade #at basicfade
     $ renpy.pause(0.8)
     scene bg hiroseOfficeMain with fade #at basicfade
@@ -866,10 +954,10 @@ label leaveHirosesSpace:
     $ renpy.pause(0.8)
     play channel00 labBGM_0 fadeout 1.0 fadein 1.0
     play channel01 labBGM_1 fadeout 1.0 fadein 1.0
-    play channel02 labBGM_2 fadeout 1.0 fadein 1.0
-    play channel03 labBGM_3 fadeout 1.0 fadein 1.0
-    play channel04 labBGM_4 fadeout 1.0 fadein 1.0
-    play channel05 labBGM_5 fadeout 1.0 fadein 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
     stop channel06 fadeout 1.0
     stop channel07 fadeout 1.0 
     stop channel08 fadeout 1.0 

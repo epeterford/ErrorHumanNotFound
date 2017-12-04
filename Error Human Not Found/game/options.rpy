@@ -41,6 +41,13 @@ define gui.about = _("{i}Error: Human Not Found{/i} was developed by the staff o
                        " Visit our {a=https://www.facebook.com/ErrorHNF/?hc_ref=ARTPlH781yn9-qQLtonRZNXyFDy6PA5ky4CKiD5VnbwBWFweq0jHSDmmeXh03VrYohA&fref=nf} facebook page{/a} or find us on twitter "
                        "{a=https://twitter.com/CelleC_Error}@CelleC_Error{/a}.\n\n\n\n\n")
 
+define gui.about2 = _("{i}Error: Human Not Found{/i} follows the story of Grace Fortran as she works with"
+                      " her AI sidekick Ada to uncover the truth behind the death of Alpha, the first Artificial"
+                      " Intelligence to receive a physical body. Ada needs to know how and why her friend died, and "
+                      "if she too is in danger. With Grace, accusations of negligence on her part paint her as the primary "
+                      "suspect in Alpha's death. With her reputation and job on the line, Grace has"
+                      " to race against the clock to solve the mystery.\n\n\n\n\n")
+
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

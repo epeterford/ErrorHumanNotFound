@@ -1,3 +1,16 @@
+screen enableStuff():
+    key 'h' action Hide('hide_window')
+    key 'K_PAGEUP' action Rollback()
+    key 'repeat_K_PAGEUP' action Rollback()
+    key 'K_AC_BACK' action Rollback()
+    key 'mousedown_4' action Rollback()
+    key 'K_LCTRL' action Skip("")
+    key 'K_RCTRL' action Skip("")
+    key 'K_TAB' action Skip("")
+    key '>' action Skip("")
+#    $config.keymap['hide_window'].append('h')
+    $config.allow_skipping = True
+    
 label chapterOne_screens:
     screen lgEasyLose_scr:
         imagebutton:
@@ -18,6 +31,17 @@ label chapterOne_screens:
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen lgEasyDone_scr:
         imagebutton:
@@ -29,6 +53,17 @@ label chapterOne_screens:
             action Jump("lgEasyDone_talk")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen lgEasyWin_scr:
         imagebutton:
@@ -49,6 +84,17 @@ label chapterOne_screens:
             action Jump("exploreHiroseOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen gramEasyLose_scr:
         imagebutton:
@@ -69,6 +115,17 @@ label chapterOne_screens:
             action Jump("doorPuzzle")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen doorPuzzle_scr:
         imagebutton:
@@ -80,6 +137,17 @@ label chapterOne_screens:
             action Jump("chooseEasyGram")
             hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
             activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen gramEasyDone_scr:
         imagebutton:
@@ -91,6 +159,17 @@ label chapterOne_screens:
             action Jump("hiroseDoorPassed")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrInv_1:
         imagebutton:
@@ -101,6 +180,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_Inv_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrInv_2:
         imagebutton:
@@ -111,7 +201,6 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_Inv_1")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
-
         imagebutton:
             idle "finish.png" 
             hover "finish_hover.png" 
@@ -121,6 +210,17 @@ label chapterOne_screens:
             action Jump("hiroseOffice_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrGramEasy_1:
         imagebutton:
@@ -131,6 +231,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrGramEasy_2:
         imagebutton:
@@ -141,6 +252,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
 
         imagebutton:
             idle "back.png" 
@@ -158,7 +280,7 @@ label chapterOne_screens:
             xpos 1650
             ypos 940 
             focus_mask True
-            action Jump("tutorial_GramEasy_4")
+            action Jump("tutorial_GramEasy_3b")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "back.png" 
@@ -168,6 +290,46 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+            
+    screen tutorial_scrGramEasy_3b:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_GramEasy_4")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_GramEasy_3")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrGramEasy_4:
         imagebutton:
@@ -184,9 +346,20 @@ label chapterOne_screens:
             xpos 0
             ypos 940 
             focus_mask True
-            action Jump("tutorial_GramEasy_3")
+            action Jump("tutorial_GramEasy_3b")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     screen tutorial_scrGramEasy_5:
         imagebutton:
             idle "next.png" 
@@ -204,6 +377,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrGramEasy_6:
         imagebutton:
@@ -222,6 +406,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrGramEasy_7:
         imagebutton:
@@ -241,6 +436,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_GramEasy_6")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrLGEasy_1:
         imagebutton:
@@ -251,8 +457,48 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_LGEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrLGEasy_2:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LGEasy_2b")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LGEasy_1")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
+    screen tutorial_scrLGEasy_2b:
         imagebutton:
             idle "next.png" 
             hover "next_hover.png" 
@@ -267,8 +513,19 @@ label chapterOne_screens:
             xpos 0
             ypos 940 
             focus_mask True
-            action Jump("tutorial_LGEasy_1")
+            action Jump("tutorial_LGEasy_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrLGEasy_3:
         imagebutton:
@@ -285,8 +542,19 @@ label chapterOne_screens:
             xpos 0
             ypos 940 
             focus_mask True
-            action Jump("tutorial_LGEasy_2")
+            action Jump("tutorial_LGEasy_2b")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrLGEasy_4:
         imagebutton:
@@ -305,6 +573,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_LGEasy_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrLGEasy_5:
         imagebutton:
@@ -324,6 +603,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("tutorial_LGEasy_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen hiroseOfficeAction:
         $config.skipping=None
@@ -346,6 +636,17 @@ label chapterOne_screens:
             action Jump("exploreOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen hiroseOffice1_scr:
         $config.skipping=None
@@ -355,7 +656,7 @@ label chapterOne_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[hiroseTransitionItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -386,6 +687,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("hiroseOffice_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen hiroseOffice2_scr:
         $config.skipping=None
@@ -408,6 +720,17 @@ label chapterOne_screens:
             action Jump("exploreOffice")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen investigateOffice:
         $config.skipping=None
@@ -417,7 +740,7 @@ label chapterOne_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[hiroseOfficeItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -460,6 +783,17 @@ label chapterOne_screens:
                 action Jump("adaActualPuzzle1")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
                 
     screen hirosePersonalArea_scr:
         imagebutton:
@@ -480,6 +814,17 @@ label chapterOne_screens:
             action Jump("hirosePersonalArea_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen hirosePersonalArea_invScr:
         imagebutton:
@@ -508,6 +853,17 @@ label chapterOne_screens:
             focus_mask True
             action Jump("hirosePersonalArea_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
 
             
     screen investigateHirosePC:
@@ -529,6 +885,17 @@ label chapterOne_screens:
             action Jump("hirosePC_label")
             hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
             activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen investigateHiroseBed:
         imagebutton:
@@ -536,7 +903,7 @@ label chapterOne_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[hirosePersonalItems_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -579,6 +946,17 @@ label chapterOne_screens:
                 action Jump("hirosePhoto_label")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
     jump tutorial_Inv_1
             
 label tutorial_Inv_1:
@@ -613,6 +991,14 @@ label tutorial_LGEasy_2:
     $ quick_menu = False
     scene bg lgEasy2 
     call screen tutorial_scrLGEasy_2
+    
+label tutorial_LGEasy_2b:
+    $config.skipping=None
+    $renpy.block_rollback()
+    window hide
+    $ quick_menu = False
+    scene bg lgEasy2b
+    call screen tutorial_scrLGEasy_2b
         
 label tutorial_LGEasy_3:
     $config.skipping=None
@@ -663,6 +1049,14 @@ label tutorial_GramEasy_3:
     scene bg gramEasy3 
     call screen tutorial_scrGramEasy_3
     
+label tutorial_GramEasy_3b:
+    $config.skipping=None
+    $renpy.block_rollback()
+    window hide
+    $ quick_menu = False
+    scene bg gramEasy3b 
+    call screen tutorial_scrGramEasy_3b
+    
 label tutorial_GramEasy_4:
     $config.skipping=None
     $renpy.block_rollback()
@@ -709,6 +1103,18 @@ label hiroseTea_label:
     $ quick_menu = True
     $ hiroseTea_inv = True
     $ hiroseOfficeItems +=1
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show other darken
     show image "objects/hiroseTea_closeup.png" at centerScreen
     window show
@@ -737,6 +1143,18 @@ label hiroseTree:
     $ quick_menu = True
     $ hiroseTree_inv = True
     $ hiroseTransitionItems +=1
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show other darken
     show image "objects/hiroseTree_closeup.png" at centerScreen
     window show
@@ -786,6 +1204,18 @@ label hiroseRecorder_label:
     $ quick_menu = True
     $ hiroseRecorder_inv = True
     $ hiroseOfficeItems += 1
+    hide screen logicGatesC3
+    hide screen logicGatesC2
+    hide screen logicGatesC1
+    hide screen logicGatesB3
+    hide screen logicGatesB2
+    hide screen logicGatesB1
+    hide screen logicGatesA3
+    hide screen logicGatesA2
+    hide screen logicGatesA1
+    hide screen disable_hide
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show other darken
     show image "objects/hiroseRecorder_closeup.png" at centerScreen
     window show
@@ -862,25 +1292,25 @@ label LGEasyHintsA1:
 label LGEasyHintsA2:
     show screen disable_hide
     $ remainder = LGEasyHints%3
-    show ea1tile100 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
+    show ea2tile100 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0) onlayer screens
     show other darken onlayer screens
     if (remainder == 0):
         $ LGEasyHints +=1
         g "Remember Ada, the crescent shaped one is the OR gate. As long as one of the pipes is green, or true, the output will be true."
         hide other darken onlayer screens
-        hide ea1tile100 onlayer screens
+        hide ea2tile100 onlayer screens
         jump gamefileA2
     if (remainder==1):
         $ LGEasyHints +=1
         g "Here's a hint: the half moon is the AND gate. If both pipes feeding into it are green, the output will be green. Otherwise it will output red."
         hide other darken onlayer screens
-        hide ea1tile100 onlayer screens
+        hide ea2tile100 onlayer screens
         jump gamefileA2
     if (remainder==2):
         $ LGEasyHints +=1
         g "The easy one is the triangle with the circle on the end. It only works when there is one input, and flips it. Green goes to red, red goes to green. NOT gate is easy as it comes."
         hide other darken onlayer screens
-        hide ea1tile100 onlayer screens
+        hide ea2tile100 onlayer screens
         jump gamefileA2
     jump gamefileA2
     
@@ -1101,143 +1531,82 @@ label LGEasyHintsC3:
 label gramEasyHints1:
     show screen disable_hide
     $ remainder = gramEasyHints%3
-    show eaeng_e1_tile226 at Position(xpos = eae1and5x, xanchor = 0, ypos = eae1and5y, yanchor = 0) onlayer screens
-    show eaeng_e1_tile227 at Position(xpos = eae1and1x, xanchor = 0, ypos = eae1and1y, yanchor = 0) onlayer screens
-    show eaeng_e1_tile228 at Position(xpos = eae1and3x, xanchor = 0, ypos = eae1and3y, yanchor = 0) onlayer screens
-    show eaeng_e1_tile229 at Position(xpos = eae1and6x, xanchor = 0, ypos = eae1and6y, yanchor = 0) onlayer screens
-    show eaeng_e1_tile230 at Position(xpos = eae1and4x, xanchor = 0, ypos = eae1and4y, yanchor = 0) onlayer screens
-    show eaeng_e1_tile231 at Position(xpos = eae1and2x, xanchor = 0, ypos = eae1and2y, yanchor = 0) onlayer screens
+    show eaeng_e1_tile226 at Position(xpos = eae1letterPx, xanchor = 0, ypos = eae1letterPy, yanchor = 0)
+    show eaeng_e1_tile227 at Position(xpos = eae1letterJx, xanchor = 0, ypos = eae1letterJy, yanchor = 0)
+    show eaeng_e1_tile228 at Position(xpos = eae1letterMx, xanchor = 0, ypos = eae1letterMy, yanchor = 0)
+    show eaeng_e1_tile229 at Position(xpos = eae1letterLx, xanchor = 0, ypos = eae1letterLy, yanchor = 0)
+    show eaeng_e1_tile230 at Position(xpos = eae1letterNx, xanchor = 0, ypos = eae1letterNy, yanchor = 0)
+    show eaeng_e1_tile231 at Position(xpos = eae1letterKx, xanchor = 0, ypos = eae1letterKy, yanchor = 0)
     show other darken onlayer screens
     if (remainder == 0):
-        $ gramEasyHints +=1
         a "N, L, M, and K are all terminal or final substitutions since they are replaced by strings. I would use them on the bottom row only."
-        hide eaeng_e1_tile226 onlayer screens
-        hide eaeng_e1_tile227 onlayer screens
-        hide eaeng_e1_tile228 onlayer screens
-        hide eaeng_e1_tile229 onlayer screens
-        hide eaeng_e1_tile230 onlayer screens
-        hide eaeng_e1_tile231 onlayer screens
-        hide other darken onlayer screens
-        $ quick_menu = False
-        jump gamefile_e1
     if (remainder==1):
-        $ gramEasyHints +=1
         a "Remember if a tile is red, nothing below it will receive power. You will not be able to tell if it is correct or not until all tiles above a tile are green. "
-        hide eaeng_e1_tile226 onlayer screens
-        hide eaeng_e1_tile227 onlayer screens
-        hide eaeng_e1_tile228 onlayer screens
-        hide eaeng_e1_tile229 onlayer screens
-        hide eaeng_e1_tile230 onlayer screens
-        hide eaeng_e1_tile231 onlayer screens
-        hide other darken onlayer screens
-        jump gamefile_e1
     if (remainder==2):
-        $ gramEasyHints +=1
         a "P and J both must be replaced by other letters. That means they cannot go in the bottom row and be correct."
-        hide eaeng_e1_tile226 onlayer screens
-        hide eaeng_e1_tile227 onlayer screens
-        hide eaeng_e1_tile228 onlayer screens
-        hide eaeng_e1_tile229 onlayer screens
-        hide eaeng_e1_tile230 onlayer screens
-        hide eaeng_e1_tile231 onlayer screens
-        hide other darken onlayer screens
-        jump gamefile_e1
+    $ gramEasyHints +=1
+    hide eaeng_e1_tile226 
+    hide eaeng_e1_tile227 
+    hide eaeng_e1_tile228 
+    hide eaeng_e1_tile229 
+    hide eaeng_e1_tile230 
+    hide eaeng_e1_tile231 
+    hide other darken onlayer screens
+    jump gamefile_e1
     $ quick_menu = False
     jump gamefile_e1
     
 label gramEasyHints2:
     $ remainder = gramEasyHints%3
     show screen disable_hide
-    show eaeng_e2_tile107 at Position(xpos = eae2and1x, xanchor = 0, ypos = eae2and1y, yanchor = 0) onlayer screens
-    show eaeng_e2_tile111 at Position(xpos = eae2and2x, xanchor = 0, ypos = eae2and2y, yanchor = 0) onlayer screens
-    show eaeng_e2_tile108 at Position(xpos = eae2and3x, xanchor = 0, ypos = eae2and3y, yanchor = 0) onlayer screens
-    show eaeng_e2_tile110 at Position(xpos = eae2and4x, xanchor = 0, ypos = eae2and4y, yanchor = 0) onlayer screens
-    show eaeng_e2_tile106 at Position(xpos = eae2and5x, xanchor = 0, ypos = eae2and5y, yanchor = 0) onlayer screens
-    show eaeng_e2_tile109 at Position(xpos = eae2and6x, xanchor = 0, ypos = eae2and6y, yanchor = 0) onlayer screens
+    show eaeng_e2_tile107 at Position(xpos = eae2letterKx, xanchor = 0, ypos = eae2letterKy, yanchor = 0)
+    show eaeng_e2_tile111 at Position(xpos = eae2letterNx, xanchor = 0, ypos = eae2letterNy, yanchor = 0)
+    show eaeng_e2_tile108 at Position(xpos = eae2letterMx, xanchor = 0, ypos = eae2letterMy, yanchor = 0)
+    show eaeng_e2_tile110 at Position(xpos = eae2letterPx, xanchor = 0, ypos = eae2letterPy, yanchor = 0)
+    show eaeng_e2_tile106 at Position(xpos = eae2letterSx, xanchor = 0, ypos = eae2letterSy, yanchor = 0)
+    show eaeng_e2_tile109 at Position(xpos = eae2letterQx, xanchor = 0, ypos = eae2letterQy, yanchor = 0)
     show other darken onlayer screens
     if (remainder == 0):
-        $ gramEasyHints +=1
         a "You have to use all the available slots. Just because they are green does not mean they will give us the correct answer."
-        hide other darken onlayer screens
-        hide eaeng_e2_tile107 onlayer screens
-        hide eaeng_e2_tile111 onlayer screens
-        hide eaeng_e2_tile108 onlayer screens
-        hide eaeng_e2_tile110 onlayer screens
-        hide eaeng_e2_tile106 onlayer screens
-        hide eaeng_e2_tile109 onlayer screens        
-        jump gamefile_e2
     if (remainder==1):
-        $ gramEasyHints +=1
         a "M and Q are terminal and go to strings. They have no further substitutions, so I would put them in the final row."
-        hide other darken onlayer screens
-        hide eaeng_e2_tile107 onlayer screens
-        hide eaeng_e2_tile111 onlayer screens
-        hide eaeng_e2_tile108 onlayer screens
-        hide eaeng_e2_tile110 onlayer screens
-        hide eaeng_e2_tile106 onlayer screens
-        hide eaeng_e2_tile109 onlayer screens   
-        jump gamefile_e2
     if (remainder==2):
-        $ gramEasyHints +=1
         a "N can only replace something as PN, which is a substitution for K. That means K has to be above N."
-        hide other darken onlayer screens
-        hide eaeng_e2_tile107 onlayer screens
-        hide eaeng_e2_tile111 onlayer screens
-        hide eaeng_e2_tile108 onlayer screens
-        hide eaeng_e2_tile110 onlayer screens
-        hide eaeng_e2_tile106 onlayer screens
-        hide eaeng_e2_tile109 onlayer screens   
-        jump gamefile_e2
+    $ gramEasyHints +=1
+    hide other darken onlayer screens
+    hide eaeng_e2_tile107 
+    hide eaeng_e2_tile111 
+    hide eaeng_e2_tile108 
+    hide eaeng_e2_tile110 
+    hide eaeng_e2_tile106 
+    hide eaeng_e2_tile109
     $ quick_menu = False
     jump gamefile_e2
     
 label gramEasyHints3:
     $ remainder = gramEasyHints%3
     show screen disable_hide
-    show eaeng_e3_tile202 at Position(xpos = eae3and1x, xanchor = 0, ypos = eae3and1y, yanchor = 0) onlayer screens
-    show eaeng_e3_tile206 at Position(xpos = eae3and2x, xanchor = 0, ypos = eae3and2y, yanchor = 0) onlayer screens
-    show eaeng_e3_tile203 at Position(xpos = eae3and3x, xanchor = 0, ypos = eae3and3y, yanchor = 0) onlayer screens
-    show eaeng_e3_tile205 at Position(xpos = eae3and4x, xanchor = 0, ypos = eae3and4y, yanchor = 0) onlayer screens
-    show eaeng_e3_tile201 at Position(xpos = eae3and5x, xanchor = 0, ypos = eae3and5y, yanchor = 0) onlayer screens
-    show eaeng_e3_tile204 at Position(xpos = eae3and6x, xanchor = 0, ypos = eae3and6y, yanchor = 0) onlayer screens
+    show eaeng_e3_tile202 at Position(xpos = eae3letterS1x, xanchor = 0, ypos = eae3letterS1y, yanchor = 0)
+    show eaeng_e3_tile206 at Position(xpos = eae3letterS2x, xanchor = 0, ypos = eae3letterS2y, yanchor = 0)
+    show eaeng_e3_tile203 at Position(xpos = eae3letterMx, xanchor = 0, ypos = eae3letterMy, yanchor = 0)
+    show eaeng_e3_tile205 at Position(xpos = eae3letterS3x, xanchor = 0, ypos = eae3letterS3y, yanchor = 0)
+    show eaeng_e3_tile201 at Position(xpos = eae3letterKx, xanchor = 0, ypos = eae3letterKy, yanchor = 0)
+    show eaeng_e3_tile204 at Position(xpos = eae3letterJx, xanchor = 0, ypos = eae3letterJy, yanchor = 0)
     show other darken onlayer screens
     if (remainder == 0):
-        $ gramEasyHints +=1
         a "I do believe you should fill in the tree from the top to the bottom. The first rule, S can be substituted by SK, might be a good place to start."
-        hide other darken onlayer screens
-        hide eaeng_e3_tile202 onlayer screens
-        hide eaeng_e3_tile206 onlayer screens
-        hide eaeng_e3_tile203 onlayer screens
-        hide eaeng_e3_tile205 onlayer screens
-        hide eaeng_e3_tile201 onlayer screens
-        hide eaeng_e3_tile204 onlayer screens
-        $ quick_menu = False
-        jump gamefile_e3
     if (remainder==1):
-        $ gramEasyHints +=1
-        $ hintYes = True
         a "S can also be substituted by MJ. Maybe try those on the left?"
-        hide other darken onlayer screens
-        hide eaeng_e3_tile202 onlayer screens
-        hide eaeng_e3_tile206 onlayer screens
-        hide eaeng_e3_tile203 onlayer screens
-        hide eaeng_e3_tile205 onlayer screens
-        hide eaeng_e3_tile201 onlayer screens
-        hide eaeng_e3_tile204 onlayer screens
-        $ quick_menu = False
-        jump gamefile_e3
     if (remainder==2):
-        $ gramEasyHints +=1
         a "S is a terminal letter in two cases, so it should be on the bottom twice."
-        hide other darken onlayer screens
-        hide eaeng_e3_tile202 onlayer screens
-        hide eaeng_e3_tile206 onlayer screens
-        hide eaeng_e3_tile203 onlayer screens
-        hide eaeng_e3_tile205 onlayer screens
-        hide eaeng_e3_tile201 onlayer screens
-        hide eaeng_e3_tile204 onlayer screens
-        $ quick_menu = False
-        jump gamefile_e3
+    hide other darken onlayer screens
+    hide eaeng_e3_tile202 
+    hide eaeng_e3_tile206 
+    hide eaeng_e3_tile203 
+    hide eaeng_e3_tile205 
+    hide eaeng_e3_tile201 
+    hide eaeng_e3_tile204
+    $ gramEasyHints +=1
     $ quick_menu = False
     jump gamefile_e3
     
@@ -1257,94 +1626,54 @@ screen disable_hide():
 label gramEasyHints4:
     show screen disable_hide
     $ remainder = gramEasyHints%3
-    show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)onlayer screens
-    show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)onlayer screens
-    show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)onlayer screens
-    show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)onlayer screens
-    show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)onlayer screens
-    show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)onlayer screens
+    show eaeng_e4_tile202 at Position(xpos = eae4letterHx, xanchor = 0, ypos = eae4letterHy, yanchor = 0)
+    show eaeng_e4_tile206 at Position(xpos = eae4letterBx, xanchor = 0, ypos = eae4letterBy, yanchor = 0)
+    show eaeng_e4_tile203 at Position(xpos = eae4letterPx, xanchor = 0, ypos = eae4letterPy, yanchor = 0)
+    show eaeng_e4_tile205 at Position(xpos = eae4letterRx, xanchor = 0, ypos = eae4letterRy, yanchor = 0)
+    show eaeng_e4_tile201 at Position(xpos = eae4letterGx, xanchor = 0, ypos = eae4letterGy, yanchor = 0)
+    show eaeng_e4_tile204 at Position(xpos = eae4letterKx, xanchor = 0, ypos = eae4letterKy, yanchor = 0)
     show other darken onlayer screens
     if (remainder == 0):
-        $ gramEasyHints +=1
         a "S can only be substituted by GH. I would try G and H in the middle row."
-        hide other darken onlayer screens
-        hide eaeng_e4_tile202 onlayer screens
-        hide eaeng_e4_tile206 onlayer screens
-        hide eaeng_e4_tile203 onlayer screens
-        hide eaeng_e4_tile205 onlayer screens
-        hide eaeng_e4_tile201 onlayer screens
-        hide eaeng_e4_tile204 onlayer screens
-        jump gamefile_e4
     if (remainder==1):
-        $ gramEasyHints +=1
-        $ hintYes = True
         a "If I were you, Grace, I might try using P, B, R, and K in the bottom row, since the substitutions for those are strings."
-        hide other darken onlayer screens
-        hide eaeng_e4_tile202 onlayer screens
-        hide eaeng_e4_tile206 onlayer screens
-        hide eaeng_e4_tile203 onlayer screens
-        hide eaeng_e4_tile205 onlayer screens
-        hide eaeng_e4_tile201 onlayer screens
-        hide eaeng_e4_tile204 onlayer screens
-        jump gamefile_e4
     if (remainder==2):
-        $ gramEasyHints +=1
         a "If a tile is red, none of the tiles below it will light up. Try to work from the top down, making sure every slot is green."
-        hide other darken onlayer screens
-        hide eaeng_e4_tile202 onlayer screens
-        hide eaeng_e4_tile206 onlayer screens
-        hide eaeng_e4_tile203 onlayer screens
-        hide eaeng_e4_tile205 onlayer screens
-        hide eaeng_e4_tile201 onlayer screens
-        hide eaeng_e4_tile204 onlayer screens
-        jump gamefile_e4
+    $ gramEasyHints +=1
+    hide other darken onlayer screens
+    hide eaeng_e4_tile202 
+    hide eaeng_e4_tile206 
+    hide eaeng_e4_tile203 
+    hide eaeng_e4_tile205 
+    hide eaeng_e4_tile201
+    hide eaeng_e4_tile204 
     $ quick_menu = False
     jump gamefile_e4
     
 label gramEasyHints5:
     show screen disable_hide
     $ remainder = gramEasyHints%3
-    show eaeng_e5_tile202 at Position(xpos = eae5and1x, xanchor = 0, ypos = eae5and1y, yanchor = 0) onlayer screens
-    show eaeng_e5_tile206 at Position(xpos = eae5and2x, xanchor = 0, ypos = eae5and2y, yanchor = 0)onlayer screens
-    show eaeng_e5_tile203 at Position(xpos = eae5and3x, xanchor = 0, ypos = eae5and3y, yanchor = 0)onlayer screens
-    show eaeng_e5_tile205 at Position(xpos = eae5and4x, xanchor = 0, ypos = eae5and4y, yanchor = 0)onlayer screens
-    show eaeng_e5_tile201 at Position(xpos = eae5and5x, xanchor = 0, ypos = eae5and5y, yanchor = 0)onlayer screens
-    show eaeng_e5_tile204 at Position(xpos = eae5and6x, xanchor = 0, ypos = eae5and6y, yanchor = 0)onlayer screens
+    show eaeng_e5_tile202 at Position(xpos = eae5letterKx, xanchor = 0, ypos = eae5letterKy, yanchor = 0)
+    show eaeng_e5_tile206 at Position(xpos = eae5letterIx, xanchor = 0, ypos = eae5letterIy, yanchor = 0)
+    show eaeng_e5_tile203 at Position(xpos = eae5letterMx, xanchor = 0, ypos = eae5letterMy, yanchor = 0)
+    show eaeng_e5_tile205 at Position(xpos = eae5letterPx, xanchor = 0, ypos = eae5letterPy, yanchor = 0)
+    show eaeng_e5_tile201 at Position(xpos = eae5letterJx, xanchor = 0, ypos = eae5letterJy, yanchor = 0)
+    show eaeng_e5_tile204 at Position(xpos = eae5letterGx, xanchor = 0, ypos = eae5letterGy, yanchor = 0)
     show other darken onlayer screens
     if (remainder == 0):
-        $ gramEasyHints +=1
         a "K must be substituted by two other letters, which means wherever it goes, it must have two children slots."
-        hide other darken onlayer screens
-        hide eaeng_e5_tile202 onlayer screens
-        hide eaeng_e5_tile206 onlayer screens
-        hide eaeng_e5_tile203 onlayer screens
-        hide eaeng_e5_tile205 onlayer screens
-        hide eaeng_e5_tile201 onlayer screens
-        hide eaeng_e5_tile204 onlayer screens
-        jump gamefile_e5
     if (remainder==1):
-        $ gramEasyHints +=1
-        $ hintYes = True
         a "Remember the order of substitution is important. S cannot be substituted by K on the left and J on the right; it has to be JK."
-        hide other darken onlayer screens
-        hide eaeng_e5_tile202 onlayer screens
-        hide eaeng_e5_tile206 onlayer screens
-        hide eaeng_e5_tile203 onlayer screens
-        hide eaeng_e5_tile205 onlayer screens
-        hide eaeng_e5_tile201 onlayer screens
-        hide eaeng_e5_tile204 onlayer screens
-        jump gamefile_e5
     if (remainder==2):
-        $ gramEasyHints +=1
         a "If a tile is not lighting up, make sure its parent, or the tile above it, is green, and that the other part of the substitution is also filled."
-        hide other darken onlayer screens
-        hide eaeng_e5_tile202 onlayer screens
-        hide eaeng_e5_tile206 onlayer screens
-        hide eaeng_e5_tile203 onlayer screens
-        hide eaeng_e5_tile205 onlayer screens
-        hide eaeng_e5_tile201 onlayer screens
-        hide eaeng_e5_tile204 onlayer screens
-        jump gamefile_e5
+    $ gramEasyHints +=1
+    hide other darken onlayer screens
+    hide eaeng_e5_tile202 
+    hide eaeng_e5_tile206 
+    hide eaeng_e5_tile203 
+    hide eaeng_e5_tile205 
+    hide eaeng_e5_tile201 
+    hide eaeng_e5_tile204
     $ quick_menu = False
     jump gamefile_e5
     

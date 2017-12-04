@@ -24,6 +24,9 @@ init:
     image bg Logic_Gate = "LOGIC_GATE_BG.png"
 
 label logicGate_hardB1:
+    $quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     #loads background
     scene bg Logic_Gate
    
@@ -126,18 +129,18 @@ label logicGate_hardB1:
     show HB1tile07_01 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_g_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_r_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_r_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image HB1start1 = "light_r_on.png"
+    show HB1start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image HB1start2 = "light_g_on.png"
+    show HB1start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image HB1start3 = "light_r_on.png"
+    show HB1start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image HB1start4 = "light_r_on.png"
+    show HB1start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
-    image end2 = "light_g_off.png"
-    show end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
+    image HB1end2 = "light_g_off.png"
+    show HB1end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
 
 
 
@@ -155,9 +158,9 @@ label logicGate_hardB1:
     $ and1y = 88
     $ nor1x = 1148
     $ nor1y = 88
-    $ xor1x = 1298
+    $ xor1x = 1300
     $ xor1y = 88
-    $ xor2x = 1298
+    $ xor2x = 1300
     $ xor2y = 88
     
     #gate values
@@ -208,11 +211,11 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in1 = False
                 
@@ -231,11 +234,11 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in2 = False
                 
@@ -247,18 +250,18 @@ label gamefileHB1:
             $ and1in3 = False
             $ and1in4 = False
             
-        #gate slot number three*******************************        
+        #gate slot nuHBer three*******************************        
         if slot_name == "gate slot three":
             if nor1in3 == True:
                 $ nor1x = 1148
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -276,11 +279,11 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in4 = False
                 
@@ -309,11 +312,11 @@ label gamefileHB1:
                $ and1y = 88
                $ and1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in1 = False
                 
@@ -332,11 +335,11 @@ label gamefileHB1:
                 $ and1y = 88
                 $ and1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in2 = False
                 
@@ -348,18 +351,18 @@ label gamefileHB1:
             $ nor1in3 = False
             $ nor1in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHBer three*******************************    
         if slot_name == "gate slot three":
             if and1in3 == True:
                 $ and1x = 698
                 $ and1y = 88
                 $ and1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -377,11 +380,11 @@ label gamefileHB1:
                 $ and1y = 88
                 $ and1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in4 = False
                 
@@ -414,7 +417,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in1 = False                
 
@@ -437,7 +440,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in2 = False  
                 
@@ -449,7 +452,7 @@ label gamefileHB1:
             $ xor1in3 = False
             $ xor1in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHBer three*******************************    
         if slot_name == "gate slot three":
             if and1in3 == True:
                 $ and1x = 698
@@ -460,7 +463,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -482,7 +485,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1298
+                $ xor2x = 1300
                 $ xor2y = 88
                 $ xor2in4 = False  
                 
@@ -495,7 +498,7 @@ label gamefileHB1:
             $ xor1in4 = True
         
         if slot_name == "xor return":
-            $ xor1x = 1298
+            $ xor1x = 1300
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -514,7 +517,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False                
 
@@ -537,7 +540,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False  
                 
@@ -549,7 +552,7 @@ label gamefileHB1:
             $ xor2in3 = False
             $ xor2in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHBer three*******************************    
         if slot_name == "gate slot three":
             if and1in3 == True:
                 $ and1x = 698
@@ -560,7 +563,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -582,7 +585,7 @@ label gamefileHB1:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor2in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False  
                 
@@ -595,14 +598,14 @@ label gamefileHB1:
             $ xor2in4 = True
         
         if slot_name == "xor return":
-            $ xor2x = 1298
+            $ xor2x = 1300
             $ xor2y = 88
             $ xor2in2 = False
             $ xor2in1 = False
             $ xor2in3 = False
             $ xor2in4 = False
             
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "and return" or slot_name == "nor return" or slot_name == "xor return"):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -643,6 +646,14 @@ label gamefileHB1:
 #************image zone********************* 
 #*******************************************
 
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+        
     if and1in1 == True:
         image HB11tile02_03 = "r_horizontal.png"
         image HB11tile02_04 = "r_horizontal.png"
@@ -1194,7 +1205,7 @@ label gamefileHB1:
             image HB122tile03_09 = "r_elbow_bl.png"
             show HB122tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
             show HB122tile03_09 at Position(xpos = 1111, xanchor = 0, ypos = 458, yanchor = 0)
-            image HB122tile04_09 = "r_r.png"
+            image HB122tile04_09 = "r_g.png"
             show HB122tile04_09 at Position(xpos = 1111, xanchor = 0, ypos = 533, yanchor = 0)
             image HB122tile03_13 = "r_elbow_br.png"
             show HB122tile03_13 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
@@ -1253,37 +1264,69 @@ label gamefileHB1:
 
 #win conditions ********
     if (and1in2 == True and nor1in1 == True and (xor1in3 == True or xor2in3 == True) and (xor1in4 == True or xor2in4 == True)):         
-        image MB1250tile02_09 = "xor_Gate.png"
-        show MB1250tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-        image MB1250tile02_10 = "xor_Gate.png"
-        show MB1250tile02_10 at Position(xpos = xor2x, xanchor = 0, ypos = xor2y, yanchor = 0)
-        image MB1150tile07_02 = "and_Gate.png"
-        show MB1150tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-        image MB1150tile07_08 = "nor_Gate.png"
-        show MB1150tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-        image MB1150end2 = "light_r_on.png"
-        show MB1150end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
-        "game"
-        jump start
+        image HB1250tile02_09 = "xor_Gate.png"
+        show HB1250tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
+        image HB1250tile02_10 = "xor_Gate.png"
+        show HB1250tile02_10 at Position(xpos = xor2x, xanchor = 0, ypos = xor2y, yanchor = 0)
+        image HB1150tile07_02 = "and_Gate.png"
+        show HB1150tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+        image HB1150tile07_08 = "nor_Gate.png"
+        show HB1150tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+        image HB1150end2 = "light_g_on.png"
+        show HB1150end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
+        queue sound lgWin
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgHardBWin
+        $lgHardB_solved = True
+        jump lgHard_win2
 
   
     if attempts == 0:
-        image MB1250tile02_09 = "xor_Gate.png"
-        show MB1250tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-        image MB1250tile02_10 = "xor_Gate.png"
-        show MB1250tile02_10 at Position(xpos = xor2x, xanchor = 0, ypos = xor2y, yanchor = 0)
-        image MB1250tile07_02 = "and_Gate.png"
-        show MB1250tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
-        image MB1250tile07_08 = "nor_Gate.png"
-        show MB1250tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-
-        "you lose try again"
-        jump start
+        image HB1250tile02_09 = "xor_Gate.png"
+        show HB1250tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
+        image HB1250tile02_10 = "xor_Gate.png"
+        show HB1250tile02_10 at Position(xpos = xor2x, xanchor = 0, ypos = xor2y, yanchor = 0)
+        image HB1250tile07_02 = "and_Gate.png"
+        show HB1250tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
+        image HB1250tile07_08 = "nor_Gate.png"
+        show HB1250tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+        queue sound lgLose
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_lgHardBLose
+        $lgHard_attempts +=1
+        jump lgHard_lose2
     
     jump gamefileHB1
 
 screen logicgatesHB1:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 240
+        ypos 890
+        focus_mask True
+        action Jump("hints_lgHardB1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty.png"
+        xpos 1515
+        ypos 890
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1675 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 40
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates
@@ -1358,4 +1401,4 @@ screen logicgatesHB1:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1298 ypos 88
+                xpos 1300 ypos 88

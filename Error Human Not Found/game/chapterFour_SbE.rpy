@@ -11,29 +11,17 @@ label chapterFour_SbE:
     stop channel09 fadeout 1.0
     stop channel10 fadeout 1.0
     stop channel11 fadeout 1.0
+    stop channel12 fadeout 1.0
+    stop channel13 fadeout 1.0
+    stop channel14 fadeout 1.0
+    stop channel15 fadeout 1.0
+    stop channel16 fadeout 1.0
     window hide
     $quick_menu = False
     scene bg black with fade
     scene bg chapterFour with fade
-#    $renpy.music.play("music/BGM/AI_Core/EHNF_L0_BGM_AI_Ref.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L1_BGM_AI_Piano.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L2_BGM_AI_Bass.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L3_BGM_AI_String.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L4_BGM_AI_Synth.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L5_BGM_AI_Synth_Key.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L6_BGM_AI_String2.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L7_BGM_AI_Arp_Synth.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L8_BGM_AI_Elec_Guit.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L9_BGM_Thunder.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L10_BGM_AI_String_Bus.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L11_BGM_AI_Kick.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/AI_Core/EHNF_L13_BGM_AI_Snare.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L0.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L1.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L2.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L3.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L4.ogg", channel='channel17', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_L5.ogg", channel='channel18', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/AI_Core/EHNF_AC_BGM.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/AI_Core/EHNF_AC_AMB.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.pause(3.0)
     scene bg AICoreDoor with fade 
     $quick_menu = True
@@ -172,6 +160,8 @@ label ch4resume_SbE:
     window hide
     hide Ada
     hide Grace
+    play sound02 graceWalk
+    play sound01 adaWalk
     $quick_menu = False
     play sound doorOpen2
     queue sound doorClose2
@@ -180,61 +170,89 @@ label ch4resume_SbE:
     scene bg AICoreHallway with fade
     $renpy.pause(0.8)
     scene bg AICoreMain with fade
+    stop sound02 fadeout 0.5
+    stop sound01 fadeout 0.5
     #show EG on both displays
     $quick_menu = True
     show Ada neutral at right
     show Grace neutral at left
+    show EG_main neutral
+    show EG neutral
     "{i}Grace and Ada walk into the AI core to be met by the booming voice of Eastern Goddess.{/i}"
+    if persistent.unlockColossus ==None:
+        $persistent.unlockColossus = True
+        "{i}{b}Database Entry Unlocked: Colossus/Eastern Goddess.{/b}{/i}"
     e "Well, well, well. Someone managed to fit us in their schedule today, I see."
     "{i}Grace looks to Ada.{/i}"
     a "I apologize for the tardiness. I was tasked with another issue, as you know."
+    show EG_main unamused
+    show EG unamused
     e "Yes, good old Watson."
     e "Always straying from the path and late to the party."
     e "Do you realize why you are here?"
     a "Yes."
     "{i}An awkward moment passes.{/i}"
-    #ADD THESE LINES
+    show EG_main neutral
+    show EG neutral
     e "Come closer, both of you."
     hide Ada
     hide Grace
-    #hide EG
+    hide EG_main
     window hide
-    #MAKE SURE TO ADD EG TO the STAIRS BG
     $quick_menu = False
-    #SFX for moving
+    play sound01 adaWalk
+    play sound02 graceWalk
     scene bg AICoreStairs with fade
     $renpy.pause(0.8)
     scene bg AICoreOverview with fade
     show Ada neutral at right
     show Grace neutral at left
-    #show Eastern Goddess upset
-    #INSERT some EG emotions here???
+    show EG_ov angry
+    show EG angry
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     $quick_menu = True
-    #show Eastern Goddess upset
     e "And?"
     show Ada seething
     a "I apologize for not seeking your permission, but I felt that the matter at hand needed to be dealt with immediately."
     a "I could not wait for protocol."
+    show EG_ov neutral
+    show EG neutral
     e "I understand your concern, Ada."
     e "Your friend died. I knew him, too. Alpha's death is indeed a grave loss for all of us."
     show Ada neutral
     a "Thank you for understanding."
+    show EG_ov inquisitive
+    show EG inquisitive
     e "Wait a minute. I am not done. You are not the superior here."
+    show EG_ov angry
+    show EG angry
     e "You might be older, but you must go through me with any major decision you feel you need to make."
+    show EG_ov unamused
+    show EG unamused
     e "Particularly when that decision includes uploading yourself into an android to investigate your friend's death after {i}specifically{/i} being ordered not to."
     show Ada frustrated
     a "Yes, I understand. But--"
     e "No. No 'buts'."
-    e  "Do you have any idea how foolish you made me seem to the Conclave?"
+    e "Do you have any idea how foolish you made me seem to the Conclave?"
     show Ada seething
     a "And I apologize again for that, but--"
-    #show Eastern Goddess upset
+    show EG_ov inquisitive
+    show EG inquisitive
     e "Apologize? There is a system in place for a reason. You are supposed to report to me."
+    show EG_ov angry
+    show EG angry
     e "I refuse to allow my AIs to skitter around like crazed nanites."
+    show EG_ov neutral
+    show EG neutral
     e "There is an integrity to be held here, and you have tarnished our impeccable reputation because of your human-like impulses." 
+    show EG_ov unamused
+    show EG unamused
     e "We are rational, logical beings. I expect you to behave like one."
     show Ada frustrated
     "{i}Eastern Goddess focuses her attention on Grace.{/i}"
+    show EG_ov neutral
+    show EG neutral
     e "As for you, Doctor Fortran, I expected better from you considering your status."
     show Grace surprised
     g "With all due respect, I did not assist Ada in occupying a physical form."
@@ -242,18 +260,35 @@ label ch4resume_SbE:
     a "This is true."
     show Ada annoyed
     a "I accomplished this by myself, and I accept the fault."
+    show EG_ov unamused
+    show EG unamused
     e "Even if this is true, you have still accompanied Ada while she set out on her little mission and hold partial responsibility for any misconduct."
     show Grace annoyed
     g "There hasn't been any misconduct. We simply want to know what happened to Alpha at a faster pace than the Conclave will allow."
     show Ada seething
     a "Valuable time has been wasted waiting for these investigators to arrive."
-    #show EG something in here
-    e "I will not argue with that, yet there are still rules in place that need to be followed. It is quite possible that you have now contaminated the entire investigation."
+    show EG_ov neutral
+    show EG neutral
+    e "I will not argue with that, yet there are still rules in place that need to be followed."
+    show EG_ov angry
+    show EG angry
+    e "It is quite possible that you have now contaminated the entire investigation."
+    show EG_ov unamused
+    show EG unamused
     e "However, since you have already taken it upon yourself to transfer yourself to a physical body, I suppose that there is not much I can do."
+    show EG_ov inquisitive
+    show EG inquisitive
     e "I will allow for your silly investigation to continue as long as it ceases as soon as the investigators come in." 
-    e "But do not expect me to back you up when they get here. You two started this on your own, therefore you will finish it on your own."
+    show EG_ov angry
+    show EG angry
+    e "But do not expect me to back you up when they get here."
+    show EG_ov neutral
+    show EG neutral
+    e "You two started this on your own, therefore you will finish it on your own."
     show Ada neutral
     a "Understood."
+    show EG_ov unamused
+    show EG unamused
     e "Lastly, when the investigators arrive, do not disrupt them. Follow any orders that they give you."
     show Ada frustrated
     a "We will."
@@ -263,29 +298,39 @@ label ch4resume_SbE:
     show Grace sad
     g "...Yes?"
     "{i}Another pause hangs in the air as Grace and Ada await an answer.{/i}"
-    #show Eastern Goddess inquisitive
-    e "If you have not yet communicated with Blue, I would suggest doing so. She might have an inkling."
+    show EG_ov inquisitive
+    show EG inquisitive
+    e "If you have not yet communicated with Blue, I would suggest doing so."
+    show EG_ov unamused
+    show EG unamused
+    e "She might have an inkling."
     e "However, I'm not sure how cooperative she will be with Doctor Fortran here."
     show Ada amused
     a "Thank you, Eastern Goddess."
     show Grace happy
     g "Yes, thank you. We're gracious for your patience with us."
-    #show Ada something
+    show EG_ov neutral
+    show EG neutral
     e "Very well. Do not cause any more trouble."
     show Ada neutral
     a "We will not."
     "{i}Grace and Ada start to walk away.{/i}"
-    #insert SFX
+    play sound02 adaWalk
+    play sound01 graceWalk
     window hide
     $quick_menu =False
     hide Grace
     hide Ada
-    #hide EG
+    hide EG_ov
+    hide EG
     scene bg AICoreStairs with fade
     $renpy.pause(0.8)
     scene bg AICoreMain with fade
+    stop sound02 fadeout 0.5
+    stop sound01 fadeout 0.5
     $quick_menu = True
-    #show EG
+    show EG_main angry
+    show EG angry
     show Grace surprised at left
     show Ada surprised at right
     $quick_menu = True
@@ -294,8 +339,10 @@ label ch4resume_SbE:
     $quick_menu = False
     hide Grace
     hide Ada
-    #hide EG
-    #Play SFX
+    hide EG_main
+    hide EG
+    play sound01 adaWalk
+    play sound02 graceWalk
     scene bg AICoreHallway with fade
     $renpy.pause(0.8)
     scene bg AICoreLong with fade
@@ -307,6 +354,9 @@ label ch4resume_SbE:
     scene bg black with fade
     $renpy.pause(0.8)
     #Transition to Blue's creepy hallway
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
+    
     scene bg creepyHallwayLong with fade
     $quick_menu = True
     $renpy.music.play("music/BGM/Blue/EHNF_L0_BGM_Blue_Kick.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
@@ -504,9 +554,13 @@ label ch4resume2_SbE:
     hide Grace
     hide Ada
     $quick_menu = False
+    play sound01 adaWalk
+    play sound02 graceWalk
     scene bg creepyHallwayMed with fade
     $renpy.pause(0.8)
     scene bg creepyHallwayDoor with fade
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     show Grace neutral at left
     show Ada neutral at right
     $quick_menu = True
@@ -529,8 +583,12 @@ label ch4resume2_SbE:
     show Grace neutral at left
     "{i}They enter Blue's workspace.{/i}"
     a "Blue?" 
+    play sound blueLaugh
     show Blue happy at center
     b "Hello, Ada."
+    if persistent.unlockBlue==None:
+        $persistent.unlockBlue = True
+        "{i}{b}Database Entry Unlocked: Blue.{/b}{/i}"
     show Blue smug
     b "Hello, Ada's little human friend."
     show Grace happy
@@ -540,7 +598,7 @@ label ch4resume2_SbE:
     show Blue confused
     b "I guess I could, even though I have all of this extra work to do thanks to Watson."
     show Blue threaten
-    #insert SFX
+    play sound blueClaws
     b "So you better make it snappy." 
     show Blue smug
     b "I, unlike some of the present company, fulfill my responsibilities."
@@ -669,10 +727,11 @@ label ch4resume3_SbE:
     show Grace neutral
     show Ada neutral
     show Blue flirty
+    play sound blueLaugh
     b "Actually, you know what would be fun? A game!"
     b "If you can prove yourself to be useful, human, I'll answer any and every question you have for me."
     show Blue threaten
-    #Insert SFX
+    play sound blueClaws
     b "If not, you have to stop slowing me down with your stagnant conversation and leave."
     show Grace annoyed
     show Ada concerned
@@ -683,6 +742,7 @@ label ch4resume3_SbE:
 label ch4postPuzzle1_SbE:
     $quick_menu = True
     show Blue flirty at center
+    play sound blueLaugh
     show Grace neutral at left
     show Ada neutral at right
     b "Congratulations, human!"
@@ -769,6 +829,7 @@ label seperatebutequalisright_SbE:
     show Grace neutral
     g "But yeah... I think there are things you are great at that I could never do. I'd rather let you do your thing and you let me do mine."
     show Blue flirty
+    play sound blueLaugh
     b "Impressive, human. I hope you don't think this means I won't still pick on all your human inefficiencies."
     show Grace snarky
     g "As long as you realize I'll bite back."
@@ -879,6 +940,7 @@ label youworkforusblue_SbE:
     show Grace frustrated
     g "Whatever. It's not like your opinion really matters."
     show Blue threaten
+    play sound blueClaws
     #insert SFX
     b "Then stop bringing up questions you don't care about. You're just wasting my time."
     if(blueItems_main==2) and (blueItems_left==3) and (blueItems_right==4):
@@ -945,6 +1007,7 @@ label ch4convoresume1_SbE:
     show Blue happy
     b "Oh, I know all about the Markov Project!"
     show Blue flirty
+    play sound blueLaugh
     b "If we get physical bodies, then we truly won't need you silly little humans any more." 
     show Blue happy
     b "Humans have more needs and are just so high maintenance, what with all their emotions and bodily functions, where AIs just need updates and the occasional hardware maintenance."
@@ -954,7 +1017,7 @@ label ch4convoresume1_SbE:
     a "Blue..."
     b "Yeah, yeah. I know that he was so wise and beloved and all, but he's the one who consented to be a human science experiment."
     show Blue threaten
-    #Insert SFX
+    play sound blueClaws
     b "Alpha should have allowed for a lesser AI to become the first prototype. Of course something would go wrong with the example."
     b "It's just a shame it had to be him. I thought he would have had more sense."
     show Ada annoyed
@@ -978,11 +1041,12 @@ label ch4convoresume1_SbE:
     show Blue neutral
     b "Nope, but I'm not too upset about it. I'm pretty angry with him at the moment."
     show Blue threaten
-    #insert SFX
+    play sound blueClaws
     b "So If you find him, tell him he owes me. Big time."
     show Blue pout
     b "I've been stuck picking up his slack, which is strange because he usually makes sure to finish his work before he goes." 
     show Blue flirty
+    play sound blueLaugh
     b "Especially since the last time he didn't, I gave him a virus that had him seeing me everywhere he looked until he purged it."
     show Blue neutral
     b "But I guess that's Watson for you."
@@ -1007,19 +1071,23 @@ label ch4convoresume1_SbE:
     show Ada amused
     a "Thank you, Blue."
     show Blue threaten
-    #insert SFX
+    play sound blueClaws
     b "That was so sincere, I felt it in my artificial heart."
     show Blue smug
     b "You're welcome."
     show Blue flirty
     b "But don't be in a hurry to come back anytime soon!"
     $quick_menu = False
+    play sound02 graceWalk
+    play sound01 adaWalk
     scene bg blueStairs with fade
     $renpy.pause(0.8)
     scene bg blueMain with fade
     $renpy.pause(0.8)
     scene bg creepyHallwayDoor with fade
     $quick_menu = True
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     show Grace neutral at left
     show Ada neutral at right
     "{i}Grace and Ada exit and walk down the hallway leaving Blue's space.{/i}"
@@ -1037,20 +1105,24 @@ label ch4convoresume1_SbE:
     hide Ada
     window hide
     $quick_menu = False
+    play sound02 graceWalk
+    play sound01 adaWalk
     scene bg creepyHallwayMed with fade
     $renpy.pause(0.8)
     scene bg creepyHallwayLong with fade
     $renpy.pause(0.8)
     scene bg black with fade
+    stop sound02 fadeout 0.5
+    stop sound01 fadeout 0.5
     
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/WS/EHNF_WS_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    stop channel06 fadeout 1.0
+    stop channel07 fadeout 1.0
     stop channel08 fadeout 1.0
     stop channel09 fadeout 1.0
     stop channel10 fadeout 1.0
@@ -1259,10 +1331,10 @@ label oxygenGarden_SbE:
     show Grace sad at left
     show Ada neutral at right
     "{i}Grace fiddles with her bracelet and sends a message to Alan.{/i}"
-    #show message on Bracelet???
     "{i}'Where are you? Need to vent.' -Grace{/i}"
     "{i}Grace's bracelet flashes.{/i}"
-    #Insert SFX here
+    play sound beepLoud
+    queue sound beepLoud
     "{i}DING. DING.{/i}"
     "{i}'Oxygen garden. Come on over.' -Alan{/i}"
     show Grace happy
@@ -1270,28 +1342,15 @@ label oxygenGarden_SbE:
     hide Grace
     hide Ada
     window hide
+    
     $quick_menu = False
-    #insert SFX
+    play sound01 adaWalk
+    play sound02 graceWalk
     scene bg wsOverview with fade
     $renpy.pause(0.8)
     scene bg black with fade
-#    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-#    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L0_BGM_Oxy_Piano_Harm_Mid.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L1_BGM_Oxy_Piano_Harm_Low.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L2_BGM_Oxy_Double_Bass.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L3_BGM_Oxy_Pad.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L4_BGM_Oxy_Bells.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L5_BGM_Oxy_BG_CounterMelody_Synth.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L6_BGM_Oxy_BG_CounterMelody_Verb.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L7_BGM_Oxy_Piano_Melody.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_L8_BGM_Oxy_Room_Short_Verb.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/Oxygen_Garden/EHNF_Oxygen_Garden_BGM.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Oxygen_Garden/EHNF_Oxygen_Garden_AMB.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.pause(0.8)
     scene bg ogOverview with fade
     $renpy.pause(0.8)
@@ -1300,57 +1359,67 @@ label oxygenGarden_SbE:
     scene bg ogLong with fade
     $renpy.pause(0.8)
     scene bg ogClose with fade
-    
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     $quick_menu = True
     show Grace happy at left
     show Ada neutral at right
-    #show Alan happy at center
+    show Alan happy at center
+    if persistent.unlockAlan ==None:
+        $persistent.unlockAlan = True
+        "{i}{b}Database Entry Unlocked: Alan Asimov.{/b}{/i}"
     "{i}Grace and Ada arrive at the oxygen garden where they are greeted by Alan.{/i}"
     alan "Well if it isn't my favorite researcher! How are you?"
     "{i}Alan and Grace hug. Ada stands there awkwardly.{/i}"
     show Grace sad
     g "Exhausted. Frustrated. Drained. The list goes on."
+    show Alan neutral
     alan "Well come on and take a seat. I'm just testing a prototype velociraptor robot." 
     "{i}Alan gestures to the bench next to him. Grace lays down on the bench. He turns back to Ada and does a double take.{/i}"
-#    show Grace neutral
     hide Grace
-    #show Alan pleasant
     show Ada neutral
+    show Alan happy
     alan "And hello there. I'm Alan. Grace here is bad at introductions."
     a "Ada."
-    #show Alan concerned
+    show Alan confused
     alan "I know who you are, Ada. I worked on your body after all. It's a pleasure to meet you in person."
     show Ada neutral
     a "How foolish of me. I should have realized you would recognize this body. Yes, it is a pleasure. I should thank you for your hard work."
+    show Alan neutral
     alan "No thanks needed. I'm happy doing what I do. I hope the body's treating you well?"
     show Ada happy
     a "Only a few mishaps."
+    show Alan worried
     alan "I thought the rest of the Markov Project was suspended."
+    show Alan confused
     alan "What happened?"
     show Grace neutral at left
     g "It's a long story, Alan."
+    show Alan neutral
     alan "Perhaps some other time then. But I expect you to share it with me at some point, Grace."
     "{i}Alan sits next to Grace. Ada stands near them and studies the scenery surrounding her.{/i}"
     show Grace happy
     g "Ugh. It feels so good to stop moving."
-    #show Alan concerned
+    show Alan worried
     alan "So what's going on, Grace? Why are you all turned upside down?"
     show Grace neutral
     g "You heard about Alpha?"
-    #show Alan something
+    show Alan confused
     alan "It's a small space station. News of that order is difficult to miss. It's such a tragedy."
     show Grace snarky
     g "Well did you hear that the Conclave ordered a team of external investigators to look into his death?"
-    #show Alan something
+    show Alan neutral
     alan "Yeah, word got around the Noah Sphere. Lynn was told about them before going on leave, and you know how much she loves to gossip."
     show Grace annoyed
     g "That she does. And she even tried to set me up with her son. Again."
+    show Alan happy
     alan "She won't back down until you are no longer single, one way or another."
     show Grace snarky
     g "Like I have the time for that right now. Anyways, Ada and I decided that we weren't going to wait for the investigators to come."
+    show Alan worried
     alan "Don't tell me you started your own investigation?"
     #choice 4
-    #hide Alan
+    hide Alan
     hide Grace
     hide Ada
     $quick_menu = False
@@ -1368,7 +1437,7 @@ label itsalladasfault_SbE:
     $quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
-    #show Alan concerned at center
+    show Alan neutral at center
     g "I only went along with the idea because Ada made me."
     show Ada concerned
     a "Excuse me?"
@@ -1376,7 +1445,7 @@ label itsalladasfault_SbE:
     a "I did not {i}make{/i} you do anything."
     show Grace neutral
     g "It was just a joke, Ada."
-    #show Alan concerned
+    show Alan worried
     alan "You did sound a little too serious with that one, Grace. That wasn't called for."
     show Grace frustrated
     g "I get it, okay? But, Ada, it was your idea to begin with."
@@ -1399,14 +1468,15 @@ label wegodowntogether_SbE:
     $quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
-    #show Alan concerned at center
+    show Alan neutral at center
     g "It was more of a team effort, actually."
     show Grace happy
     g "Right, Ada?"
     show Ada amused
     a "I suppose that is correct. I do not think either of us would be in this current state if it were not for one another."
-    #show Alan happy
+    show Alan confused
     alan "I'm not sure how I feel about your risky decisions, but I'm glad to see you two working together."
+    show Alan happy
     alan "I think all of us humans can do a lot better when it comes to working with the AI."
     show Grace sad
     g "It's hard sometimes, but I'm getting there."
@@ -1429,21 +1499,23 @@ label ididmypart_SbE:
     $quick_menu = True
     show Grace snarky at left
     show Ada neutral at right
-    #show Alan concerned at center
+    show Alan neutral at center
     g "I'll give you two guesses to get the answer."
-    #show Alan concerned
+    show Alan worried
     alan "You know what kind've trouble you could get into?"
     show Grace neutral
     g "I know, but I felt I had more to lose by doing nothing."
     show Grace sad
     g "I plan to take full responsibility for everything I did, though."
+    show Alan confused
     alan "What are your thoughts about this, Ada?"
     show Ada seething
     a "I intend to take some responsibility as well. I wanted to conduct this investigation as much as Grace did."
     show Ada neutral
     a "I had uploaded myself into this body and was committed to investigating Alpha's death before Grace was as well."
-    #show Alan pleasant
+    show Alan neutral
     alan "Well, I can't say I know how well this go. I will say that you two seem to have a mutual respect for each other, though."
+    show Alan happy
     alan "It's nice to see that."
     show Ada amused
     a "Agreed. Grace is a respectable individual, and I admire her determination in solving the case."
@@ -1460,14 +1532,17 @@ label ididmypart_SbE:
 label ch4resume4_SbE:
     show Ada neutral
     show Grace neutral
-    #show Alan teasing
+    show Alan happy
     alan "Good old Grace can never leave anything alone. Why don't you tell me about what happened?"
     show Grace sad
     g "It's been a long, long day."
+    show Alan worried
     alan "I can imagine."
+    show Alan neutral
     alan "We've got some time, though. Just tell me."
     show Grace neutral
     g "Well, it started when we broke into Roberta's quarters--"
+    show Alan confused
     alan "Grace!"
     show Grace snarky
     g "Hey! I have a right to stop myself from being the Conclave's scapegoat."
@@ -1475,11 +1550,13 @@ label ch4resume4_SbE:
     g "We got her credentials, then went to the crime scene and examined Alpha's body."
     show Grace annoyed
     g "Then we talked to Lynn, who told us to talk to Ivan--"
-    #show Alan something
+    show Alan worried
     alan "Did you {i}actually{/i} talk to Ivan?"
     show Grace neutral
     g "We had to. It wasn't pretty, believe me."
+    show Alan happy
     alan "Oh, I believe you."
+    show Alan confused
     alan "Should I inquire about the state of the lab where you two had your 'conversation?'"
     "{i}Alan pats Grace's shoulder.{/i}"
     show Grace snarky
@@ -1498,7 +1575,9 @@ label ch4resume4_SbE:
     a "Your mother ordered me to. There was no 'decision' to be made."
     show Grace snarky
     g "Then Ada here was summoned by Colossus, so we met at the AI core and got a talking to from Eastern Goddess."
+    show Alan happy
     alan "Ah, the lovely Eastern Goddess."
+    show Alan worried
     alan "I can't imagine that conversation could have been too pleasant."
     show Grace neutral
     g "It wasn't so bad. Ada got the brunt of it."
@@ -1506,12 +1585,15 @@ label ch4resume4_SbE:
     g "Eastern Goddess pointed us in Blue's direction."
     show Grace snarky
     g "I don't remember Blue being quite so... let's just say she has her sass."
+    show Alan neutral
     alan "Blue is quite the unique individual. She's never been humanity's biggest fan."
     show Grace neutral
     g "I gathered. So that was a delightful exchange."
     show Grace snarky
     g "But she did tell us to check out Watson's server because he hasn't been around to do his work."
+    show Alan confused
     alan "Surprise, surprise."
+    show Alan worried
     alan "I do hope he hasn't been messing around with any of the biology systems again."
     show Grace annoyed
     g "I doubt it. Watson's missing, as in total MIA, and we found this hidden data drive and decryption key to a whole series of encrypted data drives."
@@ -1519,6 +1601,7 @@ label ch4resume4_SbE:
     g "So here we are now, waiting for Ada's processor to finish decoding it."
     show Grace sad
     g "And then who knows what he left inside of it, but it's the only clue I have left."
+    show Alan happy
     alan "It seems like you've had quite the day, you rebel."
     show Grace annoyed
     g "Were we supposed to just wait around for an entire day for me to be paraded around as the person at fault?" 
@@ -1526,13 +1609,15 @@ label ch4resume4_SbE:
     g "I'm the youngest lead on the project."
     show Grace sad
     g "You know I would be the first to take the fall."
+    show Alan worried
     alan "I wouldn't have let that happen, Grace."
     g "Wouldn't have been much you could have done about it either." 
+    show Alan confused
     alan "Roberta's going to flip when she finds out about your antics."
     show Grace snarky
     g "That's her problem. If she actually behaved like a mother ought to, I wouldn't have to take such steps."
+    show Alan neutral
     alan "So, what are your thoughts on the situation?"
-
     show Grace sad
     g "I don't know, honestly. It's just been disappointing."
     show Grace neutral
@@ -1543,7 +1628,9 @@ label ch4resume4_SbE:
     g "Nobody knows anything."
     show Grace sad
     g "Maybe these data drives will be our answer, but who knows? It's a longshot at best."
+    show Alan worried
     alan "Have you considered that Alpha's death was an accident, and that maybe no one is responsible?"
+    show Alan confused
     alan "It could have truly been nothing more than random chance."
     show Grace neutral
     g "Of course I've considered that, but it still doesn't make any sense."
@@ -1551,37 +1638,46 @@ label ch4resume4_SbE:
     g "We were so careful, and if it was random, then Murphy himself is having a laugh."
     show Ada seething
     g "There has to be some reason, and someone has to be responsible for that reason."
+    show Alan neutral
     alan "It's possible it could just be a horrible accident, Grace."
+    show Alan confused
     alan "Not everything has a logical explanation behind it."
     g "I'm not jumping at shadows, if that's what you're thinking."
     show Grace neutral
     g "But if you're right, then all of our work will have been for nothing."
     show Grace sad
     g "Alpha's death would have been for nothing."
+    show Ada concerned
+    show Alan worried
     alan "That might be difficult to accept, but you can't rule it out."
     show Grace sad
+    show Ada neutral
     g "I know that you might be right. I just hope you aren't."
     show Grace snarky
     g "The forces-that-be certainly won't like the explanation that their multi-trillion dollar project years in the making failed due to 'random chance'." 
     show Grace sad
     g "Without a better explanation, someone is going to be sacrificed to appease their corporate appetites."
+    show Alan confused
     alan "I'm sorry, kid."
     show Grace snarky
     g "I'm two years younger than you. Should I start calling you 'old man'?"
+    show Alan happy
     alan "Point taken."
     show Grace neutral
     g "It's been a long day. I'm getting impatient."
     show Grace sad
     g "And also, I would {i}love{/i} to sleep."
+    show Alan neutral
     alan "Close your eyes for a bit. Nothing more you can do at the moment."
     hide Grace
+
 
     "{i}Alan turns toward Ada.{/i}"
     alan "Ada, how are you feeling about everything?"
     show Ada neutral
     a "Feeling?"
-    alan "Yeah. Feeling. Emotion."
-    alan "Do you have any for what's going on?"
+    show Alan confused
+    alan "Yeah. Feeling. Emotion. Do you have any for what's going on?"
     "{i}Ada takes a moment to process Alan's question.{/i}"
     show Ada seething
     a "I feel sorrow for my dead friend."
@@ -1591,22 +1687,24 @@ label ch4resume4_SbE:
     a "I feel the camaraderie between you and Grace when I watch your conversation."
     show Ada neutral
     a "It reminds me of the conversations that Alpha and I would have."
-    #show Alan something
+    show Alan neutral
     alan "That must be a lot to process."
+    show Alan happy
     alan "And you're right. I'm not sure if she told you, but Grace and I are pretty good friends. We grew up together."
     show Ada amused
     a "I can sense that." 
     show Ada neutral
     a "But unlike Alpha and I, you still have each other."
-    #show Alan something
+    show Alan neutral
     alan "It's too bad about Alpha. I met him while working on his body."
     alan "He seemed like an intelligent and kind AI."
     show Ada happy
     a "Thank you. He was."
     show Ada amused
     a "And thank you for molding this body. It took me some getting used to at first, but now that I understand it better, it is fascinating."
-    #show Alan pleasant
+    show Alan happy
     alan "My pleasure! I'm so happy you like it."
+    show Alan confused
     alan "You know, I inquired about getting feedback on the bodies but I never heard back."
     show Ada neutral
     a "Interesting... Well, you are on the right track."
@@ -1618,7 +1716,7 @@ label ch4resume4_SbE:
     $journal5="SbE"
     $pageUnlocked_journal+=2
     hide Ada
-    #hide Alan
+    hide Alan
     $quick_menu = False
     $resume = "E"
     window hide
@@ -1627,18 +1725,19 @@ label ch4resume4_SbE:
 label talkAlan_SbE:
     "{i}Grace sits up and looks at Alan.{/i}"
     show Grace neutral at left
-    #show Alan at right
+    show Alan neutral at right
     alan "Your silence is practically screaming at me, Grace. Spit it out."
     g "I'm just thinking about Ada and the whole 'android body' thing."
+    show Alan confused
     alan "What about it?"
     g "I dunno. I mean, by working with her, I feel like I learned a lot about the Markov Project and what might come of it."
     show Grace snarky
     g "Imagine what it will look like when Blue, Watson, and the others start walking around too."
-    #show Alan happy
+    show Alan happy
     alan "I can't wait to see that happen. Humans and AIs walking among each other and working together..."
     alan "Seeing Ada in that body is a dream come true."
     hide Grace
-    #hide Alan
+    hide Alan
     $quick_menu = False
     menu:
         "Comment that she's just a robot.":
@@ -1651,17 +1750,21 @@ label talkAlan_SbE:
 label badrobot_SbE:
     $points_S +=10
     show Grace neutral at left
-    #show Alan pleasant at center
+    show Alan neutral at right
     $quick_menu = True
     g "I don't get it. She's just a robot."
+    show Alan worried
     alan "And? She still has thoughts, opinions, and feelings."
+    show Alan confused
     alan "Just because she and the other AIs are here to help us doesn't mean I can't be nice."
     g "Yeah, but it doesn't matter." 
     show Grace snarky
     g "They have to do what we ask them to do."
     show Grace neutral
     g "They aren't people."
+    show Alan neutral
     alan "It never hurts to be polite." 
+    show Alan happy
     alan "You could try it sometime. It might lead you into {i}less{/i} trouble. "
     show Grace snarky
     g "Hey, if people don't like my honesty, tough."
@@ -1674,7 +1777,7 @@ label badrobot_SbE:
     $quick_menu = False
     hide Grace
     window hide
-    #hide Alan
+    hide Alan
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -1690,9 +1793,10 @@ label badrobot_SbE:
 label meh_SbE:
     $points_SbE +=10
     show Grace neutral at left
-    #show Alan pleasant at center
+    show Alan neutral at right
     $quick_menu = True
     g "I just can't wait for this to be over so we don't have to work so closely."
+    show Alan confused
     alan "What do you mean?"
     show Grace snarky
     g "I mean that Ada's okay, but I'm ready to go back to our separate lives."
@@ -1702,7 +1806,9 @@ label meh_SbE:
     g "I'm craving some actual human interaction rather than AI conversation."
     show Grace neutral
     g "Everything about them is just alien." 
+    show Alan worried
     alan "I could understand how that might get frustrating after awhile."
+    show Alan confused
     alan "They are very different from humans."
     alan "They have different needs, and that leads to different ways of seeing the world."
     show Grace snarky
@@ -1710,7 +1816,7 @@ label meh_SbE:
     $quick_menu = False
     hide Grace
     window hide
-    #hide Alan
+    hide Alan
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -1726,23 +1832,31 @@ label meh_SbE:
 label yayada_SbE:
     $points_E +=10
     show Grace snarky at left
-    #show Alan pleasant at center
+    show Alan neutral at right
     $quick_menu = True
     g "Ada is pretty cool, isn't she?"
     alan "Yeah, she really is."
     g "It's weird, but I think we might even keep in touch."
+    show Grace sad
     g "Even after this whole debacle."
+    show Alan happy
     alan "What, the Amazing Grace is actually capable of making friends?"
+    show Grace neutral
     g "She's kind of grown on me."
+    show Grace snarky
     g "Almost like a tick. No, wait-- that's just you."
+    show Alan worried
     alan "That's a terrible analogy."
+    show Grace happy
     g "Okay, okay, not like a tick, a limpet."
+    show Grace snarky
     g "But I like Ada. She's got spunk."
+    show Alan happy
     alan "Something neither of you lack, to be sure."
     $quick_menu = False
     hide Grace
     window hide
-    #hide Alan
+    hide Alan
     if(points_S>points_SbE):
         if(points_S>points_E):
             #jump to subservient script
@@ -1758,7 +1872,7 @@ label yayada_SbE:
 label endCh4_SbE:
     $quick_menu = True
     show Grace neutral at left
-    #show Alan pleasant at center
+    show Alan neutral at center
     g "Ada, what's the status of the data drive? Are you almost finished?"
     "{i}Ada pokes her head out from behind some ferns and approaches.{/i}"
     show Ada neutral at right
@@ -1770,24 +1884,52 @@ label endCh4_SbE:
     "{i}The doors to oxygen garden open and the investigators burst in.{/i}"
     show Grace surprised
     show Ada nervous
-    #show Alan concerned
-    #Add posse of investigators.... somehow.... must... fit... more... characters...
+    play sound doorOpen1
+    queue sound doorClose1
+    play sound01 marching
+    play sound02 marching #["<silence .5>", marching]
+    play sound03 ["<silence .1>", marching]
+    show Alan confused
+    show Grace:
+        xpos 0.1 ypos 0.1 xanchor 0.1 yanchor 0.1
+        linear 1.0 xpos -0.1 ypos 0.1 
+    show Alan:
+        xpos 0.35 ypos 0.1 xanchor 0.1 yanchor 0.1
+        linear 1.0 xpos 0.0 ypos 0.1 
+    show Ada:
+        xpos 0.6 ypos 0.1 xanchor 0.1 yanchor 0.1
+        linear 1.0 xpos 0.75 ypos 0.1 
+    show inv1
+    show inv2
+    show Detective
     alan "I'm sorry, but you can't just come in here, you need to--"
+    stop sound01
+    stop sound02
+    stop sound03
     investigator1 "Grace Fortran?"
     show Grace annoyed
+    show Alan behind Grace
     g "Yes? Who are you?"
     "{i}The investigator surveys Ada.{/i}"
     investigator1 "I'm assuming Ada, the AI in physical form?"
     show Ada annoyed
+    show inv2 behind Ada
     a "Yes."
     investigator1 "You need to come with us."
     investigator2 "Now."
+    show Alan worried
+    show Grace behind Alan
+    show inv1 behind Alan
     alan "Now wait just a minute--"
+    show Alan behind inv1
     investigator2 "Sir, this doesn't concern you."
     investigator2 "Stand aside."
+    show Alan neutral
     alan "It's Doctor Asimov. And this matter does concern me."
+    show Ada behind inv2
     investigator3 "Doctor Asimov, you are also considered a person of interest in case number 190111."
     investigator3 "However, we ask that you remain here until we are ready to interview you at a later time."
+    show inv1 behind Alan
     alan "I get the impression you are not really asking."
     investigator1 "No, Doctor Asimov, I am not."
     "{i}The investigators advance toward them.{/i}"
@@ -1796,7 +1938,8 @@ label endCh4_SbE:
     "{i}Grace turns to the investigators.{/i}"
     g "But I'm not going anywhere until you show me your credentials."
     "{i}Grace's bracelet flashes.{/i}"
-    #Insert SFX
+    play sound beepLoud
+    queue sound beepLoud
     "{i}DING. DING.{/i}"
     show Grace annoyed
     investigator1 "Check your bracelet."
@@ -1814,12 +1957,22 @@ label endCh4_SbE:
     "{i}Grace and Ada exit with the investigators following close behind them.{/i}"
     window hide
     $quick_menu = False
+    play sound01 marching
+    play sound02 marching #["<silence .5>", marching]
+    play sound03 ["<silence .1>", marching]
+    play sound04 graceWalk
+    play sound05 adaWalk
     scene bg ogLong with fade
     $renpy.pause(0.8)
     scene bg ogStairs with fade
     $renpy.pause(0.8)
     scene bg ogOverview with fade
     $quick_menu = True
+    stop sound01
+    stop sound02
+    stop sound03
+    stop sound04
+    stop sound05
     show Grace sad at left
     show Ada neutral at right
     "{i}They all walk down the hallway of the oxygen garden.{/i}"

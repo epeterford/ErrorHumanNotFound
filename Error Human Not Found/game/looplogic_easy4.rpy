@@ -354,7 +354,41 @@ label Gamefile_lle4:
         play sound llPipe2
     if (llNormal==2):
         play sound llPipe3
-    if if1in1 == True:
+    hide LLE4tile106
+    hide LLE4tile107
+    hide LLE4tile108
+    hide LLE4tile109
+    hide LLE4tile110
+    hide LLE42tile1111
+    hide LLE42tile1
+    hide LLE42tile
+    hide LLE4tile101
+    hide LLE4tile102
+    hide LLE4tile103
+    hide LLE4tile104
+    hide LLE4tile105
+    hide LLE41tile0
+    hide LLE41tile14
+    hide LLE41tile9
+    hide LLE41tile15
+    hide LLE42tile11
+    hide LLE42tile14
+    hide LLE42tile9
+    hide LLE41tile21
+    hide LLE41tile12
+    hide LLE41tile16
+    hide LLE41tile18
+    hide LLE41tile91
+    hide LLE42tile19
+    hide LLE42tile21
+    hide LLE42tile12
+    hide LLE42tile16
+    hide LLE42tile18
+    hide LLE42tile92
+    hide LLE42tile91
+    hide LLE41tile93
+
+    if if1in1:
         image LLE42tile1 = "g_horizontal_ll.png"
         show LLE42tile1 at Position(xpos = 295, xanchor = 0, ypos = 468, yanchor = 0)
         image LLE42tile = "g_end_on.png"
@@ -375,19 +409,11 @@ label Gamefile_lle4:
             $light1Sound +=1
             
     if if1in1 == False:
-        hide LLE42tile1
-        hide LLE42tile
-        hide LLE4tile101
-        hide LLE4tile102
-        hide LLE4tile103
-        hide LLE4tile104
-        hide LLE4tile105
         if (light1Sound ==1):
             play soundP01 llLightOff1
             $light1Sound -=1
             
-    if if2in1 == True:
-
+    if if2in1:
         image LLE4tile106 = "B_vertical.png"
         show LLE4tile106 at Position(xpos = 404, xanchor = 0, ypos = 360, yanchor = 0)
         image LLE4tile107 = "W_corner_RB.png"
@@ -400,18 +426,9 @@ label Gamefile_lle4:
         show LLE4tile110 at Position(xpos = 602, xanchor = 0, ypos = 315, yanchor = 0)
         image LLE42tile1111 = "B_horizontal.png"
         show LLE42tile1111 at Position(xpos = 295, xanchor = 0, ypos = 468, yanchor = 0)
-        
-    
-    if if2in1 == False:
-        hide LLE4tile106
-        hide LLE4tile107
-        hide LLE4tile108
-        hide LLE4tile109
-        hide LLE4tile110
-        hide LLE42tile1111
 
     
-    if if2in2 == True:
+    if if2in2:
         image LLE41tile0 = "b_vertical.png"
         show LLE41tile0 at Position(xpos = 744, xanchor = 0, ypos = 462, yanchor = 0)
         image LLE41tile14 = "b_horizontal.png"
@@ -425,95 +442,60 @@ label Gamefile_lle4:
             $light2Sound +=1
             
     if if2in2 == False:
-        hide LLE41tile0
-        hide LLE41tile14
-        hide LLE41tile9
-        hide LLE41tile15
         if (light2Sound ==1):
             play soundP02 llLightOff2
             $light2Sound -=1
         
-    if if1in2 == True:
+    if if1in2:
         image LLE42tile11 = "g_vertical_ll.png"
         show LLE42tile11 at Position(xpos = 676, xanchor = 0, ypos = 462, yanchor = 0)
         image LLE42tile14 = "g_horizontal_ll.png"
         show LLE42tile14 at Position(xpos = 777, xanchor = 0, ypos = 569, yanchor = 0)
         image LLE42tile9 = "W_connect_horizontal.png"
         show LLE42tile9 at Position(xpos = 677, xanchor = 0, ypos = 420, yanchor = 0)
-    if if1in2 == False:
-        hide LLE42tile11
-        hide LLE42tile14
-        hide LLE42tile9
         
-    if if1in3 == True:
-        if if2in2 == True:            
-            image LLE41tile21 = "g_horizontal_ll.png"
-            show LLE41tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE41tile12 = "W_corner_RB.png"
-            show LLE41tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
-            image LLE41tile16 = "g_vertical_ll.png"
-            show LLE41tile16 at Position(xpos = 550, xanchor = 0, ypos = 508, yanchor = 0)
-            image LLE41tile18 = "g_vertical_ll.png"
-            show LLE41tile18 at Position(xpos = 550, xanchor = 0, ypos = 683, yanchor = 0) 
-            image LLE41tile91 = "g_connect_node.png"
-            show LLE41tile91 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
-            image LLE42tile19 = "g_end_on.png"
-            show LLE42tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
-            if (light3Sound ==0):
-                play soundP03 llLightOn3
-                $light3Sound +=1
-    if if1in3 == False:
-        hide LLE41tile21
-        hide LLE41tile12
-        hide LLE41tile16
-        hide LLE41tile18
-        hide LLE41tile91
-        hide LLE42tile19
-        if (light3Sound ==1):
-            play soundP03 llLightOff3
-            $light3Sound -=1
-        
-    if if2in3 == True:
-        if if1in2 == True:            
-            image LLE42tile21 = "b_horizontal.png"
-            show LLE42tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE42tile12 = "W_corner_RB.png"
-            show LLE42tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
-            image LLE42tile16 = "b_vertical.png"
-            show LLE42tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
-            image LLE42tile18 = "b_vertical.png"
-            show LLE42tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
-            image LLE42tile92 = "b_connect_pipe.png"
-            show LLE42tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
-            image LLE42tile91 = "b_connect_node.png"
-            show LLE42tile91 at Position(xpos = 745, xanchor = 0, ypos = 453, yanchor = 0)
-            image LLE41tile93 = "b_connect_node.png"
-            show LLE41tile93 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
-    if if2in3 == False or if1in2 == False:
-        hide LLE42tile21
-        hide LLE42tile12
-        hide LLE42tile16
-        hide LLE42tile18
-        hide LLE42tile92
-        hide LLE42tile91
-        hide LLE41tile93
+    if if1in3:
+        image LLE41tile21 = "g_horizontal_ll.png"
+        show LLE41tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
+        image LLE41tile12 = "W_corner_RB.png"
+        show LLE41tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
+        image LLE41tile16 = "g_vertical_ll.png"
+        show LLE41tile16 at Position(xpos = 550, xanchor = 0, ypos = 508, yanchor = 0)
+        image LLE41tile18 = "g_vertical_ll.png"
+        show LLE41tile18 at Position(xpos = 550, xanchor = 0, ypos = 683, yanchor = 0) 
+        image LLE41tile91 = "g_connect_node.png"
+        show LLE41tile91 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
+        image LLE42tile19 = "g_end_on.png"
+        show LLE42tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
+        if (light3Sound ==0):
+            play soundP03 llLightOn3
+            $light3Sound +=1
+    
+    if if2in3:           
+        image LLE42tile21 = "b_horizontal.png"
+        show LLE42tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
+        image LLE42tile12 = "W_corner_RB.png"
+        show LLE42tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
+        image LLE42tile16 = "b_vertical.png"
+        show LLE42tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
+        image LLE42tile18 = "b_vertical.png"
+        show LLE42tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
+        image LLE42tile92 = "b_connect_pipe.png"
+        show LLE42tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
+        image LLE42tile91 = "b_connect_node.png"
+        show LLE42tile91 at Position(xpos = 745, xanchor = 0, ypos = 453, yanchor = 0)
+        image LLE41tile93 = "b_connect_node.png"
+        show LLE41tile93 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
             
     if if3in3 == True:
         if if1in2 == True:            
-            image LLE431tile21 = "b_horizontal.png"
-            show LLE431tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE431tile12 = "W_corner_RB.png"
-            show LLE431tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
-            image LLE431tile16 = "b_vertical.png"
-            show LLE431tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
-            image LLE43tile18 = "b_vertical.png"
-            show LLE43tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
-            image LLE43tile92 = "b_connect_pipe.png"
-            show LLE43tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
-            image LLE43tile91 = "b_connect_node.png"
-            show LLE43tile91 at Position(xpos = 745, xanchor = 0, ypos = 453, yanchor = 0)
-            image LLE43tile93 = "b_connect_node.png"
-            show LLE43tile93 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
+            show LLE42tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
+            show LLE42tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
+            show LLE42tile16 at Position(xpos = 553, xanchor = 0, ypos = 508, yanchor = 0)
+            show LLE42tile18 at Position(xpos = 553, xanchor = 0, ypos = 683, yanchor = 0)
+            show LLE42tile92 at Position(xpos = 707, xanchor = 0, ypos = 466, yanchor = 0)
+            show LLE42tile91 at Position(xpos = 745, xanchor = 0, ypos = 453, yanchor = 0)
+            show LLE41tile93 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
         if if2in2 == True:
             image LLE432tile21 = "g_horizontal_ll.png"
             show LLE432tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
@@ -530,24 +512,12 @@ label Gamefile_lle4:
             if (light3Sound ==0):
                 play soundP03 llLightOn3
                 $light3Sound +=1
-    if if3in3 == False or if1in2 == False: 
-        hide LLE431tile21
-        hide LLE431tile12
-        hide LLE431tile16
-        hide LLE43tile18
-        hide LLE43tile92
-        hide LLE43tile91
-        hide LLE43tile93
+        
+    if not(if1in3 or (if3in3 and if2in2)): 
         if (light3Sound ==1):
             play soundP03 llLightOff3
             $light3Sound -=1
     if if3in3 == False or if2in2 == False:
-        hide LLE432tile21
-        hide LLE432tile12
-        hide LLE432tile16
-        hide LLE432tile18
-        hide LLE43tile94
-        hide LLE43tile19
         if (light3Sound ==1):
             play soundP03 llLightOff3
             $light3Sound -=1
@@ -565,6 +535,8 @@ label Gamefile_lle4:
         show LLE499tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
         queue sound llWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_llEasyWin
         hide LLE499tile2
         hide LLE499tile13
         hide LLE4999tile17
@@ -580,6 +552,9 @@ label Gamefile_lle4:
         show LLE4999tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)
         queue sound llLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 4
+            jump pg_llEasyLose
         $loopLogicEasy_tries +=1
         hide LLE4999tile2
         hide LLE4999tile13

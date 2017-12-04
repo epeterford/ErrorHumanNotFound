@@ -330,7 +330,7 @@ label eng_gram_h1:
     #attempts for players
     $ attempts = 11
     
-    call gamefile_h1
+    call gamefile_h1 from _call_gamefile_h1
 
 
 
@@ -2742,7 +2742,9 @@ label gamefile_h1:
         show gram_h1_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
         show gram_h1_tile208 at Position(xpos = letterF7x, xanchor = 0, ypos = letterF7y, yanchor = 0)
         queue sound gramWin
-        $renpy.pause(0.7)
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_gramHardWin
         $gramHard_solved = True
         jump gramHard_win
 
@@ -2756,7 +2758,10 @@ label gamefile_h1:
         show gram_h1_tile204 at Position(xpos = letterA6x, xanchor = 0, ypos = letterA6y, yanchor = 0)
         show gram_h1_tile208 at Position(xpos = letterF7x, xanchor = 0, ypos = letterF7y, yanchor = 0)
         queue sound gramLose
-        $renpy.pause(0.8)
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_gramHardLose
         $gramHard_attempts +=1
         jump gramHard_lose
     

@@ -261,8 +261,14 @@ label gamefileB2:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-    if and1in1 == True:
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
         play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+    if and1in1 == True:
         image EB22tile01_06 = "g_r.png"
         image EB22tile03_06 = "r_vertical.png"
         image EB22tile02_06 = "r_vertical.png"
@@ -298,7 +304,6 @@ label gamefileB2:
         show EB22tile07_10 at Position(xpos = 1186, xanchor = 0, ypos = 758, yanchor = 0)
         
     if and1in1 == False:
-#        play sound pipeFlowN
         hide EB22tile02_06
         hide EB22tile01_06
         hide EB22tile03_06
@@ -317,7 +322,6 @@ label gamefileB2:
         hide EB22tile07_10            
         
     if or1in1 == True:
-        play sound pipeFlowG
         image EB23tile01_06 = "g_g.png"
         image EB23tile03_06 = "g_vertical.png"
         image EB23tile02_06 = "g_vertical.png"
@@ -353,7 +357,6 @@ label gamefileB2:
         show EB23tile07_10 at Position(xpos = 1186, xanchor = 0, ypos = 758, yanchor = 0)
         
     if or1in1 == False:
-#        play sound pipeFlowN
         hide EB23tile02_06
         hide EB23tile01_06
         hide EB23tile03_06
@@ -373,7 +376,6 @@ label gamefileB2:
 
     if and1in2 == True:
         if or1in1 == True:
-            play sound pipeFlowG
             image EB24tile01_08 = "g_horizontal.png"
             image EB24tile01_09 = "g_horizontal.png"
             image EB24tile01_10= "g_elbow_bl.png"
@@ -400,7 +402,6 @@ label gamefileB2:
             
     if or1in2 == True:
         if and1in1 == True:
-            play sound pipeFlowG
             image EB25tile01_08 = "g_horizontal.png"
             image EB25tile01_09 = "g_horizontal.png"
             image EB25tile01_10= "g_elbow_bl.png"
@@ -427,7 +428,7 @@ label gamefileB2:
 
 
         
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name=="and return" or slot_name=="or return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -455,7 +456,7 @@ label gamefileB2:
         show EB22tile04_03 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
         image EB22tile01_07 = "and_Gate.png"
         show EB22tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
-        play sound lgWin
+        queue sound lgWin
         $ renpy.pause(1.0)
         $ Logic_B_solved = True
         #make to jump back to the game
@@ -469,8 +470,10 @@ label gamefileB2:
         show EB25tile04_03 at Position(xpos = 661, xanchor = 0, ypos = 533, yanchor = 0)
         image EB25tile01_07 = "or_Gate.png"
         show EB25tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
-        play sound lgWin
+        queue sound lgWin
         $ renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgEasyBWin
         $ Logic_B_solved = True
         #make to jump back to the game
         jump nextLGEasy
@@ -480,8 +483,11 @@ label gamefileB2:
         show EB211tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
         image EB211tile07_08 = "or_Gate.png"
         show EB211tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-        play sound lgLose
+        queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 2
+            jump pg_lgEasyBLose
         $ lgEasy_tries +=1
         jump repeatLGEasy
     

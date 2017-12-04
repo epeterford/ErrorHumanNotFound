@@ -401,7 +401,7 @@ label gamefileMB3:
             $ nand1in1 = False
             $ nand1in3 = False
             
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "nand return" or slot_name == "and return" or slot_name == "nor return"):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -743,12 +743,14 @@ label gamefileMB3:
         show wLGMB3tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
         image wLGMB3tile07_08 = "nor_Gate.png"
         show wLGMB3tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-        image wend2 = "light_r_on.png"
-        show wend2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
+        image wLGMB3end2 = "light_r_on.png"
+        show wLGMB3end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgMedBWin
         $lgMedB_solved = True
-        jump lgMed_win
+        jump lgMed_winB
 
 
     if attempts == 0:
@@ -760,8 +762,11 @@ label gamefileMB3:
         show fLGMB3tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
         queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 3
+            jump pg_lgMedBLose
         $lgMed_attempts +=1
-        jump lgMed_lose
+        jump lgMed_loseB
     
     jump gamefileMB3
 

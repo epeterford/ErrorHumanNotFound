@@ -280,7 +280,7 @@ label gamefileMA1:
             $ nor1in2 = False
             $ nor1in1 = False
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name=="nor return" or slot_name=="and return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -374,6 +374,8 @@ label gamefileMA1:
         show MA18end2 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgMedAWin
         $lgMedA_solved = True
         jump lgMed_win
 
@@ -385,6 +387,9 @@ label gamefileMA1:
         show MA111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
         queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_lgMedALose
         $lgMed_attempts +=1
         jump lgMed_lose
     

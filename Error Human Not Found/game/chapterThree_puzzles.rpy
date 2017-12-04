@@ -18,6 +18,17 @@ screen lgMedLose_scr:
         action Jump("wwDoor")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 screen lgMedDone_scr:
     imagebutton:
@@ -29,6 +40,17 @@ screen lgMedDone_scr:
         action Jump("lgMed_doneTalk")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 screen lgMedWin_scr:
     imagebutton:
@@ -49,7 +71,47 @@ screen lgMedWin_scr:
         action Jump("wwDoor")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
+
+screen tutorial_lgMed:
+    imagebutton:
+        idle "finish.png" 
+        hover "finish_hover.png" 
+        xpos 1650
+        ypos 940 
+        focus_mask True
+        action Jump("choose_lgMed")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
+label tutorial_lgMed_1:
+    window hide
+    $quick_menu = False
+    scene bg tutorial_lgMed
+    $renpy.block_rollback()
+    $config.skipping=None
+    call screen tutorial_lgMed
+    
 screen wwDoor_scr:
     imagebutton:
         idle "objects/wwDoor_idle.png"
@@ -60,6 +122,15 @@ screen wwDoor_scr:
         action Jump("choose_lgMed")
         hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
         activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
         
 label choose_lgMed:
     $LGMedHints =0
@@ -79,8 +150,10 @@ label choose_lgMed:
     hide Ada
     $quick_menu = False
     $randomLGMed = renpy.random.randint(0,2)
-    #if(lgMedA_solved==False)and(lgMed_attempts==0):
-        #jump tutorial_lgMed_1
+    if(tutorial_lgMed):
+        $pageUnlocked_notes +=1
+        $tutorial_lgMed = False
+        jump tutorial_lgMed_1
     if(lgMedA_solved==False):
         if(randomLGMed==0):
             jump logicGate_mediumA1
@@ -104,9 +177,12 @@ label choose_lgMed:
             jump logicGate_mediumC3
 
 label wwDoor:
+    hide screen disable_hide
     $quick_menu = True
     $config.skipping = None
     $renpy.block_rollback()
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     stop music fadeout 1.0
     play channel00 wwAmb0 fadeout 1.0 fadein 1.0
     play channel01 wwAmb1 fadeout 1.0 fadein 1.0
@@ -118,6 +194,7 @@ label wwDoor:
     scene bg door2 with fade
     show Ada seething at right
     a "Alright Ada. If Grace could do it, then you can too. It just might take a little more practice."
+#    "Unlocked: [pageUnlocked_notes]. Current: [currentPage_notes]"
     hide Ada
     $quick_menu = False
     window hide
@@ -127,24 +204,52 @@ label lgMed_lose:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image segmentFailed = "segmentFailed.png"
-    show segmentFailed at centerScreen2
+    image lgMedA_loseImage = "lgMedA_lose.png"
+    show lgMedA_loseImage at centerScreen2
+    call screen lgMedLose_scr
+    
+label lgMed_loseB:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image lgMedB_loseImage = "lgMedB_lose.png"
+    show lgMedB_loseImage at centerScreen2
+    call screen lgMedLose_scr
+    
+label lgMed_loseC:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image lgMedC_loseImage = "lgMedC_lose.png"
+    show lgMedC_loseImage at centerScreen2
     call screen lgMedLose_scr
     
 label lgMed_done:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image passwordAccepted = "passwordAccepted.png" #CHANGE ME
-    show passwordAccepted at centerScreen2
+    image lgMedC_winImage = "lgMedC_win.png"
+    show lgMedC_winImage at centerScreen2
     call screen lgMedDone_scr
     
 label lgMed_win:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image segmentComplete = "segmentComplete.png"
-    show segmentComplete at centerScreen2
+    image lgMedA_winImage = "lgMedA_win.png"
+    show lgMedA_winImage at centerScreen2
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
+    call screen lgMedWin_scr
+    
+label lgMed_winB:
+    $config.skipping=None
+    $renpy.block_rollback()
+    show other darken
+    image lgMedB_winImage = "lgMedB_win.png"
+    show lgMedB_winImage at centerScreen2
     $ stackDepth =renpy.call_stack_depth()
     while stackDepth>0:
         $renpy.pop_call()
@@ -156,6 +261,12 @@ label lgMed_doneTalk:
     $config.skipping = None
     $renpy.block_rollback()
     stop music fadeout 1.0
+    hide screen disable_hide
+    $quick_menu = True
+    $config.skipping = None
+    $renpy.block_rollback()
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     play channel00 wwAmb0 fadeout 1.0 fadein 1.0
     play channel01 wwAmb1 fadeout 1.0 fadein 1.0
     play channel02 wwAmb2 fadeout 1.0 fadein 1.0
@@ -388,6 +499,17 @@ screen llMedLose_scr:
         action Jump("lab2_inv")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
             
 screen llMedWin_scr:
     imagebutton:
@@ -399,44 +521,30 @@ screen llMedWin_scr:
         action Jump("llMedDone")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 screen tutorial_scrLLMed_1:
-    imagebutton:
-        idle "next.png" 
-        hover "next_hover.png" 
-        xpos 1650
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_LLMed_2")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-              
-screen tutorial_scrLLMed_2:
-    imagebutton:
-        idle "back.png" 
-        hover "back_hover.png" 
-        xpos 0
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_LLMed_1")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    imagebutton:
-        idle "next.png" 
-        hover "next_hover.png" 
-        xpos 1650
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_LLMed_3")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    
-screen tutorial_scrLLMed_3:
-    imagebutton:
-        idle "back.png" 
-        hover "back_hover.png" 
-        xpos 0
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_LLMed_2")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
     imagebutton:
         idle "finish.png" 
         hover "finish_hover.png" 
@@ -449,16 +557,16 @@ screen tutorial_scrLLMed_3:
         
 label llMedLose:
     show other darken
-    image systemStartFail ="binaryEasyLose.png" #CHANGE ME
-    show systemStartFail at centerScreen2
+    image llMed_loseImage ="llMed_lose.png"
+    show llMed_loseImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen llMedLose_scr
     
 label llMedWin:
     show other darken
-    image systemStartup= "loopLogicEasyWin.png" #CHANGE ME
-    show systemStartup at centerScreen2
+    image llMed_winImage = "llMed_win.png" 
+    show llMed_winImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen llMedWin_scr
@@ -471,8 +579,8 @@ label llMedDone:
     $llMed_solved = True
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+#    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+#    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
@@ -487,21 +595,26 @@ label llMedDone:
     $renpy.music.play("music/robotScanner.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/srafTexture.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     $renpy.music.play("music/stabTapeEcho.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $config.skipping = None
+    $renpy.block_rollback()
+    hide screen disable_hide
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     if(llMed_attempts ==0):
-        #show Ivan dour at right
+        show Ivan dour at right
         show Grace happy at left
         g "Look Ivan! A sort algorithm saves time and sanity. Oh, wait, you don't have any sanity to begin with."
         ivan "It's a pity you have to demean others in an attempt to make yourself feel worthwile. Doesn't make a difference, however."
         show Grace annoyed
         g "You know, let's just see what it turned up."
     if(llMed_attempts ==1):
-        #show Ivan dour at right
+        show Ivan dour at right
         show Grace neutral at left
         g "Okay, you really need to trim the fat on your data here. Ever heard of defragging either? I swear, if your files are stored anything like this data, your poor computer..."
         ivan "Blaming me for your inability to cleanly write a sort algorithm is very transparent, Fortran. Now, do you see what you want? Because I want you gone."
     if(llMed_attempts>1):
         show Grace annoyed at left
-        #show Ivan dour at right
+        show Ivan dour at right
         g "Bubble sort, priority queues... I need a real refresher on all on this. I mean, I could have constructed an entire binary search tree in the time--"
         ivan "Fortran, no one cares about your innane babbling. Please, do get on with it. Some of use have lives we would like to return to."
     if(resume=="SbE"):
@@ -532,8 +645,10 @@ label choose_llMed:
     stop channel16 fadeout 1.0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $LLMedHints=0
-#    if (llMed_attempts == 0):
-#        jump tutorial_LLMed_1
+    if (llMed_attempts == 0 and tutorial_llMed):
+        $pageUnlocked_notes +=1
+        $tutorial_llMed = False
+        jump tutorial_LLMed_1
     $slot_name = ""
     $gate_name = ""
     $temp_gate = ""
@@ -543,6 +658,12 @@ label choose_llMed:
     $light3Sound = 0
     $light4Sound = 0
     $light5Sound = 0
+    $charge1_sound1 = 0
+    $charge1_sound2 = 0
+    $charge2_sound1 = 0
+    $charge2_sound2 = 0
+    $charge3_sound1 = 0
+    $charge3_sound2 = 0
     $randomNumberMedLL = renpy.random.randint(0,4)
     if randomNumberMedLL==0:
         jump loopLogic_med1
@@ -559,26 +680,10 @@ label choose_llMed:
 label tutorial_LLMed_1:
     window hide
     $quick_menu = False
-    scene bg tutorial_llMed_1
+    scene bg tutorial_llMed
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_scrLLMed_1
-    
-label tutorial_LLMed_2:
-    window hide
-    $quick_menu = False
-    scene bg tutorial_llMed_1
-    $renpy.block_rollback()
-    $config.skipping=None
-    call screen tutorial_scrLLMed_2
-    
-label tutorial_LLMed_3:
-    window hide
-    $quick_menu = False
-    scene bg tutorial_llMed_1
-    $renpy.block_rollback()
-    $config.skipping=None
-    call screen tutorial_scrLLMed_3
     
 label hints_llMed_1:
     show screen disable_hide
@@ -660,7 +765,7 @@ label hints_llMed_4:
     show LLM_4_tile67 at Position(xpos = while2x, xanchor = 0, ypos = while2y, yanchor = 0)
     show other darken onlayer screens
     if (remainder==0):
-        g "Two powered nodes and two green WHILEs. Seems self-explanatory"
+        g "Two powered nodes and two green WHILEs. Seems self-explanatory."
     if (remainder==1):
         g "Only one blue light, and one blue IF. I should probably try the IF in that slot."
     if (remainder==2):
@@ -687,7 +792,7 @@ label hints_llMed_5:
     if (remainder==1):
         g "There's only one green light, and one green IF, so the IF probably goes there. Won't be able to tell unless the charge node is lit up first, though."
     if (remainder==2):
-        g "The ELSE has to go to the blue light. Now where else would make sense."
+        g "The ELSE has to go to the blue light. No where else would make sense."
     hide other darken onlayer screens
     hide LLM_5_tile74
     hide LLM_5_tile75
@@ -715,9 +820,20 @@ screen binaryMedLose_scr:
         xpos 925
         ypos 610 
         focus_mask True
-        action Jump("wwPuzzleScreen") #CHANGE
+        action Jump("wwPuzzleScreen")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
             
 screen binaryMedWin_scr:
     imagebutton:
@@ -726,48 +842,22 @@ screen binaryMedWin_scr:
         xpos 815
         ypos 610
         focus_mask True
-        action Jump("binaryMedDoneTalk") #CHANGE
+        action Jump("binaryMedDoneTalk")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
-        
-#TUTORIAL FOR MEDIUM ARE NOT DONE. SCREENS ARE PLACEHOLDERS ONLY.        
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
+             
 screen tutorial_scrBinary3Bit_1:
-    imagebutton:
-        idle "next.png" 
-        hover "next_hover.png" 
-        xpos 1650
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary3Bit_2")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-        
-screen tutorial_scrBinary3Bit_2:
-    imagebutton:
-        idle "back.png" 
-        hover "back_hover.png" 
-        xpos 0
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary3Bit_1")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-    imagebutton:
-        idle "next.png" 
-        hover "next_hover.png" 
-        xpos 1650
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary3Bit_3")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
-            
-screen tutorial_scrBinary3Bit_5:
-    imagebutton:
-        idle "back.png" 
-        hover "back_hover.png" 
-        xpos 0
-        ypos 940 
-        focus_mask True
-        action Jump("tutorial_Binary3Bit_4")
-        hover_sound "audio/ENHF_UI_Button_v2.ogg"
     imagebutton:
         idle "finish.png" 
         hover "finish_hover.png" 
@@ -777,6 +867,17 @@ screen tutorial_scrBinary3Bit_5:
         action Jump("binaryMed")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 screen wwPuzzleScreen_scr:
     imagebutton:
@@ -788,6 +889,17 @@ screen wwPuzzleScreen_scr:
         action Jump("binaryMed")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
         
 label wwPuzzleScreen:
     $config.skipping=None
@@ -801,6 +913,12 @@ label wwPuzzleScreen:
     play channel05 wwAmb5 fadeout 1.0 fadein 1.0
     play channel06 wwAmb6 fadeout 1.0 fadein 1.0
     scene bg wwCritical
+    hide screen disable_hide
+    $quick_menu = True
+    $config.skipping = None
+    $renpy.block_rollback()
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show Ada seething at right
     a "If I don't get the habitat back to Nominal, Colossus will not allow me to continue my investigation."
     hide Ada
@@ -816,8 +934,8 @@ label binaryMed:
     stop channel06 fadeout 1.0
     #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
-#    if (binaryMed_attempts==0): Uncomment when have tutorial
-#        jump tutorial_Binary3Bit_1
+    if (tutorial_binaryMed):
+        jump tutorial_Binary3Bit_1
     $binaryMedHints = 0
     call binaryMatchMed from _call_binaryMatchMed
     
@@ -825,33 +943,21 @@ label tutorial_Binary3Bit_1:
     $renpy.block_rollback()
     $config.skipping=None
     window hide
+    if tutorial_binaryMed:
+        $pageUnlocked_notes +=1
+        $tutorial_binaryMed = False
     $ quick_menu = False
-    scene bg tutorial_binary3Bit_1
+    scene bg tutorial_binaryMed
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_scrBinary3Bit_1
-    
-label tutorial_Binary3Bit_2:
-    window hide
-    $ quick_menu = False
-    scene bg tutorial_binary3Bit_2
-    $renpy.block_rollback()
-    $config.skipping=None
-    call screen tutorial_scrBinary3Bit_2
-    
-label tutorial_Binary3Bit_5:
-    window hide
-    $ quick_menu = False
-    scene bg tutorial_binary3Bit_5
-    $renpy.block_rollback()
-    $config.skipping=None
-    call screen tutorial_scrBinary3Bit_5
         
 label binaryMediumHints:
     show screen disable_hide
     $config.skipping=None
     $remainder = binaryMedHints%3 
     show other darken onlayer screens
+    $ can_clickMed = False
     if (remainder==0):
         $binaryMedHints +=1
         a "Okay Ada, you can do this. 0 and 1 are the same as integers, just with extra zeros to the left."
@@ -875,8 +981,8 @@ label binaryMediumHints:
 label binaryMedWin:
     hide screen binaryMatch_med
     show other darken
-    image discStartup= "binaryEasyWin.png" #CHANGE ME
-    show discStartup at centerScreen2
+    image binaryMed_winImage = "binaryMed_win.png" 
+    show binaryMed_winImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen binaryMedWin_scr
@@ -885,8 +991,8 @@ label binaryMedLose:
     hide screen binaryMatch_med
     show other darken
     $ binaryMed_attempts +=1
-    image bootFail ="loopLogicEasyLose.png" #CHANGE ME
-    show bootFail at centerScreen2
+    image binaryMed_loseImage ="binaryMed_lose.png"
+    show binaryMed_loseImage at centerScreen2
     $renpy.block_rollback()
     $config.skipping=None
     call screen binaryMedLose_scr
@@ -902,11 +1008,16 @@ label binaryMedDoneTalk:
     play channel04 wwAmb4 fadeout 1.0 fadein 1.0
     play channel05 wwAmb5 fadeout 1.0 fadein 1.0
     play channel06 wwAmb6 fadeout 1.0 fadein 1.0
+    hide screen disable_hide
+    $config.skipping = None
+    $renpy.block_rollback()
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     if(binaryMed_attempts==0):
         show Ada annoyed at right
         a "Watson has the same computational abilities as I do. To skip out on such an elementary task is just lazy."
     if (binaryMed_attempts>=1) and (binaryMed_attempts<3):
-        show Ada neutral at right
+        show Ada annoyed at right
         a "Perhaps I have been dedicating too much of my background processes to comprehending the nuances of human interaction. I seemed to have some difficulty with this task."
     if (binaryMed_attempts>=3):
         show Ada frustrated at right
@@ -938,9 +1049,20 @@ screen gramMed_lose_scr:
         xpos 925
         ypos 610 
         focus_mask True
-        action Jump("nightShift_comp") #CHANGE ME
+        action Jump("nightShift_comp")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
             
 screen gramMed_win_scr:
     imagebutton:
@@ -952,13 +1074,44 @@ screen gramMed_win_scr:
         action Jump("gramMed_done")
         hover_sound "audio/ENHF_UI_Button_v2.ogg"
         activate_sound "audio/ENHF_UI_Button_v1.ogg"
-        
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
+    
+screen tutorial_gramMed_1_scr:
+    imagebutton:
+        idle "finish.png" 
+        hover "finish_hover.png" 
+        xpos 1650
+        ypos 940 
+        focus_mask True
+        action Jump("choose_gramMed")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+    key 'h' action NullAction() #action Hide("")
+    key 'K_PAGEUP' action NullAction() #action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+    key 'K_AC_BACK' action NullAction() #action Hide("")
+    key 'mousedown_4' action NullAction() #action Hide("")
+    key 'K_LCTRL' action NullAction() #action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    $renpy.block_rollback()
+    $config.skipping=None
 #######LABELS##############
 
 label tutorial_gramMed_1:
     window hide
     $ quick_menu = False
-    scene bg tutorial_gramMed_1
+    scene bg tutorial_gramMed
     $renpy.block_rollback()
     $config.skipping=None
     call screen tutorial_gramMed_1_scr
@@ -967,7 +1120,7 @@ label gramMed_lose:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image gramEasyLoseFail = "passwordFail.png" #CHANGE THIS
+    image gramEasyLoseFail = "passwordFail.png"
     show gramEasyLoseFail at centerScreen2
     call screen gramMed_lose_scr
     
@@ -975,7 +1128,7 @@ label gramMed_win:
     $config.skipping=None
     $renpy.block_rollback()
     show other darken
-    image passwordAccepted = "passwordAccepted.png" #CHANGE THIS
+    image passwordAccepted = "passwordAccepted.png"
     show passwordAccepted at centerScreen2
     call screen gramMed_win_scr
     
@@ -983,35 +1136,60 @@ label gramMed_done:
     $quick_menu = True
     scene bg lab2WS_unlocked with fade
     stop music fadeout 1.0
-    #INSERT NEW LAB 2 MUSIC HERE
+    hide screen disable_hide
+    $config.skipping = None
+    $renpy.block_rollback()
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+#    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+#    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L8.ogg", channel='channel08', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L9.ogg", channel='channel09', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L10.ogg", channel='channel10', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Lab2/EHNF_LAB2_L11.ogg", channel='channel11', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    
+    $renpy.music.play("music/Creep_Wav.ogg", channel='channel12', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Digi_Sprites.ogg", channel='channel13', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/robotScanner.ogg", channel='channel14', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/srafTexture.ogg", channel='channel15', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/stabTapeEcho.ogg", channel='channel16', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     if(gramMed_attempts ==0):
-        #show Ivan dour at right
+        show Ivan dour at right
         show Grace happy at left
         g "Still got it. Really Ivan, you should teach your people to make more secure passwords."
+        show Ivan disgusted
         ivan "Ellen is {i}not{/i} one of my people. My people know how to make passwords that take more than five minutes of fumbling to crack."
         g "Sure they do."
     if(gramMed_attempts ==1):
-        #show Ivan dour at right
+        show Ivan dour at right
         show Grace neutral at left
         g "Okay, it might have been easier if Ellen used password hints. Or left a stickynote lying around with a reminder of sorts."
+        show Ivan phony
         ivan "Having difficulties Fortran?"
         show Grace snarky
         g "It's unlocked, isn't it?"
     if(gramMed_attempts>1):
         show Grace annoyed at left
-        #show Ivan dour at right
+        show Ivan dour at right
         g "Seriously? If I knew it was going to be this much of an issue I would have had Ada do the brute force attack. Kind of what supercomputers are for."
-        #show Ivan phonysmile (or something) 
+        show Ivan phony
         ivan "Elegant solutions as always, Fortran."
         g "Like you could hack it any faster, Ivan."
     show Grace neutral
     g "Now I just need to check her logs..."
     show Grace surprised at left
     g "Well, that's not what I was hoping for."
-    #show Ivan something at right
+    show Ivan dour
     ivan "What Fortran?"
     show Grace annoyed
     g "The wire was faulty. But it was replaced with a new one. The faulty one should have been disposed of entirely, but looks like cleaning up after herself isn't one of Ellen's strengths."
+    show Ivan disgusted
     ivan "So there's nothing, like I said there would be."
     show Grace angry
     g "You know--"
@@ -1043,8 +1221,10 @@ label choose_gramMed:
     stop channel16 fadeout 1.0
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $gramMedHints=0
-#    if (gramMed_attempts == 0): #UNCOMMENT ME WHEN TUTORIAL IS IN
-#        jump tutorial_gramMed_1
+    if (tutorial_gramMed):
+        $pageUnlocked_notes +=1
+        $tutorial_gramMed = False
+        jump tutorial_gramMed_1
     $slot_name = ""
     $gate_name = ""
     $temp_gate = ""

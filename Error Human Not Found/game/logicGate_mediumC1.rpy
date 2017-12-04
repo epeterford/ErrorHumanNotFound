@@ -441,7 +441,7 @@ label gamefileMC1:
             $ nand1in1 = False
             $ nand1in3 = False
             
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name=="nor return" or slot_name=="and return" or slot_name=="nand return"):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -455,6 +455,7 @@ label gamefileMC1:
             if slot_name == "and return" and gate_name == "and_gate":
                 $ attempts +=1
             if slot_name == "nor return" and gate_name == "nor_gate":
+
                 $ attempts +=1
             if slot_name == "nand return" and gate_name == "nand_gate":
                 $ attempts +=1
@@ -737,6 +738,8 @@ label gamefileMC1:
         show MC12end1 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgMedCWin
         $lgMedC_solved = True
         jump lgMed_done
 
@@ -750,8 +753,11 @@ label gamefileMC1:
         show MC111tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
         queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_lgMedCLose
         $lgMed_attempts +=1
-        jump lgMed_lose
+        jump lgMed_loseC
     
     jump gamefileMC1
 

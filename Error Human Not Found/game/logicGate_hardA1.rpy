@@ -24,6 +24,9 @@ init:
     image bg Logic_Gate = "LOGIC_GATE_BG.png"
 
 label logicGate_hardA1:
+    $quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     #loads background
     scene bg Logic_Gate
    
@@ -167,7 +170,7 @@ label logicGate_hardA1:
     $ and1y = 88
     $ or1x = 848
     $ or1y = 88
-    $ xor1x = 1298
+    $ xor1x = 1300
     $ xor1y = 88
     
     #gate values
@@ -190,7 +193,7 @@ label logicGate_hardA1:
     $ xor1in3 = False
     
     #attempts for players
-    $ attempts = 6
+    $ attempts = 5
  
     jump gamefileHA1
     
@@ -209,7 +212,7 @@ label gamefileHA1:
                 $ or1y = 88
                 $ or1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -227,7 +230,7 @@ label gamefileHA1:
                 $ or1y = 88
                 $ or1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
 
@@ -244,7 +247,7 @@ label gamefileHA1:
                 $ or1y = 88
                 $ or1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
 
@@ -271,7 +274,7 @@ label gamefileHA1:
                $ and1y = 88
                $ and1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -289,7 +292,7 @@ label gamefileHA1:
                $ and1y = 88
                $ and1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
                 
@@ -306,7 +309,7 @@ label gamefileHA1:
                $ and1y = 88
                $ and1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -379,13 +382,13 @@ label gamefileHA1:
             $ xor1in2 = False
             
         if slot_name == "xor return":
-            $ xor1x = 848
+            $ xor1x = 1300
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
             $ xor1in3 = False
             
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "and return" or slot_name == "or return" or slot_name == "xor return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -419,6 +422,13 @@ label gamefileHA1:
 #************image zone********************* 
 #*******************************************
 
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
     if and1in1 == True:
         image HA11tile05_06 = "g_vertical.png"
         show HA11tile05_06 at Position(xpos = 886, xanchor = 0, ypos = 608, yanchor = 0)
@@ -685,8 +695,12 @@ label gamefileHA1:
         show HA199tile07_08 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
         image HA199end = "light_g_on.png"
         show HA199end at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
-        "game"
-        jump start
+        queue sound lgWin
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgHardAWin
+        $lgHardA_solved = True
+        jump lgHard_win
 
         
     if attempts == 0:
@@ -696,14 +710,42 @@ label gamefileHA1:
         show HA199tile07_09 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
         image HA199tile07_08 = "xor_Gate.png"
         show HA199tile07_08 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-
-        "you lose try again"
-        jump start
+        queue sound lgLose
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 1
+            jump pg_lgHardALose
+        $lgHard_attempts +=1
+        jump lgHard_lose
     
     jump gamefileHA1
 
 screen logicGatesHA1:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 240
+        ypos 890
+        focus_mask True
+        action Jump("hints_lgHardA1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty.png"
+        xpos 1515
+        ypos 890
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1675 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 40
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates
@@ -765,5 +807,5 @@ screen logicGatesHA1:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1298 ypos 88
+                xpos 1300 ypos 88
                 

@@ -322,12 +322,14 @@ label adapls_E:
  
 label gettingin_E:
     $quick_menu = True
-    play channel00 balconyAmb0
-    play channel01 balconyAmb1
-    play channel02 balconyAmb2
-    play channel03 balconyAmb3
-    play channel04 balconyAmb4
-    play channel05 balconyBGM
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    play channel00 balconyAmb
+    play channel01 balconyBGM
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     scene bg balconyMain with fade
@@ -462,6 +464,9 @@ label moveitalong:
  
 label csinoahsphere_E:
     $quick_menu = True
+    if persistent.unlockAlpha ==None:
+        $persistent.unlockAlpha = True
+        "{i}{b}Database Entry Unlocked: Alpha.{/b}{/i}"
     #insert the sound of paper crumpling
     play sound paperCrumple
     show Grace neutral at left
@@ -504,15 +509,15 @@ label enterthemopr_E:
         linear 2.0 xpos 0.27 ypos 0.1 
     $quick_menu = True
     show Grace surprised at left behind Mopr
-    show Ada neutral at right
+    show Ada neutral at right behind Mopr
     g "Ah... we were just leaving!"
-    show Mopr at nearLeft
     show Ada amused at right
-    show Mopr at nearLeft
     a "Grace, it is just a cleaning robot."
+    if persistent.unlockMopr ==None:
+        $persistent.unlockMopr = True
+        "{i}{b}Database Entry Unlocked: M.O.P.R.{/b}{/i}"
     play sound moprInquisitive
     mopr "//Inquisitive boop.//"
-    show Mopr at nearLeft
     show Grace happy at left
     g "Oh thank goodness."
     show Mopr at nearLeft
@@ -765,6 +770,9 @@ label lynnfinallyfrickinanswers_E:
     lynn "Hello?"
     show Grace happy at left
     g "Lynn!"
+    if persistent.unlockLynn ==None:
+        $persistent.unlockLynn = True
+        "{i}{b}Database Entry Unlocked: Lynn Yao.{/b}{/i}"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
     show Grace neutral
     g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"

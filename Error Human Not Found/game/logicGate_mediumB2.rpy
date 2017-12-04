@@ -382,6 +382,7 @@ label gamefileMB2:
                 $ or1in2 = False
             #sets values for checks
             $ not1x = gate2x
+
             $ not1y = gate2y
             $ not1in2 = True
             $ not1in1 = False
@@ -412,7 +413,7 @@ label gamefileMB2:
             $ not1in3 = False
             
             
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name=="or return" or slot_name=="nand return" or slot_name=="not return"):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -583,8 +584,10 @@ label gamefileMB2:
         show wLGMB2tileend at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgMedBWin
         $lgMedB_solved = True
-        jump lgMed_win
+        jump lgMed_winB
 
     if attempts == 0:
         image lLGMB2tile02_09 = "not_Gate.png"
@@ -595,8 +598,11 @@ label gamefileMB2:
         show lLGMB2tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
         queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 2
+            jump pg_lgMedBLose
         $lgMed_attempts +=1
-        jump lgMed_lose
+        jump lgMed_loseB
     
     jump gamefileMB2
 

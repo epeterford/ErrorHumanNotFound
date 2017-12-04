@@ -335,12 +335,22 @@ screen navigation_mm():
         hotspot (12, 155, 315, 95) action ShowMenu("load") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (12, 283, 315, 95) action ShowMenu("preferences") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (12, 407, 315, 95) action ShowMenu("help") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
-#        hotspot (12, 538, 315, 95) action ShowMenu("database") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+        hotspot (12, 538, 315, 95):
+            if(databasePage ==1):
+                action ShowMenu("database1")
+            if(databasePage==2):
+                action ShowMenu("database2")
+            if(databasePage==3):
+                action ShowMenu("database3")
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            selected_hover_sound "<silence 0.5>" 
+            selected_activate_sound "<silence 0.5>"
         hotspot (12, 669, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
 #        hotspot (12, 797, 315, 95) action ShowMenu ("credits")selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (12, 896, 315, 95) action Quit(confirm=True) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (27, 976, 290, 85) action Return() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Return
-        
+
 screen navigation():
     #Implement hotspot imagemap here
     imagemap:
@@ -414,11 +424,39 @@ screen main_menu:
         hotspot (12, 155, 315, 95) action ShowMenu("load") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         hotspot (12, 283, 315, 95) action ShowMenu("preferences") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         hotspot (12, 407, 315, 95) action Help() activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
-#        hotspot (12, 538, 315, 95) action ShowMenu("database") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+        hotspot (12, 538, 315, 95):
+            if(databasePage ==1):
+                action ShowMenu("database1")
+            if(databasePage==2):
+                action ShowMenu("database2")
+            if(databasePage==3):
+                action ShowMenu("database3")
+            activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" 
+            hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
+            selected_hover_sound "<silence 0.5>" 
+            selected_activate_sound "<silence 0.5>"
         hotspot (12, 669, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
         hotspot (12, 797, 315, 95) action ShowMenu ("mmCredits_start")
         hotspot (12, 896, 315, 95) action Quit(confirm=False) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
-        
+    if persistent.beatGame:
+        imagebutton:
+            idle "puzzleGallery_idle.png" 
+            hover "puzzleGallery_hover.png" 
+            xpos 0
+            ypos 0 
+            focus_mask True
+            action (SetVariable("puzzleGallery", True), Start()) #("pg_mainMenu")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "musicRoom_idle.png" 
+            hover "musicRoom_hover.png" 
+            xpos 0
+            ypos 0 
+            focus_mask True
+            action ShowMenu("music_room")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+            activate_sound "audio/ENHF_UI_Button_v1.ogg"
 
 
 ## Game Menu screen ############################################################
@@ -576,9 +614,10 @@ screen about():
            # text _("Version [config.version!t]\n") xpos 650
 
             ## gui.about is usually set in options.rpy.
-            if gui.about:
+            if gui.about and persistent.beatGame:
                 text "[gui.about!t]\n" xpos 100
-
+            elif gui.about:
+                text "[gui.about2!t]\n" xpos 100
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} 6.99.\n\n[renpy.license!t]") xpos 100
 
     if (main_menu):
@@ -1017,10 +1056,12 @@ screen preferences():
         $soundVolumeVal = 0.0
     if (soundVolumeVal>1.0):
         $soundVolumeVal = 1.0
-    if (textSpeedVal<0) or (textSpeedVal==0):
-        $textSpeedVal = 1
-    if (textSpeedVal >200):
-        $textSpeedVal = 200
+    if not(textSpeedVal==None):
+        $textSpeedVal = math.trunc(textSpeedVal)
+        if (textSpeedVal<0) or (textSpeedVal==0):
+            $textSpeedVal = 1
+        if (textSpeedVal >200):
+            $textSpeedVal = 200
     if not(autoForwardVal==None):
         $autoForwardVal = math.trunc(autoForwardVal)
         if (autoForwardVal >30):

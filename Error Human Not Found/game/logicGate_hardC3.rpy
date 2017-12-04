@@ -24,6 +24,9 @@ init:
     image bg Logic_Gate = "LOGIC_GATE_BG.png"
 
 label logicGate_hardC3:
+    $quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     #loads background
     scene bg Logic_Gate
     
@@ -169,18 +172,18 @@ label logicGate_hardC3:
     show HC3tile09_05 at Position(xpos = 811, xanchor = 0, ypos = 908, yanchor = 0)
 
     #start points
-    image start1 = "light_r_on.png"
-    show start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image start2 = "light_r_on.png"
-    show start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
-    image start3 = "light_r_on.png"
-    show start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image start4 = "light_g_on.png"
-    show start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
+    image HC3start1 = "light_r_on.png"
+    show HC3start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
+    image HC3start2 = "light_r_on.png"
+    show HC3start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
+    image HC3start3 = "light_r_on.png"
+    show HC3start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
+    image HC3start4 = "light_g_on.png"
+    show HC3start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
-    image end3 = "light_g_off.png"
-    show end3 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
+    image HC3end3 = "light_g_off.png"
+    show HC3end3 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
 
 
     
@@ -200,7 +203,7 @@ label logicGate_hardC3:
     $ or1y = 88
     $ nor1x = 1148
     $ nor1y = 88
-    $ xor1x = 1298
+    $ xor1x = 1300
     $ xor1y = 88
     $ nor2x = 1148
     $ nor2y = 88
@@ -234,7 +237,7 @@ label logicGate_hardC3:
     $ nor2in4 = False   
     
     #attempts for players
-    $ attempts = 600
+    $ attempts = 6
  
     jump gamefileHC3
     
@@ -253,7 +256,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
             if nor2in1 == True:
@@ -276,7 +279,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
             if nor2in2 == True:
@@ -292,14 +295,14 @@ label gamefileHC3:
             $ or1in3 = False
             $ or1in4 = False
             
-        #gate slot number three*******************************        
+        #gate slot nuHCer three*******************************        
         if slot_name == "gate slot three":
             if nor1in3 == True:
                 $ nor1x = 1148
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
             if nor2in3 == True:
@@ -321,7 +324,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False
             if nor2in4 == True:
@@ -354,7 +357,7 @@ label gamefileHC3:
                $ or1y = 88
                $ or1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
             if nor2in1 == True:
@@ -377,7 +380,7 @@ label gamefileHC3:
                 $ or1y = 88
                 $ or1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
             if nor2in2 == True:
@@ -393,14 +396,14 @@ label gamefileHC3:
             $ nor1in3 = False
             $ nor1in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHCer three*******************************    
         if slot_name == "gate slot three":
             if or1in3 == True:
                 $ or1x = 698
                 $ or1y = 88
                 $ or1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
             if nor2in3 == True:
@@ -422,7 +425,7 @@ label gamefileHC3:
                 $ or1y = 88
                 $ or1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False
             if nor2in4 == True:
@@ -494,7 +497,7 @@ label gamefileHC3:
             $ xor1in3 = False
             $ xor1in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHCer three*******************************    
         if slot_name == "gate slot three":
             if or1in3 == True:
                 $ or1x = 698
@@ -540,7 +543,7 @@ label gamefileHC3:
             $ xor1in4 = True
         
         if slot_name == "xor return":
-            $ xor1x = 1298
+            $ xor1x = 1300
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -559,7 +562,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False                
 
@@ -582,7 +585,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False  
                 
@@ -594,7 +597,7 @@ label gamefileHC3:
             $ nor2in3 = False
             $ nor2in4 = False
             
-        #gate slot number three*******************************    
+        #gate slot nuHCer three*******************************    
         if slot_name == "gate slot three":
             if or1in3 == True:
                 $ or1x = 698
@@ -605,7 +608,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -627,7 +630,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in4 = False  
                 
@@ -647,7 +650,7 @@ label gamefileHC3:
             $ nor2in3 = False
             $ nor2in4 = False
             
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "or return" or slot_name == "nor return" or slot_name == "xor return"):
        $ temp_slot = slot_name
        $ temp_gate = gate_name
        if temp_slot != "" and temp_gate != "":
@@ -687,7 +690,16 @@ label gamefileHC3:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-    if or1in1 == True:
+
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+        
+    if or1in1:
         image HC31tile03_09 = "r_r.png"
         image HC31tile03_11 = "r_elbow_bl.png"
         show HC31tile03_09 at Position(xpos = 1111, xanchor = 0, ypos = 458, yanchor = 0)
@@ -954,10 +966,10 @@ label gamefileHC3:
             hide HC313tile07_08
             hide HC313tile08_07
             hide HC313tile08_08
-            hide HC314tile05_11
-            hide HC314tile06_11
-            hide HC314tile07_10
-            hide HC314tile07_11
+            hide HC3145tile05_11
+            hide HC3145tile06_11
+            hide HC3145tile07_10
+            hide HC3145tile07_11
             hide HC315tile05_11
             hide HC315tile06_11
             hide HC315tile07_10
@@ -978,10 +990,10 @@ label gamefileHC3:
         hide HC313tile07_08
         hide HC313tile08_07
         hide HC313tile08_08
-        hide HC314tile05_11
-        hide HC314tile06_11
-        hide HC314tile07_10
-        hide HC314tile07_11
+        hide HC3145tile05_11
+        hide HC3145tile06_11
+        hide HC3145tile07_10
+        hide HC3145tile07_11
         hide HC315tile05_11
         hide HC315tile06_11
         hide HC315tile07_10
@@ -1238,12 +1250,12 @@ label gamefileHC3:
         hide HC330tile05_13
 
     if or1in3 == True and xor1in2 == True and (nor1in1 == True or nor2in1 == True) and (nor1in4 == True or nor2in4 == True):
-        image HC331tile05_11 = "g_r.png"
-        show HC331tile05_11 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
+        image HC331tile05_11s = "g_r.png"
+        show HC331tile05_11s at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
         image HC331tile05_13 = "r_horizontal.png"
         show HC331tile05_13 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
     else:
-        hide HC331tile05_11
+        hide HC331tile05_11s
         hide HC331tile05_13
 
     if or1in3 == True and xor1in1 == True and (nor1in2 == True or nor2in2 == True) and (nor1in4 == True or nor2in4 == True):
@@ -1294,38 +1306,70 @@ label gamefileHC3:
         
         
 #win conditions ********
-    if (or1in2 == True and xor1in3 == True and (nor1in1 == True or nor2in1 == True) and (nor1in4 == True or nor2in4 == True)) or (or1in3 == True and xor1in4 == True and (nor1in1 == True or nor2in1 == True) and (nor1in2 == True or nor2in2 == True)) or (or1in4 == True and xor1in3 == True and (nor1in1 == True or nor2in1 == True) and (nor1in2 == True or nor2in2 == True)):         
-        image MB1270tile02_09 = "xor_Gate.png"
-        show MB1270tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-        image MB1270tile02_10 = "nor_Gate.png"
-        show MB1270tile02_10 at Position(xpos = nor2x, xanchor = 0, ypos = nor2y, yanchor = 0)
-        image MB1170tile07_02 = "or_Gate.png"
-        show MB1170tile07_02 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-        image MB1170tile07_08 = "nor_Gate.png"
-        show MB1170tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-        image MB1170end2 = "light_g_on.png"
-        show MB1170end2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
-        "game"
-        jump start
+    if (or1in2 and xor1in3 and (nor1in1 or nor2in1) and (nor1in4 or nor2in4 )) or (or1in3 and xor1in4 and (nor1in1 or nor2in1) and (nor1in2 or nor2in2)) or (or1in4 and xor1in3 and (nor1in1 or nor2in1) and (nor1in2 or nor2in2)):         
+        image HC1270tile02_09 = "xor_Gate.png"
+        show HC1270tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
+        image HC1270tile02_10 = "nor_Gate.png"
+        show HC1270tile02_10 at Position(xpos = nor2x, xanchor = 0, ypos = nor2y, yanchor = 0)
+        image HC1170tile07_02 = "or_Gate.png"
+        show HC1170tile07_02 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+        image HC1170tile07_08 = "nor_Gate.png"
+        show HC1170tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+        image HC1170end2 = "light_g_on.png"
+        show HC1170end2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
+        queue sound lgWin
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgHardCWin
+        $lgHardC_solved = True
+        jump lgHard_done
 
   
     if attempts == 0:
-        image MB1270tile02_09 = "xor_Gate.png"
-        show MB1270tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-        image MB1270tile02_10 = "nor_Gate.png"
-        show MB1270tile02_10 at Position(xpos = nor2x, xanchor = 0, ypos = nor2y, yanchor = 0)
-        image MB1270tile07_02 = "or_Gate.png"
-        show MB1270tile07_02 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-        image MB1270tile07_08 = "nor_Gate.png"
-        show MB1270tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-
-        "you lose try again"
-        jump start
+        image HC1270tile02_09 = "xor_Gate.png"
+        show HC1270tile02_09 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
+        image HC1270tile02_10 = "nor_Gate.png"
+        show HC1270tile02_10 at Position(xpos = nor2x, xanchor = 0, ypos = nor2y, yanchor = 0)
+        image HC1270tile07_02 = "or_Gate.png"
+        show HC1270tile07_02 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
+        image HC1270tile07_08 = "nor_Gate.png"
+        show HC1270tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
+        queue sound lgLose
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 3
+            jump pg_lgHardCLose
+        $lgHard_attempts +=1
+        jump lgHard_lose3
     
     jump gamefileHC3
 
 screen logicgatesHC3:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 240
+        ypos 890
+        focus_mask True
+        action Jump("hints_lgHardC3")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty.png"
+        xpos 1515
+        ypos 890
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1675 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 40
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates
@@ -1400,4 +1444,4 @@ screen logicgatesHC3:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1298 ypos 88
+                xpos 1300 ypos 88

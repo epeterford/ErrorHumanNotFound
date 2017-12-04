@@ -82,6 +82,7 @@ label binaryMatchMed:
         
         label turns_loopMed:
             if turns_leftMed >0:
+                $ can_clickMed = True
                 $ result = ui.interact()
                 $tileFlipSound = renpy.random.randint(0,2)
                 if (tileFlipSound==0):
@@ -166,10 +167,14 @@ label binaryMatchMed:
 label binaryMedWin_pre:
     queue sound binaryWin
     $renpy.pause(1.0)
+    if(puzzleGallery):
+        jump pg_binaryMedWin
     jump binaryMedWin
     
 label binaryMedLose_pre:
     queue sound binaryLose
     $renpy.pause(1.5)
+    if(puzzleGallery):
+        jump pg_binaryMedLose
     jump binaryMedLose
                 

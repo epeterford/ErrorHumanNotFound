@@ -763,6 +763,46 @@ label gamefile_llm2:
             $ attempts -=1
             $ temp_slot = slot_name
             $ temp_gate = gate_name
+            
+            if slot_name == "B_if_gate_return":
+                $ attempts +=1
+                if slot_name == "B_if_gate":
+                    $ if1x = 1445
+                    $ if1y = 545
+                    $ if1in1 = False
+                    $ if1in2 = False
+                    $ if1in3 = False
+                    $ if1in4 = False
+                    
+            if slot_name == "G_if_gate_return":
+                $ attempts +=1
+                if slot_name == "G_if_gate":
+                    $ if2x = 1445
+                    $ if2y = 685
+                    $ if2in1 = False
+                    $ if2in2 = False
+                    $ if2in3 = False
+                    $ if2in4 = False
+                    
+            if slot_name == "G_else_gate_return":
+                $ attempts +=1
+                if slot_name == "G_else_gate":
+                    $ else1x = 1625
+                    $ else1y = 545
+                    $ else1in1 = False
+                    $ else1in2 = False
+                    $ else1in3 = False
+                    $ else1in4 = False
+                    
+            if slot_name == "While_gate_green_return":
+                $ attempts +=1
+                if slot_name == "While_gate":
+                    $ while1x = 1625
+                    $ while1y = 685
+                    $ while1in1 = False
+                    $ while1in2 = False
+                    $ while1in3 = False
+                    $ while1in4 = False
 
 
 #*******************************************
@@ -770,6 +810,60 @@ label gamefile_llm2:
 #*******************************************
 
 #    #if 1 section*******************************************************************************************     
+    hide LLM_2_tile71
+    hide LLM_2_tile73
+    hide LLM_2_tile74
+    hide LLM_2_tile72
+    hide LLM_2_tile43
+    hide LLM_2_tile44
+    hide LLM_2_tile45
+    hide LLM_2_tile46
+    hide LLM_2_tile75
+    hide LLM_2_tile76
+    hide LLM_2_tile77
+    hide LLM_2_tile78
+    hide LLM_2_tile79
+    hide LLM_2_tile80
+    hide LLM_2_tile81
+    hide LLM_2_tile82
+    hide LLM_2_tile83
+    hide LLM_2_tile84
+    hide LLM_2_tile50
+    hide LLM_2_tile51
+    hide LLM_2_tile52
+    hide LLM_2_tile85
+    hide LLM_2_tile86
+    hide LLM_2_tile87
+    hide LLM_2_tile88
+    hide LLM_2_tile89
+    hide LLM_2_tileS55
+    hide LLM_2_tile55
+    hide LLM_2_tile56
+    hide LLM_2_tile104
+    hide LLM_2_tile105
+    hide LLM_2_tile106
+    hide LLM_2_tile107
+    hide LLM_2_tile108
+    hide LLM_2_tile109
+    hide LLM_2_tile110
+    hide LLM_2_tile111
+    hide LLM_2_tile112
+    hide LLM_2_tile90
+    hide LLM_2_tile93
+    hide LLM_2_tile94
+    hide LLM_2_tile96
+    hide LLM_2_tile97
+    hide LLM_2_tile98
+    hide LLM_2_tile101
+    hide LLM_2_tile102
+    hide LLM_2_tile120
+    hide LLM_2_tile121
+    hide LLM_2_tile122
+    hide LLM_2_tile123
+    hide LLM_2_tile124
+    hide LLM_2_tile125
+    hide LLM_2_tile126
+
     $llNormal = renpy.random.randint(0,2)
     if (llNormal==0):
         play sound llPipe1
@@ -777,9 +871,7 @@ label gamefile_llm2:
         play sound llPipe2
     if (llNormal==2):
         play sound llPipe3
-    if if1in3 == True:
-        #image LLM_2_tile70 = "B_connect_node.png"
-        #show LLM_2_tile70 at Position(xpos = 570, xanchor = 0, ypos = 405, yanchor = 0)
+    if if1in3:
         image LLM_2_tile71 = "B_vertical_short.png"
         show LLM_2_tile71 at Position(xpos = 570, xanchor = 0, ypos = 355, yanchor = 0)
         image LLM_2_tile73 = "B_horizontal.png"
@@ -792,7 +884,7 @@ label gamefile_llm2:
             play soundP03 llLightOn3
             $light3Sound +=1
         
-        if else1in4 == True or if2in4 == True:
+        if else1in4:
             image LLM_2_tile43 = "G_connect_node.png"
             show LLM_2_tile43 at Position(xpos = 500, xanchor = 0, ypos = 403, yanchor = 0)
             image LLM_2_tile44 = "G_horizontal_short.png"
@@ -804,35 +896,26 @@ label gamefile_llm2:
             if(light4Sound==0):
                 play soundP04 llLightOn2
                 $light4Sound +=1
-
-        if else1in4 == False and if2in4 == False:
-            hide LLM_2_tile43
-            hide LLM_2_tile44
-            hide LLM_2_tile45
-            hide LLM_2_tile46
-            if(light4Sound==1):
-                play soundP04 llLightOff2
-                $light4Sound -=1
-   
-    if if1in3 == False:
-        hide LLM_2_tile71
-        hide LLM_2_tile73
-        hide LLM_2_tile74
-        hide LLM_2_tile72
-        hide LLM_2_tile43
-        hide LLM_2_tile44
-        hide LLM_2_tile45
-        hide LLM_2_tile46
-        if(light3Sound==1):
-            play soundP03 llLightOff3
-            $light3Sound -=1
+    if if2in4:
+        show LLM_2_tile43 at Position(xpos = 500, xanchor = 0, ypos = 403, yanchor = 0)
+        show LLM_2_tile44 at Position(xpos = 450, xanchor = 0, ypos = 405, yanchor = 0)
+        show LLM_2_tile45 at Position(xpos = 275, xanchor = 0, ypos = 405, yanchor = 0)
+        show LLM_2_tile46 at Position(xpos = 175, xanchor = 0, ypos = 373, yanchor = 0)
+        if(light4Sound==0):
+            play soundP04 llLightOn2
+            $light4Sound +=1
+            
+    if not(if2in4 or (if1in3 and else1in4)):
         if(light4Sound==1):
             play soundP04 llLightOff2
             $light4Sound -=1
+   
+    if if1in3 == False:
+        if(light3Sound==1):
+            play soundP03 llLightOff3
+            $light3Sound -=1
 
-    if if2in3 == True:
-        #image LLM_2_tile70 = "B_connect_node.png"
-        #show LLM_2_tile70 at Position(xpos = 570, xanchor = 0, ypos = 405, yanchor = 0)
+    if if2in3:
         image LLM_2_tile75 = "G_vertical_short.png"
         show LLM_2_tile75 at Position(xpos = 500, xanchor = 0, ypos = 355, yanchor = 0)
         image LLM_2_tile76 = "G_horizontal_ll.png"
@@ -840,40 +923,26 @@ label gamefile_llm2:
         image LLM_2_tile77 = "G_horizontal_ll.png"
         show LLM_2_tile77 at Position(xpos = 675, xanchor = 0, ypos = 287, yanchor = 0)
 
-        
-        if else1in4 == True or if1in4 == True:
+        if else1in4:
+            image LLM_2_tile81 = "B_horizontal_short.png"
+            show LLM_2_tile81 at Position(xpos = 450, xanchor = 0, ypos = 405, yanchor = 0)
+            image LLM_2_tile82 = "B_horizontal.png"
+            show LLM_2_tile82 at Position(xpos = 275, xanchor = 0, ypos = 405, yanchor = 0)
             image LLM_2_tile78 = "B_connect_pipe.png"
             show LLM_2_tile78 at Position(xpos = 530, xanchor = 0, ypos = 415, yanchor = 0)
             image LLM_2_tile79 = "B_connect_node.png"
             show LLM_2_tile79 at Position(xpos = 568, xanchor = 0, ypos = 403, yanchor = 0)
             image LLM_2_tile80 = "B_connect_node.png"
             show LLM_2_tile80 at Position(xpos = 500, xanchor = 0, ypos = 403, yanchor = 0)
-            image LLM_2_tile81 = "B_horizontal_short.png"
-            show LLM_2_tile81 at Position(xpos = 450, xanchor = 0, ypos = 405, yanchor = 0)
-            image LLM_2_tile82 = "B_horizontal.png"
-            show LLM_2_tile82 at Position(xpos = 275, xanchor = 0, ypos = 405, yanchor = 0)
 
-
-        if else1in4 == False and if1in4 == False:
-            hide LLM_2_tile78
-            hide LLM_2_tile79
-            hide LLM_2_tile80
-            hide LLM_2_tile81
-            hide LLM_2_tile82
-   
-    if if2in3 == False:
-        hide LLM_2_tile75
-        hide LLM_2_tile76
-        hide LLM_2_tile77
-        hide LLM_2_tile78
-        hide LLM_2_tile79
-        hide LLM_2_tile80
-        hide LLM_2_tile81
-        hide LLM_2_tile82
-
-
+    if if1in4:
+        show LLM_2_tile81 at Position(xpos = 450, xanchor = 0, ypos = 405, yanchor = 0)
+        show LLM_2_tile82 at Position(xpos = 275, xanchor = 0, ypos = 405, yanchor = 0)
+        show LLM_2_tile78 at Position(xpos = 530, xanchor = 0, ypos = 415, yanchor = 0)
+        show LLM_2_tile79 at Position(xpos = 568, xanchor = 0, ypos = 403, yanchor = 0)
+        show LLM_2_tile80 at Position(xpos = 500, xanchor = 0, ypos = 403, yanchor = 0)
     
-    if if2in1 == True:
+    if if2in1:
         image LLM_2_tile83 = "G_horizontal_ll.png"
         show LLM_2_tile83 at Position(xpos = 600, xanchor = 0, ypos = 540, yanchor = 0)
         image LLM_2_tile84 = "G_horizontal_ll.png"
@@ -884,15 +953,16 @@ label gamefile_llm2:
         show LLM_2_tile51 at Position(xpos = 926, xanchor = 0, ypos = 517, yanchor = 0)
         image LLM_2_tile52 = "G_vertical_short.png"
         show LLM_2_tile52 at Position(xpos = 945, xanchor = 0, ypos = 592, yanchor = 0)
-        
-    if if2in1 == False:
-        hide LLM_2_tile83
-        hide LLM_2_tile84
-        hide LLM_2_tile50
-        hide LLM_2_tile51
-        hide LLM_2_tile52
-
-    if if1in1 == True:
+        if(while1in2):
+            image LLM_2_tile55 = "G_vertical_short.png"
+            show LLM_2_tile55 at Position(xpos = 947, xanchor = 0, ypos = 675, yanchor = 0)
+            image LLM_2_tile56 = "G_end_on.png"
+            show LLM_2_tile56 at Position(xpos = 915, xanchor = 0, ypos = 727, yanchor = 0)
+            if (light2Sound==0):
+                play soundP02 llLightOn2
+                $light2Sound +=1
+            
+    if if1in1:
         image LLM_2_tile85 = "B_horizontal.png"
         show LLM_2_tile85 at Position(xpos = 600, xanchor = 0, ypos = 540, yanchor = 0)
         image LLM_2_tile86 = "B_horizontal.png"
@@ -903,45 +973,16 @@ label gamefile_llm2:
         show LLM_2_tile88 at Position(xpos = 926, xanchor = 0, ypos = 517, yanchor = 0)
         image LLM_2_tile89 = "B_vertical_short.png"
         show LLM_2_tile89 at Position(xpos = 947, xanchor = 0, ypos = 592, yanchor = 0)
-        if(while1in2==True):
+        if(while1in2):
             image LLM_2_tileS55 = "B_vertical_short.png"
             show LLM_2_tileS55 at Position(xpos = 947, xanchor = 0, ypos = 675, yanchor = 0)
-        if(while1in2==False):
-            hide LLM_2_tileS55
-    if if1in1 == False:
-        hide LLM_2_tile85
-        hide LLM_2_tile86
-        hide LLM_2_tile87
-        hide LLM_2_tile88
-        hide LLM_2_tile89
-        hide LLM_2_tileS55
 
-    if while1in2 == True and if2in1 == True:
-        image LLM_2_tile54 = "g_while_on.png"
-        show LLM_2_tile54 at Position(xpos = 947, xanchor = 0, ypos = 642, yanchor = 0)
-        image LLM_2_tile55 = "G_vertical_short.png"
-        show LLM_2_tile55 at Position(xpos = 947, xanchor = 0, ypos = 675, yanchor = 0)
-        image LLM_2_tile56 = "G_end_on.png"
-        show LLM_2_tile56 at Position(xpos = 915, xanchor = 0, ypos = 727, yanchor = 0)
-        if (light2Sound==0):
-            play soundP02 llLightOn2
-            $light2Sound +=1
-        if(light1Sound==0):
-            play soundP01 llLightOn1
-            $light1Sound +=1
-
-    if while1in2 == False or if2in1 == False:
-        hide LLM_2_tile54
-        hide LLM_2_tile55
-        hide LLM_2_tile56
+    if not(while1in2 and if2in1):
         if(light2Sound==1):
             play soundP02 llLightOff2
             $light2Sound -=1
-        if(light1Sound==1):
-            play soundP01 llLightOff1
-            $light1Sound -=1
 
-    if while1in2 == True:
+    if while1in2:
         image LLM_2_tile90 = "g_while_on.png"
         show LLM_2_tile90 at Position(xpos = 947, xanchor = 0, ypos = 642, yanchor = 0)
         image LLM_2_tile93 = "G_horizontal_ll.png"
@@ -958,9 +999,9 @@ label gamefile_llm2:
         show LLM_2_tile101 at Position(xpos = 351, xanchor = 0, ypos = 785, yanchor = 0)
         image LLM_2_tile102 = "G_horizontal_ll.png"
         show LLM_2_tile102 at Position(xpos = 426, xanchor = 0, ypos = 785, yanchor = 0)
-        if (light2Sound==0):
-            play soundP02 llLightOn2
-            $light2Sound +=1
+        if (charge1_sound1==0):
+            play soundP05 llCharge
+            $charge1_sound1 +=1
             
         image LLM_2_tile104 = "y_horizontal_short_on.png"
         show LLM_2_tile104 at Position(xpos = 897, xanchor = 0, ypos = 643, yanchor = 0)
@@ -981,57 +1022,20 @@ label gamefile_llm2:
         image LLM_2_tile112 = "y_horizontal_short_on.png"
         show LLM_2_tile112 at Position(xpos = 600, xanchor = 0, ypos = 784, yanchor = 0)
 
-
     if while1in2 == False:
-        hide LLM_2_tile90
-        hide LLM_2_tile93
-        hide LLM_2_tile94
-        hide LLM_2_tile96
-        hide LLM_2_tile97
-        hide LLM_2_tile98
-        hide LLM_2_tile101
-        hide LLM_2_tile102
-        if(light2Sound==1):
-            play soundP02 llLightOff2
-            $light2Sound -=1
-        hide LLM_2_tile104
-        hide LLM_2_tile105
-        hide LLM_2_tile106
-        hide LLM_2_tile107
-        hide LLM_2_tile108
-        hide LLM_2_tile109
-        hide LLM_2_tile110
-        hide LLM_2_tile111
-        hide LLM_2_tile112
+        if(charge1_sound1==1):
+            $charge1_sound1 -=1
 
+    if if2in2:
+        show LLM_2_tile93 at Position(xpos = 425, xanchor = 0, ypos = 542, yanchor = 0)  
+        show LLM_2_tile94 at Position(xpos = 350, xanchor = 0, ypos = 542, yanchor = 0) 
+        show LLM_2_tile96 at Position(xpos = 298, xanchor = 0, ypos = 591, yanchor = 0) 
+        show LLM_2_tile97 at Position(xpos = 298, xanchor = 0, ypos = 666, yanchor = 0)
+        show LLM_2_tile98 at Position(xpos = 298, xanchor = 0, ypos = 716, yanchor = 0)
+        show LLM_2_tile101 at Position(xpos = 351, xanchor = 0, ypos = 785, yanchor = 0)
+        show LLM_2_tile102 at Position(xpos = 426, xanchor = 0, ypos = 785, yanchor = 0)
 
-    if if2in2 == True:
-        image LLM_2_tile113 = "G_horizontal_ll.png"
-        show LLM_2_tile113 at Position(xpos = 425, xanchor = 0, ypos = 542, yanchor = 0)  
-        image LLM_2_tile114 = "G_horizontal_ll.png"
-        show LLM_2_tile114 at Position(xpos = 350, xanchor = 0, ypos = 542, yanchor = 0) 
-        image LLM_2_tile115 = "G_vertical_ll.png"
-        show LLM_2_tile115 at Position(xpos = 298, xanchor = 0, ypos = 591, yanchor = 0) 
-        image LLM_2_tile116 = "G_vertical_short.png"
-        show LLM_2_tile116 at Position(xpos = 298, xanchor = 0, ypos = 666, yanchor = 0)
-        image LLM_2_tile117 = "G_vertical_short.png"
-        show LLM_2_tile117 at Position(xpos = 298, xanchor = 0, ypos = 716, yanchor = 0)
-        image LLM_2_tile118 = "G_horizontal_ll.png"
-        show LLM_2_tile118 at Position(xpos = 351, xanchor = 0, ypos = 785, yanchor = 0)
-        image LLM_2_tile119 = "G_horizontal_ll.png"
-        show LLM_2_tile119 at Position(xpos = 426, xanchor = 0, ypos = 785, yanchor = 0)
-
-    if if2in2 == False:
-        hide LLM_2_tile113
-        hide LLM_2_tile114
-        hide LLM_2_tile115
-        hide LLM_2_tile116
-        hide LLM_2_tile117
-        hide LLM_2_tile118
-        hide LLM_2_tile119
-
-
-    if if1in2 == True:
+    if if1in2:
         image LLM_2_tile120 = "B_horizontal.png"
         show LLM_2_tile120 at Position(xpos = 425, xanchor = 0, ypos = 542, yanchor = 0)  
         image LLM_2_tile121 = "B_horizontal.png"
@@ -1047,25 +1051,13 @@ label gamefile_llm2:
         image LLM_2_tile126 = "B_horizontal.png"
         show LLM_2_tile126 at Position(xpos = 426, xanchor = 0, ypos = 785, yanchor = 0)
 
-    if if1in2 == False:
-        hide LLM_2_tile120
-        hide LLM_2_tile121
-        hide LLM_2_tile122
-        hide LLM_2_tile123
-        hide LLM_2_tile124
-        hide LLM_2_tile125
-        hide LLM_2_tile126
-
-
         
 #win conditions ********
-    if (if1in3 == True) and else1in4 == True and (if2in1 == True) and (while1in2 == True):
+    if (if1in3) and else1in4 and (if2in1) and (while1in2):
         image LLM_2_tile60 = "B_end_on.png"
         show LLM_2_tile60 at Position(xpos = 750, xanchor = 0, ypos = 253, yanchor = 0)
         image LLM_2_tile61 = "G_end_on.png"
         show LLM_2_tile61 at Position(xpos = 176, xanchor = 0, ypos = 370, yanchor = 0)
-        image LLM_2_tile62 = "G_connect_node.png"
-        show LLM_2_tile62 at Position(xpos = 947, xanchor = 0, ypos = 642, yanchor = 0)
         image LLM_2_tile63 = "G_end_on.png"
         show LLM_2_tile63 at Position(xpos = 915, xanchor = 0, ypos = 725, yanchor = 0)
 
@@ -1079,9 +1071,10 @@ label gamefile_llm2:
         show LLM_2_tile67 at Position(xpos = 500, xanchor = 0, ypos = 750, yanchor = 0)
         queue sound llWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_llMedWin
         hide LLM_2_tile60
         hide LLM_2_tile61
-        hide LLM_2_tile62
         hide LLM_2_tile63
         hide LLM_2_tile64
         hide LLM_2_tile65
@@ -1096,10 +1089,12 @@ label gamefile_llm2:
         show LLM_2_tile67 at Position(xpos = while1x, xanchor = 0, ypos = while1y, yanchor = 0)
         queue sound llLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 2
+            jump pg_llMedLose
         $llMed_attempts+=1
         hide LLM_2_tile60
         hide LLM_2_tile61
-        hide LLM_2_tile62
         hide LLM_2_tile63
         hide LLM_2_tile64
         hide LLM_2_tile65

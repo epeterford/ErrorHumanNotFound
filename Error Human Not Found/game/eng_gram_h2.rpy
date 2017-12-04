@@ -446,7 +446,7 @@ label eng_gram_h2:
     #attempts for players
     $ attempts = 14
     
-    call gamefile_h2
+    call gamefile_h2 from _call_gamefile_h2
 
 
 
@@ -6458,7 +6458,7 @@ label gamefile_h2:
             if (letterS9in6 or letterS10in6):
                 image gram_h2_tile503 = "rightTreegreen.png"
                 image gram_h2_tile504 = "1_1_green.png"
-                image gram_h2_tile505 = "solutionLine.png"
+                image gram_h2_tile505 = "solutionLine_grey.png"
                 image gram_h2_tile506 = "epsilon.png"
                 show gram_h2_tile503 at Position(xpos = 990, xanchor = 0, ypos = 600, yanchor = 0)
                 show gram_h2_tile504 at Position(xpos = 1020, xanchor = 0, ypos = 675, yanchor = 0)
@@ -6495,7 +6495,7 @@ label gamefile_h2:
                 image gram_h2_tile512 = "1_1_green.png"
                 image gram_h2_tile513 = "solutionLine.png"
                 image gram_h2_tile514 = "are.png"
-                image gram_h2_tile515 = "solutionLine.png"
+                image gram_h2_tile515 = "solutionLine_grey.png"
                 image gram_h2_tile516 = "epsilon.png"
                 
                 show gram_h2_tile509 at Position(xpos = 1195, xanchor = 0, ypos = 600, yanchor = 0)
@@ -6542,6 +6542,29 @@ label gamefile_h2:
                 play sound gramTree1
                 queue sound gramText1
                 $gramRow2_L_sound_right1 +=1
+                
+            if (letterT1in6 or letterT2in6 or letterT3in6 or letterQ4in6 or letterQ5in6 or letterK6in6 or letterS9in6 or letterS10in6):
+                show gram_h2_tile507 at Position(xpos = 990, xanchor = 0, ypos = 600, yanchor = 0)
+                show gram_h2_tile508 at Position(xpos = 1020, xanchor = 0, ypos = 675, yanchor = 0)
+                if gramRow3_L_sound_wrong1 ==0:
+                    $gramRow3_L_sound_wrong1 +=1
+                    play sound gramTree5
+            if(not(letterT1in6 or letterT2in6 or letterT3in6 or letterQ4in6 or letterQ5in6 or letterK6in6)):
+                if gramRow3_L_sound_wrong1 ==1:
+                    $gramRow3_L_sound_wrong1 -=1
+                    
+            if((letterT1in7 or letterT2in7 or letterT3in7 or letterK6in7 or letterQ5in7 or letterQ4in7 or letterS9in7 or letterS10in7) and (letterT1in8 or letterT2in8 or letterT3in8 or letterK6in8 or letterQ5in8 or letterQ4in8 or letterS9in8 or letterS10in8)):
+                show gram_h2_tile517 at Position(xpos = 1195, xanchor = 0, ypos = 600, yanchor = 0)
+                show gram_h2_tile518 at Position(xpos = 1155, xanchor = 0, ypos = 675, yanchor = 0)
+                show gram_h2_tile519 at Position(xpos = 1295, xanchor = 0, ypos = 600, yanchor = 0)
+                show gram_h2_tile520 at Position(xpos = 1310, xanchor = 0, ypos = 675, yanchor = 0)
+                if gramRow3_C_sound_wrong1 ==0:
+                    play sound gramTree5
+                    $gramRow3_C_sound_wrong1 +=1
+            if(not((letterT1in7 or letterT2in7 or letterT3in7 or letterK6in7 or letterQ4in7 or letterQ5in7 or letterS9in7 or letterS10in7) and (letterT1in8 or letterT2in8 or letterT3in8 or letterK6in8 or letterQ4in8 or letterQ5in8 or letterS9in8 or letterS10in8))):
+                if gramRow3_C_sound_wrong1 ==1:
+                    $gramRow3_C_sound_wrong1 -=1
+                    
         elif ((letterT1in3 or letterT2in3 or letterT3in3 or letterQ4in3 or letterQ5in3 or letterK6in3 or letterJ7in3 or letterM8in3 or letterS9in3 or letterS10in3) and (letterT1in4 or letterT2in4 or letterT3in4 or letterQ4in4 or letterQ5in4 or letterK6in4 or letterJ7in4 or letterM8in4 or letterS9in4 or letterS10in4)):
             image gram_h2_tile78 = "leftTreeredlong.png"
             image gram_h2_tile79 = "1_1_Red.png"
@@ -6684,7 +6707,9 @@ label gamefile_h2:
         show gram_h2_tile210 at Position(xpos = letterS9x, xanchor = 0, ypos = letterS9y, yanchor = 0)
         show gram_h2_tile211 at Position(xpos = letterS10x, xanchor = 0, ypos = letterS10y, yanchor = 0)
         queue sound gramWin
-        $renpy.pause(0.7)
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_gramHardWin
         $gramHard_solved = True 
         jump gramHard_win
 
@@ -6700,7 +6725,10 @@ label gamefile_h2:
         show gram_h2_tile210 at Position(xpos = letterS9x, xanchor = 0, ypos = letterS9y, yanchor = 0)
         show gram_h2_tile211 at Position(xpos = letterS10x, xanchor = 0, ypos = letterS10y, yanchor = 0)
         queue sound gramLose
-        $renpy.pause(0.8)
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 2
+            jump pg_gramHardLose
         $gramHard_attempts +=1
         jump gramHard_lose
     

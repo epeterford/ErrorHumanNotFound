@@ -22,6 +22,9 @@ init:
     image bg looplogic_bg = "LoopLogic_background.png"
 
 label loopLogic_hard1: #start
+    $config.skipping=None
+    $quick_menu = False
+    $game_menu = True
     #loads background
     $ gate_name= ""
     $ slot_name = ""
@@ -318,7 +321,7 @@ label loopLogic_hard1: #start
     $ temp_gate = ""
      
     #attempts for players
-    $ attempts = 10    
+    $ attempts = 12
     
     #*********************************************************
     #********************** show gates ***********************
@@ -3270,8 +3273,115 @@ label gamefile_llh1:
     $LLH_1_RWhileNode = "Off"
     $LLH_1_BWhileNode = "Off"
           
-    if (else1in1 == True or else2in1 == True):
-        if ifRGin4 == True:
+    hide LLH_1_colorTile1
+    hide LLH_1_colorTile2
+    hide LLH_1_colorTile3
+    hide LLH_1_colorTile5
+    hide LLH_1_colorTile6
+    hide LLH_1_colorTile10
+    hide LLH_1_colorTile11
+    hide LLH_1_colorTile12
+    hide LLH_1_colorTile18
+    hide LLH_1_colorTile19
+    hide LLH_1_colorTile20
+    hide LLH_1_colorTile21
+    hide LLH_1_colorTile29
+    hide LLH_1_colorTile30
+    hide LLH_1_colorTile31
+    hide LLH_1_colorTile32
+    hide LLH_1_colorTile33
+    hide LLH_1_colorTile34
+    hide LLH_1_colorTile35
+    hide LLH_1_colorTile36
+    hide LLH_1_colorTile37
+    hide LLH_1_colorTile38
+    hide LLH_1_colorTile39
+    hide LLH_1_colorTile40
+    hide LLH_1_colorTile41
+    hide LLH_1_colorTile43
+    hide LLH_1_colorTile44
+    hide LLH_1_colorTile45
+    hide LLH_1_colorTile46
+    hide LLH_1_colorTile47
+    hide LLH_1_colorTile48
+    hide LLH_1_colorTile49
+    hide LLH_1_colorTile51
+    hide LLH_1_colorTile52
+    hide LLH_1_colorTile54
+    hide LLH_1_colorTile55
+    hide LLH_1_colorTile56
+    hide LLH_1_colorTile58
+    hide LLH_1_colorTile59
+    hide LLH_1_colorTile60
+    hide LLH_1_colorTile77
+    hide LLH_1_colorTile78
+    hide LLH_1_colorTile79
+    hide LLH_1_colorTile80
+    hide LLH_1_colorTile81
+    hide LLH_1_colorTile82
+    hide LLH_1_colorTile83
+    hide LLH_1_colorTile84
+    hide LLH_1_colorTile85
+    hide LLH_1_colorTile86
+    hide LLH_1_colorTile87
+    hide LLH_1_colorTile88
+    hide LLH_1_colorTile89
+    hide LLH_1_colorTile90
+    hide LLH_1_colorTile91
+    hide LLH_1_colorTile92
+    hide LLH_1_colorTile93
+    hide LLH_1_colorTile94
+    hide LLH_1_colorTile95
+    hide LLH_1_colorTile96
+    hide LLH_1_colorTile97
+    hide LLH_1_colorTile98
+    hide LLH_1_colorTile99
+    hide LLH_1_colorTile100
+    hide LLH_1_colorTile101
+    hide LLH_1_colorTile102
+    hide LLH_1_colorTile105 
+    hide LLH_1_colorTile106
+    hide LLH_1_colorTile107
+    hide LLH_1_colorTile108
+    hide LLH_1_colorTile109
+    hide LLH_1_colorTile110
+    hide LLH_1_colorTile111 
+    hide LLH_1_colorTile112
+    hide LLH_1_colorTile115
+    hide LLH_1_colorTile116 
+    hide LLH_1_colorTile117
+    hide LLH_1_colorTile120
+    hide LLH_1_colorTile121
+    hide LLH_1_colorTile122
+    hide LLH_1_colorTile123
+    hide LLH_1_colorTile124
+    hide LLH_1_colorTile125
+    hide LLH_1_colorTile126
+    hide LLH_1_colorTile127
+    hide LLH_1_colorTile128
+    hide LLH_1_colorTile129
+    hide LLH_1_colorTile132
+    hide LLH_1_colorTileG5
+    hide LLH_1_colorTileT5
+    hide LLH_1_colorTileP1
+    hide LLH_1_colorTileP2
+    hide LLH_1_colorTileP3
+    hide LLH_1_colorTileBr1
+    hide LLH_1_colorTileBr2
+    hide LLH_1_colorTileBr3
+    hide LLH_1_colorTileT1
+    hide LLH_1_colorTileT2
+    hide LLH_1_colorTileT3
+    hide LLH_1_colorTileG55
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
+    if (else1in1 or else2in1):
+        if ifRGin4:
             image LLH_1_colorTile1 = "B_vertical.png"
             show LLH_1_colorTile1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
             image LLH_1_colorTile2 = "B_horizontal.png"
@@ -3286,14 +3396,8 @@ label gamefile_llh1:
             $LLH_1_node1 = "Blue"
             $LLH_1_node2 = "Blue"
             $LLH_1_node3 = "Blue"
-        elif ifRGin4 == False: 
-            hide LLH_1_colorTile1
-            hide LLH_1_colorTile2
-            hide LLH_1_colorTile3
-            hide LLH_1_colorTile5 
-            hide LLH_1_colorTile6
             
-        if ifBGin4 == True:
+        if ifBGin4:
             image LLH_1_colorTile10 = "R_vertical_ll.png"
             show LLH_1_colorTile10 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
             image LLH_1_colorTile11 = "R_horizontal_ll.png"
@@ -3301,74 +3405,64 @@ label gamefile_llh1:
             image LLH_1_colorTile12 = "R_horizontal_ll.png"
             show LLH_1_colorTile12 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
             $LLH_1_node1 = "Red"
-        elif ifBGin4 == False: 
-            hide LLH_1_colorTile10
-            hide LLH_1_colorTile11
-            hide LLH_1_colorTile12
 
-        if ifRin4 == True:
-            $LLH_1_node2 = "Green"
+        if ifRin4:
+            $LLH_1_node1 = "Turq"
+            $LLH_1_node2 = "Turq"
             $LLH_1_node3 = "Blue"
+            image LLH_1_colorTileT5 = "T_connect_pipe_vertical.png"
+            show LLH_1_colorTileT5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+            show LLH_1_colorTile6 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
+            image LLH_1_colorTileT1 = "T_vertical_ll.png"
+            show LLH_1_colorTileT1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+            image LLH_1_colorTileT2 = "T_horizontal_ll.png"
+            show LLH_1_colorTileT2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+            image LLH_1_colorTileT3 = "T_horizontal_ll.png"
+            show LLH_1_colorTileT3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
             
-        if ifGin4 == True:
-            $LLH_1_node1 = "Red"
+        if ifGin4:
+            $LLH_1_node1 = "Purp"
+            $LLH_1_node2 = "Blue"
             $LLH_1_node3 = "Blue"
+            show LLH_1_colorTile5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+            show LLH_1_colorTile6 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
+            image LLH_1_colorTileP1 = "P_vertical_ll.png"
+            show LLH_1_colorTileP1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+            image LLH_1_colorTileP2 = "P_horizontal_ll.png"
+            show LLH_1_colorTileP2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+            image LLH_1_colorTileP3 = "P_horizontal_ll.png"
+            show LLH_1_colorTileP3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
             
-        if ifBin4 == True:
-            $LLH_1_node1 = "Red"
+        if ifBin4:
+            $LLH_1_node1 = "Brown"
             $LLH_1_node2 = "Green"
+            image LLH_1_colorTileG5 = "G_connect_pipe_vertical.png"
+            show LLH_1_colorTileG5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+            image LLH_1_colorTileBr1 = "Br_vertical_ll.png"
+            show LLH_1_colorTileBr1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+            image LLH_1_colorTileBr2 = "Br_horizontal_ll.png"
+            show LLH_1_colorTileBr2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+            image LLH_1_colorTileBr3 = "Br_horizontal_ll.png"
+            show LLH_1_colorTileBr3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
             
-    elif (else1in1 == False and else2in1 == False):
-            hide LLH_1_colorTile1
-            hide LLH_1_colorTile2
-            hide LLH_1_colorTile3
-            hide LLH_1_colorTile5 
-            hide LLH_1_colorTile6    
-            hide LLH_1_colorTile10
-            hide LLH_1_colorTile11
-            hide LLH_1_colorTile12
-            hide LLH_1_colorTile13
-            hide LLH_1_colorTile14
-            hide LLH_1_colorTile16
-            hide LLH_1_colorTile17
-            hide LLH_1_colorTile18
-            
-    if ifBin1 == True and (ifRGin4 == True or ifBGin4 == True or ifRin4 == True or ifGin4 == True):
-        image LLH_1_colorTile63 = "B_vertical.png"
-        show LLH_1_colorTile63 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
-        image LLH_1_colorTile64 = "B_horizontal.png"
-        show LLH_1_colorTile64 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
-        image LLH_1_colorTile65 = "B_horizontal.png"
-        show LLH_1_colorTile65 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
+    if ifBin1:
+        show LLH_1_colorTile1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+        show LLH_1_colorTile2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+        show LLH_1_colorTile3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
         $LLH_1_BEnd1 = "On"
-        image LLH_1_colorTile67 = "B_connect_pipe_vertical.png"
-        show LLH_1_colorTile67 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
-        image LLH_1_colorTile68 = "B_connect_pipe_vertical.png"
-        show LLH_1_colorTile68 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
+        show LLH_1_colorTile5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+        show LLH_1_colorTile6 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
         $LLH_1_node1 = "Blue"
         $LLH_1_node2 = "Blue"
         $LLH_1_node3 = "Blue"
-    else: 
-        hide LLH_1_colorTile63
-        hide LLH_1_colorTile64
-        hide LLH_1_colorTile65
-        hide LLH_1_colorTile67
-        hide LLH_1_colorTile68
-        
-    if ifRin1 == True and (ifRGin4 == True or ifBGin4 == True or ifGin4 == True or ifBin4 == True):
-        image LLH_1_colorTile72 = "R_vertical_ll.png"
-        show LLH_1_colorTile72 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
-        image LLH_1_colorTile73 = "R_horizontal_ll.png"
-        show LLH_1_colorTile73 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
-        image LLH_1_colorTile74 = "R_horizontal_ll.png"
-        show LLH_1_colorTile74 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
+   
+    if ifRin1:
+        show LLH_1_colorTile10 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+        show LLH_1_colorTile11 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+        show LLH_1_colorTile12 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
         $LLH_1_node1 = "Red"
-    else: 
-        hide LLH_1_colorTile72
-        hide LLH_1_colorTile73
-        hide LLH_1_colorTile74
         
-    if ifGin1 == True and (ifRGin4 == True or ifBGin4 == True or ifRin4 == True or ifBin4 == True):
+    if ifGin1:
         image LLH_1_colorTile123 = "G_vertical_ll.png"
         show LLH_1_colorTile123 at Position(xpos = 772, xanchor = 0, ypos = 300, yanchor = 0)
         image LLH_1_colorTile124 = "G_horizontal_ll.png"
@@ -3379,13 +3473,26 @@ label gamefile_llh1:
         show LLH_1_colorTile122 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
         $LLH_1_node1 = "Green"
         $LLH_1_node2 = "Green"
-    else: 
-        hide LLH_1_colorTile122
-        hide LLH_1_colorTile123
-        hide LLH_1_colorTile124
-        hide LLH_1_colorTile125
             
-    if ifRGin4 == True:
+    if ifRGin1:
+        $LLH_1_node1 = "Brown"
+        $LLH_1_node2 = "Green"
+        show LLH_1_colorTileG5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+        show LLH_1_colorTileBr1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+        show LLH_1_colorTileBr2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+        show LLH_1_colorTileBr3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
+    if ifBGin1: 
+        $LLH_1_node1 = "Turq"
+        $LLH_1_node2 = "Turq"
+        $LLH_1_node3 = "Blue"
+        show LLH_1_colorTileT5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
+        show LLH_1_colorTile6 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
+        show LLH_1_colorTileT1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
+        show LLH_1_colorTileT2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
+        show LLH_1_colorTileT3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
+        
+############################################ GATE 4 ##############################################
+    if ifRGin4:
         image LLH_1_colorTile18 = "R_horizontal_ll.png"
         show LLH_1_colorTile18 at Position(xpos = 800, xanchor = 0, ypos = 370, yanchor = 0)
         image LLH_1_colorTile19 = "G_horizontal_ll.png"
@@ -3401,33 +3508,65 @@ label gamefile_llh1:
         image LLH_1_colorTile47 = "G_vertical_ll.png"
         show LLH_1_colorTile47 at Position(xpos = 1019, xanchor = 0, ypos = 478, yanchor = 0)
         
-        if ifRin8 == True:
+        if ifBGin7:
+            show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            
+        if ifRin7:
+            show LLH_1_colorTile55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
+            show LLH_1_colorTile56 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
+            show LLH_1_colorTile58 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            $LLH_1_node4 = "Red"
+            $LLH_1_node5 = "Red"
+            if whileRBin6:
+                show LLH_1_colorTile120 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
+                show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
+                
+        if ifGin7:
+            show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            show LLH_1_colorTile87 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0) 
+            $LLH_1_node4 = "Green"
+            if whileRBin6:
+                show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
+                show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
+                $LLH_1_GEnd2 = "On"
+                
+        if ifBGin8:
+            show LLH_1_colorTile51 at Position(xpos = 1019, xanchor = 0, ypos = 568, yanchor = 0)
+            if else1in7 or else2in7:
+                show LLH_1_colorTile55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
+                show LLH_1_colorTile56 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
+                show LLH_1_colorTile58 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+                $LLH_1_node4 = "Red"
+                $LLH_1_node5 = "Red"
+                if whileRBin6:
+                    show LLH_1_colorTile120 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
+                    show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
+            
+        if ifRin8:
             image LLH_1_colorTile48 = "R_vertical_ll.png"
             show LLH_1_colorTile48 at Position(xpos = 1072, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile49 = "R_vertical_ll.png"
             show LLH_1_colorTile49 at Position(xpos = 1045, xanchor = 0, ypos = 740, yanchor = 0)
             $LLH_1_REnd = "On"
-            if else1in7 == True or else2in7 == True or ifGin7 == True:
+            if else1in7 or else2in7:
                 image LLH_1_colorTile54 = "G_horizontal_short.png"
                 show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
                 image LLH_1_colorTile87 = "G_vertical_short.png"
                 show LLH_1_colorTile87 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0) 
                 $LLH_1_node4 = "Green"
-            else:
-                hide LLH_1_colorTile54
-                hide LLH_1_colorTile87
-        elif ifRin8 == False:
-            hide LLH_1_colorTile48
-            hide LLH_1_colorTile49
-            hide LLH_1_colorTile54
-            hide LLH_1_colorTile87
+                if whileRBin6:
+                    image LLH_1_colorTile88 = "G_vertical_short.png"
+                    show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
+                    image LLH_1_colorTile89 = "G_vertical_short.png"
+                    show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
+                    $LLH_1_GEnd2 = "On"
                 
-        if ifGin8 == True:
+        if ifGin8:
             image LLH_1_colorTile51 = "G_vertical_ll.png"
             show LLH_1_colorTile51 at Position(xpos = 1019, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile52 = "G_vertical_ll.png"
             show LLH_1_colorTile52 at Position(xpos = 1042, xanchor = 0, ypos = 740, yanchor = 0)
-            if else1in7 == True or else2in7 == True or ifRin7 == True:
+            if else1in7 or else2in7:
                 image LLH_1_colorTile55 = "R_connect_pipe.png"
                 show LLH_1_colorTile55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
                 image LLH_1_colorTile56 = "R_vertical_short.png"
@@ -3436,50 +3575,13 @@ label gamefile_llh1:
                 show LLH_1_colorTile58 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
                 $LLH_1_node4 = "Red"
                 $LLH_1_node5 = "Red"
-                if whileRBin6 == True:
+                if whileRBin6:
                     image LLH_1_colorTile120 = "R_vertical_short.png"
                     show LLH_1_colorTile120 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                     image LLH_1_colorTile121 = "R_vertical_short.png"
-                    show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
-                elif whileRBin6 == False:
-                    hide LLH_1_colorTile120
-                    hide LLH_1_colorTile121   
-            else:
-                hide LLH_1_colorTile55
-                hide LLH_1_colorTile56
-                hide LLH_1_colorTile58
-                hide LLH_1_colorTile120
-                hide LLH_1_colorTile121   
-        elif ifGin8 == False:
-            hide LLH_1_colorTile51
-            hide LLH_1_colorTile52
-            hide LLH_1_colorTile55
-            hide LLH_1_colorTile56
-            hide LLH_1_colorTile58 
-            hide LLH_1_colorTile120
-            hide LLH_1_colorTile121              
-            
-    elif ifRGin4 == False:
-        hide LLH_1_colorTile18
-        hide LLH_1_colorTile19
-        hide LLH_1_colorTile43
-        hide LLH_1_colorTile44
-        hide LLH_1_colorTile45
-        hide LLH_1_colorTile46
-        hide LLH_1_colorTile47
-        hide LLH_1_colorTile48
-        hide LLH_1_colorTile49
-        hide LLH_1_colorTile51
-        hide LLH_1_colorTile52
-        hide LLH_1_colorTile54
-        hide LLH_1_colorTile55
-        hide LLH_1_colorTile56
-        hide LLH_1_colorTile58
-        hide LLH_1_colorTile87
-        hide LLH_1_colorTile120
-        hide LLH_1_colorTile121   
+                    show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0) 
         
-    if ifBGin4 == True:
+    if ifBGin4:
         image LLH_1_colorTile20 = "G_horizontal_ll.png"
         show LLH_1_colorTile20 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)        
         image LLH_1_colorTile21 = "B_horizontal.png"
@@ -3494,44 +3596,56 @@ label gamefile_llh1:
         show LLH_1_colorTile93 at Position(xpos = 1069, xanchor = 0, ypos = 513, yanchor = 0)
         image LLH_1_colorTile94 = "B_vertical.png"
         show LLH_1_colorTile94 at Position(xpos = 1022, xanchor = 0, ypos = 478, yanchor = 0)
-        if ifGin8 == True:
+        if ifBin7:
+            image LLH_1_colorTile98 = "B_horizontal_short.png"
+            show LLH_1_colorTile98 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            image LLH_1_colorTile99 = "B_vertical_short.png"
+            show LLH_1_colorTile99 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
+            $LLH_1_node4 = "Blue"
+            if whileRBin6:
+                image LLH_1_colorTile107 = "B_vertical_short.png"
+                show LLH_1_colorTile107 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
+                image LLH_1_colorTile108 = "B_vertical_short.png"
+                show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
+        if ifGin7:
+            show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            show LLH_1_colorTile87 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0) 
+            $LLH_1_node4 = "Green"
+            $LLH_1_node5 = "Green"
+            image LLH_1_colorTileG55 = "G_connect_pipe.png"
+            show LLH_1_colorTileG55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
+            if whileRBin6:
+                show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
+                show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
+                $LLH_1_GEnd2 = "On"
+        if ifRGin7:
+            show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            $LLH_1_node4 = "Green"
+            $LLH_1_node5 = "Green"
+            show LLH_1_colorTileG55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
+        if ifGin8:
             image LLH_1_colorTile95 = "G_vertical_ll.png"
             show LLH_1_colorTile95 at Position(xpos = 1069, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile96 = "G_vertical_ll.png"
             show LLH_1_colorTile96 at Position(xpos = 1042, xanchor = 0, ypos = 740, yanchor = 0)
-            if else1in7 == True or else2in7 == True or ifBin7 == True:
+            if else1in7 or else2in7:
                 image LLH_1_colorTile98 = "B_horizontal_short.png"
                 show LLH_1_colorTile98 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
                 image LLH_1_colorTile99 = "B_vertical_short.png"
                 show LLH_1_colorTile99 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
                 $LLH_1_node4 = "Blue"
-                if whileRBin6 == True:
+                if whileRBin6:
                     image LLH_1_colorTile107 = "B_vertical_short.png"
                     show LLH_1_colorTile107 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                     image LLH_1_colorTile108 = "B_vertical_short.png"
                     show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
-                elif whileRBin6 == False:
-                    hide LLH_1_colorTile107
-                    hide LLH_1_colorTile108
-            else:
-                hide LLH_1_colorTile98
-                hide LLH_1_colorTile99
-                hide LLH_1_colorTile107
-                hide LLH_1_colorTile108
-        elif ifGin8 == False:
-            hide LLH_1_colorTile95
-            hide LLH_1_colorTile96
-            hide LLH_1_colorTile98
-            hide LLH_1_colorTile99
-            hide LLH_1_colorTile107
-            hide LLH_1_colorTile108
-                
-        if ifBin8 == True:
+            
+        if ifBin8:
             image LLH_1_colorTile100 = "B_vertical.png"
             show LLH_1_colorTile100 at Position(xpos = 1022, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile101 = "B_vertical.png"
             show LLH_1_colorTile101 at Position(xpos = 1045, xanchor = 0, ypos = 740, yanchor = 0)
-            if else1in7 == True or else2in7 == True or ifGin7 == True:
+            if else1in7 or else2in7:
                 image LLH_1_colorTile102 = "G_connect_pipe.png"
                 show LLH_1_colorTile102 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
                 image LLH_1_colorTile105 = "G_horizontal_short.png"
@@ -3540,179 +3654,142 @@ label gamefile_llh1:
                 show LLH_1_colorTile106 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0)
                 $LLH_1_node4 = "Green"
                 $LLH_1_node5 = "Green"
-            else:
-                hide LLH_1_colorTile102
-                hide LLH_1_colorTile105
-                hide LLH_1_colorTile106
-        elif ifBin8 == False:
-            hide LLH_1_colorTile100
-            hide LLH_1_colorTile101
-            hide LLH_1_colorTile102
-            hide LLH_1_colorTile105 
-            hide LLH_1_colorTile106 
+                if whileRBin6:
+                    show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
+                    show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
+                    $LLH_1_GEnd2 = "On"
+        if ifRGin8:
+            show LLH_1_colorTile95 at Position(xpos = 1069, xanchor = 0, ypos = 568, yanchor = 0)
+            if else1in7 or else2in7:
+                $LLH_1_node4 = "Blue"
+                show LLH_1_colorTile98 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+                show LLH_1_colorTile99 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
+                if whileRBin6:
+                    show LLH_1_colorTile107 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
+                    show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
+    if ifRin4:
+        show LLH_1_colorTile18 at Position(xpos = 800, xanchor = 0, ypos = 370, yanchor = 0)
+        show LLH_1_colorTile43 at Position(xpos = 975, xanchor = 0, ypos = 390, yanchor = 0)
+        show LLH_1_colorTile45 at Position(xpos = 1072, xanchor = 0, ypos = 438, yanchor = 0)
+        show LLH_1_colorTile46 at Position(xpos = 1072, xanchor = 0, ypos = 513, yanchor = 0)
+        if ifRGin7:
+            show LLH_1_colorTile55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
+            show LLH_1_colorTile58 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            $LLH_1_node4 = "Red"
+            $LLH_1_node5 = "Red"
+        if ifRGin8:
+            show LLH_1_colorTile48 at Position(xpos = 1072, xanchor = 0, ypos = 568, yanchor = 0)
             
-    elif ifBGin4 == False:
-        hide LLH_1_colorTile20
-        hide LLH_1_colorTile21
-        hide LLH_1_colorTile90
-        hide LLH_1_colorTile91
-        hide LLH_1_colorTile92
-        hide LLH_1_colorTile93
-        hide LLH_1_colorTile94
-        hide LLH_1_colorTile95
-        hide LLH_1_colorTile96
-        hide LLH_1_colorTile98
-        hide LLH_1_colorTile99
-        hide LLH_1_colorTile100
-        hide LLH_1_colorTile101
-        hide LLH_1_colorTile102
-        hide LLH_1_colorTile105 
-        hide LLH_1_colorTile106
-        hide LLH_1_colorTile107
-        hide LLH_1_colorTile108
-        
-    if ifRin4 == True:
-        image LLH_1_colorTile22 = "R_horizontal_ll.png"
-        show LLH_1_colorTile22 at Position(xpos = 800, xanchor = 0, ypos = 370, yanchor = 0)
-    elif ifRin4 == False:
-        hide LLH_1_colorTile22
-    if ifGin4 == True:
+    if ifGin4:
         image LLH_1_colorTile29 = "G_horizontal_ll.png"
         show LLH_1_colorTile29 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)
-    elif ifGin4 == False:
-        hide LLH_1_colorTile29
-    if ifBin4 == True:
+        show LLH_1_colorTile19 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)
+        show LLH_1_colorTile44 at Position(xpos = 950, xanchor = 0, ypos = 430, yanchor = 0)
+        show LLH_1_colorTile47 at Position(xpos = 1019, xanchor = 0, ypos = 478, yanchor = 0)
+        if ifRGin7 or ifBGin7:
+            show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            $LLH_1_node4 = "Green"
+        if ifRGin8 or ifBGin8:
+            show LLH_1_colorTile51 at Position(xpos = 1019, xanchor = 0, ypos = 568, yanchor = 0)
+            
+    if ifBin4:
         image LLH_1_colorTile30 = "B_horizontal.png"
         show LLH_1_colorTile30 at Position(xpos = 800, xanchor = 0, ypos = 450, yanchor = 0)
-    elif ifBin4 == False:
-        hide LLH_1_colorTile30
-        
-    if ifBGin3 == True:
+        show LLH_1_colorTile21 at Position(xpos = 800, xanchor = 0, ypos = 450, yanchor = 0)
+        show LLH_1_colorTile91 at Position(xpos = 950, xanchor = 0, ypos = 430, yanchor = 0)
+        show LLH_1_colorTile94 at Position(xpos = 1022, xanchor = 0, ypos = 478, yanchor = 0)
+        if ifBGin7:
+            show LLH_1_colorTile98 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
+            $LLH_1_node4 = "Blue"
+        if ifBGin8:
+            show LLH_1_colorTile100 at Position(xpos = 1022, xanchor = 0, ypos = 568, yanchor = 0)
+            
+            
+########################################### Gate 3 #####################################################
+    if ifBGin3:
         image LLH_1_colorTile31 = "G_horizontal_ll.png"
         show LLH_1_colorTile31 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
         image LLH_1_colorTile32 = "B_horizontal.png"
         show LLH_1_colorTile32 at Position(xpos = 525, xanchor = 0, ypos = 430, yanchor = 0)
         
-        if ifGin2 == True:
+        if ifGin2:
             image LLH_1_colorTile33 = "G_horizontal_ll.png"
             show LLH_1_colorTile33 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
             image LLH_1_colorTile34 = "G_horizontal_ll.png"
             show LLH_1_colorTile34 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
             $LLH_1_GEnd1 = "On"
-        elif ifGin2 == False:
-            hide LLH_1_colorTile33
-            hide LLH_1_colorTile34
-        if ifBin2 == True:
+        if ifBin2:
             image LLH_1_colorTile36 = "B_horizontal.png"
             show LLH_1_colorTile36 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
             image LLH_1_colorTile37 = "B_horizontal.png"
             show LLH_1_colorTile37 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
-        elif ifBin2 == False:
-            hide LLH_1_colorTile36
-            hide LLH_1_colorTile37
+        if ifRGin2:
+            show LLH_1_colorTile33 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
             
-        if ifGin5 == True:
+        if ifGin5:
             image LLH_1_colorTile38 = "G_vertical_ll.png"
             show LLH_1_colorTile38 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
             image LLH_1_colorTile39 = "G_vertical_ll.png"
             show LLH_1_colorTile39 at Position(xpos = 467, xanchor = 0, ypos = 650, yanchor = 0)
-        elif ifGin5 == False:
-            hide LLH_1_colorTile38
-            hide LLH_1_colorTile39
-        if ifBin5 == True:
+        if ifBin5:
             image LLH_1_colorTile40 = "B_vertical.png"
             show LLH_1_colorTile40 at Position(xpos = 470, xanchor = 0, ypos = 475, yanchor = 0)
             image LLH_1_colorTile41 = "B_vertical.png"
             show LLH_1_colorTile41 at Position(xpos = 470, xanchor = 0, ypos = 650, yanchor = 0)
             $LLH_1_BEnd2 = "On"
-        elif ifBin5 == False:
-            hide LLH_1_colorTile40
-            hide LLH_1_colorTile41
+        if ifRGin5:
+            show LLH_1_colorTile38 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
             
-    elif ifBGin3 == False:
-        hide LLH_1_colorTile31 
-        hide LLH_1_colorTile32
-        hide LLH_1_colorTile33
-        hide LLH_1_colorTile34
-        hide LLH_1_colorTile36
-        hide LLH_1_colorTile37
-        hide LLH_1_colorTile38
-        hide LLH_1_colorTile39
-        hide LLH_1_colorTile40
-        hide LLH_1_colorTile41
-        
-    if ifRGin3 == True:
+    if ifRGin3:
         image LLH_1_colorTile109 = "R_horizontal_ll.png"
         show LLH_1_colorTile109 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
         image LLH_1_colorTile110 = "G_horizontal_ll.png"
         show LLH_1_colorTile110 at Position(xpos = 525, xanchor = 0, ypos = 430, yanchor = 0)
         
-        if ifRin2 == True:
+        if ifRin2:
             image LLH_1_colorTile111 = "R_horizontal_ll.png"
             show LLH_1_colorTile111 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
             image LLH_1_colorTile112 = "R_horizontal_ll.png"
             show LLH_1_colorTile112 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
-        elif ifRin2 == False:
-            hide LLH_1_colorTile111
-            hide LLH_1_colorTile112
-        if ifGin2 == True:
-            image LLH_1_colorTile113 = "G_horizontal_ll.png"
-            show LLH_1_colorTile113 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
-            image LLH_1_colorTile114 = "G_horizontal_ll.png"
-            show LLH_1_colorTile114 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
+        if ifGin2:
+            show LLH_1_colorTile33 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
+            show LLH_1_colorTile34 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
             $LLH_1_GEnd1 = "On"
-        elif ifGin2 == False:
-            hide LLH_1_colorTile113
-            hide LLH_1_colorTile114
+        if ifBGin2:
+            show LLH_1_colorTile33 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
             
-        if ifRin5 == True:
+        if ifRin5:
             image LLH_1_colorTile116 = "R_vertical_ll.png"
             show LLH_1_colorTile116 at Position(xpos = 470, xanchor = 0, ypos = 475, yanchor = 0)
             image LLH_1_colorTile117 = "R_vertical_ll.png"
             show LLH_1_colorTile117 at Position(xpos = 470, xanchor = 0, ypos = 650, yanchor = 0)
-        elif ifRin5 == False:
-            hide LLH_1_colorTile116
-            hide LLH_1_colorTile117
-        if ifGin5 == True:
-            image LLH_1_colorTile118 = "G_vertical_ll.png"
-            show LLH_1_colorTile118 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
-            image LLH_1_colorTile119 = "G_vertical_ll.png"
-            show LLH_1_colorTile119 at Position(xpos = 467, xanchor = 0, ypos = 650, yanchor = 0)
-        elif ifGin5 == False:
-            hide LLH_1_colorTile118
-            hide LLH_1_colorTile119
+        if ifGin5:
+            show LLH_1_colorTile38 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
+            show LLH_1_colorTile39 at Position(xpos = 467, xanchor = 0, ypos = 650, yanchor = 0)
+        if ifBGin5:
+            show LLH_1_colorTile38 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
             
-    elif ifBGin3 == False:
-        hide LLH_1_colorTile109
-        hide LLH_1_colorTile110
-        hide LLH_1_colorTile111
-        hide LLH_1_colorTile112
-        hide LLH_1_colorTile113
-        hide LLH_1_colorTile114
-        hide LLH_1_colorTile116
-        hide LLH_1_colorTile117
-        hide LLH_1_colorTile118
-        hide LLH_1_colorTile119
-      
-    if ifRin3 == True:
-        image LLH_1_colorTile130 = "R_horizontal_ll.png"
-        show LLH_1_colorTile130 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
-    else:
-        hide LLH_1_colorTile130
-        
-    if ifGin3 == True:
-        image LLH_1_colorTile131 = "G_horizontal_ll.png"
-        show LLH_1_colorTile131 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
-    else:
-        hide LLH_1_colorTile131
-        
-    if ifBin3 == True:
+    if ifRin3:
+        show LLH_1_colorTile109 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
+        if ifRGin2:
+            show LLH_1_colorTile111 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
+        if ifRGin5:
+            show LLH_1_colorTile116 at Position(xpos = 470, xanchor = 0, ypos = 475, yanchor = 0)
+    if ifGin3:
+        show LLH_1_colorTile31 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
+        if ifRGin2 or ifBGin2:
+            show LLH_1_colorTile33 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
+        if ifRGin5 or ifBGin5:
+            show LLH_1_colorTile38 at Position(xpos = 467, xanchor = 0, ypos = 475, yanchor = 0)
+    if ifBin3:
         image LLH_1_colorTile132 = "B_horizontal.png"
         show LLH_1_colorTile132 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
-    else:
-        hide LLH_1_colorTile132
-        
-    if whileRBin6 == True:
+        if ifBGin2:
+            show LLH_1_colorTile36 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
+        if ifBGin5:
+            show LLH_1_colorTile40 at Position(xpos = 470, xanchor = 0, ypos = 475, yanchor = 0)
+            
+    if whileRBin6:
         image LLH_1_colorTile59 = "B_vertical.png"
         show LLH_1_colorTile59 at Position(xpos = 620, xanchor = 0, ypos = 475, yanchor = 0)
         image LLH_1_colorTile60 = "R_vertical_ll.png"
@@ -3740,69 +3817,84 @@ label gamefile_llh1:
         $LLH_1_RWhileNode = "On"
         $LLH_1_BWhileNode = "On"
 
-    elif whileRBin6 == False: 
-        hide LLH_1_colorTile59
-        hide LLH_1_colorTile60
-        hide LLH_1_colorTile77
-        hide LLH_1_colorTile78
-        hide LLH_1_colorTile79 
-        hide LLH_1_colorTile80 
-        hide LLH_1_colorTile81 
-        hide LLH_1_colorTile82 
-        hide LLH_1_colorTile83 
-        hide LLH_1_colorTile84 
-        hide LLH_1_colorTile85 
-        hide LLH_1_colorTile86 
-        
-    if ifRin6 == True:
+    if ifRin6:
         image LLH_1_colorTile115 = "R_vertical_ll.png"
         show LLH_1_colorTile115 at Position(xpos = 620, xanchor = 0, ypos = 475, yanchor = 0)
-    else:
-        hide LLH_1_colorTile115
         
-    if ifGin6 == True:
+    if ifGin6:
         image LLH_1_colorTile35 = "G_vertical_ll.png"
         show LLH_1_colorTile35 at Position(xpos = 617, xanchor = 0, ypos = 475, yanchor = 0)
-    else:
-        hide LLH_1_colorTile35
         
-    if ifBin6 == True:
+    if ifBin6:
         image LLH_1_colorTile97 = "B_vertical.png"
         show LLH_1_colorTile97 at Position(xpos = 620, xanchor = 0, ypos = 475, yanchor = 0)
-    else:
-        hide LLH_1_colorTile97
         
-    if ifRGin6 == True:
+    if ifRGin6:
         image LLH_1_colorTile126 = "R_vertical_ll.png"
         show LLH_1_colorTile126 at Position(xpos = 620, xanchor = 0, ypos = 475, yanchor = 0)
         image LLH_1_colorTile127 = "G_vertical_ll.png"
-        show LLH_1_colorTile127 at Position(xpos = 657, xanchor = 0, ypos = 475, yanchor = 0)
-    else:
-        hide LLH_1_colorTile126
-        hide LLH_1_colorTile127     
+        show LLH_1_colorTile127 at Position(xpos = 657, xanchor = 0, ypos = 475, yanchor = 0)  
         
-    if ifBGin6 == True:
+    if ifBGin6:
         image LLH_1_colorTile128 = "G_vertical_ll.png"
         show LLH_1_colorTile128 at Position(xpos = 617, xanchor = 0, ypos = 475, yanchor = 0)
         image LLH_1_colorTile129 = "B_vertical.png"
         show LLH_1_colorTile129 at Position(xpos = 660, xanchor = 0, ypos = 475, yanchor = 0)
-    else:
-        hide LLH_1_colorTile128
-        hide LLH_1_colorTile129 
-        
-    if (whileRBin6 == True and 
-            ((ifRGin4 == True and (else1in7 == True or else2in7 == True or ifGin7 == True) and ifRin8 == True) or
-            (ifBGin4 == True and ifBin8 == True and (else1in7 == True or else2in7 == True or ifGin7 ==True)))):
-        image LLH_1_colorTile88 = "G_vertical_short.png"
-        show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
-        image LLH_1_colorTile89 = "G_vertical_short.png"
-        show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
-        $LLH_1_GEnd2 = "On"
-    else:
-        hide LLH_1_colorTile88
-        hide LLH_1_colorTile89
         
         
+######################################################## SOUNDS HERE ################################
+    if whileRBin6:
+        if charge1_sound1 ==0:
+            play soundP08 llCharge
+            $charge1_sound1 +=1
+    if not(whileRBin6):
+        if charge1_sound1 ==1:
+            $charge1_sound1 -=1
+            
+    if ((ifRGin3 or ifBGin3)and ifGin2):
+        if light1Sound ==0:
+            queue soundP01 llLightOn3
+            $light1Sound +=1
+    if(not((ifRGin3 or ifBGin3)and ifGin2)):
+        if light1Sound ==1:
+            queue soundP01 llLightOff3
+            $light1Sound -=1
+            
+    if (ifBGin3 and ifBin5):
+        if light2Sound ==0:
+            queue soundP02 llLightOn2
+            $light2Sound +=1
+    if(not(ifBGin3 and ifBin5)):
+        if light2Sound ==1:
+            queue soundP02 llLightOff2
+            $light2Sound -=1
+            
+    if (whileRBin6 and ((ifRGin4 and (ifGin7 or (ifRin8 and (else1in7 or else2in7)))) or (ifBGin4 and (ifGin7 or (ifBin8 and (else1in7 or else2in7)))))):
+        if light3Sound ==0:
+            queue soundP03 llLightOn3
+            $light3Sound +=1
+    if(not(whileRBin6 and ((ifRGin4 and (ifGin7 or (ifRin8 and (else1in7 or else2in7)))) or (ifBGin4 and (ifGin7 or (ifBin8 and (else1in7 or else2in7))))))):
+        if light3Sound ==1:
+            queue soundP03 llLightOff3
+            $light3Sound -=1
+            
+    if (ifRGin4 and ifRin8):
+        if light4Sound ==0:
+            queue soundP04 llLightOn1
+            $light4Sound +=1
+    if(not(ifRGin4 and ifRin8)):
+        if light4Sound ==1:
+            queue soundP04 llLightOff1
+            $light4Sound -=1
+            
+    if (ifBin1 or (ifRGin4 and (else1in1 or else2in1))):
+        if light5Sound ==0:
+            queue soundP05 llLightOn2
+            $light5Sound +=1
+    if(not(ifBin1 or (ifRGin4 and (else1in1 or else2in1)))):
+        if light5Sound ==1:
+            queue soundP05 llLightOff2
+            $light5Sound -=1
     #Redraw Connect Nodes *********************************************************************
     hide LLH_1_WNode1
     hide LLH_1_WNode2
@@ -3824,6 +3916,21 @@ label gamefile_llh1:
     hide LLH_1_BNode3
     hide LLH_1_BNode4
     hide LLH_1_BNode5
+    hide LLH_1_BrNode1
+    hide LLH_1_BrNode2
+    hide LLH_1_BrNode3
+    hide LLH_1_BrNode4
+    hide LLH_1_BrNode5
+    hide LLH_1_PNode1
+    hide LLH_1_PNode2
+    hide LLH_1_PNode3
+    hide LLH_1_PNode4
+    hide LLH_1_PNode5
+    hide LLH_1_TNode1
+    hide LLH_1_TNode2
+    hide LLH_1_TNode3
+    hide LLH_1_TNode4
+    hide LLH_1_TNode5
     
     image LLH_1_WNode1 = "W_connect_node.png"
     image LLH_1_WNode2 = "W_connect_node.png"
@@ -3845,7 +3952,21 @@ label gamefile_llh1:
     image LLH_1_BNode3 = "B_connect_node.png"
     image LLH_1_BNode4 = "B_connect_node.png"
     image LLH_1_BNode5 = "B_connect_node.png"
-    
+    image LLH_1_BrNode1 = "Br_connect_node.png"
+    image LLH_1_BrNode2 = "Br_connect_node.png"
+    image LLH_1_BrNode3 = "Br_connect_node.png"
+    image LLH_1_BrNode4 = "Br_connect_node.png"
+    image LLH_1_BrNode5 = "Br_connect_node.png"
+    image LLH_1_PNode1 = "P_connect_node.png"
+    image LLH_1_PNode2 = "P_connect_node.png"
+    image LLH_1_PNode3 = "P_connect_node.png"
+    image LLH_1_PNode4 = "P_connect_node.png"
+    image LLH_1_PNode5 = "P_connect_node.png"
+    image LLH_1_TNode1 = "T_connect_node.png"
+    image LLH_1_TNode2 = "T_connect_node.png"
+    image LLH_1_TNode3 = "T_connect_node.png"
+    image LLH_1_TNode4 = "T_connect_node.png"
+    image LLH_1_TNode5 = "T_connect_node.png"
     if LLH_1_node1 == "None":
         show LLH_1_WNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
     elif LLH_1_node1 == "Red":
@@ -3854,6 +3975,12 @@ label gamefile_llh1:
         show LLH_1_GNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
     elif LLH_1_node1 == "Blue":
         show LLH_1_BNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
+    elif LLH_1_node1 == "Purp":
+        show LLH_1_PNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
+    elif LLH_1_node1 == "Turq":
+        show LLH_1_TNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
+    elif LLH_1_node1 == "Brown":
+        show LLH_1_BrNode1 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0) 
         
     if LLH_1_node2 == "None":
         show LLH_1_WNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0) 
@@ -3863,6 +3990,12 @@ label gamefile_llh1:
         show LLH_1_GNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0) 
     elif LLH_1_node2 == "Blue":
         show LLH_1_BNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0) 
+    elif LLH_1_node2 == "Purp":
+        show LLH_1_PNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0) 
+    elif LLH_1_node2 == "Turq":
+        show LLH_1_TNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0) 
+    elif LLH_1_node2 == "Brown":
+        show LLH_1_BrNode2 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0)
         
     if LLH_1_node3 == "None":
         show LLH_1_WNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0) 
@@ -3871,7 +4004,13 @@ label gamefile_llh1:
     elif LLH_1_node3 == "Green":
         show LLH_1_GNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0) 
     elif LLH_1_node3 == "Blue":
-        show LLH_1_BNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0) 
+        show LLH_1_BNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0)
+    elif LLH_1_node3 == "Purp":
+        show LLH_1_PNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0) 
+    elif LLH_1_node3 == "Turq":
+        show LLH_1_TNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0) 
+    elif LLH_1_node3 == "Brown":
+        show LLH_1_BrNode3 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0)
         
     if LLH_1_node4 == "None":
         show LLH_1_WNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
@@ -3881,6 +4020,12 @@ label gamefile_llh1:
         show LLH_1_GNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
     elif LLH_1_node4 == "Blue":
         show LLH_1_BNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node4 == "Purp":
+        show LLH_1_PNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node4 == "Turq":
+        show LLH_1_TNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node4 == "Brown":
+        show LLH_1_BrNode4 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0) 
         
     if LLH_1_node5 == "None":
         show LLH_1_WNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
@@ -3890,6 +4035,12 @@ label gamefile_llh1:
         show LLH_1_GNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
     elif LLH_1_node5 == "Blue":
         show LLH_1_BNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node5 == "Purp":
+        show LLH_1_PNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node5 == "Turq":
+        show LLH_1_TNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
+    elif LLH_1_node5 == "Brown":
+        show LLH_1_BrNode5 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0) 
     
     #Redraw Ends *******************************************************************************
     hide LLH_1_BlueEnd1_Off
@@ -4014,189 +4165,22 @@ label gamefile_llh1:
         image LLH_1_whileRBBorder = "placeholder3.png"
         show LLH_1_whileRBBorder at Position(xpos = 1435, xanchor = 0, ypos = 490, yanchor = 0)
         
-        "You Win!"
-        jump loopLogic_hard1
+        queue sound llWin
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_llHardWin
+        jump llHardWin
 
 #lose conditions ********
     if attempts == 0:
-        hide LLH_1_colorTile1
-        hide LLH_1_colorTile2
-        hide LLH_1_colorTile3
-        hide LLH_1_colorTile4
-        hide LLH_1_colorTile5
-        hide LLH_1_colorTile6
-        hide LLH_1_colorTile7
-        hide LLH_1_colorTile8
-        hide LLH_1_colorTile9
-        hide LLH_1_colorTile10
-        hide LLH_1_colorTile11
-        hide LLH_1_colorTile12
-        hide LLH_1_colorTile13
-        hide LLH_1_colorTile14
-        hide LLH_1_colorTile15
-        hide LLH_1_colorTile16
-        hide LLH_1_colorTile17
-        hide LLH_1_colorTile18
-        hide LLH_1_colorTile19
-        hide LLH_1_colorTile20
-        hide LLH_1_colorTile21
-        hide LLH_1_colorTile22
-        hide LLH_1_colorTile23
-        hide LLH_1_colorTile24
-        hide LLH_1_colorTile25
-        hide LLH_1_colorTile26
-        hide LLH_1_colorTile27
-        hide LLH_1_colorTile28
-        hide LLH_1_colorTile29
-        hide LLH_1_colorTile30
-        hide LLH_1_colorTile31
-        hide LLH_1_colorTile32
-        hide LLH_1_colorTile33
-        hide LLH_1_colorTile34
-        hide LLH_1_colorTile35
-        hide LLH_1_colorTile36
-        hide LLH_1_colorTile37
-        hide LLH_1_colorTile38
-        hide LLH_1_colorTile39
-        hide LLH_1_colorTile40
-        hide LLH_1_colorTile41
-        hide LLH_1_colorTile42
-        hide LLH_1_colorTile43
-        hide LLH_1_colorTile44
-        hide LLH_1_colorTile45
-        hide LLH_1_colorTile46
-        hide LLH_1_colorTile47
-        hide LLH_1_colorTile48
-        hide LLH_1_colorTile49
-        hide LLH_1_colorTile50
-        hide LLH_1_colorTile51
-        hide LLH_1_colorTile52
-        hide LLH_1_colorTile53
-        hide LLH_1_colorTile54
-        hide LLH_1_colorTile55
-        hide LLH_1_colorTile56
-        hide LLH_1_colorTile57
-        hide LLH_1_colorTile58
-        hide LLH_1_colorTile59
-        hide LLH_1_colorTile60
-        hide LLH_1_colorTile61
-        hide LLH_1_colorTile62
-        hide LLH_1_colorTile63
-        hide LLH_1_colorTile64
-        hide LLH_1_colorTile65
-        hide LLH_1_colorTile66
-        hide LLH_1_colorTile67
-        hide LLH_1_colorTile68
-        hide LLH_1_colorTile69
-        hide LLH_1_colorTile70
-        hide LLH_1_colorTile71
-        hide LLH_1_colorTile72
-        hide LLH_1_colorTile73
-        hide LLH_1_colorTile74
-        hide LLH_1_colorTile75
-        hide LLH_1_colorTile76
-        hide LLH_1_colorTile77
-        hide LLH_1_colorTile78
-        hide LLH_1_colorTile79
-        hide LLH_1_colorTile80
-        hide LLH_1_colorTile81
-        hide LLH_1_colorTile82
-        hide LLH_1_colorTile83
-        hide LLH_1_colorTile84
-        hide LLH_1_colorTile85
-        hide LLH_1_colorTile86
-        hide LLH_1_colorTile87
-        hide LLH_1_colorTile88
-        hide LLH_1_colorTile89
-        hide LLH_1_colorTile90
-        hide LLH_1_colorTile91
-        hide LLH_1_colorTile92
-        hide LLH_1_colorTile93
-        hide LLH_1_colorTile94
-        hide LLH_1_colorTile95
-        hide LLH_1_colorTile96
-        hide LLH_1_colorTile97
-        hide LLH_1_colorTile98
-        hide LLH_1_colorTile99
-        hide LLH_1_colorTile100
-        hide LLH_1_colorTile101
-        hide LLH_1_colorTile102
-        hide LLH_1_colorTile103 
-        hide LLH_1_colorTile104
-        hide LLH_1_colorTile105 
-        hide LLH_1_colorTile106
-        hide LLH_1_colorTile107
-        hide LLH_1_colorTile108
-        hide LLH_1_colorTile109
-        hide LLH_1_colorTile110
-        hide LLH_1_colorTile111 
-        hide LLH_1_colorTile112
-        hide LLH_1_colorTile113
-        hide LLH_1_colorTile114
-        hide LLH_1_colorTile115
-        hide LLH_1_colorTile116 
-        hide LLH_1_colorTile117
-        hide LLH_1_colorTile118
-        hide LLH_1_colorTile119
-        hide LLH_1_colorTile120
-        hide LLH_1_colorTile121
-        hide LLH_1_colorTile122
-        hide LLH_1_colorTile123
-        hide LLH_1_colorTile124
-        hide LLH_1_colorTile125
-        hide LLH_1_colorTile126
-        hide LLH_1_colorTile127
-        hide LLH_1_colorTile128
-        hide LLH_1_colorTile129
-        hide LLH_1_colorTile130
-        hide LLH_1_colorTile131
-        hide LLH_1_colorTile132
-
-        hide LLH_1_WNode1
-        hide LLH_1_WNode2
-        hide LLH_1_WNode3
-        hide LLH_1_WNode4
-        hide LLH_1_WNode5
-        hide LLH_1_RNode1
-        hide LLH_1_RNode2
-        hide LLH_1_RNode3
-        hide LLH_1_RNode4
-        hide LLH_1_RNode5
-        hide LLH_1_GNode1
-        hide LLH_1_GNode2
-        hide LLH_1_GNode3
-        hide LLH_1_GNode4
-        hide LLH_1_GNode5
-        hide LLH_1_BNode1
-        hide LLH_1_BNode2
-        hide LLH_1_BNode3
-        hide LLH_1_BNode4
-        hide LLH_1_BNode5
-    
-        hide LLH_1_BlueEnd1_Off
-        hide LLH_1_BlueEnd2_Off
-        hide LLH_1_GreenEnd1_Off
-        hide LLH_1_GreenEnd2_Off
-        hide LLH_1_RedEnd_Off
-        hide LLH_1_BlueEnd1_On
-        hide LLH_1_BlueEnd2_On
-        hide LLH_1_GreenEnd1_On
-        hide LLH_1_GreenEnd2_On
-        hide LLH_1_RedEnd_On
-
-        hide LLH_1_Red_While_Node_Off
-        hide LLH_1_Red_While_Node_On
-        hide LLH_1_Blue_While_Node_Off
-        hide LLH_1_Blue_While_Node_On
-    
-        show LLH_1_ifR at Position(xpos = gate8x, xanchor = 0, ypos = gate8y, yanchor = 0)
-        show LLH_1_ifG at Position(xpos = gate2x, xanchor = 0, ypos = gate2y, yanchor = 0)
-        show LLH_1_ifB at Position(xpos = gate5x, xanchor = 0, ypos = gate5y, yanchor = 0)
-        show LLH_1_ifRG at Position(xpos = gate4x, xanchor = 0, ypos = gate4y, yanchor = 0)
-        show LLH_1_ifBG at Position(xpos = gate3x, xanchor = 0, ypos = gate3y, yanchor = 0)
-        show LLH_1_else1 at Position(xpos = gate1x, xanchor = 0, ypos = gate1y, yanchor = 0)
-        show LLH_1_else2 at Position(xpos = gate7x, xanchor = 0, ypos = gate7y, yanchor = 0)
-        show LLH_1_whileRB at Position(xpos = gate6x, xanchor = 0, ypos = gate6y, yanchor = 0)
+        show LLH_1_ifR at Position(xpos = ifRx, xanchor = 0, ypos = ifRy, yanchor = 0)
+        show LLH_1_ifG at Position(xpos = ifGx, xanchor = 0, ypos = ifGy, yanchor = 0)
+        show LLH_1_ifB at Position(xpos = ifBx, xanchor = 0, ypos = ifBy, yanchor = 0)
+        show LLH_1_ifRG at Position(xpos = ifRGx, xanchor = 0, ypos = ifRGy, yanchor = 0)
+        show LLH_1_ifBG at Position(xpos = ifBGx, xanchor = 0, ypos = ifBGy, yanchor = 0)
+        show LLH_1_else1 at Position(xpos = else1x, xanchor = 0, ypos = else1y, yanchor = 0)
+        show LLH_1_else2 at Position(xpos = else2x, xanchor = 0, ypos = else2y, yanchor = 0)
+        show LLH_1_whileRB at Position(xpos = whileRBx, xanchor = 0, ypos = whileRBy, yanchor = 0)
         
         show LLH_1_ifRBorder at Position(xpos = 1385, xanchor = 0, ypos = 635, yanchor = 0)
         show LLH_1_ifGBorder at Position(xpos = 1515, xanchor = 0, ypos = 635, yanchor = 0)
@@ -4206,13 +4190,41 @@ label gamefile_llh1:
         show LLH_1_elseBorder at Position(xpos = 1575, xanchor = 0, ypos = 490, yanchor = 0)
         show LLH_1_whileRBBorder at Position(xpos = 1435, xanchor = 0, ypos = 490, yanchor = 0)
         
-        "You lose. Try again!"
-        jump loopLogic_hard1
+        queue sound llLose
+        $renpy.pause(1.5)
+        $llHard_attempts +=1
+        if(puzzleGallery):
+            jump pg_llHardLose1
+        jump llHardLose
     
     jump gamefile_llh1
 
 screen loopLogicHard_1Scr:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "button_empty2.png"
+        xpos 1463
+        ypos 295
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 1545
+        ypos 220
+        focus_mask True
+        action Jump("hints_llHard_1")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    text "Moves" xpos 1480 ypos 315 color "#0060db" font "United Kingdom DEMO.otf" size 25
+    text ": " xpos 1605 ypos 304 color "#0060db" font "Bitter-Bold.otf" size 38
+    text "[attempts]" xpos 1640 ypos 313 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
 

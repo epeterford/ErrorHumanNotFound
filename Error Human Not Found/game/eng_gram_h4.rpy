@@ -487,7 +487,7 @@ label eng_gram_h4:
     #attempts for players
     $ attempts = 15
     
-    call gamefile_h4
+    call gamefile_h4 from _call_gamefile_h4
 
 label gamefile_h4:
     #image moon = "images/blankgram_h4_tile.png"
@@ -8397,11 +8397,11 @@ label gamefile_h4:
             image gram_h4_tile63 = "1_1_green.png"
             show gram_h4_tile62 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile63 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_h4_tile64 = "solutionLine.png"
-            image gram_h4_tile65 = "solutionLine.png"
+            image gram_h4_tile64 = "solutionLine_grey.png"
+            image gram_h4_tile65 = "solutionLine_grey.png"
             show gram_h4_tile64 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
             show gram_h4_tile65 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
-            image gram_h4_tile66 = "solutionLine.png"
+            image gram_h4_tile66 = "solutionLine_grey.png"
             image gram_h4_tile67 = "epsilon.png"
             show gram_h4_tile66 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h4_tile67 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
@@ -8434,7 +8434,7 @@ label gamefile_h4:
             if (letterA4in9 or letterA6in9 or letterA8in9 or letterA10in9) and (letterT5in10 or letterT9in10 or letterT11in10) and ((letterA4in11 or letterA6in11 or letterA8in11 or letterA10in11)):
                image gram_h4_tile76 = "leftTreegreenlong.png"
                image gram_h4_tile77 = "1_1_green.png"
-               image gram_h4_tile78 = "solutionLine.png"
+               image gram_h4_tile78 = "solutionLine_grey.png"
                image gram_h4_tile79 = "epsilon.png"
                show gram_h4_tile76 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
                show gram_h4_tile77 at Position(xpos = 1100, xanchor = 0, ypos = 675, yanchor = 0)
@@ -8452,7 +8452,7 @@ label gamefile_h4:
                image gram_h4_tile85 = "1_1_green.png"
                show gram_h4_tile84 at Position(xpos = 1310, xanchor = 0, ypos = 600, yanchor = 0)
                show gram_h4_tile85 at Position(xpos = 1400, xanchor = 0, ypos = 675, yanchor = 0)
-               image gram_h4_tile86 = "solutionLine.png"
+               image gram_h4_tile86 = "solutionLine_grey.png"
                image gram_h4_tile87 = "epsilon.png"
                show gram_h4_tile86 at Position(xpos = 1400, xanchor = 0, ypos = 770, yanchor = 0)
                show gram_h4_tile87 at Position(xpos = 1355, xanchor = 0, ypos = 800, yanchor = 0)
@@ -8491,11 +8491,11 @@ label gamefile_h4:
             image gram_h4_tile101 = "1_1_green.png"
             show gram_h4_tile100 at Position(xpos = 1040, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile101 at Position(xpos = 1000, xanchor = 0, ypos = 500, yanchor = 0)
-            image gram_h4_tile102 = "solutionLine.png"
-            image gram_h4_tile103 = "solutionLine.png"
+            image gram_h4_tile102 = "solutionLine_grey.png"
+            image gram_h4_tile103 = "solutionLine_grey.png"
             show gram_h4_tile102 at Position(xpos = 980, xanchor = 0, ypos = 600, yanchor = 0)
             show gram_h4_tile103 at Position(xpos = 980, xanchor = 0, ypos = 692, yanchor = 0)
-            image gram_h4_tile104 = "solutionLine.png"
+            image gram_h4_tile104 = "solutionLine_grey.png"
             image gram_h4_tile105 = "epsilon.png"
             show gram_h4_tile104 at Position(xpos = 980, xanchor = 0, ypos = 785, yanchor = 0)
             show gram_h4_tile105 at Position(xpos = 900, xanchor = 0, ypos = 800, yanchor = 0)
@@ -8511,9 +8511,9 @@ label gamefile_h4:
             show gram_h4_tile108 at Position(xpos = 1310, xanchor = 0, ypos = 425, yanchor = 0)
             show gram_h4_tile109 at Position(xpos = 1500, xanchor = 0, ypos = 500, yanchor = 0)
 
-            image gram_h4_tile110 = "solutionLine.png"
-            image gram_h4_tile111 = "solutionLine.png"
-            image gram_h4_tile112 = "solutionLine.png"
+            image gram_h4_tile110 = "solutionLine_grey.png"
+            image gram_h4_tile111 = "solutionLine_grey.png"
+            image gram_h4_tile112 = "solutionLine_grey.png"
             image gram_h4_tile113 = "epsilon.png"
 
             show gram_h4_tile110 at Position(xpos = 1500, xanchor = 0, ypos = 600, yanchor = 0)
@@ -8529,7 +8529,7 @@ label gamefile_h4:
                #image gram_h4_tile50 = "leftTreegreen.png"
                image gram_h4_tile88 = "leftTreegreenlong.png"
                image gram_h4_tile89 = "1_1_green.png"
-               image gram_h4_tile90 = "solutionLine.png"
+               image gram_h4_tile90 = "solutionLine_grey.png"
                image gram_h4_tile91 = "epsilon.png"
                #show gram_h4_tile50 at Position(xpos = 960, xanchor = 0, ypos = 575, yanchor = 0)
                show gram_h4_tile88 at Position(xpos = 1140, xanchor = 0, ypos = 600, yanchor = 0)
@@ -8680,7 +8680,9 @@ label gamefile_h4:
         show gram_h4_tile410 at Position(xpos = letterA10x, xanchor = 0, ypos = letterA10y, yanchor = 0)
         show gram_h4_tile411 at Position(xpos = letterT11x, xanchor = 0, ypos = letterT11y, yanchor = 0)
         queue sound gramWin
-        $renpy.pause(0.7)
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_gramHardWin
         $gramHard_solved = True
         jump gramHard_win
 
@@ -8697,7 +8699,10 @@ label gamefile_h4:
         show gram_h4_tile410 at Position(xpos = letterA10x, xanchor = 0, ypos = letterA10y, yanchor = 0)
         show gram_h4_tile411 at Position(xpos = letterT11x, xanchor = 0, ypos = letterT11y, yanchor = 0)
         queue sound gramLose
-        $renpy.pause(0.8)
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 4
+            jump pg_gramHardLose
         hide gram_h4_tile42
         hide gram_h4_tile43
         hide gram_h4_tile44

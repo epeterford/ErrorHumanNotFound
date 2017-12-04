@@ -157,10 +157,15 @@ label gamefileA1:
 #*******************************************
 #************image zone*********************
 #*******************************************
-
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
 #first slot for and 1
     if and1in1 == True:
-        play sound pipeFlowG
         image eatile39 = "g_horizontal.png"
         image eatile40 = "g_horizontal.png"
         image eatile41 = "g_horizontal.png"
@@ -178,8 +183,10 @@ label gamefileA1:
     if and1in1 == True: 
         image eatile100 = "AND_Gate.png"
         show eatile100 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
-        play sound lgWin
+        queue sound lgWin
         $ renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgEasyAWin
         $ Logic_A_solved = True
         jump nextLGEasy
     

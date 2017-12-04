@@ -11,103 +11,103 @@ label logicGate_easyA2:  #logicGate_easyA2
     #the first set of values declares images for the show call
     #the second set show the image at a certain positon
     #row 1
-    image ea1tile1 = "g_horizontal.png"
-    image ea1tile2 = "g_horizontal.png"
-    image ea1tile3 = "g_horizontal.png"
-    image ea1tile4 = "g_horizontal.png"
-    image ea1tile5 = "g_elbow_bl.png"
+    image ea2tile1 = "g_horizontal.png"
+    image ea2tile2 = "g_horizontal.png"
+    image ea2tile3 = "g_horizontal.png"
+    image ea2tile4 = "g_horizontal.png"
+    image ea2tile5 = "g_elbow_bl.png"
     
-    show ea1tile1 at Position(xpos = 436, xanchor = 0, ypos = 308, yanchor = 0)
-    show ea1tile2 at Position(xpos = 511, xanchor = 0, ypos = 308, yanchor = 0)
-    show ea1tile3 at Position(xpos = 586, xanchor = 0, ypos = 308, yanchor = 0)
-    show ea1tile4 at Position(xpos = 661, xanchor = 0, ypos = 308, yanchor = 0)
-    show ea1tile5 at Position(xpos = 736, xanchor = 0, ypos = 308, yanchor = 0)
+    show ea2tile1 at Position(xpos = 436, xanchor = 0, ypos = 308, yanchor = 0)
+    show ea2tile2 at Position(xpos = 511, xanchor = 0, ypos = 308, yanchor = 0)
+    show ea2tile3 at Position(xpos = 586, xanchor = 0, ypos = 308, yanchor = 0)
+    show ea2tile4 at Position(xpos = 661, xanchor = 0, ypos = 308, yanchor = 0)
+    show ea2tile5 at Position(xpos = 736, xanchor = 0, ypos = 308, yanchor = 0)
 
     #row 2
-    image ea1tile6 = "g_g.png"
-    image ea1tile7 = "AND_Gate_blue.png"
-    image ea1tile8 = "g_horizontal.png"
-    image ea1tile9 = "g_horizontal.png"
-    image ea1tile10 = "g_elbow_bl.png"
+    image ea2tile6 = "g_g.png"
+    image ea2tile7 = "AND_Gate_blue.png"
+    image ea2tile8 = "g_horizontal.png"
+    image ea2tile9 = "g_horizontal.png"
+    image ea2tile10 = "g_elbow_bl.png"
 
-    show ea1tile6 at Position(xpos = 736, xanchor = 0, ypos = 383, yanchor = 0)
-    show ea1tile7 at Position(xpos = 811, xanchor = 0, ypos = 383, yanchor = 0)
-    show ea1tile8 at Position(xpos = 886, xanchor = 0, ypos = 383, yanchor = 0)
-    show ea1tile9 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
-    show ea1tile10 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
+    show ea2tile6 at Position(xpos = 736, xanchor = 0, ypos = 383, yanchor = 0)
+    show ea2tile7 at Position(xpos = 811, xanchor = 0, ypos = 383, yanchor = 0)
+    show ea2tile8 at Position(xpos = 886, xanchor = 0, ypos = 383, yanchor = 0)
+    show ea2tile9 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
+    show ea2tile10 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
  
     #row 3
-    image ea1tile11 = "g_horizontal.png"
-    image ea1tile12 = "g_horizontal.png"
-    image ea1tile13 = "g_t_down.png"
-    image ea1tile14 = "g_horizontal.png"
+    image ea2tile11 = "g_horizontal.png"
+    image ea2tile12 = "g_horizontal.png"
+    image ea2tile13 = "g_t_down.png"
+    image ea2tile14 = "g_horizontal.png"
    
     image eahelpme = "g_elbow_tl.png"
-    image ea1tile16 = "g_vertical.png"
+    image ea2tile16 = "g_vertical.png"
     
-    show ea1tile11 at Position(xpos = 436, xanchor = 0, ypos = 458, yanchor = 0)
-    show ea1tile12 at Position(xpos = 511, xanchor = 0, ypos = 458, yanchor = 0)
-    show ea1tile13 at Position(xpos = 586, xanchor = 0, ypos = 458, yanchor = 0)
-    show ea1tile14 at Position(xpos = 661, xanchor = 0, ypos = 458, yanchor = 0)
+    show ea2tile11 at Position(xpos = 436, xanchor = 0, ypos = 458, yanchor = 0)
+    show ea2tile12 at Position(xpos = 511, xanchor = 0, ypos = 458, yanchor = 0)
+    show ea2tile13 at Position(xpos = 586, xanchor = 0, ypos = 458, yanchor = 0)
+    show ea2tile14 at Position(xpos = 661, xanchor = 0, ypos = 458, yanchor = 0)
     show eahelpme at Position(xpos = 736, xanchor = 0, ypos = 458, yanchor = 0)
-    show ea1tile16 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
+    show ea2tile16 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
     
     #row 4
-    image ea1tile17 = "g_vertical.png"
-    image ea1tile18 = "g_vertical.png"
+    image ea2tile17 = "g_vertical.png"
+    image ea2tile18 = "g_vertical.png"
     
-    show ea1tile17 at Position(xpos = 586, xanchor = 0, ypos = 533, yanchor = 0)
-    show ea1tile18 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
+    show ea2tile17 at Position(xpos = 586, xanchor = 0, ypos = 533, yanchor = 0)
+    show ea2tile18 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
     
     #row 5
-    image ea1tile19 = "g_elbow_tr.png"
-    image ea1tile20 = "g_horizontal.png"
-    image ea1tile21 = "g_elbow_bl.png"
-    image ea1tile22 = "g_r.png"
-    image ea1tile28 = "NONE_Gate.png"
-    image ea1tile29 = "y_horizontal.png"
-    image ea1tile30 = "y_horizontal.png"
-    image ea1tile31 = "y_horizontal.png"
-    image ea1tile32 = "y_horizontal.png"
+    image ea2tile19 = "g_elbow_tr.png"
+    image ea2tile20 = "g_horizontal.png"
+    image ea2tile21 = "g_elbow_bl.png"
+    image ea2tile22 = "g_r.png"
+    image ea2tile28 = "NONE_Gate.png"
+    image ea2tile29 = "y_horizontal.png"
+    image ea2tile30 = "y_horizontal.png"
+    image ea2tile31 = "y_horizontal.png"
+    image ea2tile32 = "y_horizontal.png"
     
-    show ea1tile19 at Position(xpos = 586, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile20 at Position(xpos = 661, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile21 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile22 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile28 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile29 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile30 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile31 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
-    show ea1tile32 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile19 at Position(xpos = 586, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile20 at Position(xpos = 661, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile21 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile22 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile28 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile29 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile30 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile31 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
+    show ea2tile32 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
     
     #row6
-    image ea1tile23 = "g_r.png"
-    image ea1tile24 = "AND_Gate_blue.png"
-    image ea1tile25 = "r_horizontal.png"
-    image ea1tile26 = "r_horizontal.png"
-    image ea1tile27 = "r_elbow_tl.png"
+    image ea2tile23 = "g_r.png"
+    image ea2tile24 = "AND_Gate_blue.png"
+    image ea2tile25 = "r_horizontal.png"
+    image ea2tile26 = "r_horizontal.png"
+    image ea2tile27 = "r_elbow_tl.png"
     
-    show ea1tile23 at Position(xpos = 736, xanchor = 0, ypos = 683, yanchor = 0)
-    show ea1tile24 at Position(xpos = 811, xanchor = 0, ypos = 683, yanchor = 0)
-    show ea1tile25 at Position(xpos = 886, xanchor = 0, ypos = 683, yanchor = 0)
-    show ea1tile26 at Position(xpos = 961, xanchor = 0, ypos = 683, yanchor = 0)
-    show ea1tile27 at Position(xpos = 1036, xanchor = 0, ypos = 683, yanchor = 0)
+    show ea2tile23 at Position(xpos = 736, xanchor = 0, ypos = 683, yanchor = 0)
+    show ea2tile24 at Position(xpos = 811, xanchor = 0, ypos = 683, yanchor = 0)
+    show ea2tile25 at Position(xpos = 886, xanchor = 0, ypos = 683, yanchor = 0)
+    show ea2tile26 at Position(xpos = 961, xanchor = 0, ypos = 683, yanchor = 0)
+    show ea2tile27 at Position(xpos = 1036, xanchor = 0, ypos = 683, yanchor = 0)
     
     #row7
-    image ea1tile34 = "r_horizontal.png"
-    image ea1tile35 = "r_horizontal.png"
-    image ea1tile36 = "r_horizontal.png"
-    image ea1tile37 = "r_horizontal.png"
-    image ea1tile38 = "r_elbow_tl.png"
+    image ea2tile34 = "r_horizontal.png"
+    image ea2tile35 = "r_horizontal.png"
+    image ea2tile36 = "r_horizontal.png"
+    image ea2tile37 = "r_horizontal.png"
+    image ea2tile38 = "r_elbow_tl.png"
     
-    show ea1tile34 at Position(xpos = 436, xanchor = 0, ypos = 758, yanchor = 0)
-    show ea1tile35 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
-    show ea1tile36 at Position(xpos = 586, xanchor = 0, ypos = 758, yanchor = 0)
-    show ea1tile37 at Position(xpos = 661, xanchor = 0, ypos = 758, yanchor = 0)
-    show ea1tile38 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
+    show ea2tile34 at Position(xpos = 436, xanchor = 0, ypos = 758, yanchor = 0)
+    show ea2tile35 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
+    show ea2tile36 at Position(xpos = 586, xanchor = 0, ypos = 758, yanchor = 0)
+    show ea2tile37 at Position(xpos = 661, xanchor = 0, ypos = 758, yanchor = 0)
+    show ea2tile38 at Position(xpos = 736, xanchor = 0, ypos = 758, yanchor = 0)
     
     #logicGate_easyA1 and end points
-    image logicGate_easyA21 = "light_r_on.png"
+    image logicGate_easyA21 = "light_g_on.png"
     show logicGate_easyA21 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
     image logicGate_easyA22 = "light_g_on.png"
     show logicGate_easyA22 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
@@ -154,22 +154,27 @@ label gamefileA2:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
 #first slot for and 1
     if and1in1 == True:
-        play sound pipeFlowG
-        image ea1tile39 = "g_horizontal.png"
-        image ea1tile40 = "g_horizontal.png"
-        image ea1tile41 = "g_horizontal.png"
-        image ea1tile42 = "g_horizontal.png"
-        image ea1end2 = "light_g_on.png"
+        image ea2tile39 = "g_horizontal.png"
+        image ea2tile40 = "g_horizontal.png"
+        image ea2tile41 = "g_horizontal.png"
+        image ea2tile42 = "g_horizontal.png"
+        image ea2end2 = "light_g_on.png"
 
         #shows tiles
-        show ea1tile39 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-        show ea1tile40 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
-        show ea1tile41 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
-        show ea1tile42 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
-        show ea1end2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
+        show ea2tile39 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
+        show ea2tile40 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)
+        show ea2tile41 at Position(xpos = 1336, xanchor = 0, ypos = 608, yanchor = 0)
+        show ea2tile42 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
+        show ea2end2 at Position(xpos = 1595, xanchor = 0, ypos = 608, yanchor = 0)
         
         
     if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
@@ -186,10 +191,12 @@ label gamefileA2:
         
 #win conditions ********
     if and1in1 == True: 
-        image ea1tile100 = "OR_Gate.png"
-        show ea1tile100 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
-        play sound lgWin
+        image ea2tile100 = "OR_Gate.png"
+        show ea2tile100 at Position(xpos = 1111, xanchor = 0, ypos = 608, yanchor = 0)
+        queue sound lgWin
         $ renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgEasyAWin
         $ Logic_A_solved = True
         jump nextLGEasy
         #jump logicGate_easyA2

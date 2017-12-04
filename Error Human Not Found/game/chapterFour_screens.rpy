@@ -18,6 +18,17 @@ label chapterFour_screens:
             action Jump("blueInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
         
     screen blueInvestigation_scr:
         imagebutton:
@@ -32,7 +43,7 @@ label chapterFour_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[blueItems_main]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "2" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -74,6 +85,17 @@ label chapterFour_screens:
             action Jump("blueLeft")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
         
     screen blueLeft_scr:
         imagebutton:
@@ -81,7 +103,7 @@ label chapterFour_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[blueItems_left]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -124,14 +146,25 @@ label chapterFour_screens:
             action Jump("blueInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     screen blueRight_scr:
         imagebutton:
             idle "button_empty.png"
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[blueItems_right]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "4" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -184,7 +217,17 @@ label chapterFour_screens:
             action Jump("blueInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-            
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
     #Watson's Server
     screen watsonActions_scr:
         imagebutton:
@@ -205,28 +248,43 @@ label chapterFour_screens:
             action Jump("watsonInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-            
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     screen driveTable_scr:
-        if(drive2_inv==False):
+        if not(binaryHard_solved ):
             imagebutton:
                 idle "objects/drive2_idle.png"
                 xpos 0
                 ypos 0 
+            key 'h' action NullAction() #action Hide("")
+            key 'K_PAGEUP' action NullAction() #action Hide("")
+            key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+            key 'K_AC_BACK' action NullAction() #action Hide("")
+            key 'mousedown_4' action NullAction() #action Hide("")
+            key 'K_LCTRL' action NullAction() #action Skip("")
+            key 'K_RCTRL' action NullAction() #action Skip("")
+            key 'K_TAB' action NullAction() #action Hide("")
+            key '>' action NullAction() #action Skip("")
+            $renpy.block_rollback()
+            $config.skipping=None
             
     screen watsonInvestigation_scr:
-        imagebutton:
-            idle "back.png"
-            hover "back_hover.png"
-            xpos 0
-            ypos 0
-            focus_mask True
-            action Jump("watsonActions")
         imagebutton:
             idle "button_empty.png"
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[watsonItems_main]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -258,6 +316,24 @@ label chapterFour_screens:
             action Jump("watsonLeft")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        imagebutton:
+            idle "back.png"
+            hover "back_hover.png"
+            xpos 0
+            ypos 0
+            focus_mask True
+            action Jump("watsonActions")
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
         
     screen watsonLeft_scr:
         imagebutton:
@@ -265,7 +341,7 @@ label chapterFour_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[watsonItems_left]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -289,7 +365,7 @@ label chapterFour_screens:
                 action Jump("invWatsonDesk")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
-        if(drive2_inv==False):
+        if not(binaryHard_solved):
             imagebutton:
                 idle "objects/drive2_idle.png"
                 hover "objects/drive2_hover.png"
@@ -308,14 +384,25 @@ label chapterFour_screens:
             action Jump("watsonInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     screen watsonRight_scr:
         imagebutton:
             idle "button_empty.png"
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[watsonItems_right]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -338,7 +425,18 @@ label chapterFour_screens:
             action Jump("watsonInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-            
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     #Oxygen Garden Screens
     screen ogActions_scr:
         imagebutton:
@@ -359,7 +457,18 @@ label chapterFour_screens:
             action Jump("ogInvestigation")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
-            
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
     screen ogInvestigation_scr:
         imagebutton:
             idle "back.png"
@@ -373,7 +482,7 @@ label chapterFour_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[ogItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -407,7 +516,18 @@ label chapterFour_screens:
                 action Jump("invFern")
                 hover_sound "music/UI/Investigate/ENHF_Investigate_Highlight.ogg"
                 activate_sound "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
-
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
 label blueInvestigation:
     scene bg blueMain with fade
     call screen blueInvestigation_scr
@@ -438,7 +558,7 @@ label invSoilSamples:
     show Blue neutral at center
     g "Huh, what're th--"
     show Blue threaten
-    #play SFX here
+    play sound blueClaws
     b "Don't touch that! So help my circuits, if you contaminate those soil samples I will show you just how menacing I can be."
     show Grace snarky 
     g "Wow, touchy much?"
@@ -469,6 +589,7 @@ label invScanner:
     show Blue neutral at center
     a "This is quite the piece of equipment, Blue."
     show Blue flirty
+    play sound blueLaugh
     b "Like my scanner? It's pretty robust."
     show Blue smug
     b "Why have an entire suite of smaller readers when you can save power and room space by using an omniscanner?"
@@ -512,7 +633,7 @@ label invAtmosphereReading:
     show Ada neutral
     a "I am sure Watson has a good reason for his absence."
     show Blue threaten
-    #Insert SFX here
+    play sound blueClaws
     b "Yeah, his reason is that he has a MOPR for a brain."
     show Ada concerned
     a "Blue!"
@@ -535,6 +656,7 @@ label invBluesCore:
     show Grace neutral at left
     show Ada neutral at right
     show Blue flirty at center
+    play sound blueLaugh
     b "Ah yes, my quantum core. Aren't I beautiful?"
     show Grace snarky
     g "I'm sure I can find a handsome toaster aboard the station for you."
@@ -565,6 +687,7 @@ label invBluesFloor:
     show Blue neutral at center
     g "Jeez, there really are no seats anywhere in here."
     show Blue flirty
+    play sound blueLaugh
     b "Wow, it's almost like the hyper-intelligent AI said there wasn't any chairs in here."
     show Ada concerned
     a "Is this attitude really necessary, Blue?"
@@ -601,7 +724,7 @@ label invConvenienceTable:
     show Grace annoyed
     g "And if people want to get food that isn't printed?"
     show Blue threaten
-    #play SFX
+    play sound blueClaws
     b "That sounds like a personal problem."
     $quick_menu = False
     hide Blue
@@ -683,9 +806,10 @@ label invBluesDemands:
     show Grace snarky
     g "It's almost like you're a supervillain or something, Blue."
     show Blue flirty
+    play sound blueLaugh
     b "I can't say I'm opposed to the idea."
     show Blue threaten
-    #play SFX
+    play sound blueClaws
     b "Maybe my workers will actually get something done if I chain them to their stations."
     show Ada concerned
     show Grace surprised
@@ -730,7 +854,7 @@ label talkBlue:
         show Blue neutral at center
         g "Got another moment, Blue?"
         show Blue threaten
-        #Insert SFX here
+        play sound blueClaws
         b "You know, considering that body of yours has an expiration date, I'm surprised at how much time you love to waste."
         show Grace snarky
         g "Can you really say that conversation is a time waster?"
@@ -752,7 +876,7 @@ label talkBlue:
         show Blue neutral at center
         g "There's still more I want to talk about."
         show Blue threaten
-        #Insert SFX
+        play sound blueClaws
         b "I thought we already went over this."
         b "What I need from you is efficiency."
         show Grace snarky
@@ -781,7 +905,7 @@ label talkBlue:
         b "Productive of desired effects, especially without waste."
         b "These are all definitions for the word 'efficient.' Please talk to me again once you've learned the meaning of this word."
         show Blue threaten
-        #insert SFX here
+        play sound blueClaws
         b "Or don't."
         hide Grace
         hide Ada
@@ -880,50 +1004,88 @@ label talkAdaWatson:
 label invDrive2:
     scene bg wsDesk
     $quick_menu = True
-    $drive2_inv = True
-    $watsonItems_left +=1
-    show other darken
-    show image "objects/jumpdrive_closeup.png" at centerScreen
-    "{i}An inconspicuous data drive. Although most scientists use the same, generic drives for storing data, it's impossible to tell what one might contain.{/i}"
-    hide other darken
-    hide image "objects/jumpdrive_closeup.png"
-    show Grace surprised at left
-    show Ada neutral at right
-    g "Another data drive? It's identical to the one Alpha had on him."
-    show Grace happy
-    g "That means this is another piece of sweet, sweet evidence!"
-    show Ada concerned
-    a "Compared to your previous displays of relief, I am reading a sharp spike in your emotional state."
-    show Grace surprised
-    g "Oh!"
-    show Grace snarky
-    g "Honestly, the only thing that would make this better would be if the drive had a fresh cup of coffee sitting next to it as well, and maybe some snacks."
-    show Ada neutral
-    a "Note to self: humans can be placated with food items."
-    g "Hey, I'm only human. Some of us need things like sleep and food for energy."
-    show Grace neutral
-    g "What does it say, Ada?"
-    if(llHard_solved==True):
-        show Ada annoyed
-        a "I cannot be sure as of yet. The decryption key we found appears to match this encryption, but I still hae to break it down."
-        g "Okay. I'm waiting on you then."
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    if not(drive2_inv):
+        $drive2_inv = True
+        show other darken
+        show image "objects/jumpdrive_closeup.png" at centerScreen
+        "{i}An inconspicuous data drive. Although most scientists use the same, generic drives for storing data, it's impossible to tell what one might contain.{/i}"
+        hide other darken
+        hide image "objects/jumpdrive_closeup.png"
+        show Grace surprised at left
+        show Ada neutral at right
+        g "Another data drive? It's identical to the one Alpha had on him."
+        show Grace happy
+        g "That means this is another piece of sweet, sweet evidence!"
+        show Ada concerned
+        a "Compared to your previous displays of relief, I am reading a sharp spike in your emotional state."
+        show Grace surprised
+        g "Oh!"
+        show Grace snarky
+        g "Honestly, the only thing that would make this better would be if the drive had a fresh cup of coffee sitting next to it as well, and maybe some snacks."
         show Ada neutral
-        a "I will try to decrypt it now."
+        a "Note to self: humans can be placated with food items."
+        g "Hey, I'm only human. Some of us need things like sleep and food for energy."
+        show Grace neutral
+        g "What does it say, Ada?"
+        if(llHard_solved==True):
+            show Ada annoyed
+            a "I cannot be sure as of yet. The decryption key we found appears to match this encryption, but I still hae to break it down."
+            g "Okay. I'm waiting on you then."
+            show Ada neutral
+            a "I will try to decrypt it now."
+            hide Grace
+            window hide
+            hide Ada
+            $quick_menu = False
+            jump binaryHard
+        else:
+            show Ada seething
+            a "I cannot decipher this drive. It is encrypted like the other one."
+            show Ada annoyed
+            a "If I had the encryption key, I could do it, but until then, it is a lost cause." 
+            show Grace neutral
+            g "Well, if I were trying to hide something valuable, I would put it in the safe."
+            show Grace snarky
+            g "Just let me at it."
+            show Ada neutral
+            a "I will leave this here until we have the decryption key then."
+            hide Grace
+            hide Ada
+            $quick_menu = False
+            window hide
+            jump watsonLeft
+    show Grace neutral at left
+    show Ada neutral at right
+    if llHard_solved and binaryHard_attempts==0:
+        show Grace happy at left
+        g "One encryption key, as asked."
+        show Ada amused
+        a "I shall get to work on the decryption then."
+        show Grace happy
+        g "We finally seem to be getting somewhere."
         hide Grace
-        window hide
         hide Ada
         $quick_menu = False
+        window hide
         jump binaryHard
-    else:
+    if llHard_solved and binaryHard_attempts>0:
+        g "You ready to try to crack this again?"
         show Ada seething
-        a "I cannot decipher this drive. It is encrypted like the other one."
-        show Ada annoyed
-        a "If I had the encryption key, I could do it, but until then, it is a lost cause." 
-        show Grace neutral
-        g "Well, if I were trying to hide something valuable, I would put it in the safe."
+        a "I refuse to let Watson beat me, so yes."
+        show Grace happy
+        g "You'll get it."
+        hide Grace
+        hide Ada
+        $quick_menu = False
+        window hide
+        jump binaryHard
+    if not(llHard_solved):
+        a "I still need the decryption key before attempting to solve this, Grace."
         show Grace snarky
-        g "Just let me at it."
-#        $binaryHard_solved = True #REMOVE LATER
+        g "Right, I'll get on it."
         hide Grace
         hide Ada
         $quick_menu = False
@@ -934,13 +1096,16 @@ label invWatsonScreens:
     $quick_menu = True
     $watsonScreens_inv = True
     $watsonItems_main +=1
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show other darken
-    show image "objects/watsonScreen_closeup1.png" at centerScreen
-    "{i}Watson's screensaver has a distinctly different style than the default screensavers commonly used throughout the Noah Sphere. It changes frequently, and is designed by Watson himself, often the product of his newest inspiration.{/i}"
-    hide image "objects/watsonScreen_closeup1.png"
     show image "objects/watsonScreen_closeup2.png" at centerScreen
     "{i}Many of Watson's designs seem to be centered on animals. He has been banned from multiple bio-labs because of his past actions.{/i}"
     hide image "objects/watsonScreen_closeup2.png"
+    show image "objects/watsonScreen_closeup1.png" at centerScreen
+    "{i}Watson's screensaver has a distinctly different style than the default screensavers commonly used throughout the Noah Sphere. It changes frequently, and is designed by Watson himself, often the product of his newest inspiration.{/i}"
+    hide image "objects/watsonScreen_closeup1.png"
     show image "objects/watsonScreen_closeup3.png" at centerScreen
     "{i}The sketch of the mosquito is from one of Watson's more infamous jaunts.{/i}"
     hide image "objects/watsonScreen_closeup3.png"
@@ -980,8 +1145,11 @@ label invWatsonScreens:
     
 label invSafe:
     $quick_menu = True
-    if(safe_inv==False):
-        $safe_inv = True
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    if(llHard_attempts ==0):
+        $assistantSpeech = True
         show other darken
         show image "objects/safe_closeup.png" at centerScreen
         "{i}A safe where Watson has his secretary store important data drives. The network which most scientists and AIs use to store data is relatively secure; however, Watson's fascination with old human culture have led him to request a safe to store things in.{/i}"
@@ -992,7 +1160,7 @@ label invSafe:
         g "Here we are. Watson's {i}safe{/i}..."
         show Ada concerned
         a "And I thought {i}your{/i} storage methods were archaic. This lock looks like it is actually mechanical."
-        show Grace neutral
+        show Grace snarky
         g "That blows us right out of the water. You think he has a key somewhere?"
         show Ada neutral
         a "If he does, it will take us too long to find it."
@@ -1007,16 +1175,17 @@ label invSafe:
         window hide
         hide Ada
         $quick_menu = False
-        #jump chooseLLHard 
-        $ llHard_solved = True #REMOVE THIS WHEN THE PUZZLE IS IMPLEMENTED
-        $watsonItems_right +=1 #ALSO REMOVE THIS. PUT ON 'DONE' LABEL
-        jump watsonRight
+        jump chooseLLHard 
     else: 
         show Grace neutral at left
         show Ada neutral at right
         g "Okay Ada, route it to my bracelet again. I'm ready for another go."
         show Ada seething
         a "Sending now, Grace."
+        hide Grace
+        hide Ada
+        window hide
+        $quick_menu = False
         jump chooseLLHard
     
 label invWatsonDesk:
@@ -1024,6 +1193,9 @@ label invWatsonDesk:
     $watsonDesk_inv = True
     $watsonItems_left +=1
     show other darken
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     show image "objects/watsonDesk_closeup.png" at centerScreen
     "{i}This desk is the home of the human secretary that works with Watson on his work on the habitats on the Noah Sphere. There have been many different people working for Watson over time. They generally don't last long before requesting a transfer.{/i}"
     hide other darken
@@ -1047,11 +1219,13 @@ label invWatsonDesk:
     jump watsonLeft
     
 label invWatsonComputer:
-    if(drive2_inv==False):
-        show screen driveTable_scr
+#    if(drive2_inv==False):
+#        show screen driveTable_scr
     $quick_menu = True
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
     if(lgHard_attempts==0) and (lgHardC_solved==False):
-        $watsonItems_left +=1
         show other darken
         show image "objects/watsonComputer_closeup.png" at centerScreen
         "{i}This computer seems to be attached to Watson's servers, rather than the Noah Sphere's.{/i}"
@@ -1065,17 +1239,12 @@ label invWatsonComputer:
         show Grace annoyed
         show Ada neutral
         a "Allow me a moment."
-        show Grace neutral
-        "{i}Ada takes one of the cords running into her head and plugs it into a socket on the desk.{/i}"
         show Ada seething
         a "I can interface with the computer now. I will attempt to run a trace on Watson's location."
-        "PUZZLE PLACEHOLDER."
         hide Grace
         hide Ada
         $quick_menu = False
-        #jump chooseLGHard
-        $lgHardC_solved = True #REMOVE WHEN PUZZLE IMPLEMENTED
-        jump watsonLeft
+        jump choose_lgHard
     else:
         show Ada neutral at right
         show Grace neutral at left
@@ -1084,26 +1253,27 @@ label invWatsonComputer:
         g "Sure. I'll just ssit in this chair here until you succeed."
         show Ada annoyed
         a "I would suggest not getting too comfortable, then."
-        jump chooseLGHard
+        jump choose_lgHard
     
 label watsonInvestigation:
     if (drive2_inv==False):
         scene bg wsMain_drive with fade
     else:
         scene bg wsMain with fade
+    $renpy.block_rollback()
+    $config.skipping=None
+    $ stackDepth =renpy.call_stack_depth()
+    while stackDepth>0:
+        $renpy.pop_call()
+        $stackDepth -=1
     call screen watsonInvestigation_scr
     
 label watsonActions:
     stop music fadeout 1.0
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L5.ogg", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L6.ogg", channel='channel06', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/WS/EHNF_WS_L7.ogg", channel='channel07', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    if (drive2_inv==False):
+    $renpy.block_rollback()
+    $config.skipping=None
+    $renpy.music.play("music/Amb/WS/EHNF_WS_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    if not(binaryHard_solved ):
         scene bg wsMain_drive
     else:
         scene bg wsMain
@@ -1117,7 +1287,7 @@ label watsonActions:
     call screen watsonActions_scr
     
 label watsonLeft:
-    if (drive2_inv==False):
+    if not(binaryHard_solved ):
         scene bg wsDesk_drive with fade
     else:
         scene bg wsDesk with fade
@@ -1127,11 +1297,51 @@ label watsonRight:
     scene bg wsSafe with fade
     call screen watsonRight_scr
         
+label watsonRight_llH:
+    scene bg wsSafe with fade
+    $renpy.block_rollback()
+    $config.skipping=None
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen disable_hide
+    hide screen loopLogicHard_5Scr
+    hide screen loopLogicHard_4Scr
+    hide screen loopLogicHard_3Scr
+    hide screen loopLogicHard_2Scr
+    hide screen loopLogicHard_1Scr
+    
+    if not(assistantSpeech):
+        $quick_menu = True
+        show Grace sad at left
+        show Ada neutral at right
+        g "I need a break. I'll give it another go in a minute."
+        show Ada surprised
+        a "We do not have much time left, Grace."
+        show Grace snarky
+        g "I'm aware. Sleep deprivation doesn't help those of us mere mortals process complex thoughts, however." 
+        show Grace sad
+        g "I'll get it. Don't worry."
+    if(assistantSpeech):
+        $quick_menu = True
+        show Grace annoyed at left
+        show Ada neutral at right
+        g "If I weren't technically banned from investigating, I would drag Watson's assistant down here and make them open the safe."
+        show Ada amused
+        a "You assume Watson would give anyone the passcode. Having analyzed his behavior in the past, I find this unlikely."
+        show Grace snarky
+        g "Good point. Okay, I'll give it another go in a minute."
+        $assistantSpeech=False
+    $quick_menu = False
+    window hide
+    hide Grace
+    hide Ada
+    jump watsonRight
+        
 #Oxygen Garden stuff 
     
 label ogActions:
     scene bg ogClose
-    if(ogItems==3) and (talkAdaWatson_count>0):
+    if(ogItems==3) and (talkAlan_count>0):
         if(resume=="S"):
             jump endCh4_S
         if(resume=="E"):
@@ -1153,21 +1363,21 @@ label invRaptor:
     hide other darken
     hide image "objects/raptor_closeup.png"
     show Grace surprised at left
-    #show Alan pleasant at center
+    show Alan neutral at right
     g "Oh! You've finally got a prototype working?"
-    #show Alan pleasant
+    show Alan happy
     alan "Sure did! Can't do much other than squawk and walk around, but it's a start."
-    #Insert SFX
+    play sound raptor2
     show Grace happy
     g "Careful, you don't want these to overrun the station."
-    #show Alan happy
+    show Alan confused
     alan "You've got me. That was my master plan all along!"
-    #show Alan teasing
+    show Alan happy
     alan "First, the Noah Sphere. Then, the world!"
     $quick_menu = False
     window hide
     hide Grace
-#    hide Alan
+    hide Alan
     jump ogInvestigation
     
 label invCamcorder:
@@ -1180,22 +1390,22 @@ label invCamcorder:
     hide other darken
     hide image "objects/camcorder_closeup.png"
     show Grace neutral at left
-    #show Alan pleasant at center
-    #Insert SFX
+    show Alan neutral at right
+    play sound beepLoud
     "{i}A beep sounds off next to Grace.{/i}"
-    #show Alan concerned
+    show Alan confused
     alan "Ah! Watch the camera, please."
     show Grace surprised
     g "Oh! You had it flying a bit low, there."
     show Grace snarky
     g "Are you filming a movie or something?"
-    #show Alan teasing
+    show Alan happy
     alan "You know me, Grace."
     alan "I've always got to get those beauty shots. These sphere cams are a blessing."
     $quick_menu = False
     window hide
     hide Grace
-#    hide Alan
+    hide Alan
     jump ogInvestigation
     
 label invFern:
@@ -1209,19 +1419,19 @@ label invFern:
     hide image "objects/fern_closeup.png"
     show Ada happy at right
     show Grace neutral at left
-    #show Alan pleasant at center
+    show Alan neutral at center
     a "Ah, it seems the ferns are growing well."
-    #show Alan pleasant
+    show Alan happy
     alan "Yes, it's thrilling! If we can get them to grow in varied environments, they'll be reintroduced to Earth within the year."
     show Grace happy
     g "Can't say that I ever imagined I'd notice the absence of ferns on Earth."
-    #show Alan Happy
+    show Alan confused
     alan "Well, once they're back, the planet's one step closer to being fixed, give or take a couple centuries."
     $quick_menu = False
     window hide
     hide Grace
     hide Ada
-#    hide Alan
+    hide Alan
     jump ogInvestigation
     
 label talkAlan:
@@ -1237,84 +1447,89 @@ label talkAlan:
     if(talkAlan_count==1):
         $talkAlan_count +=1
         show Grace neutral at left
-        #show Alan something at center
+        show Alan neutral at right
         g "We've talked a lot about what I've been doing, but what have you been doing, Alan?"
-        #show Alan teasing
+        show Alan happy
         alan "Unlike {i}someone{/i} I know, I actually listened to the temporary suspension of the project."
         alan "So I haven't done anything about the Markov Project since I got the alert."
         show Grace surprised
         g "Hey! That's not fair, you can't just call me out like that after all we've talked about."
+        show Alan confused
         alan "Oh? And what are you gonna do about it?"
         show Grace snarky
         g "Just you wait. I'll get my revenge one of these days."
         alan "Oh yeah?"
         g "Yeah."
+        show Alan neutral
         alan "..."
         show Grace neutral
         g "..."
+        show Alan happy
         alan "Haha!"
         show Grace happy
         g "Haha!"
         window hide
         hide Grace
-#        hide Alan
+        hide Alan
         $quick_menu = False
         jump ogActions
     if(talkAlan_count==2):
         $talkAlan_count +=1 
         show Grace neutral at left
-        #show Alan pleasant at center
+        show Alan neutral at right
         g "So you didn't really answer my question."
         g "You weren't dealing with the Alpha situation, but were you doing anything else interesting?"
-        #show Alan pleasant
+        show Alan confused
         alan "Just a combination of brainstorming and daydreaming."
         show Grace happy
         g "The usual, then."
-        #show Alan happy
+        show Alan happy
         alan "Yup! You know me."
-        #show Alan pleasant
+        show Alan neutral
         alan "I was thinking about how to approach the android for Colossus."
         alan "He does the whole 'Eastern Goddess' thing, so I wonder we could represent that with the body somehow."
         show Grace neutral
         g "Do you think that's necessary?"
-        #show Alan something
+        show Alan worried
         alan "Think of it this way: You've been called into a meeting with Colossus, now in his android body."
+        show Alan confused
         alan "Wouldn't you rather be able to tell which mood he's in just by looking at him?"
+        show Alan happy
         alan "Or would you prefer rolling the dice and guessing?"
         show Grace snarky
         g "I see your point."
         window hide
         hide Grace
-#        hide Alan
+        hide Alan
         $quick_menu = False
         jump ogActions
     if(talkAlan_count==3):
         $talkAlan_count +=1
         show Grace neutral at left
-        #show Alan pleasant at center
+        show Alan neutral at right
         g "So what about a screen?"
-        #show Alan concerned
+        show Alan confused
         alan "What do you mean?"
         g "The situation with Colossus' android... Why not build it with a facial screen and colored lights going down the arms and legs."
         g "When he's Colossus, the face and lights will be blue. When he's Eastern Goddess, the face and lights will be gold."
-        #show Alan pleasant
+        show Alan neutral
         alan "That's such a simple-but-brilliant idea. I can't believe I overlooked it."
-        #show Alan happy
+        show Alan happy
         alan "Thanks, Grace!"
         show Grace happy
         g "Glad I could help."
         window hide
         hide Grace
-#        hide Alan
+        hide Alan
         $quick_menu = False
         jump ogActions
     if(talkAlan_count>3):
         show Grace neutral at left
-        #show Alan pleasant at center
+        show Alan neutral at right
         g "Anything else you've been thinking about?"
-        #show Alan pleasant
+        show Alan confused
         alan "Nothing too special."
-        #show Alan teasing
+        show Alan happy
         alan "But don't you have some mysteries to solve? You don't have a lot of time left, you know?"
         show Grace snarky
         g "A true detective takes her time investigating every scene."
@@ -1322,6 +1537,6 @@ label talkAlan:
         g "But you're probably right. I should get back to work."
         window hide
         hide Grace
-#        hide Alan
+        hide Alan
         $quick_menu = False
         jump ogActions

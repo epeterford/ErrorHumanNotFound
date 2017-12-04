@@ -268,7 +268,7 @@ label gamefileMA3:
             $ or1in1 = False
 
 
-    if temp_slot == "" and temp_gate == "" and slot_name != "null":
+    if temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "nand return" or slot_name == "or return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -354,6 +354,8 @@ label gamefileMA3:
         show MA3end2 at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgMedAWin
         $lgMedA_solved = True
         jump lgMed_win
 
@@ -364,6 +366,9 @@ label gamefileMA3:
         show MA36tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
         queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 3
+            jump pg_lgMedALose
         $lgMed_attempts +=1
         jump lgMed_lose
     

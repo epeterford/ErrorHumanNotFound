@@ -1,12 +1,13 @@
 # The script of the game goes in this file.
-
+image splash = "splashscreen.png"
+image mm_base = "mm_idle.png"
 #Character Declarations
 define g = Character("Grace", color ="#006d0d")
 define a = Character("Ada", color="#3a416c")
 define secretary = Character("Virtual Secretary", color ="#383838") 
 define h = Character("Director Hirose", color="8b00bf")
 define knuth = Character("Chief Knuth", color="#5a0167")
-define neva = Character("Chief Nevalinna", color="#5a0167")
+define neva = Character("Chief Nevanlinna", color="#5a0167")
 define cray = Character("Chief Cray", color="#5a0167")
 define godel = Character("Chief Godel", color="#5a0167")
 define b = Character("Blue", color="#0016bb")
@@ -60,6 +61,38 @@ image Blue flirty = "sprites/blueFlirty.png"
 image Blue confused = "sprites/blueConfused.png"
 image Blue neutral = "sprites/blueNormal.png"
 image Blue angry = "sprites/blueAngry.png"
+image Hirose neutral = "sprites/hirose_neutral.png"
+image Hirose thoughtful = "sprites/hirose_thoughtful.png"
+image Hirose pleased = "sprites/hirose_pleased.png"
+image Hirose angry = "sprites/hirose_angry.png"
+image Hirose annoyed = "sprites/hirose_annoyed.png"
+image Hirose concerned = "sprites/hirose_concerned.png"
+image Colossus = "sprites/Colossus.png"
+image EG_main angry = "sprites/EG_Main_Angry.png"
+image EG_main inquisitive = "sprites/EG_Main_Inquisitive.png"
+image EG_main neutral = "sprites/EG_Main_Neutral.png"
+image EG_main unamused = "sprites/EG_Main_Unamused.png"
+image EG_ov angry = "sprites/EG_Overview_Angry.png"
+image EG_ov inquisitive = "sprites/EG_Overview_Inquisitive.png"
+image EG_ov neutral = "sprites/EG_Overview_Neutral.png"
+image EG_ov unamused = "sprites/EG_Overview_Unamused.png"
+image EG angry = "sprites/EG_angry.png"
+image EG unamused = "sprites/EG_unamused.png"
+image EG neutral = "sprites/EG_neutral.png"
+image EG inquisitive = "sprites/EG_inquisitive.png"
+
+image Ivan dour = "sprites/ivan_dour.png"
+image Ivan phony = "sprites/ivan_phonySmile.png"
+image Ivan disgusted  = "sprites/ivan_disgusted.png"
+image Ivan defensive = "sprites/ivan_defensive.png"
+image Alan worried = "sprites/alan_worried.png"
+image Alan happy = "sprites/alan_happy.png"
+image Alan neutral = "sprites/alan_neutral.png"
+image Alan confused = "sprites/alan_confused.png"
+
+image inv1 = "sprites/koman.png"
+image inv2 = "sprites/brodowsky.png"
+image Detective = "sprites/Laslo.png"
 
 #Opening Crawl
 image openingCrawl = "openCrawlText.png"
@@ -74,8 +107,9 @@ image bg G_right = "bg/GraceDesk_Right.png"
 image bg hallwayGrace = "bg/Hallway_Grace.png"
 
 #tutorial backgrounds
-image bg lgEasy1 = "dragNDrop_instructions.png"
-image bg lgEasy2 = "LG_instructions.png"
+image bg lgEasy1 = "tutorials_lgEasy_1.png"
+image bg lgEasy2 = "tutorials_lgEasy_2.png"
+image bg lgEasy2b = "tutorials_lgEasy_3.png"
 image bg lgEasy3 = "truthTable_instructions.png"
 image bg lgEasy4 = "NOT_instructions.png"
 image bg lgEasy5 = "AND_OR_instructions.png"
@@ -84,6 +118,7 @@ image bg tutorial_inv_2 = "inv_instruction2.png"
 image bg gramEasy1 = "easyGrammar_Tut1.png"
 image bg gramEasy2 = "easyGrammar_Tut2.png"
 image bg gramEasy3 = "easyGrammar_Tut3.png"
+image bg gramEasy3b = "easyGrammar_Tut3b.png"
 image bg gramEasy4 = "easyGrammar_Tut4.png"
 image bg gramEasy5 = "easyGrammar_Tut5.png"
 image bg gramEasy6 = "easyGrammar_Tut6.png"
@@ -94,8 +129,20 @@ image bg tutorial_binary2Bit_3 = "binary_tutorial3.png"
 image bg tutorial_binary2Bit_4 = "binary_tutorial4.png"
 image bg tutorial_binary2Bit_5 = "binary_tutorial5.png"
 image bg tutorial_LL1 = "ll_easy_Tutorial.png"
+image bg tutorial_LL1b = "ll_easy_Tutorial1b.png"
 image bg tutorial_LL2 = "ll_easy_Tutorial2.png"
 image bg tutorial_LL3 = "ll_easy_Tutorial3.png"
+image bg tutorial_lgMed = "tutorials_lgMed.png"
+image bg tutorial_lgHard = "tutorials_lgHard.png"
+image bg tutorial_binaryMed = "tutorials_binaryMed.png"
+image bg tutorial_binaryHard_1 = "tutorials_binaryHard1.png"
+image bg tutorial_binaryHard_2 = "tutorials_binaryHard2.png"
+image bg tutorial_llMed = "tutorials_llMed.png"
+image bg tutorial_llHard_1 = "tutorials_llHard_1.png"
+image bg tutorial_llHard_2 = "tutorials_llHard_2.png"
+image bg tutorial_gramMed = "tutorials_gramMed.png"
+image bg tutorial_gramHard = "tutorials_gramHard.png"
+
 
 ##The Conclave
 image bg conclaveWaitingRoom = "bg/ConclaveReception_Main.png"
@@ -164,6 +211,7 @@ image bg lab2Ivan_unlocked = "images/bg/Lab2_Ivan_Unlocked.png"
 image bg lab2Table_locked = "images/bg/Lab2_Main.png"
 image bg lab2Table_unlocked = "images/bg/Lab2_Main_Unlocked.png"
 
+image bg PG = "images/bg/puzzleBG.png"
 #AI Core
 image bg AICoreDoor = "images/bg/AICore_Door.png"
 image bg AICoreHallway = "images/bg/AICore_Hallway.png"
@@ -274,12 +322,8 @@ define audio.doorAccess= "music/Object/Door_Audio/ENHF_Object_Door_AccessGranted
 define audio.doorScan = "music/Object/Door_Audio/EHNF_OBJECT_Door_Scan.ogg"
 
 #balcony ambience sounds
-define audio.balconyAmb0 = "music/Amb/Balcony/EHNF_BAL_L0.ogg"
-define audio.balconyAmb1 = "music/Amb/Balcony/EHNF_BAL_L1.ogg"
-define audio.balconyAmb2 = "music/Amb/Balcony/EHNF_BAL_L2.ogg"
-define audio.balconyAmb3 = "music/Amb/Balcony/EHNF_BAL_L3.ogg"
-define audio.balconyAmb4 = "music/Amb/Balcony/EHNF_BAL_L4.ogg"
-define audio.balconyBGM = "music/BGM/The_Balcony.mp3"
+define audio.balconyAmb = "music/Amb/Balcony/EHNF_BAL_AMB.ogg"
+define audio.balconyBGM = "music/BGM/EHNF_BAL_BGM.ogg"
 
 #Watson's Workspace Ambience
 define audio.wwAmb0 = "music/Amb/watsonWorkspace/EHNF_WW_L0.ogg"
@@ -309,7 +353,7 @@ define audio.conclaveProperAmb = "music/amb/Conclave/EHNF_CC_Amb.mp3"
 define audio.typing = "music/Amb/Grace_Lab/Typing/EHNF_AMB_Grace_Lab_TYP_L_0.ogg"
 define audio.graceLabAmb = "music/Amb/Grace_Lab/Normal/EHNF_Grace_Lab_Norm.ogg"
 
-define audio.hallwayAmb = "music/Amb/Hallway/EHNF_Amb_Scene_Hallway_Norm.ogg"
+define audio.hallwayAmb = "music/Amb/Hallway/EHNF_Hall_AMB.ogg"
 
 #hover_sound "audio/ENHF_UI_Button_v2.ogg"
 #            activate_sound "audio/ENHF_UI_Button_v1.ogg"
@@ -445,12 +489,8 @@ define audio.BlueAmb_02 = "music/Amb/Blue/EHNF_BW_L2.ogg"
 define audio.BlueAmb_03 = "music/Amb/Blue/EHNF_BW_L3.ogg"
 
 #Lab 2/Grace Lab music?
-define audio.labBGM_0 = "music/BGM/Lab2/EHNF_L0_BGM_Lab2_Pad.ogg"
-define audio.labBGM_1 = "music/BGM/Lab2/EHNF_L1_BGM_Lab2_Bass.ogg"
-define audio.labBGM_2 = "music/BGM/Lab2/EHNF_L2_BGM_Lab2_Pad2.ogg"
-define audio.labBGM_3 = "music/BGM/Lab2/EHNF_L3_BGM_Lab2_Pad_Melodic_Stinger.ogg"
-define audio.labBGM_4 = "music/BGM/Lab2/EHNF_L4_BGM_Lab2_Melody.ogg"
-define audio.labBGM_5 = "music/BGM/Lab2/EHNF_L5_BGM_Lab2_Sweep.ogg"
+define audio.labBGM_0 = "music/BGM/Lab2/EHNF_LAB2_BGM.ogg"
+define audio.labBGM_1 = "music/AMB/Lab2/EHNF_LAB2_AMB.ogg"
 
 #Oxygen Garden
 define audio.ogBGM_0 = "music/BGM/Oxygen_Garden/EHNF_L0_BGM_Oxy_Piano_Harm_Mid.ogg"
@@ -526,7 +566,7 @@ define audio.computer4 = "music/Object/Computer_Audio/EHNF_Computer_Start_04.ogg
 define audio.marching = "music/Object/Misc_Audio/EHNF_InvestigatorsMarching.ogg"
 define audio.clue = "music/Object/Misc_Audio/EHNF_Item_Clue.ogg"
 define audio.pickup = "music/Object/Misc_Audio/EHNF_Item_Pickup.ogg"
-define aduio.speakerCrackle = "music/Object/Misc_Audio/EHNF_Speaker_Crackle1.ogg"
+define audio.speakerCrackle = "music/Object/Misc_Audio/EHNF_Speaker_Crackle1.ogg"
 define audio.shortWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_1Sec.ogg"
 define audio.longWhiteNoise = "music/Object/Misc_Audio/EHNF_White_Noise_20Sec.ogg"
 define audio.paperCrumple = "music/Object/Misc_Audio/EHNF_Paper_Crumple_OB.ogg"
@@ -574,7 +614,9 @@ define audio.ui1 = "music/UI/ENHF_UI_Button_v1.ogg"
 define audio.ui2 = "music/UI/ENHF_UI_Button_v2.ogg"
 define audio.menuEnter = "music/UI/ENHF_UI_Menu_Enter.ogg"
 define audio.menuExit = "music/UI/ENHF_UI_Menu_Exit.ogg"
-
+init -100 python:
+    databasePage = 1
+    puzzleGallery = False
 init: 
     $ config.keymap['hide_windows'].remove('mouseup_2')
 init python:
@@ -621,6 +663,11 @@ init python:
     renpy.music.register_channel("soundP04", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP05", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
     renpy.music.register_channel("soundP06", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP07", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP08", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP09", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP10", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
+    renpy.music.register_channel("soundP11", mixer="sfx", loop=False, stop_on_mute=True, tight=True, file_prefix="", file_suffix="", buffer_queue=True)
 
 
     config.rollback_side_size = 0.0
@@ -628,6 +675,8 @@ init python:
     config.main_menu_music = "music/EHNF_Main_Theme.ogg"
     #atl_transform ::= "transform" scrolling_vertical "("parameters")" ":"
 init python:
+    centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
+    centerScreen2 = Position(xpos=0.5, xanchor =0.5, ypos =0.35, yanchor = 0.2)
     currentPage_journal = 0
     currentPage_notes = 0
     pageUnlocked_journal=6
@@ -638,6 +687,22 @@ init python:
     journal4 = ""
     journal5 = ""
     journal6 = ""
+    notes_hard1 = "none"
+    notes_hard2 = "none"
+    notes_hard3 = "none"
+    nearLeft = Position(xpos=0.27, xanchor=0.1, ypos=0.1, yanchor = 0.1)
+    invLeft = Position(xpos=0.2, xanchor=0.1, ypos=0.1, yanchor = 0.1)
+    invRight = Position(xpos=0.33, xanchor=0.1, ypos=0.1, yanchor = 0.1)
+    nearRight = Position(xpos=0.55, xanchor=0.1, ypos=0.1, yanchor = 0.1)
+    near_left = Position(xpos=0.25, ypos = 0.5)
+    tutorial_lgMed = True
+    tutorial_lgHard = True
+    tutorial_gramMed = True
+    tutorial_gramHard = True
+    tutorial_binaryMed = True
+    tutorial_binaryHard = True
+    tutorial_llMed = True
+    tutorial_llHard = True
 # The game starts here.
 label start:
     $Preference("rollback side", "disable")
@@ -648,11 +713,6 @@ label start:
     $ points_S = 0
     $ quick_menu = False
     $ gate_name = ""
-    $ centerScreen = Position(xpos=0.5, xanchor =0.5, ypos =0.2, yanchor = 0.2)
-    $nearLeft = Position(xpos=0.27, xanchor=0.1, ypos=0.1, yanchor = 0.1)
-    $nearRight = Position(xpos=0.55, xanchor=0.1, ypos=0.1, yanchor = 0.1)
-    $ centerScreen2 = Position(xpos=0.5, xanchor =0.5, ypos =0.35, yanchor = 0.2)
-    $ near_left = Position(xpos=0.25, ypos = 0.5)
     #hirose variables
     $ hiroseTea_inv = False
     $ hiroseOfficeComputer = False
@@ -796,7 +856,8 @@ label start:
             linear 0.3 alpha 1.0
         on hide:
             linear 0.1 alpha 0.0   
-
+    if (puzzleGallery):
+        jump pg_mainMenu
     window hide
     scene bg openCrawlBG at basicfade
     show openingCrawl at crawlScroll
@@ -827,3 +888,11 @@ label start:
     $ quick_menu = True
     #with fade(5.0)
     jump prologue
+    
+label splashscreen:
+    scene bg black
+    show splash with fade
+    $renpy.pause(3.0)
+    scene bg black with fade
+    show mm_base with fade
+    return

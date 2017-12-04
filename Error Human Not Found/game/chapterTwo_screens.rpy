@@ -19,6 +19,18 @@ label chapterTwo_screens:
             action Jump("balcony_alpha")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+        
             
     screen llEasyWin_scr:
         imagebutton:
@@ -30,6 +42,17 @@ label chapterTwo_screens:
             action Jump("llDoneTalk")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"  
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen binaryEasyLose_scr:
         imagebutton:
@@ -50,6 +73,17 @@ label chapterTwo_screens:
             action Jump("balcony_alpha")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen binaryEasyWin_scr:
         imagebutton:
@@ -61,6 +95,17 @@ label chapterTwo_screens:
             action Jump("binaryDoneTalk")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg" 
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
       
     screen tutorial_scrLL_1:
         imagebutton:
@@ -69,8 +114,48 @@ label chapterTwo_screens:
             xpos 1650
             ypos 940 
             focus_mask True
+            action Jump("tutorial_LL_1b")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
+            
+    screen tutorial_scrLL_1b:
+        imagebutton:
+            idle "next.png" 
+            hover "next_hover.png" 
+            xpos 1650
+            ypos 940 
+            focus_mask True
             action Jump("tutorial_LL_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        imagebutton:
+            idle "back.png" 
+            hover "back_hover.png" 
+            xpos 0
+            ypos 940 
+            focus_mask True
+            action Jump("tutorial_LLEasy")
+            hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
               
     screen tutorial_scrLL_2:
         imagebutton:
@@ -79,7 +164,7 @@ label chapterTwo_screens:
             xpos 0
             ypos 940 
             focus_mask True
-            action Jump("tutorial_LLEasy")
+            action Jump("tutorial_LL_1b")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
         imagebutton:
             idle "next.png" 
@@ -89,6 +174,17 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_LL_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
     
     screen tutorial_scrLL_3:
         imagebutton:
@@ -108,6 +204,17 @@ label chapterTwo_screens:
             action Jump("loopLogicEasyChoose")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrBinary2Bit_1:
         imagebutton:
@@ -118,6 +225,17 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_Binary2Bit_2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrBinary2Bit_2:
         imagebutton:
@@ -136,6 +254,17 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_Binary2Bit_3")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
     
     screen tutorial_scrBinary2Bit_3:
         imagebutton:
@@ -154,6 +283,17 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_Binary2Bit_4")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrBinary2Bit_4:
         imagebutton:
@@ -172,6 +312,17 @@ label chapterTwo_screens:
             focus_mask True
             action Jump("tutorial_Binary2Bit_5")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen tutorial_scrBinary2Bit_5:
         imagebutton:
@@ -191,6 +342,17 @@ label chapterTwo_screens:
             action Jump("binaryEasy")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen graceLab_actionsScr:
         imagebutton:
@@ -211,6 +373,17 @@ label chapterTwo_screens:
             action Jump("graceLab_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen graceLab_invScr:
         imagebutton:
@@ -242,6 +415,17 @@ label chapterTwo_screens:
             else:
                 action Jump("graceLab_actions")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen graceLab_left1Scr:
         imagebutton:
@@ -249,7 +433,7 @@ label chapterTwo_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[graceLeft1Desk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -301,6 +485,17 @@ label chapterTwo_screens:
             action Jump("graceLab_left2")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen graceLab_left2Scr:
         imagebutton:
@@ -347,10 +542,21 @@ label chapterTwo_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[graceLeft2Desk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen graceLab_right:
         imagebutton:
@@ -358,7 +564,7 @@ label chapterTwo_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[graceRightDesk_value]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
@@ -401,6 +607,17 @@ label chapterTwo_screens:
             action Jump("graceLab_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen balcony_actionsScr:
         imagebutton:
@@ -421,6 +638,17 @@ label chapterTwo_screens:
             action Jump("balcony_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
     screen balcony_invScr:
         if(balconyView_look==False):
@@ -455,10 +683,21 @@ label chapterTwo_screens:
             xpos 1630
             ypos 10
         text "Items" xpos 1650 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 8 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[balconyItems]" xpos 1800 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 25 color "#0060db" font "Bitter-Bold.otf"
         text "1" xpos 1850 ypos 25 color "#0060db" font "United Kingdom DEMO.otf"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
                 
     screen balcony_alphaScr:
         if(alphaBody_look==False):
@@ -497,7 +736,7 @@ label chapterTwo_screens:
             xpos 1630
             ypos 70
         text "Items" xpos 1650 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
-        text ": " xpos 1775 ypos 68 color "#0060db" font "Bitter-Bold.otf" size 50
+        text ": " xpos 1780 ypos 68 color "#0060db" font "Bitter-Bold.otf" size 50
         text "[alphaBodyItems]" xpos 1800 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
         text "/" xpos 1827 ypos 85 color "#0060db" font "Bitter-Bold.otf"
         text "3" xpos 1850 ypos 85 color "#0060db" font "United Kingdom DEMO.otf"
@@ -510,6 +749,17 @@ label chapterTwo_screens:
             action Jump("balcony_inv")
             hover_sound "audio/ENHF_UI_Button_v2.ogg"
             activate_sound "audio/ENHF_UI_Button_v1.ogg"
+        key 'h' action NullAction() #action Hide("")
+        key 'K_PAGEUP' action NullAction() #action Hide("")
+        key 'repeat_K_PAGEUP' action NullAction() #action Hide("")
+        key 'K_AC_BACK' action NullAction() #action Hide("")
+        key 'mousedown_4' action NullAction() #action Hide("")
+        key 'K_LCTRL' action NullAction() #action Skip("")
+        key 'K_RCTRL' action NullAction() #action Skip("")
+        key 'K_TAB' action NullAction() #action Hide("")
+        key '>' action NullAction() #action Skip("")
+        $renpy.block_rollback()
+        $config.skipping=None
             
 label graceLab_actions:
     scene bg G_deskArea
@@ -601,6 +851,7 @@ label balcony_actions:
     window hide
     $renpy.block_rollback()
     $config.skipping=None
+    hide screen disable_hide
     call screen balcony_actionsScr
     
 label gracePoster_inv:
@@ -1008,36 +1259,32 @@ label balcony_inv:
     scene bg balconyClose with fade
     $renpy.block_rollback()
     $config.skipping=None
+    hide screen disable_hide
     call screen balcony_invScr
     
 label balcony_alpha:
     $renpy.block_rollback()
     $config.skipping=None
     stop music fadeout 1.0
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/EHNF_BAL_BGM.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     window hide
     $ quick_menu = False
     scene bg balconyTop with fade
     $renpy.block_rollback()
     $config.skipping=None
+    hide screen disable_hide
     call screen balcony_alphaScr
     
 label loopLogicEasyChoose:
     stop channel00 fadeout 1.0
     stop channel01 fadeout 1.0
-    stop channel02 fadeout 1.0
-    stop channel03 fadeout 1.0
-    stop channel04 fadeout 1.0
-    stop channel05 fadeout 1.0
     #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     $LLEasyHints=0
     if (tutorial_loopLogicEasy == False):
+#        $pageUnlocked_notes = 6
+        $pageUnlocked_notes +=2
         jump tutorial_LLEasy
     $slot_name = ""
     $gate_name = ""
@@ -1047,7 +1294,6 @@ label loopLogicEasyChoose:
     $light2Sound = 0
     $light3Sound = 0
     $randomNumberEasyLL = renpy.random.randint(0,4)
-#    jump loopLogic_easy3
     if randomNumberEasyLL==0:
         jump loopLogic_easy4
     if randomNumberEasyLL==1:
@@ -1062,13 +1308,10 @@ label loopLogicEasyChoose:
 label binaryEasy:
     stop channel00 fadeout 1.0
     stop channel01 fadeout 1.0
-    stop channel02 fadeout 1.0
-    stop channel03 fadeout 1.0
-    stop channel04 fadeout 1.0
-    stop channel05 fadeout 1.0
     #Add more stops here if needed when the BGM is added
     $renpy.music.play("music/BGM/Puzzle_BGM.ogg", channel='music', loop=True, fadeout=2, synchro_start=False, fadein=2, tight=True, if_changed=True)
     if (tutorial_binaryEasy == False):
+        $pageUnlocked_notes +=1
         jump tutorial_Binary2Bit_1
     $binaryEasyHints = 0
     call binaryMatchEasy from _call_binaryMatchEasy
@@ -1308,6 +1551,14 @@ label tutorial_LLEasy:
     $config.skipping=None
     call screen tutorial_scrLL_1
     
+label tutorial_LL_1b:
+    window hide
+    $ quick_menu = False
+    scene bg tutorial_LL1b
+    $renpy.block_rollback()
+    $config.skipping=None
+    call screen tutorial_scrLL_1b
+    
 label tutorial_LL_2:
     window hide
     $ quick_menu = False
@@ -1467,35 +1718,22 @@ label loopLogic_EasyHints5:
     show screen disable_hide
     $config.skipping=None
     $remainder = LLEasyHints%3 
-    show LLE599tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)onlayer screens
-    show LLE599tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0) onlayer screens
-    show LLE599tile17 at Position(xpos = if3x, xanchor = 0, ypos =if3y, yanchor = 0)  onlayer screens
+    show LLE5_99tile2 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
+    show LLE5_99tile13 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
+    show LLE5_99tile17 at Position(xpos = else3x, xanchor = 0, ypos =else3y, yanchor = 0) 
     show other darken onlayer screens
+    $LLEasyHints +=1
     if (remainder==0):
-        $LLEasyHints +=1
         a "There are two blue lights, and only one blue IF. The IF can stand by itself, remember."
-        hide other darken onlayer screens
-        hide LLE599tile2 onlayer screens
-        hide LLE599tile13 onlayer screens
-        hide LLE599tile17 onlayer screens
-        jump Gamefile_lle5
     if (remainder==1):
-        $LLEasyHints +=1
         a "There is one green light and one green IF. I would put the green IF by the green light."
-        hide other darken onlayer screens
-        hide LLE599tile2 onlayer screens
-        hide LLE599tile13 onlayer screens
-        hide LLE599tile17 onlayer screens
-        jump Gamefile_lle5
     if (remainder==2):
-        $LLEasyHints +=1
         a "The ELSE has to be paired with an IF, remember, and it will let through whatever color the IF {i}is not{/i}."
-        hide other darken onlayer screens
-        hide LLE599tile2 onlayer screens
-        hide LLE599tile13 onlayer screens
-        hide LLE599tile17 onlayer screens
-        jump Gamefile_lle5
-    jump Gamefile_lle5
+    hide other darken onlayer screens
+    hide LLE5_99tile2 onlayer screens
+    hide LLE5_99tile13 onlayer screens
+    hide LLE5_99tile17 onlayer screens
+    jump gamefile_lle5
     
 label llEasyWin:
     show other darken
@@ -1538,6 +1776,7 @@ label binaryEasyHints:
     $config.skipping=None
     $remainder = binaryEasyHints%3 
     show other darken onlayer screens
+    $ can_click = False
     if (remainder==0):
         $binaryEasyHints +=1
         g "The easy ones are 0 and 1. The look the same in binary, just with three zeros to the left of the first bit."
@@ -1560,14 +1799,14 @@ label binaryEasyHints:
     
 label binaryDoneTalk:
     $quick_menu = True
+    $renpy.block_rollback()
     scene bg balconyTop with fade
     stop music fadeout 1.0
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen disable_hide
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/EHNF_BAL_BGM.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     show Grace neutral at left
     if (binaryEasy_tries<1):
         show Ada amused at right
@@ -1610,13 +1849,13 @@ label llDoneTalk:
     $quick_menu = True
     scene bg balconyTop with fade
     stop music fadeout 1.0
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L0.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L1.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L2.ogg", channel='channel02', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L3.ogg", channel='channel03', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_L4.ogg", channel='channel04', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
-    $renpy.music.play("music/BGM/The_Balcony.mp3", channel='channel05', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.block_rollback()
+    $renpy.music.play("music/Amb/Balcony/EHNF_BAL_AMB.ogg", channel='channel00', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
+    $renpy.music.play("music/BGM/EHNF_BAL_BGM.ogg", channel='channel01', loop=True, fadeout=1.0, synchro_start=True, fadein=1.0, tight=True, if_changed=True)
     show Ada neutral at right
+    $config.rollback_enabled = True
+    $config.allow_skipping = True
+    hide screen disable_hide
     if(loopLogicEasy_tries==0):
         show Grace happy at left
         g "Easy as manufactured apple pie. No infinite loops here." 

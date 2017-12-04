@@ -448,7 +448,7 @@ label eng_gram_h5:
     #attempts for players
     $ attempts = 12
     
-    call gamefile_h5
+    call gamefile_h5 from _call_gamefile_h5
 
 
 
@@ -4444,7 +4444,7 @@ label gamefile_h5:
                 show gram_h5_colorTile22 at Position(xpos = 1000, xanchor = 0, ypos = 600, yanchor = 0)
                 image gram_h5_colorTile23 = "solutionLine.png"
                 show gram_h5_colorTile23 at Position(xpos = 850, xanchor = 0, ypos = 770, yanchor = 0)
-                image gram_h5_colorTile24 = "solutionLine.png"
+                image gram_h5_colorTile24 = "solutionLine_grey.png"
                 show gram_h5_colorTile24 at Position(xpos = 1015, xanchor = 0, ypos = 770, yanchor = 0)
                 image gram_h5_colorTile25 = "1_1_green.png"
                 show gram_h5_colorTile25 at Position(xpos = 850, xanchor = 0, ypos = 675, yanchor = 0)
@@ -4505,11 +4505,11 @@ label gamefile_h5:
             show gram_h5_colorTile34 at Position(xpos = 1410, xanchor = 0, ypos = 425, yanchor = 0)
             image gram_h5_colorTile35 = "rightTreegreenlong.png"
             show gram_h5_colorTile35 at Position(xpos = 1485, xanchor = 0, ypos = 425, yanchor = 0)
-            image gram_h5_colorTile36 = "solutionLine.png"
+            image gram_h5_colorTile36 = "solutionLine_grey.png"
             show gram_h5_colorTile36 at Position(xpos = 1245, xanchor = 0, ypos = 590, yanchor = 0)
-            image gram_h5_colorTile37 = "solutionLine.png"
+            image gram_h5_colorTile37 = "solutionLine_grey.png"
             show gram_h5_colorTile37 at Position(xpos = 1245, xanchor = 0, ypos = 680, yanchor = 0)
-            image gram_h5_colorTile38 = "solutionLine.png"
+            image gram_h5_colorTile38 = "solutionLine_grey.png"
             show gram_h5_colorTile38 at Position(xpos = 1245, xanchor = 0, ypos = 770, yanchor = 0)
             image gram_h5_colorTile39 = "solutionLine.png"
             show gram_h5_colorTile39 at Position(xpos = 1410, xanchor = 0, ypos = 590, yanchor = 0)
@@ -4610,7 +4610,9 @@ label gamefile_h5:
         show gram_h5_letterJ at Position(xpos = letterJx, xanchor = 0, ypos = letterJy, yanchor = 0)
         show gram_h5_letterT at Position(xpos = letterTx, xanchor = 0, ypos = letterTy, yanchor = 0)
         queue sound gramWin
-        $renpy.pause(0.7)
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_gramHardWin
         $gramHard_solved = True
         jump gramHard_win
         
@@ -4626,7 +4628,10 @@ label gamefile_h5:
         show gram_h5_letterJ at Position(xpos = letterJx, xanchor = 0, ypos = letterJy, yanchor = 0)
         show gram_h5_letterT at Position(xpos = letterTx, xanchor = 0, ypos = letterTy, yanchor = 0)
         queue sound gramLose
-        $renpy.pause(0.8)
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 5
+            jump pg_gramHardLose
         hide gram_h5_colorTile1
         hide gram_h5_colorTile2
         hide gram_h5_colorTile3

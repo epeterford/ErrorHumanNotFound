@@ -319,15 +319,17 @@ label plsstop:
 label gettingin_S:
     scene bg balconyMain with fade
     #Cahnnel 00 through 05 are Grace's lab
-    play channel00 balconyAmb0
-    play channel01 balconyAmb1
-    play channel02 balconyAmb2
-    play channel03 balconyAmb3
-    play channel04 balconyAmb4
-    play channel05 balconyBGM
+    stop channel00 fadeout 1.0
+    stop channel01 fadeout 1.0
+    stop channel02 fadeout 1.0
+    stop channel03 fadeout 1.0
+    stop channel04 fadeout 1.0
+    stop channel05 fadeout 1.0
+    play channel00 balconyAmb
+    play channel01 balconyBGM
     #Add BGM to channel 05+
-    stop sound01 fadeout 1.0
-    stop sound02 fadeout 1.0
+    stop sound01 fadeout 0.5
+    stop sound02 fadeout 0.5
     #Display the crime scene background. The background comes up before the character sprites do.
     $quick_menu = True
     show Grace neutral at left
@@ -462,9 +464,12 @@ label alphadistraction_S:
     jump csinoahsphere_SbE
 
 label csinoahsphere_S:
-    #insert the sound of paper crumpling
-    play sound paperCrumple
     $quick_menu = True
+    #insert the sound of paper crumpling
+    if persistent.unlockAlpha ==None:
+        $persistent.unlockAlpha = True
+        "{i}{b}Database Entry Unlocked: Alpha.{/b}{/i}"
+    play sound paperCrumple
     show Ada neutral at right
     show Grace neutral at left
     g "Huh?"
@@ -509,6 +514,9 @@ label enterthemopr_S:
     g "Ah... we were just leaving!"
     show Ada amused at right
     a "Grace, it is just a cleaning robot."
+    if persistent.unlockMopr ==None:
+        $persistent.unlockMopr = True
+        "{i}{b}Database Entry Unlocked: M.O.P.R.{/b}{/i}"
     play sound moprInquisitive
     mopr "//Inquisitive boop.//"
     show Grace happy
@@ -744,6 +752,9 @@ label lynnfinallyfrickinanswers_S:
     lynn "Hello?"
     show Grace happy
     g "Lynn!"
+    if persistent.unlockLynn ==None:
+        $persistent.unlockLynn = True
+        "{i}{b}Database Entry Unlocked: Lynn Yao.{/b}{/i}"
     lynn "Oh, hello Grace! Word get around that quickly that I left?"
     show Grace neutral
     g "Yes, Lynn. I was so worried when I didn't see you at lunch. Where'd you get off to?"

@@ -189,8 +189,8 @@ label logicGate_easyB3: #logicGate_easyB3
     show lgB3start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
-    image end4 = "light_g_off.png"
-    show end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
+    image EB3end4 = "light_g_off.png"
+    show EB3end4 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
 
     
 #    ****************************************************
@@ -288,8 +288,14 @@ label gamefileB3:
 #*******************************************
 #************image zone********************* 
 #*******************************************
-    if and1in1 == True:
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
         play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+    if and1in1 == True:
         image EB3TILE2 = "r_g.png"
         image EB3TILE1  = "r_elbow_bl.png"
         image EB3TILE11 = "g_elbow_br.png"
@@ -331,7 +337,6 @@ label gamefileB3:
         show EB3TILE118 at Position(xpos = 1186, xanchor = 0, ypos = 908, yanchor = 0)
     
     if and1in1 == False:
-#        play sound pipeFlowN
         hide EB3TILE2
         hide EB3TILE1
         hide EB3TILE11
@@ -354,7 +359,6 @@ label gamefileB3:
         
     if and1in2 == True:
         if or1in1 == True:
-            play sound pipeFlowR
             image EB3TILE141 = "r_horizontal.png"
             image EB3TILE142 = "r_elbow_tl.png"
             image EB3TILE143 = "r_elbow_br.png"
@@ -364,13 +368,11 @@ label gamefileB3:
             show EB3TILE142 at Position(xpos = 1411, xanchor = 0, ypos = 833, yanchor = 0)
             
     if and1in2 == False:
-#        play sound pipeFlowN
         hide EB3TILE143
         hide EB3TILE141
         hide EB3TILE142
         
     if or1in1 == True:
-        play sound pipeFlowG
         image EB3TILE21 = "r_g.png"
         image EB3TILE120  = "r_elbow_bl.png"
         image EB3TILE121 = "g_elbow_br.png"
@@ -412,7 +414,6 @@ label gamefileB3:
         show EB3TILE137 at Position(xpos = 1186, xanchor = 0, ypos = 908, yanchor = 0)
         
     if or1in1 == False:
-#        play sound pipeFlowN
         hide EB3TILE127
         hide EB3TILE128
         hide EB3TILE129
@@ -435,7 +436,6 @@ label gamefileB3:
  
     if or1in2 == True:
         if and1in1 == True:
-            play sound pipeFlowG
             image EB3TILE138 = "g_horizontal.png"
             image EB3TILE139 = "g_elbow_tl.png"
             image EB3TILE140 = "g_elbow_br.png"
@@ -445,12 +445,11 @@ label gamefileB3:
             show EB3TILE140 at Position(xpos = 1411, xanchor = 0, ypos = 758, yanchor = 0)
             
     if or1in2 == False:
-#        play sound pipeFlowN
         hide EB3TILE138
         hide EB3TILE139
         hide EB3TILE140
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name=="and return" or slot_name=="or return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -478,8 +477,10 @@ label gamefileB3:
         show EB3tile220 at Position(xpos = 1261, xanchor = 0, ypos = 833, yanchor = 0)
         image EB3tile225 = "light_g_on.png"
         show EB3tile225 at Position(xpos = 1595, xanchor = 0, ypos = 758, yanchor = 0)
-        play sound lgWin
+        queue sound lgWin
         $ renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgEasyBWin
         $ Logic_B_solved = True
         #make to jump back to the game
         jump nextLGEasy
@@ -489,8 +490,11 @@ label gamefileB3:
         show EB311tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
         image EB311tile07_08 = "or_Gate.png"
         show EB311tile07_08 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
-        play sound lgLose
+        queue sound lgLose
         $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 3
+            jump pg_lgEasyBLose
         $ lgEasy_tries +=1
         jump repeatLGEasy
     

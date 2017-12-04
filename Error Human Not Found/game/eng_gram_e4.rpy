@@ -25,30 +25,6 @@ screen logicGatese4:
     text "Moves" xpos 200 ypos 305 color "#0060db" font "United Kingdom DEMO.otf" size 25
     text ": " xpos 315 ypos 293 color "#0060db" font "Bitter-Bold.otf" size 38
     text "[attempts]" xpos 350 ypos 303 color "#0060db" font "United Kingdom DEMO.otf" size 27
-#    imagebutton:
-#        idle "letterH_grey.png"
-#        xpos 275
-#        ypos 575
-#    imagebutton:
-#        idle "letterB_grey.png"
-#        xpos 410
-#        ypos 575
-#    imagebutton:
-#        idle "letterP_grey.png"
-#        xpos 342
-#        ypos 660
-#    imagebutton: 
-#        idle "letterR_grey.png"
-#        xpos 275
-#        ypos 750
-#    imagebutton:
-#        idle "letterG_grey.png"
-#        xpos 410
-#        ypos 750
-#    imagebutton:
-#        idle "letterK_grey.png"
-#        xpos 342
-#        ypos 832
     draggroup:
         #and gates
         drag:
@@ -56,37 +32,37 @@ screen logicGatese4:
                 child "letterH.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and1x ypos eae4and1y
+                xpos eae4letterHx ypos eae4letterHy
         drag:
                 drag_name "letterB"
                 child "letterB.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and2x ypos eae4and2y
+                xpos eae4letterBx ypos eae4letterBy
         drag:
                 drag_name "letterP"
                 child "letterP.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and3x ypos eae4and3y
+                xpos eae4letterPx ypos eae4letterPy
         drag:
                 drag_name "letterR"
                 child "letterR.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and4x ypos eae4and4y
+                xpos eae4letterRx ypos eae4letterRy
         drag:
                 drag_name "letterG"
                 child "letterG.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and5x ypos eae4and5y
+                xpos eae4letterGx ypos eae4letterGy
         drag:
                 drag_name "letterK"
                 child "letterK.png"
                 droppable False
                 dragged gate_dragged
-                xpos eae4and6x ypos eae4and6y
+                xpos eae4letterKx ypos eae4letterKy
         
         #location to be dropped
         drag:
@@ -251,68 +227,68 @@ label eng_gram_e4:
 
 
     # gates
-    $ eae4and1x = 275 
-    $ eae4and1y = 575
-    $ eae4and2x = 410
-    $ eae4and2y = 575
-    $ eae4and3x = 342 
-    $ eae4and3y = 660
-    $ eae4and4x = 275
-    $ eae4and4y = 750
-    $ eae4and5x = 410
-    $ eae4and5y = 750
-    $ eae4and6x = 342 
-    $ eae4and6y = 832
+    $ eae4letterHx = 275 
+    $ eae4letterHy = 575
+    $ eae4letterBx = 410
+    $ eae4letterBy = 575
+    $ eae4letterPx = 342 
+    $ eae4letterPy = 660
+    $ eae4letterRx = 275
+    $ eae4letterRy = 750
+    $ eae4letterGx = 410
+    $ eae4letterGy = 750
+    $ eae4letterKx = 342 
+    $ eae4letterKy = 832
     
     # check conditons for locations
-    $ and1in1 = False
-    $ and1in2 = False
-    $ and1in3 = False
-    $ and1in4 = False
-    $ and1in5 = False
-    $ and1in6 = False
-    $ and1in7 = False
+    $ letterHin1 = False
+    $ letterHin2 = False
+    $ letterHin3 = False
+    $ letterHin4 = False
+    $ letterHin5 = False
+    $ letterHin6 = False
+    $ letterHin7 = False
 
-    $ and2in1 = False
-    $ and2in2 = False
-    $ and2in3 = False
-    $ and2in4 = False
-    $ and2in5 = False
-    $ and2in6 = False
-    $ and2in7 = False
+    $ letterBin1 = False
+    $ letterBin2 = False
+    $ letterBin3 = False
+    $ letterBin4 = False
+    $ letterBin5 = False
+    $ letterBin6 = False
+    $ letterBin7 = False
 
-    $ and3in1 = False
-    $ and3in2 = False
-    $ and3in3 = False
-    $ and3in4 = False
-    $ and3in5 = False
-    $ and3in6 = False
-    $ and3in7 = False
+    $ letterPin1 = False
+    $ letterPin2 = False
+    $ letterPin3 = False
+    $ letterPin4 = False
+    $ letterPin5 = False
+    $ letterPin6 = False
+    $ letterPin7 = False
 
-    $ and4in1 = False
-    $ and4in2 = False
-    $ and4in3 = False
-    $ and4in4 = False
-    $ and4in5 = False
-    $ and4in6 = False
-    $ and4in7 = False
+    $ letterRin1 = False
+    $ letterRin2 = False
+    $ letterRin3 = False
+    $ letterRin4 = False
+    $ letterRin5 = False
+    $ letterRin6 = False
+    $ letterRin7 = False
 
-    $ and5in1 = False
-    $ and5in2 = False
-    $ and5in3 = False
-    $ and5in4 = False
-    $ and5in5 = False
-    $ and5in6 = False
-    $ and5in7 = False
+    $ letterGin1 = False
+    $ letterGin2 = False
+    $ letterGin3 = False
+    $ letterGin4 = False
+    $ letterGin5 = False
+    $ letterGin6 = False
+    $ letterGin7 = False
 
 
-    $ and6in1 = False
-    $ and6in2 = False
-    $ and6in3 = False
-    $ and6in4 = False
-    $ and6in5 = False
-    $ and6in6 = False
-    $ and6in7 = False
+    $ letterKin1 = False
+    $ letterKin2 = False
+    $ letterKin3 = False
+    $ letterKin4 = False
+    $ letterKin5 = False
+    $ letterKin6 = False
+    $ letterKin7 = False
 
 
 
@@ -332,678 +308,678 @@ label gamefile_e4:
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
             #check to make sure no other eaeng_e4_tile here
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
             #sets values for checks
-            $ eae4and1x = 1115
-            $ eae4and1y = 340
-            $ and1in1 = True
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
+            $ eae4letterHx = 1115
+            $ eae4letterHy = 340
+            $ letterHin1 = True
+            $ letterHin2 = False
+            $ letterHin3 = False
+            $ letterHin4 = False
+            $ letterHin5 = False
+            $ letterHin6 = False
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and1x = 1415
-            $ eae4and1y = 340
-            $ and1in1 = False
-            $ and1in2 = True
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
+            $ eae4letterHx = 1415
+            $ eae4letterHy = 340
+            $ letterHin1 = False
+            $ letterHin2 = True
+            $ letterHin3 = False
+            $ letterHin4 = False
+            $ letterHin5 = False
+            $ letterHin6 = False
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and1x = 1040
-            $ eae4and1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = True
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = False
+            $ eae4letterHx = 1040
+            $ eae4letterHy = 515
+            $ letterHin1 = False
+            $ letterHin2 = False
+            $ letterHin3 = True
+            $ letterHin4 = False
+            $ letterHin5 = False
+            $ letterHin6 = False
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and1x = 1190
-            $ eae4and1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = True
-            $ and1in5 = False
-            $ and1in6 = False
+            $ eae4letterHx = 1190
+            $ eae4letterHy = 515
+            $ letterHin1 = False
+            $ letterHin2 = False
+            $ letterHin3 = False
+            $ letterHin4 = True
+            $ letterHin5 = False
+            $ letterHin6 = False
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and1x = 1340
-            $ eae4and1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = True
-            $ and1in6 = False
+            $ eae4letterHx = 1340
+            $ eae4letterHy = 515
+            $ letterHin1 = False
+            $ letterHin2 = False
+            $ letterHin3 = False
+            $ letterHin4 = False
+            $ letterHin5 = True
+            $ letterHin6 = False
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and1x = 1490
-            $ eae4and1y = 515
-            $ and1in1 = False
-            $ and1in2 = False
-            $ and1in3 = False
-            $ and1in4 = False
-            $ and1in5 = False
-            $ and1in6 = True
+            $ eae4letterHx = 1490
+            $ eae4letterHy = 515
+            $ letterHin1 = False
+            $ letterHin2 = False
+            $ letterHin3 = False
+            $ letterHin4 = False
+            $ letterHin5 = False
+            $ letterHin6 = True
 
     if gate_name == "letterB":
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
 
             #sets values for checks
-            $ eae4and2x = 1115
-            $ eae4and2y = 340
-            $ and2in1 = True
-            $ and2in2 = False
-            $ and2in3 = False
-            $ and2in4 = False
-            $ and2in5 = False
-            $ and2in6 = False
+            $ eae4letterBx = 1115
+            $ eae4letterBy = 340
+            $ letterBin1 = True
+            $ letterBin2 = False
+            $ letterBin3 = False
+            $ letterBin4 = False
+            $ letterBin5 = False
+            $ letterBin6 = False
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and2x = 1415
-            $ eae4and2y = 340
-            $ and2in1 = False
-            $ and2in2 = True
-            $ and2in3 = False
-            $ and2in4 = False
-            $ and2in5 = False
-            $ and2in6 = False
+            $ eae4letterBx = 1415
+            $ eae4letterBy = 340
+            $ letterBin1 = False
+            $ letterBin2 = True
+            $ letterBin3 = False
+            $ letterBin4 = False
+            $ letterBin5 = False
+            $ letterBin6 = False
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and2x = 1040
-            $ eae4and2y = 515
-            $ and2in1 = False
-            $ and2in2 = False
-            $ and2in3 = True
-            $ and2in4 = False
-            $ and2in5 = False
-            $ and2in6 = False
+            $ eae4letterBx = 1040
+            $ eae4letterBy = 515
+            $ letterBin1 = False
+            $ letterBin2 = False
+            $ letterBin3 = True
+            $ letterBin4 = False
+            $ letterBin5 = False
+            $ letterBin6 = False
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and2x = 1190
-            $ eae4and2y = 515
-            $ and2in1 = False
-            $ and2in2 = False
-            $ and2in3 = False
-            $ and2in4 = True
-            $ and2in5 = False
-            $ and2in6 = False
+            $ eae4letterBx = 1190
+            $ eae4letterBy = 515
+            $ letterBin1 = False
+            $ letterBin2 = False
+            $ letterBin3 = False
+            $ letterBin4 = True
+            $ letterBin5 = False
+            $ letterBin6 = False
 
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and2x = 1340
-            $ eae4and2y = 515
-            $ and2in1 = False
-            $ and2in2 = False
-            $ and2in3 = False
-            $ and2in4 = False
-            $ and2in5 = True
-            $ and2in6 = False
+            $ eae4letterBx = 1340
+            $ eae4letterBy = 515
+            $ letterBin1 = False
+            $ letterBin2 = False
+            $ letterBin3 = False
+            $ letterBin4 = False
+            $ letterBin5 = True
+            $ letterBin6 = False
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and2x = 1490
-            $ eae4and2y = 515
-            $ and2in1 = False
-            $ and2in2 = False
-            $ and2in3 = False
-            $ and2in4 = False
-            $ and2in5 = False
-            $ and2in6 = True
+            $ eae4letterBx = 1490
+            $ eae4letterBy = 515
+            $ letterBin1 = False
+            $ letterBin2 = False
+            $ letterBin3 = False
+            $ letterBin4 = False
+            $ letterBin5 = False
+            $ letterBin6 = True
 
     if gate_name == "letterP":
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
 
             #sets values for checks
-            $ eae4and3x = 1115
-            $ eae4and3y = 340
-            $ and3in1 = True
-            $ and3in2 = False
-            $ and3in3 = False
-            $ and3in4 = False
-            $ and3in5 = False
-            $ and3in6 = False
+            $ eae4letterPx = 1115
+            $ eae4letterPy = 340
+            $ letterPin1 = True
+            $ letterPin2 = False
+            $ letterPin3 = False
+            $ letterPin4 = False
+            $ letterPin5 = False
+            $ letterPin6 = False
  
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and3x = 1415
-            $ eae4and3y = 340
-            $ and3in1 = False
-            $ and3in2 = True
-            $ and3in3 = False
-            $ and3in4 = False
-            $ and3in5 = False
-            $ and3in6 = False
+            $ eae4letterPx = 1415
+            $ eae4letterPy = 340
+            $ letterPin1 = False
+            $ letterPin2 = True
+            $ letterPin3 = False
+            $ letterPin4 = False
+            $ letterPin5 = False
+            $ letterPin6 = False
         
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and3x = 1040
-            $ eae4and3y = 515
-            $ and3in1 = False
-            $ and3in2 = False
-            $ and3in3 = True
-            $ and3in4 = False
-            $ and3in5 = False
-            $ and3in6 = False
+            $ eae4letterPx = 1040
+            $ eae4letterPy = 515
+            $ letterPin1 = False
+            $ letterPin2 = False
+            $ letterPin3 = True
+            $ letterPin4 = False
+            $ letterPin5 = False
+            $ letterPin6 = False
         
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and3x = 1190
-            $ eae4and3y = 515
-            $ and3in1 = False
-            $ and3in2 = False
-            $ and3in3 = False
-            $ and3in4 = True
-            $ and3in5 = False
-            $ and3in6 = False
+            $ eae4letterPx = 1190
+            $ eae4letterPy = 515
+            $ letterPin1 = False
+            $ letterPin2 = False
+            $ letterPin3 = False
+            $ letterPin4 = True
+            $ letterPin5 = False
+            $ letterPin6 = False
        
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and3x = 1340
-            $ eae4and3y = 515
-            $ and3in1 = False
-            $ and3in2 = False
-            $ and3in3 = False
-            $ and3in4 = False
-            $ and3in5 = True
-            $ and3in6 = False
+            $ eae4letterPx = 1340
+            $ eae4letterPy = 515
+            $ letterPin1 = False
+            $ letterPin2 = False
+            $ letterPin3 = False
+            $ letterPin4 = False
+            $ letterPin5 = True
+            $ letterPin6 = False
         
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and3x = 1490
-            $ eae4and3y = 515
-            $ and3in1 = False
-            $ and3in2 = False
-            $ and3in3 = False
-            $ and3in4 = False
-            $ and3in5 = False
-            $ and3in6 = True
+            $ eae4letterPx = 1490
+            $ eae4letterPy = 515
+            $ letterPin1 = False
+            $ letterPin2 = False
+            $ letterPin3 = False
+            $ letterPin4 = False
+            $ letterPin5 = False
+            $ letterPin6 = True
           
 
 
@@ -1011,230 +987,230 @@ label gamefile_e4:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
 
             #sets values for checks
-            $ eae4and4x = 1115
-            $ eae4and4y = 340
-            $ and4in1 = True
-            $ and4in2 = False
-            $ and4in3 = False
-            $ and4in4 = False
-            $ and4in5 = False
-            $ and4in6 = False
+            $ eae4letterRx = 1115
+            $ eae4letterRy = 340
+            $ letterRin1 = True
+            $ letterRin2 = False
+            $ letterRin3 = False
+            $ letterRin4 = False
+            $ letterRin5 = False
+            $ letterRin6 = False
          
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and4x = 1415
-            $ eae4and4y = 340
-            $ and4in1 = False
-            $ and4in2 = True
-            $ and4in3 = False
-            $ and4in4 = False
-            $ and4in5 = False
-            $ and4in6 = False
+            $ eae4letterRx = 1415
+            $ eae4letterRy = 340
+            $ letterRin1 = False
+            $ letterRin2 = True
+            $ letterRin3 = False
+            $ letterRin4 = False
+            $ letterRin5 = False
+            $ letterRin6 = False
           
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and4x = 1040
-            $ eae4and4y = 515
-            $ and4in1 = False
-            $ and4in2 = False
-            $ and4in3 = True
-            $ and4in4 = False
-            $ and4in5 = False
-            $ and4in6 = False
+            $ eae4letterRx = 1040
+            $ eae4letterRy = 515
+            $ letterRin1 = False
+            $ letterRin2 = False
+            $ letterRin3 = True
+            $ letterRin4 = False
+            $ letterRin5 = False
+            $ letterRin6 = False
             
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and4x = 1190
-            $ eae4and4y = 515
-            $ and4in1 = False
-            $ and4in2 = False
-            $ and4in3 = False
-            $ and4in4 = True
-            $ and4in5 = False
-            $ and4in6 = False
+            $ eae4letterRx = 1190
+            $ eae4letterRy = 515
+            $ letterRin1 = False
+            $ letterRin2 = False
+            $ letterRin3 = False
+            $ letterRin4 = True
+            $ letterRin5 = False
+            $ letterRin6 = False
            
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and4x = 1340
-            $ eae4and4y = 515
-            $ and4in1 = False
-            $ and4in2 = False
-            $ and4in3 = False
-            $ and4in4 = False
-            $ and4in5 = True
-            $ and4in6 = False
+            $ eae4letterRx = 1340
+            $ eae4letterRy = 515
+            $ letterRin1 = False
+            $ letterRin2 = False
+            $ letterRin3 = False
+            $ letterRin4 = False
+            $ letterRin5 = True
+            $ letterRin6 = False
             
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and4x = 1490
-            $ eae4and4y = 515
-            $ and4in1 = False
-            $ and4in2 = False
-            $ and4in3 = False
-            $ and4in4 = False
-            $ and4in5 = False
-            $ and4in6 = True
+            $ eae4letterRx = 1490
+            $ eae4letterRy = 515
+            $ letterRin1 = False
+            $ letterRin2 = False
+            $ letterRin3 = False
+            $ letterRin4 = False
+            $ letterRin5 = False
+            $ letterRin6 = True
            
 
 
@@ -1242,230 +1218,230 @@ label gamefile_e4:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
 
             #sets values for checks
-            $ eae4and5x = 1115
-            $ eae4and5y = 340
-            $ and5in1 = True
-            $ and5in2 = False
-            $ and5in3 = False
-            $ and5in4 = False
-            $ and5in5 = False
-            $ and5in6 = False
+            $ eae4letterGx = 1115
+            $ eae4letterGy = 340
+            $ letterGin1 = True
+            $ letterGin2 = False
+            $ letterGin3 = False
+            $ letterGin4 = False
+            $ letterGin5 = False
+            $ letterGin6 = False
            
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and5x = 1415
-            $ eae4and5y = 340
-            $ and5in1 = False
-            $ and5in2 = True
-            $ and5in3 = False
-            $ and5in4 = False
-            $ and5in5 = False
-            $ and5in6 = False
+            $ eae4letterGx = 1415
+            $ eae4letterGy = 340
+            $ letterGin1 = False
+            $ letterGin2 = True
+            $ letterGin3 = False
+            $ letterGin4 = False
+            $ letterGin5 = False
+            $ letterGin6 = False
          
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and5x = 1040
-            $ eae4and5y = 515
-            $ and5in1 = False
-            $ and5in2 = False
-            $ and5in3 = True
-            $ and5in4 = False
-            $ and5in5 = False
-            $ and5in6 = False
+            $ eae4letterGx = 1040
+            $ eae4letterGy = 515
+            $ letterGin1 = False
+            $ letterGin2 = False
+            $ letterGin3 = True
+            $ letterGin4 = False
+            $ letterGin5 = False
+            $ letterGin6 = False
            
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and5x = 1190
-            $ eae4and5y = 515
-            $ and5in1 = False
-            $ and5in2 = False
-            $ and5in3 = False
-            $ and5in4 = True
-            $ and5in5 = False
-            $ and5in6 = False
+            $ eae4letterGx = 1190
+            $ eae4letterGy = 515
+            $ letterGin1 = False
+            $ letterGin2 = False
+            $ letterGin3 = False
+            $ letterGin4 = True
+            $ letterGin5 = False
+            $ letterGin6 = False
             
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and5x = 1340
-            $ eae4and5y = 515
-            $ and5in1 = False
-            $ and5in2 = False
-            $ and5in3 = False
-            $ and5in4 = False
-            $ and5in5 = True
-            $ and5in6 = False
+            $ eae4letterGx = 1340
+            $ eae4letterGy = 515
+            $ letterGin1 = False
+            $ letterGin2 = False
+            $ letterGin3 = False
+            $ letterGin4 = False
+            $ letterGin5 = True
+            $ letterGin6 = False
             
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and5x = 1490
-            $ eae4and5y = 515
-            $ and5in1 = False
-            $ and5in2 = False
-            $ and5in3 = False
-            $ and5in4 = False
-            $ and5in5 = False
-            $ and5in6 = True
+            $ eae4letterGx = 1490
+            $ eae4letterGy = 515
+            $ letterGin1 = False
+            $ letterGin2 = False
+            $ letterGin3 = False
+            $ letterGin4 = False
+            $ letterGin5 = False
+            $ letterGin6 = True
             
   
 
@@ -1473,231 +1449,231 @@ label gamefile_e4:
             #call and_gate_pos_1
             #gate slot numeber one *******************************
         if slot_name == "gate slot one":
-            if and1in1 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in1 = False
-            if and2in1 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in1 = False
-            if and3in1 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in1 = False
-            if and4in1 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in1 = False
-            if and5in1 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in1 = False
-            if and6in1 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in1 = False
+            if letterHin1 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin1 = False
+            if letterBin1 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin1 = False
+            if letterPin1 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin1 = False
+            if letterRin1 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin1 = False
+            if letterGin1 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin1 = False
+            if letterKin1 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin1 = False
 
             #sets values for checks
-            $ eae4and6x = 1115
-            $ eae4and6y = 340
-            $ and6in1 = True
-            $ and6in2 = False
-            $ and6in3 = False
-            $ and6in4 = False
-            $ and6in5 = False
-            $ and6in6 = False
+            $ eae4letterKx = 1115
+            $ eae4letterKy = 340
+            $ letterKin1 = True
+            $ letterKin2 = False
+            $ letterKin3 = False
+            $ letterKin4 = False
+            $ letterKin5 = False
+            $ letterKin6 = False
             
 
                     #gate slot number 2********************************** 
         if slot_name == "gate slot two":
-            if and1in2 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in2 = False
-            if and2in2 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in2 = False
-            if and3in2 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in2 = False
-            if and4in2 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in2 = False
-            if and5in2 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in2 = False
-            if and6in2 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in2 = False
+            if letterHin2 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin2 = False
+            if letterBin2 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin2 = False
+            if letterPin2 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin2 = False
+            if letterRin2 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin2 = False
+            if letterGin2 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin2 = False
+            if letterKin2 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin2 = False
 
             #sets check values
-            $ eae4and6x = 1415
-            $ eae4and6y = 340
-            $ and6in1 = False
-            $ and6in2 = True
-            $ and6in3 = False
-            $ and6in4 = False
-            $ and6in5 = False
-            $ and6in6 = False
+            $ eae4letterKx = 1415
+            $ eae4letterKy = 340
+            $ letterKin1 = False
+            $ letterKin2 = True
+            $ letterKin3 = False
+            $ letterKin4 = False
+            $ letterKin5 = False
+            $ letterKin6 = False
             
                 
         #gate slot number 3******************************
         if slot_name == "gate slot three":
-            if and1in3 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in3 = False
-            if and2in3 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in3 = False
-            if and3in3 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in3 = False
-            if and4in3 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in3 = False
-            if and5in3 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in3 = False
-            if and6in3 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in3 = False
+            if letterHin3 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin3 = False
+            if letterBin3 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin3 = False
+            if letterPin3 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin3 = False
+            if letterRin3 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin3 = False
+            if letterGin3 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin3 = False
+            if letterKin3 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin3 = False
 
             #sets values for the checks
-            $ eae4and6x = 1040
-            $ eae4and6y = 515
-            $ and6in1 = False
-            $ and6in2 = False
-            $ and6in3 = True
-            $ and6in4 = False
-            $ and6in5 = False
-            $ and6in6 = False
+            $ eae4letterKx = 1040
+            $ eae4letterKy = 515
+            $ letterKin1 = False
+            $ letterKin2 = False
+            $ letterKin3 = True
+            $ letterKin4 = False
+            $ letterKin5 = False
+            $ letterKin6 = False
             
 
                 #gate slot number 4******************************
         if slot_name == "gate slot four":
-            if and1in4 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in4 = False
-            if and2in4 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in4 = False
-            if and3in4 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in4 = False
-            if and4in4 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in4 = False
-            if and5in4 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in4 = False
-            if and6in4 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in4 = False
+            if letterHin4 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin4 = False
+            if letterBin4 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin4 = False
+            if letterPin4 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin4 = False
+            if letterRin4 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin4 = False
+            if letterGin4 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin4 = False
+            if letterKin4 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin4 = False
 
             #sets values for the checks
-            $ eae4and6x = 1190
-            $ eae4and6y = 515
-            $ and6in1 = False
-            $ and6in2 = False
-            $ and6in3 = False
-            $ and6in4 = True
-            $ and6in5 = False
-            $ and6in6 = False
+            $ eae4letterKx = 1190
+            $ eae4letterKy = 515
+            $ letterKin1 = False
+            $ letterKin2 = False
+            $ letterKin3 = False
+            $ letterKin4 = True
+            $ letterKin5 = False
+            $ letterKin6 = False
             
 
                 #gate slot number 5******************************
         if slot_name == "gate slot five":
-            if and1in5 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in5 = False
-            if and2in5 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in5 = False
-            if and3in5 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in5 = False
-            if and4in5 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in5 = False
-            if and5in5 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in5 = False
-            if and6in5 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in5 = False
+            if letterHin5 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin5 = False
+            if letterBin5 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin5 = False
+            if letterPin5 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin5 = False
+            if letterRin5 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin5 = False
+            if letterGin5 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin5 = False
+            if letterKin5 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin5 = False
 
             #sets values for the checks
-            $ eae4and6x = 1340
-            $ eae4and6y = 515
-            $ and6in1 = False
-            $ and6in2 = False
-            $ and6in3 = False
-            $ and6in4 = False
-            $ and6in5 = True
-            $ and6in6 = False
+            $ eae4letterKx = 1340
+            $ eae4letterKy = 515
+            $ letterKin1 = False
+            $ letterKin2 = False
+            $ letterKin3 = False
+            $ letterKin4 = False
+            $ letterKin5 = True
+            $ letterKin6 = False
 
                 #gate slot number 6******************************
         if slot_name == "gate slot six":
-            if and1in6 == True:
-               $ eae4and1x = 275
-               $ eae4and1y = 575
-               $ and1in6 = False
-            if and2in6 == True:
-               $ eae4and2x = 410
-               $ eae4and2y = 575
-               $ and2in6 = False
-            if and3in6 == True:
-               $ eae4and3x = 342
-               $ eae4and3y = 660
-               $ and3in6 = False
-            if and4in6 == True:
-               $ eae4and4x = 275
-               $ eae4and4y = 750
-               $ and4in6 = False
-            if and5in6 == True:
-               $ eae4and5x = 410
-               $ eae4and5y = 750
-               $ and5in6 = False
-            if and6in6 == True:
-               $ eae4and6x = 342
-               $ eae4and6y = 832
-               $ and6in6 = False
+            if letterHin6 == True:
+               $ eae4letterHx = 275
+               $ eae4letterHy = 575
+               $ letterHin6 = False
+            if letterBin6 == True:
+               $ eae4letterBx = 410
+               $ eae4letterBy = 575
+               $ letterBin6 = False
+            if letterPin6 == True:
+               $ eae4letterPx = 342
+               $ eae4letterPy = 660
+               $ letterPin6 = False
+            if letterRin6 == True:
+               $ eae4letterRx = 275
+               $ eae4letterRy = 750
+               $ letterRin6 = False
+            if letterGin6 == True:
+               $ eae4letterGx = 410
+               $ eae4letterGy = 750
+               $ letterGin6 = False
+            if letterKin6 == True:
+               $ eae4letterKx = 342
+               $ eae4letterKy = 832
+               $ letterKin6 = False
 
             #sets values for the checks
-            $ eae4and6x = 1490
-            $ eae4and6y = 515
-            $ and6in1 = False
-            $ and6in2 = False
-            $ and6in3 = False
-            $ and6in4 = False
-            $ and6in5 = False
-            $ and6in6 = True
+            $ eae4letterKx = 1490
+            $ eae4letterKy = 515
+            $ letterKin1 = False
+            $ letterKin2 = False
+            $ letterKin3 = False
+            $ letterKin4 = False
+            $ letterKin5 = False
+            $ letterKin6 = True
 
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null") and not(slot_name == "LetterH_return" or slot_name == "LetterB_return" or slot_name == "LetterP_return" or slot_name == "LetterR_return" or slot_name == "LetterG_return" or slot_name == "LetterK_return"):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -1711,93 +1687,127 @@ label gamefile_e4:
             if slot_name == "LetterH_return":
                 $ attempts +=1
                 if gate_name == "letterH":
-                    $ eae4and1x = 275
-                    $ eae4and1y = 575
-                    $ and1in1 = False
-                    $ and1in2 = False
-                    $ and1in3 = False
-                    $ and1in4 = False
-                    $ and1in5 = False
-                    $ and1in6 = False
+                    $ eae4letterHx = 275
+                    $ eae4letterHy = 575
+                    $ letterHin1 = False
+                    $ letterHin2 = False
+                    $ letterHin3 = False
+                    $ letterHin4 = False
+                    $ letterHin5 = False
+                    $ letterHin6 = False
    
             if slot_name == "LetterB_return":
                 $ attempts +=1
                 if gate_name == "letterB":
-                    $ eae4and2x = 410
-                    $ eae4and2y = 575
-                    $ and2in1 = False
-                    $ and2in2 = False
-                    $ and2in3 = False
-                    $ and2in4 = False
-                    $ and2in5 = False
-                    $ and2in6 = False
+                    $ eae4letterBx = 410
+                    $ eae4letterBy = 575
+                    $ letterBin1 = False
+                    $ letterBin2 = False
+                    $ letterBin3 = False
+                    $ letterBin4 = False
+                    $ letterBin5 = False
+                    $ letterBin6 = False
                     
             if slot_name == "LetterP_return":
                 $ attempts +=1
                 if gate_name == "letterP":
-                    $ eae4and3x = 342
-                    $ eae4and3y = 660
-                    $ and3in1 = False
-                    $ and3in2 = False
-                    $ and3in3 = False
-                    $ and3in4 = False
-                    $ and3in5 = False
-                    $ and3in6 = False
+                    $ eae4letterPx = 342
+                    $ eae4letterPy = 660
+                    $ letterPin1 = False
+                    $ letterPin2 = False
+                    $ letterPin3 = False
+                    $ letterPin4 = False
+                    $ letterPin5 = False
+                    $ letterPin6 = False
 
             if slot_name == "LetterR_return":
                 $ attempts +=1
                 if gate_name == "letterR":
-                    $ eae4and4x = 275
-                    $ eae4and4y = 750
-                    $ and4in1 = False
-                    $ and4in2 = False
-                    $ and4in3 = False
-                    $ and4in4 = False
-                    $ and4in5 = False
-                    $ and4in6 = False
+                    $ eae4letterRx = 275
+                    $ eae4letterRy = 750
+                    $ letterRin1 = False
+                    $ letterRin2 = False
+                    $ letterRin3 = False
+                    $ letterRin4 = False
+                    $ letterRin5 = False
+                    $ letterRin6 = False
 
             if slot_name == "LetterG_return":
                 $ attempts +=1
                 if gate_name == "letterG":
-                    $ eae4and5x = 410
-                    $ eae4and5y = 750
-                    $ and5in1 = False
-                    $ and5in2 = False
-                    $ and5in3 = False
-                    $ and5in4 = False
-                    $ and5in5 = False
-                    $ and5in6 = False
+                    $ eae4letterGx = 410
+                    $ eae4letterGy = 750
+                    $ letterGin1 = False
+                    $ letterGin2 = False
+                    $ letterGin3 = False
+                    $ letterGin4 = False
+                    $ letterGin5 = False
+                    $ letterGin6 = False
 
             if slot_name == "LetterK_return":
                 $ attempts +=1
                 if gate_name == "letterK":
-                    $ eae4and6x = 342
-                    $ eae4and6y = 832
-                    $ and6in1 = False
-                    $ and6in2 = False
-                    $ and6in3 = False
-                    $ and6in4 = False
-                    $ and6in5 = False
-                    $ and6in6 = False
-
-    play sound gramTree2
-    if and5in1 == True and and1in2 == True:
+                    $ eae4letterKx = 342
+                    $ eae4letterKy = 832
+                    $ letterKin1 = False
+                    $ letterKin2 = False
+                    $ letterKin3 = False
+                    $ letterKin4 = False
+                    $ letterKin5 = False
+                    $ letterKin6 = False
+    hide eaeng_e4_tile42
+    hide eaeng_e4_tile43
+    hide eaeng_e4_tile44
+    hide eaeng_e4_tile45
+    hide eaeng_e4_tile46
+    hide eaeng_e4_tile47
+    hide eaeng_e4_tile48
+    hide eaeng_e4_tile49
+    hide eaeng_e4_tile50
+    hide eaeng_e4_tile51
+    hide eaeng_e4_tile52
+    hide eaeng_e4_tile53
+    hide eaeng_e4_tile54
+    hide eaeng_e4_tile55
+    hide eaeng_e4_tile60
+    hide eaeng_e4_tile61
+    hide eaeng_e4_tile62
+    hide eaeng_e4_tile63
+    hide eaeng_e4_tile64
+    hide eaeng_e4_tile65
+    hide eaeng_e4_tile66
+    hide eaeng_e4_tile67
+    hide eaeng_e4_tile68
+    hide eaeng_e4_tile69
+    hide eaeng_e4_tile70
+    hide eaeng_e4_tile71
+    hide eaeng_e4_tile72
+    hide eaeng_e4_tile73
+    hide eaeng_e4_tile86
+    hide eaeng_e4_tile87
+    hide eaeng_e4_tile88
+    hide eaeng_e4_tile89
+    $llNormal = renpy.random.randint(0,2)
+    if (llNormal==0):
+        play sound llPipe1
+    if (llNormal==1):
+        play sound llPipe2
+    if (llNormal==2):
+        play sound llPipe3
+    if letterGin1 and letterHin2:
         image eaeng_e4_tile42 = "leftTreegreenlong.png"
         image eaeng_e4_tile43 = "1_1_green.png"
         image eaeng_e4_tile60 = "rightTreegreenlong.png"
         image eaeng_e4_tile61 = "1_1_green.png"
         if (gramRow1_sound==0):
             play sound gramTree1
-            $gramRow1_sound+=1
-        #play sound gramTree2
-        #play sound gramTree1
+            $gramRow1_C_sound_right1 +=1
         show eaeng_e4_tile42 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e4_tile43 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
         show eaeng_e4_tile60 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e4_tile61 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
 
-        
-        if and3in3 == True and and6in4 == True:
+        if letterPin3 and letterKin4:
             image eaeng_e4_tile44 = "leftTreegreen.png"
             image eaeng_e4_tile45 = "1_1_green.png"
             image eaeng_e4_tile46 = "solutionLine.png"
@@ -1806,55 +1816,39 @@ label gamefile_e4:
             image eaeng_e4_tile51 = "1_1_green.png"
             image eaeng_e4_tile52 = "solutionLine.png"
             image eaeng_e4_tile53 = "friend.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
-                play sound gramText1
-                $gramRow2_soundA +=1
-            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
-                play sound gramText1
-                $gramRow2_soundA +=1
+            if (gramRow2_L_sound_right1 ==0):
+                play sound gramTree1
+                queue sound gramText1
+                $gramRow2_L_sound_right1 +=1
             show eaeng_e4_tile44 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile45 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile46 at Position(xpos = 1025, xanchor = 0, ypos = 600, yanchor = 0)
             show eaeng_e4_tile47 at Position(xpos = 990, xanchor = 0, ypos = 700, yanchor = 0)
-            #play sound gramText1
             show eaeng_e4_tile50 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile51 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile52 at Position(xpos = 1175, xanchor = 0, ypos = 600, yanchor = 0)
             show eaeng_e4_tile53 at Position(xpos = 1145, xanchor = 0, ypos = 700, yanchor = 0)
 
-        if and3in3 == False or and6in4 == False:
-            hide eaeng_e4_tile44
-            hide eaeng_e4_tile45
-            hide eaeng_e4_tile46
-            hide eaeng_e4_tile47
-            hide eaeng_e4_tile50
-            hide eaeng_e4_tile51
-            hide eaeng_e4_tile52
-            hide eaeng_e4_tile53
-
-     
-        if (and1in3 == True or and2in3 == True or and4in3 == True or and5in3 == True or and6in3 == True) and (and1in4 == True or and2in4 == True or and3in4 == True or and4in4 == True or and5in4 == True):
+        elif (letterBin3 or letterRin3 or letterPin3 or letterKin3) and (letterKin4 or letterBin4 or letterPin4 or letterRin4):
             image eaeng_e4_tile48 = "leftTreered.png"
             image eaeng_e4_tile49 = "1_1_red.png"
             image eaeng_e4_tile54 = "rightTreered.png"
             image eaeng_e4_tile55 = "1_1_red.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+            if (gramRow2_L_sound_wrong1 ==0):
                 play sound gramTree5
-            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
-                play sound gramTree5
+                $gramRow2_L_sound_wrong1 +=1
             show eaeng_e4_tile48 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile49 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
-            #play sound gramTree5
             show eaeng_e4_tile54 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile55 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
-
-        elif and1in3 == False or and1in4 == False:
-            hide eaeng_e4_tile48
-            hide eaeng_e4_tile49
-            hide eaeng_e4_tile54
-            hide eaeng_e4_tile55
-
-        if and4in5 == True and and2in6 == True:
+        if (not(letterPin3 and letterKin4)):
+            if gramRow2_L_sound_right1 ==1:
+                $gramRow2_L_sound_right1 -=1
+        if (not((letterBin3 or letterRin3 or letterPin3 or letterKin3) and (letterKin4 or letterBin4 or letterPin4 or letterRin4))):
+            if gramRow2_L_sound_wrong1 ==1:
+                $gramRow2_L_sound_wrong1 -=1
+            
+        if letterRin5 and letterBin6:
             image eaeng_e4_tile62 = "leftTreegreen.png"
             image eaeng_e4_tile63 = "1_1_green.png"
             image eaeng_e4_tile64 = "solutionLine.png"
@@ -1863,172 +1857,64 @@ label gamefile_e4:
             image eaeng_e4_tile69 = "1_1_green.png"
             image eaeng_e4_tile70 = "solutionLine.png"
             image eaeng_e4_tile71 = "enter.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
-                play sound gramText1
-                $gramRow2_soundB +=1
-            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
-                play sound gramText1
-                $gramRow2_soundB +=1
+            if (gramRow2_R_sound_right1==0):
+                play sound gramTree1
+                queue sound gramText1
+                $gramRow2_R_sound_right1 +=1
             show eaeng_e4_tile62 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile63 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile64 at Position(xpos = 1325, xanchor = 0, ypos = 600, yanchor = 0)
             show eaeng_e4_tile65 at Position(xpos = 1298, xanchor = 0, ypos = 700, yanchor = 0)
-            #play sound gramText1
             show eaeng_e4_tile68 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile69 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile70 at Position(xpos = 1475, xanchor = 0, ypos = 600, yanchor = 0)
             show eaeng_e4_tile71 at Position(xpos = 1450, xanchor = 0, ypos = 700, yanchor = 0)
 
-        if and4in5 == False or and2in6 == False:
-            hide eaeng_e4_tile62
-            hide eaeng_e4_tile63
-            hide eaeng_e4_tile64
-            hide eaeng_e4_tile65
-            hide eaeng_e4_tile68
-            hide eaeng_e4_tile69
-            hide eaeng_e4_tile70
-            hide eaeng_e4_tile71
-
-        if (and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True) and (and1in6 == True or and3in6 == True or and4in6 == True or and5in6 == True or and6in6 == True):
+        elif(letterRin5 or letterBin5 or letterPin5 or letterKin5 == True) and (letterPin6 or letterRin6 or letterBin6 or letterKin6):
             image eaeng_e4_tile66 = "leftTreered.png"
             image eaeng_e4_tile67 = "1_1_red.png"
             image eaeng_e4_tile72 = "rightTreered.png"
             image eaeng_e4_tile73 = "1_1_red.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
+            if (gramRow2_R_sound_wrong1 ==0):
                 play sound gramTree5
-            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
-                play sound gramTree5
+                $gramRow2_R_sound_wrong1 +=1
             show eaeng_e4_tile66 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile67 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
             show eaeng_e4_tile72 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
             show eaeng_e4_tile73 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in4 == False or and1in4 == False:
-            hide eaeng_e4_tile66
-            hide eaeng_e4_tile67
-            hide eaeng_e4_tile72
-            hide eaeng_e4_tile73
-
-        if and3in3 == True and (and1in4 == True or and2in4 == True or and4in4 == True or and5in4 == True) or and6in4 == True and (and1in3 == True or and2in3 == True or and4in3 == True or and3in4 == True):
-            image eaeng_e4_tile74 = "leftTreered.png"
-            image eaeng_e4_tile75 = "1_1_red.png"
-            image eaeng_e4_tile76 = "rightTreered.png"
-            image eaeng_e4_tile77 = "1_1_red.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
-                play sound gramTree5
-            if (gramRow2_soundA==0) and (gramRow2_soundB==1):
-                play sound gramTree5
-            show eaeng_e4_tile74 at Position(xpos = 1070, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e4_tile75 at Position(xpos = 1025, xanchor = 0, ypos = 500, yanchor = 0)
-            #play sound gramTree5
-            show eaeng_e4_tile76 at Position(xpos = 1170, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e4_tile77 at Position(xpos = 1175, xanchor = 0, ypos = 500, yanchor = 0)
-
-        elif and1in3 == False or and1in4 == False:
-            hide eaeng_e4_tile74
-            hide eaeng_e4_tile75
-            hide eaeng_e4_tile76
-            hide eaeng_e4_tile77
-
-        if and4in5 == True and (and1in6 == True or and3in6 == True or and5in6 == True or and6in6 == True) or and2in6 == True and (and1in5 == True or and2in5 == True or and3in5 == True or and5in5 == True or and6in5 == True):
-            image eaeng_e4_tile78 = "leftTreered.png"
-            image eaeng_e4_tile79 = "1_1_red.png"
-            image eaeng_e4_tile80 = "rightTreered.png"
-            image eaeng_e4_tile81 = "1_1_red.png"
-            if (gramRow2_soundA==0) and (gramRow2_soundB==0):
-                play sound gramTree5
-            if (gramRow2_soundA==1) and (gramRow2_soundB==0):
-                play sound gramTree5
-            show eaeng_e4_tile78 at Position(xpos = 1370, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e4_tile79 at Position(xpos = 1325, xanchor = 0, ypos = 500, yanchor = 0)
-            show eaeng_e4_tile80 at Position(xpos = 1470, xanchor = 0, ypos = 425, yanchor = 0)
-            show eaeng_e4_tile81 at Position(xpos = 1475, xanchor = 0, ypos = 500, yanchor = 0)
-        elif and1in4 == False or and1in4 == False:
-            hide eaeng_e4_tile78
-            hide eaeng_e4_tile79
-            hide eaeng_e4_tile80
-            hide eaeng_e4_tile81
+            
+        if (not(letterRin5 and letterBin6)):
+            if gramRow2_R_sound_right1 ==1:
+                $gramRow2_R_sound_right1 -=1
+        if (not((letterRin5 or letterBin5 or letterPin5 or letterKin5 == True) and (letterPin6 or letterRin6 or letterBin6 or letterKin6))):
+            if gramRow2_R_sound_wrong1 ==1:
+                $gramRow2_R_sound_wrong1 -=1
 
 
-
-    if and5in1 == False or and1in2 == False:
-        hide eaeng_e4_tile42
-        hide eaeng_e4_tile43
-        hide eaeng_e4_tile44
-        hide eaeng_e4_tile45
-        hide eaeng_e4_tile46
-        hide eaeng_e4_tile47
-        hide eaeng_e4_tile48
-        hide eaeng_e4_tile49
-        hide eaeng_e4_tile50
-        hide eaeng_e4_tile51
-        hide eaeng_e4_tile52
-        hide eaeng_e4_tile53
-        hide eaeng_e4_tile54
-        hide eaeng_e4_tile55
-        hide eaeng_e4_tile60
-        hide eaeng_e4_tile61
-        hide eaeng_e4_tile62
-        hide eaeng_e4_tile63
-        hide eaeng_e4_tile64
-        hide eaeng_e4_tile65
-        hide eaeng_e4_tile66
-        hide eaeng_e4_tile67
-        hide eaeng_e4_tile68
-        hide eaeng_e4_tile69
-        hide eaeng_e4_tile70
-        hide eaeng_e4_tile71
-        hide eaeng_e4_tile72
-        hide eaeng_e4_tile73
-        hide eaeng_e4_tile74
-        hide eaeng_e4_tile75
-        hide eaeng_e4_tile76
-        hide eaeng_e4_tile77
-        hide eaeng_e4_tile78
-        hide eaeng_e4_tile79
-        hide eaeng_e4_tile80
-        hide eaeng_e4_tile81
-
-
-    
-    if (and1in1 == True or and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True) and (and2in2 == True or and3in2 == True or and4in2 == True or and5in2 == True or and6in2 == True):
-         image eaeng_e4_tile82 = "leftTreeredlong.png"
-         image eaeng_e4_tile83 = "1_1_red.png"
-         image eaeng_e4_tile84 = "rightTreeredlong.png"
-         image eaeng_e4_tile85 = "1_1_red.png"
-         if(gramRow1_sound==0):
-             play sound gramTree5
-         show eaeng_e4_tile82 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
-         show eaeng_e4_tile83 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
-         #play sound gramTree4
-         show eaeng_e4_tile84 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
-         show eaeng_e4_tile85 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
-    elif and1in1 == False or and2in2 == False:
-         hide eaeng_e4_tile82
-         hide eaeng_e4_tile83
-         hide eaeng_e4_tile84
-         hide eaeng_e4_tile85
-
-    if and5in1 == True and (and2in2 == True or and3in2 == True or and4in2 == True or and6in2 == True) or and1in2 == True and (and2in1 == True or and3in1 == True or and4in1 == True or and6in1 == True):
+    elif (letterGin1 or letterBin1 or letterPin1 or letterRin1 or letterKin1 or letterHin1) and (letterBin2 or letterPin2 or letterRin2 or letterKin2 or letterHin2 or letterGin2):
          image eaeng_e4_tile86 = "leftTreeredlong.png"
          image eaeng_e4_tile87 = "1_1_red.png"
          image eaeng_e4_tile88 = "rightTreeredlong.png"
          image eaeng_e4_tile89 = "1_1_red.png"
          if (gramRow1_sound==0):
              play sound gramTree5
-         #play sound gramTree5
+             $gramRow1_C_sound_wrong1 +=1
          show eaeng_e4_tile86 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e4_tile87 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)
-         #play sound gramTree4
          show eaeng_e4_tile88 at Position(xpos = 1310, xanchor = 0, ypos = 250, yanchor = 0)
          show eaeng_e4_tile89 at Position(xpos = 1400, xanchor = 0, ypos = 325, yanchor = 0)
-    elif and1in1 == False or and2in2 == False:
-         hide eaeng_e4_tile86
-         hide eaeng_e4_tile87
-         hide eaeng_e4_tile88
-         hide eaeng_e4_tile89
-
+         
+    if (not(letterGin1 and letterHin2)):
+        if gramRow1_C_sound_right1 ==1:
+            $gramRow1_C_sound_right1 -=1
+    
+    if (not((letterGin1 or letterBin1 or letterPin1 or letterRin1 or letterKin1 or letterHin1) and (letterBin2 or letterPin2 or letterRin2 or letterKin2 or letterHin2 or letterGin2))):
+        if gramRow1_C_sound_wrong1 ==1:
+            $gramRow1_C_sound_wrong1 -=1
+            
+            
     #win conditions
-    if and5in1 == True and and3in3 == True and and6in4 == True and and1in2 == True and and4in5 == True and and2in6 == True: 
+    if letterGin1 == True and letterPin3 == True and letterKin4 == True and letterHin2 == True and letterRin5 == True and letterBin6 == True: 
         image eaeng_e4_tile202 = "letterH.png"
         image eaeng_e4_tile206 = "letterB.png"
         image eaeng_e4_tile203 = "letterP.png"
@@ -2036,113 +1922,30 @@ label gamefile_e4:
         image eaeng_e4_tile201 = "letterG.png"
         image eaeng_e4_tile204 = "letterK.png"
         
-
-        show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)
-        show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)
-        show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)
-        show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)
-        show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)
-        show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)
+        show eaeng_e4_tile202 at Position(xpos = eae4letterHx, xanchor = 0, ypos = eae4letterHy, yanchor = 0)
+        show eaeng_e4_tile206 at Position(xpos = eae4letterBx, xanchor = 0, ypos = eae4letterBy, yanchor = 0)
+        show eaeng_e4_tile203 at Position(xpos = eae4letterPx, xanchor = 0, ypos = eae4letterPy, yanchor = 0)
+        show eaeng_e4_tile205 at Position(xpos = eae4letterRx, xanchor = 0, ypos = eae4letterRy, yanchor = 0)
+        show eaeng_e4_tile201 at Position(xpos = eae4letterGx, xanchor = 0, ypos = eae4letterGy, yanchor = 0)
+        show eaeng_e4_tile204 at Position(xpos = eae4letterKx, xanchor = 0, ypos = eae4letterKy, yanchor = 0)
         queue sound gramWin
         $ renpy.pause(1.0)
-        hide eaeng_e4_tile42
-        hide eaeng_e4_tile43
-        hide eaeng_e4_tile44
-        hide eaeng_e4_tile45
-        hide eaeng_e4_tile46
-        hide eaeng_e4_tile47
-        hide eaeng_e4_tile48
-        hide eaeng_e4_tile49
-        hide eaeng_e4_tile50
-        hide eaeng_e4_tile51
-        hide eaeng_e4_tile52
-        hide eaeng_e4_tile53
-        hide eaeng_e4_tile54
-        hide eaeng_e4_tile55
-        hide eaeng_e4_tile61
-        hide eaeng_e4_tile62
-        hide eaeng_e4_tile63
-        hide eaeng_e4_tile64
-        hide eaeng_e4_tile65
-        hide eaeng_e4_tile66
-        hide eaeng_e4_tile67
-        hide eaeng_e4_tile68
-        hide eaeng_e4_tile69
-        hide eaeng_e4_tile70
-        hide eaeng_e4_tile71
-        hide eaeng_e4_tile72
-        hide eaeng_e4_tile73
-        hide eaeng_e4_tile74
-        hide eaeng_e4_tile75
-        hide eaeng_e4_tile76
-        hide eaeng_e4_tile77
-        hide eaeng_e4_tile78
-        hide eaeng_e4_tile79
-        hide eaeng_e4_tile80
-        hide eaeng_e4_tile81
-        hide eaeng_e4_tile82
-        hide eaeng_e4_tile83
-        hide eaeng_e4_tile84
-        hide eaeng_e4_tile85
-        hide eaeng_e4_tile86
-        hide eaeng_e4_tile87
-        hide eaeng_e4_tile88
-        hide eaeng_e4_tile89
-        
+        if(puzzleGallery):
+            jump pg_gramEasyWin
         jump gramEasyDone
 
     if attempts ==0:
         queue sound gramLose
-        show eaeng_e4_tile202 at Position(xpos = eae4and1x, xanchor = 0, ypos = eae4and1y, yanchor = 0)
-        show eaeng_e4_tile206 at Position(xpos = eae4and2x, xanchor = 0, ypos = eae4and2y, yanchor = 0)
-        show eaeng_e4_tile203 at Position(xpos = eae4and3x, xanchor = 0, ypos = eae4and3y, yanchor = 0)
-        show eaeng_e4_tile205 at Position(xpos = eae4and4x, xanchor = 0, ypos = eae4and4y, yanchor = 0)
-        show eaeng_e4_tile201 at Position(xpos = eae4and5x, xanchor = 0, ypos = eae4and5y, yanchor = 0)
-        show eaeng_e4_tile204 at Position(xpos = eae4and6x, xanchor = 0, ypos = eae4and6y, yanchor = 0)
+        show eaeng_e4_tile202 at Position(xpos = eae4letterHx, xanchor = 0, ypos = eae4letterHy, yanchor = 0)
+        show eaeng_e4_tile206 at Position(xpos = eae4letterBx, xanchor = 0, ypos = eae4letterBy, yanchor = 0)
+        show eaeng_e4_tile203 at Position(xpos = eae4letterPx, xanchor = 0, ypos = eae4letterPy, yanchor = 0)
+        show eaeng_e4_tile205 at Position(xpos = eae4letterRx, xanchor = 0, ypos = eae4letterRy, yanchor = 0)
+        show eaeng_e4_tile201 at Position(xpos = eae4letterGx, xanchor = 0, ypos = eae4letterGy, yanchor = 0)
+        show eaeng_e4_tile204 at Position(xpos = eae4letterKx, xanchor = 0, ypos = eae4letterKy, yanchor = 0)
         $renpy.pause(1.5)
-        hide eaeng_e4_tile42
-        hide eaeng_e4_tile43
-        hide eaeng_e4_tile44
-        hide eaeng_e4_tile45
-        hide eaeng_e4_tile46
-        hide eaeng_e4_tile47
-        hide eaeng_e4_tile48
-        hide eaeng_e4_tile49
-        hide eaeng_e4_tile50
-        hide eaeng_e4_tile51
-        hide eaeng_e4_tile52
-        hide eaeng_e4_tile53
-        hide eaeng_e4_tile54
-        hide eaeng_e4_tile55
-        hide eaeng_e4_tile61
-        hide eaeng_e4_tile62
-        hide eaeng_e4_tile63
-        hide eaeng_e4_tile64
-        hide eaeng_e4_tile65
-        hide eaeng_e4_tile66
-        hide eaeng_e4_tile67
-        hide eaeng_e4_tile68
-        hide eaeng_e4_tile69
-        hide eaeng_e4_tile70
-        hide eaeng_e4_tile71
-        hide eaeng_e4_tile72
-        hide eaeng_e4_tile73
-        hide eaeng_e4_tile74
-        hide eaeng_e4_tile75
-        hide eaeng_e4_tile76
-        hide eaeng_e4_tile77
-        hide eaeng_e4_tile78
-        hide eaeng_e4_tile79
-        hide eaeng_e4_tile80
-        hide eaeng_e4_tile81
-        hide eaeng_e4_tile82
-        hide eaeng_e4_tile83
-        hide eaeng_e4_tile84
-        hide eaeng_e4_tile85
-        hide eaeng_e4_tile86
-        hide eaeng_e4_tile87
-        hide eaeng_e4_tile88
-        hide eaeng_e4_tile89
+        if(puzzleGallery):
+            $repeat_number = 4
+            jump pg_gramEasyLose
         $attemptsGramEasy +=1
         jump gramEasyLose 
     

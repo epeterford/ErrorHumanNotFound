@@ -24,6 +24,9 @@ init:
     image bg Logic_Gate = "LOGIC_GATE_BG.png"
 
 label logicGate_hardA2:
+    $quick_menu = False
+    $config.skipping=None
+    $renpy.block_rollback()
     #loads background
     scene bg Logic_Gate
    
@@ -67,7 +70,7 @@ label logicGate_hardA2:
     image HA2tile03_04 = "g_t_down.png"
     image HA2tile03_05 = "g_elbow_tl.png"
     image HA2tile03_08 = "y_y.png"
-    image HA2tile03_09 = "XOR_Gate_blue.png"
+    image HA2tile03_09 = "NOR_Gate_blue.png"
     image HA2tile03_10 = "y_horizontal.png"
     image HA2tile03_11 = "y_horizontal.png"
     image HA2tile03_12 = "y_elbow_tl.png"
@@ -109,7 +112,7 @@ label logicGate_hardA2:
     show HA2tile05_04 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
     
     #row 6
-    image HA2tile06_01 = "g_r.png"
+    image HA2tile06_01 = "g_g.png"
     image HA2tile06_02 = "NONE_Gate.png"
     image HA2tile06_03 = "y_elbow_tl.png"
     
@@ -118,8 +121,8 @@ label logicGate_hardA2:
     show HA2tile06_03 at Position(xpos = 661, xanchor = 0, ypos = 683, yanchor = 0)
     
     #row 7 (row has a light)
-    image HA2tile07_00 = "r_horizontal.png"
-    image HA2tile07_01 = "r_elbow_tl.png"
+    image HA2tile07_00 = "g_horizontal.png"
+    image HA2tile07_01 = "g_elbow_tl.png"
     
     show HA2tile07_00 at Position(xpos = 436, xanchor = 0, ypos = 758, yanchor = 0)
     show HA2tile07_01 at Position(xpos = 511, xanchor = 0, ypos = 758, yanchor = 0)
@@ -132,7 +135,7 @@ label logicGate_hardA2:
     show HA299start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
     image HA299start3 = "light_g_on.png"
     show HA299start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
-    image HA299start4 = "light_r_on.png"
+    image HA299start4 = "light_g_on.png"
     show HA299start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
     #end points (only use one of these
@@ -153,7 +156,7 @@ label logicGate_hardA2:
     $ and1y = 88
     $ or1x = 848
     $ or1y = 88
-    $ xor1x = 1298
+    $ xor1x = 1300
     $ xor1y = 88
     
     #gate values
@@ -176,7 +179,7 @@ label logicGate_hardA2:
     $ xor1in3 = False
     
     #attempts for players
-    $ attempts = 6
+    $ attempts = 5
  
     jump gamefileHA2
     
@@ -195,7 +198,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -213,7 +216,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
 
@@ -230,7 +233,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
 
@@ -257,7 +260,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -275,7 +278,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in2 = False
                 
@@ -292,7 +295,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1298
+                $ xor1x = 1300
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -365,13 +368,13 @@ label gamefileHA2:
             $ xor1in2 = False
             
         if slot_name == "xor return":
-            $ xor1x = 848
+            $ xor1x = 1300
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
             $ xor1in3 = False
             
-    if (temp_slot == "" and temp_gate == "" and slot_name != "null"):
+    if (temp_slot == "" and temp_gate == "" and slot_name != "null" and not(slot_name == "and return" or slot_name == "or return" or slot_name == "xor return")):
         $ temp_slot = slot_name
         $ temp_gate = gate_name
         if temp_slot != "" and temp_gate != "":
@@ -405,6 +408,14 @@ label gamefileHA2:
 #************image zone********************* 
 #*******************************************
 
+    $lgNormal = renpy.random.randint(0,2)
+    if (lgNormal==0):
+        play sound pipeFlowR
+    if (lgNormal==1):
+        play sound pipeFlowG
+    if (lgNormal==2):
+        play sound pipeFlowN
+        
     if and1in1 == True:
         image HA21tile02_07 = "r_horizontal.png"
         image HA21tile02_08 = "r_elbow_bl.png"
@@ -445,23 +456,23 @@ label gamefileHA2:
         hide HA23tile03_08
     
     if and1in2 == True:
-        image HA24tile05_03 = "r_elbow_br.png"
-        image HA24tile05_04 = "r_elbow_tl.png"
+        image HA24tile05_03 = "g_elbow_br.png"
+        image HA24tile05_04 = "g_elbow_tl.png"
     
         show HA24tile05_03 at Position(xpos = 661, xanchor = 0, ypos = 608, yanchor = 0)
         show HA24tile05_04 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
     
-        image HA24tile06_03 = "r_elbow_tl.png"
+        image HA24tile06_03 = "g_elbow_tl.png"
         show HA24tile06_03 at Position(xpos = 661, xanchor = 0, ypos = 683, yanchor = 0)
-        image HA24tile04_04 = "g_r.png"
+        image HA24tile04_04 = "g_g.png"
         show HA24tile04_04 at Position(xpos = 736, xanchor = 0, ypos = 533, yanchor = 0)
         if or1in3 == True:
             image HA27tile04_06 = "g_horizontal.png"
-            image HA27tile04_08 = "g_elbow_tl.png"
+            image HA27tile04_08 = "r_elbow_tl.png"
         
             show HA27tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
             show HA27tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
-            image HA27tile03_08 = "y_g.png"
+            image HA27tile03_08 = "y_r.png"
             show HA27tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
         else:
             hide HA27tile04_06
@@ -469,7 +480,7 @@ label gamefileHA2:
             hide HA27tile03_08
             
         if xor1in3 == True:
-            image HA28tile04_06 = "g_horizontal.png"
+            image HA28tile04_06 = "r_horizontal.png"
             image HA28tile04_08 = "g_elbow_tl.png"
         
             show HA28tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
@@ -506,11 +517,11 @@ label gamefileHA2:
         show HA25tile04_04 at Position(xpos = 736, xanchor = 0, ypos = 533, yanchor = 0)
         if and1in3 == True:
             image HA29tile04_06 = "g_horizontal.png"
-            image HA29tile04_08 = "g_elbow_tl.png"
+            image HA29tile04_08 = "r_elbow_tl.png"
         
             show HA29tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
             show HA29tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
-            image HA29tile03_08 = "y_g.png"
+            image HA29tile03_08 = "y_r.png"
             show HA29tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
         else:
             hide HA29tile04_06
@@ -518,11 +529,11 @@ label gamefileHA2:
             hide HA29tile03_08
         if xor1in3 == True:
             image HA20tile04_06 = "r_horizontal.png"
-            image HA20tile04_08 = "r_elbow_tl.png"
+            image HA20tile04_08 = "g_elbow_tl.png"
         
             show HA20tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
             show HA20tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
-            image HA20tile03_08 = "y_r.png"
+            image HA20tile03_08 = "y_g.png"
             show HA20tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
         else:
             hide HA20tile04_06
@@ -542,18 +553,18 @@ label gamefileHA2:
         hide HA20tile03_08
         
     if xor1in2 == True:
-        image HA26tile05_03 = "g_elbow_br.png"
-        image HA26tile05_04 = "g_elbow_tl.png"
+        image HA26tile05_03 = "r_elbow_br.png"
+        image HA26tile05_04 = "r_elbow_tl.png"
     
         show HA26tile05_03 at Position(xpos = 661, xanchor = 0, ypos = 608, yanchor = 0)
         show HA26tile05_04 at Position(xpos = 736, xanchor = 0, ypos = 608, yanchor = 0)
     
-        image HA26tile06_03 = "g_elbow_tl.png"
+        image HA26tile06_03 = "r_elbow_tl.png"
         show HA26tile06_03 at Position(xpos = 661, xanchor = 0, ypos = 683, yanchor = 0)
-        image HA26tile04_04 = "g_g.png"
+        image HA26tile04_04 = "g_r.png"
         show HA26tile04_04 at Position(xpos = 736, xanchor = 0, ypos = 533, yanchor = 0)
         if and1in3 == True:
-            image HA211tile04_06 = "g_horizontal.png"
+            image HA211tile04_06 = "r_horizontal.png"
             image HA211tile04_08 = "g_elbow_tl.png"
         
             show HA211tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
@@ -566,11 +577,11 @@ label gamefileHA2:
             hide HA211tile03_08
         if or1in3 == True:
             image HA212tile04_06 = "g_horizontal.png"
-            image HA212tile04_08 = "g_elbow_tl.png"
+            image HA212tile04_08 = "r_elbow_tl.png"
         
             show HA212tile04_06 at Position(xpos = 886, xanchor = 0, ypos = 533, yanchor = 0)
             show HA212tile04_08 at Position(xpos = 1036, xanchor = 0, ypos = 533, yanchor = 0)
-            image HA212tile03_08 = "y_g.png"
+            image HA212tile03_08 = "y_r.png"
             show HA212tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
         else:
             hide HA212tile04_06
@@ -590,7 +601,7 @@ label gamefileHA2:
         hide HA212tile03_08
         
     # not winning
-    if (xor1in1 == True and and1in3 == True and or1in2 == True) or (and1in3 == True and or1in1 == True and xor1in2 == True) or (and1in2 == True and or1in3 == True and xor1in1 == True) or (and1in2 == True and or1in1 == True and xor1in3 == True):
+    if (and1in3 and or1in1 and xor1in2) or (and1in2 and or1in1 and xor1in3):
         image HA213tile01_12 = "r_elbow_br.png"
         image HA213tile01_13 = "r_horizontal.png"
         show HA213tile01_12 at Position(xpos = 1336, xanchor = 0, ypos = 308, yanchor = 0)
@@ -614,7 +625,7 @@ label gamefileHA2:
         hide HA213tile03_11
         hide HA213tile03_12
     
-    if (and1in1 == True and or1in2 == True and xor1in3 == True):
+    if (and1in1 and or1in2 and xor1in3):
         image HA214tile01_12 = "r_elbow_br.png"
         image HA214tile01_13 = "r_horizontal.png"
         show HA214tile01_12 at Position(xpos = 1336, xanchor = 0, ypos = 308, yanchor = 0)
@@ -628,26 +639,51 @@ label gamefileHA2:
         show HA214tile03_08 at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
         show HA214tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
         show HA214tile03_11 at Position(xpos = 1261, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)  
+    else:
+        hide HA214tile03_08
+        
+    if (and1in2 and or1in3 and xor1in1) or (xor1in1 and or1in2 and and1in3):
+        show HA214tile01_12 at Position(xpos = 1336, xanchor = 0, ypos = 308, yanchor = 0)
+        show HA214tile01_13 at Position(xpos = 1411, xanchor = 0, ypos = 308, yanchor = 0)
+        show HA214tile02_12 at Position(xpos = 1336, xanchor = 0, ypos = 383, yanchor = 0)
+        image HA214tile03_08S = "g_r.png"
+        show HA214tile03_08S at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_11 at Position(xpos = 1261, xanchor = 0, ypos = 458, yanchor = 0)
         show HA214tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
     else:
+        hide HA214tile03_08S
+        
+    if (and1in1 and or1in2 and xor1in3):
+        show HA214tile01_12 at Position(xpos = 1336, xanchor = 0, ypos = 308, yanchor = 0)
+        show HA214tile01_13 at Position(xpos = 1411, xanchor = 0, ypos = 308, yanchor = 0)
+        show HA214tile02_12 at Position(xpos = 1336, xanchor = 0, ypos = 383, yanchor = 0)
+        image HA214tile03_08Sx = "r_g.png"
+        show HA214tile03_08Sx at Position(xpos = 1036, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_11 at Position(xpos = 1261, xanchor = 0, ypos = 458, yanchor = 0)
+        show HA214tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
+    else:
+        hide HA214tile03_08Sx
+        
+    if not((and1in2 and or1in3 and xor1in1) or (and1in1 and or1in2 and xor1in3) or (and1in1 and or1in2 and xor1in3) or (xor1in1 and or1in2 and and1in3)):
         hide HA214tile01_12
         hide HA214tile01_13
         hide HA214tile02_12
-        hide HA214tile03_08
         hide HA214tile03_10
         hide HA214tile03_11
-        hide HA214tile03_12    
-        
+        hide HA214tile03_12 
         
     #winning
-    if (and1in1 == True and or1in3 == True and xor1in2 == True):
+    if (and1in1 and xor1in2 and or1in3):
         image HA215tile01_12 = "g_elbow_br.png"
         image HA215tile01_13 = "g_horizontal.png"
         show HA215tile01_12 at Position(xpos = 1336, xanchor = 0, ypos = 308, yanchor = 0)
         show HA215tile01_13 at Position(xpos = 1411, xanchor = 0, ypos = 308, yanchor = 0)
         image HA215tile02_12 = "g_vertical.png"
         show HA215tile02_12 at Position(xpos = 1336, xanchor = 0, ypos = 383, yanchor = 0)
-        image HA215tile03_08 = "r_g.png"
+        image HA215tile03_08 = "r_r.png"
         image HA215tile03_10 = "g_horizontal.png"
         image HA215tile03_11 = "g_horizontal.png"
         image HA215tile03_12 = "g_elbow_tl.png"
@@ -663,8 +699,12 @@ label gamefileHA2:
         show HA215tile07_08 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
         image HA215end = "light_g_on.png"
         show HA215end at Position(xpos = 1595, xanchor = 0, ypos = 308, yanchor = 0)
-        "game"
-        jump start
+        queue sound lgWin
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_lgHardAWin
+        $lgHardA_solved = True
+        jump lgHard_win
 
         
     if attempts == 0:
@@ -674,14 +714,42 @@ label gamefileHA2:
         show HA216tile07_09 at Position(xpos = or1x, xanchor = 0, ypos = or1y, yanchor = 0)
         image HA216tile07_08 = "xor_Gate.png"
         show HA216tile07_08 at Position(xpos = xor1x, xanchor = 0, ypos = xor1y, yanchor = 0)
-
-        "you lose try again"
-        jump start
+        queue sound lgLose
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 2
+            jump pg_lgHardALose
+        $lgHard_attempts +=1
+        jump lgHard_lose
     
     jump gamefileHA2
 
 screen logicGatesHA2:
-    
+    key 'h'action NullAction()# action Hide("")
+    key 'K_PAGEUP' action NullAction()# action Hide("")
+    key 'repeat_K_PAGEUP' action NullAction()# action Hide("")
+    key 'K_AC_BACK' action NullAction()#action Hide("")
+    key 'mousedown_4'action NullAction()# action Hide("")
+    key 'K_LCTRL' action NullAction()# action Skip("")
+    key 'K_RCTRL' action NullAction() #action Skip("")
+    key 'K_TAB' action NullAction() #action Hide("")
+    key '>' action NullAction() #action Skip("")
+    imagebutton:
+        idle "hints_idle.png"
+        hover "hints_hover.png"
+        xpos 240
+        ypos 890
+        focus_mask True
+        action Jump("hints_lgHardA2")
+        hover_sound "audio/ENHF_UI_Button_v2.ogg"
+        activate_sound "audio/ENHF_UI_Button_v1.ogg"
+    imagebutton:
+        idle "button_empty.png"
+        xpos 1515
+        ypos 890
+    text "Moves" xpos 1550 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
+    text ": " xpos 1675 ypos 895 color "#0060db" font "Bitter-Bold.otf" size 40
+    text "[attempts]" xpos 1705 ypos 908 color "#0060db" font "United Kingdom DEMO.otf" size 27
     #drags and drop location
     draggroup:
             #and gates
@@ -743,4 +811,4 @@ screen logicGatesHA2:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1298 ypos 88
+                xpos 1300 ypos 88

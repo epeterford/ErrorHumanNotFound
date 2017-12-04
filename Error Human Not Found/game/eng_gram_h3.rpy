@@ -516,7 +516,7 @@ label eng_gram_h3:
     #attempts for players
     $ attempts = 15
     
-    call gamefile_h3
+    call gamefile_h3 from _call_gamefile_h3
 
 label gamefile_h3:
     call screen grammar_hard3
@@ -7581,15 +7581,15 @@ label gamefile_h3:
         show gram_h3_colorTile2 at Position(xpos = 1420, xanchor = 0, ypos = 250, yanchor = 0)
         image gram_h3_colorTile3 = "rightTreegreenlong1.png"
         show gram_h3_colorTile3 at Position(xpos = 1480, xanchor = 0, ypos = 250, yanchor = 0)
-        image gram_h3_colorTile43 = "solutionLine.png"
+        image gram_h3_colorTile43 = "solutionLine_grey.png"
         show gram_h3_colorTile43 at Position(xpos = 1660, xanchor = 0, ypos = 410, yanchor = 0)
-        image gram_h3_colorTile44 = "solutionLine.png"
+        image gram_h3_colorTile44 = "solutionLine_grey.png"
         show gram_h3_colorTile44 at Position(xpos = 1660, xanchor = 0, ypos = 500, yanchor = 0)
-        image gram_h3_colorTile45 = "solutionLine.png"
+        image gram_h3_colorTile45 = "solutionLine_grey.png"
         show gram_h3_colorTile45 at Position(xpos = 1660, xanchor = 0, ypos = 590, yanchor = 0)
-        image gram_h3_colorTile46 = "solutionLine.png"
+        image gram_h3_colorTile46 = "solutionLine_grey.png"
         show gram_h3_colorTile46 at Position(xpos = 1660, xanchor = 0, ypos = 680, yanchor = 0)
-        image gram_h3_colorTile47 = "solutionLine.png"
+        image gram_h3_colorTile47 = "solutionLine_grey.png"
         show gram_h3_colorTile47 at Position(xpos = 1660, xanchor = 0, ypos = 770, yanchor = 0)
         image gram_h3_colorTile4 = "1_1_green.png"
         show gram_h3_colorTile4 at Position(xpos = 1025, xanchor = 0, ypos = 325, yanchor = 0)
@@ -7612,11 +7612,11 @@ label gamefile_h3:
             show gram_h3_colorTile14 at Position(xpos = 1025, xanchor = 0, ypos = 425, yanchor = 0)
             image gram_h3_colorTile15 = "rightTreegreenlong.png"
             show gram_h3_colorTile15 at Position(xpos = 1100, xanchor = 0, ypos = 425, yanchor = 0)
-            image gram_h3_colorTile49 = "solutionLine.png"
+            image gram_h3_colorTile49 = "solutionLine_grey.png"
             show gram_h3_colorTile49 at Position(xpos = 1190, xanchor = 0, ypos = 590, yanchor = 0)
-            image gram_h3_colorTile50 = "solutionLine.png"
+            image gram_h3_colorTile50 = "solutionLine_grey.png"
             show gram_h3_colorTile50 at Position(xpos = 1190, xanchor = 0, ypos = 680, yanchor = 0)
-            image gram_h3_colorTile51 = "solutionLine.png"
+            image gram_h3_colorTile51 = "solutionLine_grey.png"
             show gram_h3_colorTile51 at Position(xpos = 1190, xanchor = 0, ypos = 770, yanchor = 0)
             image gram_h3_colorTile16 = "1_1_green.png"
             show gram_h3_colorTile16 at Position(xpos = 860, xanchor = 0, ypos = 500, yanchor = 0)
@@ -7635,7 +7635,7 @@ label gamefile_h3:
                 show gram_h3_colorTile25 at Position(xpos = 820, xanchor = 0, ypos = 600, yanchor = 0)
                 image gram_h3_colorTile26 = "treeGreen.png"
                 show gram_h3_colorTile26 at Position(xpos = 890, xanchor = 0, ypos = 600, yanchor = 0)
-                image gram_h3_colorTile29 = "solutionLine.png"
+                image gram_h3_colorTile29 = "solutionLine_grey.png"
                 show gram_h3_colorTile29 at Position(xpos = 760, xanchor = 0, ypos = 770, yanchor = 0)
                 image gram_h3_colorTile30 = "solutionLine.png"
                 show gram_h3_colorTile30 at Position(xpos = 895, xanchor = 0, ypos = 770, yanchor = 0)
@@ -7837,7 +7837,9 @@ label gamefile_h3:
         show gram_h3_letterK at Position(xpos = letterKx, xanchor = 0, ypos = letterKy, yanchor = 0)
         show gram_h3_letterH at Position(xpos = letterHx, xanchor = 0, ypos = letterHy, yanchor = 0)
         queue sound gramWin
-        $renpy.pause(0.7)
+        $renpy.pause(1.0)
+        if(puzzleGallery):
+            jump pg_gramHardWin
         $gramHard_solved = True
         jump gramHard_win
     
@@ -7855,7 +7857,10 @@ label gamefile_h3:
         show gram_h3_letterK at Position(xpos = letterKx, xanchor = 0, ypos = letterKy, yanchor = 0)
         show gram_h3_letterH at Position(xpos = letterHx, xanchor = 0, ypos = letterHy, yanchor = 0)
         queue sound gramLose
-        $renpy.pause(0.8)
+        $renpy.pause(1.5)
+        if(puzzleGallery):
+            $repeat_number = 3
+            jump pg_gramHardLose
         hide gram_h3_colorTile1
         hide gram_h3_colorTile2
         hide gram_h3_colorTile3

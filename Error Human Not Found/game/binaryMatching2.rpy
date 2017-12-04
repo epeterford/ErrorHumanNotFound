@@ -82,6 +82,7 @@ label binaryMatchEasy:
         
         label turns_loop:
             if turns_left >0:
+                $ can_click = True
                 $ result = ui.interact()
                 $tileFlipSound = renpy.random.randint(0,2)
                 if (tileFlipSound==0):
@@ -151,9 +152,13 @@ label binaryMatchEasy:
 label binaryEasyWin_pre:
     queue sound binaryWin
     $renpy.pause(1.0)
+    if(puzzleGallery):
+        jump pg_binaryEasyWin
     jump binaryEasyWin
     
 label binaryEasyLose_pre:
     queue sound binaryLose
     $renpy.pause(1.5)
+    if(puzzleGallery):
+        jump pg_binaryEasyLose
     jump binaryEasyLose
