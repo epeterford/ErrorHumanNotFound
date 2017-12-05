@@ -655,7 +655,7 @@ label ch3resume3_E:
     show Ivan behind Grace
     g "Just show us what you have, Babbage."
     show Grace snarky
-    g "Then we'll get out of that mop you call your hair."
+    g "Then we'll get out of that non-existent mess you call your hair."
     "{i}Ivan guides Grace and Ada inside of his lab.{/i}"
     window hide
     hide Ivan
