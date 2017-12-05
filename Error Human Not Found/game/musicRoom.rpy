@@ -11,6 +11,8 @@ init -100 python:
     mr.add("music/Music_Gallery/EHNF_CH5.mp3", always_unlocked = True)
     mr.add("music/Music_Gallery/Puzzle_BGM.ogg", always_unlocked = True)
     mr.loop = True
+    mr.fadeout = 0.0
+    mr.fadein = 0.0
     
 screen music_room:
     tag menu

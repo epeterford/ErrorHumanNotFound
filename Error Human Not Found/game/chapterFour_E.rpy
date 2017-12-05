@@ -179,7 +179,7 @@ label ch4resume_E:
     scene bg AICoreMain with fade
     stop sound02 fadeout 0.5
     stop sound01 fadeout 0.5
-    show EG_main neutral
+    show EG_main neutral behind Ada
     show EG neutral
     $quick_menu = True
     show Ada neutral at right
@@ -2189,7 +2189,7 @@ label endCh4_E:
     show Grace neutral
     g "Yeah?"
     a "I recommend we stall for time."
-    a "I have almost finish the decryption."
+    a "I have almost finished the decryption."
     show Grace snarky
     g "I'll do my best."
     window hide

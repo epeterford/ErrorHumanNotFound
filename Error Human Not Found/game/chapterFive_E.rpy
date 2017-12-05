@@ -375,6 +375,7 @@ label badgraces_E:
     show inv2
     show Detective
     show Grace happy at left
+    show Ada neutral at right
     $quick_menu = True
     g "Actually, no. Could you kindly fill me in?"
     show Detective behind inv2

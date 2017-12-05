@@ -174,9 +174,9 @@ label ch4resume_SbE:
     stop sound01 fadeout 0.5
     #show EG on both displays
     $quick_menu = True
+    show EG_main neutral
     show Ada neutral at right
     show Grace neutral at left
-    show EG_main neutral
     show EG neutral
     "{i}Grace and Ada walk into the AI core to be met by the booming voice of Eastern Goddess.{/i}"
     if persistent.unlockColossus ==None:
@@ -1981,7 +1981,7 @@ label endCh4_SbE:
     show Grace neutral
     g "Yeah?"
     a "I recommend we stall for time."
-    a "I have almost finish the decryption."
+    a "I have almost finished the decryption."
     show Grace snarky
     g "I'll do my best."
     window hide

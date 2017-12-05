@@ -617,6 +617,7 @@ define audio.menuExit = "music/UI/ENHF_UI_Menu_Exit.ogg"
 init -100 python:
     databasePage = 1
     puzzleGallery = False
+    config.image_cache_size = 50
 init: 
     $ config.keymap['hide_windows'].remove('mouseup_2')
 init python:
@@ -703,6 +704,7 @@ init python:
     tutorial_binaryHard = True
     tutorial_llMed = True
     tutorial_llHard = True
+    repeat_number = 0
 # The game starts here.
 label start:
     $Preference("rollback side", "disable")

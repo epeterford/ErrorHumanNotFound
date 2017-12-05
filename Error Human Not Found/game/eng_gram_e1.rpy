@@ -1799,8 +1799,8 @@ label gamefile_e1:
         image eaeng_e1_tile183 = "1_1_green.png"
         image eaeng_e1_tile184 = "rightTreegreenlong.png"
         image eaeng_e1_tile185 = "1_1_green.png"
-        if (gramRow1_sound ==0):
-            $gramRow1_sound +=1
+        if (gramRow1_C_sound_right1 ==0):
+            $gramRow1_C_sound_right1 +=1
             play sound gramTree1
         show eaeng_e1_tile182 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
         show eaeng_e1_tile183 at Position(xpos = 1100, xanchor = 0, ypos = 325, yanchor = 0)

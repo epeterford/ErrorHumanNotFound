@@ -436,7 +436,7 @@ screen main_menu:
             selected_hover_sound "<silence 0.5>" 
             selected_activate_sound "<silence 0.5>"
         hotspot (12, 669, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
-        hotspot (12, 797, 315, 95) action ShowMenu ("mmCredits_start")
+        hotspot (12, 797, 315, 95) action ShowMenu("mmCredits_start") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" 
         hotspot (12, 896, 315, 95) action Quit(confirm=False) activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
     if persistent.beatGame:
         imagebutton:

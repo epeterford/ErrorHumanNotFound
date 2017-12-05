@@ -1799,7 +1799,7 @@ label gamefile_e4:
         image eaeng_e4_tile43 = "1_1_green.png"
         image eaeng_e4_tile60 = "rightTreegreenlong.png"
         image eaeng_e4_tile61 = "1_1_green.png"
-        if (gramRow1_sound==0):
+        if (gramRow1_C_sound_right1==0):
             play sound gramTree1
             $gramRow1_C_sound_right1 +=1
         show eaeng_e4_tile42 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)
@@ -1896,7 +1896,7 @@ label gamefile_e4:
          image eaeng_e4_tile87 = "1_1_red.png"
          image eaeng_e4_tile88 = "rightTreeredlong.png"
          image eaeng_e4_tile89 = "1_1_red.png"
-         if (gramRow1_sound==0):
+         if (gramRow1_C_sound_wrong1==0):
              play sound gramTree5
              $gramRow1_C_sound_wrong1 +=1
          show eaeng_e4_tile86 at Position(xpos = 1140, xanchor = 0, ypos = 250, yanchor = 0)

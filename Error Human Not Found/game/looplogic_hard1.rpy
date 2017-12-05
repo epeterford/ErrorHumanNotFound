@@ -31,162 +31,8 @@ label loopLogic_hard1: #start
     $ quick_menu = False
     $ game_menu = True
     scene bg looplogic_bg
-
-    #Left of Start
-    image LLH_1_tile1 = "W_horizontal.png"
-    show LLH_1_tile1 at Position(xpos = 525, xanchor = 0, ypos = 390, yanchor = 0)
-    image LLH_1_tile2 = "W_horizontal.png"
-    show LLH_1_tile2 at Position(xpos = 525, xanchor = 0, ypos = 430, yanchor = 0)
-
-    #Down of Start
-    image LLH_1_tile3 = "W_vertical.png"
-    show LLH_1_tile3 at Position(xpos = 620, xanchor = 0, ypos = 475, yanchor = 0)
-    image LLH_1_tile4 = "W_vertical.png"
-    show LLH_1_tile4 at Position(xpos = 660, xanchor = 0, ypos = 475, yanchor = 0)
-
-    #Top of Start Connect Node
-    image LLH_1_tile16 = "W_vertical.png"
-    show LLH_1_tile16 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
-
-    #Right of Start
-    image LLH_1_tile5 = "R_horizontal_ll.png"
-    show LLH_1_tile5 at Position(xpos = 700, xanchor = 0, ypos = 370, yanchor = 0)
-    image LLH_1_tile6 = "W_horizontal.png"
-    show LLH_1_tile6 at Position(xpos = 800, xanchor = 0, ypos = 370, yanchor = 0)
-    image LLH_1_tile7 = "G_horizontal_ll.png"
-    show LLH_1_tile7 at Position(xpos = 700, xanchor = 0, ypos = 410, yanchor = 0)
-    image LLH_1_tile8 = "W_horizontal.png"
-    show LLH_1_tile8 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)
-    image LLH_1_tile9 = "B_horizontal.png"
-    show LLH_1_tile9 at Position(xpos = 700, xanchor = 0, ypos = 450, yanchor = 0)
-    image LLH_1_tile10 = "W_horizontal.png"
-    show LLH_1_tile10 at Position(xpos = 800, xanchor = 0, ypos = 450, yanchor = 0)
-    image LLH_1_tile11 = "W_connect_pipe_vertical.png"
-    show LLH_1_tile11 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
-    image LLH_1_tile12 = "W_connect_pipe_vertical.png"
-    show LLH_1_tile12 at Position(xpos = 783, xanchor = 0, ypos = 420, yanchor = 0)
-    
-    #Left of Top Blue End
-    image LLH_1_tile17 = "W_horizontal.png"
-    show LLH_1_tile17 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
-    image LLH_1_tile18 = "W_horizontal.png"
-    show LLH_1_tile18 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
-    
-    #Left of Gate Left of Start
-    image LLH_1_tile19 = "W_horizontal.png"
-    show LLH_1_tile19 at Position(xpos = 365, xanchor = 0, ypos = 410, yanchor = 0)
-    
-    #Down of Gate Left of Start
-    image LLH_1_tile20 = "W_vertical.png"
-    show LLH_1_tile20 at Position(xpos = 470, xanchor = 0, ypos = 475, yanchor = 0)
-    
-    #Right of Green End
-    image LLH_1_tile21 = "W_horizontal.png"
-    show LLH_1_tile21 at Position(xpos = 190, xanchor = 0, ypos = 410, yanchor = 0)
-    
-    #Top of Bottom Blue End
-    image LLH_1_tile22 = "W_vertical.png"
-    show LLH_1_tile22 at Position(xpos = 470, xanchor = 0, ypos = 650, yanchor = 0)
-    
-    #Dotted Line
-    image LLH_1_tile23 = "y_horizontal_short_off.png"
-    show LLH_1_tile23 at Position(xpos = 680, xanchor = 0, ypos = 565, yanchor = 0)
-    image LLH_1_tile24 = "y_horizontal_short_off.png"
-    show LLH_1_tile24 at Position(xpos = 755, xanchor = 0, ypos = 565, yanchor = 0)
-    image LLH_1_tile25 = "y_vertical_short_off.png"
-    show LLH_1_tile25 at Position(xpos = 790, xanchor = 0, ypos = 595, yanchor = 0)
-    image LLH_1_tile26 = "y_horizontal_short_off.png"
-    show LLH_1_tile26 at Position(xpos = 800, xanchor = 0, ypos = 650, yanchor = 0)
-    image LLH_1_tile27 = "y_horizontal_short_off.png"
-    show LLH_1_tile27 at Position(xpos = 870, xanchor = 0, ypos = 650, yanchor = 0)
-    image LLH_1_tile28 = "y_horizontal_short_off.png"
-    show LLH_1_tile28 at Position(xpos = 700, xanchor = 0, ypos = 610, yanchor = 0)
-    image LLH_1_tile29 = "y_vertical_short_off.png"
-    show LLH_1_tile29 at Position(xpos = 760, xanchor = 0, ypos = 620, yanchor = 0)
-    image LLH_1_tile30 = "y_vertical_short_off.png"
-    show LLH_1_tile30 at Position(xpos = 760, xanchor = 0, ypos = 685, yanchor = 0)
-    image LLH_1_tile31 = "y_horizontal_short_off.png"
-    show LLH_1_tile31 at Position(xpos = 790, xanchor = 0, ypos = 720, yanchor = 0)
-    image LLH_1_tile32 = "y_horizontal_short_off.png"
-    show LLH_1_tile32 at Position(xpos = 860, xanchor = 0, ypos = 720, yanchor = 0)
-
-    #Right of Gate Right from Start
-    image LLH_1_tile33 = "W_horizontal.png"
-    show LLH_1_tile33 at Position(xpos = 975, xanchor = 0, ypos = 390, yanchor = 0)
-    image LLH_1_tile34 = "W_horizontal_short.png"
-    show LLH_1_tile34 at Position(xpos = 950, xanchor = 0, ypos = 430, yanchor = 0)
-    image LLH_1_tile35 = "W_corner_LB.png"
-    show LLH_1_tile35 at Position(xpos = 1050, xanchor = 0, ypos = 363, yanchor = 0)
-    image LLH_1_tile36 = "W_corner_LB.png"
-    show LLH_1_tile36 at Position(xpos = 1000, xanchor = 0, ypos = 403, yanchor = 0)
-    image LLH_1_tile37 = "W_vertical.png"
-    show LLH_1_tile37 at Position(xpos = 1072, xanchor = 0, ypos = 438, yanchor = 0)
-    image LLH_1_tile38 = "W_vertical_short.png"
-    show LLH_1_tile38 at Position(xpos = 1072, xanchor = 0, ypos = 513, yanchor = 0)
-    image LLH_1_tile39 = "W_vertical.png"
-    show LLH_1_tile39 at Position(xpos = 1022, xanchor = 0, ypos = 478, yanchor = 0)
-    image LLH_1_tile40 = "W_vertical.png"
-    show LLH_1_tile40 at Position(xpos = 1072, xanchor = 0, ypos = 568, yanchor = 0)
-    image LLH_1_tile41 = "W_vertical.png"
-    show LLH_1_tile41 at Position(xpos = 1022, xanchor = 0, ypos = 568, yanchor = 0)
-    image LLH_1_tile42 = "W_connect_pipe.png"
-    show LLH_1_tile42 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
-    
-    #Left of Red End Connector
-    image LLH_1_tile45 = "W_horizontal_short.png"
-    show LLH_1_tile45 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)    
-    
-    #Top of Red End
-    image LLH_1_tile46 = "W_vertical.png"
-    show LLH_1_tile46 at Position(xpos = 1045, xanchor = 0, ypos = 740, yanchor = 0)
-
-    #Top of Bottom Green End
-    image LLH_1_tile47 = "W_vertical_short.png"
-    show LLH_1_tile47 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
-    image LLH_1_tile48 = "W_vertical_short.png"
-    show LLH_1_tile48 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
-    image LLH_1_tile49 = "W_vertical_short.png"
-    show LLH_1_tile49 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
-    image LLH_1_tile50 = "r_while_off.png"
-    show LLH_1_tile50 at Position(xpos = 898, xanchor = 0, ypos = 648, yanchor = 0)
-    image LLH_1_tile51 = "b_while_off.png"
-    show LLH_1_tile51 at Position(xpos = 898, xanchor = 0, ypos = 719, yanchor = 0)
-
-    #*********************************************************
-    #********************* start points **********************
-    #*********************************************************
-    image LLH_1_Start = "Start.png"
-    show LLH_1_Start at Position(xpos = 600, xanchor = 0, ypos = 375, yanchor = 0)
-    
-    #*********************************************************
-    #********************** end points ***********************
-    #*********************************************************    
-    image LLH_1_BlueEnd1 = "B_end_off.png"
-    show LLH_1_BlueEnd1 at Position(xpos = 980, xanchor = 0, ypos = 200, yanchor = 0)
-    image LLH_1_BlueEnd2 = "B_end_off.png"
-    show LLH_1_BlueEnd2 at Position(xpos = 435, xanchor = 0, ypos = 725, yanchor = 0)
-    image LLH_1_GreenEnd1 = "G_end_off.png"
-    show LLH_1_GreenEnd1 at Position(xpos = 100, xanchor = 0, ypos = 375, yanchor = 0)
-    image LLH_1_GreenEnd2 = "G_end_off.png"
-    show LLH_1_GreenEnd2 at Position(xpos = 865, xanchor = 0, ypos = 785, yanchor = 0)
-    image LLH_1_RedEnd = "R_end_off.png"
-    show LLH_1_RedEnd at Position(xpos = 1010, xanchor = 0, ypos = 810, yanchor = 0)
-
-    #*********************************************************
-    #********************* connect nodes *********************
-    #*********************************************************      
-    image LLH_1_tile13 = "W_connect_node.png"
-    show LLH_1_tile13 at Position(xpos = 772, xanchor = 0, ypos = 365, yanchor = 0)
-    image LLH_1_tile14 = "W_connect_node.png"
-    show LLH_1_tile14 at Position(xpos = 772, xanchor = 0, ypos = 407, yanchor = 0)
-    image LLH_1_tile15 = "W_connect_node.png"
-    show LLH_1_tile15 at Position(xpos = 772, xanchor = 0, ypos = 450, yanchor = 0)
-    
-    image LLH_1_tile43 = "W_connect_node.png"
-    show LLH_1_tile43 at Position(xpos = 1020, xanchor = 0, ypos = 545, yanchor = 0)
-    image LLH_1_tile44 = "W_connect_node.png"
-    show LLH_1_tile44 at Position(xpos = 1070, xanchor = 0, ypos = 545, yanchor = 0)
-    
+    image layoutLLHard1 = "layoutLLHard1.png"
+    show layoutLLHard1
     
 #    ****************************************************
 #    **********template makers stop here*****************
@@ -3456,13 +3302,13 @@ label gamefile_llh1:
         $LLH_1_node2 = "Blue"
         $LLH_1_node3 = "Blue"
    
-    if ifRin1:
+    elif ifRin1:
         show LLH_1_colorTile10 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
         show LLH_1_colorTile11 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
         show LLH_1_colorTile12 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
         $LLH_1_node1 = "Red"
         
-    if ifGin1:
+    elif ifGin1:
         image LLH_1_colorTile123 = "G_vertical_ll.png"
         show LLH_1_colorTile123 at Position(xpos = 772, xanchor = 0, ypos = 300, yanchor = 0)
         image LLH_1_colorTile124 = "G_horizontal_ll.png"
@@ -3474,14 +3320,14 @@ label gamefile_llh1:
         $LLH_1_node1 = "Green"
         $LLH_1_node2 = "Green"
             
-    if ifRGin1:
+    elif ifRGin1:
         $LLH_1_node1 = "Brown"
         $LLH_1_node2 = "Green"
         show LLH_1_colorTileG5 at Position(xpos = 783, xanchor = 0, ypos = 380, yanchor = 0)
         show LLH_1_colorTileBr1 at Position(xpos = 775, xanchor = 0, ypos = 300, yanchor = 0)
         show LLH_1_colorTileBr2 at Position(xpos = 840, xanchor = 0, ypos = 230, yanchor = 0)
         show LLH_1_colorTileBr3 at Position(xpos = 915, xanchor = 0, ypos = 230, yanchor = 0)
-    if ifBGin1: 
+    elif ifBGin1: 
         $LLH_1_node1 = "Turq"
         $LLH_1_node2 = "Turq"
         $LLH_1_node3 = "Blue"
@@ -3511,7 +3357,7 @@ label gamefile_llh1:
         if ifBGin7:
             show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
             
-        if ifRin7:
+        elif ifRin7:
             show LLH_1_colorTile55 at Position(xpos = 1037, xanchor = 0, ypos = 555, yanchor = 0)
             show LLH_1_colorTile56 at Position(xpos = 900, xanchor = 0, ypos = 600, yanchor = 0)
             show LLH_1_colorTile58 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
@@ -3521,7 +3367,7 @@ label gamefile_llh1:
                 show LLH_1_colorTile120 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                 show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
                 
-        if ifGin7:
+        elif ifGin7:
             show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
             show LLH_1_colorTile87 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0) 
             $LLH_1_node4 = "Green"
@@ -3542,7 +3388,7 @@ label gamefile_llh1:
                     show LLH_1_colorTile120 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                     show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
             
-        if ifRin8:
+        elif ifRin8:
             image LLH_1_colorTile48 = "R_vertical_ll.png"
             show LLH_1_colorTile48 at Position(xpos = 1072, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile49 = "R_vertical_ll.png"
@@ -3561,7 +3407,7 @@ label gamefile_llh1:
                     show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
                     $LLH_1_GEnd2 = "On"
                 
-        if ifGin8:
+        elif ifGin8:
             image LLH_1_colorTile51 = "G_vertical_ll.png"
             show LLH_1_colorTile51 at Position(xpos = 1019, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile52 = "G_vertical_ll.png"
@@ -3581,7 +3427,7 @@ label gamefile_llh1:
                     image LLH_1_colorTile121 = "R_vertical_short.png"
                     show LLH_1_colorTile121 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0) 
         
-    if ifBGin4:
+    elif ifBGin4:
         image LLH_1_colorTile20 = "G_horizontal_ll.png"
         show LLH_1_colorTile20 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)        
         image LLH_1_colorTile21 = "B_horizontal.png"
@@ -3607,7 +3453,7 @@ label gamefile_llh1:
                 show LLH_1_colorTile107 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                 image LLH_1_colorTile108 = "B_vertical_short.png"
                 show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
-        if ifGin7:
+        elif ifGin7:
             show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
             show LLH_1_colorTile87 at Position(xpos = 897, xanchor = 0, ypos = 600, yanchor = 0) 
             $LLH_1_node4 = "Green"
@@ -3618,7 +3464,7 @@ label gamefile_llh1:
                 show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
                 show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
                 $LLH_1_GEnd2 = "On"
-        if ifRGin7:
+        elif ifRGin7:
             show LLH_1_colorTile54 at Position(xpos = 975, xanchor = 0, ypos = 548, yanchor = 0)
             $LLH_1_node4 = "Green"
             $LLH_1_node5 = "Green"
@@ -3640,7 +3486,7 @@ label gamefile_llh1:
                     image LLH_1_colorTile108 = "B_vertical_short.png"
                     show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
             
-        if ifBin8:
+        elif ifBin8:
             image LLH_1_colorTile100 = "B_vertical.png"
             show LLH_1_colorTile100 at Position(xpos = 1022, xanchor = 0, ypos = 568, yanchor = 0)
             image LLH_1_colorTile101 = "B_vertical.png"
@@ -3658,7 +3504,7 @@ label gamefile_llh1:
                     show LLH_1_colorTile88 at Position(xpos = 897, xanchor = 0, ypos = 679, yanchor = 0)
                     show LLH_1_colorTile89 at Position(xpos = 897, xanchor = 0, ypos = 750, yanchor = 0)
                     $LLH_1_GEnd2 = "On"
-        if ifRGin8:
+        elif ifRGin8:
             show LLH_1_colorTile95 at Position(xpos = 1069, xanchor = 0, ypos = 568, yanchor = 0)
             if else1in7 or else2in7:
                 $LLH_1_node4 = "Blue"
@@ -3667,7 +3513,7 @@ label gamefile_llh1:
                 if whileRBin6:
                     show LLH_1_colorTile107 at Position(xpos = 900, xanchor = 0, ypos = 679, yanchor = 0)
                     show LLH_1_colorTile108 at Position(xpos = 900, xanchor = 0, ypos = 750, yanchor = 0)
-    if ifRin4:
+    elif ifRin4:
         show LLH_1_colorTile18 at Position(xpos = 800, xanchor = 0, ypos = 370, yanchor = 0)
         show LLH_1_colorTile43 at Position(xpos = 975, xanchor = 0, ypos = 390, yanchor = 0)
         show LLH_1_colorTile45 at Position(xpos = 1072, xanchor = 0, ypos = 438, yanchor = 0)
@@ -3680,7 +3526,7 @@ label gamefile_llh1:
         if ifRGin8:
             show LLH_1_colorTile48 at Position(xpos = 1072, xanchor = 0, ypos = 568, yanchor = 0)
             
-    if ifGin4:
+    elif ifGin4:
         image LLH_1_colorTile29 = "G_horizontal_ll.png"
         show LLH_1_colorTile29 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)
         show LLH_1_colorTile19 at Position(xpos = 800, xanchor = 0, ypos = 410, yanchor = 0)
@@ -3692,7 +3538,7 @@ label gamefile_llh1:
         if ifRGin8 or ifBGin8:
             show LLH_1_colorTile51 at Position(xpos = 1019, xanchor = 0, ypos = 568, yanchor = 0)
             
-    if ifBin4:
+    elif ifBin4:
         image LLH_1_colorTile30 = "B_horizontal.png"
         show LLH_1_colorTile30 at Position(xpos = 800, xanchor = 0, ypos = 450, yanchor = 0)
         show LLH_1_colorTile21 at Position(xpos = 800, xanchor = 0, ypos = 450, yanchor = 0)

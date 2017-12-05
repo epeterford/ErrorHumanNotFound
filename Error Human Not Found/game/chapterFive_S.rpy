@@ -329,7 +329,6 @@ label bathroomstall_S:
     show Detective
     show Grace happy at left
     show Ada neutral at right
-    #show Detective at center
     $quick_menu = True
     g "Actually, no. Could you kindly fill me in?"
     show Detective behind inv2

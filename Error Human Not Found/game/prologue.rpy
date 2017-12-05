@@ -19,8 +19,8 @@ label prologue:
     $renpy.block_rollback()
     if persistent.unlockGrace ==None:
         $persistent.unlockGrace = True
-        "{i}When you encounter a new character for the first time, a database will unlock. You can access the database from the main menu.{/i}"
-        "{i}{b}Database Entry Unlocked: Grace.{/b}{/i}"
+#        "{i}When you encounter a new character for the first time, a database will unlock. You can access the database from the main menu.{/i}"
+        "{i}{b}Database Entry Unlocked: Grace Fortran.{/b}{/i}"
     #Insert SFX Typing here
     "{i}Grace types away at her computer.{/i}"
     "{i}Grace's bracelet beeps and flashes.{/i}"
@@ -209,25 +209,25 @@ label prologueResume1:
     show Hirose angry at center behind Grace
     if persistent.unlockHirose ==None:
         $persistent.unlockHirose = True
-        "{i}{b}Database Entry Unlocked: Hirose.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Director Roberta Hirose.{/b}{/i}"
     h "Grace Ruby Fortran. Eavesdropping at the door? How very mature of you."
     show Grace frustrated at left
     show Nevalinna speaking at right
     if persistent.unlockNevalinna ==None:
         $persistent.unlockNevalinna = True
-        "{i}{b}Database Entry Unlocked: Nevanlinna.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Chief Nevanlinna.{/b}{/i}"
     neva "What is the meaning of this, Doctor Fortran?"
     hide Nevalinna
     show Godel speaking at right
     if persistent.unlockGodel ==None:
         $persistent.unlockGodel = True
-        "{i}{b}Database Entry Unlocked: Godel.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Chief Godel.{/b}{/i}"
     godel "You dare to eavesdrop on a Conclave meeting? Inconceivable!"
     hide Godel
     show Cray speaking at right
     if persistent.unlockCray ==None:
         $persistent.unlockCray = True
-        "{i}{b}Database Entry Unlocked: Cray.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Chief Cray.{/b}{/i}"
     cray "Director, are you just going to allow--"
     show Hirose annoyed
     h "Grace, you should know better than this. Our meetings are private for a reason. This is a breach of protocol."
@@ -245,7 +245,7 @@ label prologueResume1:
     show Knuth speaking at right
     if persistent.unlockKnuth ==None:
         $persistent.unlockKnuth = True
-        "{i}{b}Database Entry Unlocked: Knuth.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Chief Knuth.{/b}{/i}"
     knuth "That's not the proper way for you to speak to the Director. Check your manners."
     show Grace snarky
     g "Mind your own business."
@@ -377,7 +377,7 @@ label prologueResume2:
     show Ada neutral at right
     if persistent.unlockAda ==None:
         $persistent.unlockAda = True
-        "{i}{b}Database Entry Unlocked: Knuth.{/b}{/i}"
+        "{i}{b}Database Entry Unlocked: Ada.{/b}{/i}"
     g "What the... Who are you? And what do you think you're doing in my lab?"
     show Ada neutral at right
     a "Grace, it is I, Ada." 

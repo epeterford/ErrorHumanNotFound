@@ -169,9 +169,9 @@ label ch4resume_S:
     stop sound01 fadeout 0.5
     stop sound02 fadeout 0.5
     $quick_menu = True
+    show EG_main neutral
     show Ada neutral at right
     show Grace neutral at left
-    show EG_main neutral
     show EG neutral
     "{i}Grace and Ada walk into the AI core to be met by the booming voice of Eastern Goddess.{/i}"
     if persistent.unlockColossus ==None:
