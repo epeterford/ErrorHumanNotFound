@@ -1,5 +1,5 @@
 # The script of the game goes in this file.
-image splash = "splashscreen.png"
+image splash = "errorSplashscreen.png"
 image mm_base = "mm_idle.png"
 #Character Declarations
 define g = Character("Grace", color ="#006d0d")
@@ -893,8 +893,10 @@ label start:
     
 label splashscreen:
     scene bg black
+    $renpy.movie_cutscene('images/ErrorOpening.mpg')
     show splash with fade
-    $renpy.pause(3.0)
+    play sound moprInquisitive
+    $renpy.pause(4.0)
     scene bg black with fade
     show mm_base with fade
     return

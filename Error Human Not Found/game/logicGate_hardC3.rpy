@@ -203,7 +203,7 @@ label logicGate_hardC3:
     $ or1y = 88
     $ nor1x = 1148
     $ nor1y = 88
-    $ xor1x = 1300
+    $ xor1x = 1299
     $ xor1y = 88
     $ nor2x = 1148
     $ nor2y = 88
@@ -256,7 +256,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if nor2in1 == True:
@@ -279,7 +279,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if nor2in2 == True:
@@ -302,7 +302,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if nor2in3 == True:
@@ -324,7 +324,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if nor2in4 == True:
@@ -357,7 +357,7 @@ label gamefileHC3:
                $ or1y = 88
                $ or1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if nor2in1 == True:
@@ -380,7 +380,7 @@ label gamefileHC3:
                 $ or1y = 88
                 $ or1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if nor2in2 == True:
@@ -403,7 +403,7 @@ label gamefileHC3:
                 $ or1y = 88
                 $ or1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if nor2in3 == True:
@@ -425,7 +425,7 @@ label gamefileHC3:
                 $ or1y = 88
                 $ or1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if nor2in4 == True:
@@ -543,7 +543,7 @@ label gamefileHC3:
             $ xor1in4 = True
         
         if slot_name == "xor return":
-            $ xor1x = 1300
+            $ xor1x = 1299
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -562,7 +562,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False                
 
@@ -585,7 +585,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False  
                 
@@ -608,7 +608,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -630,7 +630,7 @@ label gamefileHC3:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False  
                 
@@ -1444,4 +1444,4 @@ screen logicgatesHC3:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1300 ypos 88
+                xpos 1299 ypos 88

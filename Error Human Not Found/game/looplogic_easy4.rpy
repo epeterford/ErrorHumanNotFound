@@ -497,18 +497,25 @@ label Gamefile_lle4:
             show LLE42tile91 at Position(xpos = 745, xanchor = 0, ypos = 453, yanchor = 0)
             show LLE41tile93 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
         if if2in2 == True:
-            image LLE432tile21 = "g_horizontal_ll.png"
-            show LLE432tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
-            image LLE432tile12 = "W_corner_RB.png"
-            show LLE432tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
-            image LLE432tile16 = "g_vertical_ll.png"
-            show LLE432tile16 at Position(xpos = 550, xanchor = 0, ypos = 508, yanchor = 0)
-            image LLE432tile18 = "g_vertical_ll.png"
-            show LLE432tile18 at Position(xpos = 550, xanchor = 0, ypos = 683, yanchor = 0) 
-            image LLE43tile94 = "g_connect_node.png"
-            show LLE43tile94 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
-            image LLE43tile19 = "g_end_on.png"
-            show LLE43tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
+            show LLE41tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
+            show LLE41tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
+            show LLE41tile16 at Position(xpos = 550, xanchor = 0, ypos = 508, yanchor = 0)
+            show LLE41tile18 at Position(xpos = 550, xanchor = 0, ypos = 683, yanchor = 0) 
+            show LLE41tile91 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
+            show LLE42tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
+        
+#            image LLE432tile21 = "g_horizontal_ll.png"
+#            show LLE432tile21 at Position(xpos = 602, xanchor = 0, ypos = 455, yanchor = 0)
+#            image LLE432tile12 = "W_corner_RB.png"
+#            show LLE432tile12 at Position(xpos = 527, xanchor = 0, ypos = 430, yanchor = 0)
+#            image LLE432tile16 = "g_vertical_ll.png"
+#            show LLE432tile16 at Position(xpos = 550, xanchor = 0, ypos = 508, yanchor = 0)
+#            image LLE432tile18 = "g_vertical_ll.png"
+#            show LLE432tile18 at Position(xpos = 550, xanchor = 0, ypos = 683, yanchor = 0) 
+#            image LLE43tile94 = "g_connect_node.png"
+#            show LLE43tile94 at Position(xpos = 678, xanchor = 0, ypos = 453, yanchor = 0)
+#            image LLE43tile19 = "g_end_on.png"
+#            show LLE43tile19 at Position(xpos = 516, xanchor = 0, ypos = 755, yanchor = 0)
             if (light3Sound ==0):
                 play soundP03 llLightOn3
                 $light3Sound +=1

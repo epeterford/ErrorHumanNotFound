@@ -156,7 +156,7 @@ label logicGate_hardA2:
     $ and1y = 88
     $ or1x = 848
     $ or1y = 88
-    $ xor1x = 1300
+    $ xor1x = 1299
     $ xor1y = 88
     
     #gate values
@@ -198,7 +198,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -216,7 +216,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
 
@@ -233,7 +233,7 @@ label gamefileHA2:
                 $ or1y = 88
                 $ or1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
 
@@ -260,7 +260,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
                 
@@ -278,7 +278,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
                 
@@ -295,7 +295,7 @@ label gamefileHA2:
                $ and1y = 88
                $ and1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -368,7 +368,7 @@ label gamefileHA2:
             $ xor1in2 = False
             
         if slot_name == "xor return":
-            $ xor1x = 1300
+            $ xor1x = 1299
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -811,4 +811,4 @@ screen logicGatesHA2:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1300 ypos 88
+                xpos 1299 ypos 88

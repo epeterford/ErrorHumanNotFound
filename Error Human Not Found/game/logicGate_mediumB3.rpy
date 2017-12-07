@@ -50,9 +50,9 @@ label logicGate_mediumB3:
 
     
     #row 2
-    image LGMB3tile02_01 = "g_r.png"
+    image LGMB3tile02_01 = "g_g.png"
     image LGMB3tile02_02 = "NAND_Gate_blue.png"
-    image LGMB3tile02_03 = "g_elbow_bl.png"
+    image LGMB3tile02_03 = "r_elbow_bl.png"
     image LGMB3tile02_06 = "g_y.png"
     image LGMB3tile02_07 = "NONE_Gate.png"
     image LGMB3tile02_08 = "y_horizontal.png"
@@ -69,9 +69,9 @@ label logicGate_mediumB3:
     show LGMB3tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
 
     #row 3 (row has a light)
-    image LGMB3tile03_00 = "r_horizontal.png"
-    image LGMB3tile03_01 = "r_elbow_tl.png"
-    image LGMB3tile03_03 = "g_g.png"
+    image LGMB3tile03_00 = "g_horizontal.png"
+    image LGMB3tile03_01 = "g_elbow_tl.png"
+    image LGMB3tile03_03 = "r_g.png"
     image LGMB3tile03_04 = "NONE_Gate.png"
     image LGMB3tile03_05 = "y_horizontal.png"
     image LGMB3tile03_06 = "y_t_left.png"
@@ -160,7 +160,7 @@ label logicGate_mediumB3:
     #start points
     image LGMB3start1 = "light_g_on.png"
     show LGMB3start1 at Position(xpos = 238, xanchor = 0, ypos = 308, yanchor = 0)
-    image LGMB3start2 = "light_r_on.png"
+    image LGMB3start2 = "light_g_on.png"
     show LGMB3start2 at Position(xpos = 238, xanchor = 0, ypos = 458, yanchor = 0)
     image LGMB3start3 = "light_g_on.png"
     show LGMB3start3 at Position(xpos = 238, xanchor = 0, ypos = 608, yanchor = 0)
@@ -168,7 +168,7 @@ label logicGate_mediumB3:
     show LGMB3start4 at Position(xpos = 238, xanchor = 0, ypos = 758, yanchor = 0)
     
 
-    image LGMB3end1 = "light_r_off.png"
+    image LGMB3end1 = "light_g_off.png"
     show LGMB3end1 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
 
     
@@ -441,7 +441,7 @@ label gamefileMB3:
         play sound pipeFlowG
     if (lgNormal==2):
         play sound pipeFlowN
-    if and1in1 == True:
+    if nand1in1:
         image aLGMB3tile02_06 = "g_g.png"
         show aLGMB3tile02_06 at Position(xpos = 886, xanchor = 0, ypos = 383, yanchor = 0)
         image aLGMB3tile03_05 = "g_horizontal.png"
@@ -457,7 +457,7 @@ label gamefileMB3:
         image aLGMB3tile05_08 = "g_y.png"
         show aLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
         
-    if and1in1 == False:
+    if nand1in1 == False:
         hide aLGMB3tile02_06
         hide aLGMB3tile03_05
         hide aLGMB3tile03_06
@@ -466,7 +466,7 @@ label gamefileMB3:
         hide aLGMB3tile04_08
         hide aLGMB3tile05_08
 
-    if nand1in1 == True or nor1in1 == True:
+    if and1in1 == True or nor1in1 == True:
         image nLGMB3tile02_06 = "g_r.png"
         show nLGMB3tile02_06 at Position(xpos = 886, xanchor = 0, ypos = 383, yanchor = 0)
         image nLGMB3tile03_05 = "r_horizontal.png"
@@ -482,7 +482,7 @@ label gamefileMB3:
         image nLGMB3tile05_08 = "r_y.png"
         show nLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
         
-    if nand1in1 == False and nor1in1 == False:
+    if and1in1 == False and nor1in1 == False:
         hide nLGMB3tile02_06
         hide nLGMB3tile03_05
         hide nLGMB3tile03_06
@@ -492,7 +492,17 @@ label gamefileMB3:
         hide nLGMB3tile04_07
         
     if and1in2 == True:
-        if nand1in1 == True or nor1in1 == True:
+        if nand1in1:
+            image aLGMB3tile02_08S = "g_horizontal.png"
+            image a2LGMB3tile02_09S = "g_horizontal.png"
+            image aLGMB3tile02_10S = "g_elbow_bl.png"
+            show aLGMB3tile02_08S at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
+            show a2LGMB3tile02_09S at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
+            show aLGMB3tile02_10S at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
+            image aLGMB3tile03_10S = "g_y.png"
+            show aLGMB3tile03_10S at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+            
+        if nor1in1:
             image aLGMB3tile02_08 = "r_horizontal.png"
             image a2LGMB3tile02_09 = "r_horizontal.png"
             image aLGMB3tile02_10 = "r_elbow_bl.png"
@@ -502,13 +512,36 @@ label gamefileMB3:
             image aLGMB3tile03_10 = "r_y.png"
             show aLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
             
-    if and1in2 == False or (nand1in1 == False and nor1in1 == False):
+    if and1in2 == False or (nand1in1 == False):
+        hide aLGMB3tile02_08S
+        hide aLGMB3tile02_10S
+        hide aLGMB3tile03_10S
+        hide a2LGMB3tile02_09S
+        
+    if and1in2== False or (nor1in1 == False):
         hide aLGMB3tile02_08
         hide aLGMB3tile02_10
         hide aLGMB3tile03_10
+        hide a2LGMB3tile02_09
         
-    if nand1in2 == True or nor1in2 == True:
-        if and1in1 == True:
+    if nand1in2:
+        if nor1in1 or and1in1:
+            image nLGMB3tile02_08 = "g_horizontal.png"
+            image nLGMB3tile02_09 = "g_horizontal.png"
+            image nLGMB3tile02_10 = "g_elbow_bl.png"
+            show nLGMB3tile02_08 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
+            show nLGMB3tile02_09 at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
+            show nLGMB3tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
+            image nLGMB3tile03_10 = "g_y.png"
+            show nLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+    if nand1in2 == False or (nor1in1 == False and and1in1==False):
+        hide nLGMB3tile02_08
+        hide nLGMB3tile02_09
+        hide nLGMB3tile02_10
+        hide nLGMB3tile03_10
+            
+    if nor1in2 == True:
+        if and1in1 or nand1in1:
             image noLGMB3tile02_08 = "r_horizontal.png"
             image no2LGMB3tile02_09 = "r_horizontal.png"
             image noLGMB3tile02_10 = "r_elbow_bl.png"
@@ -518,43 +551,11 @@ label gamefileMB3:
             image noLGMB3tile03_10 = "r_y.png"
             show noLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
     
-    if and1in1 == False or (nand1in2 == False and nor1in2 == False):
+    if nor1in2 == False or (and1in1 == False and nand1in1 == False):
         hide noLGMB3tile02_08
         hide no2LGMB3tile02_09
         hide noLGMB3tile02_10
         hide noLGMB3tile03_10  
-        
-    if nand1in2 == True:
-        if nor1in1 == True:
-            image nLGMB3tile02_08 = "g_horizontal.png"
-            image nLGMB3tile02_09 = "g_horizontal.png"
-            image nLGMB3tile02_10 = "g_elbow_bl.png"
-            show nLGMB3tile02_08 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
-            show nLGMB3tile02_09 at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
-            show nLGMB3tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
-            image nLGMB3tile03_10 = "g_y.png"
-            show nLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
-    if nand1in2 == False or nor1in1 == False:
-            hide nLGMB3tile02_08
-            hide nLGMB3tile02_09
-            hide nLGMB3tile02_10
-            hide nLGMB3tile03_10
-        
-    if nor1in2 == True:
-        if nand1in1 == True:
-            image oLGMB3tile02_08 = "r_horizontal.png"
-            image oLGMB3tile02_09 = "r_horizontal.png"
-            image oLGMB3tile02_10 = "r_elbow_bl.png"
-            show oLGMB3tile02_08 at Position(xpos = 1036, xanchor = 0, ypos = 383, yanchor = 0)
-            show oLGMB3tile02_09 at Position(xpos = 1111, xanchor = 0, ypos = 383, yanchor = 0)
-            show oLGMB3tile02_10 at Position(xpos = 1186, xanchor = 0, ypos = 383, yanchor = 0)
-            image oLGMB3tile03_10 = "r_y.png"
-            show oLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
-    if nor1in2 == False or nand1in1 == False:
-            hide oLGMB3tile02_08
-            hide oLGMB3tile02_09
-            hide oLGMB3tile02_10
-            hide oLGMB3tile03_10
             
     if and1in3 == True:
         image aLGMB3tile05_05 = "g_elbow_br.png"
@@ -619,14 +620,14 @@ label gamefileMB3:
         hide oLGMB3tile06_08
         hide o3LGMB3tile05_08        
         
-    if (and1in1 == True and nor1in3 == True):
-        image anoLGMB3tile04_10 = "g_vertical.png"
+    if (and1in1 == True and (nor1in3 or nand1in3)):
+        image anoLGMB3tile04_10 = "r_vertical.png"
         show anoLGMB3tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
-        image anoLGMB3tile05_08 = "g_r.png"
-        image anoLGMB3tile05_10 = "g_elbow_tl.png"
+        image anoLGMB3tile05_08 = "r_r.png"
+        image anoLGMB3tile05_10 = "r_elbow_tl.png"
         show anoLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
         show anoLGMB3tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-        image 9onaLGMB3tile03_10 = "y_g.png"
+        image 9onaLGMB3tile03_10 = "y_r.png"
         show 9onaLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
         
     else:
@@ -634,22 +635,6 @@ label gamefileMB3:
         hide anoLGMB3tile05_08
         hide anoLGMB3tile05_10
         hide 9onaLGMB3tile03_10
-    
-    if and1in1 == True and nand1in3 == True:
-        image 1anoLGMB3tile04_10 = "g_vertical.png"
-        show 1anoLGMB3tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
-        image 1anoLGMB3tile05_08 = "g_r.png"
-        image 1anoLGMB3tile05_10 = "g_elbow_tl.png"
-        show 1anoLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
-        show 1anoLGMB3tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-        image 10onaLGMB3tile03_10 = "y_g.png"
-        show 10onaLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
-        
-    else:
-        hide 1anoLGMB3tile04_10
-        hide 1anoLGMB3tile05_08
-        hide 1anoLGMB3tile05_10
-        hide 10onaLGMB3tile03_10
     
     if (nand1in3 == True and nor1in1 == True):
         image nanoLGMB3tile04_10 = "r_vertical.png"
@@ -668,13 +653,13 @@ label gamefileMB3:
         hide 11onaLGMB3tile03_10
         
     if (nand1in1 == True and nor1in3 == True):
-        image 1nanoLGMB3tile04_10 = "r_vertical.png"
+        image 1nanoLGMB3tile04_10 = "g_vertical.png"
         show 1nanoLGMB3tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
-        image 1nanoLGMB3tile05_08 = "r_r.png"
-        image 1nanoLGMB3tile05_10 = "r_elbow_tl.png"
+        image 1nanoLGMB3tile05_08 = "g_r.png"
+        image 1nanoLGMB3tile05_10 = "g_elbow_tl.png"
         show 1nanoLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
         show 1nanoLGMB3tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-        image 8onaLGMB3tile03_10 = "y_r.png"
+        image 8onaLGMB3tile03_10 = "y_g.png"
         show 8onaLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
     else:
         hide 1nanoLGMB3tile04_10
@@ -697,13 +682,13 @@ label gamefileMB3:
         hide 2nanoLGMB3tile05_10
         hide 7onaLGMB3tile03_10
     if (and1in3 == True and nand1in1 ==True):
-        image 3nanoLGMB3tile04_10 = "r_vertical.png"
+        image 3nanoLGMB3tile04_10 = "g_vertical.png"
         show 3nanoLGMB3tile04_10 at Position(xpos = 1186, xanchor = 0, ypos = 533, yanchor = 0)
-        image 3nanoLGMB3tile05_08 = "r_r.png"
-        image 3nanoLGMB3tile05_10 = "r_elbow_tl.png"
+        image 3nanoLGMB3tile05_08 = "g_r.png"
+        image 3nanoLGMB3tile05_10 = "g_elbow_tl.png"
         show 3nanoLGMB3tile05_08 at Position(xpos = 1036, xanchor = 0, ypos = 608, yanchor = 0)
         show 3nanoLGMB3tile05_10 at Position(xpos = 1186, xanchor = 0, ypos = 608, yanchor = 0)
-        image 6onaLGMB3tile03_10 = "y_r.png"
+        image 6onaLGMB3tile03_10 = "y_g.png"
         show 6onaLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
     else:
         hide 3nanoLGMB3tile04_10
@@ -711,19 +696,19 @@ label gamefileMB3:
         hide 3nanoLGMB3tile05_10
         hide 6onaLGMB3tile03_10
         
-    if (and1in1 == True and nand1in2 == True and nor1in3 == True) or (and1in1 == True and nand1in3 == True and nor1in2 == True) or (and1in3 == True and nand1in2 == True and nor1in1 == True):
+    if (and1in1 and nand1in2 and nor1in3)or (nor1in1 and nand1in2 and and1in3):
         image onaLGMB3tile03_12 = "r_horizontal.png"
         image onaLGMB3tile03_13 = "r_horizontal.png"
         show onaLGMB3tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
         show onaLGMB3tile03_13 at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
-        image onaLGMB3tile03_10 = "r_g.png"
+        image onaLGMB3tile03_10 = "g_r.png"
         show onaLGMB3tile03_10 at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
     else:
         hide onaLGMB3tile03_12
         hide onaLGMB3tile03_13
         hide onaLGMB3tile03_10
 
-    if (and1in2 == True and nand1in3 == True and nor1in1 == True) or (and1in2 == True and nand1in1 == True and nor1in3 == True) or (and1in2 == True and nand1in3 == True and nor1in2 == True) or (and1in2 == True and nand1in3 == True and nor1in2 == True):
+    if (and1in1 and nand1in3 and nor1in2) or (nor1in1 and and1in2 and nand1in3):
         image 1onaLGMB3tile03_12 = "r_horizontal.png"
         image 1onaLGMB3tile03_13 = "r_horizontal.png"
         show 1onaLGMB3tile03_12 at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
@@ -735,15 +720,33 @@ label gamefileMB3:
         hide 1onaLGMB3tile03_13
         hide 1onaLGMB3tile03_10
         
+    if (nand1in1 and nor1in2 and and1in3):
+        image 1onaLGMB3tile03_12S = "r_horizontal.png"
+        image 1onaLGMB3tile03_13S = "r_horizontal.png"
+        show 1onaLGMB3tile03_12S at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
+        show 1onaLGMB3tile03_13S at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
+        image 1onaLGMB3tile03_10S = "r_g.png"
+        show 1onaLGMB3tile03_10S at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
+    else:
+        hide 1onaLGMB3tile03_12S
+        hide 1onaLGMB3tile03_13S
+        hide 1onaLGMB3tile03_10S
+        
 #win conditions ********
-    if (and1in1 == True and nor1in2 == True and nand1in3 == True) or (and1in1 == True and nand1in2 == True and nor1in3 == True) or (and1in2 == True and nand1in3 == True and nor1in1 == True) or (and1in2 == True and nand1in1 == True and nor1in3 == True) : 
+    if (and1in2 and nand1in1 and nor1in3): 
+        image 1onaLGMB3tile03_12Sx = "g_horizontal.png"
+        image 1onaLGMB3tile03_13Sx = "g_horizontal.png"
+        show 1onaLGMB3tile03_12Sx at Position(xpos = 1336, xanchor = 0, ypos = 458, yanchor = 0)
+        show 1onaLGMB3tile03_13Sx at Position(xpos = 1411, xanchor = 0, ypos = 458, yanchor = 0)
+        image 1onaLGMB3tile03_10Sx = "g_g.png"
+        show 1onaLGMB3tile03_10Sx at Position(xpos = 1186, xanchor = 0, ypos = 458, yanchor = 0)
         image wLGMB3tile02_09 = "nand_Gate.png"
         show wLGMB3tile02_09 at Position(xpos = nand1x, xanchor = 0, ypos = nand1y, yanchor = 0)
         image wLGMB3tile07_02 = "and_Gate.png"
         show wLGMB3tile07_02 at Position(xpos = and1x, xanchor = 0, ypos = and1y, yanchor = 0)
         image wLGMB3tile07_08 = "nor_Gate.png"
         show wLGMB3tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
-        image wLGMB3end2 = "light_r_on.png"
+        image wLGMB3end2 = "light_g_on.png"
         show wLGMB3end2 at Position(xpos = 1595, xanchor = 0, ypos = 458, yanchor = 0)
         queue sound lgWin
         $renpy.pause(1.0)

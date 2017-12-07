@@ -196,7 +196,7 @@ label logicGate_hardC1:
     $ and1y = 88
     $ nor1x = 1148
     $ nor1y = 88
-    $ xor1x = 1300
+    $ xor1x = 1299
     $ xor1y = 88
     $ nand1x = 998
     $ nand1y = 88
@@ -249,7 +249,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if nand1in1 == True:
@@ -272,7 +272,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if nand1in2 == True:
@@ -295,7 +295,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if nand1in3 == True:
@@ -317,7 +317,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if nand1in4 == True:
@@ -350,7 +350,7 @@ label gamefileHC1:
                $ and1y = 88
                $ and1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if nand1in1 == True:
@@ -373,7 +373,7 @@ label gamefileHC1:
                 $ and1y = 88
                 $ and1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if nand1in2 == True:
@@ -396,7 +396,7 @@ label gamefileHC1:
                 $ and1y = 88
                 $ and1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if nand1in3 == True:
@@ -418,7 +418,7 @@ label gamefileHC1:
                 $ and1y = 88
                 $ and1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if nand1in4 == True:
@@ -536,7 +536,7 @@ label gamefileHC1:
             $ xor1in4 = True
         
         if slot_name == "xor return":
-            $ xor1x = 1300
+            $ xor1x = 1299
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -555,7 +555,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False                
 
@@ -578,7 +578,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False  
                 
@@ -601,7 +601,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -623,7 +623,7 @@ label gamefileHC1:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False  
                 
@@ -704,7 +704,7 @@ label gamefileHC1:
     if (lgNormal==2):
         play sound pipeFlowN
         
-    if and1in1 == True:
+    if and1in1 or nor1in1:
         image HC11tile01_06 = "r_horizontal.png"
         image HC11tile01_07 = "r_elbow_bl.png"
         show HC11tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
@@ -720,7 +720,7 @@ label gamefileHC1:
         hide HC11tile02_07
         hide HC11tile03_07
         
-    if nand1in1 == True:
+    if nand1in1 or xor1in1:
         image HC12tile01_06 = "g_horizontal.png"
         image HC12tile01_07 = "g_elbow_bl.png"
         show HC12tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
@@ -735,39 +735,6 @@ label gamefileHC1:
         hide HC12tile01_07
         hide HC12tile02_07
         hide HC12tile03_07
-        
-        
-    if nor1in1 == True:
-        image HC13tile01_06 = "r_horizontal.png"
-        image HC13tile01_07 = "r_elbow_bl.png"
-        show HC13tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
-        show HC13tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
-        image HC13tile02_07 = "r_vertical.png"
-        show HC13tile02_07 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
-        image HC13tile03_07 = "r_y.png"
-        show HC13tile03_07 at Position(xpos = 961, xanchor = 0, ypos = 458, yanchor = 0)
-    
-    else:
-        hide HC13tile01_06
-        hide HC13tile01_07
-        hide HC13tile02_07
-        hide HC13tile03_07
-        
-    if xor1in1 == True:
-        image HC14tile01_06 = "g_horizontal.png"
-        image HC14tile01_07 = "g_elbow_bl.png"
-        show HC14tile01_06 at Position(xpos = 886, xanchor = 0, ypos = 308, yanchor = 0)
-        show HC14tile01_07 at Position(xpos = 961, xanchor = 0, ypos = 308, yanchor = 0)
-        image HC14tile02_07 = "g_vertical.png"
-        show HC14tile02_07 at Position(xpos = 961, xanchor = 0, ypos = 383, yanchor = 0)
-        image HC14tile03_07 = "g_y.png"
-        show HC14tile03_07 at Position(xpos = 961, xanchor = 0, ypos = 458, yanchor = 0)
-    
-    else:
-        hide HC14tile01_06
-        hide HC14tile01_07
-        hide HC14tile02_07
-        hide HC14tile03_07
         
     if and1in2 == True:
         image HC15tile08_06 = "g_elbow_tr.png"
@@ -1712,7 +1679,6 @@ label gamefileHC1:
                 hide HC139tile07_11
                 hide HC139tile05_11        
      
-            
         else:
             hide HC167tile03_07
             hide HC167tile04_07
@@ -1872,7 +1838,7 @@ label gamefileHC1:
                 else:
                     hide HC1811tile05_13
                     hide HC1811tile05_11
-             
+            
         else:
             hide HC180tile03_09
             hide HC180tile03_10
@@ -1996,7 +1962,7 @@ label gamefileHC1:
                 if nor1in4 == True:
                     image HC146tile05_13 = "r_horizontal.png"
                     show HC146tile05_13 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
-                    image HC146tile05_11 = "g_g.png"
+                    image HC146tile05_11 = "g_r.png"
                     show HC146tile05_11 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0)  
                 else:
                     hide HC146tile05_13
@@ -2140,7 +2106,7 @@ label gamefileHC1:
                 image HC190tile03_07 = "g_g.png"
                 show HC190tile03_07 at Position(xpos = 961, xanchor = 0, ypos = 458, yanchor = 0)
                 if nor1in4 == True:
-                    image HC149tile05_13 = "g_horizontal.png"
+                    image HC149tile05_13 = "r_horizontal.png"
                     show HC149tile05_13 at Position(xpos = 1411, xanchor = 0, ypos = 608, yanchor = 0)
                     image HC149tile05_11 = "g_r.png"
                     show HC149tile05_11 at Position(xpos = 1261, xanchor = 0, ypos = 608, yanchor = 0) 
@@ -2958,7 +2924,7 @@ screen logicgatesHC1:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1300 ypos 88
+                xpos 1299 ypos 88
                 
             drag:
                 drag_name "nand return"

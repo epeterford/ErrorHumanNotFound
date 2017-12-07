@@ -177,9 +177,9 @@ label logicGate_hardB3:
     $ nor1y = 88
     $ nand1x = 998
     $ nand1y = 88
-    $ xor1x = 1300
+    $ xor1x = 1299
     $ xor1y = 88
-    $ xor2x = 1300
+    $ xor2x = 1299
     $ xor2y = 88
     
     #gate values
@@ -230,11 +230,11 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in1 = False
                 
@@ -253,11 +253,11 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in2 = False
                 
@@ -276,11 +276,11 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -298,11 +298,11 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in4 = False
                 
@@ -331,11 +331,11 @@ label gamefileHB3:
                $ nor1y = 88
                $ nor1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in1 = False
                 
@@ -354,11 +354,11 @@ label gamefileHB3:
                 $ nor1y = 88
                 $ nor1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in2 = False
                 
@@ -377,11 +377,11 @@ label gamefileHB3:
                 $ nor1y = 88
                 $ nor1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -399,11 +399,11 @@ label gamefileHB3:
                 $ nor1y = 88
                 $ nor1in4 = False
             if xor1in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in4 = False
                 
@@ -436,7 +436,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in1 = False
             if xor2in1 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in1 = False                
 
@@ -459,7 +459,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in2 = False
             if xor2in2 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in2 = False  
                 
@@ -482,7 +482,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in3 = False
             if xor2in3 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in3 = False
                 
@@ -504,7 +504,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in4 = False
             if xor2in4 == True:
-                $ xor2x = 1300
+                $ xor2x = 1299
                 $ xor2y = 88
                 $ xor2in4 = False  
                 
@@ -517,7 +517,7 @@ label gamefileHB3:
             $ xor1in4 = True
         
         if slot_name == "xor return":
-            $ xor1x = 1300
+            $ xor1x = 1299
             $ xor1y = 88
             $ xor1in2 = False
             $ xor1in1 = False
@@ -536,7 +536,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in1 = False
             if xor1in1 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in1 = False                
 
@@ -559,7 +559,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in2 = False
             if xor1in2 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in2 = False  
                 
@@ -582,7 +582,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in3 = False
             if xor1in3 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in3 = False
                 
@@ -604,7 +604,7 @@ label gamefileHB3:
                 $ nand1y = 88
                 $ nand1in4 = False
             if xor2in4 == True:
-                $ xor1x = 1300
+                $ xor1x = 1299
                 $ xor1y = 88
                 $ xor1in4 = False  
                 
@@ -617,7 +617,7 @@ label gamefileHB3:
             $ xor2in4 = True
         
         if slot_name == "xor return":
-            $ xor2x = 1300
+            $ xor2x = 1299
             $ xor2y = 88
             $ xor2in2 = False
             $ xor2in1 = False
@@ -1539,4 +1539,4 @@ screen logicgatesHB3:
                 drag_name "xor return"
                 child "cover.png"
                 draggable False
-                xpos 1300 ypos 88
+                xpos 1299 ypos 88

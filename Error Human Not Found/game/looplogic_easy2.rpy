@@ -489,9 +489,9 @@ label gamefile_lle2:
         image LLE_2_tile50 = "B_end_on.png"
         show LLE_2_tile50 at Position(xpos = 185, xanchor = 0, ypos = 397, yanchor = 0)
         image LLE_2_tile51 = "B_if.png"
-        show LLE_2_tile51 at Position(xpos = 190, xanchor = 0, ypos = 220, yanchor = 0)
+        show LLE_2_tile51 at Position(xpos = if1x, xanchor = 0, ypos = if1y, yanchor = 0)
         image LLE_2_tile52 = "B_if.png"
-        show LLE_2_tile52 at Position(xpos = 525, xanchor = 0, ypos = 680, yanchor = 0)
+        show LLE_2_tile52 at Position(xpos = if2x, xanchor = 0, ypos = if2y, yanchor = 0)
         image LLE_2_tile53 = "G_else.png"
         show LLE_2_tile53 at Position(xpos = 755, xanchor = 0, ypos = 715, yanchor = 0)
         queue sound llWin

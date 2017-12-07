@@ -404,11 +404,11 @@ label hints_lgMedB3:
     show fLGMB3tile07_08 at Position(xpos = nor1x, xanchor = 0, ypos = nor1y, yanchor = 0)
     show other darken onlayer screens
     if (remainder==0):
-        a "The NOR gate will output red, or false, as long as one input is green, or true."
+        a "The NOR gate will output red, or false, as long as one input is green, or true. It will only ouput true if both inputs are red, which does not happen in this puzzle, so here it will always output red."
     if (remainder==1):
-        a "The final gate is an AND gate, and since I want the output to be false, or red, I just need one input to be false, or red."
+        a "The final gate is an AND gate, and since I want the output to be true, or green, I need both routes to be green."
     if (remainder==2):
-        a "Since the NAND gate, or the half-moon with the circle on the right, reverses the output of the AND gate, it will output true, or green, as long as both inputs are {i}not{/i} true, or green."
+        a "Since the NAND gate, or the half-moon with the circle on the right, reverses the output of the AND gate, it will output true, or green, as long as both inputs are {i}not{/i} true, or green. It will output green in the middle slot."
     hide other darken onlayer screens
     hide fLGMB3tile02_09
     hide fLGMB3tile07_02
