@@ -656,6 +656,9 @@ label ch5_S_resume:
         $renpy.pop_call()
         $stackDepth -=1
     "{i}Grace's journal has updated.{/i}"
+    $achievement.Sync()
+    $achievement.sync()
+    $achievement.grant("ACH_SUB")
     $journal6="S"
     $pageUnlocked_journal+=2
     jump credits

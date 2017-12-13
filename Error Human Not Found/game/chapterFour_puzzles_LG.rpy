@@ -287,6 +287,12 @@ label lgHard_doneTalk:
     if(lgHard_attempts==0):
         show Ada happy at right
         a "I have yet to discover anything in the physical realm that matches the joy experienced when code executes flawlessly."
+        if (lgMed_attempts==0) and (lgEasy_tries==0):
+            $achievement.Sync()
+            $achievement.sync()
+            $achievement.grant("ACH_LOGIC")
+            $achievement.sync()
+            $achievement.Sync()
     if(lgHard_attempts==1):
         show Ada neutral at right
         a "The amount of firewalls Watson utilizes to try and conceal his location is absurd. He spends more time working to not be found than if he just did his work in the first place."

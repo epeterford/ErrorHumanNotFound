@@ -204,6 +204,12 @@ label binaryHardDoneTalk:
         show Grace neutral at left
         show Ada amused at right
         a "With the correct encryption key, this was easy enough to crack. Now we just have to wait for the rest to finish decrypting."
+        if (binaryMed_attempts==0) and (binaryEasy_tries ==0):
+            $achievement.Sync()
+            $achievement.sync()
+            $achievement.grant("ACH_BINARY")
+            $achievement.sync()
+            $achievement.Sync()
     if (binaryHard_attempts>=1) and (binaryHard_attempts<3):
         show Ada seething at right
         show Grace neutral at left
@@ -364,6 +370,12 @@ label gramHard_done:
         g "Ha, ha, Blue! Got it on the first try."
         show Blue pout
         b "Meh."  
+        if (gramMed_attempts==0) and (attemptsGramEasy==0):
+            $achievement.Sync()
+            $achievement.sync()
+            $achievement.grant("ACH_GRAMMAR")
+            $achievement.sync()
+            $achievement.Sync()
     if (gramHard_attempts==1):
         show Ada neutral at right
         show Blue smug at center

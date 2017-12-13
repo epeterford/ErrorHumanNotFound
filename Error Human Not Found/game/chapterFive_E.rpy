@@ -688,6 +688,9 @@ label ch5_E_resume:
     show Ada amused
     a "I know."
     "{i}Ada and Grace leave.{/i}"
+    $achievement.Sync()
+    $achievement.sync()
+    $achievement.grant("ACH_EQUAL")
     #FANFARE. THE END. THAT'S ALL FOLKS. BYE-BYE NOW.
     #insert jump to credits
     $ stackDepth =renpy.call_stack_depth()

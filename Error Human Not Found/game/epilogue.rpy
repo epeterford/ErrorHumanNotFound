@@ -25,5 +25,10 @@ label Epilogue:
         "{i}{b}Database Entry Unlocked: Watson.{/b}{/i}"
     $persistent.beatGame = True
     "{i}{b}THE END.{/b}{/i}"
+    $achievement.Sync()
+    $achievement.sync()
+    $achievement.grant("ACH_WHODUNIT")
+    $achievement.Sync()
+    $achievement.sync()
     return
     

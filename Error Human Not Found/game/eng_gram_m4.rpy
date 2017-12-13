@@ -3526,6 +3526,8 @@ label gamefile_m4:
     hide gram_m4_tile51
     hide gram_m4_tile52
     hide gram_m4_tile53
+    hide gram_m4_tile54
+    hide gram_m4_tile55 
     hide gram_m4_tile215
     hide gram_m4_tile216
     hide gram_m4_tile210

@@ -287,6 +287,7 @@ screen quick_menu():
             hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"
         imagebutton: #Skip
             idle "skip_idle.png"
+            selected "skip_hover.png"
             hover "skip_hover.png"
             xpos 857
             ypos 989
@@ -347,7 +348,7 @@ screen navigation_mm():
             selected_hover_sound "<silence 0.5>" 
             selected_activate_sound "<silence 0.5>"
         hotspot (12, 669, 315, 95) action ShowMenu("about") activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
-#        hotspot (12, 797, 315, 95) action ShowMenu ("credits")selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
+        hotspot (12, 797, 315, 95) action ShowMenu ("mmCredits_start") activate_sound "music/UI/ENHF_UI_Menu_Enter.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>" 
         hotspot (12, 896, 315, 95) action Quit(confirm=True) activate_sound "music/UI/ENHF_UI_Button_v2.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg"selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"
         hotspot (27, 976, 290, 85) action Return() activate_sound "music/UI/ENHF_UI_Menu_Exit.ogg" hover_sound "music/UI/mainMenu/ENHF_UI_Highlight.ogg" selected_hover_sound "<silence 0.5>" selected_activate_sound "<silence 0.5>"#Return
 

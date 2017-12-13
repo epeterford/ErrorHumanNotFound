@@ -152,6 +152,12 @@ label llHardDone:
         g "Couldn't even let me have this victory for a moment?"
         show Ada neutral
         a "I apologize, but we are running out of time."
+        if (llMed_attempts==0) and (loopLogicEasy_tries==0):
+            $achievement.Sync()
+            $achievement.sync()
+            $achievement.grant("ACH_LOOP")
+            $achievement.sync()
+            $achievement.Sync()
     if(llHard_attempts ==1):
         show Grace neutral at left
         show Ada neutral at right

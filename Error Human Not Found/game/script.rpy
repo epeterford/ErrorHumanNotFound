@@ -705,6 +705,16 @@ init python:
     tutorial_llMed = True
     tutorial_llHard = True
     repeat_number = 0
+    
+    achievement.register("ACH_WELCOME")
+    achievement.register("ACH_BINARY")
+    achievement.register("ACH_LOOP")
+    achievement.register("ACH_GRAMMAR")
+    achievement.register("ACH_LOGIC")
+    achievement.register("ACH_SUB")
+    achievement.register("ACH_EQUAL")
+    achievement.register("ACH_SEP")
+    achievement.register("ACH_WHODUNIT")
 # The game starts here.
 label start:
     $Preference("rollback side", "disable")
@@ -867,20 +877,7 @@ label start:
     scene bg splashScreen
     #with fade(5.0)
     $ renpy.pause(5.0)
-    stop music fadeout 1.0
-#    menu:
-#        "Chapter 3 SbE":
-#            jump chapterThree_SbE
-#        "Chapter 3 E":
-#            jump chapterThree_E
-#        "Chapter 3 S":
-#            jump chapterThree_S
-#        "Chapter 4 S.":
-#            jump chapterFour_S
-#        "Chapter 4 E.":
-#            jump chapterFour_E
-#        "Test MOPR slide.":
-#            jump enterthemopr_E
+    stop music fadeout 1.05
     show bg black with fade
     scene bg prologue with fade
     $renpy.pause(3.0)
@@ -896,6 +893,11 @@ label splashscreen:
     $renpy.movie_cutscene('images/ErrorOpening.mpg')
     show splash with fade
     play sound moprInquisitive
+    $achievement.Sync()
+    $achievement.sync()
+    $achievement.grant("ACH_WELCOME")
+    $achievement.sync()
+    $achievement.Sync()
     $renpy.pause(4.0)
     scene bg black with fade
     show mm_base with fade
